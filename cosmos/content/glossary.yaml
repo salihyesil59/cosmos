@@ -1,0 +1,643 @@
+# Glossary of terms. Definitions are plain text (they also appear in tooltips).
+# Keys are referenced from lessons as [[key]] or [[key|shown text]].
+
+age-of-universe:
+  term: Age of the universe
+  definition: >
+    The time elapsed since the Big Bang, about 13.8 billion years according to the
+    ΛCDM model. It follows from integrating the expansion history, and is close to
+    the Hubble time 1/H0 by coincidence.
+  see_also: [hubble-time, lambda-cdm]
+  lessons: [L3.4, L1.2]
+
+angular-diameter-distance:
+  term: Angular diameter distance
+  definition: >
+    The distance obtained by comparing an object's true size with the angle it covers
+    on the sky. In an expanding universe it differs from other distance measures, and
+    it even decreases again for very distant objects.
+  see_also: [luminosity-distance, comoving-distance]
+  lessons: [L2.1]
+
+astronomical-unit:
+  term: Astronomical unit (AU)
+  definition: >
+    Exactly 149 597 870 700 metres, roughly the average Earth–Sun distance. Used for
+    distances within the Solar System.
+  see_also: [light-year, parsec]
+  lessons: [L0.2]
+
+baryon:
+  term: Baryon
+  definition: >
+    A particle made of three quarks, such as a proton or neutron. In cosmology,
+    "baryonic matter" means all ordinary matter made of atoms (including electrons),
+    about 5% of the universe's energy content.
+  see_also: [dark-matter, nucleosynthesis]
+  lessons: [L3.2, L4.3]
+
+baryon-to-photon-ratio:
+  term: Baryon-to-photon ratio (η)
+  definition: >
+    The number of baryons per photon, about 6 × 10⁻¹⁰. There are more than a billion
+    CMB photons for every proton or neutron. This ratio controls nucleosynthesis and
+    delays recombination.
+  see_also: [nucleosynthesis, recombination]
+  lessons: [L4.2, L4.3]
+
+big-bang:
+  term: Big Bang
+  definition: >
+    The hot, dense early state of the universe and its subsequent expansion and
+    cooling. It was not an explosion at a point in space; space itself expanded
+    everywhere.
+  see_also: [scale-factor, nucleosynthesis, cmb]
+  lessons: [L4.1, L1.3]
+
+big-crunch:
+  term: Big Crunch
+  definition: >
+    A possible fate in which gravity halts the expansion and the universe collapses
+    back into a hot, dense state. Observations of dark energy make it very unlikely
+    for our universe.
+  see_also: [closed-universe, friedmann-equations]
+  lessons: [L2.3]
+
+blackbody:
+  term: Blackbody radiation
+  definition: >
+    The light emitted by an object in thermal equilibrium. Its spectrum depends only
+    on temperature. The cosmic microwave background is the most perfect blackbody
+    ever measured.
+  see_also: [cmb, spectrum]
+  lessons: [L4.2, L4.4]
+
+blueshift:
+  term: Blueshift
+  definition: >
+    A shift of light to shorter wavelengths, caused for example by a source moving
+    towards the observer. The opposite of redshift.
+  see_also: [redshift, doppler-effect]
+  lessons: [L0.3]
+
+bullet-cluster:
+  term: Bullet Cluster
+  definition: >
+    Two colliding galaxy clusters (1E 0657-558) in which gravitational lensing shows
+    that most of the mass has separated from the hot gas that contains most of the
+    ordinary matter. Strong evidence for dark matter.
+  see_also: [dark-matter, gravitational-lensing]
+  lessons: [L3.2]
+
+cepheid:
+  term: Cepheid variable
+  definition: >
+    A pulsating giant star whose pulsation period is tightly related to its
+    luminosity (the Leavitt law). This makes Cepheids standard candles for measuring
+    distances to nearby galaxies.
+  see_also: [standard-candle, distance-ladder]
+  lessons: [L1.1]
+
+closed-universe:
+  term: Closed universe
+  definition: >
+    A universe with positive spatial curvature (k > 0, total density above critical).
+    It is finite but has no edge, like the surface of a sphere in two dimensions.
+  see_also: [curvature, open-universe, flat-universe]
+  lessons: [L2.5, L2.4]
+
+cmb:
+  term: Cosmic microwave background (CMB)
+  definition: >
+    The relic radiation released about 380 000 years after the Big Bang, when atoms
+    formed. Today it fills the universe as microwaves with a blackbody temperature of
+    2.7255 K and tiny fluctuations of one part in 100 000.
+  see_also: [recombination, last-scattering-surface, blackbody]
+  lessons: [L4.4, L1.3]
+
+comoving-distance:
+  term: Comoving distance
+  definition: >
+    Distance measured on a grid that expands with the universe. It stays constant for
+    objects moving with the expansion. By convention it equals today's proper
+    distance.
+  see_also: [proper-distance, scale-factor]
+  lessons: [L2.1]
+
+cosmological-constant:
+  term: Cosmological constant (Λ)
+  definition: >
+    A constant term in Einstein's equations that acts like an energy of empty space
+    with negative pressure (w = −1). It is the simplest explanation for dark energy.
+  see_also: [dark-energy, equation-of-state, lambda-cdm]
+  lessons: [L3.3, L3.1]
+
+cosmological-principle:
+  term: Cosmological principle
+  definition: >
+    The assumption, supported by observations, that on large enough scales the
+    universe is homogeneous (the same everywhere) and isotropic (the same in all
+    directions).
+  see_also: [homogeneity, isotropy]
+  lessons: [L1.3]
+
+cosmological-redshift:
+  term: Cosmological redshift
+  definition: >
+    The stretching of light's wavelength by the expansion of space while the light
+    travels. It obeys 1 + z = 1/a, where a is the scale factor when the light was
+    emitted.
+  see_also: [redshift, scale-factor]
+  lessons: [L2.2]
+
+cosmology:
+  term: Cosmology
+  definition: >
+    The science of the universe as a whole: its contents, structure, origin,
+    evolution and fate.
+  see_also: [cosmological-principle, big-bang]
+  lessons: [L0.1]
+
+critical-density:
+  term: Critical density
+  definition: >
+    The density needed for a flat universe at a given expansion rate, 3H²/(8πG).
+    Today it is about 9 × 10⁻²⁷ kg/m³, roughly five hydrogen atoms per cubic metre.
+  see_also: [density-parameter, flat-universe]
+  lessons: [L2.4]
+
+curvature:
+  term: Spatial curvature
+  definition: >
+    The deviation of space from flat (Euclidean) geometry. It can be positive
+    (closed), zero (flat) or negative (open), and is measured by k or by the
+    curvature parameter Ωk.
+  see_also: [flat-universe, closed-universe, open-universe]
+  lessons: [L2.5, L2.3]
+
+dark-energy:
+  term: Dark energy
+  definition: >
+    The unknown component with strongly negative pressure that makes the expansion
+    of the universe accelerate. It accounts for about 69% of the energy density
+    today.
+  see_also: [cosmological-constant, deceleration-parameter]
+  lessons: [L3.3, L3.4]
+
+dark-matter:
+  term: Dark matter
+  definition: >
+    Matter that neither emits nor absorbs light but exerts gravity. It makes up about
+    84% of all matter and is revealed by rotation curves, cluster dynamics,
+    gravitational lensing and the CMB.
+  see_also: [rotation-curve, bullet-cluster, lambda-cdm]
+  lessons: [L3.2]
+
+deceleration-parameter:
+  term: Deceleration parameter (q)
+  definition: >
+    A dimensionless measure of how the expansion rate changes, q = −ä·a/ȧ². Positive q
+    means deceleration, negative q acceleration. Today q0 ≈ −0.53.
+  see_also: [dark-energy, friedmann-equations]
+  lessons: [L3.3]
+
+decoupling:
+  term: Decoupling
+  definition: >
+    The moment a type of particle stops interacting with the rest of the cosmic
+    plasma because its reactions become slower than the expansion. Photons decoupled
+    at recombination; neutrinos about one second after the Big Bang.
+  see_also: [recombination, neutrino]
+  lessons: [L4.4, L4.2]
+
+density-parameter:
+  term: Density parameter (Ω)
+  definition: >
+    The density of a component divided by the critical density. Total Ω above 1 means
+    closed space, equal to 1 flat, below 1 open.
+  see_also: [critical-density, curvature]
+  lessons: [L2.4]
+
+deuterium:
+  term: Deuterium
+  definition: >
+    Heavy hydrogen: a nucleus of one proton and one neutron. Its primordial abundance
+    is a sensitive measure of the density of ordinary matter.
+  see_also: [nucleosynthesis, baryon]
+  lessons: [L4.3]
+
+distance-ladder:
+  term: Cosmic distance ladder
+  definition: >
+    The chain of methods (radar, parallax, Cepheids, Type Ia supernovae, redshift)
+    in which each method is calibrated by the one below it to measure ever larger
+    distances.
+  see_also: [parallax, cepheid, type-ia-supernova]
+  lessons: [L1.1]
+
+doppler-effect:
+  term: Doppler effect
+  definition: >
+    The change in observed wavelength of a wave caused by the relative motion of
+    source and observer: longer when they recede, shorter when they approach.
+  see_also: [redshift, blueshift]
+  lessons: [L0.3]
+
+electromagnetic-spectrum:
+  term: Electromagnetic spectrum
+  definition: >
+    The full range of light wavelengths, from gamma rays and X-rays through
+    ultraviolet, visible and infrared light to microwaves and radio waves.
+  see_also: [wavelength, spectrum]
+  lessons: [L0.3]
+
+electron-volt:
+  term: Electron volt (eV)
+  definition: >
+    A unit of energy, 1.602 × 10⁻¹⁹ joules. A temperature of 11 600 K corresponds to
+    a typical particle energy of 1 eV; 1 MeV corresponds to about 10¹⁰ K.
+  see_also: [blackbody]
+  lessons: [L4.2]
+
+equation-of-state:
+  term: Equation of state (w)
+  definition: >
+    The ratio of pressure to energy density, w = p/(ρc²). Matter has w = 0, radiation
+    w = 1/3 and a cosmological constant w = −1. It determines how a component dilutes
+    as the universe expands.
+  see_also: [matter, radiation, cosmological-constant]
+  lessons: [L3.1]
+
+flat-universe:
+  term: Flat universe
+  definition: >
+    A universe with zero spatial curvature, where ordinary Euclidean geometry holds on
+    large scales. Its total density equals the critical density. Observations show our
+    universe is flat to within about 0.2%.
+  see_also: [curvature, critical-density]
+  lessons: [L2.5]
+
+friedmann-equations:
+  term: Friedmann equations
+  definition: >
+    The equations, derived from general relativity for a homogeneous and isotropic
+    universe, that relate the expansion rate and acceleration of the scale factor to
+    the density, pressure and curvature of the universe.
+  see_also: [scale-factor, critical-density]
+  lessons: [L2.3]
+
+galaxy:
+  term: Galaxy
+  definition: >
+    A gravitationally bound system of stars, gas, dust and dark matter, containing
+    from millions to hundreds of billions of stars.
+  see_also: [milky-way, local-group]
+  lessons: [L0.1]
+
+general-relativity:
+  term: General relativity
+  definition: >
+    Einstein's theory of gravity (1915), in which mass and energy curve spacetime and
+    free objects follow the curvature. It is the basis of modern cosmology.
+  see_also: [spacetime, friedmann-equations]
+  lessons: [L0.4]
+
+gravitational-lensing:
+  term: Gravitational lensing
+  definition: >
+    The bending of light by mass, predicted by general relativity. It distorts,
+    magnifies or multiplies the images of background sources and measures the total
+    mass of the lens, including dark matter.
+  see_also: [general-relativity, dark-matter]
+  lessons: [L3.2, L0.4]
+
+helium-4:
+  term: Helium-4
+  definition: >
+    The most common helium nucleus (2 protons, 2 neutrons). About 25% of ordinary
+    matter by mass was turned into helium-4 in the first minutes after the Big Bang.
+  see_also: [nucleosynthesis, deuterium]
+  lessons: [L4.3]
+
+homogeneity:
+  term: Homogeneity
+  definition: >
+    Being the same at every location. The universe is homogeneous when averaged over
+    regions hundreds of megaparsecs across.
+  see_also: [isotropy, cosmological-principle]
+  lessons: [L1.3]
+
+hubble-constant:
+  term: Hubble constant (H0)
+  definition: >
+    Today's expansion rate of the universe, about 67–73 km/s per megaparsec. A galaxy
+    one megaparsec farther away recedes about 70 km/s faster.
+  see_also: [hubble-lemaitre-law, hubble-parameter, hubble-time]
+  lessons: [L1.2]
+
+hubble-distance:
+  term: Hubble distance
+  definition: >
+    The distance c/H0, about 4 300 Mpc or 14 billion light-years, at which the
+    recession velocity from the Hubble–Lemaître law equals the speed of light.
+  see_also: [hubble-constant]
+  lessons: [L2.1]
+
+hubble-lemaitre-law:
+  term: Hubble–Lemaître law
+  definition: >
+    The observation that galaxies recede with velocities proportional to their
+    distance, v = H0 d. It is the signature of uniform cosmic expansion.
+  see_also: [hubble-constant, redshift]
+  lessons: [L1.2]
+
+hubble-parameter:
+  term: Hubble parameter H(t)
+  definition: >
+    The expansion rate at any time, H = ȧ/a. It is the same everywhere in space but
+    changes with time; its present value is the Hubble constant.
+  see_also: [hubble-constant, scale-factor]
+  lessons: [L2.1]
+
+hubble-time:
+  term: Hubble time
+  definition: >
+    The time 1/H0, about 14 billion years. It is the age the universe would have if it
+    had always expanded at today's rate.
+  see_also: [hubble-constant, age-of-universe]
+  lessons: [L1.2]
+
+isotropy:
+  term: Isotropy
+  definition: >
+    Being the same in every direction. The CMB is isotropic to one part in 100 000
+    after removing the effect of our own motion.
+  see_also: [homogeneity, cosmological-principle]
+  lessons: [L1.3]
+
+lambda-cdm:
+  term: ΛCDM model
+  definition: >
+    The standard model of cosmology: a flat universe containing a cosmological
+    constant (Λ), cold dark matter (CDM), ordinary matter and radiation, described by
+    six parameters.
+  see_also: [cosmological-constant, dark-matter]
+  lessons: [L3.4]
+
+last-scattering-surface:
+  term: Last scattering surface
+  definition: >
+    The spherical shell around every observer from which CMB photons last scattered,
+    about 380 000 years after the Big Bang. It is the farthest we can see with light.
+  see_also: [cmb, recombination]
+  lessons: [L4.4]
+
+light-year:
+  term: Light-year (ly)
+  definition: >
+    The distance light travels in one year, about 9.46 × 10¹⁵ metres. It is a unit of
+    distance, not time.
+  see_also: [parsec, astronomical-unit]
+  lessons: [L0.2]
+
+local-group:
+  term: Local Group
+  definition: >
+    The small group of galaxies containing the Milky Way, the Andromeda galaxy, the
+    Triangulum galaxy and dozens of dwarf galaxies, about 3 Mpc across.
+  see_also: [milky-way, galaxy]
+  lessons: [L0.1]
+
+lookback-time:
+  term: Lookback time
+  definition: >
+    How long ago the light we now receive from an object was emitted. Because light
+    travels at a finite speed, looking far away means looking back in time.
+  see_also: [age-of-universe]
+  lessons: [L0.1, L4.1]
+
+luminosity:
+  term: Luminosity
+  definition: >
+    The total power emitted by an object, measured in watts or solar luminosities.
+    The observed brightness (flux) falls off with distance as luminosity/(4πd²).
+  see_also: [standard-candle, luminosity-distance]
+  lessons: [L1.1]
+
+luminosity-distance:
+  term: Luminosity distance
+  definition: >
+    The distance inferred from comparing a source's luminosity with its observed
+    flux, using the inverse-square law. In an expanding universe it exceeds the
+    comoving distance by a factor 1 + z.
+  see_also: [luminosity, angular-diameter-distance]
+  lessons: [L1.1]
+
+matter:
+  term: Matter (in cosmology)
+  definition: >
+    Any component whose particles move much slower than light, so its pressure is
+    negligible (w = 0). Includes ordinary (baryonic) matter and cold dark matter. Its
+    density dilutes as a⁻³.
+  see_also: [equation-of-state, dark-matter, baryon]
+  lessons: [L3.1]
+
+matter-radiation-equality:
+  term: Matter–radiation equality
+  definition: >
+    The moment, about 51 000 years after the Big Bang (z ≈ 3 400), when the densities
+    of matter and radiation were equal. Before it radiation dominated; afterwards
+    matter did.
+  see_also: [radiation, matter]
+  lessons: [L3.1, L4.1]
+
+megaparsec:
+  term: Megaparsec (Mpc)
+  definition: >
+    One million parsecs, about 3.26 million light-years or 3.09 × 10²² metres. The
+    standard unit of distance in cosmology.
+  see_also: [parsec]
+  lessons: [L0.2]
+
+milky-way:
+  term: Milky Way
+  definition: >
+    Our home galaxy, a barred spiral about 100 000 light-years across containing
+    some 100–400 billion stars. The Sun lies about 8 kiloparsecs from its centre.
+  see_also: [galaxy, local-group]
+  lessons: [L0.1]
+
+neutrino:
+  term: Neutrino
+  definition: >
+    A very light, electrically neutral particle that interacts only weakly. Neutrinos
+    decoupled about one second after the Big Bang and still fill the universe as a
+    cosmic neutrino background.
+  see_also: [decoupling, radiation]
+  lessons: [L4.1]
+
+nucleosynthesis:
+  term: Big Bang nucleosynthesis (BBN)
+  definition: >
+    The formation of light nuclei (deuterium, helium-3, helium-4, lithium-7) in the
+    first twenty minutes after the Big Bang.
+  see_also: [helium-4, deuterium, baryon-to-photon-ratio]
+  lessons: [L4.3]
+
+observable-universe:
+  term: Observable universe
+  definition: >
+    The region from which light has had time to reach us since the Big Bang. Because
+    space expanded while the light travelled, its radius today is about 46 billion
+    light-years. The whole universe may be much larger or infinite.
+  see_also: [cosmology, comoving-distance]
+  lessons: [L0.1]
+
+open-universe:
+  term: Open universe
+  definition: >
+    A universe with negative spatial curvature (k < 0, total density below critical),
+    like a saddle surface in two dimensions. It is infinite.
+  see_also: [curvature, closed-universe, flat-universe]
+  lessons: [L2.5]
+
+parallax:
+  term: Parallax
+  definition: >
+    The apparent shift of a nearby star against distant background stars as the Earth
+    orbits the Sun. The distance in parsecs is 1 divided by the parallax angle in
+    arcseconds.
+  see_also: [parsec, distance-ladder]
+  lessons: [L0.2, L1.1]
+
+parsec:
+  term: Parsec (pc)
+  definition: >
+    The distance at which a star has a parallax of one arcsecond: about 3.26
+    light-years or 3.09 × 10¹⁶ metres.
+  see_also: [parallax, megaparsec, light-year]
+  lessons: [L0.2]
+
+peculiar-velocity:
+  term: Peculiar velocity
+  definition: >
+    The motion of a galaxy through space in addition to the cosmic expansion, caused
+    by the gravity of nearby structures. Typically a few hundred km/s.
+  see_also: [hubble-lemaitre-law]
+  lessons: [L1.2]
+
+photon:
+  term: Photon
+  definition: >
+    A particle of light. Its energy is inversely proportional to its wavelength, so
+    photons lose energy as cosmic expansion stretches their wavelength.
+  see_also: [radiation, cmb]
+  lessons: [L2.2]
+
+proper-distance:
+  term: Proper distance
+  definition: >
+    The physical distance between two objects at a given moment, as a very long ruler
+    would measure it. It grows with the scale factor: D = a × comoving distance.
+  see_also: [comoving-distance, scale-factor]
+  lessons: [L2.1]
+
+radiation:
+  term: Radiation (in cosmology)
+  definition: >
+    Relativistic particles such as photons and, in the early universe, neutrinos. It
+    has pressure w = 1/3 and its density dilutes as a⁻⁴. It dominated the first
+    51 000 years.
+  see_also: [equation-of-state, matter-radiation-equality]
+  lessons: [L3.1]
+
+recombination:
+  term: Recombination
+  definition: >
+    The formation of neutral atoms about 380 000 years after the Big Bang, when the
+    universe cooled to about 3 000 K. It made the universe transparent and released
+    the CMB.
+  see_also: [cmb, decoupling, last-scattering-surface]
+  lessons: [L4.4]
+
+redshift:
+  term: Redshift (z)
+  definition: >
+    The fractional increase in wavelength of light, z = (observed − emitted)/emitted.
+    For distant galaxies it is mainly caused by cosmic expansion, with 1 + z = 1/a.
+  see_also: [cosmological-redshift, doppler-effect, blueshift]
+  lessons: [L0.3, L2.2]
+
+rotation-curve:
+  term: Rotation curve
+  definition: >
+    A graph of the orbital speed of stars and gas against distance from a galaxy's
+    centre. Observed curves stay flat far beyond the visible disk, revealing dark
+    matter halos.
+  see_also: [dark-matter]
+  lessons: [L3.2]
+
+scale-factor:
+  term: Scale factor a(t)
+  definition: >
+    The factor by which all cosmic distances are multiplied as the universe expands.
+    By convention a = 1 today and a = 1/(1 + z) when light of redshift z was emitted.
+  see_also: [comoving-distance, proper-distance, hubble-parameter]
+  lessons: [L2.1]
+
+spacetime:
+  term: Spacetime
+  definition: >
+    The four-dimensional combination of three space dimensions and time used in
+    relativity. In general relativity mass and energy curve spacetime.
+  see_also: [general-relativity]
+  lessons: [L0.4]
+
+spectral-line:
+  term: Spectral line
+  definition: >
+    A narrow dark (absorption) or bright (emission) feature in a spectrum at a
+    wavelength characteristic of a particular element or molecule.
+  see_also: [spectrum, redshift]
+  lessons: [L0.3]
+
+spectrum:
+  term: Spectrum
+  definition: >
+    Light spread out by wavelength. It reveals an object's temperature, composition
+    and motion.
+  see_also: [spectral-line, electromagnetic-spectrum]
+  lessons: [L0.3]
+
+standard-candle:
+  term: Standard candle
+  definition: >
+    An astronomical object of known luminosity. Comparing its known luminosity with
+    its observed brightness gives its distance.
+  see_also: [cepheid, type-ia-supernova, luminosity]
+  lessons: [L1.1]
+
+supercluster:
+  term: Supercluster
+  definition: >
+    A large grouping of galaxy clusters and groups, part of the cosmic web. The Milky
+    Way lies in the Laniakea supercluster, about 520 million light-years across.
+  see_also: [galaxy, local-group]
+  lessons: [L0.1]
+
+type-ia-supernova:
+  term: Type Ia supernova
+  definition: >
+    The thermonuclear explosion of a white dwarf star. Its peak luminosity can be
+    standardised, making it a precise distance indicator out to billions of
+    light-years. Used to discover cosmic acceleration.
+  see_also: [standard-candle, dark-energy, distance-ladder]
+  lessons: [L1.1, L3.3]
+
+wavelength:
+  term: Wavelength (λ)
+  definition: >
+    The distance between successive crests of a wave. For light it determines the
+    colour or the band of the electromagnetic spectrum.
+  see_also: [electromagnetic-spectrum, redshift]
+  lessons: [L0.3]

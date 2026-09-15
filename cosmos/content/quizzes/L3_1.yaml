@@ -1,0 +1,28 @@
+- question: "What is the equation of state parameter w for radiation?"
+  choices: ["−1", "0", "1/3", "1"]
+  answer: 2
+  explanation: "Radiation has p = ρc²/3, so w = 1/3."
+- question: "Why does radiation density fall as a⁻⁴ instead of a⁻³?"
+  choices:
+    - "Photons are destroyed by the expansion"
+    - "The number density drops as a⁻³ and each photon also loses energy as its wavelength stretches"
+    - "Radiation has negative pressure"
+    - "It does not; it falls as a⁻³"
+  answer: 1
+  explanation: "Dilution gives a⁻³, and redshift reduces each photon's energy by another factor of a."
+- question: "How does the density of a cosmological constant change as the universe expands?"
+  choices: ["It falls as a⁻³", "It falls as a⁻⁴", "It stays constant", "It grows as a³"]
+  answer: 2
+  explanation: "With w = −1, ρ ∝ a^(−3(1+w)) = a⁰: the density is constant."
+- question: "In a flat universe dominated by matter, the scale factor grows as..."
+  choices: ["t^(1/2)", "t^(2/3)", "t", "exponentially"]
+  answer: 1
+  explanation: "a ∝ t^(2/(3(1+w))) with w = 0 gives a ∝ t^(2/3)."
+- question: "What was the correct order of the dominant components in cosmic history?"
+  choices:
+    - "Matter → radiation → dark energy"
+    - "Dark energy → matter → radiation"
+    - "Radiation → matter → dark energy"
+    - "Radiation → dark energy → matter"
+  answer: 2
+  explanation: "Radiation (a⁻⁴) dominated first, then matter (a⁻³), and finally the constant dark energy density."

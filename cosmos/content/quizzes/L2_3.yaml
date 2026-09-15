@@ -1,0 +1,28 @@
+- question: "In the Newtonian derivation of the Friedmann equation, which quantity stays constant for a galaxy on the edge of the expanding sphere?"
+  choices:
+    - "Its speed"
+    - "Its kinetic plus gravitational potential energy"
+    - "The density inside the sphere"
+    - "The proper radius of the sphere"
+  answer: 1
+  explanation: "Energy conservation, ½mṘ² − GMm/R = E, leads directly to the Friedmann equation."
+- question: "In the Friedmann equation H² = (8πG/3)ρ − kc²/a², what does the constant k describe?"
+  choices: ["The expansion speed today", "The curvature of space", "The temperature", "The number of galaxies"]
+  answer: 1
+  explanation: "In general relativity k is the spatial curvature: positive (closed), zero (flat) or negative (open)."
+- question: "For a universe containing only matter, which case leads to a Big Crunch?"
+  choices: ["k < 0 (open)", "k = 0 (flat)", "k > 0 (closed)", "All of them"]
+  answer: 2
+  explanation: "k > 0 corresponds to negative total energy E, like a ball thrown slower than escape velocity: the expansion eventually reverses."
+- question: "According to the acceleration equation, what is needed for the expansion to accelerate?"
+  choices:
+    - "More ordinary matter"
+    - "A component with strongly negative pressure, p < −ρc²/3"
+    - "Higher temperature"
+    - "Positive curvature"
+  answer: 1
+  explanation: "ä/a = −(4πG/3)(ρ + 3p/c²) is positive only if pressure is sufficiently negative."
+- question: "How old is a flat, matter-only (Einstein–de Sitter) universe?"
+  choices: ["1/H0", "2/(3H0)", "1/(2H0)", "3/(2H0)"]
+  answer: 1
+  explanation: "With a ∝ t^(2/3), H = 2/(3t), so t0 = 2/(3H0), about 9.3 billion years for H0 = 70."

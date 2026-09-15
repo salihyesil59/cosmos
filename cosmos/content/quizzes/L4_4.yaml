@@ -1,0 +1,36 @@
+- question: "Why was the universe opaque before recombination?"
+  choices:
+    - "It was full of dust"
+    - "Photons constantly scattered off free electrons"
+    - "Dark matter absorbed all light"
+    - "There was no light yet"
+  answer: 1
+  explanation: "In a plasma, free electrons scatter photons (Thomson scattering), so light could not travel far."
+- question: "Hydrogen's binding energy is 13.6 eV (about 150 000 K). Why did atoms form only at about 3 000 K?"
+  choices:
+    - "Electrons were moving too slowly before"
+    - "The huge number of photons per atom meant enough high-energy photons remained to ionise atoms until much lower temperatures"
+    - "Protons had not formed yet"
+    - "Dark energy kept atoms apart"
+  answer: 1
+  explanation: "With over a billion photons per atom, the high-energy tail of the blackbody spectrum kept hydrogen ionised until about 3 000 K."
+- question: "At what redshift did recombination approximately happen?"
+  choices: ["z ≈ 1", "z ≈ 10", "z ≈ 1 100", "z ≈ 10⁹"]
+  answer: 2
+  explanation: "3 000 K / 2.7255 K ≈ 1 100, so 1 + z ≈ 1 100."
+- question: "What causes the CMB dipole?"
+  choices:
+    - "The Big Bang happened on one side of the sky"
+    - "The motion of the Solar System at about 370 km/s relative to the CMB"
+    - "The Milky Way's dust"
+    - "The rotation of the Earth"
+  answer: 1
+  explanation: "Our motion Doppler-shifts the CMB, making one side about 3.4 mK warmer and the opposite side cooler."
+- question: "Who first detected the cosmic microwave background?"
+  choices:
+    - "Edwin Hubble"
+    - "Arno Penzias and Robert Wilson"
+    - "Albert Einstein"
+    - "The Planck satellite"
+  answer: 1
+  explanation: "In 1964–1965 they found an unexplained microwave signal from all directions with a Bell Labs radio antenna."

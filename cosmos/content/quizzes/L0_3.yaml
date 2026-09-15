@@ -1,0 +1,32 @@
+- question: "A spectral line with rest wavelength 500 nm is observed at 550 nm. What is the redshift?"
+  choices: ["0.05", "0.1", "0.5", "1.1"]
+  answer: 1
+  explanation: "z = (550 − 500) / 500 = 0.1."
+- question: "What happens to the spectral lines of a star moving towards us?"
+  choices:
+    - "They shift to longer wavelengths (redshift)"
+    - "They shift to shorter wavelengths (blueshift)"
+    - "They disappear"
+    - "They stay in the same place but become brighter"
+  answer: 1
+  explanation: "An approaching source compresses its waves, shifting lines to shorter wavelengths: a blueshift."
+- question: "Why are spectral lines called fingerprints of the elements?"
+  choices:
+    - "Each element absorbs and emits at its own characteristic set of wavelengths"
+    - "They were first discovered by a detective"
+    - "All elements produce the same pattern"
+    - "They only appear in the light of the Sun"
+  answer: 0
+  explanation: "The wavelengths are set by the energy levels of each element's electrons, which are unique."
+- question: "Using z ≈ v/c, how fast does a galaxy with z = 0.01 recede?"
+  choices: ["30 km/s", "300 km/s", "3 000 km/s", "30 000 km/s"]
+  answer: 2
+  explanation: "v ≈ 0.01 × 300 000 km/s = 3 000 km/s. The approximation is valid because z is small."
+- question: "Which statement about redshift is correct?"
+  choices:
+    - "Redshift only happens to red light"
+    - "All lines in a spectrum shift by the same factor 1 + z"
+    - "Redshift z can never be larger than 1"
+    - "A redshift means the object is getting hotter"
+  answer: 1
+  explanation: "Every wavelength is multiplied by 1 + z. 'Red' just means longer wavelength, and z can exceed 1."

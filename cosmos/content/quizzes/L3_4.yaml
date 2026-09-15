@@ -1,0 +1,36 @@
+- question: "What do the letters in ΛCDM stand for?"
+  choices:
+    - "Lambda (cosmological constant) and Cold Dark Matter"
+    - "Light Curve Distance Measurement"
+    - "Lambda and Cosmic Dust Model"
+    - "Linear Cosmic Density Mode"
+  answer: 0
+  explanation: "Λ is the cosmological constant (dark energy) and CDM is cold dark matter."
+- question: "Approximately what share of today's energy density is ordinary matter?"
+  choices: ["About 5%", "About 26%", "About 50%", "About 69%"]
+  answer: 0
+  explanation: "Ωb ≈ 0.049. Dark matter is about 26% and dark energy about 69%."
+- question: "How is the age of the universe calculated in ΛCDM?"
+  choices:
+    - "As exactly 1/H0"
+    - "By integrating dt = da/(aH) from a = 0 to a = 1"
+    - "By counting the oldest stars"
+    - "By measuring the temperature of the CMB"
+  answer: 1
+  explanation: "Summing small time steps da/(aH) over the whole expansion history gives about 13.8 billion years."
+- question: "Why is the age of our universe so close to the Hubble time 1/H0?"
+  choices:
+    - "Because the expansion has always been constant"
+    - "Because early deceleration and late acceleration nearly cancel out"
+    - "Because dark matter does not exist"
+    - "It is required by the cosmological principle"
+  answer: 1
+  explanation: "It is a coincidence of our epoch: the matter era made the universe younger than 1/H0, the dark energy era older."
+- question: "What is the Hubble tension?"
+  choices:
+    - "The universe will tear apart"
+    - "Local measurements of H0 (about 73) disagree with the value inferred from the CMB (about 67)"
+    - "The Hubble telescope is under mechanical stress"
+    - "Galaxies move faster than light"
+  answer: 1
+  explanation: "The few-percent disagreement may point to measurement issues or to new physics beyond ΛCDM."

@@ -1,0 +1,40 @@
+- question: "What does 'isotropic' mean?"
+  choices:
+    - "The same at every location"
+    - "The same in every direction"
+    - "Expanding at a constant rate"
+    - "Containing only one element"
+  answer: 1
+  explanation: "Isotropy means no preferred direction. Homogeneity means no preferred location."
+- question: "On what scales does the cosmological principle apply?"
+  choices:
+    - "At every scale, including the Solar System"
+    - "Only inside galaxies"
+    - "On scales of hundreds of megaparsecs and larger"
+    - "Only on the scale of the Earth"
+  answer: 2
+  explanation: "On small scales the universe is lumpy. Averaged over regions hundreds of Mpc across, it looks the same everywhere."
+- question: "Which observation provides the strongest evidence for isotropy?"
+  choices:
+    - "The rotation of the Earth"
+    - "The cosmic microwave background, uniform to 1 part in 100 000"
+    - "The brightness of the Sun"
+    - "The shape of the Milky Way"
+  answer: 1
+  explanation: "The CMB has the same temperature in all directions to extraordinary precision."
+- question: "Which picture of the Big Bang is correct?"
+  choices:
+    - "An explosion at a point, with galaxies flying into empty space"
+    - "Space itself expanding everywhere, with no centre and no edge"
+    - "A collision between two galaxies"
+    - "A star exploding at the centre of the universe"
+  answer: 1
+  explanation: "The Big Bang happened everywhere: space expands and carries galaxies with it."
+- question: "Why is the cosmological principle so useful?"
+  choices:
+    - "It proves that dark matter exists"
+    - "It reduces the description of the whole universe to a few numbers that depend only on time"
+    - "It tells us the exact number of galaxies"
+    - "It explains the colour of stars"
+  answer: 1
+  explanation: "With homogeneity and isotropy, quantities like density and expansion rate are the same everywhere, so only their time dependence matters."

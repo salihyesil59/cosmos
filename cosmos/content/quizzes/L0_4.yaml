@@ -1,0 +1,32 @@
+- question: "Why does gravity dominate the universe on large scales even though it is the weakest force?"
+  choices:
+    - "It has the longest name"
+    - "It is always attractive and does not cancel, while electric charges cancel out"
+    - "Nuclear forces become stronger at large distances"
+    - "Gravity is actually the strongest force"
+  answer: 1
+  explanation: "Large bodies are electrically neutral, and the nuclear forces are short range. Gravity adds up with every bit of mass."
+- question: "If the distance between two masses is tripled, the gravitational force becomes..."
+  choices: ["three times weaker", "six times weaker", "nine times weaker", "unchanged"]
+  answer: 2
+  explanation: "Newton's law is an inverse-square law: (1/3)² = 1/9."
+- question: "Far outside a central mass, how should orbital speed change with distance r?"
+  choices: ["It grows as r", "It stays constant", "It falls as 1/√r", "It falls as 1/r²"]
+  answer: 2
+  explanation: "From v = √(GM/r), speed falls as one over the square root of distance, as for the planets."
+- question: "In general relativity, what is gravity?"
+  choices:
+    - "A force carried by electric fields"
+    - "The curvature of spacetime produced by mass and energy"
+    - "A pressure exerted by empty space"
+    - "An effect of the Earth's rotation"
+  answer: 1
+  explanation: "Mass and energy curve spacetime, and freely moving objects follow that curvature."
+- question: "Which of these is a prediction of general relativity that Newton's theory does not make?"
+  choices:
+    - "Objects fall towards the Earth"
+    - "The Moon orbits the Earth"
+    - "Light is bent when it passes a massive object"
+    - "Heavier planets pull harder"
+  answer: 2
+  explanation: "Gravitational lensing, the bending of light by mass, was confirmed during the 1919 solar eclipse and is used in cosmology today."
