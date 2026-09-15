@@ -25,10 +25,11 @@ from cosmos.gui.theme import theme
 from cosmos.gui.widgets.common import Banner, InfoButton, ParameterSlider, PresetSelector, labelled_row
 from cosmos.gui.widgets.plot import PlotWidget, write_csv
 from cosmos.physics import constants as const
-from cosmos.physics.cosmology import Cosmology
+from cosmos.physics.cosmology import Cosmology, Fate
 from cosmos.physics.presets import PRESETS
 
 MPC_TO_GLY = const.MPC / const.LIGHT_YEAR / 1e9
+C_KM_S = const.C / 1e3
 
 EXPLANATIONS = {
     "age0": (
@@ -62,6 +63,23 @@ EXPLANATIONS = {
         "Angular diameter distance",
         "The distance you would infer from the object's apparent size. It is the comoving distance divided "
         "by (1 + z), and it shrinks again for very distant objects.",
+    ),
+    "vnow": (
+        "Recession velocity today",
+        "How fast the distance to the object grows today, H0 × comoving distance, in units of the speed of "
+        "light. Values above 1 are allowed: this is the stretching of space, not motion through space.",
+    ),
+    "vemit": (
+        "Recession velocity at emission",
+        "How fast the distance was growing when the light was emitted: H(z) × proper distance at that time.",
+    ),
+    "ph": (
+        "Particle horizon today",
+        "Radius of the observable universe: the comoving distance light has covered since the Big Bang.",
+    ),
+    "eh": (
+        "Event horizon today",
+        "Light emitted today from beyond this distance will never reach us. Only accelerating universes have one.",
     ),
     "mu": (
         "Distance modulus",
@@ -301,12 +319,17 @@ class CalculatorSimulator(SimulatorBase):
             ("dlt", "Light-travel distance", self._dist(dlt)),
             ("dl", "Luminosity distance", self._dist(dl)),
             ("da", "Angular diameter distance", self._dist(da)),
+            ("vnow", "Recession velocity today", self._speed(c.H0 * dc / C_KM_S)),
+            ("vemit", "Recession velocity at emission", self._speed(float(c.H(z)) * dc / (1 + z) / C_KM_S)),
             ("mu", "Distance modulus m − M", f"{fmt(5 * math.log10(dl) + 25 if dl > 0 else math.nan)} mag"),
             ("scale", "Scale: 1 arcsec corresponds to", f"{fmt(da * 1e3 * math.pi / 648000)} kpc"),
             ("hz", "Hubble parameter H(z)", f"{fmt(float(c.H(z)))} km/s/Mpc"),
             ("a", "Scale factor a = 1/(1+z)", fmt(1 / (1 + z))),
             ("tcmb", "CMB temperature at z", f"{fmt(const.T_CMB * (1 + z))} K"),
             ("ok", "Curvature Ωk", f"{fmt(c.Ok0)}  ({c.geometry})"),
+            ("ph", "Particle horizon today", self._dist(c.particle_horizon())),
+            ("eh", "Event horizon today", self._dist(c.event_horizon()) if c.fate() is not Fate.BIG_CRUNCH
+             else "not computed for recollapsing universes"),
             ("rhoc", "Critical density today", f"{fmt(rhoc)} kg/m³  (≈ {rhoc / const.M_PROTON:.2f} H atoms/m³)"),
             ("q0", "Deceleration parameter q0", f"{fmt(float(c.deceleration_parameter(0)))}"
              f"  ({'accelerating' if c.deceleration_parameter(0) < 0 else 'decelerating'})"),
@@ -339,7 +362,16 @@ class CalculatorSimulator(SimulatorBase):
         return f"{fmt(gyr)} billion years"
 
     @staticmethod
+    def _speed(v_over_c: float) -> str:
+        if not math.isfinite(v_over_c):
+            return "—"
+        note = "faster than light" if v_over_c > 1 else "slower than light"
+        return f"{v_over_c:.3f} c  ({note})"
+
+    @staticmethod
     def _dist(mpc: float) -> str:
+        if math.isinf(mpc):
+            return "infinite"
         if not math.isfinite(mpc):
             return "—"
         return f"{fmt(mpc)} Mpc  ({fmt(mpc * MPC_TO_GLY)} billion ly)"

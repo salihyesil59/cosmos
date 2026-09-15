@@ -321,3 +321,73 @@ def _cosmic_web(fig, p: Palette):
     ax.set_axis_off()
     ax.set_title("Illustration (not real data): galaxies trace filaments and clusters around empty voids",
                  fontsize=8, color=p.text)
+
+
+_MPC_TO_GLY = const.MPC / const.LIGHT_YEAR / 1e9
+
+
+@figure("horizons_spacetime")
+def _horizons_spacetime(fig, p: Palette):
+    ax = fig.add_subplot()
+    c = PRESETS["planck18"].cosmology
+    a, t, chi = c.conformal_history(a_max=8.0, n=4000)
+    t0 = float(c.age(0))
+    chi0 = c.particle_horizon()
+    chi_inf = chi0 + c.event_horizon()
+    to_gly = _MPC_TO_GLY
+    hubble = c.hubble_distance / np.sqrt(c.E2_of_a(a)) * to_gly
+    particle = a * chi * to_gly
+    event = a * (chi_inf - chi) * to_gly
+    past = t <= t0
+    cone = a[past] * (chi0 - chi[past]) * to_gly
+    ax.fill_between(t[past], 0, cone, color=p.accent2, alpha=0.12, linewidth=0)
+    ax.plot(t[past], cone, color=p.accent2, linewidth=2.2, label="Our past light cone")
+    ax.plot(t, hubble, color=p.series[2], linewidth=1.8, linestyle="--", label="Hubble sphere (v = c)")
+    ax.plot(t, event, color=p.danger, linewidth=1.8, label="Event horizon")
+    ax.plot(t, particle, color=p.series[0], linewidth=2, label="Particle horizon (observable universe)")
+    ax.axvline(t0, color=p.muted, linestyle=":", linewidth=1)
+    ax.annotate("today", (t0, 30), textcoords="offset points", xytext=(4, 0), color=p.muted, fontsize=8)
+    ax.set_xlim(0, 40)
+    ax.set_ylim(0, 70)
+    ax.set_xlabel("Time since the Big Bang (billion years)")
+    ax.set_ylabel("Proper distance from us (billion ly)")
+    ax.legend(loc="upper right", fontsize=8)
+
+
+@figure("distance_measures")
+def _distance_measures(fig, p: Palette):
+    ax = fig.add_subplot()
+    c = PRESETS["planck18"].cosmology
+    z = np.logspace(-2, np.log10(20), 200)
+    to_gly = _MPC_TO_GLY
+    ax.loglog(z, c.luminosity_distance(z) * to_gly, color=p.series[1], linewidth=2, label="Luminosity distance")
+    ax.loglog(z, c.comoving_distance(z) * to_gly, color=p.series[0], linewidth=2, label="Comoving distance")
+    ax.loglog(z, c.light_travel_distance(z) * to_gly, color=p.series[4], linewidth=2, label="Light-travel distance")
+    ax.loglog(z, c.angular_diameter_distance(z) * to_gly, color=p.series[2], linewidth=2,
+              label="Angular diameter distance")
+    ax.loglog(z, z * c.hubble_distance * to_gly, color=p.muted, linestyle=":", label="Hubble's law  d = cz/H₀")
+    ax.set_ylim(0.1, 500)
+    ax.set_xlabel("Redshift z")
+    ax.set_ylabel("Distance (billion light-years)")
+    ax.legend(loc="upper left", fontsize=8)
+
+
+@figure("angular_size")
+def _angular_size(fig, p: Palette):
+    ax = fig.add_subplot()
+    c = PRESETS["planck18"].cosmology
+    z = np.logspace(-1.3, 1.3, 200)
+    size_kpc = 30.0
+    arcsec = size_kpc / c.kpc_per_arcsec(z)
+    euclid = size_kpc / (z * c.hubble_distance * 1e3) * 648000 / np.pi
+    ax.loglog(z, arcsec, color=p.series[0], linewidth=2.2, label="Expanding universe (Planck 2018)")
+    ax.loglog(z, euclid, color=p.muted, linestyle=":", label="Static Euclidean space with d = cz/H₀")
+    z_peak, _ = c.angular_diameter_distance_peak()
+    ax.scatter([z_peak], [size_kpc / c.kpc_per_arcsec(z_peak)], color=p.accent2, zorder=3)
+    ax.annotate(f"smallest at z ≈ {z_peak:.1f}", (z_peak, size_kpc / c.kpc_per_arcsec(z_peak)),
+                textcoords="offset points", xytext=(-20, -22), color=p.accent2, fontsize=8)
+    ax.set_xlabel("Redshift z")
+    ax.set_ylabel("Angular size (arcseconds)")
+    ax.set_title("Apparent size of a galaxy 30 kpc across", fontsize=9)
+    ax.set_ylim(0.5, 100)
+    ax.legend(loc="upper right", fontsize=8)

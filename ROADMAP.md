@@ -101,8 +101,8 @@ Legend: `[x]` done · `[ ]` planned
 - [x] `L1.5` The discovery of the cosmic microwave background
 
 **Level 2 — The Expanding Universe**
-- [ ] `L2.6` Horizons: particle horizon, Hubble sphere, event horizon
-- [ ] `L2.7` Distance measures: luminosity distance, angular diameter distance, lookback time
+- [x] `L2.6` Horizons: particle horizon, Hubble sphere, event horizon
+- [x] `L2.7` Distance measures: luminosity distance, angular diameter distance, lookback time
 
 **Level 3 — Contents of the Universe**
 - [ ] `L3.5` Computing the age of the universe

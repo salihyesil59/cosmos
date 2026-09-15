@@ -1,0 +1,36 @@
+- question: "At very small redshift (z ≪ 1), how do the different cosmological distances compare?"
+  choices:
+    - "They differ by factors of ten"
+    - "They all agree with Hubble's law, d ≈ cz/H0"
+    - "Only the luminosity distance is defined"
+    - "The angular diameter distance is always zero"
+  answer: 1
+  explanation: "The differences between them grow with redshift; nearby they are all approximately cz/H0."
+- question: "Why is a distant supernova dimmer than the simple inverse-square law with its comoving distance predicts?"
+  choices:
+    - "Dust absorbs exactly half of its light"
+    - "Each photon loses energy and photons arrive less often, each by a factor 1 + z"
+    - "Supernovae were intrinsically fainter in the past"
+    - "The speed of light was lower"
+  answer: 1
+  explanation: "Redshift reduces photon energy and time dilation reduces the arrival rate, so D_L = (1 + z) D_M."
+- question: "A galaxy at z = 1 has a comoving distance of 11.1 billion light-years in a flat universe. What is its luminosity distance?"
+  choices: ["5.5 billion ly", "11.1 billion ly", "22.2 billion ly", "44.4 billion ly"]
+  answer: 2
+  explanation: "D_L = (1 + z) D_C = 2 × 11.1 = 22.2 billion light-years."
+- question: "Why do galaxies beyond z ≈ 1.6 appear larger on the sky the farther away they are?"
+  choices:
+    - "Galaxies were bigger in the past"
+    - "Gravitational lensing magnifies all distant galaxies"
+    - "We see them as they were when the universe was small and they were physically closer to us"
+    - "Telescopes have lower resolution at high redshift"
+  answer: 2
+  explanation: "The angular diameter distance equals the distance at emission, which decreases again for very early times."
+- question: "A news report says a galaxy is '13 billion light-years away'. Which distance does this usually refer to?"
+  choices:
+    - "Comoving distance"
+    - "Luminosity distance"
+    - "Light-travel distance (the lookback time)"
+    - "Angular diameter distance"
+  answer: 2
+  explanation: "It usually means the light has travelled for 13 billion years. The galaxy's comoving distance today is much larger."

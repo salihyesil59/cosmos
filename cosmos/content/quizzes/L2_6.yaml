@@ -1,0 +1,40 @@
+- question: "A galaxy at redshift z = 2 is receding from us faster than light today. Can we see it?"
+  choices:
+    - "No, light from beyond the Hubble sphere can never reach us"
+    - "Yes, the Hubble sphere is not a horizon and light from such galaxies does reach us"
+    - "Only with radio telescopes"
+    - "Only if the galaxy stops receding"
+  answer: 1
+  explanation: "Light that starts outside the Hubble sphere can later enter it as the sphere grows, and then reach us. We observe many galaxies that recede faster than light."
+- question: "What does the particle horizon describe?"
+  choices:
+    - "The distance at which galaxies recede at the speed of light"
+    - "The farthest distance from which light could have reached us since the Big Bang"
+    - "The size of a proton"
+    - "The distance light emitted today will ever travel"
+  answer: 1
+  explanation: "It is the comoving distance light has covered since the Big Bang: the radius of the observable universe."
+- question: "Why is the radius of the observable universe about 46 billion light-years rather than 13.8?"
+  choices:
+    - "Light travels faster in the early universe"
+    - "The universe is actually 46 billion years old"
+    - "Space expanded while the light travelled, carrying its sources much farther away"
+    - "Measurement errors in the Hubble constant"
+  answer: 2
+  explanation: "The comoving distance to the regions that emitted the oldest light has grown with the expansion to about 46 billion light-years."
+- question: "Which universe has a cosmological event horizon?"
+  choices:
+    - "A flat universe containing only matter"
+    - "An open universe containing only matter"
+    - "A universe whose expansion accelerates forever, such as one dominated by a cosmological constant"
+    - "Every universe has one"
+  answer: 2
+  explanation: "Only with accelerating expansion is the future comoving distance light can travel finite. In decelerating universes light eventually arrives from anywhere."
+- question: "Galaxies at z ≈ 3 are beyond our event horizon. What does that mean?"
+  choices:
+    - "We can no longer see them at all"
+    - "We still see their old light, but light they emit today will never reach us"
+    - "They are moving towards us"
+    - "They are inside the Milky Way"
+  answer: 1
+  explanation: "Past light is already on its way and keeps arriving, but events happening there now are forever out of our reach."

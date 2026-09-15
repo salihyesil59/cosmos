@@ -19,8 +19,9 @@ levels:
     title: The Expanding Universe
     description: >
       The scale factor, cosmological redshift, the Friedmann equations, critical
-      density and the geometry of space.
-    lessons: [L2.1, L2.2, L2.3, L2.4, L2.5]
+      density, the geometry of space, cosmic horizons and the many ways to
+      measure distance.
+    lessons: [L2.1, L2.2, L2.3, L2.4, L2.5, L2.6, L2.7]
 
   - number: 3
     title: Contents of the Universe
