@@ -1,0 +1,32 @@
+- question: "Which formula gives the age of the universe?"
+  choices:
+    - "t0 = H0"
+    - "t0 = ∫ da / (a H), from a = 0 to a = 1"
+    - "t0 = c / H0"
+    - "t0 = ∫ H da, from a = 0 to a = 1"
+  answer: 1
+  explanation: "The time for a small growth da is da/ȧ = da/(aH). Adding all steps from the Big Bang to today gives the age."
+- question: "What is the age of an empty universe (no matter, radiation or dark energy)?"
+  choices: ["Exactly 1/H0", "2/(3H0)", "1/(2H0)", "Infinite"]
+  answer: 0
+  explanation: "With nothing to slow or speed it up, the expansion rate stays constant, so the age equals the Hubble time."
+- question: "Why is a flat matter-only universe younger than 1/H0?"
+  choices:
+    - "Matter makes light travel slower"
+    - "Gravity slowed the expansion, so it expanded faster in the past and needed less time to reach today's size"
+    - "Matter-only universes have no Big Bang"
+    - "It is actually older than 1/H0"
+  answer: 1
+  explanation: "Its age is 2/3 of the Hubble time, about 9.6 billion years for H0 = 67.7 km/s/Mpc."
+- question: "If H0 were 73 km/s/Mpc instead of 67.7 (with the same Ωm and ΩΛ), the age of the universe would be..."
+  choices: ["larger, about 14.9 billion years", "smaller, about 12.8 billion years", "unchanged", "about 1.4 billion years"]
+  answer: 1
+  explanation: "For fixed contents the age scales as 1/H0: 13.8 × 67.7/73 ≈ 12.8 billion years."
+- question: "How did the discovery of dark energy solve the 'age problem' of the 1990s?"
+  choices:
+    - "It showed the oldest stars are younger than thought"
+    - "It made the universe older than a matter-only model, comfortably older than the oldest stars"
+    - "It changed the value of the speed of light"
+    - "It removed the need to know H0"
+  answer: 1
+  explanation: "Accelerated expansion in the recent past means the universe expanded more slowly earlier, giving about 13.8 billion years instead of 9–10."

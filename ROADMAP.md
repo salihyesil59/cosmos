@@ -105,11 +105,11 @@ Legend: `[x]` done · `[ ]` planned
 - [x] `L2.7` Distance measures: luminosity distance, angular diameter distance, lookback time
 
 **Level 3 — Contents of the Universe**
-- [ ] `L3.5` Computing the age of the universe
+- [x] `L3.5` Computing the age of the universe
 
 **Level 4 — Thermal History**
-- [ ] `L4.5` Neutrino decoupling and the cosmic neutrino background
-- [ ] `L4.6` Baryogenesis: the matter–antimatter asymmetry
+- [x] `L4.5` Neutrino decoupling and the cosmic neutrino background
+- [x] `L4.6` Baryogenesis: the matter–antimatter asymmetry
 
 **Level 5 — CMB & Structure Formation**
 - [ ] `L5.1` CMB anisotropies, the power spectrum and acoustic peaks

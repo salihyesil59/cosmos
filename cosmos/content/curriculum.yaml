@@ -27,12 +27,13 @@ levels:
     title: Contents of the Universe
     description: >
       Radiation, matter and dark energy; the evidence for dark matter and dark
-      energy; and the standard ΛCDM model.
-    lessons: [L3.1, L3.2, L3.3, L3.4]
+      energy; the standard ΛCDM model; and how to compute the age of the universe.
+    lessons: [L3.1, L3.2, L3.3, L3.4, L3.5]
 
   - number: 4
     title: Thermal History
     description: >
       The hot early universe: its timeline, how temperature evolves, the formation
-      of the first nuclei and the release of the cosmic microwave background.
-    lessons: [L4.1, L4.2, L4.3, L4.4]
+      of the first nuclei, the release of the cosmic microwave background, the
+      relic neutrinos and the origin of the matter–antimatter asymmetry.
+    lessons: [L4.1, L4.2, L4.3, L4.4, L4.5, L4.6]

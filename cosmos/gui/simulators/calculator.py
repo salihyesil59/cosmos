@@ -27,6 +27,7 @@ from cosmos.gui.widgets.plot import PlotWidget, write_csv
 from cosmos.physics import constants as const
 from cosmos.physics.cosmology import Cosmology, Fate
 from cosmos.physics.presets import PRESETS
+from cosmos.physics.thermal import RELIC_NEUTRINO_RATIO
 
 MPC_TO_GLY = const.MPC / const.LIGHT_YEAR / 1e9
 C_KM_S = const.C / 1e3
@@ -100,6 +101,11 @@ EXPLANATIONS = {
     "tcmb": (
         "CMB temperature at z",
         "T = T0 (1 + z): the temperature of the background radiation when the light was emitted.",
+    ),
+    "tnu": (
+        "Neutrino background temperature at z",
+        "T_ν = (4/11)^(1/3) × T_CMB: relic neutrinos are colder because electron–positron annihilation heated "
+        "only the photons.",
     ),
     "ok": (
         "Curvature Ωk",
@@ -326,6 +332,7 @@ class CalculatorSimulator(SimulatorBase):
             ("hz", "Hubble parameter H(z)", f"{fmt(float(c.H(z)))} km/s/Mpc"),
             ("a", "Scale factor a = 1/(1+z)", fmt(1 / (1 + z))),
             ("tcmb", "CMB temperature at z", f"{fmt(const.T_CMB * (1 + z))} K"),
+            ("tnu", "Neutrino background temperature at z", f"{fmt(RELIC_NEUTRINO_RATIO * const.T_CMB * (1 + z))} K"),
             ("ok", "Curvature Ωk", f"{fmt(c.Ok0)}  ({c.geometry})"),
             ("ph", "Particle horizon today", self._dist(c.particle_horizon())),
             ("eh", "Event horizon today", self._dist(c.event_horizon()) if c.fate() is not Fate.BIG_CRUNCH
