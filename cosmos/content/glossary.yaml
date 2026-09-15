@@ -130,7 +130,7 @@ cosmological-constant:
     A constant term in Einstein's equations that acts like an energy of empty space
     with negative pressure (w = −1). It is the simplest explanation for dark energy.
   see_also: [dark-energy, equation-of-state, lambda-cdm]
-  lessons: [L3.3, L3.1]
+  lessons: [L3.3, L3.1, L6.2]
 
 cosmological-principle:
   term: Cosmological principle
@@ -182,7 +182,7 @@ dark-energy:
     of the universe accelerate. It accounts for about 69% of the energy density
     today.
   see_also: [cosmological-constant, deceleration-parameter]
-  lessons: [L3.3, L3.4, L2.6]
+  lessons: [L3.3, L3.4, L2.6, L6.7, L6.8]
 
 dark-matter:
   term: Dark matter
@@ -191,7 +191,7 @@ dark-matter:
     84% of all matter and is revealed by rotation curves, cluster dynamics,
     gravitational lensing and the CMB.
   see_also: [rotation-curve, bullet-cluster, lambda-cdm]
-  lessons: [L3.2, L5.3, L5.5]
+  lessons: [L3.2, L5.3, L5.5, L6.8]
 
 deceleration-parameter:
   term: Deceleration parameter (q)
@@ -300,7 +300,7 @@ general-relativity:
     Einstein's theory of gravity (1915), in which mass and energy curve spacetime and
     free objects follow the curvature. It is the basis of modern cosmology.
   see_also: [spacetime, friedmann-equations]
-  lessons: [L0.4]
+  lessons: [L0.4, L6.1, L6.2]
 
 gravitational-lensing:
   term: Gravitational lensing
@@ -474,7 +474,7 @@ neutrino:
     decoupled about one second after the Big Bang and still fill the universe as a
     cosmic neutrino background.
   see_also: [decoupling, radiation]
-  lessons: [L4.1, L4.5]
+  lessons: [L4.1, L4.5, L6.8]
 
 nucleosynthesis:
   term: Big Bang nucleosynthesis (BBN)
@@ -591,7 +591,7 @@ spacetime:
     The four-dimensional combination of three space dimensions and time used in
     relativity. In general relativity mass and energy curve spacetime.
   see_also: [general-relativity]
-  lessons: [L0.4]
+  lessons: [L0.4, L6.1]
 
 spectral-line:
   term: Spectral line
@@ -615,7 +615,7 @@ standard-candle:
     An astronomical object of known luminosity. Comparing its known luminosity with
     its observed brightness gives its distance.
   see_also: [cepheid, type-ia-supernova, luminosity]
-  lessons: [L1.1]
+  lessons: [L1.1, L6.5]
 
 supercluster:
   term: Supercluster
@@ -806,7 +806,7 @@ baryogenesis:
     The unknown process in the early universe that created a small excess of baryons
     over antibaryons, leaving the matter we see today.
   see_also: [sakharov-conditions, leptogenesis, baryon-to-photon-ratio]
-  lessons: [L4.6]
+  lessons: [L4.6, L6.8]
 
 cosmic-neutrino-background:
   term: Cosmic neutrino background (CνB)
@@ -851,7 +851,7 @@ hubble-tension:
     (CMB, about 67–68 km/s/Mpc) and measured locally with Cepheids and supernovae
     (about 73 km/s/Mpc).
   see_also: [hubble-constant, lambda-cdm]
-  lessons: [L3.5, L3.4, L5.2]
+  lessons: [L3.5, L3.4, L5.2, L6.6]
 
 leptogenesis:
   term: Leptogenesis
@@ -1015,7 +1015,7 @@ sigma8:
     The root-mean-square linear matter fluctuation in spheres of radius 8 Mpc/h today,
     the standard measure of the amplitude of clustering. Planck finds about 0.81.
   see_also: [matter-power-spectrum, weak-lensing]
-  lessons: [L5.4]
+  lessons: [L5.4, L6.6]
 
 sound-horizon:
   term: Sound horizon
@@ -1052,3 +1052,163 @@ weak-lensing:
     structure (cosmic shear).
   see_also: [gravitational-lensing, einstein-radius, sigma8]
   lessons: [L5.6]
+
+21-cm-line:
+  term: 21-cm line
+  definition: >
+    Radio emission or absorption at 1420.4 MHz (21.1 cm) caused by the flip of the
+    electron spin relative to the proton spin in hydrogen. Redshifted, it maps neutral
+    hydrogen during the dark ages, cosmic dawn and reionisation.
+  see_also: [reionization, redshift]
+  lessons: [L6.4]
+
+chirp-mass:
+  term: Chirp mass
+  definition: >
+    The combination (m₁m₂)^(3/5)/(m₁+m₂)^(1/5) of the masses of a binary that controls
+    how fast the frequency of its gravitational waves increases.
+  see_also: [gravitational-waves, standard-siren]
+  lessons: [L6.5]
+
+cosmological-tension:
+  term: Cosmological tension
+  definition: >
+    A statistically significant disagreement between measurements of the same quantity by
+    different methods, such as the Hubble tension and the S8 tension. It may signal
+    systematic errors or new physics.
+  see_also: [hubble-tension, sigma8]
+  lessons: [L6.6]
+
+e-fold:
+  term: e-fold
+  definition: >
+    Growth by a factor e ≈ 2.718. The expansion during inflation is counted in e-folds,
+    N = ln(a_end/a_start); about 60 are needed to solve the horizon and flatness problems.
+  see_also: [inflation]
+  lessons: [L6.3]
+
+flrw-metric:
+  term: FLRW metric
+  definition: >
+    The Friedmann–Lemaître–Robertson–Walker metric, the most general description of a
+    homogeneous and isotropic expanding spacetime. It depends only on the scale factor a(t)
+    and the spatial curvature k.
+  see_also: [metric, scale-factor, curvature]
+  lessons: [L6.1, L6.2]
+
+geodesic:
+  term: Geodesic
+  definition: >
+    The straightest possible path in a curved space or spacetime. In general relativity
+    freely falling particles and light rays follow geodesics.
+  see_also: [metric, general-relativity]
+  lessons: [L6.1]
+
+gravitational-waves:
+  term: Gravitational waves
+  definition: >
+    Ripples in the curvature of spacetime produced by accelerating masses and travelling at
+    the speed of light. First detected directly by LIGO in 2015 from merging black holes.
+  see_also: [standard-siren, chirp-mass, general-relativity]
+  lessons: [L6.5]
+
+inflation:
+  term: Cosmic inflation
+  definition: >
+    A proposed phase of accelerated expansion before the hot Big Bang, driven by a slowly
+    rolling scalar field. It explains the flatness and uniformity of the universe and the
+    origin of the primordial fluctuations.
+  see_also: [inflaton, e-fold, horizon-problem]
+  lessons: [L6.3]
+
+inflaton:
+  term: Inflaton
+  definition: >
+    The hypothetical scalar field whose potential energy drove inflation. Its quantum
+    fluctuations became the seeds of all cosmic structure.
+  see_also: [inflation]
+  lessons: [L6.3]
+
+horizon-problem:
+  term: Horizon problem
+  definition: >
+    The puzzle that the CMB has the same temperature in all directions although, in the
+    standard Big Bang, regions more than about two degrees apart were never in causal
+    contact before it was released. Inflation solves it.
+  see_also: [inflation, particle-horizon]
+  lessons: [L6.3, L2.6]
+
+metric:
+  term: Metric
+  definition: >
+    The rule that gives the distance (or time interval) ds between nearby points of a space
+    or spacetime, and so defines its geometry.
+  see_also: [flrw-metric, geodesic, spacetime]
+  lessons: [L6.1]
+
+mond:
+  term: MOND
+  definition: >
+    Modified Newtonian Dynamics, proposed by Mordehai Milgrom in 1983: gravity becomes
+    stronger than Newton's law below an acceleration a₀ ≈ 1.2 × 10⁻¹⁰ m/s². It explains flat
+    rotation curves without dark matter but struggles with clusters and the CMB.
+  see_also: [dark-matter, rotation-curve]
+  lessons: [L6.7]
+
+multiverse:
+  term: Multiverse
+  definition: >
+    The speculative idea that our observable universe is one of many regions or universes,
+    possibly with different properties. It appears in eternal inflation and the string
+    landscape but has not been tested.
+  see_also: [inflation, quantum-gravity]
+  lessons: [L6.8]
+
+optical-depth:
+  term: Optical depth (τ)
+  definition: >
+    A measure of how likely light is to be scattered or absorbed along its path. The CMB
+    optical depth to reionisation, τ ≈ 0.054, counts scatterings off free electrons.
+  see_also: [reionization, cmb]
+  lessons: [L6.4]
+
+perfect-fluid:
+  term: Perfect fluid
+  definition: >
+    A fluid without viscosity or heat flow, fully described by its energy density and
+    pressure. On large scales every component of the universe behaves as one.
+  see_also: [equation-of-state, flrw-metric]
+  lessons: [L6.2]
+
+proper-time:
+  term: Proper time
+  definition: >
+    The time measured by a clock moving along a path through spacetime. Clocks in stronger
+    gravity or moving faster record less proper time.
+  see_also: [metric, spacetime]
+  lessons: [L6.1]
+
+quantum-gravity:
+  term: Quantum gravity
+  definition: >
+    A still-missing theory combining general relativity with quantum mechanics, needed near
+    the Planck scale (about 10¹⁹ GeV, 10⁻⁴³ s). String theory and loop quantum gravity are
+    leading candidates.
+  see_also: [general-relativity, multiverse]
+  lessons: [L6.8]
+
+reionization:
+  term: Reionisation
+  definition: >
+    The epoch when ultraviolet light from the first stars and galaxies ionised the
+    intergalactic hydrogen again, roughly between redshifts 15 and 6.
+  see_also: [optical-depth, 21-cm-line, recombination]
+  lessons: [L6.4]
+
+standard-siren:
+  term: Standard siren
+  definition: >
+    A source of gravitational waves, such as merging neutron stars, whose signal reveals its
+    luminosity distance directly from general relativity, without a distance ladder.
+  see_also: [gravitational-waves, standard-candle, hubble-constant]
+  lessons: [L6.5]

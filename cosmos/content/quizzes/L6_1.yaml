@@ -1,0 +1,40 @@
+- question: "What does a metric tell you?"
+  choices:
+    - "The mass of every object in space"
+    - "The distance or time interval between nearby points, and therefore the geometry"
+    - "The temperature of the universe"
+    - "The speed of every galaxy"
+  answer: 1
+  explanation: "A metric such as ds² = dx² + dy² defines distances, and through them angles, areas and curvature."
+- question: "In the Minkowski metric ds² = −c²dt² + dx² + dy² + dz², what does ds² = 0 describe?"
+  choices:
+    - "Two events at the same place"
+    - "Events connected by a light ray, forming the light cone"
+    - "Events that can never influence each other"
+    - "An object at rest"
+  answer: 1
+  explanation: "Light travels along null paths with ds² = 0; these directions form the light cone."
+- question: "According to general relativity, how does a freely falling particle move?"
+  choices:
+    - "In a perfectly straight line in space"
+    - "Along a geodesic, the straightest possible path in curved spacetime"
+    - "In a circle around the nearest mass"
+    - "It does not move"
+  answer: 1
+  explanation: "Gravity is not a force pulling objects off straight lines; free particles follow geodesics of spacetime."
+- question: "In the FLRW metric, which quantities fully describe the geometry of a homogeneous, isotropic universe?"
+  choices:
+    - "The masses of all galaxies"
+    - "The scale factor a(t) and the spatial curvature k"
+    - "The Hubble constant and the CMB temperature only"
+    - "The positions of all stars"
+  answer: 1
+  explanation: "Homogeneity and isotropy leave only one function of time and one curvature constant."
+- question: "Why is conformal time useful in cosmological spacetime diagrams?"
+  choices:
+    - "It makes galaxies move faster than light"
+    - "In comoving distance and conformal time, light always travels at 45°"
+    - "It removes dark energy from the equations"
+    - "It equals the age of the universe"
+  answer: 1
+  explanation: "dη = c dt/a turns the flat FLRW metric into Minkowski space times a factor, so light cones are straight."

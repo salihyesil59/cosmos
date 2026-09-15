@@ -1,0 +1,40 @@
+- question: "What is the horizon problem?"
+  choices:
+    - "Telescopes cannot see beyond the horizon of the Earth"
+    - "The CMB is uniform across regions that, in the standard Big Bang, were never in causal contact"
+    - "Galaxies disappear beyond the event horizon"
+    - "Black holes have horizons"
+  answer: 1
+  explanation: "At recombination causally connected patches covered only about two degrees, yet the whole sky has the same temperature."
+- question: "How does inflation solve the horizon problem?"
+  choices:
+    - "It makes light travel faster"
+    - "Accelerated expansion shrinks the comoving Hubble radius, so the observable universe came from one tiny causally connected patch"
+    - "It heats the CMB uniformly today"
+    - "It removes the CMB"
+  answer: 1
+  explanation: "Regions that look disconnected today were in contact before inflation stretched them apart."
+- question: "When does slow-roll inflation end?"
+  choices:
+    - "When the slow-roll parameter ε reaches about 1"
+    - "When the universe becomes 13.8 billion years old"
+    - "When dark energy appears"
+    - "It never ends"
+  answer: 0
+  explanation: "Once the potential is no longer flat enough, ε ≈ 1, the field rolls quickly, oscillates and reheats the universe."
+- question: "What does slow-roll inflation predict for the spectral index n_s?"
+  choices:
+    - "Exactly 1"
+    - "Slightly below 1, n_s = 1 − 6ε + 2η"
+    - "Much larger than 1"
+    - "Zero"
+  answer: 1
+  explanation: "Planck measures n_s = 0.965, significantly below 1, as predicted."
+- question: "Why is the simple φ² inflation model ruled out?"
+  choices:
+    - "It predicts no inflation at all"
+    - "It predicts a tensor-to-scalar ratio r ≈ 0.14, above the observed limit r < 0.036"
+    - "It predicts n_s = 2"
+    - "It requires negative energy"
+  answer: 1
+  explanation: "Its n_s is acceptable, but it predicts too many primordial gravitational waves; plateau models fit better."

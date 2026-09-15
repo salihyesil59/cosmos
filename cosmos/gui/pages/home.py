@@ -137,7 +137,8 @@ class HomePage(QWidget):
         sims = QGridLayout()
         sims.setSpacing(10)
         for i, info in enumerate(SIMULATORS.values()):
-            btn = QPushButton(f"{info.icon}  {info.title}\n{info.tagline}")
+            # "&" would otherwise become a keyboard mnemonic and vanish from the label.
+            btn = QPushButton(f"{info.icon}  {info.title}\n{info.tagline}".replace("&", "&&"))
             btn.setStyleSheet("QPushButton { text-align: left; padding: 10px 14px; }")
             btn.setToolTip(info.description)
             btn.clicked.connect(lambda _=False, sid=info.id: ctx.navigate(f"sim:{sid}"))

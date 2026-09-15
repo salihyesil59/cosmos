@@ -1,0 +1,32 @@
+- question: "Which two values are at the heart of the Hubble tension?"
+  choices:
+    - "13.8 and 14.4 billion years"
+    - "About 67.4 km/s/Mpc from the CMB and about 73 km/s/Mpc from the local distance ladder"
+    - "0.3 and 0.7"
+    - "2.7 K and 3.0 K"
+  answer: 1
+  explanation: "Early-universe and local measurements differ by about five standard deviations."
+- question: "How does the CMB determine H0?"
+  choices:
+    - "By measuring galaxy redshifts directly"
+    - "The known sound horizon and its measured angle give the distance to last scattering, which ΛCDM links to today's expansion rate"
+    - "By counting Cepheids"
+    - "From the CMB temperature alone"
+  answer: 1
+  explanation: "This inverse distance ladder assumes ΛCDM between recombination and today."
+- question: "Roughly how large a shift in the calibrated brightness of Type Ia supernovae corresponds to the Hubble tension?"
+  choices: ["About 0.015 mag", "About 0.15 mag", "About 1.5 mag", "About 15 mag"]
+  answer: 1
+  explanation: "Cepheid calibration gives M ≈ −19.25, the CMB + BAO calibration M ≈ −19.40."
+- question: "What is the S8 tension about?"
+  choices:
+    - "The age of the oldest stars"
+    - "Weak lensing surveys find matter slightly less clumpy than predicted from the CMB with ΛCDM"
+    - "The number of neutrino species"
+    - "The temperature of the CMB"
+  answer: 1
+  explanation: "S8 = σ8 √(Ωm/0.3) is about 0.83 from Planck and about 0.77–0.78 from lensing surveys."
+- question: "Which proposed explanation of the Hubble tension changes physics before recombination?"
+  choices: ["Early dark energy", "A local void", "Cepheid crowding", "Supernova dust"]
+  answer: 0
+  explanation: "Early dark energy would shrink the sound horizon, raising the H0 inferred from the CMB."

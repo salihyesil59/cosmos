@@ -1,0 +1,40 @@
+- question: "According to MOND, what happens at accelerations far below a₀ ≈ 1.2 × 10⁻¹⁰ m/s²?"
+  choices:
+    - "Gravity switches off"
+    - "Gravity becomes stronger than Newton's law, g ≈ √(g_N a₀)"
+    - "Gravity becomes repulsive"
+    - "Nothing changes"
+  answer: 1
+  explanation: "This boost makes rotation curves flat, with v⁴ = G M a₀."
+- question: "Which observation is hardest for MOND to explain without extra unseen matter?"
+  choices:
+    - "Flat rotation curves of spiral galaxies"
+    - "The baryonic Tully–Fisher relation"
+    - "The Bullet Cluster and the height of the third CMB peak"
+    - "The orbits of planets"
+  answer: 2
+  explanation: "MOND succeeds in galaxies but struggles with clusters, the Bullet Cluster and the CMB."
+- question: "How did the neutron star merger GW170817 affect modified gravity theories?"
+  choices:
+    - "It confirmed all of them"
+    - "It ruled out many that predicted gravitational waves travelling at a different speed from light"
+    - "It had no relevance"
+    - "It proved dark energy does not exist"
+  answer: 1
+  explanation: "Gravitational waves and light arrived together, eliminating large classes of models."
+- question: "What is quintessence?"
+  choices:
+    - "A fifth type of quark"
+    - "A slowly evolving scalar field proposed as dynamical dark energy, with w ≥ −1"
+    - "The name of the CMB"
+    - "A kind of dark matter particle"
+  answer: 1
+  explanation: "Unlike a cosmological constant, its equation of state can change with time."
+- question: "What would happen in a universe dominated by phantom dark energy with w < −1?"
+  choices:
+    - "A Big Crunch"
+    - "A Big Rip, where the expansion rate diverges in a finite time"
+    - "The expansion would stop forever"
+    - "Nothing unusual"
+  answer: 1
+  explanation: "Phantom energy grows denser as space expands, eventually tearing apart all bound structures."
