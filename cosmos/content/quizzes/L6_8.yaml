@@ -1,0 +1,36 @@
+- question: "Which is a leading candidate for dark matter searched for with microwave cavities in strong magnetic fields?"
+  choices: ["WIMPs", "Axions", "Neutron stars", "Photons"]
+  answer: 1
+  explanation: "Experiments such as ADMX look for axions converting into microwave photons."
+- question: "What is the cosmological constant problem?"
+  choices:
+    - "The constant cannot be written down"
+    - "Naive quantum estimates of vacuum energy exceed the observed dark energy density by up to 10¹²⁰"
+    - "Λ changes every year"
+    - "Λ is too large to allow galaxies"
+  answer: 1
+  explanation: "Why the vacuum energy is so tiny, yet not zero, is one of the deepest puzzles in physics."
+- question: "What does the Big Bang singularity signal?"
+  choices:
+    - "That infinite density certainly existed"
+    - "That general relativity breaks down and a theory of quantum gravity is needed"
+    - "That the universe is static"
+    - "That dark matter is made of black holes"
+  answer: 1
+  explanation: "Near the Planck scale both gravity and quantum effects matter, and current theories are incomplete."
+- question: "How should the multiverse be described in a science course?"
+  choices:
+    - "As an established observational result"
+    - "As a speculative idea arising from some theories, not yet testable"
+    - "As proven by the CMB"
+    - "As disproven"
+  answer: 1
+  explanation: "Several theories suggest it, but there is no observational evidence so far."
+- question: "Which of these is established rather than speculative?"
+  choices:
+    - "The universe was hot and dense in the past and has expanded since"
+    - "Our universe is one bubble in an eternal inflation multiverse"
+    - "The Big Bang was replaced by a Big Bounce"
+    - "Dark matter is made of axions"
+  answer: 0
+  explanation: "The hot Big Bang is confirmed by the expansion, the CMB and the light elements; the others are open questions."

@@ -120,27 +120,27 @@ Legend: `[x]` done · `[ ]` planned
 - [x] `L5.6` Gravitational lensing (strong and weak)
 
 **Level 6 — Advanced Topics**
-- [ ] `L6.1` Minimal general relativity: metrics, geodesics, the FLRW metric
-- [ ] `L6.2` Deriving the Friedmann equations from Einstein's field equations
-- [ ] `L6.3` Inflation: horizon/flatness/monopole problems, slow roll, n_s and r
-- [ ] `L6.4` Reionization and 21-cm cosmology
-- [ ] `L6.5` Gravitational waves and standard sirens
-- [ ] `L6.6` Current tensions: the Hubble tension and the S8 tension
-- [ ] `L6.7` Alternative models: MOND, modified gravity, quintessence
-- [ ] `L6.8` Open problems: the nature of dark matter and dark energy, quantum gravity, the multiverse
+- [x] `L6.1` Minimal general relativity: metrics, geodesics, the FLRW metric
+- [x] `L6.2` Deriving the Friedmann equations from Einstein's field equations
+- [x] `L6.3` Inflation: horizon/flatness/monopole problems, slow roll, n_s and r
+- [x] `L6.4` Reionization and 21-cm cosmology
+- [x] `L6.5` Gravitational waves and standard sirens
+- [x] `L6.6` Current tensions: the Hubble tension and the S8 tension
+- [x] `L6.7` Alternative models: MOND, modified gravity, quintessence
+- [x] `L6.8` Open problems: the nature of dark matter and dark energy, quantum gravity, the multiverse
 
 ### Simulators
-- [ ] `S8` Curvature Visualizer (triangles on sphere, plane and saddle)
-- [ ] `S9` Spacetime / Horizon Diagram (light cones, conformal diagram)
+- [x] `S8` Curvature Visualizer (triangles on sphere, plane and saddle)
+- [x] `S9` Spacetime / Horizon Diagram (light cones, conformal diagram)
 - [ ] `S10` Interactive Cosmic Timeline
 - [ ] `S11` BBN Abundance Explorer
 - [x] `S12` CMB Power Spectrum Explorer (approximate model)
 - [x] `S13` 2D N-body Structure Formation
 - [x] `S14` Gravitational Lensing Simulator
-- [ ] `S15` Inflation Slow-Roll Simulator
-- [ ] `S16` Supernova Ia Discovery (re-create the 1998 result)
+- [x] `S15` Inflation Slow-Roll Simulator
+- [x] `S16` Supernova Ia Discovery (re-create the 1998 result)
 - [ ] `S17` Olbers' Paradox Simulator
-- [ ] `S18` Build Your Own Universe (sandbox)
+- [x] `S18` Build Your Own Universe (sandbox)
 
 ### Guidance & learning
 - [ ] `G7` "Intuitive ↔ Mathematical" view for every lesson

@@ -1,0 +1,32 @@
+- question: "What is measured by gravitational-wave detectors such as LIGO?"
+  choices:
+    - "Changes in temperature of mirrors"
+    - "Tiny changes in arm length (strain h ≈ 10⁻²¹) as a wave stretches and squeezes space"
+    - "The brightness of distant galaxies"
+    - "Radio emission from pulsars"
+  answer: 1
+  explanation: "A passing wave changes the two arm lengths in opposite ways, shifting the laser interference pattern."
+- question: "Which property of a binary controls how fast the chirp frequency rises?"
+  choices: ["Its distance", "Its chirp mass", "Its colour", "Its redshift only"]
+  answer: 1
+  explanation: "The frequency evolution depends on the chirp mass (m₁m₂)^(3/5)/(m₁+m₂)^(1/5)."
+- question: "Why are merging compact binaries called standard sirens?"
+  choices:
+    - "They emit sound we can hear"
+    - "Their signal gives the luminosity distance directly from general relativity, without a distance ladder"
+    - "They are all at the same distance"
+    - "They are used to navigate spacecraft"
+  answer: 1
+  explanation: "The chirp gives the mass, and the amplitude then gives the distance."
+- question: "What did the neutron star merger GW170817 show about the speed of gravitational waves?"
+  choices:
+    - "It is half the speed of light"
+    - "It equals the speed of light to about one part in 10¹⁵"
+    - "It is infinite"
+    - "It could not be measured"
+  answer: 1
+  explanation: "Gamma rays arrived 1.7 s after the gravitational waves, after travelling 130 million years."
+- question: "What value of H0 did the standard siren GW170817 give?"
+  choices: ["67.4 ± 0.5 km/s/Mpc", "70 (+12, −8) km/s/Mpc", "500 km/s/Mpc", "7 km/s/Mpc"]
+  answer: 1
+  explanation: "One siren gives a large uncertainty; many future events could help resolve the Hubble tension."

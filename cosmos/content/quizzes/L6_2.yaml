@@ -1,0 +1,36 @@
+- question: "Which ingredients are inserted into Einstein's equations to derive the Friedmann equations?"
+  choices:
+    - "The Schwarzschild metric and a point mass"
+    - "The FLRW metric and a perfect fluid with density and pressure"
+    - "Newton's law and a rotating disk"
+    - "The CMB power spectrum and supernova data"
+  answer: 1
+  explanation: "Symmetry reduces the ten field equations to two independent Friedmann equations."
+- question: "What is the meaning of k in the relativistic Friedmann equation?"
+  choices:
+    - "The kinetic energy of a test particle"
+    - "The curvature of space appearing in the FLRW metric"
+    - "Boltzmann's constant"
+    - "The number of galaxies"
+  answer: 1
+  explanation: "In the Newtonian derivation k looked like an energy; general relativity shows it is spatial curvature."
+- question: "In the acceleration equation, which combination acts as the source of gravity?"
+  choices: ["ρ − p/c²", "ρ + 3p/c²", "p only", "ρ only"]
+  answer: 1
+  explanation: "ä/a = −(4πG/3)(ρ + 3p/c²) + Λc²/3: pressure gravitates, and negative pressure can make gravity repulsive."
+- question: "Which equation follows from conservation of energy and momentum, ∇_μ T^μν = 0?"
+  choices:
+    - "The Hubble–Lemaître law"
+    - "The fluid equation ρ̇ + 3H(ρ + p/c²) = 0"
+    - "The Planck spectrum"
+    - "The lens equation"
+  answer: 1
+  explanation: "It is the first law of thermodynamics for an expanding volume and gives ρ ∝ a^(−3(1+w))."
+- question: "Why can a cosmological constant accelerate the expansion, which Newtonian gravity cannot explain?"
+  choices:
+    - "It has very large mass"
+    - "Its pressure p = −ρc² makes ρ + 3p/c² negative"
+    - "It rotates the universe"
+    - "It creates new galaxies"
+  answer: 1
+  explanation: "In general relativity pressure contributes to gravity; strongly negative pressure produces repulsion."

@@ -102,7 +102,7 @@ class LessonPage(QWidget):
                 item.widget().deleteLater()
         for sid in lesson.simulators:
             info = SIMULATORS[sid]
-            btn = QPushButton(f"{info.icon} {info.title}")
+            btn = QPushButton(f"{info.icon} {info.title}".replace("&", "&&"))  # keep "&" visible
             btn.setToolTip(f"Open the {info.title}: {info.tagline}")
             btn.clicked.connect(lambda _=False, s=sid: self.ctx.navigate(f"sim:{s}"))
             self.sim_buttons.addWidget(btn)
