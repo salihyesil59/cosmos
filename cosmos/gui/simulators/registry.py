@@ -200,5 +200,81 @@ SIMULATORS: dict[str, SimulatorInfo] = {
             class_name="BalloonSimulator",
             icon="◌",
         ),
+        SimulatorInfo(
+            id="S12",
+            title="CMB Power Spectrum Explorer",
+            tagline="How the universe's ingredients shape the CMB peaks.",
+            description=(
+                "The pattern of hot and cold spots in the cosmic microwave background encodes the geometry and "
+                "contents of the universe. Change ordinary matter, dark matter, curvature and the initial "
+                "fluctuations, and watch the acoustic peaks and the simulated sky respond."
+            ),
+            how_to_use=[
+                "Move a slider in <b>Contents of the universe</b>; the blue curve is your universe, the dashed curve "
+                "the Planck 2018 model.",
+                "Read the <b>peak positions</b> and the acoustic angle in the results panel.",
+                "Open the <b>What the sky looks like</b> tab to compare simulated sky patches.",
+                "Press <b>Reset to Planck 2018</b> to start again.",
+            ],
+            things_to_try=[
+                "Make space closed (Ωk = −0.1): do the spots on the sky look larger or smaller?",
+                "Double Ωb h². Which peaks grow and which shrink?",
+                "Set τ = 0.15. Which part of the spectrum is suppressed?",
+            ],
+            lessons=["L5.1", "L5.2", "L2.5", "L4.4"],
+            module="cosmos.gui.simulators.cmb_spectrum",
+            class_name="CMBSpectrumSimulator",
+            icon="∿",
+        ),
+        SimulatorInfo(
+            id="S13",
+            title="2D N-body Structure Formation",
+            tagline="Watch gravity build the cosmic web from tiny ripples.",
+            description=(
+                "Tens of thousands of dark matter particles start almost uniformly spread, with tiny ripples. "
+                "Gravity amplifies the ripples into sheets, filaments and halos that merge into ever larger "
+                "structures. Compare the growth with linear theory and try warm dark matter."
+            ),
+            how_to_use=[
+                "Press <b>Play</b>. Time is measured by the growth factor D; D = 1 corresponds to today.",
+                "Watch the lower plot: at first the density contrast follows linear theory, then gravity takes over.",
+                "Change the <b>spectral index</b> or choose <b>warm dark matter</b>, then press <b>Apply and restart</b>.",
+                "A different <b>random seed</b> gives a different universe with the same statistics.",
+            ],
+            things_to_try=[
+                "When does the simulation first deviate from the linear-theory line?",
+                "Compare n = −2 with n = 0: which one forms large filaments, which one many small clumps?",
+                "Run the same seed with warm dark matter. What happens to the smallest halos?",
+            ],
+            lessons=["L5.3", "L5.4", "L5.5", "L1.4"],
+            module="cosmos.gui.simulators.nbody_sim",
+            class_name="NBodySimulator",
+            icon="⁂",
+        ),
+        SimulatorInfo(
+            id="S14",
+            title="Gravitational Lensing Simulator",
+            tagline="Bend light with galaxies, clusters and black holes.",
+            description=(
+                "Mass bends the paths of light rays. Put a point mass, a galaxy or a galaxy cluster in front of "
+                "distant galaxies and see multiple images, arcs and Einstein rings. The Einstein radius uses real "
+                "cosmological distances, so the ring's size weighs the lens."
+            ),
+            how_to_use=[
+                "Choose a <b>lens type</b> and set its mass or velocity dispersion.",
+                "<b>Drag</b> inside the image to move the background galaxy; the orange cross marks its true position.",
+                "Change the <b>lens and source redshifts</b> and watch the Einstein radius in the measurements.",
+                "Switch to <b>a field of galaxies</b> to see how a cluster distorts many galaxies at once.",
+            ],
+            things_to_try=[
+                "Place the source exactly behind the lens: what shape appears?",
+                "Tick <b>Switch the lens off</b> to see the sky as it would look without gravity.",
+                "Keep the lens mass fixed and move the lens redshift: where is lensing strongest?",
+            ],
+            lessons=["L5.6", "L3.2", "L0.4"],
+            module="cosmos.gui.simulators.lensing_sim",
+            class_name="LensingSimulator",
+            icon="⊚",
+        ),
     ]
 }

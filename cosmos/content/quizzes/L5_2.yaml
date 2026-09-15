@@ -1,0 +1,40 @@
+- question: "What sets the BAO scale of about 147 Mpc?"
+  choices:
+    - "The size of the largest galaxy clusters"
+    - "The distance sound waves travelled in the photon–baryon plasma before baryons were released"
+    - "The distance to the Andromeda galaxy multiplied by a thousand"
+    - "The Hubble distance c/H0"
+  answer: 1
+  explanation: "It is the sound horizon at the drag epoch, calculated from the physics of the early plasma."
+- question: "Where does BAO appear in the galaxy correlation function?"
+  choices:
+    - "As a single bump at a separation of about 100 Mpc/h"
+    - "As a dip at 1 Mpc"
+    - "As an infinite spike at zero separation"
+    - "It is not visible in the correlation function"
+  answer: 0
+  explanation: "There is a small excess of galaxy pairs separated by the sound horizon, about 100 Mpc/h or 147 Mpc."
+- question: "Why is BAO called a standard ruler?"
+  choices:
+    - "It is made of a rigid material"
+    - "Its physical size is known, so its apparent size measures distance"
+    - "It is always exactly one degree on the sky"
+    - "It measures the brightness of galaxies"
+  answer: 1
+  explanation: "Comparing the known r_d with its angle gives D_M(z); its extent in redshift gives H(z)."
+- question: "The BAO scale covers a smaller angle on the sky for galaxies at z = 1 than at z = 0.5. Why?"
+  choices:
+    - "The sound horizon was smaller at z = 1"
+    - "Galaxies at z = 1 are farther away, so the same comoving length appears smaller"
+    - "Dark matter hides part of the ruler"
+    - "It covers a larger angle at z = 1"
+  answer: 1
+  explanation: "The angle is r_d / D_M(z), and the transverse comoving distance grows with redshift."
+- question: "Which surveys first detected the BAO signal in 2005?"
+  choices:
+    - "Planck and WMAP"
+    - "The Sloan Digital Sky Survey and the 2dF Galaxy Redshift Survey"
+    - "Hubble and Humason's galaxy counts"
+    - "The Event Horizon Telescope"
+  answer: 1
+  explanation: "Eisenstein et al. (SDSS) and Cole et al. (2dFGRS) found the peak where the CMB predicted."

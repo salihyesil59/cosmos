@@ -48,6 +48,8 @@ def render_png(name: str, palette: Palette, device_ratio: float = 1.0) -> bytes:
     _REGISTRY[name](fig, palette)
     for ax in fig.axes:
         style_axes(ax, palette)
+        if ax.images:
+            ax.grid(False)  # grid lines on top of pictures only distract
         if ax.get_legend():
             style_legend(ax.get_legend(), palette)
     if fig.get_layout_engine() is None:
@@ -486,3 +488,7 @@ def _baryon_asymmetry(fig, p: Palette):
     ax.xaxis.set_minor_formatter(NullFormatter())
     ax.invert_xaxis()
     ax.legend(loc="lower left", fontsize=8)
+
+
+# Figures for later levels register themselves on import.
+from cosmos.gui.rendering import figures_structure  # noqa: E402,F401

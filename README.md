@@ -1,8 +1,8 @@
 # Cosmos
 
 An interactive desktop application that teaches cosmology, from the size of the
-universe and the nature of light to the Friedmann equations, dark energy and the
-first minutes after the Big Bang.
+universe and the nature of light to the Friedmann equations, dark energy, the first
+minutes after the Big Bang and the growth of cosmic structure.
 
 Everything happens in the graphical interface: lessons with formulas and figures,
 hands-on simulators, quizzes with explained answers, a glossary and a progress
@@ -11,9 +11,9 @@ on first launch.
 
 ## Features
 
-- **29 lessons in 5 levels**: Foundations, Observational Cosmology, The Expanding
-  Universe, Contents of the Universe, Thermal History
-- **7 simulators**
+- **35 lessons in 6 levels**: Foundations, Observational Cosmology, The Expanding
+  Universe, Contents of the Universe, Thermal History, CMB & Structure Formation
+- **10 simulators**
   - Cosmology Calculator: ages, distances, horizons and recession velocities at any redshift
   - Expansion History Explorer: a(t) and the Ωm–ΩΛ map
   - Powers of Ten Zoom: from a human to the observable universe
@@ -21,9 +21,12 @@ on first launch.
   - Hubble Diagram Fitter: Hubble's 1929 data and a simulated modern sample
   - Galaxy Rotation Curve: find the dark matter halo
   - Balloon & Raisin-Bread Expansion: expansion with no centre
-- **145 quiz questions** with explanations; score 70% or more to complete a
+  - CMB Power Spectrum Explorer: acoustic peaks and simulated sky patches
+  - 2D N-body Structure Formation: gravity builds the cosmic web
+  - Gravitational Lensing Simulator: arcs, multiple images and Einstein rings
+- **175 quiz questions** with explanations; score 70% or more to complete a
   lesson
-- **103-term glossary**: terms in lessons open their definitions in the Guide panel
+- **123-term glossary**: terms in lessons open their definitions in the Guide panel
 - Tooltips and **?** buttons on every control
 - Progress tracking with a prerequisite map
 - Dark and light themes

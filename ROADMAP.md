@@ -112,12 +112,12 @@ Legend: `[x]` done · `[ ]` planned
 - [x] `L4.6` Baryogenesis: the matter–antimatter asymmetry
 
 **Level 5 — CMB & Structure Formation**
-- [ ] `L5.1` CMB anisotropies, the power spectrum and acoustic peaks
-- [ ] `L5.2` Baryon acoustic oscillations
-- [ ] `L5.3` Jeans instability and linear perturbation growth
-- [ ] `L5.4` The matter power spectrum
-- [ ] `L5.5` Hierarchical structure formation and N-body simulations
-- [ ] `L5.6` Gravitational lensing (strong and weak)
+- [x] `L5.1` CMB anisotropies, the power spectrum and acoustic peaks
+- [x] `L5.2` Baryon acoustic oscillations
+- [x] `L5.3` Jeans instability and linear perturbation growth
+- [x] `L5.4` The matter power spectrum
+- [x] `L5.5` Hierarchical structure formation and N-body simulations
+- [x] `L5.6` Gravitational lensing (strong and weak)
 
 **Level 6 — Advanced Topics**
 - [ ] `L6.1` Minimal general relativity: metrics, geodesics, the FLRW metric
@@ -134,9 +134,9 @@ Legend: `[x]` done · `[ ]` planned
 - [ ] `S9` Spacetime / Horizon Diagram (light cones, conformal diagram)
 - [ ] `S10` Interactive Cosmic Timeline
 - [ ] `S11` BBN Abundance Explorer
-- [ ] `S12` CMB Power Spectrum Explorer (approximate model)
-- [ ] `S13` 2D N-body Structure Formation
-- [ ] `S14` Gravitational Lensing Simulator
+- [x] `S12` CMB Power Spectrum Explorer (approximate model)
+- [x] `S13` 2D N-body Structure Formation
+- [x] `S14` Gravitational Lensing Simulator
 - [ ] `S15` Inflation Slow-Roll Simulator
 - [ ] `S16` Supernova Ia Discovery (re-create the 1998 result)
 - [ ] `S17` Olbers' Paradox Simulator

@@ -1,0 +1,36 @@
+- question: "According to the Jeans criterion, when does a gas cloud collapse?"
+  choices:
+    - "When it is smaller than the Jeans length"
+    - "When it is larger than the Jeans length, so gravity acts faster than pressure can respond"
+    - "Only when it contains dark energy"
+    - "Whenever its temperature rises"
+  answer: 1
+  explanation: "Above λ_J = c_s √(π/Gρ), sound cannot cross the region before gravity collapses it."
+- question: "What happened to the Jeans mass of ordinary matter at recombination?"
+  choices:
+    - "It increased enormously because photons heated the gas"
+    - "It dropped from about 10¹⁸ to about 10⁵ solar masses as the sound speed collapsed"
+    - "It stayed the same"
+    - "It became zero"
+  answer: 1
+  explanation: "Once photons decoupled, the gas pressure fell dramatically and even globular-cluster masses could collapse."
+- question: "How does a density perturbation grow in a matter-dominated expanding universe (linear regime)?"
+  choices: ["Exponentially in time", "As δ ∝ a", "As δ ∝ a⁴", "It does not grow"]
+  answer: 1
+  explanation: "Hubble drag slows gravitational growth from exponential to a power law: δ grows in proportion to the scale factor."
+- question: "What is the Mészáros effect?"
+  choices:
+    - "The acceleration caused by dark energy"
+    - "The stalling of matter perturbation growth during the radiation era"
+    - "The bending of light by galaxies"
+    - "The formation of the first stars"
+  answer: 1
+  explanation: "When radiation dominated, the expansion was so fast that matter perturbations grew only logarithmically."
+- question: "Why are galaxies hard to explain without dark matter?"
+  choices:
+    - "Baryon fluctuations of 10⁻⁵ at recombination would have grown only to about 10⁻² today"
+    - "Ordinary matter cannot form stars"
+    - "Dark matter is needed to create light"
+    - "The CMB would be too hot"
+  answer: 0
+  explanation: "Dark matter perturbations had been growing since matter–radiation equality, giving the baryons deep potential wells to fall into."

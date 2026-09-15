@@ -113,7 +113,7 @@ cmb:
     formed. Today it fills the universe as microwaves with a blackbody temperature of
     2.7255 K and tiny fluctuations of one part in 100 000.
   see_also: [recombination, last-scattering-surface, blackbody]
-  lessons: [L4.4, L1.3, L1.5]
+  lessons: [L4.4, L1.3, L1.5, L5.1]
 
 comoving-distance:
   term: Comoving distance
@@ -191,7 +191,7 @@ dark-matter:
     84% of all matter and is revealed by rotation curves, cluster dynamics,
     gravitational lensing and the CMB.
   see_also: [rotation-curve, bullet-cluster, lambda-cdm]
-  lessons: [L3.2]
+  lessons: [L3.2, L5.3, L5.5]
 
 deceleration-parameter:
   term: Deceleration parameter (q)
@@ -309,7 +309,7 @@ gravitational-lensing:
     magnifies or multiplies the images of background sources and measures the total
     mass of the lens, including dark matter.
   see_also: [general-relativity, dark-matter]
-  lessons: [L3.2, L0.4]
+  lessons: [L3.2, L0.4, L5.6]
 
 helium-4:
   term: Helium-4
@@ -851,7 +851,7 @@ hubble-tension:
     (CMB, about 67–68 km/s/Mpc) and measured locally with Cepheids and supernovae
     (about 73 km/s/Mpc).
   see_also: [hubble-constant, lambda-cdm]
-  lessons: [L3.5, L3.4]
+  lessons: [L3.5, L3.4, L5.2]
 
 leptogenesis:
   term: Leptogenesis
@@ -878,3 +878,177 @@ sphaleron:
     difference.
   see_also: [leptogenesis, baryogenesis]
   lessons: [L4.6]
+
+angular-power-spectrum:
+  term: Angular power spectrum (Cℓ)
+  definition: >
+    The strength of temperature fluctuations on the sky as a function of multipole ℓ,
+    i.e. of angular scale. For the CMB it is usually plotted as ℓ(ℓ+1)Cℓ/2π in μK².
+  see_also: [multipole, cmb-anisotropies, acoustic-peaks]
+  lessons: [L5.1]
+
+acoustic-peaks:
+  term: Acoustic peaks
+  definition: >
+    The series of maxima in the CMB power spectrum, produced by sound waves in the
+    photon–baryon plasma caught at maximum compression or rarefaction when the CMB
+    was released. The first lies at ℓ ≈ 220, about one degree.
+  see_also: [angular-power-spectrum, sound-horizon, bao]
+  lessons: [L5.1]
+
+bao:
+  term: Baryon acoustic oscillations (BAO)
+  definition: >
+    A slight excess of galaxy pairs separated by the sound horizon at the drag epoch,
+    about 147 Mpc, left by sound waves in the early universe. Used as a standard ruler
+    to measure distances and the expansion rate.
+  see_also: [sound-horizon, standard-ruler, correlation-function]
+  lessons: [L5.2]
+
+cmb-anisotropies:
+  term: CMB anisotropies
+  definition: >
+    The tiny temperature differences, about 100 μK or one part in 30 000, between
+    different directions in the cosmic microwave background. They record density
+    variations 380 000 years after the Big Bang.
+  see_also: [cmb, angular-power-spectrum]
+  lessons: [L5.1]
+
+correlation-function:
+  term: Two-point correlation function ξ(r)
+  definition: >
+    The excess probability, compared with a random distribution, of finding two
+    galaxies separated by a distance r. It is the Fourier counterpart of the power
+    spectrum.
+  see_also: [matter-power-spectrum, bao]
+  lessons: [L5.2]
+
+dark-matter-halo:
+  term: Dark matter halo
+  definition: >
+    A gravitationally bound, roughly spherical concentration of dark matter, about 200
+    times denser than the cosmic average, that hosts a galaxy, group or cluster.
+  see_also: [hierarchical-structure-formation, halo-mass-function, dark-matter]
+  lessons: [L5.3, L5.5]
+
+density-contrast:
+  term: Density contrast (δ)
+  definition: >
+    The relative deviation of the local density from the cosmic average,
+    δ = (ρ − ρ̄)/ρ̄. It was about 10⁻⁵ at recombination and exceeds a million in
+    galaxies today.
+  see_also: [growth-factor, jeans-length]
+  lessons: [L5.3]
+
+einstein-radius:
+  term: Einstein radius
+  definition: >
+    The angular radius of the ring formed when a source lies exactly behind a lens.
+    It depends only on the lens mass and on the distances, so it weighs the lens:
+    about 1″ for galaxies and tens of arcseconds for clusters.
+  see_also: [gravitational-lensing, weak-lensing]
+  lessons: [L5.6]
+
+growth-factor:
+  term: Linear growth factor D(a)
+  definition: >
+    The factor by which small density perturbations have grown. It equals the scale
+    factor in a matter-dominated universe and grows more slowly once dark energy
+    dominates.
+  see_also: [density-contrast, matter-power-spectrum]
+  lessons: [L5.3]
+
+halo-mass-function:
+  term: Halo mass function
+  definition: >
+    The number density of dark matter halos as a function of mass and redshift. The
+    Press–Schechter model predicts it from the linear power spectrum; massive clusters
+    are exponentially rare.
+  see_also: [dark-matter-halo, hierarchical-structure-formation, sigma8]
+  lessons: [L5.5]
+
+hierarchical-structure-formation:
+  term: Hierarchical structure formation
+  definition: >
+    The "bottom-up" growth of structure in cold dark matter: small halos collapse first
+    and merge into ever larger ones, up to galaxy clusters today.
+  see_also: [dark-matter-halo, n-body-simulation]
+  lessons: [L5.5]
+
+jeans-length:
+  term: Jeans length
+  definition: >
+    The size above which gravity overcomes pressure and a gas cloud collapses,
+    λ_J = c_s √(π/Gρ). The corresponding Jeans mass fell from about 10¹⁸ to 10⁵ solar
+    masses at recombination.
+  see_also: [density-contrast, growth-factor]
+  lessons: [L5.3]
+
+matter-power-spectrum:
+  term: Matter power spectrum P(k)
+  definition: >
+    The strength of matter density fluctuations as a function of wavenumber
+    k = 2π/λ. It peaks near k ≈ 0.016 h/Mpc, the matter–radiation equality scale.
+  see_also: [transfer-function, sigma8, correlation-function]
+  lessons: [L5.4]
+
+multipole:
+  term: Multipole (ℓ)
+  definition: >
+    The index of a spherical harmonic used to describe patterns on the sky. A
+    multipole ℓ corresponds to an angular scale of roughly 180°/ℓ.
+  see_also: [angular-power-spectrum]
+  lessons: [L5.1]
+
+n-body-simulation:
+  term: N-body simulation
+  definition: >
+    A computer simulation that follows the gravitational motion of many particles
+    representing dark matter, from nearly smooth initial conditions to the cosmic web
+    and halos of today.
+  see_also: [hierarchical-structure-formation, dark-matter-halo]
+  lessons: [L5.5]
+
+sigma8:
+  term: σ8
+  definition: >
+    The root-mean-square linear matter fluctuation in spheres of radius 8 Mpc/h today,
+    the standard measure of the amplitude of clustering. Planck finds about 0.81.
+  see_also: [matter-power-spectrum, weak-lensing]
+  lessons: [L5.4]
+
+sound-horizon:
+  term: Sound horizon
+  definition: >
+    The comoving distance a sound wave in the photon–baryon plasma could travel before
+    recombination: about 144 Mpc at decoupling and 147 Mpc at the drag epoch. It sets
+    the scale of the acoustic peaks and BAO.
+  see_also: [acoustic-peaks, bao, standard-ruler]
+  lessons: [L5.1, L5.2]
+
+standard-ruler:
+  term: Standard ruler
+  definition: >
+    An object or feature of known physical size. Its apparent angular size gives the
+    angular diameter distance. The BAO scale and the CMB sound horizon are the most
+    important cosmological rulers.
+  see_also: [bao, angular-diameter-distance, standard-candle]
+  lessons: [L5.2]
+
+transfer-function:
+  term: Transfer function T(k)
+  definition: >
+    Describes how the growth of each Fourier mode was modified after it entered the
+    horizon. Modes that entered during radiation domination grew less, so T(k) falls
+    on small scales.
+  see_also: [matter-power-spectrum]
+  lessons: [L5.4]
+
+weak-lensing:
+  term: Weak lensing
+  definition: >
+    Tiny, percent-level distortions of the shapes of distant galaxies caused by
+    intervening mass. Measured statistically, it maps dark matter and the growth of
+    structure (cosmic shear).
+  see_also: [gravitational-lensing, einstein-radius, sigma8]
+  lessons: [L5.6]

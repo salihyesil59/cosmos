@@ -1,0 +1,40 @@
+- question: "A large value of P(k) at wavenumber k means..."
+  choices:
+    - "strong density fluctuations on scales of about 2π/k"
+    - "that the universe is expanding faster"
+    - "that there are no galaxies at that scale"
+    - "a high CMB temperature"
+  answer: 0
+  explanation: "The power spectrum measures the squared amplitude of density waves with wavelength 2π/k."
+- question: "What does the spectral index n_s = 0.965 tell us?"
+  choices:
+    - "Primordial fluctuations were slightly stronger on large scales than exact scale invariance"
+    - "The universe is 96.5% dark energy"
+    - "Space is closed"
+    - "Neutrinos are massless"
+  answer: 0
+  explanation: "n_s = 1 would be scale-invariant; a value slightly below 1 is a prediction of simple inflation models."
+- question: "Why does the matter power spectrum turn over near k ≈ 0.016 h/Mpc?"
+  choices:
+    - "Galaxies stop existing on smaller scales"
+    - "Smaller-scale modes entered the horizon during radiation domination, when growth stalled"
+    - "BAO removes all power there"
+    - "Telescopes cannot measure those scales"
+  answer: 1
+  explanation: "The turnover marks the scale entering the horizon at matter–radiation equality; its position depends on Ω_m h."
+- question: "What is σ8?"
+  choices:
+    - "The age of the universe in units of 8 billion years"
+    - "The RMS linear matter fluctuation in spheres of radius 8 Mpc/h"
+    - "The number of neutrino species"
+    - "The angle of the first CMB peak"
+  answer: 1
+  explanation: "It is the standard measure of the amplitude of matter clustering; Planck gives about 0.81."
+- question: "Why do galaxy surveys not measure the matter power spectrum directly?"
+  choices:
+    - "Galaxies are biased tracers, clustering more or less strongly than matter"
+    - "Galaxies do not follow gravity"
+    - "Surveys only measure the CMB"
+    - "The power spectrum cannot be defined for galaxies"
+  answer: 0
+  explanation: "P_gal = b² P with a bias b that must be modelled; weak lensing measures the matter itself."
