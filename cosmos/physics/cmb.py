@@ -55,6 +55,10 @@ class CMBParameters:
     n_s: float = 0.9665
     a_s: float = 2.105e-9
     tau: float = 0.0561
+    w0: float = -1.0
+    wa: float = 0.0
+    tcmb: float = const.T_CMB
+    neff: float = const.NEFF
 
     @property
     def omega_m(self) -> float:
@@ -63,7 +67,8 @@ class CMBParameters:
     def cosmology(self) -> Cosmology:
         h2 = self.h * self.h
         om = self.omega_m / h2
-        probe = Cosmology(H0=100 * self.h, Om0=om, Ode0=0.0, Ob0=self.omega_b / h2)
+        probe = Cosmology(H0=100 * self.h, Om0=om, Ode0=0.0, Ob0=self.omega_b / h2, w0=self.w0, wa=self.wa,
+                          Tcmb0=self.tcmb, Neff=self.neff)
         ode = 1.0 - om - probe.Or0 - self.omega_k
         return probe.with_params(Ode0=ode, name="CMB model")
 

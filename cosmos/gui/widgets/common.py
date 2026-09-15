@@ -68,7 +68,11 @@ def labelled_row(label: str, widget: QWidget, info: tuple[str, str] | None = Non
     lab = QLabel(label)
     layout.addWidget(lab)
     layout.addStretch(1)
-    layout.addWidget(widget)
+    if isinstance(widget, QComboBox):
+        # Long item texts must not force the control column wider than the window allows.
+        widget.setSizeAdjustPolicy(QComboBox.AdjustToMinimumContentsLengthWithIcon)
+        widget.setMinimumContentsLength(14)
+    layout.addWidget(widget, 1)
     if info:
         layout.addWidget(InfoButton(*info))
     return row
@@ -167,6 +171,14 @@ class ParameterSlider(QWidget):
 
     def value(self) -> float:
         return self.spin.value()
+
+    def set_range(self, minimum: float, maximum: float) -> None:
+        """Change the allowed range, keeping the value inside it."""
+        self._min, self._max = minimum, maximum
+        self._block = True
+        self.spin.setRange(minimum, maximum)
+        self._block = False
+        self.setValue(min(max(self.spin.value(), minimum), maximum), emit=False)
 
     def setValue(self, v: float, emit: bool = True) -> None:
         self._block = True

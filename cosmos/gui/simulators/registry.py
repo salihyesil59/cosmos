@@ -169,8 +169,9 @@ SIMULATORS: dict[str, SimulatorInfo] = {
                 "Switch off the halo: how does the curve behave at 30 kpc?",
                 "How much dark matter lies inside 30 kpc compared with visible matter?",
                 "Can you fit the data with a heavier disk and no halo? Why not?",
+                "Tick <b>Use MOND</b>: can modified gravity explain the curve without dark matter?",
             ],
-            lessons=["L3.2"],
+            lessons=["L3.2", "L6.7"],
             module="cosmos.gui.simulators.rotation_curve",
             class_name="RotationCurveSimulator",
             icon="◎",
@@ -276,5 +277,133 @@ SIMULATORS: dict[str, SimulatorInfo] = {
             class_name="LensingSimulator",
             icon="⊚",
         ),
+        SimulatorInfo(
+            id="S8",
+            title="Curvature Visualizer",
+            tagline="Triangles, circles and rulers in curved space.",
+            description=(
+                "Space itself can be curved. Draw the same triangle and circle in closed (spherical), flat and "
+                "open (hyperbolic) space and see how angles, circumferences and apparent sizes change. Then "
+                "connect the curvature radius to our own universe."
+            ),
+            how_to_use=[
+                "Change the <b>triangle side</b>: small triangles look flat everywhere, large ones reveal curvature.",
+                "Read the angle sums and circumference ratios in <b>Measurements</b>.",
+                "Open the <b>Apparent sizes</b> tab to see why curvature changes the size of CMB spots.",
+                "Set <b>Ωk</b> to see how big the curvature radius of our universe could be.",
+            ],
+            things_to_try=[
+                "Make a spherical triangle whose angles add up to 270°. What fraction of the sphere does it cover?",
+                "At which radius does a circle on a sphere have the largest circumference?",
+                "With |Ωk| = 0.002, how many observable-universe radii fit into the curvature radius?",
+            ],
+            lessons=["L6.1", "L2.5"],
+            module="cosmos.gui.simulators.curvature",
+            class_name="CurvatureSimulator",
+            icon="△",
+        ),
+        SimulatorInfo(
+            id="S9",
+            title="Spacetime & Horizon Diagram",
+            tagline="Light cones, horizons and galaxy worldlines through cosmic time.",
+            description=(
+                "A spacetime diagram shows distance across and time upwards. Follow the paths of light and "
+                "galaxies, see the teardrop-shaped past light cone, and watch the particle horizon, event horizon "
+                "and Hubble sphere evolve. Switch to conformal coordinates where light moves at 45°."
+            ),
+            how_to_use=[
+                "Choose a universe with the <b>preset</b> or the Ωm and ΩΛ sliders.",
+                "Pick <b>coordinates</b>: proper distance, comoving distance, or comoving distance with conformal time.",
+                "Move the <b>scale factor of the observer</b> to watch from the past or the future.",
+                "Toggle light cones, horizons and worldlines to focus on one idea at a time.",
+            ],
+            things_to_try=[
+                "In proper coordinates, where is the past light cone widest? Where does it cross the Hubble sphere?",
+                "Switch to conformal time: why do light cones become straight lines?",
+                "Remove dark energy (ΩΛ = 0). What happens to the event horizon?",
+            ],
+            lessons=["L6.1", "L2.6"],
+            module="cosmos.gui.simulators.spacetime",
+            class_name="SpacetimeSimulator",
+            icon="⧖",
+        ),
+        SimulatorInfo(
+            id="S15",
+            title="Inflation Slow-Roll Simulator",
+            tagline="Roll a field down a potential and test its predictions.",
+            description=(
+                "During inflation a scalar field rolled slowly down its potential, driving exponential expansion "
+                "and creating the seeds of all structure. Choose a potential, watch the field roll, and compare its "
+                "predicted spectral index and gravitational waves with Planck and BICEP/Keck."
+            ),
+            how_to_use=[
+                "Choose a <b>model</b>; some have an extra parameter.",
+                "Set <b>N*</b>, how many e-folds before the end the observed scales left the horizon.",
+                "Press <b>Play</b> to watch the field roll and inflation end when ε reaches 1.",
+                "Check whether the star for your model lies inside the green allowed region of the nₛ–r plot.",
+            ],
+            things_to_try=[
+                "Why is the simplest φ² model ruled out even though its nₛ looks fine?",
+                "Change the decay constant of natural inflation: can you make it consistent?",
+                "How many e-folds of inflation does the comoving Hubble radius plot need to explain the horizon?",
+            ],
+            lessons=["L6.3"],
+            module="cosmos.gui.simulators.inflation_sim",
+            class_name="InflationSimulator",
+            icon="⥥",
+        ),
+        SimulatorInfo(
+            id="S16",
+            title="Supernova Ia Discovery",
+            tagline="Repeat the 1998 discovery and meet the Hubble tension.",
+            description=(
+                "Fit the brightness of Type Ia supernovae against redshift to find out whether the expansion is "
+                "slowing down or speeding up. Then calibrate the supernova brightness in two different ways and see "
+                "how the Hubble constant changes."
+            ),
+            how_to_use=[
+                "Choose the <b>1998-like</b> or <b>modern-like</b> simulated sample.",
+                "Compare the data with the empty, matter-only and best-fit models in the <b>Hubble diagram</b>.",
+                "Open the <b>Ωm–ΩΛ plane</b> to see which universes the data allow; try <b>Assume a flat universe</b>.",
+                "Switch the <b>calibration</b> and read the Hubble constant.",
+            ],
+            things_to_try=[
+                "With the 1998-like sample, how strong is the evidence for acceleration with and without flatness?",
+                "Do distant supernovae look brighter or fainter than in an empty universe?",
+                "Which calibration gives a Hubble constant close to Planck, and which close to SH0ES?",
+            ],
+            lessons=["L6.6", "L3.3", "L1.1"],
+            module="cosmos.gui.simulators.supernova_sim",
+            class_name="SupernovaSimulator",
+            icon="✶",
+        ),
+        SimulatorInfo(
+            id="S18",
+            title="Build Your Own Universe",
+            tagline="Design a universe and grade it against observations.",
+            description=(
+                "Choose every ingredient: the expansion rate, ordinary and dark matter, curvature, radiation, "
+                "neutrinos and evolving dark energy. See its history, contents, fate and CMB spectrum, and get a "
+                "report card that compares it with real measurements."
+            ),
+            how_to_use=[
+                "Start from a <b>preset</b> or move any slider.",
+                "Read the <b>score</b> at the top and open the <b>Report card</b> to see which tests pass.",
+                "Use <b>History and contents</b> to see when radiation, matter and dark energy dominated.",
+                "Try evolving or phantom dark energy with <b>w0</b> and <b>wa</b>.",
+            ],
+            things_to_try=[
+                "Build a universe without dark matter that still passes the age test. Which tests fail?",
+                "Set w0 = −1.3: when does the Big Rip happen?",
+                "Can you find a universe very different from ΛCDM that passes every test?",
+            ],
+            lessons=["L6.2", "L6.7", "L6.8"],
+            module="cosmos.gui.simulators.sandbox",
+            class_name="SandboxSimulator",
+            icon="✦",
+        ),
     ]
 }
+
+# Keep simulators in numerical order regardless of when they were added.
+SIMULATORS = dict(sorted(SIMULATORS.items(), key=lambda item: int(item[0][1:])))
