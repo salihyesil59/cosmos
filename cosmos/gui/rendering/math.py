@@ -28,7 +28,7 @@ def render_png(tex: str, color: str, size_pt: float, device_ratio: float = 1.0) 
     """
     buf = io.BytesIO()
     try:
-        with rc_context({"mathtext.fontset": "cm"}):
+        with rc_context({"mathtext.fontset": "cm", "savefig.transparent": True, "figure.facecolor": "none"}):
             mathtext.math_to_image(
                 f"${tex}$",
                 buf,

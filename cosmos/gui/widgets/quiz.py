@@ -150,6 +150,7 @@ class QuizWidget(QWidget):
         self.prompt.setText(q.prompt)
         for button in self.group.buttons():
             self.group.removeButton(button)
+            button.hide()
             button.deleteLater()
         for i, choice in enumerate(q.choices):
             rb = QRadioButton(choice)

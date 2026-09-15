@@ -104,7 +104,8 @@ class ParameterSlider(QWidget):
         outer.setSpacing(2)
         top = QHBoxLayout()
         self.label = QLabel(label)
-        top.addWidget(self.label)
+        self.label.setWordWrap(True)
+        top.addWidget(self.label, 1)
         top.addStretch(1)
         self.spin = QDoubleSpinBox()
         self.spin.setDecimals(decimals)
@@ -112,7 +113,8 @@ class ParameterSlider(QWidget):
         self.spin.setSingleStep(step or (maximum - minimum) / 100)
         self.spin.setSuffix(suffix)
         self.spin.setKeyboardTracking(False)
-        self.spin.setMinimumWidth(96)
+        self.spin.setMinimumWidth(84)
+        self.spin.setMaximumWidth(120)
         if log:
             self.spin.setStepType(QDoubleSpinBox.AdaptiveDecimalStepType)
         top.addWidget(self.spin)
@@ -205,7 +207,7 @@ class PresetSelector(QComboBox):
         idx = self.findData(key)
         if idx < 0:
             return
-        self.blockSignals(not emit)
+        self.blockSignals(True)
         self.setCurrentIndex(idx)
         self.blockSignals(False)
         if emit:

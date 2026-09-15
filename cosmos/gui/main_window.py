@@ -99,7 +99,7 @@ class MainWindow(QMainWindow):
         tree.setHeaderHidden(True)
         tree.setIndentation(14)
         tree.setIconSize(QSize(14, 14))
-        tree.setMinimumWidth(270)
+        tree.setMinimumWidth(300)
         tree.setAnimated(True)
         self.sidebar = tree
 

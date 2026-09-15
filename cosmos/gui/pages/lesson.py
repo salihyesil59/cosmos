@@ -98,6 +98,7 @@ class LessonPage(QWidget):
         while self.sim_buttons.count():
             item = self.sim_buttons.takeAt(0)
             if item.widget():
+                item.widget().hide()
                 item.widget().deleteLater()
         for sid in lesson.simulators:
             info = SIMULATORS[sid]
