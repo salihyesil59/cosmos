@@ -21,7 +21,7 @@ C_KM_S = const.C / 1e3
 # ----------------------------------------------------------------- growth
 def _e2_no_radiation(c: Cosmology, a):
     a = np.asarray(a, dtype=float)
-    return c.Om0 * a**-3 + (c.Ok0 + c.Or0) * a**-2 + c.Ode0 * a ** (-3 * (1 + c.w0))
+    return c.Om0 * a**-3 + (c.Ok0 + c.Or0) * a**-2 + c.Ode0 * c.de_density_ratio(a)
 
 
 def growth_factor(c: Cosmology, a, normalize: bool = True):
@@ -32,12 +32,11 @@ def growth_factor(c: Cosmology, a, normalize: bool = True):
     its tiny density is folded into the curvature term). With ``normalize`` the
     result is 1 today, otherwise it equals ``a`` in the early matter era.
     """
-    w = c.w0
-
     def rhs(lna, y):
         a = math.exp(lna)
         e2 = float(_e2_no_radiation(c, a))
-        de2 = -3 * c.Om0 * a**-3 - 2 * (c.Ok0 + c.Or0) * a**-2 - 3 * (1 + w) * c.Ode0 * a ** (-3 * (1 + w))
+        rho_de = c.Ode0 * float(c.de_density_ratio(a))
+        de2 = -3 * c.Om0 * a**-3 - 2 * (c.Ok0 + c.Or0) * a**-2 - 3 * (1 + float(c.w_of_a(a))) * rho_de
         dlnh = 0.5 * de2 / e2
         om_a = c.Om0 * a**-3 / e2
         d, dp = y

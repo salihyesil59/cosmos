@@ -73,3 +73,20 @@ def keplerian_velocity(r_kpc, mass: float):
     """Speed of an orbit around a point mass: falls off as ``1/sqrt(r)``."""
     r = np.clip(np.asarray(r_kpc, dtype=float), 1e-6, None)
     return np.sqrt(G_KPC * mass / r)
+
+
+A0_MOND = 1.2e-10  # Milgrom's acceleration scale [m/s²]
+
+
+def mond_velocity(r_kpc, newtonian_velocity_km_s, a0: float = A0_MOND):
+    """Rotation speed in Modified Newtonian Dynamics (MOND).
+
+    The Newtonian acceleration g_N = v_N²/r of the visible matter is boosted with
+    the "simple" interpolating function g = g_N (1 + √(1 + 4a0/g_N)) / 2. Far from
+    the centre g ≈ √(g_N a0), which gives a flat curve with v⁴ = G M a0.
+    """
+    r_m = np.clip(np.asarray(r_kpc, dtype=float), 1e-6, None) * const.KPC
+    v_n = np.asarray(newtonian_velocity_km_s, dtype=float) * 1e3
+    g_n = np.clip(v_n * v_n / r_m, 1e-30, None)
+    g = g_n * 0.5 * (1 + np.sqrt(1 + 4 * a0 / g_n))
+    return np.sqrt(g * r_m) / 1e3

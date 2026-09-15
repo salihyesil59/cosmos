@@ -168,3 +168,35 @@ def test_recession_velocity_and_angular_peak():
     z_peak, _ = c.angular_diameter_distance_peak()
     assert 1.4 < z_peak < 1.8
     np.testing.assert_allclose(c.luminosity_distance(Z), (1 + Z) ** 2 * c.angular_diameter_distance(Z))
+
+
+@pytest.mark.parametrize("w0, wa", [(-0.75, -0.9), (-0.9, 0.3), (-1.2, 0.0)])
+def test_w0wa_against_astropy(w0, wa):
+    c = Cosmology(H0=68, Om0=0.31, Ode0=0.69, w0=w0, wa=wa)
+    ref = astropy_cosmo.w0waCDM(H0=68, Om0=0.31, Ode0=0.69, w0=w0, wa=wa, Tcmb0=c.Tcmb0, Neff=c.Neff, m_nu=0.0)
+    np.testing.assert_allclose(c.efunc(Z), ref.efunc(Z), rtol=1e-6)
+    np.testing.assert_allclose(c.luminosity_distance(Z), ref.luminosity_distance(Z).value, rtol=1e-5)
+    assert c.age() == pytest.approx(ref.age(0).value, rel=1e-4)
+    np.testing.assert_allclose(c.Ode(Z), ref.Ode(Z), rtol=1e-6)
+
+
+def test_big_rip():
+    c = Cosmology(H0=70, Om0=0.3, Ode0=0.7, w0=-1.5, Tcmb0=0)
+    assert c.fate() is Fate.BIG_RIP
+    # Caldwell et al. (2003): t_rip - t0 ≈ 2 / (3 |1 + w| H0 sqrt(1 - Ωm)).
+    approx = 2 / (3 * 0.5) * c.hubble_time / math.sqrt(0.7)
+    assert c.big_rip_time() == pytest.approx(approx, rel=0.05)
+    assert math.isfinite(c.event_horizon())
+    assert math.isinf(PRESETS["planck18"].cosmology.big_rip_time())
+
+
+def test_evolving_dark_energy_growth_and_history():
+    from cosmos.physics import structure
+
+    c = PRESETS["evolving_de"].cosmology
+    assert c.fate() is Fate.EXPANDS_FOREVER  # wa < 0: dark energy eventually fades in the CPL form
+    assert 12.5 < c.age() < 14.5
+    d = structure.growth_factor(c, np.array([0.5, 1.0]))
+    assert d[1] == pytest.approx(1.0) and 0.5 < d[0] < 0.7
+    hist = c.expansion_history(t_future=10)
+    assert np.interp(0.0, hist.t, hist.a) == pytest.approx(1.0, abs=1e-6)
