@@ -62,6 +62,10 @@ class RotationCurveSimulator(SimulatorBase):
         )
         dl.addWidget(self.halo)
         dl.addWidget(self.conc)
+        self.mond = QCheckBox("Use MOND instead of dark matter")
+        self.mond.setToolTip("Modified Newtonian Dynamics: no dark matter, but gravity becomes stronger than "
+                             "Newton's law at very low accelerations (below about 1.2 × 10⁻¹⁰ m/s²).")
+        dl.addWidget(self.mond)
         fit = QPushButton("Fit halo to data")
         fit.setProperty("role", "primary")
         fit.setToolTip("Find the halo mass that best matches the data points for the current visible matter.")
@@ -97,6 +101,7 @@ class RotationCurveSimulator(SimulatorBase):
         for w in (self.bulge, self.disk, self.scale, self.halo, self.conc):
             w.valueChanged.connect(self.schedule_update)
         self.halo_on.toggled.connect(self._halo_toggled)
+        self.mond.toggled.connect(self._mond_toggled)
         self._halo_toggled(False)
 
     def bulge_mass(self) -> float:
@@ -111,7 +116,21 @@ class RotationCurveSimulator(SimulatorBase):
     def _halo_toggled(self, on: bool) -> None:
         self.halo.setEnabled(on)
         self.conc.setEnabled(on)
+        if on and self.mond.isChecked():
+            self.mond.setChecked(False)
         self.schedule_update()
+
+    def _mond_toggled(self, on: bool) -> None:
+        if on and self.halo_on.isChecked():
+            self.halo_on.setChecked(False)
+        self.schedule_update()
+
+    def model_velocity(self, r, bulge, disk, halo):
+        """Total rotation speed of the current model (Newton + halo, or MOND)."""
+        visible = rotation.total_velocity(bulge, disk)
+        if self.mond.isChecked():
+            return rotation.mond_velocity(r, visible)
+        return rotation.total_velocity(bulge, disk, halo)
 
     def components(self, r):
         bulge = rotation.bulge_velocity(r, self.bulge_mass(), 0.5)
@@ -127,18 +146,19 @@ class RotationCurveSimulator(SimulatorBase):
         r = np.array([R_REPORT])
         bulge, disk, halo = self.components(r)
         visible = float(rotation.total_velocity(bulge, disk)[0])
-        total = float(rotation.total_velocity(bulge, disk, halo)[0])
+        total = float(self.model_velocity(r, bulge, disk, halo)[0])
         m_visible = float(rotation.enclosed_mass(R_REPORT, visible))
         m_total = float(rotation.enclosed_mass(R_REPORT, total))
         observed = float(np.interp(R_REPORT, self.data.radius_kpc, self.data.velocity_km_s))
         chi2 = self._chi2()
         dm_share = 1 - m_visible / m_total if m_total > 0 else 0
+        share_label = "Missing mass MOND explains without dark matter" if self.mond.isChecked() else "Dark matter share"
         self.summary.setText(
             f"Speed from visible matter: <b>{visible:.0f} km/s</b><br>"
             f"Model total: <b>{total:.0f} km/s</b> (data ≈ {observed:.0f} km/s)<br>"
             f"Mass from visible matter: {m_visible:.2e} M☉<br>"
             f"Mass required by the model: {m_total:.2e} M☉<br>"
-            f"Dark matter share: <b>{dm_share:.0%}</b><br>"
+            f"{share_label}: <b>{dm_share:.0%}</b><br>"
             f"Fit quality χ²/point: <b>{chi2:.1f}</b> (about 1 is a good fit)"
         )
         self.plot.refresh()
@@ -151,7 +171,7 @@ class RotationCurveSimulator(SimulatorBase):
             halo = rotation.nfw_velocity(r, self.halo_mass(), self.conc.value()) if self.halo_on.isChecked() else 0 * r
         else:
             halo = rotation.nfw_velocity(r, halo_mass, self.conc.value())
-        model = rotation.total_velocity(bulge, disk, halo)
+        model = self.model_velocity(r, bulge, disk, halo)
         return float(np.mean(((model - self.data.velocity_km_s) / self.data.error_km_s) ** 2))
 
     def _fit_halo(self) -> None:
@@ -180,6 +200,9 @@ class RotationCurveSimulator(SimulatorBase):
         if self.halo_on.isChecked():
             ax.plot(r, rotation.total_velocity(bulge, disk, halo), color=p.series[0], linewidth=2.6,
                     label="Visible + dark matter")
+        if self.mond.isChecked():
+            ax.plot(r, rotation.mond_velocity(r, visible), color=p.series[5], linewidth=2.6,
+                    label="MOND (visible matter only)")
         if self.show_kepler.isChecked():
             rk = r[r > 8]
             ax.plot(rk, rotation.keplerian_velocity(rk, self.bulge_mass() + self.disk_mass()), color=p.muted,
@@ -195,7 +218,7 @@ class RotationCurveSimulator(SimulatorBase):
     def _csv(self):
         r = self.radius
         bulge, disk, halo = self.components(r)
-        total = rotation.total_velocity(bulge, disk, halo)
+        total = self.model_velocity(r, bulge, disk, halo)
         rows = [[f"{x:.4g}", f"{b:.4g}", f"{d:.4g}", f"{h:.4g}", f"{t:.4g}"]
                 for x, b, d, h, t in zip(r, bulge, disk, halo, total)]
         return ["radius_kpc", "bulge_km_s", "disk_km_s", "halo_km_s", "total_km_s"], rows

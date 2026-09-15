@@ -64,9 +64,23 @@ class PlotWidget(QWidget):
                 data.clicked.connect(self.export_csv)
                 bar.addWidget(data)
             layout.addLayout(bar)
-        theme().changed.connect(lambda _p: self.refresh())
+        self._dirty = False
+        theme().changed.connect(self._theme_changed)
+
+    def _theme_changed(self, _palette) -> None:
+        # Hidden plots are redrawn only when they become visible again.
+        if self.isVisible():
+            self.refresh()
+        else:
+            self._dirty = True
+
+    def showEvent(self, event):  # noqa: N802 (Qt override)
+        if self._dirty:
+            self.refresh()
+        super().showEvent(event)
 
     def refresh(self) -> None:
+        self._dirty = False
         p = theme().palette
         self.figure.clear()
         self.figure.patch.set_facecolor(p.surface)

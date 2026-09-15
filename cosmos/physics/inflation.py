@@ -15,6 +15,7 @@ before the end of inflation:
 
 from __future__ import annotations
 
+import functools
 import math
 import warnings
 from dataclasses import dataclass
@@ -166,6 +167,7 @@ def field_at_efolds(pot: Potential, n_star: float, p: float = 0.0) -> float:
     return float(optimize.brentq(lambda f: efolds(pot, f, p) - n_star, far, phi_end - 1e-9))
 
 
+@functools.lru_cache(maxsize=256)
 def predictions(pot: Potential, n_star: float = 55.0, p: float | None = None) -> SlowRollResult:
     p = pot.parameter_default if p is None else p
     phi_star = field_at_efolds(pot, n_star, p)

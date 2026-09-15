@@ -175,3 +175,70 @@ def test_structure_simulators(window):
     s14.z_lens.setValue(1.0, emit=False)
     s14.recompute()  # source in front of the lens must show a warning, not crash
     assert s14.banner.isVisibleTo(s14)
+
+
+def test_advanced_simulators(window):
+    import math
+
+    window.navigate("sim:S8")
+    s8 = window.stack.currentWidget().simulator
+    s8.side.setValue(math.pi / 2, emit=False)
+    s8.omega_k.setValue(0.0, emit=False)
+    s8.recompute()
+    assert "Closed: <b>269.9°" in s8.summary.text()  # side 1.57 ≈ π/2: an octant of the sphere
+
+    window.navigate("sim:S9")
+    s9 = window.stack.currentWidget().simulator
+    for index in range(s9.coords.count()):
+        s9.coords.setCurrentIndex(index)
+        s9.observe.setValue(0.5 + index, emit=False)
+        s9.recompute()
+    s9.om.setValue(0.05, emit=False)
+    s9.ode.setValue(1.5, emit=False)
+    s9.recompute()  # no Big Bang: warning instead of a crash
+    assert s9.data is None and s9.banner.isVisibleTo(s9)
+
+    window.navigate("sim:S15")
+    s15 = window.stack.currentWidget().simulator
+    for index in range(s15.potential.count()):
+        s15.potential.setCurrentIndex(index)
+        pump()
+    s15.potential.setCurrentIndex(0)  # quadratic
+    s15.recompute()
+    assert not s15.result.consistent
+    s15._rewind()
+    s15.play.setChecked(True)
+    for _ in range(5):
+        s15._tick()
+    window.navigate("home")
+    assert not s15.play.isChecked()
+
+    window.navigate("sim:S16")
+    s16 = window.stack.currentWidget().simulator
+    s16.sample_box.setCurrentIndex(1)
+    s16.recompute()
+    cepheid = s16.hubble_constant()
+    s16.inverse.setChecked(True)
+    s16.recompute()
+    assert cepheid - s16.hubble_constant() > 3
+    s16.flat.setChecked(True)
+    s16.recompute()
+
+    window.navigate("sim:S18")
+    s18 = window.stack.currentWidget().simulator
+    s18.preset.set_key("planck18", emit=True)
+    assert all(check.passed for check in s18.checks)
+    s18.oc.setValue(0.0, emit=False)
+    s18.w0.setValue(-1.3, emit=False)
+    s18.recompute()
+    assert sum(1 for check in s18.checks if check.passed is False) >= 2
+    s18.radiation.setChecked(False)
+    s18.recompute()
+
+    window.navigate("sim:S6")
+    s6 = window.stack.currentWidget().simulator
+    s6.mond.setChecked(True)
+    s6.recompute()
+    assert s6._chi2() < 10
+    s6._fit_halo()
+    assert not s6.mond.isChecked()
