@@ -1,0 +1,36 @@
+- question: "What is the approximate value of the baryon asymmetry η = (n_b − n_b̄)/n_γ?"
+  choices: ["0.5", "6 × 10⁻¹⁰", "10⁻¹⁸", "1"]
+  answer: 1
+  explanation: "Both Big Bang nucleosynthesis and the CMB give about 6 × 10⁻¹⁰."
+- question: "What would the universe look like if exactly equal amounts of matter and antimatter had been produced?"
+  choices:
+    - "Exactly like today"
+    - "Almost all matter would have annihilated, leaving about a billion times less than we observe"
+    - "Half of all galaxies would be antimatter and clearly visible"
+    - "There would be twice as much matter"
+  answer: 1
+  explanation: "Annihilation would continue until only about 10⁻¹⁸ nucleons per photon remained, far below the observed 6 × 10⁻¹⁰."
+- question: "Which of these is NOT one of Sakharov's conditions?"
+  choices:
+    - "Baryon number violation"
+    - "C and CP violation"
+    - "Departure from thermal equilibrium"
+    - "A positive cosmological constant"
+  answer: 3
+  explanation: "Sakharov's three conditions concern particle physics and equilibrium; dark energy plays no role."
+- question: "Why can the Standard Model alone not explain the matter excess?"
+  choices:
+    - "It has no baryon number violation at all"
+    - "Its CP violation is far too small and its electroweak transition is smooth, so there is no departure from equilibrium"
+    - "It predicts more antimatter than matter"
+    - "It forbids antiparticles"
+  answer: 1
+  explanation: "Sphalerons do violate baryon number, but the other two ingredients are far too weak with the measured Higgs mass."
+- question: "What is leptogenesis?"
+  choices:
+    - "The formation of the first stars"
+    - "A scenario in which heavy neutrino decays create a lepton excess that is partly converted into a baryon excess"
+    - "The annihilation of electrons and positrons"
+    - "The decay of protons"
+  answer: 1
+  explanation: "It links the matter asymmetry to neutrino physics; neutrino experiments searching for CP violation test it."

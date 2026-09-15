@@ -8,7 +8,7 @@ age-of-universe:
     ΛCDM model. It follows from integrating the expansion history, and is close to
     the Hubble time 1/H0 by coincidence.
   see_also: [hubble-time, lambda-cdm]
-  lessons: [L3.4, L1.2]
+  lessons: [L3.4, L1.2, L3.5]
 
 angular-diameter-distance:
   term: Angular diameter distance
@@ -34,7 +34,7 @@ baryon:
     "baryonic matter" means all ordinary matter made of atoms (including electrons),
     about 5% of the universe's energy content.
   see_also: [dark-matter, nucleosynthesis]
-  lessons: [L3.2, L4.3]
+  lessons: [L3.2, L4.3, L4.6]
 
 baryon-to-photon-ratio:
   term: Baryon-to-photon ratio (η)
@@ -43,7 +43,7 @@ baryon-to-photon-ratio:
     CMB photons for every proton or neutron. This ratio controls nucleosynthesis and
     delays recombination.
   see_also: [nucleosynthesis, recombination]
-  lessons: [L4.2, L4.3]
+  lessons: [L4.2, L4.3, L4.6]
 
 big-bang:
   term: Big Bang
@@ -208,7 +208,7 @@ decoupling:
     plasma because its reactions become slower than the expansion. Photons decoupled
     at recombination; neutrinos about one second after the Big Bang.
   see_also: [recombination, neutrino]
-  lessons: [L4.4, L4.2]
+  lessons: [L4.4, L4.2, L4.5]
 
 density-parameter:
   term: Density parameter (Ω)
@@ -365,7 +365,7 @@ hubble-time:
     The time 1/H0, about 14 billion years. It is the age the universe would have if it
     had always expanded at today's rate.
   see_also: [hubble-constant, age-of-universe]
-  lessons: [L1.2]
+  lessons: [L1.2, L3.5]
 
 isotropy:
   term: Isotropy
@@ -474,7 +474,7 @@ neutrino:
     decoupled about one second after the Big Bang and still fill the universe as a
     cosmic neutrino background.
   see_also: [decoupling, radiation]
-  lessons: [L4.1]
+  lessons: [L4.1, L4.5]
 
 nucleosynthesis:
   term: Big Bang nucleosynthesis (BBN)
@@ -790,3 +790,91 @@ transverse-comoving-distance:
     comoving sizes and angles. It equals the comoving distance in a flat universe.
   see_also: [comoving-distance, curvature]
   lessons: [L2.7]
+
+antimatter:
+  term: Antimatter
+  definition: >
+    Matter made of antiparticles, which have the same mass as their partners but
+    opposite charge. A particle and its antiparticle annihilate into energy. The
+    observable universe contains almost no antimatter.
+  see_also: [baryogenesis, baryon]
+  lessons: [L4.6]
+
+baryogenesis:
+  term: Baryogenesis
+  definition: >
+    The unknown process in the early universe that created a small excess of baryons
+    over antibaryons, leaving the matter we see today.
+  see_also: [sakharov-conditions, leptogenesis, baryon-to-photon-ratio]
+  lessons: [L4.6]
+
+cosmic-neutrino-background:
+  term: Cosmic neutrino background (CνB)
+  definition: >
+    The relic neutrinos that decoupled about one second after the Big Bang. They fill
+    space with about 336 neutrinos per cubic centimetre at a temperature of 1.95 K,
+    but have not been detected directly.
+  see_also: [neutrino, cmb, effective-neutrino-number]
+  lessons: [L4.5]
+
+cp-violation:
+  term: CP violation
+  definition: >
+    A difference between the behaviour of particles and the mirror image of their
+    antiparticles. It is observed in quark and possibly neutrino interactions and is
+    required to create the matter–antimatter asymmetry.
+  see_also: [sakharov-conditions, baryogenesis]
+  lessons: [L4.6]
+
+effective-neutrino-number:
+  term: Effective number of neutrino species (N_eff)
+  definition: >
+    A parameter measuring the energy density of relativistic particles other than
+    photons. The Standard Model predicts 3.044; nucleosynthesis and the CMB measure a
+    value close to 3.
+  see_also: [cosmic-neutrino-background, radiation]
+  lessons: [L4.5]
+
+globular-cluster:
+  term: Globular cluster
+  definition: >
+    A dense, spherical group of hundreds of thousands of old stars orbiting in a
+    galaxy's halo. Their stellar populations give ages of about 12–13.5 billion
+    years, a lower limit on the age of the universe.
+  see_also: [age-of-universe, milky-way]
+  lessons: [L3.5]
+
+hubble-tension:
+  term: Hubble tension
+  definition: >
+    The disagreement between the Hubble constant inferred from the early universe
+    (CMB, about 67–68 km/s/Mpc) and measured locally with Cepheids and supernovae
+    (about 73 km/s/Mpc).
+  see_also: [hubble-constant, lambda-cdm]
+  lessons: [L3.5, L3.4]
+
+leptogenesis:
+  term: Leptogenesis
+  definition: >
+    A proposed origin of the matter excess: decays of very heavy neutrinos create a
+    lepton asymmetry, which sphaleron processes partly convert into a baryon
+    asymmetry.
+  see_also: [baryogenesis, sphaleron, neutrino]
+  lessons: [L4.6]
+
+sakharov-conditions:
+  term: Sakharov conditions
+  definition: >
+    The three requirements for creating a baryon asymmetry (Sakharov, 1967): baryon
+    number violation, C and CP violation, and a departure from thermal equilibrium.
+  see_also: [baryogenesis, cp-violation]
+  lessons: [L4.6]
+
+sphaleron:
+  term: Sphaleron
+  definition: >
+    A process in the Standard Model, efficient at temperatures above about 100 GeV,
+    that changes the numbers of baryons and leptons while conserving their
+    difference.
+  see_also: [leptogenesis, baryogenesis]
+  lessons: [L4.6]

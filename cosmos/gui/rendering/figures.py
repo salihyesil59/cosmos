@@ -12,6 +12,7 @@ import io
 import numpy as np
 from matplotlib.backends.backend_agg import FigureCanvasAgg
 from matplotlib.figure import Figure
+from matplotlib.ticker import NullFormatter
 
 from cosmos.gui.theme import Palette, style_axes, style_legend
 from cosmos.physics import constants as const
@@ -391,3 +392,97 @@ def _angular_size(fig, p: Palette):
     ax.set_title("Apparent size of a galaxy 30 kpc across", fontsize=9)
     ax.set_ylim(0.5, 100)
     ax.legend(loc="upper right", fontsize=8)
+
+
+@figure("age_integrand")
+def _age_integrand(fig, p: Palette):
+    ax = fig.add_subplot()
+    c = PRESETS["planck18"].cosmology
+    a = np.linspace(1e-4, 1.0, 600)
+    integrand = 1.0 / np.sqrt(a * a * c.E2_of_a(a)) * c.hubble_time
+    ax.fill_between(a, 0, integrand, color=p.series[0], alpha=0.25, linewidth=0)
+    ax.plot(a, integrand, color=p.series[0], linewidth=2.2, label="1 / (a H)  — time spent per unit growth of a")
+    eds = PRESETS["eds"].cosmology.with_params(H0=c.H0)
+    ax.plot(a, 1.0 / np.sqrt(a * a * eds.E2_of_a(a)) * eds.hubble_time, color=p.series[1], linestyle="--",
+            linewidth=1.6, label="Einstein–de Sitter (matter only)")
+    ax.text(0.5, 3.5, f"shaded area = age\n≈ {c.age():.1f} billion years", color=p.text, fontsize=9, ha="center")
+    ax.set_xlim(0, 1)
+    ax.set_ylim(0, 30)
+    ax.set_xlabel("Scale factor a  (Big Bang → today)")
+    ax.set_ylabel("dt/da (billion years)")
+    ax.legend(loc="upper right", fontsize=8)
+
+
+@figure("age_vs_matter")
+def _age_vs_matter(fig, p: Palette):
+    from cosmos.physics.cosmology import Cosmology
+
+    ax = fig.add_subplot()
+    h0 = PRESETS["planck18"].cosmology.H0
+    om = np.linspace(0.05, 1.5, 60)
+    flat = [Cosmology(H0=h0, Om0=m, Ode0=1 - m, Tcmb0=0).age() for m in om]
+    open_ = [Cosmology(H0=h0, Om0=m, Ode0=0.0, Tcmb0=0).age() for m in om]
+    ax.axhspan(12.0, 13.5, color=p.accent2, alpha=0.15, linewidth=0)
+    ax.text(1.02, 12.25, "ages of the oldest stars", color=p.accent2, fontsize=8)
+    ax.plot(om, flat, color=p.series[0], linewidth=2.2, label="Flat, with dark energy (ΩΛ = 1 − Ωm)")
+    ax.plot(om, open_, color=p.series[3], linewidth=2.2, label="No dark energy (ΩΛ = 0)")
+    ax.scatter([0.31], [PRESETS["planck18"].cosmology.age()], color=p.accent2, zorder=4, marker="*", s=120,
+               label="Our universe (Planck 2018)")
+    ax.set_xlabel("Matter density Ωm")
+    ax.set_ylabel("Age of the universe (billion years)")
+    ax.set_title(f"H0 = {h0:.1f} km/s/Mpc", fontsize=9)
+    ax.set_ylim(6, 26)
+    ax.legend(loc="upper right", fontsize=8)
+
+
+@figure("neutrino_decoupling")
+def _neutrino_decoupling(fig, p: Palette):
+    from cosmos.physics import thermal
+
+    fig.set_layout_engine("constrained")
+    ax1, ax2 = fig.subplots(1, 2)
+    t = np.logspace(-1.5, 1.5, 200)
+    ax1.loglog(t, thermal.weak_rate_over_hubble(t), color=p.series[0], linewidth=2.2)
+    ax1.axhline(1, color=p.muted, linestyle=":")
+    t_dec = thermal.neutrino_decoupling_temperature()
+    ax1.axvline(t_dec, color=p.accent2, linestyle="--", linewidth=1)
+    ax1.text(t_dec * 1.15, 1e-3, f"decoupling\n≈ {t_dec:.1f} MeV", color=p.accent2, fontsize=8)
+    ax1.text(4, 3e2, "coupled", color=p.text, fontsize=8)
+    ax1.text(0.05, 3e-3, "free\nstreaming", color=p.text, fontsize=8)
+    ax1.set_xlabel("Temperature (MeV)  → cooling")
+    ax1.set_ylabel("Weak rate Γ ÷ expansion rate H")
+    ax1.invert_xaxis()
+    ax1.set_title("Neutrinos decouple", fontsize=9)
+
+    t2 = np.logspace(1, -2, 80)
+    ax2.semilogx(t2, thermal.neutrino_to_photon_temperature(t2), color=p.series[2], linewidth=2.2)
+    ax2.axhline(thermal.RELIC_NEUTRINO_RATIO, color=p.muted, linestyle=":")
+    ax2.text(8, thermal.RELIC_NEUTRINO_RATIO + 0.01, "(4/11)^(1/3) ≈ 0.714", color=p.muted, fontsize=8)
+    ax2.axvline(thermal.M_ELECTRON_MEV, color=p.accent2, linestyle="--", linewidth=1)
+    ax2.text(thermal.M_ELECTRON_MEV * 1.2, 0.80, "mₑc²", color=p.accent2, fontsize=8, ha="right")
+    ax2.set_xlabel("Photon temperature (MeV)  → cooling")
+    ax2.set_ylabel("T_ν / T_γ")
+    ax2.set_ylim(0.68, 1.03)
+    ax2.invert_xaxis()
+    ax2.set_title("e⁺e⁻ annihilation heats photons", fontsize=9)
+
+
+@figure("baryon_asymmetry")
+def _baryon_asymmetry(fig, p: Palette):
+    from cosmos.physics import thermal
+
+    ax = fig.add_subplot()
+    t = np.logspace(np.log10(12), np.log10(200), 300)
+    eq = thermal.nucleon_equilibrium_ratio(t)
+    eta = 6.1e-10
+    ax.loglog(t, eq, color=p.series[0], linewidth=2.2, label="Nucleons per photon in thermal equilibrium")
+    ax.axhline(eta, color=p.accent2, linewidth=2, label="Observed baryon excess η ≈ 6 × 10⁻¹⁰")
+    ax.axhline(1e-18, color=p.danger, linestyle="--", linewidth=1.5,
+               label="Leftover if matter and antimatter were equal (≈ 10⁻¹⁸)")
+    ax.set_xlabel("Temperature (MeV)   → the universe cools")
+    ax.set_ylabel("Number per photon")
+    ax.set_ylim(1e-22, 1)
+    ax.set_xticks([200, 100, 50, 20], ["200", "100", "50", "20"])
+    ax.xaxis.set_minor_formatter(NullFormatter())
+    ax.invert_xaxis()
+    ax.legend(loc="lower left", fontsize=8)
