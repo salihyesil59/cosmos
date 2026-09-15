@@ -10,7 +10,7 @@ from cosmos.gui.context import AppContext
 from cosmos.gui.theme import theme
 from cosmos.progress import LessonStatus
 
-NODE_W, NODE_H = 210, 58
+NODE_W, NODE_H = 236, 58
 COL_GAP, ROW_GAP = 70, 18
 HEADER_H = 50
 

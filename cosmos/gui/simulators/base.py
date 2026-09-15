@@ -11,7 +11,7 @@ from cosmos.gui.simulators.registry import SimulatorInfo
 class SimulatorBase(QWidget):
     """Base class. Subclasses fill ``self.controls`` and ``self.display``."""
 
-    CONTROL_WIDTH = 330
+    CONTROL_WIDTH = 350
 
     def __init__(self, info: SimulatorInfo, parent: QWidget | None = None):
         super().__init__(parent)
@@ -26,6 +26,7 @@ class SimulatorBase(QWidget):
 
         scroll = QScrollArea()
         scroll.setWidgetResizable(True)
+        scroll.setHorizontalScrollBarPolicy(Qt.ScrollBarAlwaysOff)
         scroll.setMinimumWidth(self.CONTROL_WIDTH)
         scroll.setMaximumWidth(self.CONTROL_WIDTH + 80)
         controls_host = QWidget()

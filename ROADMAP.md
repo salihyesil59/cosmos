@@ -28,61 +28,63 @@ Legend: `[x]` done · `[ ]` planned
 
 ## Phase 1 — Core application
 
+**Status:** completed on 2026-09-15.
+
 ### Curriculum
 
 **Level 0 — Foundations**
-- [ ] `L0.1` Scales of the Universe
-- [ ] `L0.2` Distance units: AU, light-year, parsec, megaparsec
-- [ ] `L0.3` Light, spectra, the Doppler effect and redshift
-- [ ] `L0.4` Gravity, intuitively: from Newton to Einstein
+- [x] `L0.1` Scales of the Universe
+- [x] `L0.2` Distance units: AU, light-year, parsec, megaparsec
+- [x] `L0.3` Light, spectra, the Doppler effect and redshift
+- [x] `L0.4` Gravity, intuitively: from Newton to Einstein
 
 **Level 1 — Observational Cosmology**
-- [ ] `L1.1` The cosmic distance ladder
-- [ ] `L1.2` The Hubble–Lemaître law
-- [ ] `L1.3` The cosmological principle
+- [x] `L1.1` The cosmic distance ladder
+- [x] `L1.2` The Hubble–Lemaître law
+- [x] `L1.3` The cosmological principle
 
 **Level 2 — The Expanding Universe**
-- [ ] `L2.1` The scale factor; comoving vs. proper distance
-- [ ] `L2.2` Cosmological redshift vs. Doppler redshift
-- [ ] `L2.3` The Friedmann equations (Newtonian derivation)
-- [ ] `L2.4` Critical density and density parameters
-- [ ] `L2.5` The geometry of space: open, flat, closed
+- [x] `L2.1` The scale factor; comoving vs. proper distance
+- [x] `L2.2` Cosmological redshift vs. Doppler redshift
+- [x] `L2.3` The Friedmann equations (Newtonian derivation)
+- [x] `L2.4` Critical density and density parameters
+- [x] `L2.5` The geometry of space: open, flat, closed
 
 **Level 3 — Contents of the Universe**
-- [ ] `L3.1` Radiation, matter, dark energy and the equation of state
-- [ ] `L3.2` Evidence for dark matter
-- [ ] `L3.3` Dark energy and the accelerating universe
-- [ ] `L3.4` The ΛCDM model
+- [x] `L3.1` Radiation, matter, dark energy and the equation of state
+- [x] `L3.2` Evidence for dark matter
+- [x] `L3.3` Dark energy and the accelerating universe
+- [x] `L3.4` The ΛCDM model
 
 **Level 4 — Thermal History**
-- [ ] `L4.1` A timeline of the universe
-- [ ] `L4.2` Temperature in an expanding universe
-- [ ] `L4.3` Big Bang nucleosynthesis
-- [ ] `L4.4` Recombination and the last scattering surface
+- [x] `L4.1` A timeline of the universe
+- [x] `L4.2` Temperature in an expanding universe
+- [x] `L4.3` Big Bang nucleosynthesis
+- [x] `L4.4` Recombination and the last scattering surface
 
 ### Simulators
-- [ ] `S1` Cosmology Calculator
-- [ ] `S2` Expansion History Explorer (with the Ωm–ΩΛ plane)
-- [ ] `S3` Powers of Ten Zoom
-- [ ] `S4` Spectrum & Redshift Simulator
-- [ ] `S5` Hubble Diagram Fitter
-- [ ] `S6` Galaxy Rotation Curve
-- [ ] `S7` Balloon / Raisin-Bread Expansion
+- [x] `S1` Cosmology Calculator
+- [x] `S2` Expansion History Explorer (with the Ωm–ΩΛ plane)
+- [x] `S3` Powers of Ten Zoom
+- [x] `S4` Spectrum & Redshift Simulator
+- [x] `S5` Hubble Diagram Fitter
+- [x] `S6` Galaxy Rotation Curve
+- [x] `S7` Balloon / Raisin-Bread Expansion
 
 ### Guidance & learning
-- [ ] `G1` Lesson pages (text, formulas, figures, "Try it" links to simulators)
-- [ ] `G2` Guided tour on first launch
-- [ ] `G3` Tooltips and "?" info buttons on every control
-- [ ] `G4` Glossary with clickable terms inside lessons
-- [ ] `G5` Quizzes with explained answers
-- [ ] `G6` Progress tracking and prerequisite map
+- [x] `G1` Lesson pages (text, formulas, figures, "Try it" links to simulators)
+- [x] `G2` Guided tour on first launch
+- [x] `G3` Tooltips and "?" info buttons on every control
+- [x] `G4` Glossary with clickable terms inside lessons
+- [x] `G5` Quizzes with explained answers
+- [x] `G6` Progress tracking and prerequisite map
 
 ### Extras & quality
-- [ ] `E1` Bundled offline data (Planck 2018, WMAP9, Hubble 1929)
-- [ ] `E2` Export plots (PNG/SVG) and results (CSV)
-- [ ] `E3` Dark / light theme
-- [ ] `E4` Cosmology presets (Planck18, WMAP9, Einstein–de Sitter, …)
-- [ ] `E5` Physics engine unit tests against astropy
+- [x] `E1` Bundled offline data (Planck 2018, WMAP9, Hubble 1929)
+- [x] `E2` Export plots (PNG/SVG) and results (CSV)
+- [x] `E3` Dark / light theme
+- [x] `E4` Cosmology presets (Planck18, WMAP9, Einstein–de Sitter, …)
+- [x] `E5` Physics engine unit tests against astropy
 
 ---
 
