@@ -2,7 +2,8 @@
 
 The :class:`Cosmology` class describes a homogeneous, isotropic universe filled
 with radiation (photons + massless neutrinos), matter (baryons + cold dark
-matter) and dark energy with a constant equation of state ``w0``. Spatial
+matter) and dark energy with the equation of state ``w(a) = w0 + wa (1 - a)``
+(Chevallier–Polarski–Linder; ``wa = 0`` is a constant ``w``). Spatial
 curvature follows from the closure relation ``Ok0 = 1 - Or0 - Om0 - Ode0``.
 
 Conventions
@@ -30,6 +31,7 @@ class Fate(enum.Enum):
     ACCELERATES_FOREVER = "accelerates forever"
     EXPANDS_FOREVER = "expands forever"
     BIG_CRUNCH = "recollapses in a Big Crunch"
+    BIG_RIP = "ends in a Big Rip"
     NO_BIG_BANG = "has no Big Bang"
 
     @property
@@ -49,6 +51,10 @@ _FATE_EXPLANATIONS = {
     Fate.BIG_CRUNCH: (
         "Gravity wins: the expansion stops, reverses, and the universe collapses "
         "back into a hot, dense state."
+    ),
+    Fate.BIG_RIP: (
+        "Phantom dark energy (w < −1) grows denser as space expands. The expansion rate "
+        "diverges in a finite time and tears apart galaxies, stars and finally atoms."
     ),
     Fate.NO_BIG_BANG: (
         "Going back in time the universe never shrinks to zero size: dark energy "
@@ -82,7 +88,9 @@ class Cosmology:
     Neff:
         Effective number of massless neutrino species.
     w0:
-        Dark-energy equation of state ``p = w0 * rho * c^2``.
+        Dark-energy equation of state today, ``p = w rho c^2``.
+    wa:
+        Rate of change of the equation of state: ``w(a) = w0 + wa (1 - a)``.
     name:
         Human readable label.
     """
@@ -94,6 +102,7 @@ class Cosmology:
     Tcmb0: float = const.T_CMB
     Neff: float = const.NEFF
     w0: float = -1.0
+    wa: float = 0.0
     name: str = "Custom"
 
     # ------------------------------------------------------------------ build
@@ -169,6 +178,19 @@ class Cosmology:
         return self.critical_density(0.0)
 
     # -------------------------------------------------------- expansion rate
+    def w_of_a(self, a):
+        """Dark-energy equation of state at scale factor ``a``."""
+        return self.w0 + self.wa * (1.0 - np.asarray(a, dtype=float))
+
+    def de_density_ratio(self, a):
+        """Dark-energy density relative to today, ρ_de(a)/ρ_de,0."""
+        a = np.asarray(a, dtype=float)
+        with np.errstate(over="ignore", divide="ignore"):
+            ratio = a ** (-3.0 * (1.0 + self.w0 + self.wa))
+            if self.wa:
+                ratio = ratio * np.exp(-3.0 * self.wa * (1.0 - a))
+        return ratio
+
     def E2_of_a(self, a):
         """Squared normalised expansion rate ``(H/H0)^2`` as a function of ``a``."""
         a = np.asarray(a, dtype=float)
@@ -176,7 +198,7 @@ class Cosmology:
             self.Or0 * a**-4
             + self.Om0 * a**-3
             + self.Ok0 * a**-2
-            + self.Ode0 * a ** (-3.0 * (1.0 + self.w0))
+            + self.Ode0 * self.de_density_ratio(a)
         )
 
     def efunc(self, z):
@@ -205,12 +227,13 @@ class Cosmology:
 
     def Ode(self, z):
         """Dark-energy density parameter at redshift ``z``."""
-        zp1 = 1.0 + np.asarray(z, dtype=float)
-        return self.Ode0 * zp1 ** (3 * (1 + self.w0)) / self.efunc(z) ** 2
+        a = 1.0 / (1.0 + np.asarray(z, dtype=float))
+        return self.Ode0 * self.de_density_ratio(a) / self.efunc(z) ** 2
 
     def deceleration_parameter(self, z=0.0):
         """Deceleration parameter ``q = -a a'' / a'^2`` (negative = accelerating)."""
-        return self.Or(z) + 0.5 * self.Om(z) + 0.5 * (1 + 3 * self.w0) * self.Ode(z)
+        a = 1.0 / (1.0 + np.asarray(z, dtype=float))
+        return self.Or(z) + 0.5 * self.Om(z) + 0.5 * (1 + 3 * self.w_of_a(a)) * self.Ode(z)
 
     def Tcmb(self, z):
         """CMB temperature at redshift ``z`` [K]."""
@@ -236,13 +259,20 @@ class Cosmology:
             self.Or0 > tiny
             or self.Om0 > tiny
             or self.Ok0 > tiny
-            or (self.Ode0 > tiny and self.w0 > -1.0)
+            or (self.Ode0 > tiny and self.w0 + self.wa > -1.0)
         )
 
     def recollapses(self) -> bool:
         """True if the expansion halts and reverses in the future."""
         a = np.logspace(0, 6, 6000)
-        return bool(np.any(self.E2_of_a(a) < 0))
+        with np.errstate(over="ignore", invalid="ignore"):
+            return bool(np.any(self.E2_of_a(a) < 0))
+
+    def _late_time_w(self) -> float:
+        """Equation of state of dark energy in the far future."""
+        if self.wa == 0:
+            return self.w0
+        return -math.inf if self.wa > 0 else math.inf
 
     def fate(self) -> Fate:
         """Classify the universe's history and future."""
@@ -250,10 +280,20 @@ class Cosmology:
             return Fate.NO_BIG_BANG
         if self.recollapses():
             return Fate.BIG_CRUNCH
-        # Far in the future dark energy dominates if it has positive density.
-        if self.Ode0 > 0 and self.w0 < -1.0 / 3.0:
-            return Fate.ACCELERATES_FOREVER
+        if self.Ode0 > 0:
+            w_late = self._late_time_w()
+            if w_late < -1.0:
+                return Fate.BIG_RIP
+            if w_late < -1.0 / 3.0:
+                # Far in the future dark energy with positive density dominates.
+                return Fate.ACCELERATES_FOREVER
         return Fate.EXPANDS_FOREVER
+
+    def big_rip_time(self) -> float:
+        """Time from today until the Big Rip [Gyr] (``inf`` if there is none)."""
+        if self.fate() is not Fate.BIG_RIP:
+            return math.inf
+        return self._time_integral(1.0, math.inf) * self.hubble_time
 
     # ------------------------------------------------------------------ times
     def _time_integral(self, a_lo: float, a_hi: float) -> float:
@@ -368,7 +408,7 @@ class Cosmology:
         """
         if self.recollapses():
             return math.nan
-        if not (self.Ode0 > 0 and self.w0 < -1.0 / 3.0):
+        if not (self.Ode0 > 0 and self._late_time_w() < -1.0 / 3.0):
             return math.inf
         return self._conformal_integral(1.0 / (1.0 + z), math.inf) * self.hubble_distance
 
@@ -444,15 +484,15 @@ _A_MIN = 1e-3
 
 def _integrate_history(cosmo: Cosmology, t_future: float, a_max: float) -> ExpansionHistory:
     th = cosmo.hubble_time
-    w = cosmo.w0
 
     def rhs(_tau, y):
         a, adot = y
         a = max(a, 1e-9)
+        w = float(cosmo.w_of_a(a))
         addot = a * (
             -cosmo.Or0 * a**-4
             - 0.5 * cosmo.Om0 * a**-3
-            - 0.5 * (1 + 3 * w) * cosmo.Ode0 * a ** (-3 * (1 + w))
+            - 0.5 * (1 + 3 * w) * cosmo.Ode0 * float(cosmo.de_density_ratio(a))
         )
         return [adot, addot]
 

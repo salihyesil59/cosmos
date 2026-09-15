@@ -37,6 +37,21 @@ PRESETS: dict[str, Preset] = {
             _flat("WMAP 9-year", H0=69.32, Om0=0.2865, Ob0=0.04628, Tcmb0=2.725, Neff=3.04),
         ),
         Preset(
+            "evolving_de",
+            "Evolving dark energy (DESI-like)",
+            "An illustrative flat w0waCDM model with w0 = −0.75 and wa = −0.9, close to the "
+            "2025 fits combining DESI baryon acoustic oscillations, the CMB and supernovae. "
+            "Dark energy was stronger in the past and is slowly weakening.",
+            Cosmology.flat(H0=66.7, Om0=0.319, Ob0=0.049, w0=-0.75, wa=-0.9, name="Evolving dark energy"),
+        ),
+        Preset(
+            "phantom",
+            "Phantom dark energy (w = −1.3)",
+            "A flat universe whose dark energy has w = −1.3, below the cosmological-constant value. "
+            "Its density grows as space expands and the universe ends in a Big Rip.",
+            Cosmology.flat(H0=70.0, Om0=0.3, Ob0=0.05, Tcmb0=0.0, w0=-1.3, name="Phantom dark energy"),
+        ),
+        Preset(
             "concordance",
             "Round-number ΛCDM",
             "A textbook model with easy-to-remember numbers: H0 = 70, Ωm = 0.3, "
