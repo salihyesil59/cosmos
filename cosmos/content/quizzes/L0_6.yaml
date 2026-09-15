@@ -1,0 +1,36 @@
+- question: "What does Olbers' paradox claim about an infinite, eternal, static universe filled evenly with stars?"
+  choices:
+    - "The night sky would be completely dark"
+    - "Every line of sight would end on a star, so the whole sky would be bright"
+    - "Stars would collapse into a single black hole"
+    - "Only the Milky Way would be visible"
+  answer: 1
+  explanation: "Like trees in an endless forest, stars would cover every direction, making the sky as bright as a star's surface."
+- question: "In the shell argument, why does every shell of stars send us the same amount of light?"
+  choices:
+    - "All stars are at the same distance"
+    - "The number of stars grows as r² while each star's brightness falls as 1/r²"
+    - "Distant stars are more luminous"
+    - "Light does not lose brightness with distance"
+  answer: 1
+  explanation: "The r² from the shell's volume cancels the 1/r² of the inverse-square law, so each shell contributes n L dr."
+- question: "Why can interstellar dust not solve the paradox?"
+  choices:
+    - "There is no dust in space"
+    - "Dust in an eternal universe would heat up until it glowed as brightly as the starlight"
+    - "Dust only absorbs radio waves"
+    - "Dust reflects all light back to Earth"
+  answer: 1
+  explanation: "Absorbed energy has to go somewhere. Given enough time the dust reaches the temperature of the radiation and re-emits it."
+- question: "What is the main reason the night sky is dark?"
+  choices:
+    - "The expansion of the universe redshifts all starlight"
+    - "The universe has a finite age and stars have finite lifetimes"
+    - "Most stars are hidden behind the Moon"
+    - "The Earth's atmosphere absorbs starlight"
+  answer: 1
+  explanation: "We only receive light from a limited volume, and stars could never have filled the universe with that much light. Expansion helps, but only by a factor of a few."
+- question: "In which part of the spectrum does the whole sky glow almost uniformly?"
+  choices: ["Visible light", "X-rays", "Microwaves", "Gamma rays"]
+  answer: 2
+  explanation: "The cosmic microwave background comes from every direction: light from when the universe really was a hot glowing gas, now cooled to 2.7 K by expansion."

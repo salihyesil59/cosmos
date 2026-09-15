@@ -49,7 +49,8 @@ def render_png(name: str, palette: Palette, device_ratio: float = 1.0) -> bytes:
         style_axes(ax, palette)
         if ax.get_legend():
             style_legend(ax.get_legend(), palette)
-    fig.tight_layout()
+    if fig.get_layout_engine() is None:
+        fig.tight_layout()
     buf = io.BytesIO()
     fig.savefig(buf, format="png", facecolor=palette.surface)
     return buf.getvalue()
@@ -226,3 +227,97 @@ def _distance_ladder(fig, p: Palette):
     ticks = [-10, -8, -6, -4, -2, 0, 2, 4]
     ax.set_xticks(ticks, [f"$10^{{{t}}}$" for t in ticks])
     ax.set_xlabel("Distance (Mpc)")
+
+
+@figure("discovery_timeline")
+def _discovery_timeline(fig, p: Palette):
+    early = [
+        (1543, "Copernicus:\nSun at the centre"),
+        (1610, "Galileo's\ntelescope"),
+        (1687, "Newton's\ngravity"),
+        (1785, "Herschel maps\nthe Milky Way"),
+        (1823, "Olbers'\nparadox"),
+    ]
+    modern = [
+        (1915, "General\nrelativity"),
+        (1924, "Andromeda is\na galaxy"),
+        (1929, "Hubble–Lemaître\nlaw"),
+        (1948, "Big Bang vs.\nsteady state"),
+        (1965, "CMB\ndiscovered"),
+        (1992, "COBE sees\nCMB ripples"),
+        (1998, "Accelerating\nexpansion"),
+        (2018, "Planck final\nresults"),
+    ]
+    fig.set_layout_engine("constrained")
+    grid = fig.add_gridspec(1, 2, width_ratios=[1, 1.6])
+    for idx, (events, lo, hi) in enumerate([(early, 1520, 1850), (modern, 1905, 2030)]):
+        ax = fig.add_subplot(grid[idx])
+        ax.axhline(0, color=p.muted, linewidth=1.5)
+        for i, (year, label) in enumerate(events):
+            height = [1.0, -1.0, 2.0, -2.0][i % 4]
+            color = p.series[i % 6]
+            ax.plot([year, year], [0, height * 0.8], color=color, linewidth=1)
+            ax.scatter([year], [0], color=color, zorder=3, s=22)
+            ax.text(year, height * 0.85, f"{year}\n{label}", ha="center", va="bottom" if height > 0 else "top",
+                    fontsize=7, color=p.text)
+        ax.set_xlim(lo, hi)
+        ax.set_ylim(-3.2, 3.2)
+        ax.set_yticks([])
+        ax.grid(False)
+        if idx == 1:
+            ax.spines["left"].set_linestyle((0, (3, 3)))
+    fig.suptitle("Milestones of cosmology (note the change of time scale)", fontsize=9, color=p.text)
+
+
+@figure("olbers_sky_coverage")
+def _olbers_sky_coverage(fig, p: Palette):
+    ax = fig.add_subplot()
+    # A static universe with 10^9 Sun-like stars per cubic megaparsec.
+    n_stars = 1e9 / const.MPC**3
+    sigma = np.pi * 6.96e8**2
+    mean_free_path = 1 / (n_stars * sigma) / const.LIGHT_YEAR
+    r = np.logspace(6, 26, 400)
+    covered = -np.expm1(-r / mean_free_path)
+    ax.loglog(r, covered, color=p.series[0], linewidth=2.2, label="Fraction of the sky covered by stars")
+    horizon = 13.8e9
+    ax.axvline(horizon, color=p.accent2, linestyle="--", linewidth=1.2)
+    ax.text(horizon * 1.4, 1e-18, "light-travel limit\n(13.8 billion ly)", color=p.accent2, fontsize=8)
+    ax.axvline(mean_free_path, color=p.danger, linestyle=":", linewidth=1.2)
+    ax.text(mean_free_path * 1.5, 1e-6, "sky fully\ncovered\n(~10²⁴ ly)", color=p.danger, fontsize=8)
+    ax.set_xlabel("How far we can look (light-years)")
+    ax.set_ylabel("Fraction of sky covered")
+    ax.set_ylim(1e-20, 3)
+    ax.legend(loc="lower right", fontsize=8)
+
+
+@figure("cosmic_web_illustration")
+def _cosmic_web(fig, p: Palette):
+    from scipy.spatial import Voronoi
+
+    rng = np.random.default_rng(42)
+    seeds = np.column_stack([rng.uniform(-0.2, 2.0, 110), rng.uniform(-0.2, 1.2, 110)])
+    vor = Voronoi(seeds)
+    points = []
+    for a, b in vor.ridge_vertices:
+        if a < 0 or b < 0:
+            continue
+        va, vb = vor.vertices[a], vor.vertices[b]
+        length = np.linalg.norm(vb - va)
+        k = int(260 * length) + 1
+        t = rng.uniform(0, 1, k)
+        pts = va + np.outer(t, vb - va) + rng.normal(0, 0.009, (k, 2))
+        points.append(pts)
+    for v in vor.vertices:
+        points.append(v + rng.normal(0, 0.012, (18, 2)))
+    points.append(rng.uniform(0, 1, (200, 2)) * [1.8, 1.0])
+    pts = np.vstack(points)
+    inside = (pts[:, 0] > 0) & (pts[:, 0] < 1.8) & (pts[:, 1] > 0) & (pts[:, 1] < 1)
+    pts = pts[inside]
+    ax = fig.add_subplot()
+    ax.scatter(pts[:, 0], pts[:, 1], s=1.2, color=p.series[0], alpha=0.75, linewidths=0)
+    ax.set_xlim(0, 1.8)
+    ax.set_ylim(0, 1)
+    ax.set_aspect("equal")
+    ax.set_axis_off()
+    ax.set_title("Illustration (not real data): galaxies trace filaments and clusters around empty voids",
+                 fontsize=8, color=p.text)

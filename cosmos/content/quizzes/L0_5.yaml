@@ -1,0 +1,40 @@
+- question: "Why did many ancient astronomers reject the idea that the Earth moves around the Sun?"
+  choices:
+    - "They had measured the Earth's orbit and found it was too small"
+    - "No stellar parallax could be seen, and the ground does not seem to move"
+    - "The Sun was known to be smaller than the Earth"
+    - "Religious texts described the orbit of the Earth"
+  answer: 1
+  explanation: "A moving Earth should make nearby stars shift slightly during the year. The shift exists but is far too small for the naked eye, so the objection seemed strong."
+- question: "What were Ptolemy's epicycles designed to explain?"
+  choices:
+    - "The phases of the Moon"
+    - "The apparent backward (retrograde) motion of planets"
+    - "The expansion of the universe"
+    - "The colours of stars"
+  answer: 1
+  explanation: "Placing each planet on a small circle moving along a larger circle reproduced retrograde motion in an Earth-centred model."
+- question: "Which contribution came from astronomers in the medieval Islamic world?"
+  choices:
+    - "The discovery of galaxies beyond the Milky Way"
+    - "The Tusi couple and improved planetary models and star catalogues"
+    - "The first telescope observations of Jupiter's moons"
+    - "The law of universal gravitation"
+  answer: 1
+  explanation: "Al-Tusi, Ibn al-Shatir, Ulugh Beg and others improved measurements and models; some of their techniques resemble those later used by Copernicus."
+- question: "What did the 1920 Great Debate between Shapley and Curtis concern?"
+  choices:
+    - "Whether the Earth or the Sun is at the centre of the Solar System"
+    - "Whether spiral nebulae are inside the Milky Way or separate galaxies"
+    - "Whether the universe is expanding"
+    - "The temperature of the cosmic microwave background"
+  answer: 1
+  explanation: "Hubble resolved it in 1924 using Cepheids in Andromeda: spiral nebulae are galaxies far beyond the Milky Way."
+- question: "Which observation most clearly ruled out the steady state theory?"
+  choices:
+    - "The Hubble–Lemaître law"
+    - "The discovery of the cosmic microwave background in 1965"
+    - "Kepler's laws of planetary motion"
+    - "The existence of the Andromeda galaxy"
+  answer: 1
+  explanation: "A universe that always looks the same has no natural source for a uniform relic radiation; a hot Big Bang predicts it."

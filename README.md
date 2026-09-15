@@ -11,7 +11,7 @@ on first launch.
 
 ## Features
 
-- **20 lessons in 5 levels**: Foundations, Observational Cosmology, The Expanding
+- **24 lessons in 5 levels**: Foundations, Observational Cosmology, The Expanding
   Universe, Contents of the Universe, Thermal History
 - **7 simulators**
   - Cosmology Calculator: ages, distances and more at any redshift
@@ -21,9 +21,9 @@ on first launch.
   - Hubble Diagram Fitter: Hubble's 1929 data and a simulated modern sample
   - Galaxy Rotation Curve: find the dark matter halo
   - Balloon & Raisin-Bread Expansion: expansion with no centre
-- **100 quiz questions** with explanations; score 70% or more to complete a
+- **120 quiz questions** with explanations; score 70% or more to complete a
   lesson
-- **76-term glossary**: terms in lessons open their definitions in the Guide panel
+- **87-term glossary**: terms in lessons open their definitions in the Guide panel
 - Tooltips and **?** buttons on every control
 - Progress tracking with a prerequisite map
 - Dark and light themes
