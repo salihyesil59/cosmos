@@ -93,12 +93,12 @@ Legend: `[x]` done · `[ ]` planned
 ### Curriculum
 
 **Level 0 — Foundations**
-- [ ] `L0.5` A history of cosmology: from geocentrism to the Big Bang
-- [ ] `L0.6` Olbers' paradox: why is the night sky dark?
+- [x] `L0.5` A history of cosmology: from geocentrism to the Big Bang
+- [x] `L0.6` Olbers' paradox: why is the night sky dark?
 
 **Level 1 — Observational Cosmology**
-- [ ] `L1.4` Galaxies, clusters and the cosmic web
-- [ ] `L1.5` The discovery of the cosmic microwave background
+- [x] `L1.4` Galaxies, clusters and the cosmic web
+- [x] `L1.5` The discovery of the cosmic microwave background
 
 **Level 2 — The Expanding Universe**
 - [ ] `L2.6` Horizons: particle horizon, Hubble sphere, event horizon

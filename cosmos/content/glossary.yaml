@@ -52,7 +52,7 @@ big-bang:
     cooling. It was not an explosion at a point in space; space itself expanded
     everywhere.
   see_also: [scale-factor, nucleosynthesis, cmb]
-  lessons: [L4.1, L1.3]
+  lessons: [L4.1, L1.3, L0.5]
 
 big-crunch:
   term: Big Crunch
@@ -70,7 +70,7 @@ blackbody:
     on temperature. The cosmic microwave background is the most perfect blackbody
     ever measured.
   see_also: [cmb, spectrum]
-  lessons: [L4.2, L4.4]
+  lessons: [L4.2, L4.4, L1.5]
 
 blueshift:
   term: Blueshift
@@ -113,7 +113,7 @@ cmb:
     formed. Today it fills the universe as microwaves with a blackbody temperature of
     2.7255 K and tiny fluctuations of one part in 100 000.
   see_also: [recombination, last-scattering-surface, blackbody]
-  lessons: [L4.4, L1.3]
+  lessons: [L4.4, L1.3, L1.5]
 
 comoving-distance:
   term: Comoving distance
@@ -292,7 +292,7 @@ galaxy:
     A gravitationally bound system of stars, gas, dust and dark matter, containing
     from millions to hundreds of billions of stars.
   see_also: [milky-way, local-group]
-  lessons: [L0.1]
+  lessons: [L0.1, L1.4]
 
 general-relativity:
   term: General relativity
@@ -406,7 +406,7 @@ local-group:
     The small group of galaxies containing the Milky Way, the Andromeda galaxy, the
     Triangulum galaxy and dozens of dwarf galaxies, about 3 Mpc across.
   see_also: [milky-way, galaxy]
-  lessons: [L0.1]
+  lessons: [L0.1, L1.4]
 
 lookback-time:
   term: Lookback time
@@ -465,7 +465,7 @@ milky-way:
     Our home galaxy, a barred spiral about 100 000 light-years across containing
     some 100–400 billion stars. The Sun lies about 8 kiloparsecs from its centre.
   see_also: [galaxy, local-group]
-  lessons: [L0.1]
+  lessons: [L0.1, L1.4]
 
 neutrino:
   term: Neutrino
@@ -491,7 +491,7 @@ observable-universe:
     space expanded while the light travelled, its radius today is about 46 billion
     light-years. The whole universe may be much larger or infinite.
   see_also: [cosmology, comoving-distance]
-  lessons: [L0.1]
+  lessons: [L0.1, L0.6]
 
 open-universe:
   term: Open universe
@@ -508,7 +508,7 @@ parallax:
     orbits the Sun. The distance in parsecs is 1 divided by the parallax angle in
     arcseconds.
   see_also: [parsec, distance-ladder]
-  lessons: [L0.2, L1.1]
+  lessons: [L0.2, L1.1, L0.5]
 
 parsec:
   term: Parsec (pc)
@@ -623,7 +623,7 @@ supercluster:
     A large grouping of galaxy clusters and groups, part of the cosmic web. The Milky
     Way lies in the Laniakea supercluster, about 520 million light-years across.
   see_also: [galaxy, local-group]
-  lessons: [L0.1]
+  lessons: [L0.1, L1.4]
 
 type-ia-supernova:
   term: Type Ia supernova
@@ -641,3 +641,101 @@ wavelength:
     colour or the band of the electromagnetic spectrum.
   see_also: [electromagnetic-spectrum, redshift]
   lessons: [L0.3]
+
+cosmic-web:
+  term: Cosmic web
+  definition: >
+    The large-scale pattern in which galaxies are arranged: filaments and sheets of
+    galaxies with clusters at their intersections, surrounding vast empty voids.
+  see_also: [void, galaxy-cluster, supercluster]
+  lessons: [L1.4]
+
+galaxy-cluster:
+  term: Galaxy cluster
+  definition: >
+    A gravitationally bound system of hundreds to thousands of galaxies with a total
+    mass of 10¹⁴–10¹⁵ solar masses, filled with X-ray emitting hot gas and dominated
+    by dark matter. The largest bound objects in the universe.
+  see_also: [local-group, supercluster, dark-matter]
+  lessons: [L1.4, L3.2]
+
+geocentric-model:
+  term: Geocentric model
+  definition: >
+    The ancient picture of the cosmos with a stationary Earth at the centre and the
+    Sun, Moon, planets and stars moving around it. Ptolemy's version with epicycles
+    was used for about 1 400 years.
+  see_also: [heliocentric-model]
+  lessons: [L0.5]
+
+heliocentric-model:
+  term: Heliocentric model
+  definition: >
+    The model in which the Earth and the other planets orbit the Sun. Proposed by
+    Aristarchus in antiquity and established by Copernicus (1543), Kepler, Galileo
+    and Newton.
+  see_also: [geocentric-model]
+  lessons: [L0.5]
+
+hubble-sequence:
+  term: Hubble sequence
+  definition: >
+    Edwin Hubble's classification of galaxies by shape (1926): elliptical,
+    lenticular, spiral and barred spiral, plus irregular galaxies. Often drawn as a
+    "tuning fork".
+  see_also: [galaxy]
+  lessons: [L1.4]
+
+olbers-paradox:
+  term: Olbers' paradox
+  definition: >
+    The puzzle that the night sky is dark although an infinite, eternal, static
+    universe full of stars would make it bright everywhere. It is resolved mainly by
+    the finite age of the universe and the finite lifetimes of stars.
+  see_also: [observable-universe, lookback-time]
+  lessons: [L0.6]
+
+quasar:
+  term: Quasar
+  definition: >
+    An extremely luminous active galactic nucleus, powered by gas falling onto a
+    supermassive black hole. Quasars can outshine their host galaxy and are seen
+    across most of cosmic history.
+  see_also: [supermassive-black-hole, galaxy]
+  lessons: [L1.4]
+
+redshift-survey:
+  term: Redshift survey
+  definition: >
+    A project that measures the redshifts, and therefore approximate distances, of
+    many galaxies to build a three-dimensional map of the universe. Examples: CfA,
+    2dFGRS, SDSS, DESI.
+  see_also: [cosmic-web, hubble-lemaitre-law]
+  lessons: [L1.4]
+
+steady-state-theory:
+  term: Steady state theory
+  definition: >
+    A cosmological model (Bondi, Gold and Hoyle, 1948) in which the universe expands
+    but always looks the same, with matter continuously created. It was abandoned
+    after the discovery of the cosmic microwave background.
+  see_also: [big-bang, cmb]
+  lessons: [L0.5, L1.5]
+
+supermassive-black-hole:
+  term: Supermassive black hole
+  definition: >
+    A black hole with millions to billions of solar masses, found at the centre of
+    almost every large galaxy. The Milky Way's, Sagittarius A*, has about four
+    million solar masses.
+  see_also: [quasar, milky-way]
+  lessons: [L1.4]
+
+void:
+  term: Cosmic void
+  definition: >
+    A huge, nearly empty region of space, typically 10–100 Mpc across, surrounded by
+    the filaments and walls of the cosmic web. Voids fill most of the universe's
+    volume.
+  see_also: [cosmic-web]
+  lessons: [L1.4]
