@@ -1,0 +1,36 @@
+- question: "In the spherical collapse model, a region has collapsed into a halo when its linearly extrapolated density contrast reaches..."
+  choices: ["0.01", "1.686", "200", "10⁶"]
+  answer: 1
+  explanation: "δ_c ≈ 1.686 is the critical linear overdensity; the resulting halo is about 200 times denser than average."
+- question: "In a cold dark matter universe, which objects form first?"
+  choices:
+    - "Galaxy clusters, which then fragment"
+    - "Small halos, which later merge into larger ones"
+    - "All objects form at the same time"
+    - "Superclusters"
+  answer: 1
+  explanation: "Fluctuations are larger on small mass scales, so structure grows hierarchically, bottom-up."
+- question: "Why are counts of massive galaxy clusters a sensitive test of cosmology?"
+  choices:
+    - "Their abundance depends exponentially on σ(M), so small changes in σ8 or Ωm change the number enormously"
+    - "Clusters are the only objects that contain dark energy"
+    - "Clusters never merge"
+    - "They are easy to see in visible light only"
+  answer: 0
+  explanation: "The factor exp(−ν²/2) in the mass function makes rare, massive halos highly sensitive to the fluctuation amplitude."
+- question: "How are initial conditions for a cosmological N-body simulation usually created?"
+  choices:
+    - "Particles are placed at random"
+    - "Particles on a grid are displaced slightly according to the linear power spectrum (Zel'dovich approximation)"
+    - "Particles start at rest in a single point"
+    - "Real galaxy positions are used as particles"
+  answer: 1
+  explanation: "Small displacements reproduce the tiny Gaussian density fluctuations predicted at high redshift."
+- question: "What universal result did Navarro, Frenk and White find in simulations?"
+  choices:
+    - "All halos have the same mass"
+    - "Halos of all masses share a similar density profile (the NFW profile)"
+    - "Dark matter forms perfect spheres of constant density"
+    - "Halos rotate faster than light"
+  answer: 1
+  explanation: "The NFW profile describes halos from dwarf galaxies to clusters and is used to model rotation curves and lensing."

@@ -9,7 +9,9 @@ from cosmos.content.loader import load_curriculum, load_glossary
 CURRICULUM = load_curriculum()
 GLOSSARY = load_glossary()
 LESSON_IDS = list(CURRICULUM.lessons)
-SIMULATOR_IDS = {f"S{i}" for i in range(1, 8)}
+from cosmos.gui.simulators.registry import SIMULATORS  # noqa: E402
+
+SIMULATOR_IDS = set(SIMULATORS)
 
 
 def test_every_level_has_lessons():

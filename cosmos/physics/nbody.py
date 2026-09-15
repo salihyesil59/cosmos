@@ -128,9 +128,18 @@ class NBodySimulation:
         idx = (self.pos * g).astype(int) % g
         return float(np.mean(delta[idx[:, 0], idx[:, 1]] > threshold))
 
-    def density_image(self, pixels: int = 256) -> np.ndarray:
-        """Log-scaled density map in the range 0..1 for display."""
+    def density_image(self, pixels: int | None = None, smoothing: float = 0.7) -> np.ndarray:
+        """Log-scaled density map in the range 0..1 for display.
+
+        ``smoothing`` is a Gaussian width in pixels that removes particle shot noise.
+        """
+        pixels = pixels or self.config.particles_per_side
         rho = _deposit_cic(self.pos, pixels)
+        if smoothing > 0:
+            freq = np.fft.fftfreq(pixels)
+            fx, fy = np.meshgrid(freq, freq, indexing="ij")
+            kernel = np.exp(-2 * (math.pi * smoothing) ** 2 * (fx * fx + fy * fy))
+            rho = np.clip(np.real(np.fft.ifft2(np.fft.fft2(rho) * kernel)), 0, None)
         rho = rho / rho.mean()
         img = np.log10(np.clip(rho, 0.05, None))
         return np.clip((img + 1.3) / 2.8, 0.0, 1.0)

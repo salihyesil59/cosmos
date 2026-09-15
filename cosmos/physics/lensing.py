@@ -80,7 +80,7 @@ def point_lens_magnification(beta: float, theta_e: float) -> float:
     return (u * u + 2) / (u * math.sqrt(u * u + 4))
 
 
-def background_sky(n: int = 400, field_arcsec: float = 20.0, seed: int = 5, n_galaxies: int = 26):
+def background_sky(n: int = 400, field_arcsec: float = 20.0, seed: int = 5, n_galaxies: int = 70):
     """Procedural image of background galaxies (RGB float array, values 0..1)."""
     rng = np.random.default_rng(seed)
     coords = (np.arange(n) + 0.5) / n * field_arcsec - field_arcsec / 2
@@ -89,7 +89,7 @@ def background_sky(n: int = 400, field_arcsec: float = 20.0, seed: int = 5, n_ga
     colours = np.array([[0.55, 0.7, 1.0], [1.0, 0.85, 0.6], [0.9, 0.6, 0.9], [0.7, 1.0, 0.85]])
     for _ in range(n_galaxies):
         cx, cy = rng.uniform(-field_arcsec / 2, field_arcsec / 2, 2)
-        size = rng.uniform(0.25, 0.9)
+        size = rng.uniform(0.008, 0.025) * field_arcsec
         q = rng.uniform(0.35, 1.0)
         ang = rng.uniform(0, math.pi)
         dx, dy = x - cx, y - cy

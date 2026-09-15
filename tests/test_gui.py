@@ -139,3 +139,39 @@ def test_theme_toggle_and_tour(window):
         overlay.go(overlay.index + 1)
         pump()
     assert window.ctx.store.data.tour_completed
+
+
+def test_structure_simulators(window):
+    window.navigate("sim:S12")
+    s12 = window.stack.currentWidget().simulator
+    s12.omega_k.setValue(-0.08, emit=False)
+    s12.recompute()
+    assert s12.spec.peaks[0][0] < s12.reference.peaks[0][0]
+    s12.reset()
+    assert abs(s12.spec.peaks[0][0] - s12.reference.peaks[0][0]) < 1
+
+    window.navigate("sim:S13")
+    s13 = window.stack.currentWidget().simulator
+    s13.resolution.setCurrentIndex(0)
+    s13.restart()
+    s13._advance(40)
+    assert s13.sim.growth > 0.08
+    s13.warm.setChecked(True)
+    s13.restart()
+    assert s13.sim.config.cutoff > 0
+    s13.play.setChecked(True)
+    window.navigate("home")
+    assert not s13.play.isChecked()  # animation stops when leaving the page
+
+    window.navigate("sim:S14")
+    s14 = window.stack.currentWidget().simulator
+    for index in range(s14.kind.count()):
+        s14.kind.setCurrentIndex(index)
+        s14.background.setCurrentIndex(index % 2)
+        s14.recompute()
+        pump()
+    s14._move_source(0.0, 0.0)
+    s14.z_source.setValue(0.2, emit=False)
+    s14.z_lens.setValue(1.0, emit=False)
+    s14.recompute()  # source in front of the lens must show a warning, not crash
+    assert s14.banner.isVisibleTo(s14)
