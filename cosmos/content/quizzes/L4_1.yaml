@@ -1,0 +1,28 @@
+- question: "Which event happened first?"
+  choices: ["Recombination", "Big Bang nucleosynthesis", "Formation of the first stars", "Formation of the Sun"]
+  answer: 1
+  explanation: "Nucleosynthesis took place in the first minutes; recombination after 380 000 years; first stars after 100–200 million years; the Sun after 9.2 billion years."
+- question: "About when was the cosmic microwave background released?"
+  choices: ["3 minutes after the Big Bang", "380 000 years after the Big Bang", "1 billion years after the Big Bang", "Today"]
+  answer: 1
+  explanation: "At recombination, about 380 000 years after the Big Bang, the universe became transparent."
+- question: "What are the 'dark ages'?"
+  choices:
+    - "The era before the Big Bang"
+    - "The period after recombination and before the first stars formed"
+    - "The present epoch dominated by dark energy"
+    - "The time when dark matter was created"
+  answer: 1
+  explanation: "After the CMB was released, the universe contained neutral gas but no light sources until the first stars ignited."
+- question: "Which part of the cosmic timeline is the most speculative?"
+  choices: ["Recombination", "Nucleosynthesis", "The Planck era and inflation", "Reionisation"]
+  answer: 2
+  explanation: "Physics at the highest energies, including quantum gravity and inflation, has not been tested directly."
+- question: "What does the term 'Big Bang' refer to in modern cosmology?"
+  choices:
+    - "An explosion at the centre of the universe"
+    - "The hot, dense early state of the universe and its expansion"
+    - "The formation of the first galaxy"
+    - "The sound of the CMB"
+  answer: 1
+  explanation: "It describes the early hot, dense phase and the expansion of space everywhere, not an explosion at a point."

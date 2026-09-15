@@ -1,0 +1,36 @@
+- question: "What did the supernova teams discover in 1998?"
+  choices:
+    - "Distant supernovae are brighter than expected, so the expansion is slowing"
+    - "Distant supernovae are fainter than expected, so the expansion is accelerating"
+    - "Supernovae are not standard candles"
+    - "The universe is not expanding"
+  answer: 1
+  explanation: "Fainter means farther away than expected for their redshift, which requires an accelerating expansion."
+- question: "What is the deceleration parameter q0 for Ωm = 0.3 and ΩΛ = 0.7?"
+  choices: ["+0.55", "−0.55", "0", "−1"]
+  answer: 1
+  explanation: "q0 = Ωm/2 − ΩΛ = 0.15 − 0.7 = −0.55. Negative q means acceleration."
+- question: "Why did Einstein originally introduce the cosmological constant?"
+  choices:
+    - "To explain the acceleration of the universe"
+    - "To allow a static universe"
+    - "To explain the CMB"
+    - "To describe dark matter"
+  answer: 1
+  explanation: "In 1917 he believed the universe was static and used Λ to balance gravity. The expansion was discovered later."
+- question: "What is the 'cosmological constant problem'?"
+  choices:
+    - "Λ cannot be measured"
+    - "Quantum field theory estimates of vacuum energy exceed the observed value by up to 120 orders of magnitude"
+    - "Λ changes sign every billion years"
+    - "Λ violates energy conservation in laboratories"
+  answer: 1
+  explanation: "The observed dark energy density is tiny compared with naive quantum predictions, and nobody knows why."
+- question: "Which of these is NOT independent evidence for dark energy?"
+  choices:
+    - "Flat geometry combined with a low matter density"
+    - "Baryon acoustic oscillations"
+    - "Flat galaxy rotation curves"
+    - "The age of the universe compared with the oldest stars"
+  answer: 2
+  explanation: "Rotation curves are evidence for dark matter, not dark energy."

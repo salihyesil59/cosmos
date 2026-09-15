@@ -1,0 +1,28 @@
+- question: "What was the CMB temperature at redshift z = 9?"
+  choices: ["2.7 K", "24.5 K", "27.3 K", "270 K"]
+  answer: 2
+  explanation: "T = T0 (1 + z) = 2.7255 K × 10 ≈ 27.3 K."
+- question: "Why does a stretched blackbody spectrum stay a blackbody?"
+  choices:
+    - "Photons constantly collide with galaxies today"
+    - "Stretching all wavelengths by the same factor turns it into a blackbody of lower temperature"
+    - "It does not; the CMB is not a blackbody"
+    - "Dark energy keeps it hot"
+  answer: 1
+  explanation: "Every wavelength grows by the factor a, which is exactly a blackbody with T reduced by the same factor."
+- question: "Roughly what temperature was the universe one second after the Big Bang?"
+  choices: ["3 000 K", "10⁶ K", "10¹⁰ K", "10³² K"]
+  answer: 2
+  explanation: "In the radiation era T ≈ 10¹⁰ K × (t / 1 s)^(−1/2), giving about 10¹⁰ K at one second."
+- question: "When does a reaction 'freeze out' in the early universe?"
+  choices:
+    - "When the temperature reaches 0 K"
+    - "When its rate Γ drops below the expansion rate H"
+    - "When all particles are converted to photons"
+    - "When the universe starts accelerating"
+  answer: 1
+  explanation: "If particles meet less often than the universe doubles in size, the reaction effectively stops."
+- question: "About how many photons are there per baryon in the universe?"
+  choices: ["About 1", "About 1 000", "About 1.6 billion", "About 10⁶⁰"]
+  answer: 2
+  explanation: "η = nb/nγ ≈ 6 × 10⁻¹⁰, so there are about 1.6 × 10⁹ photons per baryon."

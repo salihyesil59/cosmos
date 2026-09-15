@@ -1,0 +1,32 @@
+- question: "Why were there fewer neutrons than protons in the early universe?"
+  choices:
+    - "Neutrons are slightly heavier, so fewer are present in thermal equilibrium"
+    - "Neutrons were destroyed by dark matter"
+    - "Protons are created by the expansion"
+    - "Neutrons are electrically charged"
+  answer: 0
+  explanation: "The neutron–proton mass difference of 1.29 MeV suppresses neutrons by the Boltzmann factor exp(−Δmc²/kT)."
+- question: "What is the deuterium bottleneck?"
+  choices:
+    - "Deuterium cannot exist in stars"
+    - "Numerous energetic photons destroyed deuterium until the universe cooled to about 10⁹ K"
+    - "Deuterium is too heavy to form"
+    - "The universe ran out of protons"
+  answer: 1
+  explanation: "With over a billion photons per baryon, enough photons can break the weakly bound deuterium until about 3 minutes."
+- question: "If n/p = 1/7 when nucleosynthesis starts, what is the helium-4 mass fraction?"
+  choices: ["About 7%", "About 14%", "About 25%", "About 50%"]
+  answer: 2
+  explanation: "Yp = 2(n/p)/(1 + n/p) = (2/7)/(8/7) = 0.25."
+- question: "Why did Big Bang nucleosynthesis produce almost no elements heavier than lithium?"
+  choices:
+    - "Heavy elements are unstable in hot conditions forever"
+    - "There are no stable nuclei with 5 or 8 nucleons, and the universe cooled and thinned too quickly"
+    - "Dark energy prevented fusion"
+    - "Heavy elements were formed but later decayed"
+  answer: 1
+  explanation: "These gaps block the easy fusion paths, and after about 20 minutes nuclei no longer had enough energy to fuse."
+- question: "If the universe contained more baryons, the leftover amount of deuterium would be..."
+  choices: ["larger", "smaller", "the same", "zero"]
+  answer: 1
+  explanation: "A higher baryon density burns deuterium into helium more efficiently, leaving less behind. This makes deuterium a baryon density meter."

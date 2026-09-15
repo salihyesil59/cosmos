@@ -1,0 +1,32 @@
+- question: "With H0 = 70 km/s/Mpc, how fast does a galaxy 200 Mpc away recede (ignoring peculiar motion)?"
+  choices: ["350 km/s", "1 400 km/s", "14 000 km/s", "140 000 km/s"]
+  answer: 2
+  explanation: "v = H0 d = 70 × 200 = 14 000 km/s."
+- question: "What is the Hubble time 1/H0 for H0 ≈ 70 km/s/Mpc?"
+  choices: ["About 1.4 billion years", "About 14 billion years", "About 140 billion years", "About 14 million years"]
+  answer: 1
+  explanation: "Converting units gives 1/H0 ≈ 4.4 × 10¹⁷ s ≈ 14 billion years, close to the true age of 13.8 billion years."
+- question: "Why did Hubble obtain H0 ≈ 500 km/s/Mpc in 1929?"
+  choices:
+    - "The universe expanded faster in 1929"
+    - "His distances were systematically too small because of calibration errors"
+    - "He measured the velocities incorrectly by a factor of seven"
+    - "He used the wrong speed of light"
+  answer: 1
+  explanation: "The linear pattern was correct, but the distance scale was off by about a factor of seven due to calibration problems."
+- question: "Every galaxy sees all other galaxies receding according to v = H0 d. What does this imply?"
+  choices:
+    - "The Milky Way is at the centre of the universe"
+    - "The expansion has no centre"
+    - "Galaxies are being pushed by a central explosion"
+    - "Only nearby galaxies are moving"
+  answer: 1
+  explanation: "Uniform expansion, like rising raisin bread, looks the same from every galaxy: there is no special centre."
+- question: "Why is the Andromeda galaxy approaching us despite cosmic expansion?"
+  choices:
+    - "The Hubble–Lemaître law is wrong"
+    - "Its peculiar velocity due to gravity exceeds the small expansion velocity at its distance"
+    - "Andromeda is inside the Milky Way"
+    - "Light from Andromeda is blueshifted by dust"
+  answer: 1
+  explanation: "At 0.78 Mpc the expansion velocity would only be about 55 km/s, much smaller than the motion caused by the gravitational pull between the two galaxies."

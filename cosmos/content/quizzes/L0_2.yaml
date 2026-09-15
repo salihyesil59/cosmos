@@ -1,0 +1,20 @@
+- question: "What does a light-year measure?"
+  choices: ["A time interval", "A distance", "A speed", "The brightness of a star"]
+  answer: 1
+  explanation: "A light-year is the distance light travels in one year, about 9.46 × 10¹⁵ m."
+- question: "A star has a parallax angle of 0.1 arcseconds. How far away is it?"
+  choices: ["0.1 pc", "1 pc", "10 pc", "100 pc"]
+  answer: 2
+  explanation: "d [pc] = 1 / p [arcsec] = 1 / 0.1 = 10 parsecs."
+- question: "Approximately how many light-years are there in one parsec?"
+  choices: ["0.31", "1", "3.26", "206 265"]
+  answer: 2
+  explanation: "1 pc ≈ 3.26 light-years. The number 206 265 is the number of AU in a parsec."
+- question: "Which unit is most convenient for distances between galaxies?"
+  choices: ["Astronomical unit", "Kilometre", "Megaparsec", "Light-second"]
+  answer: 2
+  explanation: "Galaxies are typically millions of parsecs apart, so the megaparsec (Mpc) is the standard unit of cosmology."
+- question: "If a star's parallax is smaller, the star is..."
+  choices: ["closer", "farther away", "brighter", "hotter"]
+  answer: 1
+  explanation: "Distance is inversely proportional to parallax: a smaller apparent shift means a larger distance."

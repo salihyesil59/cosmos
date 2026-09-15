@@ -1,0 +1,28 @@
+- question: "The critical density today corresponds roughly to..."
+  choices:
+    - "one grain of sand per cubic metre"
+    - "about five hydrogen atoms per cubic metre"
+    - "the density of air"
+    - "one galaxy per cubic metre"
+  answer: 1
+  explanation: "ρc ≈ 9 × 10⁻²⁷ kg/m³ for H0 = 70, about 5.5 hydrogen atoms per cubic metre."
+- question: "If the total density parameter Ω is greater than 1, space is..."
+  choices: ["open", "flat", "closed", "impossible to determine"]
+  answer: 2
+  explanation: "Ω + Ωk = 1, so Ω > 1 means Ωk < 0 and k > 0: a closed universe."
+- question: "How does the critical density depend on the expansion rate H?"
+  choices: ["It is proportional to H", "It is proportional to H²", "It is independent of H", "It is proportional to 1/H"]
+  answer: 1
+  explanation: "ρc = 3H²/(8πG): a faster expansion needs a higher density to be flat."
+- question: "In H² = H0²[Ωr a⁻⁴ + Ωm a⁻³ + Ωk a⁻² + ΩΛ], which term dominates at very early times (a → 0)?"
+  choices: ["Radiation", "Matter", "Curvature", "Dark energy"]
+  answer: 0
+  explanation: "a⁻⁴ grows fastest as a becomes small, so radiation dominates the early universe."
+- question: "What is the flatness problem?"
+  choices:
+    - "The Milky Way is a flat disk"
+    - "Deviations from Ω = 1 grow with time, so the early universe had to be extremely close to flat"
+    - "Space is flat, so the universe cannot expand"
+    - "Flat universes have no dark energy"
+  answer: 1
+  explanation: "For Ω to be close to 1 today, it had to equal 1 to about one part in 10⁶⁰ early on. Inflation is one proposed explanation."

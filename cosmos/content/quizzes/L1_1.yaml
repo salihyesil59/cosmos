@@ -1,0 +1,36 @@
+- question: "Why is parallax considered the foundation of the distance ladder?"
+  choices:
+    - "It works for all galaxies"
+    - "It uses pure geometry and needs no assumptions about the physics of stars"
+    - "It is the newest method"
+    - "It measures redshift directly"
+  answer: 1
+  explanation: "Parallax only uses the size of the Earth's orbit and a measured angle. All other rungs are calibrated with it."
+- question: "A standard candle is moved to twice its original distance. Its observed brightness becomes..."
+  choices: ["half", "one quarter", "one eighth", "unchanged"]
+  answer: 1
+  explanation: "Flux F = L / 4πd² falls with the square of distance: (1/2)² = 1/4."
+- question: "What did Henrietta Swan Leavitt discover about Cepheid variables?"
+  choices:
+    - "Their colour depends on their distance"
+    - "Brighter Cepheids pulsate with longer periods"
+    - "They are all at the same distance"
+    - "They are exploding white dwarfs"
+  answer: 1
+  explanation: "The period–luminosity relation lets astronomers find a Cepheid's luminosity from its period, making it a standard candle."
+- question: "Why are Type Ia supernovae useful for cosmology?"
+  choices:
+    - "They are nearby and easy to measure with parallax"
+    - "They are extremely bright and have standardisable peak luminosities"
+    - "They emit only radio waves"
+    - "They never fade"
+  answer: 1
+  explanation: "They can outshine a whole galaxy and, after correcting for their fading rate, their peak luminosities are nearly identical."
+- question: "What did Hubble's discovery of Cepheids in Andromeda show in the 1920s?"
+  choices:
+    - "Andromeda is a gas cloud inside the Milky Way"
+    - "Andromeda is a separate galaxy far outside the Milky Way"
+    - "The universe is contracting"
+    - "Cepheids do not exist in other galaxies"
+  answer: 1
+  explanation: "The Cepheid distance placed Andromeda far beyond the Milky Way's edge, proving it is a galaxy of its own."

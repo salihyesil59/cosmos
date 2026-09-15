@@ -1,0 +1,28 @@
+- question: "On a positively curved (closed) space, the angles of a large triangle add up to..."
+  choices: ["less than 180°", "exactly 180°", "more than 180°", "exactly 360°"]
+  answer: 2
+  explanation: "Like a triangle on a sphere: from the North Pole to the equator and back, all three angles can be 90°."
+- question: "Which geometry has a finite volume?"
+  choices: ["Open", "Flat", "Closed", "All of them"]
+  answer: 2
+  explanation: "A closed universe is finite but unbounded, like the surface of a sphere. Open and flat universes (in the simplest topology) are infinite."
+- question: "How do CMB hot and cold spots reveal the geometry of space?"
+  choices:
+    - "Their colours change with curvature"
+    - "A ruler of known size appears larger in closed space and smaller in open space"
+    - "They only exist in flat universes"
+    - "They rotate in curved space"
+  answer: 1
+  explanation: "The sound horizon at recombination is a known length. Curvature bends light rays and changes its apparent angle; about 1° indicates flat space."
+- question: "What is the current observational limit on the curvature parameter?"
+  choices: ["|Ωk| < 0.002", "|Ωk| ≈ 0.5", "Ωk = 1", "It has never been measured"]
+  answer: 0
+  explanation: "CMB plus baryon acoustic oscillations show space is flat to within about 0.2%."
+- question: "Can a spatially flat universe expand?"
+  choices:
+    - "No, flat means static"
+    - "Yes, flatness describes the geometry of space at each moment, not how distances change in time"
+    - "Only if it contains no matter"
+    - "Only if it is closed"
+  answer: 1
+  explanation: "Our universe is both flat and expanding. Spacetime as a whole is curved even when space is flat."

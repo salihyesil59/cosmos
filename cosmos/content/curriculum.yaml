@@ -1,0 +1,35 @@
+levels:
+  - number: 0
+    title: Foundations
+    description: >
+      No background needed. How big is the universe, how do we measure distances,
+      what can light tell us, and what is gravity?
+    lessons: [L0.1, L0.2, L0.3, L0.4]
+
+  - number: 1
+    title: Observational Cosmology
+    description: >
+      How astronomers measure the distances of galaxies, the discovery that the
+      universe is expanding, and the principle that makes cosmology possible.
+    lessons: [L1.1, L1.2, L1.3]
+
+  - number: 2
+    title: The Expanding Universe
+    description: >
+      The scale factor, cosmological redshift, the Friedmann equations, critical
+      density and the geometry of space.
+    lessons: [L2.1, L2.2, L2.3, L2.4, L2.5]
+
+  - number: 3
+    title: Contents of the Universe
+    description: >
+      Radiation, matter and dark energy; the evidence for dark matter and dark
+      energy; and the standard ΛCDM model.
+    lessons: [L3.1, L3.2, L3.3, L3.4]
+
+  - number: 4
+    title: Thermal History
+    description: >
+      The hot early universe: its timeline, how temperature evolves, the formation
+      of the first nuclei and the release of the cosmic microwave background.
+    lessons: [L4.1, L4.2, L4.3, L4.4]

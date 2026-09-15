@@ -1,0 +1,32 @@
+- question: "What did Vera Rubin and Kent Ford find about spiral galaxies?"
+  choices:
+    - "Their rotation speeds fall steeply beyond the visible disk"
+    - "Their rotation curves stay roughly flat far beyond the visible disk"
+    - "They do not rotate"
+    - "They rotate faster at the centre than any star could"
+  answer: 1
+  explanation: "Flat rotation curves mean the enclosed mass keeps growing with radius: galaxies are embedded in dark matter halos."
+- question: "If a galaxy's rotation speed v is constant with radius r, how does the enclosed mass M(r) grow?"
+  choices: ["M ∝ 1/r", "M is constant", "M ∝ r", "M ∝ r³"]
+  answer: 2
+  explanation: "M(r) = v²r/G, so constant v means M grows linearly with r."
+- question: "Why is the Bullet Cluster considered strong evidence for dark matter?"
+  choices:
+    - "It contains no galaxies"
+    - "Lensing shows most of the mass is separated from the hot gas that holds most ordinary matter"
+    - "It is the brightest cluster in the sky"
+    - "Its galaxies rotate backwards"
+  answer: 1
+  explanation: "After the collision, the gas slowed down in the middle while most of the mass passed through with the galaxies."
+- question: "Roughly what fraction of all matter is dark matter?"
+  choices: ["About 5%", "About 16%", "About 50%", "About 84%"]
+  answer: 3
+  explanation: "Ωm ≈ 0.31 and Ωb ≈ 0.049, so dark matter is about (0.31 − 0.049)/0.31 ≈ 84% of matter."
+- question: "Why can dark matter not simply be ordinary matter that is hard to see?"
+  choices:
+    - "Ordinary matter always glows"
+    - "Nucleosynthesis and the CMB independently limit ordinary matter to about 5% of the critical density"
+    - "Ordinary matter has no gravity"
+    - "Telescopes can see every atom"
+  answer: 1
+  explanation: "Two independent methods fix the amount of baryons, and it is far less than the total matter measured by gravity."

@@ -1,0 +1,28 @@
+- question: "A galaxy has redshift z = 3. How large was the universe, relative to today, when its light was emitted?"
+  choices: ["One third", "One quarter", "Three times larger", "The same size"]
+  answer: 1
+  explanation: "1 + z = 1/a gives a = 1/4: the universe was a quarter of its present size."
+- question: "Light was emitted when the scale factor was 0.2. What redshift do we measure?"
+  choices: ["0.2", "0.8", "4", "5"]
+  answer: 2
+  explanation: "1 + z = 1/0.2 = 5, so z = 4."
+- question: "What causes cosmological redshift?"
+  choices:
+    - "The galaxy moving through space at the moment it emits light"
+    - "The stretching of the light's wavelength as space expands during the journey"
+    - "Dust absorbing blue light"
+    - "The gravity of the Milky Way"
+  answer: 1
+  explanation: "The wavelength grows with the scale factor while the light travels; it is not a Doppler shift at emission."
+- question: "A supernova at z = 1 lasts 20 days in its own rest frame. How long does it appear to last to us?"
+  choices: ["10 days", "20 days", "40 days", "400 days"]
+  answer: 2
+  explanation: "Time intervals are stretched by 1 + z = 2, so the event appears to last 40 days."
+- question: "For which galaxies do the Doppler and cosmological pictures give the same result?"
+  choices:
+    - "Only for galaxies at z > 10"
+    - "For nearby galaxies with z much smaller than 1, where z ≈ v/c"
+    - "For all galaxies"
+    - "For none"
+  answer: 1
+  explanation: "At small redshift both give z ≈ H0 D / c. At large redshift the Doppler formula has no clear meaning."

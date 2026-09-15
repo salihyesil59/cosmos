@@ -1,0 +1,24 @@
+- question: "Two galaxies are 300 Mpc apart today. How far apart were they when the scale factor was a = 0.5?"
+  choices: ["75 Mpc", "150 Mpc", "300 Mpc", "600 Mpc"]
+  answer: 1
+  explanation: "Proper distance D = a χ = 0.5 × 300 Mpc = 150 Mpc. Their comoving distance stays 300 Mpc."
+- question: "What is the value of the scale factor today, by convention?"
+  choices: ["0", "0.5", "1", "It depends on the galaxy"]
+  answer: 2
+  explanation: "We define a(t0) = 1, so comoving distances equal today's proper distances."
+- question: "How is the Hubble parameter related to the scale factor?"
+  choices: ["H = a × ȧ", "H = ȧ / a", "H = a / ȧ", "H = ä / a"]
+  answer: 1
+  explanation: "H = ȧ/a is the fractional expansion rate. Multiplying by distance gives v = H D."
+- question: "Which distance stays constant for galaxies moving only with the expansion?"
+  choices: ["Proper distance", "Comoving distance", "Light-travel distance", "None of them"]
+  answer: 1
+  explanation: "Comoving distance is measured on the expanding grid, so it does not change."
+- question: "Galaxies beyond the Hubble distance recede faster than light. Does this violate relativity?"
+  choices:
+    - "Yes, so such galaxies cannot exist"
+    - "No, recession is the growth of space, not motion through space"
+    - "Yes, but only for a short time"
+    - "No, because the speed of light increases with distance"
+  answer: 1
+  explanation: "Special relativity limits local motion through space. The expansion of space between distant galaxies is not limited in this way."
