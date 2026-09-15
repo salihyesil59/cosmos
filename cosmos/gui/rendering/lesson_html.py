@@ -30,6 +30,8 @@ _CALLOUT = re.compile(r"^:::(\w+)[ \t]*(.*?)\n(.*?)^:::[ \t]*$", re.MULTILINE | 
 _FIGURE = re.compile(r"^\{\{figure:(\w+)\}\}[ \t]*$", re.MULTILINE)
 _DISPLAY_MATH = re.compile(r"\$\$(.+?)\$\$", re.DOTALL)
 _INLINE_MATH = re.compile(r"(?<![\\$])\$(?!\$)((?:[^$\\]|\\.)+?)\$")
+# Proportional line height would also scale images, so image blocks use 100%.
+_BLOCK_P = '<p align="center" style="line-height:100%; margin-top:10px; margin-bottom:10px;">'
 _GLOSSARY = re.compile(r"\[\[([\w-]+)(?:\|([^\]]+))?\]\]")
 
 CALLOUT_STYLES = {
@@ -120,7 +122,7 @@ class _Renderer:
 
     def _figure(self, name: str) -> str:
         png = figures.render_png(name, self.ctx.palette, self.ctx.device_ratio)
-        return f'<p align="center">{self._image(f"figure:{name}", png)}</p>'
+        return f'{_BLOCK_P}{self._image(f"figure:{name}", png)}</p>'
 
     def _inline_markdown(self, text: str) -> str:
         out = markdown.markdown(self._prepare(text))
@@ -139,7 +141,7 @@ class _Renderer:
         )
         text = _FIGURE.sub(lambda m: "\n" + self._token(self._figure(m.group(1))) + "\n", text)
         text = _DISPLAY_MATH.sub(
-            lambda m: "\n\n" + self._token(f'<p align="center">{self._math_img(m.group(1), True)}</p>') + "\n\n",
+            lambda m: "\n\n" + self._token(f'{_BLOCK_P}{self._math_img(m.group(1), True)}</p>') + "\n\n",
             text,
         )
         text = _INLINE_MATH.sub(lambda m: self._token(self._math_img(m.group(1), False)), text)

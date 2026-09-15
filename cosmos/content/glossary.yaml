@@ -17,7 +17,7 @@ angular-diameter-distance:
     on the sky. In an expanding universe it differs from other distance measures, and
     it even decreases again for very distant objects.
   see_also: [luminosity-distance, comoving-distance]
-  lessons: [L2.1]
+  lessons: [L2.1, L2.7]
 
 astronomical-unit:
   term: Astronomical unit (AU)
@@ -122,7 +122,7 @@ comoving-distance:
     objects moving with the expansion. By convention it equals today's proper
     distance.
   see_also: [proper-distance, scale-factor]
-  lessons: [L2.1]
+  lessons: [L2.1, L2.7]
 
 cosmological-constant:
   term: Cosmological constant (Λ)
@@ -182,7 +182,7 @@ dark-energy:
     of the universe accelerate. It accounts for about 69% of the energy density
     today.
   see_also: [cosmological-constant, deceleration-parameter]
-  lessons: [L3.3, L3.4]
+  lessons: [L3.3, L3.4, L2.6]
 
 dark-matter:
   term: Dark matter
@@ -341,7 +341,7 @@ hubble-distance:
     The distance c/H0, about 4 300 Mpc or 14 billion light-years, at which the
     recession velocity from the Hubble–Lemaître law equals the speed of light.
   see_also: [hubble-constant]
-  lessons: [L2.1]
+  lessons: [L2.1, L2.6]
 
 hubble-lemaitre-law:
   term: Hubble–Lemaître law
@@ -414,7 +414,7 @@ lookback-time:
     How long ago the light we now receive from an object was emitted. Because light
     travels at a finite speed, looking far away means looking back in time.
   see_also: [age-of-universe]
-  lessons: [L0.1, L4.1]
+  lessons: [L0.1, L4.1, L2.7]
 
 luminosity:
   term: Luminosity
@@ -431,7 +431,7 @@ luminosity-distance:
     flux, using the inverse-square law. In an expanding universe it exceeds the
     comoving distance by a factor 1 + z.
   see_also: [luminosity, angular-diameter-distance]
-  lessons: [L1.1]
+  lessons: [L1.1, L2.7]
 
 matter:
   term: Matter (in cosmology)
@@ -491,7 +491,7 @@ observable-universe:
     space expanded while the light travelled, its radius today is about 46 billion
     light-years. The whole universe may be much larger or infinite.
   see_also: [cosmology, comoving-distance]
-  lessons: [L0.1, L0.6]
+  lessons: [L0.1, L0.6, L2.6]
 
 open-universe:
   term: Open universe
@@ -540,7 +540,7 @@ proper-distance:
     The physical distance between two objects at a given moment, as a very long ruler
     would measure it. It grows with the scale factor: D = a × comoving distance.
   see_also: [comoving-distance, scale-factor]
-  lessons: [L2.1]
+  lessons: [L2.1, L2.6]
 
 radiation:
   term: Radiation (in cosmology)
@@ -739,3 +739,54 @@ void:
     volume.
   see_also: [cosmic-web]
   lessons: [L1.4]
+
+event-horizon:
+  term: Event horizon (cosmological)
+  definition: >
+    The greatest distance from which light emitted now can ever reach us. It exists
+    only if the expansion accelerates forever; for our universe it lies about 16.6
+    billion light-years away today.
+  see_also: [particle-horizon, hubble-sphere, dark-energy]
+  lessons: [L2.6]
+
+etherington-relation:
+  term: Etherington relation
+  definition: >
+    The distance duality relation D_L = (1 + z)² D_A between luminosity distance and
+    angular diameter distance, valid in any expanding universe in which photons are
+    conserved.
+  see_also: [luminosity-distance, angular-diameter-distance]
+  lessons: [L2.7]
+
+hubble-sphere:
+  term: Hubble sphere
+  definition: >
+    The sphere of radius c/H around an observer, at which the recession velocity
+    equals the speed of light (about 14.4 billion light-years today). It is not a
+    horizon: we can see objects beyond it.
+  see_also: [hubble-distance, particle-horizon, event-horizon]
+  lessons: [L2.6]
+
+light-travel-distance:
+  term: Light-travel distance
+  definition: >
+    The speed of light times the lookback time. It tells how long the light has
+    travelled, not where the object is now or was when the light left.
+  see_also: [lookback-time, comoving-distance]
+  lessons: [L2.7]
+
+particle-horizon:
+  term: Particle horizon
+  definition: >
+    The comoving distance light has travelled since the Big Bang: the boundary of the
+    observable universe, about 46 billion light-years today. It grows with time.
+  see_also: [observable-universe, event-horizon, hubble-sphere]
+  lessons: [L2.6]
+
+transverse-comoving-distance:
+  term: Transverse comoving distance
+  definition: >
+    The comoving distance corrected for the curvature of space, used to relate
+    comoving sizes and angles. It equals the comoving distance in a flat universe.
+  see_also: [comoving-distance, curvature]
+  lessons: [L2.7]

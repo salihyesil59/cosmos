@@ -325,6 +325,88 @@ class Cosmology:
         """Proper transverse size corresponding to one arcsecond [kpc]."""
         return self.angular_diameter_distance(z) * 1e3 * math.pi / 648_000
 
+    def light_travel_distance(self, z):
+        """Speed of light times lookback time [Mpc]."""
+        return np.asarray(self.lookback_time(z)) * const.GYR * const.C / const.MPC
+
+    def angular_diameter_distance_peak(self) -> tuple[float, float]:
+        """Redshift and value [Mpc] where the angular diameter distance is largest."""
+        from scipy import optimize
+
+        res = optimize.minimize_scalar(
+            lambda lz: -self.angular_diameter_distance(10**lz), bounds=(-2, 2), method="bounded"
+        )
+        return float(10**res.x), float(-res.fun)
+
+    # ------------------------------------------------------------- horizons
+    def _conformal_integral(self, a_lo: float, a_hi: float) -> float:
+        """Integral of ``da / (a^2 E(a))``, a comoving distance in Hubble distances."""
+
+        def integrand(a):
+            val = a**4 * self.E2_of_a(a) if a > 0 else self.Or0
+            if val <= 0:
+                return math.inf if a > 0 else 0.0
+            return 1.0 / math.sqrt(val)
+
+        result, _ = integrate.quad(integrand, a_lo, a_hi, limit=400, epsabs=0, epsrel=1e-8)
+        return result
+
+    def particle_horizon(self, z=0.0) -> float:
+        """Comoving distance light has travelled since the Big Bang [Mpc].
+
+        Equal to today's proper radius of the observable universe for ``z = 0``.
+        """
+        if not self.has_big_bang():
+            return math.inf
+        return self._conformal_integral(0.0, 1.0 / (1.0 + z)) * self.hubble_distance
+
+    def event_horizon(self, z=0.0) -> float:
+        """Comoving distance light emitted at ``z`` can ever travel in the future [Mpc].
+
+        Infinite when the expansion does not accelerate forever, ``nan`` for
+        recollapsing universes (not modelled here).
+        """
+        if self.recollapses():
+            return math.nan
+        if not (self.Ode0 > 0 and self.w0 < -1.0 / 3.0):
+            return math.inf
+        return self._conformal_integral(1.0 / (1.0 + z), math.inf) * self.hubble_distance
+
+    def conformal_history(self, a_max: float = 6.0, n: int = 3000) -> tuple[np.ndarray, np.ndarray, np.ndarray]:
+        """Tabulate cosmic time and comoving light distance since the Big Bang.
+
+        Returns ``(a, t, chi)`` with ``t`` in Gyr since the Big Bang and ``chi`` the
+        comoving distance [Mpc] light has travelled by then (the particle horizon).
+        Only defined for universes with a Big Bang that do not recollapse before
+        ``a_max``.
+        """
+        a0 = 1e-6
+        a = np.logspace(math.log10(a0), math.log10(a_max), n)
+        e = np.sqrt(self.E2_of_a(a))
+        # Integrate in ln a: dt = dln(a) / H, dchi = c dln(a) / (a H).
+        dt = 1.0 / e
+        dchi = 1.0 / (a * e)
+        lna = np.log(a)
+        t = np.concatenate([[0.0], np.cumsum(0.5 * (dt[1:] + dt[:-1]) * np.diff(lna))])
+        chi = np.concatenate([[0.0], np.cumsum(0.5 * (dchi[1:] + dchi[:-1]) * np.diff(lna))])
+        t += self._time_integral(0.0, a0)
+        chi += self._conformal_integral(0.0, a0)
+        return a, t * self.hubble_time, chi * self.hubble_distance
+
+    def hubble_radius(self, z=0.0):
+        """Radius of the Hubble sphere ``c/H(z)`` [proper Mpc]."""
+        return const.C / 1e3 / self.H(z)
+
+    def recession_velocity(self, z, at_emission: bool = False):
+        """Recession velocity of an object at redshift ``z`` in units of c.
+
+        Today: ``H0 D_C / c``. At emission: ``H(z) D_C / ((1+z) c)``.
+        """
+        dc = np.asarray(self.comoving_distance(z))
+        if at_emission:
+            return self.H(z) * dc / (1.0 + np.asarray(z)) / (const.C / 1e3)
+        return self.H0 * dc / (const.C / 1e3)
+
     # -------------------------------------------------------- time evolution
     def expansion_history(self, t_future: float = 40.0, a_max: float = 30.0) -> "ExpansionHistory":
         """Integrate the scale factor ``a(t)`` backwards and forwards from today.

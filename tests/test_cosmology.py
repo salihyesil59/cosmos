@@ -133,3 +133,38 @@ def test_expansion_history_detects_crunch():
 def test_deceleration_parameter_today():
     c = Cosmology(H0=70, Om0=0.3, Ode0=0.7, Tcmb0=0)
     assert c.deceleration_parameter(0) == pytest.approx(0.15 - 0.7)
+
+
+def test_horizons_planck18():
+    c = PRESETS["planck18"].cosmology
+    gly = 3.0856775814913673e22 / 9.4607304725808e15 / 1e9  # Mpc -> Gly
+    assert c.particle_horizon() * gly == pytest.approx(46.3, abs=0.2)
+    assert c.event_horizon() * gly == pytest.approx(16.6, abs=0.2)
+    assert c.hubble_radius(0) == pytest.approx(c.hubble_distance)
+    # The particle horizon is the comoving distance to infinite redshift.
+    assert c.particle_horizon() == pytest.approx(float(c.comoving_distance(1e7)), rel=1e-4)
+
+
+def test_horizons_analytic_models():
+    eds = PRESETS["eds"].cosmology
+    assert eds.particle_horizon() == pytest.approx(2 * eds.hubble_distance, rel=1e-6)
+    assert math.isinf(eds.event_horizon())
+    ds = PRESETS["de_sitter"].cosmology
+    assert ds.event_horizon() == pytest.approx(ds.hubble_distance, rel=1e-6)
+    assert math.isinf(ds.particle_horizon())
+
+
+def test_conformal_history_matches_integrals():
+    c = PRESETS["planck18"].cosmology
+    a, t, chi = c.conformal_history(a_max=2.0, n=4000)
+    assert np.interp(0.0, np.log(a), t) == pytest.approx(c.age(0), rel=1e-3)
+    assert np.interp(0.0, np.log(a), chi) == pytest.approx(c.particle_horizon(), rel=1e-3)
+
+
+def test_recession_velocity_and_angular_peak():
+    c = PRESETS["planck18"].cosmology
+    assert float(c.recession_velocity(0.01)) == pytest.approx(float(c.comoving_distance(0.01)) * c.H0 / 299792.458)
+    assert float(c.recession_velocity(2.0)) > 1.0  # visible yet receding faster than light today
+    z_peak, _ = c.angular_diameter_distance_peak()
+    assert 1.4 < z_peak < 1.8
+    np.testing.assert_allclose(c.luminosity_distance(Z), (1 + Z) ** 2 * c.angular_diameter_distance(Z))
