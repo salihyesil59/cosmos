@@ -9,6 +9,7 @@ from PySide6.QtWidgets import QTextBrowser, QToolTip
 from cosmos.content.loader import load_glossary
 from cosmos.gui.rendering.lesson_html import RenderContext, render_markdown, stylesheet
 from cosmos.gui.theme import theme
+from cosmos.i18n import tr
 
 
 class RichBrowser(QTextBrowser):
@@ -107,11 +108,12 @@ class RichBrowser(QTextBrowser):
             if term:
                 QToolTip.showText(
                     QCursor.pos(),
-                    f"<b>{term.term}</b><br>{term.definition}<br><i>Click to open in the Guide panel.</i>",
+                    f"<b>{term.term}</b><br>{term.definition}<br><i>"
+                    + tr("Click to open in the Guide panel.") + "</i>",
                     self,
                 )
                 return
         elif text.startswith("sim:"):
-            self.viewport().setToolTip("Open this simulator")
+            self.viewport().setToolTip(tr("Open this simulator"))
             return
         QToolTip.hideText()

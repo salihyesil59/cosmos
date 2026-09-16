@@ -19,15 +19,16 @@ from PySide6.QtWidgets import (
 
 from cosmos.gui.simulators.base import SimulatorBase
 from cosmos.gui.widgets.common import Banner, ParameterSlider, labelled_row
+from cosmos.i18n import tr, tr_noop
 from cosmos.physics import lensing
 from cosmos.physics.presets import PRESETS
 
 PIXELS = 360
 FIXED_FIELD = {"point": 3.0, "galaxy": 8.0, "cluster": 160.0}   # arcsec across the view
 LENS_TYPES = {
-    "point": "Point mass (star, black hole)",
-    "galaxy": "Galaxy (isothermal sphere)",
-    "cluster": "Galaxy cluster (several clumps)",
+    "point": tr_noop("Point mass (star, black hole)"),
+    "galaxy": tr_noop("Galaxy (isothermal sphere)"),
+    "cluster": tr_noop("Galaxy cluster (several clumps)"),
 }
 
 
@@ -39,7 +40,7 @@ class LensCanvas(QWidget):
         self.setMinimumSize(380, 380)
         self.setSizePolicy(QSizePolicy.Expanding, QSizePolicy.Expanding)
         self.setCursor(Qt.CrossCursor)
-        self.setToolTip("Drag to move the background source.")
+        self.setToolTip(tr("Drag to move the background source."))
         self.image: QImage | None = None
         self.field = 10.0
         self.circles: list[tuple[float, float, float]] = []
@@ -110,54 +111,54 @@ class LensingSimulator(SimulatorBase):
         self._sky_cache: dict[tuple, np.ndarray] = {}
         self._theta_e = 1.0
 
-        lens = QGroupBox("1 · The lens")
+        lens = QGroupBox(tr("1 · The lens"))
         ll = QVBoxLayout(lens)
         self.kind = QComboBox()
         for key, label in LENS_TYPES.items():
-            self.kind.addItem(label, key)
+            self.kind.addItem(tr(label), key)
         self.kind.setCurrentIndex(1)
-        ll.addWidget(labelled_row("Type", self.kind, (
-            "Lens models",
-            "A point mass bends light as 1/distance. An isothermal sphere, a good model of galaxies and "
-            "clusters, bends light by the same angle at every distance.")))
+        ll.addWidget(labelled_row(tr("Type"), self.kind, (
+            tr("Lens models"),
+            tr("A point mass bends light as 1/distance. An isothermal sphere, a good model of galaxies and "
+                "clusters, bends light by the same angle at every distance."))))
         self.mass = ParameterSlider(
-            "Mass (M☉)", 1e8, 1e14, 1e11, decimals=0, log=True,
-            info=("Point mass", "The Einstein radius grows as the square root of the mass."),
+            tr("Mass (M☉)"), 1e8, 1e14, 1e11, decimals=0, log=True,
+            info=(tr("Point mass"), tr("The Einstein radius grows as the square root of the mass.")),
         )
         self.sigma = ParameterSlider(
-            "Velocity dispersion σ (km/s)", 50, 1500, 250, decimals=0, step=10,
-            info=("Velocity dispersion", "How fast stars or galaxies move inside the lens. It measures the "
-                  "total mass: typical galaxies 150–300 km/s, clusters 800–1500 km/s. θ_E ∝ σ²."),
+            tr("Velocity dispersion σ (km/s)"), 50, 1500, 250, decimals=0, step=10,
+            info=(tr("Velocity dispersion"), tr("How fast stars or galaxies move inside the lens. It measures the "
+                      "total mass: typical galaxies 150–300 km/s, clusters 800–1500 km/s. θ_E ∝ σ².")),
         )
-        self.z_lens = ParameterSlider("Lens redshift", 0.05, 2.0, 0.4, decimals=2, step=0.05,
-                                      info=("Lens redshift", "Lenses halfway to the source are the most efficient."))
-        self.z_source = ParameterSlider("Source redshift", 0.1, 6.0, 2.0, decimals=2, step=0.05,
-                                        info=("Source redshift", "The source must lie behind the lens."))
+        self.z_lens = ParameterSlider(tr("Lens redshift"), 0.05, 2.0, 0.4, decimals=2, step=0.05,
+                                      info=(tr("Lens redshift"), tr("Lenses halfway to the source are the most efficient.")))
+        self.z_source = ParameterSlider(tr("Source redshift"), 0.1, 6.0, 2.0, decimals=2, step=0.05,
+                                        info=(tr("Source redshift"), tr("The source must lie behind the lens.")))
         for w in (self.mass, self.sigma, self.z_lens, self.z_source):
             ll.addWidget(w)
         self.controls.addWidget(lens)
 
-        src = QGroupBox("2 · The background")
+        src = QGroupBox(tr("2 · The background"))
         sl = QVBoxLayout(src)
         self.background = QComboBox()
-        self.background.addItem("A single galaxy (drag to move)", "single")
-        self.background.addItem("A field of galaxies", "field")
-        sl.addWidget(labelled_row("Background", self.background))
-        self.source_size = ParameterSlider("Source size (fraction of θ_E)", 0.05, 0.8, 0.2, decimals=2, step=0.01)
+        self.background.addItem(tr("A single galaxy (drag to move)"), "single")
+        self.background.addItem(tr("A field of galaxies"), "field")
+        sl.addWidget(labelled_row(tr("Background"), self.background))
+        self.source_size = ParameterSlider(tr("Source size (fraction of θ_E)"), 0.05, 0.8, 0.2, decimals=2, step=0.01)
         sl.addWidget(self.source_size)
-        self.show_ring = QCheckBox("Show Einstein radius")
+        self.show_ring = QCheckBox(tr("Show Einstein radius"))
         self.show_ring.setChecked(True)
-        self.show_source = QCheckBox("Mark the true source position")
+        self.show_source = QCheckBox(tr("Mark the true source position"))
         self.show_source.setChecked(True)
-        self.no_lens = QCheckBox("Switch the lens off")
-        self.auto_zoom = QCheckBox("Zoom automatically to the Einstein radius")
-        self.auto_zoom.setToolTip("Off: the view has a fixed size, so a heavier lens makes a visibly bigger ring. "
-                                  "On: the view always spans four Einstein radii.")
+        self.no_lens = QCheckBox(tr("Switch the lens off"))
+        self.auto_zoom = QCheckBox(tr("Zoom automatically to the Einstein radius"))
+        self.auto_zoom.setToolTip(tr("Off: the view has a fixed size, so a heavier lens makes a visibly bigger ring. "
+                                      "On: the view always spans four Einstein radii."))
         for w in (self.show_ring, self.show_source, self.no_lens, self.auto_zoom):
             sl.addWidget(w)
         self.controls.addWidget(src)
 
-        results = QGroupBox("Measurements")
+        results = QGroupBox(tr("Measurements"))
         rl = QVBoxLayout(results)
         self.summary = QLabel()
         self.summary.setWordWrap(True)
@@ -304,8 +305,8 @@ class LensingSimulator(SimulatorBase):
 
     def guide_extra(self) -> str:
         return (
-            "### The key formula\n\n"
-            "For a point mass the Einstein radius is\n\n"
+            "### " + tr("The key formula") + "\n\n"
+            + tr("For a point mass the Einstein radius is") + "\n\n"
             "$$\\theta_E = \\sqrt{\\frac{4GM}{c^2}\\frac{D_{ls}}{D_l D_s}}$$\n\n"
-            "Measuring the ring's size therefore **weighs** the lens, dark matter included."
+            + tr("Measuring the ring's size therefore **weighs** the lens, dark matter included.")
         )

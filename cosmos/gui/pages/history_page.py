@@ -22,7 +22,7 @@ from cosmos.gui.widgets.common import card, muted_label, title_label
 from cosmos.gui.widgets.rich_browser import RichBrowser
 from cosmos.i18n import tr, tr_noop
 
-GUIDE = """
+GUIDE = tr_noop("""
 ## The history of cosmology
 
 Cosmology went from philosophy to precision science in four centuries. This page
@@ -37,7 +37,7 @@ follows that road.
 
 Every entry links to the lesson where the physics is explained, so the history
 and the science stay together.
-"""
+""")
 
 KIND_LABELS = {
     "idea": (tr_noop("Idea"), "accent2"),
@@ -106,7 +106,7 @@ class HistoryPage(QWidget):
             self.show_scientist(self.scientists[0])
 
     def guide_markdown(self) -> str:
-        return GUIDE
+        return tr(GUIDE)
 
     # ------------------------------------------------------------------ api
     def matching_events(self, needle: str = "") -> list:

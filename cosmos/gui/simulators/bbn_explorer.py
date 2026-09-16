@@ -10,6 +10,7 @@ from cosmos.gui.simulators.base import SimulatorBase
 from cosmos.gui.theme import theme
 from cosmos.gui.widgets.common import Banner, ParameterSlider
 from cosmos.gui.widgets.plot import PlotWidget
+from cosmos.i18n import tr
 from cosmos.physics import bbn
 
 ETA_MIN, ETA_MAX = 0.5, 20.0
@@ -22,67 +23,67 @@ class BBNExplorerSimulator(SimulatorBase):
         super().__init__(info, parent)
         self.ab = None
 
-        baryons = QGroupBox("1 · Density of ordinary matter")
+        baryons = QGroupBox(tr("1 · Density of ordinary matter"))
         bl = QVBoxLayout(baryons)
         self.eta = ParameterSlider(
-            "η₁₀  baryons per 10¹⁰ photons", ETA_MIN, ETA_MAX,
+            tr("η₁₀  baryons per 10¹⁰ photons"), ETA_MIN, ETA_MAX,
             float(bbn.eta10_from_omega_b_h2(bbn.PLANCK_OMEGA_B_H2[0])), decimals=2, log=True,
-            info=("Baryon-to-photon ratio",
-                  "The number of protons and neutrons per photon, multiplied by 10¹⁰. It is the only free "
-                  "parameter of standard nucleosynthesis. It is fixed by the density of ordinary matter: "
-                  "η₁₀ = 273.9 Ω_b h²."),
+            info=(tr("Baryon-to-photon ratio"),
+                  tr("The number of protons and neutrons per photon, multiplied by 10¹⁰. It is the only free "
+                          "parameter of standard nucleosynthesis. It is fixed by the density of ordinary matter: "
+                          "η₁₀ = 273.9 Ω_b h².")),
         )
         bl.addWidget(self.eta)
         self.omega_label = QLabel()
         self.omega_label.setTextFormat(Qt.RichText)
         bl.addWidget(self.omega_label)
         row = QHBoxLayout()
-        planck = QPushButton("Planck CMB value")
-        planck.setToolTip("Set the baryon density measured from the acoustic peaks of the CMB.")
+        planck = QPushButton(tr("Planck CMB value"))
+        planck.setToolTip(tr("Set the baryon density measured from the acoustic peaks of the CMB."))
         planck.clicked.connect(lambda: self.eta.setValue(float(bbn.eta10_from_omega_b_h2(bbn.PLANCK_OMEGA_B_H2[0]))))
-        deut = QPushButton("From deuterium")
-        deut.setToolTip("Set the baryon density that reproduces the measured deuterium abundance.")
+        deut = QPushButton(tr("From deuterium"))
+        deut.setToolTip(tr("Set the baryon density that reproduces the measured deuterium abundance."))
         deut.clicked.connect(self._from_deuterium)
         row.addWidget(planck)
         row.addWidget(deut)
         bl.addLayout(row)
         self.controls.addWidget(baryons)
 
-        physics = QGroupBox("2 · Change the physics")
+        physics = QGroupBox(tr("2 · Change the physics"))
         pl = QVBoxLayout(physics)
         self.delta_neff = ParameterSlider(
-            "ΔN_eff  extra neutrino-like species", -1.0, 3.0, 0.0, decimals=2, step=0.1,
-            info=("Extra relativistic species",
-                  "Extra light particles add energy density, so the universe expands faster during BBN. Weak "
-                  "reactions freeze out earlier with more neutrons, and more helium forms. BBN limits "
-                  "ΔN_eff to about ±0.3."),
+            tr("ΔN_eff  extra neutrino-like species"), -1.0, 3.0, 0.0, decimals=2, step=0.1,
+            info=(tr("Extra relativistic species"),
+                  tr("Extra light particles add energy density, so the universe expands faster during BBN. Weak "
+                          "reactions freeze out earlier with more neutrons, and more helium forms. BBN limits "
+                          "ΔN_eff to about ±0.3.")),
         )
         pl.addWidget(self.delta_neff)
         self.lifetime = ParameterSlider(
-            "Neutron lifetime (s)", 860.0, 900.0, bbn.NEUTRON_LIFETIME_S, decimals=1, step=0.5,
-            info=("Neutron lifetime",
-                  "A free neutron decays in about 15 minutes. A longer lifetime leaves more neutrons when "
-                  "deuterium finally forms, so more helium. Bottle experiments measure 878.4 s, beam experiments "
-                  "about 888 s: an unsolved discrepancy."),
+            tr("Neutron lifetime (s)"), 860.0, 900.0, bbn.NEUTRON_LIFETIME_S, decimals=1, step=0.5,
+            info=(tr("Neutron lifetime"),
+                  tr("A free neutron decays in about 15 minutes. A longer lifetime leaves more neutrons when "
+                          "deuterium finally forms, so more helium. Bottle experiments measure 878.4 s, beam experiments "
+                          "about 888 s: an unsolved discrepancy.")),
         )
         pl.addWidget(self.lifetime)
-        reset = QPushButton("Standard physics")
+        reset = QPushButton(tr("Standard physics"))
         reset.clicked.connect(self._reset_physics)
         pl.addWidget(reset)
         self.controls.addWidget(physics)
 
-        view = QGroupBox("3 · Show")
+        view = QGroupBox(tr("3 · Show"))
         vl = QVBoxLayout(view)
-        self.show_obs = QCheckBox("Observed primordial abundances")
+        self.show_obs = QCheckBox(tr("Observed primordial abundances"))
         self.show_obs.setChecked(True)
-        self.show_cmb = QCheckBox("Baryon density from the CMB (Planck)")
+        self.show_cmb = QCheckBox(tr("Baryon density from the CMB (Planck)"))
         self.show_cmb.setChecked(True)
         for box in (self.show_obs, self.show_cmb):
             box.toggled.connect(self.schedule_update)
             vl.addWidget(box)
         self.controls.addWidget(view)
 
-        results = QGroupBox("Predictions")
+        results = QGroupBox(tr("Predictions"))
         rl = QVBoxLayout(results)
         self.summary = QLabel()
         self.summary.setWordWrap(True)
@@ -249,9 +250,10 @@ class BBNExplorerSimulator(SimulatorBase):
 
     def guide_extra(self) -> str:
         return (
-            "### About the model\n\n"
-            "The curves come from fitting formulas that reproduce full nuclear reaction network calculations to a "
-            "few percent near the observed baryon density (Steigman 2007, 2012); far from it they are only "
-            "qualitative. The neutron-fraction panel is the simple picture from lesson L4.3: neutrons freeze out "
-            "at about 0.8 MeV and decay until deuterium can survive."
+            "### " + tr("About the model") + "\n\n"
+            + tr(
+                "The curves come from fitting formulas that reproduce full nuclear reaction network calculations to a "
+                "few percent near the observed baryon density (Steigman 2007, 2012); far from it they are only "
+                "qualitative. The neutron-fraction panel is the simple picture from lesson L4.3: neutrons freeze out "
+                "at about 0.8 MeV and decay until deuterium can survive.")
         )

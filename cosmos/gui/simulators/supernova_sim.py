@@ -19,6 +19,7 @@ from cosmos.gui.simulators.base import SimulatorBase
 from cosmos.gui.theme import theme
 from cosmos.gui.widgets.common import Banner, InfoButton, ParameterSlider, labelled_row
 from cosmos.gui.widgets.plot import PlotWidget
+from cosmos.i18n import tr
 from cosmos.physics import supernovae as sn
 from cosmos.physics.cosmology import no_big_bang_boundary
 
@@ -31,31 +32,31 @@ class SupernovaSimulator(SimulatorBase):
     def __init__(self, info, parent=None):
         super().__init__(info, parent)
 
-        data = QGroupBox("1 · Data")
+        data = QGroupBox(tr("1 · Data"))
         dl = QVBoxLayout(data)
         self.sample_box = QComboBox()
         for key, factory in sn.SAMPLES.items():
             sample = factory()
             self.sample_box.addItem(sample.label, key)
             self.sample_box.setItemData(self.sample_box.count() - 1, sample.description, Qt.ToolTipRole)
-        dl.addWidget(labelled_row("Sample", self.sample_box, (
-            "Three samples",
-            "The first two are generated inside the app from a flat universe with Ωm = 0.3, mimicking the "
-            "numbers, redshifts and scatter of real surveys. The third is the real Pantheon+ compilation "
-            "as published, so the fit you get is the measurement itself.")))
-        self.flat = QCheckBox("Assume a flat universe (ΩΛ = 1 − Ωm)")
-        self.flat.setToolTip("An extra assumption supported by the CMB. It makes the evidence much stronger.")
+        dl.addWidget(labelled_row(tr("Sample"), self.sample_box, (
+            tr("Three samples"),
+            tr("The first two are generated inside the app from a flat universe with Ωm = 0.3, mimicking the "
+                "numbers, redshifts and scatter of real surveys. The third is the real Pantheon+ compilation "
+                "as published, so the fit you get is the measurement itself."))))
+        self.flat = QCheckBox(tr("Assume a flat universe (ΩΛ = 1 − Ωm)"))
+        self.flat.setToolTip(tr("An extra assumption supported by the CMB. It makes the evidence much stronger."))
         dl.addWidget(self.flat)
         self.controls.addWidget(data)
 
-        models = QGroupBox("2 · Compare with models")
+        models = QGroupBox(tr("2 · Compare with models"))
         ml = QVBoxLayout(models)
         self.model_boxes = {}
         for key, label, default in [
-            ("empty", "Empty universe (Ωm = 0, ΩΛ = 0)", True),
-            ("eds", "Matter only (Ωm = 1, ΩΛ = 0)", True),
-            ("open", "Low density, no dark energy (Ωm = 0.3, ΩΛ = 0)", False),
-            ("best", "Best fit to the data", True),
+            ("empty", tr("Empty universe (Ωm = 0, ΩΛ = 0)"), True),
+            ("eds", tr("Matter only (Ωm = 1, ΩΛ = 0)"), True),
+            ("open", tr("Low density, no dark energy (Ωm = 0.3, ΩΛ = 0)"), False),
+            ("best", tr("Best fit to the data"), True),
         ]:
             box = QCheckBox(label)
             box.setChecked(default)
@@ -64,32 +65,33 @@ class SupernovaSimulator(SimulatorBase):
             self.model_boxes[key] = box
         self.controls.addWidget(models)
 
-        calib = QGroupBox("3 · Calibrate the brightness → H0")
+        calib = QGroupBox(tr("3 · Calibrate the brightness → H0"))
         cl = QVBoxLayout(calib)
-        self.cepheid = QRadioButton(f"Cepheids (M = {sn.M_CEPHEID})")
-        self.cepheid.setToolTip("Local distance ladder: parallax → Cepheids → supernovae (SH0ES).")
-        self.inverse = QRadioButton(f"CMB + BAO (M = {sn.M_INVERSE_LADDER:.2f})")
-        self.inverse.setToolTip("Inverse distance ladder: the CMB sound horizon calibrates BAO, which calibrates "
-                                "the supernovae.")
-        self.custom = QRadioButton("Your own value")
+        self.cepheid = QRadioButton(tr("Cepheids (M = {value})").format(value=sn.M_CEPHEID))
+        self.cepheid.setToolTip(tr("Local distance ladder: parallax → Cepheids → supernovae (SH0ES)."))
+        self.inverse = QRadioButton(tr("CMB + BAO (M = {value})")
+                                    .format(value=f"{sn.M_INVERSE_LADDER:.2f}"))
+        self.inverse.setToolTip(tr("Inverse distance ladder: the CMB sound horizon calibrates BAO, which calibrates "
+                                    "the supernovae."))
+        self.custom = QRadioButton(tr("Your own value"))
         self.cepheid.setChecked(True)
         group = QButtonGroup(self)
         for b in (self.cepheid, self.inverse, self.custom):
             group.addButton(b)
             cl.addWidget(b)
             b.toggled.connect(self.schedule_update)
-        self.magnitude = ParameterSlider("Absolute magnitude M", -19.8, -18.8, -19.3, decimals=3, step=0.01)
+        self.magnitude = ParameterSlider(tr("Absolute magnitude M"), -19.8, -18.8, -19.3, decimals=3, step=0.01)
         self.magnitude.valueChanged.connect(self.schedule_update)
         cl.addWidget(self.magnitude)
         cl.addWidget(InfoButton(
-            "Why calibration matters",
-            "Supernovae tell us relative distances very precisely, but not the absolute scale. Their true "
-            "brightness M must be calibrated with Cepheids (local) or with the sound horizon (early universe). "
-            "The two calibrations differ by about 0.15 magnitudes: this is the Hubble tension.",
+            tr("Why calibration matters"),
+            tr("Supernovae tell us relative distances very precisely, but not the absolute scale. Their true "
+                "brightness M must be calibrated with Cepheids (local) or with the sound horizon (early universe). "
+                "The two calibrations differ by about 0.15 magnitudes: this is the Hubble tension."),
         ))
         self.controls.addWidget(calib)
 
-        results = QGroupBox("Results")
+        results = QGroupBox(tr("Results"))
         rl = QVBoxLayout(results)
         self.summary = QLabel()
         self.summary.setWordWrap(True)
@@ -104,9 +106,9 @@ class SupernovaSimulator(SimulatorBase):
         self.hubble_plot = PlotWidget(self._draw_hubble, csv_provider=self._csv, export_name="supernova_hubble_diagram")
         self.plane_plot = PlotWidget(self._draw_plane, export_name="supernova_omega_plane")
         self.h0_plot = PlotWidget(self._draw_h0, export_name="supernova_h0")
-        tabs.addTab(self.hubble_plot, "Hubble diagram")
-        tabs.addTab(self.plane_plot, "Ωm–ΩΛ plane")
-        tabs.addTab(self.h0_plot, "Hubble constant")
+        tabs.addTab(self.hubble_plot, tr("Hubble diagram"))
+        tabs.addTab(self.plane_plot, tr("Ωm–ΩΛ plane"))
+        tabs.addTab(self.h0_plot, tr("Hubble constant"))
         self.display.addWidget(tabs, 1)
 
         self.sample_box.currentIndexChanged.connect(self._load_sample)

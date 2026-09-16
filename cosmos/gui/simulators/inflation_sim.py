@@ -11,6 +11,7 @@ from cosmos.gui.simulators.base import SimulatorBase
 from cosmos.gui.theme import theme
 from cosmos.gui.widgets.common import Banner, ParameterSlider, labelled_row, muted_label
 from cosmos.gui.widgets.plot import PlotWidget
+from cosmos.i18n import tr
 from cosmos.physics import inflation
 
 
@@ -22,44 +23,44 @@ class InflationSimulator(SimulatorBase):
         self.result = None
         self.trajectory = None
 
-        model = QGroupBox("1 · The inflaton potential")
+        model = QGroupBox(tr("1 · The inflaton potential"))
         ml = QVBoxLayout(model)
         self.potential = QComboBox()
         for key, pot in inflation.POTENTIALS.items():
             self.potential.addItem(pot.label, key)
             self.potential.setItemData(self.potential.count() - 1, pot.description, Qt.ToolTipRole)
         self.potential.setCurrentIndex(list(inflation.POTENTIALS).index("starobinsky"))
-        ml.addWidget(labelled_row("Model", self.potential, (
-            "Inflation models",
-            "Each model is a different shape for the energy of the inflaton field. The field rolls slowly down "
-            "the potential; the shape decides how the universe expands and which fluctuations are created.")))
+        ml.addWidget(labelled_row(tr("Model"), self.potential, (
+            tr("Inflation models"),
+            tr("Each model is a different shape for the energy of the inflaton field. The field rolls slowly down "
+                "the potential; the shape decides how the universe expands and which fluctuations are created."))))
         self.description = muted_label("")
         ml.addWidget(self.description)
-        self.parameter = ParameterSlider("Parameter", 1.0, 40.0, 7.0, decimals=1, step=0.5)
+        self.parameter = ParameterSlider(tr("Parameter"), 1.0, 40.0, 7.0, decimals=1, step=0.5)
         ml.addWidget(self.parameter)
         self.n_star = ParameterSlider(
-            "N*  e-folds before the end", 40, 70, 55, decimals=0, step=1,
-            info=("N*", "When the scales we observe in the CMB left the horizon, measured in e-folds before "
-                  "inflation ended. It depends on how the universe reheated; 50–60 is typical."),
+            tr("N*  e-folds before the end"), 40, 70, 55, decimals=0, step=1,
+            info=(tr("N*"), tr("When the scales we observe in the CMB left the horizon, measured in e-folds before "
+                      "inflation ended. It depends on how the universe reheated; 50–60 is typical.")),
         )
         ml.addWidget(self.n_star)
         self.controls.addWidget(model)
 
-        run = QGroupBox("2 · Watch the field roll")
+        run = QGroupBox(tr("2 · Watch the field roll"))
         rl = QVBoxLayout(run)
         row = QHBoxLayout()
-        self.play = QPushButton("▶ Play")
+        self.play = QPushButton(tr("▶ Play"))
         self.play.setCheckable(True)
         self.play.setProperty("role", "primary")
         self.play.toggled.connect(self._toggle)
-        rewind = QPushButton("Rewind")
+        rewind = QPushButton(tr("Rewind"))
         rewind.clicked.connect(self._rewind)
         row.addWidget(self.play)
         row.addWidget(rewind)
         rl.addLayout(row)
         self.controls.addWidget(run)
 
-        results = QGroupBox("Predictions")
+        results = QGroupBox(tr("Predictions"))
         vl = QVBoxLayout(results)
         self.summary = QLabel()
         self.summary.setWordWrap(True)

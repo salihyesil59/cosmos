@@ -20,9 +20,9 @@ from cosmos.gui.simulators.registry import SIMULATORS
 from cosmos.gui.theme import repolish
 from cosmos.gui.widgets.common import card, muted_label, title_label
 from cosmos.gui.widgets.prereq_map import PrerequisiteMap
-from cosmos.i18n import tr
+from cosmos.i18n import tr, tr_noop
 
-GUIDE = """
+GUIDE = tr_noop("""
 ## Your progress
 
 ### Reading the map
@@ -46,7 +46,7 @@ along you are.
 
 **Reset progress** clears quiz scores, completed lessons, challenges and badges.
 Your notes, bookmarks and settings are kept.
-"""
+""")
 
 
 class ProgressPage(QWidget):
@@ -124,7 +124,7 @@ class ProgressPage(QWidget):
         self.refresh()
 
     def guide_markdown(self) -> str:
-        return GUIDE
+        return tr(GUIDE)
 
     def refresh(self) -> None:
         cur, store = self.ctx.curriculum, self.ctx.store

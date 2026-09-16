@@ -6,11 +6,11 @@ from PySide6.QtCore import Qt
 from PySide6.QtWidgets import QLineEdit, QListWidget, QListWidgetItem, QVBoxLayout, QWidget
 
 from cosmos.gui.context import AppContext
-from cosmos.gui.search import KIND_LABELS, search
+from cosmos.gui.search import KIND_COUNTS, KIND_LABELS, search
 from cosmos.gui.widgets.common import muted_label, title_label
-from cosmos.i18n import tr
+from cosmos.i18n import tr, tr_noop
 
-GUIDE = """
+GUIDE = tr_noop("""
 ## Search
 
 One box for the whole course: lesson text, glossary definitions, simulators and
@@ -24,7 +24,7 @@ the formula sheet.
   refers to it.
 
 The toolbar search box (Ctrl+F) always brings you back here.
-"""
+""")
 
 
 class SearchPage(QWidget):
@@ -56,7 +56,7 @@ class SearchPage(QWidget):
         root.addWidget(self.list, 1)
 
     def guide_markdown(self) -> str:
-        return GUIDE
+        return tr(GUIDE)
 
     # ------------------------------------------------------------------ api
     def set_query(self, text: str) -> None:
@@ -75,14 +75,14 @@ class SearchPage(QWidget):
             self.count.setText(tr("Type at least two letters."))
             return
         kinds = {k: sum(1 for h in self.hits if h.kind == k) for k in KIND_LABELS}
-        summary = ", ".join(f"{n} {KIND_LABELS[k].lower()}{'s' if n != 1 else ''}"
+        summary = ", ".join(tr(KIND_COUNTS[k][0] if n == 1 else KIND_COUNTS[k][1]).format(n=n)
                             for k, n in kinds.items() if n)
-        self.count.setText(f"{len(self.hits)} results — {summary}" if self.hits
-                           else "Nothing found. Try a shorter or more common word.")
+        self.count.setText(tr("{count} results — {summary}").format(count=len(self.hits), summary=summary)
+                           if self.hits else tr("Nothing found. Try a shorter or more common word."))
         for hit in self.hits:
             item = QListWidgetItem(f"{hit.icon}  {hit.title}\n      {hit.label} · {hit.subtitle}\n      {hit.snippet}")
             item.setData(Qt.UserRole, hit.route)
-            item.setToolTip(f"Open {hit.route}")
+            item.setToolTip(tr("Open {route}").format(route=hit.route))
             self.list.addItem(item)
         if self.hits:
             self.list.setCurrentRow(0)

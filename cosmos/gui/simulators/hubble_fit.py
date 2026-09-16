@@ -10,6 +10,7 @@ from cosmos.gui.simulators.base import SimulatorBase
 from cosmos.gui.theme import theme
 from cosmos.gui.widgets.common import ParameterSlider, muted_label
 from cosmos.gui.widgets.plot import PlotWidget
+from cosmos.i18n import tr
 from cosmos.physics import constants as const
 from cosmos.physics import datasets, hubble
 
@@ -20,39 +21,39 @@ class HubbleFitSimulator(SimulatorBase):
         self.sets = datasets.hubble_datasets()
         self.fit: hubble.HubbleFit | None = None
 
-        data_box = QGroupBox("1 · Data set")
+        data_box = QGroupBox(tr("1 · Data set"))
         dl = QVBoxLayout(data_box)
         self.selector = QComboBox()
         for key, ds in self.sets.items():
             self.selector.addItem(ds.label, key)
-        self.selector.setToolTip("Choose which galaxies to plot.")
+        self.selector.setToolTip(tr("Choose which galaxies to plot."))
         dl.addWidget(self.selector)
         self.description = muted_label("")
         dl.addWidget(self.description)
         self.controls.addWidget(data_box)
 
-        fit_box = QGroupBox("2 · Fit the line v = H0 × d")
+        fit_box = QGroupBox(tr("2 · Fit the line v = H0 × d"))
         fl = QVBoxLayout(fit_box)
         self.h0 = ParameterSlider(
-            "Your H0 (km/s/Mpc)", 0, 700, 300, decimals=1, step=5,
-            info=("Slope of the line", "Move this until the line runs through the middle of the points. The "
-                  "residual sum below gets smaller as the fit improves."),
+            tr("Your H0 (km/s/Mpc)"), 0, 700, 300, decimals=1, step=5,
+            info=(tr("Slope of the line"), tr("Move this until the line runs through the middle of the points. The "
+                      "residual sum below gets smaller as the fit improves.")),
         )
         fl.addWidget(self.h0)
         self.residual = QLabel()
         self.residual.setTextFormat(Qt.RichText)
         self.residual.setWordWrap(True)
         fl.addWidget(self.residual)
-        best = QPushButton("Find best fit (least squares)")
+        best = QPushButton(tr("Find best fit (least squares)"))
         best.setProperty("role", "primary")
-        best.setToolTip("Compute the slope that minimises the sum of squared residuals.")
+        best.setToolTip(tr("Compute the slope that minimises the sum of squared residuals."))
         best.clicked.connect(self._best_fit)
         fl.addWidget(best)
         self.controls.addWidget(fit_box)
 
-        result_box = QGroupBox("Result")
+        result_box = QGroupBox(tr("Result"))
         rl = QVBoxLayout(result_box)
-        self.result = QLabel("Press <b>Find best fit</b> to compute H0 and the Hubble time.")
+        self.result = QLabel(tr("Press <b>Find best fit</b> to compute H0 and the Hubble time."))
         self.result.setWordWrap(True)
         self.result.setTextFormat(Qt.RichText)
         rl.addWidget(self.result)
@@ -75,7 +76,7 @@ class HubbleFitSimulator(SimulatorBase):
         tag = "⚠ Simulated data. " if ds.simulated else "Real historical data. "
         self.description.setText(tag + ds.description)
         self.fit = None
-        self.result.setText("Press <b>Find best fit</b> to compute H0 and the Hubble time.")
+        self.result.setText(tr("Press <b>Find best fit</b> to compute H0 and the Hubble time."))
         self.h0.setValue(300 if ds.key == "hubble1929" else 40)
 
     def recompute(self) -> None:

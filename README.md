@@ -51,7 +51,7 @@ on first launch.
 - **Notes and bookmarks**: a private notebook for every page, exportable as Markdown
 - Tooltips and **?** buttons on every control
 - Progress tracking with a prerequisite map
-- Dark and light themes; the interface is translatable and ships with Turkish
+- Dark and light themes; the interface is translatable and ships with a full Turkish pack
 - An optional **Tutor** panel that answers questions with your own API key
 - Export plots as PNG/SVG and data as CSV
 - Presets: Planck 2018, WMAP 9-year, evolving and phantom dark energy, Einstein–de Sitter and more
@@ -102,9 +102,11 @@ cached. Without `camb` the app behaves exactly as before.
 
 The course content is English. The interface — menus, buttons, page headings,
 badges and the panels around the content — is translatable, and **Turkish ships
-with the app**: choose it in **View → Language** and restart. About 217 strings
-are translated; the lessons, the Guide panel and the simulator controls stay in
-English.
+with the app**: choose it in **View → Language** and restart. Close to 900 strings
+are translated, including the Guide panel, the guided tour and the controls,
+tooltips and guidance of every simulator. The course itself — lesson text,
+quizzes, the glossary, the formula sheet — and the numbers a simulator reports
+back stay in English.
 
 To add another language, use the standard Qt tools:
 

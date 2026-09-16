@@ -151,6 +151,7 @@ Legend: `[x]` done · `[ ]` planned
 - [x] `G11` Notes and bookmarks
 - [x] `G12` Historical timeline of discoveries and scientist cards
 - [x] `G13` Achievements and badges
+- [x] `G14` Turkish for the Guide panel, the tour and the simulator controls
 
 ### Extras & quality
 - [x] `E1+` Pantheon+ supernova sample and SPARC rotation curves (license check, needs download)
@@ -193,7 +194,6 @@ same style. ★ marks the ones worth doing first.
 - [ ] `S24` CMB Sky Viewer: a real Planck map, with masking and filtering (needs a download)
 
 ### Guidance & learning
-- [ ] ★ `G14` Translate the Guide panel, the tour and the simulator controls (the Turkish pack covers the chrome only)
 - [ ] ★ `G15` Worked problem sets: numeric exercises with checked answers, one per level
 - [ ] `G16` Spaced repetition: bring back quiz questions you got wrong, days later
 - [ ] `G17` Accessibility pass: font scaling, a high-contrast theme, keyboard-only navigation

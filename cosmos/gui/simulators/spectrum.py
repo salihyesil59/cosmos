@@ -21,6 +21,7 @@ from PySide6.QtWidgets import (
 from cosmos.gui.simulators.base import SimulatorBase
 from cosmos.gui.theme import theme
 from cosmos.gui.widgets.common import Banner, ParameterSlider
+from cosmos.i18n import tr
 from cosmos.physics import spectra
 from cosmos.physics.presets import PRESETS
 
@@ -110,12 +111,12 @@ class SpectrumSimulator(SimulatorBase):
         self.challenge_z: float | None = None
         self.cosmo = PRESETS["planck18"].cosmology
 
-        mode_box = QGroupBox("1 · What causes the shift?")
+        mode_box = QGroupBox(tr("1 · What causes the shift?"))
         ml = QVBoxLayout(mode_box)
-        self.doppler = QRadioButton("Doppler motion (a moving light source)")
-        self.doppler.setToolTip("A star or galaxy moving towards or away from us through space.")
-        self.cosmic = QRadioButton("Cosmic expansion (a distant galaxy)")
-        self.cosmic.setToolTip("Light stretched by the expansion of the universe: 1 + z = 1/a.")
+        self.doppler = QRadioButton(tr("Doppler motion (a moving light source)"))
+        self.doppler.setToolTip(tr("A star or galaxy moving towards or away from us through space."))
+        self.cosmic = QRadioButton(tr("Cosmic expansion (a distant galaxy)"))
+        self.cosmic.setToolTip(tr("Light stretched by the expansion of the universe: 1 + z = 1/a."))
         self.mode = QButtonGroup(self)
         self.mode.addButton(self.doppler, 0)
         self.mode.addButton(self.cosmic, 1)
@@ -124,23 +125,23 @@ class SpectrumSimulator(SimulatorBase):
         ml.addWidget(self.cosmic)
         self.controls.addWidget(mode_box)
 
-        shift_box = QGroupBox("2 · Amount of shift")
+        shift_box = QGroupBox(tr("2 · Amount of shift"))
         sl = QVBoxLayout(shift_box)
         self.velocity = ParameterSlider(
-            "Radial velocity (km/s)", -250000, 250000, 0.0, decimals=0, step=1000,
-            info=("Radial velocity", "Positive: moving away (redshift). Negative: approaching (blueshift). "
-                  "The relativistic Doppler formula is used, so the speed never reaches c."),
+            tr("Radial velocity (km/s)"), -250000, 250000, 0.0, decimals=0, step=1000,
+            info=(tr("Radial velocity"), tr("Positive: moving away (redshift). Negative: approaching (blueshift). "
+                      "The relativistic Doppler formula is used, so the speed never reaches c.")),
         )
         self.redshift = ParameterSlider(
-            "Redshift z", 0.001, 12.0, 0.5, decimals=3, log=True,
-            info=("Cosmological redshift", "How much the universe has expanded since the light left the galaxy: "
-                  "1 + z = 1/a."),
+            tr("Redshift z"), 0.001, 12.0, 0.5, decimals=3, log=True,
+            info=(tr("Cosmological redshift"), tr("How much the universe has expanded since the light left the galaxy: "
+                      "1 + z = 1/a.")),
         )
         sl.addWidget(self.velocity)
         sl.addWidget(self.redshift)
         self.controls.addWidget(shift_box)
 
-        read_box = QGroupBox("Readout")
+        read_box = QGroupBox(tr("Readout"))
         rl = QVBoxLayout(read_box)
         self.readout = QLabel()
         self.readout.setWordWrap(True)
@@ -148,14 +149,14 @@ class SpectrumSimulator(SimulatorBase):
         rl.addWidget(self.readout)
         self.controls.addWidget(read_box)
 
-        challenge = QGroupBox("Challenge: Mystery galaxy")
+        challenge = QGroupBox(tr("Challenge: Mystery galaxy"))
         cl = QVBoxLayout(challenge)
-        hint = QLabel("Match the redshift of an unknown galaxy by lining up the lines.")
+        hint = QLabel(tr("Match the redshift of an unknown galaxy by lining up the lines."))
         hint.setWordWrap(True)
         cl.addWidget(hint)
-        self.new_challenge = QPushButton("🔭 New mystery galaxy")
+        self.new_challenge = QPushButton(tr("🔭 New mystery galaxy"))
         self.new_challenge.clicked.connect(self._start_challenge)
-        self.check = QPushButton("Check my answer")
+        self.check = QPushButton(tr("Check my answer"))
         self.check.setEnabled(False)
         self.check.clicked.connect(self._check_challenge)
         cl.addWidget(self.new_challenge)

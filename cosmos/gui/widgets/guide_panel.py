@@ -8,6 +8,7 @@ from PySide6.QtWidgets import QHBoxLayout, QLabel, QPushButton, QVBoxLayout, QWi
 from cosmos.gui.context import AppContext
 from cosmos.gui.widgets.common import card, muted_label, title_label
 from cosmos.gui.widgets.rich_browser import RichBrowser
+from cosmos.i18n import tr
 
 
 class GuidePanel(QWidget):
@@ -25,12 +26,12 @@ class GuidePanel(QWidget):
         tc = QVBoxLayout(self.term_card)
         tc.setContentsMargins(12, 10, 12, 10)
         head = QHBoxLayout()
-        self.term_kicker = muted_label("GLOSSARY")
+        self.term_kicker = muted_label(tr("GLOSSARY"))
         head.addWidget(self.term_kicker)
         head.addStretch(1)
         close = QPushButton("✕")
         close.setFixedWidth(30)
-        close.setToolTip("Hide this definition")
+        close.setToolTip(tr("Hide this definition"))
         close.clicked.connect(lambda: self.term_card.hide())
         head.addWidget(close)
         tc.addLayout(head)
@@ -41,7 +42,7 @@ class GuidePanel(QWidget):
         self.term_links = QLabel()
         self.term_links.setWordWrap(True)
         self.term_links.linkActivated.connect(self._on_link)
-        open_btn = QPushButton("Open in Glossary")
+        open_btn = QPushButton(tr("Open in Glossary"))
         open_btn.clicked.connect(lambda: self.ctx.navigate(f"glossary:{self._term_key}"))
         tc.addWidget(self.term_title)
         tc.addWidget(self.term_body)

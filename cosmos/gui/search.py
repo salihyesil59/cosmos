@@ -7,8 +7,17 @@ from dataclasses import dataclass
 
 from cosmos.content.loader import load_formulas
 from cosmos.gui.context import AppContext
+from cosmos.i18n import tr, tr_noop
 
-KIND_LABELS = {"lesson": "Lesson", "glossary": "Term", "simulator": "Simulator", "formula": "Formula"}
+KIND_LABELS = {"lesson": tr_noop("Lesson"), "glossary": tr_noop("Term"),
+               "simulator": tr_noop("Simulator"), "formula": tr_noop("Formula")}
+# Singular and plural for the "3 lessons, 1 term" summary line.
+KIND_COUNTS = {
+    "lesson": (tr_noop("{n} lesson"), tr_noop("{n} lessons")),
+    "glossary": (tr_noop("{n} term"), tr_noop("{n} terms")),
+    "simulator": (tr_noop("{n} simulator"), tr_noop("{n} simulators")),
+    "formula": (tr_noop("{n} formula"), tr_noop("{n} formulas")),
+}
 KIND_ICONS = {"lesson": "📖", "glossary": "🔤", "simulator": "🧪", "formula": "∑"}
 SNIPPET_CHARS = 150
 
@@ -28,7 +37,7 @@ class SearchHit:
 
     @property
     def label(self) -> str:
-        return KIND_LABELS[self.kind]
+        return tr(KIND_LABELS[self.kind])
 
 
 def _clean(text: str) -> str:
@@ -90,12 +99,13 @@ def search(ctx: AppContext, query: str, limit: int = 60) -> list[SearchHit]:
                                   "Glossary term", _snippet(term.definition, needle), score))
 
     for info in SIMULATORS.values():
-        extra = " ".join(info.things_to_try + info.how_to_use)
-        score = _score(needle, [(info.title, 100), (info.id, 80), (info.tagline, 45),
-                                (info.description, 30), (extra, 12)])
+        extra = " ".join(tr(t) for t in info.things_to_try + info.how_to_use)
+        title, description = tr(info.title), tr(info.description)
+        score = _score(needle, [(title, 100), (info.id, 80), (tr(info.tagline), 45),
+                                (description, 30), (extra, 12)])
         if score:
-            hits.append(SearchHit("simulator", f"sim:{info.id}", f"{info.icon}  {info.title}",
-                                  f"Simulator {info.id}", _snippet(info.description, needle), score))
+            hits.append(SearchHit("simulator", f"sim:{info.id}", f"{info.icon}  {title}",
+                                  f"Simulator {info.id}", _snippet(description, needle), score))
 
     for formula in load_formulas():
         score = _score(needle, [(formula.title, 100), (formula.group, 40), (formula.symbols, 35),

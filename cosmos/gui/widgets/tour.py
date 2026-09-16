@@ -10,6 +10,7 @@ from PySide6.QtGui import QColor, QPainter, QPainterPath, QPen
 from PySide6.QtWidgets import QFrame, QHBoxLayout, QLabel, QPushButton, QVBoxLayout, QWidget
 
 from cosmos.gui.theme import theme
+from cosmos.i18n import tr
 
 
 @dataclass
@@ -48,9 +49,9 @@ class TourOverlay(QWidget):
         bl.addWidget(self.title)
         bl.addWidget(self.body)
         buttons = QHBoxLayout()
-        self.skip = QPushButton("Skip tour")
-        self.back = QPushButton("Back")
-        self.next = QPushButton("Next")
+        self.skip = QPushButton(tr("Skip tour"))
+        self.back = QPushButton(tr("Back"))
+        self.next = QPushButton(tr("Next"))
         self.next.setProperty("role", "primary")
         buttons.addWidget(self.skip)
         buttons.addStretch(1)

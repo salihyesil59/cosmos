@@ -12,15 +12,16 @@ from cosmos.gui.simulators.base import SimulatorBase
 from cosmos.gui.theme import theme
 from cosmos.gui.widgets.common import Banner, ParameterSlider, labelled_row
 from cosmos.gui.widgets.plot import PlotWidget
+from cosmos.i18n import tr, tr_noop
 from cosmos.physics import olbers
 
 # name: (density, finite age, age, limited lifetimes, shining fraction, expanding, Hubble length)
 SCENARIOS = {
-    "olbers": ("Olbers' universe: infinite, static and eternal", (4e-4, False, 300.0, False, 1.0, False, 1000.0)),
-    "age": ("A universe with a finite age", (4e-4, True, 200.0, False, 1.0, False, 1000.0)),
-    "lifetimes": ("Finite age and stars that burn out", (4e-4, True, 200.0, True, 0.2, False, 1000.0)),
-    "expanding": ("Infinitely old but expanding (steady state)", (4e-4, False, 300.0, False, 1.0, True, 300.0)),
-    "custom": ("Custom", None),
+    "olbers": (tr_noop("Olbers' universe: infinite, static and eternal"), (4e-4, False, 300.0, False, 1.0, False, 1000.0)),
+    "age": (tr_noop("A universe with a finite age"), (4e-4, True, 200.0, False, 1.0, False, 1000.0)),
+    "lifetimes": (tr_noop("Finite age and stars that burn out"), (4e-4, True, 200.0, True, 0.2, False, 1000.0)),
+    "expanding": (tr_noop("Infinitely old but expanding (steady state)"), (4e-4, False, 300.0, False, 1.0, True, 300.0)),
+    "custom": (tr_noop("Custom"), None),
 }
 
 
@@ -31,58 +32,58 @@ class OlbersSimulator(SimulatorBase):
         self.sky = None
         self._loading = False
 
-        universe = QGroupBox("1 · Choose a universe")
+        universe = QGroupBox(tr("1 · Choose a universe"))
         ul = QVBoxLayout(universe)
         self.scenario = QComboBox()
         for key, (label, _) in SCENARIOS.items():
-            self.scenario.addItem(label, key)
-        ul.addWidget(labelled_row("Scenario", self.scenario, (
-            "Scenarios", "Each scenario switches on one of the ways out of the paradox. Change any control to "
-            "build your own.")))
+            self.scenario.addItem(tr(label), key)
+        ul.addWidget(labelled_row(tr("Scenario"), self.scenario, (
+            tr("Scenarios"), tr("Each scenario switches on one of the ways out of the paradox. Change any control to "
+                    "build your own."))))
         self.density = ParameterSlider(
-            "Star density (stars per unit volume)", 2e-5, 2e-2, 4e-4, decimals=5, log=True,
-            info=("Units", "Distances are measured in stellar radii: a star has radius 1. The mean free path "
-                  "λ = 1/(nπ) is how far a line of sight goes, on average, before it hits a star."),
+            tr("Star density (stars per unit volume)"), 2e-5, 2e-2, 4e-4, decimals=5, log=True,
+            info=(tr("Units"), tr("Distances are measured in stellar radii: a star has radius 1. The mean free path "
+                          "λ = 1/(nπ) is how far a line of sight goes, on average, before it hits a star.")),
         )
         ul.addWidget(self.density)
         self.controls.addWidget(universe)
 
-        ways = QGroupBox("2 · Ways out of the paradox")
+        ways = QGroupBox(tr("2 · Ways out of the paradox"))
         wl = QVBoxLayout(ways)
-        self.finite_age = QCheckBox("The universe has a finite age")
-        self.finite_age.setToolTip("Light from stars farther than the light-travel distance has not reached us yet.")
+        self.finite_age = QCheckBox(tr("The universe has a finite age"))
+        self.finite_age.setToolTip(tr("Light from stars farther than the light-travel distance has not reached us yet."))
         wl.addWidget(self.finite_age)
         self.age = ParameterSlider(
-            "Light-travel distance (age × c)", 10.0, 1e4, 300.0, decimals=0, log=True,
-            info=("Finite age", "If the universe (or its stars) began a time t ago, we see only stars within a "
-                  "distance ct. In our universe ct is 13.8 billion light-years, far shorter than the mean free "
-                  "path of about 10²⁴ light-years."),
+            tr("Light-travel distance (age × c)"), 10.0, 1e4, 300.0, decimals=0, log=True,
+            info=(tr("Finite age"), tr("If the universe (or its stars) began a time t ago, we see only stars within a "
+                          "distance ct. In our universe ct is 13.8 billion light-years, far shorter than the mean free "
+                          "path of about 10²⁴ light-years.")),
         )
         wl.addWidget(self.age)
-        self.lifetimes = QCheckBox("Stars shine for a limited time")
+        self.lifetimes = QCheckBox(tr("Stars shine for a limited time"))
         wl.addWidget(self.lifetimes)
         self.fraction = ParameterSlider(
-            "Fraction of stars shining at once", 0.01, 1.0, 0.2, decimals=3, log=True,
-            info=("Stellar lifetimes", "A star shines for a limited time, so only part of the stars along a line "
-                  "of sight are shining when their light leaves. This lowers the effective density of stars."),
+            tr("Fraction of stars shining at once"), 0.01, 1.0, 0.2, decimals=3, log=True,
+            info=(tr("Stellar lifetimes"), tr("A star shines for a limited time, so only part of the stars along a line "
+                          "of sight are shining when their light leaves. This lowers the effective density of stars.")),
         )
         wl.addWidget(self.fraction)
-        self.expanding = QCheckBox("The universe expands")
+        self.expanding = QCheckBox(tr("The universe expands"))
         wl.addWidget(self.expanding)
         self.hubble = ParameterSlider(
-            "Hubble length c/H", 20.0, 1e4, 150.0, decimals=0, log=True,
-            info=("Redshift dimming", "Light from a distance d arrives with 1 + z = e^(d/L) in a universe expanding "
-                  "at a constant rate. Its surface brightness falls as (1 + z)⁻⁴: fewer photons per second, each "
-                  "with less energy, and two factors from the stretching of the image."),
+            tr("Hubble length c/H"), 20.0, 1e4, 150.0, decimals=0, log=True,
+            info=(tr("Redshift dimming"), tr("Light from a distance d arrives with 1 + z = e^(d/L) in a universe expanding "
+                          "at a constant rate. Its surface brightness falls as (1 + z)⁻⁴: fewer photons per second, each "
+                          "with less energy, and two factors from the stretching of the image.")),
         )
         wl.addWidget(self.hubble)
-        new_sky = QPushButton("New random sky")
-        new_sky.setToolTip("Place the stars at new random positions.")
+        new_sky = QPushButton(tr("New random sky"))
+        new_sky.setToolTip(tr("Place the stars at new random positions."))
         new_sky.clicked.connect(self._new_sky)
         wl.addWidget(new_sky)
         self.controls.addWidget(ways)
 
-        results = QGroupBox("Results")
+        results = QGroupBox(tr("Results"))
         rl = QVBoxLayout(results)
         self.summary = QLabel()
         self.summary.setWordWrap(True)
@@ -90,7 +91,7 @@ class OlbersSimulator(SimulatorBase):
         rl.addWidget(self.summary)
         self.controls.addWidget(results)
 
-        real = QGroupBox("Our universe")
+        real = QGroupBox(tr("Our universe"))
         ol = QVBoxLayout(real)
         r = olbers.real_universe()
         text = QLabel(
@@ -275,8 +276,9 @@ class OlbersSimulator(SimulatorBase):
 
     def guide_extra(self) -> str:
         return (
-            "### About the simulation\n\n"
-            "Stars are placed at random in a teaching universe measured in stellar radii. Nearby stars are drawn "
-            "as discs; beyond 400 stellar radii each empty pixel is followed along its line of sight with the "
-            "exact probability of hitting a star. The sky is **simulated**, not an image of the real sky."
+            "### " + tr("About the simulation") + "\n\n"
+            + tr(
+                "Stars are placed at random in a teaching universe measured in stellar radii. Nearby stars are drawn "
+                "as discs; beyond 400 stellar radii each empty pixel is followed along its line of sight with the "
+                "exact probability of hitting a star. The sky is **simulated**, not an image of the real sky.")
         )

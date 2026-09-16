@@ -8,9 +8,9 @@ from PySide6.QtWidgets import QHBoxLayout, QLineEdit, QListWidget, QListWidgetIt
 from cosmos.gui.context import AppContext
 from cosmos.gui.widgets.common import muted_label, title_label
 from cosmos.gui.widgets.rich_browser import RichBrowser
-from cosmos.i18n import tr
+from cosmos.i18n import tr, tr_noop
 
-GUIDE = """
+GUIDE = tr_noop("""
 ## Glossary
 
 All important terms of the course in one place.
@@ -20,7 +20,7 @@ All important terms of the course in one place.
   is explained.
 - Inside lessons, coloured terms open their definition directly in this Guide
   panel, so you never lose your place.
-"""
+""")
 
 
 class GlossaryPage(QWidget):
@@ -58,7 +58,7 @@ class GlossaryPage(QWidget):
             self.list.setCurrentRow(0)
 
     def guide_markdown(self) -> str:
-        return GUIDE
+        return tr(GUIDE)
 
     def select(self, key: str) -> None:
         for i in range(self.list.count()):

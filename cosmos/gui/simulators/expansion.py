@@ -10,6 +10,7 @@ from cosmos.gui.simulators.base import SimulatorBase
 from cosmos.gui.theme import theme
 from cosmos.gui.widgets.common import ParameterSlider, PresetSelector, labelled_row
 from cosmos.gui.widgets.plot import PlotWidget
+from cosmos.i18n import tr
 from cosmos.physics import constants as const
 from cosmos.physics.cosmology import Cosmology, Fate, no_big_bang_boundary, recollapse_boundary
 from cosmos.physics.presets import PRESETS
@@ -25,44 +26,44 @@ class ExpansionSimulator(SimulatorBase):
         self.pinned: list[tuple[str, object]] = []
         self.history = None
 
-        model = QGroupBox("Universe contents")
+        model = QGroupBox(tr("Universe contents"))
         ml = QVBoxLayout(model)
         self.preset = PresetSelector()
-        ml.addWidget(labelled_row("Preset", self.preset, (
-            "Presets", "Load a named model. Moving any slider switches back to custom values.")))
+        ml.addWidget(labelled_row(tr("Preset"), self.preset, (
+            tr("Presets"), tr("Load a named model. Moving any slider switches back to custom values."))))
         self.om = ParameterSlider(
-            "Ωm matter", *OM_RANGE, 0.31, decimals=3, step=0.01,
-            info=("Matter density Ωm", "Matter (ordinary + dark) slows the expansion. Above 1 without dark "
-                  "energy, the universe recollapses."),
+            tr("Ωm matter"), *OM_RANGE, 0.31, decimals=3, step=0.01,
+            info=(tr("Matter density Ωm"), tr("Matter (ordinary + dark) slows the expansion. Above 1 without dark "
+                      "energy, the universe recollapses.")),
         )
         self.ode = ParameterSlider(
-            "ΩΛ dark energy", *OL_RANGE, 0.69, decimals=3, step=0.01,
-            info=("Dark energy density ΩΛ", "A positive cosmological constant accelerates the expansion. "
-                  "Negative values act like extra attraction and cause recollapse."),
+            tr("ΩΛ dark energy"), *OL_RANGE, 0.69, decimals=3, step=0.01,
+            info=(tr("Dark energy density ΩΛ"), tr("A positive cosmological constant accelerates the expansion. "
+                      "Negative values act like extra attraction and cause recollapse.")),
         )
         self.h0 = ParameterSlider(
-            "H0 (km/s/Mpc)", 40, 100, 67.66, decimals=1,
-            info=("Hubble constant", "Sets the time scale: a larger H0 makes every universe younger, "
-                  "but does not change the shape of the curves."),
+            tr("H0 (km/s/Mpc)"), 40, 100, 67.66, decimals=1,
+            info=(tr("Hubble constant"), tr("Sets the time scale: a larger H0 makes every universe younger, "
+                      "but does not change the shape of the curves.")),
         )
-        self.radiation = QCheckBox("Include radiation")
-        self.radiation.setToolTip("Radiation only matters in the first ~100 000 years; the effect on this plot is tiny.")
+        self.radiation = QCheckBox(tr("Include radiation"))
+        self.radiation.setToolTip(tr("Radiation only matters in the first ~100 000 years; the effect on this plot is tiny."))
         for w in (self.om, self.ode, self.h0, self.radiation):
             ml.addWidget(w)
         self.controls.addWidget(model)
 
-        pins = QGroupBox("Compare")
+        pins = QGroupBox(tr("Compare"))
         pl = QHBoxLayout(pins)
-        pin = QPushButton("📌 Pin curve")
-        pin.setToolTip("Keep the current a(t) curve on the plot to compare with other models (up to 5).")
+        pin = QPushButton(tr("📌 Pin curve"))
+        pin.setToolTip(tr("Keep the current a(t) curve on the plot to compare with other models (up to 5)."))
         pin.clicked.connect(self._pin)
-        clear = QPushButton("Clear pins")
+        clear = QPushButton(tr("Clear pins"))
         clear.clicked.connect(self._clear_pins)
         pl.addWidget(pin)
         pl.addWidget(clear)
         self.controls.addWidget(pins)
 
-        summary = QGroupBox("This universe")
+        summary = QGroupBox(tr("This universe"))
         sl = QVBoxLayout(summary)
         self.summary = QLabel()
         self.summary.setWordWrap(True)
@@ -75,7 +76,7 @@ class ExpansionSimulator(SimulatorBase):
         self.a_plot = PlotWidget(self._draw_history, csv_provider=self._history_csv, export_name="scale_factor")
         self.plane = PlotWidget(self._draw_plane, export_name="omega_plane")
         self.plane.canvas.mpl_connect("button_press_event", self._plane_clicked)
-        self.plane.canvas.setToolTip("Click anywhere on this map to choose Ωm and ΩΛ.")
+        self.plane.canvas.setToolTip(tr("Click anywhere on this map to choose Ωm and ΩΛ."))
         split.addWidget(self.a_plot)
         split.addWidget(self.plane)
         split.setSizes([450, 400])

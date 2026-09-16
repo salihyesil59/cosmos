@@ -10,6 +10,7 @@ from cosmos.gui.simulators.base import SimulatorBase
 from cosmos.gui.theme import theme
 from cosmos.gui.widgets.common import Banner, ParameterSlider, labelled_row, muted_label
 from cosmos.gui.widgets.plot import PlotWidget
+from cosmos.i18n import tr
 from cosmos.physics import inference as inf
 from cosmos.physics import supernovae as sn
 
@@ -25,62 +26,63 @@ class MCMCSimulator(SimulatorBase):
         self.frame = 0
         self.grid = None
 
-        data = QGroupBox("1 · The data")
+        data = QGroupBox(tr("1 · The data"))
         dl = QVBoxLayout(data)
         self.sample_box = QComboBox()
         for key, factory in sn.SAMPLES.items():
             self.sample_box.addItem(factory().label, key)
         self.sample_box.setCurrentIndex(self.sample_box.findData("pantheon"))
-        dl.addWidget(labelled_row("Sample", self.sample_box, (
-            "What the likelihood sees",
-            "Every supernova contributes one term to χ². The real Pantheon+ sample is the default; the "
-            "simulated ones let you see what fewer or noisier measurements would give.")))
-        self.flat = QCheckBox("Assume a flat universe (ΩΛ = 1 − Ωm)")
-        self.flat.setToolTip("One parameter instead of two. The chain then explores a line, not a plane.")
+        dl.addWidget(labelled_row(tr("Sample"), self.sample_box, (
+            tr("What the likelihood sees"),
+            tr("Every supernova contributes one term to χ². The real Pantheon+ sample is the default; the "
+                "simulated ones let you see what fewer or noisier measurements would give."))))
+        self.flat = QCheckBox(tr("Assume a flat universe (ΩΛ = 1 − Ωm)"))
+        self.flat.setToolTip(tr("One parameter instead of two. The chain then explores a line, not a plane."))
         dl.addWidget(self.flat)
         self.controls.addWidget(data)
 
-        walk = QGroupBox("2 · The chain")
+        walk = QGroupBox(tr("2 · The chain"))
         wl = QVBoxLayout(walk)
         self.steps = ParameterSlider(
-            "Steps", 500, 20000, 4000, decimals=0, log=True,
-            info=("Length of the chain",
-                  "Each step proposes a new universe and accepts or rejects it. More steps mean a smoother "
-                  "posterior, but the useful number is the effective sample size, not the raw count."),
+            tr("Steps"), 500, 20000, 4000, decimals=0, log=True,
+            info=(tr("Length of the chain"),
+                  tr("Each step proposes a new universe and accepts or rejects it. More steps mean a smoother "
+                      "posterior, but the useful number is the effective sample size, not the raw count.")),
         )
         self.step_size = ParameterSlider(
-            "Proposal step σ", 0.005, 0.5, 0.08, decimals=3, log=True,
-            info=("How far each proposal jumps",
-                  "Too small and the walker crawls, accepting almost everything but exploring nothing. Too "
-                  "large and almost every proposal is rejected. An acceptance rate around 0.25 is healthy."),
+            tr("Proposal step σ"), 0.005, 0.5, 0.08, decimals=3, log=True,
+            info=(tr("How far each proposal jumps"),
+                  tr("Too small and the walker crawls, accepting almost everything but exploring nothing. Too "
+                      "large and almost every proposal is rejected. An acceptance rate around 0.25 is healthy.")),
         )
         self.burn_in = ParameterSlider(
-            "Burn-in (fraction)", 0.0, 0.5, 0.2, decimals=2, step=0.05,
-            info=("Throwing away the start",
-                  "The walker begins wherever you put it, not in the good region. The first steps are "
-                  "discarded so they do not bias the answer."),
+            tr("Burn-in (fraction)"), 0.0, 0.5, 0.2, decimals=2, step=0.05,
+            info=(tr("Throwing away the start"),
+                  tr("The walker begins wherever you put it, not in the good region. The first steps are "
+                      "discarded so they do not bias the answer.")),
         )
-        self.seed = ParameterSlider("Random seed", 1, 99, 1, decimals=0, step=1)
+        self.seed = ParameterSlider(tr("Random seed"), 1, 99, 1, decimals=0, step=1)
         for w in (self.steps, self.step_size, self.burn_in, self.seed):
             wl.addWidget(w)
         row = QHBoxLayout()
-        self.run_button = QPushButton("▶ Run the chain")
+        self.run_button = QPushButton(tr("▶ Run the chain"))
         self.run_button.setProperty("role", "primary")
         self.run_button.clicked.connect(self.run)
-        self.animate_button = QPushButton("Watch it walk")
+        self.animate_button = QPushButton(tr("Watch it walk"))
         self.animate_button.setCheckable(True)
-        self.animate_button.setToolTip("Reveal the chain step by step.")
+        self.animate_button.setToolTip(tr("Reveal the chain step by step."))
         self.animate_button.toggled.connect(self._animate)
         row.addWidget(self.run_button)
         row.addWidget(self.animate_button)
         wl.addLayout(row)
-        self.rhat_button = QPushButton(f"Run {CHAINS_FOR_RHAT} chains and check convergence")
-        self.rhat_button.setToolTip("Start four walkers from different corners and compare them with R̂.")
+        self.rhat_button = QPushButton(tr("Run {count} chains and check convergence")
+                                       .format(count=CHAINS_FOR_RHAT))
+        self.rhat_button.setToolTip(tr("Start four walkers from different corners and compare them with R̂."))
         self.rhat_button.clicked.connect(self.run_many)
         wl.addWidget(self.rhat_button)
         self.controls.addWidget(walk)
 
-        results = QGroupBox("What the chain says")
+        results = QGroupBox(tr("What the chain says"))
         rl = QVBoxLayout(results)
         self.summary = QLabel()
         self.summary.setWordWrap(True)
@@ -96,8 +98,8 @@ class MCMCSimulator(SimulatorBase):
         tabs = QTabWidget()
         self.posterior_plot = PlotWidget(self._draw_posterior, csv_provider=self._csv, export_name="mcmc_posterior")
         self.trace_plot = PlotWidget(self._draw_trace, export_name="mcmc_trace")
-        tabs.addTab(self.posterior_plot, "Posterior")
-        tabs.addTab(self.trace_plot, "Walk and χ²")
+        tabs.addTab(self.posterior_plot, tr("Posterior"))
+        tabs.addTab(self.trace_plot, tr("Walk and χ²"))
         self.display.addWidget(tabs, 1)
 
         self.timer = QTimer(self)
@@ -326,13 +328,13 @@ class MCMCSimulator(SimulatorBase):
 
     def guide_extra(self) -> str:
         return (
-            "### What the numbers mean\n\n"
-            "- **Acceptance rate** — the fraction of proposals the walker took. Near 25% is healthy for two "
-            "parameters; 1% or 95% both mean the step size is wrong.\n"
-            "- **Autocorrelation length** — how many steps before the walker forgets where it was. The "
-            "effective sample size is the chain length divided by it.\n"
-            "- **R̂** — four walkers started far apart should end up describing the same distribution. "
-            "Above 1.01 they have not met yet.\n"
-            "- The magnitude offset is fitted away at every step, which is why H0 never appears here: "
-            "supernovae alone measure the *shape* of the expansion, not its rate."
+            "### " + tr("What the numbers mean") + "\n\n"
+            + tr("- **Acceptance rate** — the fraction of proposals the walker took. Near 25% is healthy for "
+                 "two parameters; 1% or 95% both mean the step size is wrong.\n"
+                 "- **Autocorrelation length** — how many steps before the walker forgets where it was. The "
+                 "effective sample size is the chain length divided by it.\n"
+                 "- **R̂** — four walkers started far apart should end up describing the same distribution. "
+                 "Above 1.01 they have not met yet.\n"
+                 "- The magnitude offset is fitted away at every step, which is why H0 never appears here: "
+                 "supernovae alone measure the *shape* of the expansion, not its rate.")
         )

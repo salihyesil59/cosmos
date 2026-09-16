@@ -13,6 +13,7 @@ from cosmos.gui.simulators.base import SimulatorBase
 from cosmos.gui.theme import theme
 from cosmos.gui.widgets.common import Banner, ParameterSlider, labelled_row
 from cosmos.gui.widgets.plot import PlotWidget
+from cosmos.i18n import tr
 from cosmos.physics import constants as const
 from cosmos.physics.timeline import EPOCHS, T_MAX_S, T_MIN_S, YEAR_S, Timeline, format_time
 
@@ -90,40 +91,40 @@ class CosmicTimelineSimulator(SimulatorBase):
         self.timeline = Timeline()
         self._markers = []
 
-        travel = QGroupBox("1 · Travel through time")
+        travel = QGroupBox(tr("1 · Travel through time"))
         tl = QVBoxLayout(travel)
         self.log_time = ParameterSlider(
-            "log₁₀ of time since the Big Bang (seconds)", LOG_T_MIN, LOG_T_MAX,
+            tr("log₁₀ of time since the Big Bang (seconds)"), LOG_T_MIN, LOG_T_MAX,
             math.log10(self.timeline.age_s), decimals=2, step=0.1,
-            info=("A logarithmic time axis",
-                  "Each step of 1 multiplies the time by ten. A log scale is the only way to show 10⁻⁴³ seconds and "
-                  "13.8 billion years on the same slider. 0 is one second, 7.5 is one year and 17.64 is today."),
+            info=(tr("A logarithmic time axis"),
+                  tr("Each step of 1 multiplies the time by ten. A log scale is the only way to show 10⁻⁴³ seconds and "
+                      "13.8 billion years on the same slider. 0 is one second, 7.5 is one year and 17.64 is today.")),
         )
         tl.addWidget(self.log_time)
         self.time_label = QLabel()
         self.time_label.setProperty("role", "subtitle")
         tl.addWidget(self.time_label)
         self.epoch_box = QComboBox()
-        self.epoch_box.addItem("Jump to an epoch…", None)
+        self.epoch_box.addItem(tr("Jump to an epoch…"), None)
         for ep in EPOCHS:
             self.epoch_box.addItem(ep.name, ep.name)
-        tl.addWidget(labelled_row("Epoch", self.epoch_box, (
-            "Jump to an epoch", "Moves the time slider to the middle of the chosen epoch.")))
+        tl.addWidget(labelled_row(tr("Epoch"), self.epoch_box, (
+            tr("Jump to an epoch"), tr("Moves the time slider to the middle of the chosen epoch."))))
         row = QHBoxLayout()
-        self.play = QPushButton("▶ Play history")
+        self.play = QPushButton(tr("▶ Play history"))
         self.play.setCheckable(True)
         self.play.setProperty("role", "primary")
-        self.play.setToolTip("Sweep through cosmic history from the Planck era to the far future.")
+        self.play.setToolTip(tr("Sweep through cosmic history from the Planck era to the far future."))
         self.play.toggled.connect(self._toggle)
-        today = QPushButton("Today")
-        today.setToolTip("Jump back to the present day.")
+        today = QPushButton(tr("Today"))
+        today.setToolTip(tr("Jump back to the present day."))
         today.clicked.connect(lambda: self.log_time.setValue(math.log10(self.timeline.age_s)))
         row.addWidget(self.play)
         row.addWidget(today)
         tl.addLayout(row)
         self.controls.addWidget(travel)
 
-        state = QGroupBox("The universe at this moment")
+        state = QGroupBox(tr("The universe at this moment"))
         sl = QVBoxLayout(state)
         self.readout = QLabel()
         self.readout.setWordWrap(True)
@@ -294,10 +295,11 @@ class CosmicTimelineSimulator(SimulatorBase):
         return ["time_s", "temperature_K", "radiation_fraction", "matter_fraction", "dark_energy_fraction"], rows
 
     def guide_extra(self) -> str:
-        lines = ["### Epochs and their lessons", ""]
+        lines = ["### " + tr("Epochs and their lessons"), ""]
         for ep in EPOCHS:
-            link = f" — [lesson {ep.lesson}](lesson:{ep.lesson})" if ep.lesson else ""
+            label = tr("lesson {id}").format(id=ep.lesson)
+            link = f" — [{label}](lesson:{ep.lesson})" if ep.lesson else ""
             lines.append(f"- **{ep.name}** ({format_time(ep.start_s)}){link}")
-        lines += ["", "Before about 10⁻¹¹ s the temperatures are extrapolations of known physics. "
-                  "After one second they come from the Planck 2018 ΛCDM model."]
+        lines += ["", tr("Before about 10⁻¹¹ s the temperatures are extrapolations of known physics. "
+                         "After one second they come from the Planck 2018 ΛCDM model.")]
         return "\n".join(lines)
