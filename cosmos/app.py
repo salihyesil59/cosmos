@@ -11,6 +11,7 @@ from PySide6.QtGui import QFont
 from PySide6.QtWidgets import QApplication
 
 from cosmos import APP_NAME, __version__
+from cosmos.gui.icons import app_icon
 
 
 def data_path() -> Path:
@@ -41,11 +42,70 @@ def create_window(app: QApplication):
     return MainWindow(ctx)
 
 
+def selftest(report_path: str | None = None) -> int:
+    """Open every kind of page once and check the content is complete.
+
+    Used to verify a packaged build: ``Cosmos.exe --selftest report.txt``.
+    """
+    os.environ.setdefault("QT_QPA_PLATFORM", "offscreen")
+    from cosmos.content.loader import load_challenges, load_formulas, load_history
+    from cosmos.gui.simulators.registry import SIMULATORS
+
+    app = QApplication.instance() or QApplication([])
+    lines = [f"{APP_NAME} {__version__}", f"progress file: {data_path()}"]
+    failures = []
+    window = create_window(app)
+    window.show()
+    app.processEvents()
+    curriculum = window.ctx.curriculum
+    checks = [
+        ("lessons", len(curriculum.lessons)),
+        ("simulators", len(SIMULATORS)),
+        ("glossary terms", len(window.ctx.glossary)),
+        ("formulas", len(load_formulas())),
+        ("challenges", sum(len(v) for v in load_challenges().values())),
+        ("history events", len(load_history()[0])),
+    ]
+    for name, count in checks:
+        lines.append(f"{name}: {count}")
+        if count == 0:
+            failures.append(f"no {name} were bundled")
+
+    routes = ["home", "sims", "glossary", "reference", "history", "notes", "progress",
+              f"lesson:{curriculum.ordered_ids[0]}", "sim:S1", "search:redshift"]
+    for route in routes:
+        try:
+            window.navigate(route)
+            app.processEvents()
+        except Exception as exc:                       # noqa: BLE001 - reported, not raised
+            failures.append(f"{route}: {exc!r}")
+    lines.append(f"pages opened: {len(routes)}")
+    lines.append("RESULT: " + ("ok" if not failures else "failed"))
+    lines += [f"  - {problem}" for problem in failures]
+    window.close()
+
+    text = "\n".join(lines)
+    if report_path:
+        Path(report_path).write_text(text + "\n", encoding="utf-8")
+    print(text)
+    return 0 if not failures else 1
+
+
 def run(argv: list[str] | None = None) -> int:
+    args = list(argv if argv is not None else sys.argv)
+    if "--version" in args:
+        print(f"{APP_NAME} {__version__}")
+        return 0
+    if "--selftest" in args:
+        index = args.index("--selftest")
+        report = args[index + 1] if len(args) > index + 1 else None
+        return selftest(report)
+
     app = QApplication(argv if argv is not None else sys.argv)
     app.setApplicationName(APP_NAME)
     app.setOrganizationName(APP_NAME)
     app.setApplicationVersion(__version__)
+    app.setWindowIcon(app_icon())
     font = QFont("Segoe UI" if sys.platform == "win32" else app.font().family())
     font.setPointSizeF(10)
     app.setFont(font)

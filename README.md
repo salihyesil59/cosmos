@@ -71,6 +71,34 @@ python main.py
 
 You can also start the app with `python -m cosmos`.
 
+## A standalone Windows executable
+
+No Python installation is needed to run a packaged build.
+
+```bash
+pip install -r requirements-dev.txt
+python packaging/build_exe.py            # one file:  dist/Cosmos.exe   (~100 MB)
+python packaging/build_exe.py --onedir   # a folder:  dist/Cosmos/Cosmos.exe (starts in under a second)
+python packaging/build_exe.py --zip      # also writes dist/Cosmos-<version>-windows.zip
+```
+
+The build bundles the whole course (lessons, quizzes, glossary, formulas,
+challenges, history and the observational data) and leaves the test-only
+dependencies out. When it finishes, the script runs the packaged program with
+`--selftest`, which opens every kind of page off-screen and fails the build if
+anything is missing:
+
+```bash
+dist\Cosmos.exe --selftest report.txt    # exit code 0 means the build is complete
+dist\Cosmos.exe --version
+```
+
+The single-file build unpacks itself on every start (about five seconds); the
+`--onedir` build starts immediately and is the better choice for daily use.
+Progress, notes and bookmarks are stored per user in
+`%APPDATA%\Cosmos\progress.json`, so they survive updating the executable.
+The application icon is drawn by `packaging/make_icon.py`.
+
 ## Development
 
 ```bash
