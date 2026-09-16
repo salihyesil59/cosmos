@@ -40,6 +40,14 @@ definition here.
 Press **Continue learning** on the home page. It always points to the next lesson
 you are ready for.
 
+### More to explore
+
+- **Challenges** inside many simulators give you a concrete task and check your
+  answer.
+- **History** tells the story from Copernicus to the latest surveys, with cards
+  for the scientists.
+- **Badges** on the Progress page mark what you have achieved.
+
 ### Finding things again
 
 - **Search** (Ctrl+F) looks through every lesson, glossary term, simulator and

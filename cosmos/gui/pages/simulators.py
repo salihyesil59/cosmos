@@ -13,8 +13,10 @@ from PySide6.QtWidgets import (
     QWidget,
 )
 
+from cosmos.content.loader import load_challenges
 from cosmos.gui.context import AppContext
 from cosmos.gui.simulators.registry import SIMULATORS, SimulatorInfo
+from cosmos.gui.widgets.challenge_bar import ChallengeBar
 from cosmos.gui.widgets.common import card, muted_label, title_label
 
 HUB_GUIDE = """
@@ -87,7 +89,16 @@ class SimulatorHostPage(QWidget):
         root.addWidget(title_label(f"{info.icon}  {info.title}"))
         root.addWidget(muted_label(info.description))
         self.simulator = info.create()
+        self.challenges = load_challenges().get(info.id, [])
+        self.challenge_bar = None
+        if self.challenges:
+            self.challenge_bar = ChallengeBar(ctx, self.simulator, self.challenges)
+            self.challenge_bar.solved.connect(self._challenge_solved)
+            root.addWidget(self.challenge_bar)
         root.addWidget(self.simulator, 1)
+
+    def _challenge_solved(self, _key: str) -> None:
+        self.ctx.signals.progressChanged.emit()
 
     def guide_markdown(self) -> str:
         info = self.info
@@ -100,6 +111,13 @@ class SimulatorHostPage(QWidget):
         if lessons:
             lines += ["", "### Related lessons", ""]
             lines += [f"- [{lid} {cur.lessons[lid].title}](lesson:{lid})" for lid in lessons]
+        if self.challenges:
+            solved = sum(1 for c in self.challenges
+                         if self.ctx.store.is_challenge_done(c.simulator, c.id))
+            lines += ["", "### Challenges", "",
+                      f"This simulator has {len(self.challenges)} guided challenges "
+                      f"({solved} solved). Read the task at the top, set the controls, then press "
+                      "**Check my answer**."]
         extra = getattr(self.simulator, "guide_extra", None)
         if extra:
             lines += ["", extra()]

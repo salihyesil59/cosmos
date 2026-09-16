@@ -340,3 +340,74 @@ def test_reference_search_and_notes(window):
     window.navigate("glossary")                              # notes are disabled where they make no sense
     window.navigate("search:redshift")
     assert window.notes.route == ""
+
+
+def test_intuitive_view_and_challenges(window):
+    store = window.ctx.store
+
+    window.navigate("lesson:L2.3")
+    page = window.lesson_page
+    full_text = page.browser.toPlainText()
+    page.view_buttons.button(0).click()                       # Intuitive
+    pump()
+    assert store.data.math_view == "intuitive"
+    assert "Intuitive view" in page.browser.toPlainText()
+    assert page.hidden_counts(page.lesson) == (8, 1)          # 8 formulas, 1 derivation callout
+    window.navigate("lesson:L4.3")
+    pump()
+    assert page.view_buttons.button(0).isChecked()            # the choice follows the learner
+    page.view_buttons.button(1).click()
+    assert store.data.math_view == "full" and page.browser.toPlainText() != ""
+    window.navigate("lesson:L2.3")
+    pump()
+    assert page.browser.toPlainText() == full_text
+
+    window.navigate("sim:S17")
+    host = window.stack.currentWidget()
+    bar = host.challenge_bar
+    assert bar is not None and len(host.challenges) == 3
+    sim = host.simulator
+    sim.scenario.setCurrentIndex(sim.scenario.findData("olbers"))   # an earlier test left it elsewhere
+    pump()
+    bar.go(0)
+    assert bar.check() is True                                # Olbers' universe: the sky is fully covered
+    assert store.is_challenge_done("S17", "blazing-sky")
+    assert "challenger" in store.data.achievements
+    bar.go(2)
+    assert bar.check() is False                               # not set up for the expansion challenge
+    bar.show_hint()
+    assert "Hint" in bar.feedback.label.text()
+    sim.scenario.setCurrentIndex(sim.scenario.findData("expanding"))
+    pump()
+    assert bar.check() is True
+    assert "Challenges" in host.guide_markdown()
+
+    window.navigate("sim:S1")
+    calculator = window.stack.currentWidget()
+    calculator.simulator.preset.set_key("planck18", emit=True)
+    calculator.simulator.z.setValue(1090)
+    calculator.simulator.recompute()
+    calculator.challenge_bar.go(0)
+    assert calculator.challenge_bar.check() is True
+
+
+def test_history_page(window):
+    window.navigate("history")
+    pump()
+    page = window.history_page
+    assert len(page.matching_events()) > 25
+    assert 1998 in [e.year for e in page.matching_events("supernovae")]
+    assert page.matching_scientists("Leavitt")[0].name.endswith("Leavitt")
+    page.search.setText("dark matter")
+    pump()
+    assert 0 < len(page.matching_events("dark matter")) < 10
+    page.search.clear()
+    page.tabs.setCurrentIndex(1)
+    page.show_scientist(page.scientists[0])
+    assert "Copernicus" in page.person_view.toPlainText()
+    assert "history" in window.ctx.store.data.pages_seen
+
+    window.navigate("progress")
+    pump()
+    assert "badges earned" in window.progress_page.badge_summary.text()
+    assert window.progress_page.badge_widgets["historian"][3].text().startswith("Earned")

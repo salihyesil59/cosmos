@@ -1,0 +1,358 @@
+# A history of cosmology (G12): the timeline of discoveries and the people behind them.
+#
+# events: year, title, who, description, kind (idea | theory | observation | problem), lesson
+# scientists: name, years, contribution, story, lessons
+events:
+- year: 1543
+  title: The Sun takes the centre
+  who: Nicolaus Copernicus
+  description: De revolutionibus puts the Sun, not the Earth, at the centre of the planetary system and
+    starts the long retreat of humanity from the middle of everything.
+  kind: idea
+  lesson: L0.1
+- year: 1610
+  title: The Milky Way resolves into stars
+  who: Galileo Galilei
+  description: The first telescopic survey of the sky shows that the milky band is made of countless faint
+    stars.
+  kind: observation
+  lesson: L0.1
+- year: 1687
+  title: Universal gravitation
+  who: Isaac Newton
+  description: The Principia gives one law for falling apples and orbiting moons, and with it the first
+    physics that can be applied to the universe as a whole.
+  kind: theory
+  lesson: L0.5
+- year: 1755
+  title: Island universes
+  who: Immanuel Kant
+  description: Kant suggests that the faint nebulae are separate star systems like the Milky Way.
+  kind: idea
+  lesson: L1.4
+- year: 1823
+  title: Why is the night sky dark?
+  who: Heinrich Olbers
+  description: Olbers popularises the paradox of the dark night sky, which needs a universe with a beginning
+    to resolve.
+  kind: idea
+  lesson: L0.6
+- year: 1838
+  title: The first stellar parallax
+  who: Friedrich Bessel
+  description: 'The distance to 61 Cygni is measured from the tiny yearly wobble of its position: the
+    first rung of the distance ladder.'
+  kind: observation
+  lesson: L1.1
+- year: 1848
+  title: Poe's answer to Olbers
+  who: Edgar Allan Poe
+  description: 'In the essay Eureka a writer, not an astronomer, states the correct solution: light from
+    the most distant regions has not had time to reach us.'
+  kind: idea
+  lesson: L0.6
+- year: 1912
+  title: The period–luminosity law
+  who: Henrietta Swan Leavitt
+  description: Cepheid variables pulsate with a period that reveals their true brightness, turning them
+    into standard candles for measuring distances far beyond parallax.
+  kind: observation
+  lesson: L1.2
+- year: 1915
+  title: General relativity
+  who: Albert Einstein
+  description: Gravity becomes the curvature of spacetime, and the universe as a whole becomes something
+    physics can describe with equations.
+  kind: theory
+  lesson: L6.1
+- year: 1917
+  title: The cosmological constant
+  who: Albert Einstein
+  description: To keep the universe static Einstein adds the term Λ to his equations. The same term returns
+    in 1998 as dark energy.
+  kind: theory
+  lesson: L3.3
+- year: 1922
+  title: The expanding solutions
+  who: Alexander Friedmann
+  description: Friedmann solves Einstein's equations for a uniform universe and finds that it must expand
+    or contract, never stay still.
+  kind: theory
+  lesson: L2.3
+- year: 1927
+  title: The primeval atom
+  who: Georges Lemaître
+  description: A Belgian priest and physicist derives the expansion independently, predicts a linear velocity–distance
+    law and proposes that the universe began in a hot dense state.
+  kind: theory
+  lesson: L1.3
+- year: 1929
+  title: Galaxies are receding
+  who: Edwin Hubble
+  description: 'Distances and redshifts of 24 galaxies show velocity growing with distance: the observational
+    discovery of the expanding universe.'
+  kind: observation
+  lesson: L1.3
+- year: 1933
+  title: Missing mass in the Coma cluster
+  who: Fritz Zwicky
+  description: 'Galaxies in the cluster move far too fast for the visible matter. Zwicky calls the missing
+    component dunkle Materie: dark matter.'
+  kind: observation
+  lesson: L3.2
+- year: 1948
+  title: A hot beginning and its afterglow
+  who: Ralph Alpher and Robert Herman
+  description: Working with George Gamow on the origin of the elements, they predict a relic radiation
+    of a few kelvin filling the sky today.
+  kind: theory
+  lesson: L4.3
+- year: 1948
+  title: The steady state alternative
+  who: Fred Hoyle, Hermann Bondi and Thomas Gold
+  description: A rival theory keeps the universe unchanging by creating matter continuously. Hoyle coins
+    the mocking name Big Bang for the competition.
+  kind: idea
+  lesson: L4.1
+- year: 1964
+  title: The cosmic microwave background
+  who: Arno Penzias and Robert Wilson
+  description: An unexplained hiss in a radio antenna turns out to be the 3 K afterglow of the hot early
+    universe, and the steady state theory collapses.
+  kind: observation
+  lesson: L4.4
+- year: 1970
+  title: Flat rotation curves
+  who: Vera Rubin and Kent Ford
+  description: Spiral galaxies rotate just as fast in their outskirts as near the centre, demanding halos
+    of invisible matter around every galaxy.
+  kind: observation
+  lesson: L3.2
+- year: 1980
+  title: Inflation
+  who: Alan Guth
+  description: A brief burst of accelerated expansion in the first fraction of a second would explain
+    why the universe is flat, uniform and free of monopoles.
+  kind: theory
+  lesson: L6.3
+- year: 1981
+  title: Slow-roll inflation
+  who: Andrei Linde, Andreas Albrecht and Paul Steinhardt
+  description: A gently rolling field fixes the graceful-exit problem of the first inflation models and
+    predicts the spectrum of primordial ripples.
+  kind: theory
+  lesson: L6.3
+- year: 1992
+  title: Ripples in the afterglow
+  who: COBE satellite
+  description: 'COBE measures a perfect blackbody spectrum and finds temperature differences of one part
+    in 100 000: the seeds of all structure.'
+  kind: observation
+  lesson: L5.1
+- year: 1998
+  title: The expansion is accelerating
+  who: Saul Perlmutter, Brian Schmidt and Adam Riess
+  description: Distant type Ia supernovae are fainter than expected. Two competing teams conclude that
+    the expansion is speeding up, driven by dark energy.
+  kind: observation
+  lesson: L3.3
+- year: 2000
+  title: Space is flat
+  who: BOOMERanG and MAXIMA
+  description: Balloon-borne telescopes measure the first acoustic peak of the CMB and show that the geometry
+    of space is flat to within a few percent.
+  kind: observation
+  lesson: L5.1
+- year: 2003
+  title: The concordance model
+  who: WMAP satellite
+  description: Precision CMB maps pin down the age, contents and geometry of the universe, and ΛCDM becomes
+    the standard model of cosmology.
+  kind: observation
+  lesson: L3.4
+- year: 2005
+  title: Baryon acoustic oscillations
+  who: SDSS and 2dF surveys
+  description: The sound horizon of the early universe is found imprinted on the distribution of galaxies
+    as a standard ruler 150 megaparsecs across.
+  kind: observation
+  lesson: L5.2
+- year: 2006
+  title: The Bullet Cluster
+  who: Douglas Clowe and collaborators
+  description: In a cluster collision the lensing mass and the hot gas are separated, which is very hard
+    to explain without dark matter.
+  kind: observation
+  lesson: L6.7
+- year: 2013
+  title: Planck's portrait of the young universe
+  who: Planck satellite
+  description: The most precise CMB maps ever made give the parameters used throughout this course.
+  kind: observation
+  lesson: L5.1
+- year: 2015
+  title: Gravitational waves detected
+  who: LIGO collaboration
+  description: Ripples in spacetime from two merging black holes reach the Earth, opening a new window
+    on the universe.
+  kind: observation
+  lesson: L6.5
+- year: 2017
+  title: A standard siren
+  who: LIGO, Virgo and 70 observatories
+  description: The neutron-star merger GW170817 is seen in gravitational waves and in light, giving an
+    independent measurement of the Hubble constant.
+  kind: observation
+  lesson: L6.5
+- year: 2019
+  title: The first image of a black hole
+  who: Event Horizon Telescope
+  description: A planet-sized radio array photographs the shadow of the black hole in M87.
+  kind: observation
+  lesson: L6.1
+- year: 2019
+  title: The Hubble tension sharpens
+  who: SH0ES and Planck
+  description: Local Cepheid-calibrated supernovae and the CMB disagree about the expansion rate by more
+    than four standard deviations.
+  kind: problem
+  lesson: L6.6
+- year: 2022
+  title: JWST opens the early universe
+  who: James Webb Space Telescope
+  description: Infrared images reveal galaxies only a few hundred million years after the Big Bang, some
+    of them surprisingly bright.
+  kind: observation
+  lesson: L6.4
+- year: 2024
+  title: Hints of evolving dark energy
+  who: DESI survey
+  description: Baryon acoustic oscillations from millions of galaxies hint that dark energy may be weakening,
+    a possible crack in ΛCDM.
+  kind: problem
+  lesson: L6.2
+scientists:
+- name: Nicolaus Copernicus
+  years: 1473–1543
+  contribution: Moved the Earth out of the centre of the cosmos.
+  story: His heliocentric model was published in the year of his death. The principle named after him
+    — that we occupy no special place — is still a foundation of cosmology.
+  lessons:
+  - L0.1
+- name: Isaac Newton
+  years: 1642–1727
+  contribution: Universal gravitation and the first physics of the cosmos.
+  story: Newton realised that an infinite static universe of stars would be gravitationally unstable,
+    a puzzle he never resolved.
+  lessons:
+  - L0.5
+- name: Heinrich Wilhelm Olbers
+  years: 1758–1840
+  contribution: Made the dark night sky a scientific problem.
+  story: Olbers was a physician who observed at night; he also discovered two asteroids.
+  lessons:
+  - L0.6
+- name: Henrietta Swan Leavitt
+  years: 1868–1921
+  contribution: Discovered the period–luminosity law of Cepheids.
+  story: Employed as a human computer at Harvard on 30 cents an hour, she found the relation that let
+    Hubble measure the distance to other galaxies.
+  lessons:
+  - L1.2
+- name: Albert Einstein
+  years: 1879–1955
+  contribution: General relativity, and the cosmological constant.
+  story: He called adding Λ his greatest blunder — yet the term returned in 1998 as dark energy.
+  lessons:
+  - L6.1
+  - L3.3
+- name: Alexander Friedmann
+  years: 1888–1925
+  contribution: Found the expanding solutions of Einstein's equations.
+  story: A mathematician and balloon-flight record holder, he died of typhoid at 37, before Hubble's observations
+    proved him right.
+  lessons:
+  - L2.3
+- name: Georges Lemaître
+  years: 1894–1966
+  contribution: Proposed the expanding universe and the primeval atom.
+  story: A Catholic priest and physicist who derived the velocity–distance law two years before Hubble
+    published it, in a journal few cosmologists read.
+  lessons:
+  - L1.3
+  - L2.3
+- name: Edwin Hubble
+  years: 1889–1953
+  contribution: Showed that galaxies are outside the Milky Way and receding.
+  story: A lawyer and amateur boxer before he turned to astronomy; the space telescope carries his name.
+  lessons:
+  - L1.3
+  - L1.4
+- name: Fritz Zwicky
+  years: 1898–1974
+  contribution: Inferred dark matter from the Coma cluster.
+  story: Also predicted neutron stars and gravitational lenses decades before either was observed.
+  lessons:
+  - L3.2
+  - L5.6
+- name: George Gamow
+  years: 1904–1968
+  contribution: Worked out nucleosynthesis in a hot early universe.
+  story: With Alpher and Herman he predicted the microwave background, a prediction largely forgotten
+    until it was found by accident.
+  lessons:
+  - L4.3
+- name: Fred Hoyle
+  years: 1915–2001
+  contribution: Champion of the steady state, and of stellar nucleosynthesis.
+  story: He coined the term Big Bang on the radio in 1949 for a theory he opposed; his work on how stars
+    make carbon remains fundamental.
+  lessons:
+  - L4.1
+- name: Vera Rubin
+  years: 1928–2016
+  contribution: Measured the flat rotation curves that established dark matter.
+  story: She and Kent Ford studied dozens of spirals; every one needed far more mass than its stars provide.
+  lessons:
+  - L3.2
+- name: Jim Peebles
+  years: 1935–
+  contribution: Built much of the theory of structure formation and the CMB.
+  story: Nobel laureate in 2019 for theoretical discoveries in physical cosmology.
+  lessons:
+  - L5.3
+  - L5.4
+- name: Stephen Hawking
+  years: 1942–2018
+  contribution: Singularity theorems and the radiation of black holes.
+  story: With Roger Penrose he proved that a beginning is unavoidable in classical general relativity.
+  lessons:
+  - L6.1
+  - L6.8
+- name: Alan Guth
+  years: 1947–
+  contribution: Invented inflation.
+  story: He wrote SPECTACULAR REALIZATION in his notebook the night he saw that exponential expansion
+    solves the flatness and horizon problems.
+  lessons:
+  - L6.3
+- name: Andrei Linde
+  years: 1948–
+  contribution: Slow-roll and eternal inflation.
+  story: His version of inflation ends gracefully and leads to the idea of a multiverse of bubble universes.
+  lessons:
+  - L6.3
+  - L6.8
+- name: Saul Perlmutter, Brian Schmidt and Adam Riess
+  years: 1959–, 1967–, 1969–
+  contribution: Discovered the accelerating expansion with type Ia supernovae.
+  story: Two rival teams reached the same conclusion in 1998 and shared the 2011 Nobel Prize.
+  lessons:
+  - L3.3
+  - L6.6
+- name: Jocelyn Bell Burnell
+  years: 1943–
+  contribution: Discovered pulsars, the clocks of modern astrophysics.
+  story: Pulsar timing now hunts for the gravitational-wave background of merging supermassive black holes.
+  lessons:
+  - L6.5

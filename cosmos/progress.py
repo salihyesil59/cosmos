@@ -25,6 +25,7 @@ class UserData:
     theme: str = "dark"
     tour_completed: bool = False
     default_preset: str = "planck18"
+    math_view: str = "full"                                         # "full" or "intuitive" lesson view
     last_route: str = "home"
     quiz_best: dict[str, float] = field(default_factory=dict)       # lesson id -> best score 0..1
     completed: dict[str, str] = field(default_factory=dict)         # lesson id -> ISO timestamp
@@ -32,6 +33,9 @@ class UserData:
     simulators_opened: list[str] = field(default_factory=list)
     notes: dict[str, str] = field(default_factory=dict)             # route -> the learner's own note
     bookmarks: list[str] = field(default_factory=list)              # routes, most recent first
+    challenges_done: list[str] = field(default_factory=list)        # "S1/redshift-1100"
+    pages_seen: list[str] = field(default_factory=list)             # route kinds the learner has visited
+    achievements: dict[str, str] = field(default_factory=dict)      # achievement id -> ISO timestamp
 
     @classmethod
     def from_dict(cls, data: dict) -> "UserData":
@@ -59,8 +63,11 @@ class ProgressStore:
         os.replace(tmp, self.path)
 
     def reset(self) -> None:
-        theme, preset = self.data.theme, self.data.default_preset
-        self.data = UserData(theme=theme, default_preset=preset, tour_completed=True)
+        """Clear the learning record but keep the learner's own writing and settings."""
+        kept = self.data
+        self.data = UserData(theme=kept.theme, default_preset=kept.default_preset, tour_completed=True,
+                             math_view=kept.math_view, notes=dict(kept.notes),
+                             bookmarks=list(kept.bookmarks))
         self.save()
 
     # ----------------------------------------------------------- recording
@@ -79,6 +86,39 @@ class ProgressStore:
         if item_id not in bucket:
             bucket.append(item_id)
             self.save()
+
+    def mark_page_seen(self, page: str) -> None:
+        if page not in self.data.pages_seen:
+            self.data.pages_seen.append(page)
+            self.save()
+
+    def record_challenge(self, simulator_id: str, challenge_id: str) -> bool:
+        """Remember a solved simulator challenge; returns True the first time."""
+        key = f"{simulator_id}/{challenge_id}"
+        if key in self.data.challenges_done:
+            return False
+        self.data.challenges_done.append(key)
+        self.save()
+        return True
+
+    def is_challenge_done(self, simulator_id: str, challenge_id: str) -> bool:
+        return f"{simulator_id}/{challenge_id}" in self.data.challenges_done
+
+    # ------------------------------------------------------- achievements
+    def refresh_achievements(self, curriculum: Curriculum) -> list[str]:
+        """Record any newly earned achievements and return their ids."""
+        from cosmos.achievements import ACHIEVEMENTS
+
+        new = []
+        for achievement in ACHIEVEMENTS:
+            if achievement.id in self.data.achievements:
+                continue
+            if achievement.is_earned(self, curriculum):
+                self.data.achievements[achievement.id] = datetime.now().isoformat(timespec="seconds")
+                new.append(achievement.id)
+        if new:
+            self.save()
+        return new
 
     # ------------------------------------------------ notes and bookmarks
     def note(self, route: str) -> str:

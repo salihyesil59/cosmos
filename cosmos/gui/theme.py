@@ -137,6 +137,15 @@ def _stylesheet(p: Palette) -> str:
         background: {p.accent}; color: {p.accent_text}; border: 1px solid {p.accent}; font-weight: 600;
     }}
     QPushButton[role="primary"]:hover {{ background: {p.mix("#ffffff", 0.15, p.accent)}; }}
+    QFrame[card="true"][earned="no"] {{ background: {p.bg}; border-style: dashed; }}
+    QFrame#challengeBar {{ border-color: {p.accent2}; }}
+    QPushButton[segment="left"] {{ border-top-right-radius: 0; border-bottom-right-radius: 0; padding: 4px 10px; }}
+    QPushButton[segment="right"] {{
+        border-top-left-radius: 0; border-bottom-left-radius: 0; border-left: none; padding: 4px 10px;
+    }}
+    QPushButton[segment]:checked {{
+        background: {p.accent}; color: {p.accent_text}; border-color: {p.accent}; font-weight: 600;
+    }}
     QPushButton[role="link"] {{ background: transparent; border: none; color: {p.link}; padding: 2px; text-align: left; }}
     QPushButton[role="link"]:hover {{ text-decoration: underline; }}
     QToolButton[role="info"] {{

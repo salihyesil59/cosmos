@@ -34,8 +34,15 @@ on first launch.
   - Inflation Slow-Roll Simulator: potentials, nₛ and r against Planck and BICEP/Keck
   - Supernova Ia Discovery: repeat the 1998 analysis and meet the Hubble tension
   - Build Your Own Universe: design a cosmology and grade it against observations
+- **Two ways to read every lesson**: *Intuitive* tells the story in words,
+  *With the maths* shows every formula and derivation
 - **215 quiz questions** with explanations; score 70% or more to complete a
   lesson
+- **18 guided challenges** inside the simulators, with hints and automatic checking
+- **A history of cosmology**: 33 milestones from Copernicus to DESI and 18
+  scientist cards, each linked to the lesson that explains the physics
+- **16 badges** earned by learning: finishing levels, perfect quizzes, exploring
+  simulators and solving their challenges
 - **142-term glossary**: terms in lessons open their definitions in the Guide panel
 - **Reference page**: a 52-entry formula sheet, physical constants, a unit
   converter and the parameters of every model
@@ -79,7 +86,9 @@ quizzes, formulas) and open every page and simulator headlessly.
 ```
 cosmos/
   physics/      GUI-independent cosmology engine (numpy, scipy)
-  content/      lessons (Markdown), quizzes and glossary (YAML), curriculum
+  content/      lessons (Markdown); quizzes, glossary, formulas, challenges and
+                history (YAML); curriculum
+  achievements.py  badge definitions, computed from the learner's progress
   data/         bundled observational data
   gui/
     pages/      home, lesson, simulators, glossary, reference, search, notes, progress
@@ -99,14 +108,16 @@ On top of standard Markdown they support:
 |---|---|
 | `$$ ... $$` / `$ ... $` | display / inline formula (matplotlib mathtext) |
 | `[[key]]` or `[[key\|text]]` | link to a glossary term |
-| `:::note Title` … `:::` | callout (`note`, `tip`, `key`, `warning`, `history`, `example`) |
+| `:::note Title` … `:::` | callout (`note`, `tip`, `key`, `warning`, `history`, `example`, `math`) |
 | `:::try S1 Text` | "Try it" box that opens a simulator |
 | `{{figure:name}}` | figure drawn from the physics engine |
 | `[text](lesson:L1.2)` | link to another lesson |
 
 Add the lesson id to `cosmos/content/curriculum.yaml` and its quiz to
 `cosmos/content/quizzes/`. Entries for the formula sheet live in
-`cosmos/content/formulas.yaml`. Run `pytest` to check the new content.
+`cosmos/content/formulas.yaml`, simulator challenges in `challenges.yaml` and
+the timeline in `history.yaml`. A `:::math` callout marks a derivation, which
+the intuitive lesson view hides. Run `pytest` to check the new content.
 
 ## Data sources
 

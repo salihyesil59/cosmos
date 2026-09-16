@@ -292,6 +292,19 @@ class CalculatorSimulator(SimulatorBase):
         )
 
     # ------------------------------------------------------------ compute
+    def state(self) -> dict:
+        c = self.cosmo
+        z = self.z.value()
+        return {
+            "z": z,
+            "preset": self.preset.currentData(),
+            "om": c.Om0,
+            "ode": c.Ode0,
+            "h0": c.H0,
+            "age_gyr": float(c.age(0)) if c.has_big_bang() else float("nan"),
+            "age_at_z_gyr": float(c.age(z)) if c.has_big_bang() else float("nan"),
+        }
+
     def recompute(self) -> None:
         self.cosmo = c = self._build()
         z = self.z.value()

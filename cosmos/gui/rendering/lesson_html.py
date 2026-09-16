@@ -6,7 +6,8 @@ Supported syntax on top of standard Markdown:
 ``$ ... $``              inline formula
 ``[[key]]``              link to a glossary term (``[[key|shown text]]``)
 ``:::note Title``        callout box, closed by a line containing ``:::``
-                         kinds: note, tip, key, warning, history, example
+                         kinds: note, tip, key, warning, history, example, math
+                         (``math`` marks a derivation, hidden in the intuitive view)
 ``:::try S1 Text``       single-line "Try it" link to a simulator
 ``{{figure:name}}``      figure drawn by :mod:`cosmos.gui.rendering.figures`
 ``[text](lesson:L1.2)``  link to another lesson
@@ -41,8 +42,13 @@ CALLOUT_STYLES = {
     "warning": ("danger", "Common misconception"),
     "history": ("warning", "History"),
     "example": ("accent", "Worked example"),
+    "math": ("accent2", "The mathematics"),
     "try": ("accent", "Try it"),
 }
+
+# Callouts that carry the mathematical detail; hidden in the intuitive view (G7).
+MATH_CALLOUTS = ("math", "example")
+FULL_VIEW, INTUITIVE_VIEW = "full", "intuitive"
 
 
 @dataclass
@@ -50,6 +56,8 @@ class RenderedDocument:
     html: str
     images: dict[str, bytes] = field(default_factory=dict)  # url -> PNG
     sizes: dict[str, tuple[int, int]] = field(default_factory=dict)
+    hidden_formulas: int = 0     # display formulas left out of the intuitive view
+    hidden_blocks: int = 0       # derivations and worked examples left out
 
 
 @dataclass
@@ -59,6 +67,7 @@ class RenderContext:
     device_ratio: float = 1.0
     simulator_titles: dict[str, str] = field(default_factory=dict)
     glossary_terms: dict[str, str] = field(default_factory=dict)
+    math_view: str = FULL_VIEW    # FULL_VIEW shows every formula, INTUITIVE_VIEW hides them
 
 
 class _Renderer:
@@ -66,6 +75,7 @@ class _Renderer:
         self.ctx = ctx
         self.doc = RenderedDocument(html="")
         self._blocks: dict[str, str] = {}
+        self.intuitive = ctx.math_view == INTUITIVE_VIEW
 
     # -------------------------------------------------------------- tokens
     def _token(self, html_fragment: str) -> str:
@@ -133,17 +143,9 @@ class _Renderer:
     def _prepare(self, text: str) -> str:
         p = self.ctx.palette
         text = _TRY.sub(lambda m: "\n" + self._token(self._try_block(m.group(1), m.group(2))) + "\n", text)
-        text = _CALLOUT.sub(
-            lambda m: "\n"
-            + self._token(self._callout(m.group(1), m.group(2), self._render_fragment(m.group(3))))
-            + "\n",
-            text,
-        )
+        text = _CALLOUT.sub(self._callout_match, text)
         text = _FIGURE.sub(lambda m: "\n" + self._token(self._figure(m.group(1))) + "\n", text)
-        text = _DISPLAY_MATH.sub(
-            lambda m: "\n\n" + self._token(f'{_BLOCK_P}{self._math_img(m.group(1), True)}</p>') + "\n\n",
-            text,
-        )
+        text = _DISPLAY_MATH.sub(self._display_math_match, text)
         text = _INLINE_MATH.sub(lambda m: self._token(self._math_img(m.group(1), False)), text)
 
         def glossary_link(m):
@@ -155,6 +157,20 @@ class _Renderer:
             )
 
         return _GLOSSARY.sub(glossary_link, text)
+
+    def _callout_match(self, match: re.Match) -> str:
+        kind = match.group(1)
+        if self.intuitive and kind in MATH_CALLOUTS:
+            self.doc.hidden_blocks += 1
+            return "\n"
+        body = self._render_fragment(match.group(3))
+        return "\n" + self._token(self._callout(kind, match.group(2), body)) + "\n"
+
+    def _display_math_match(self, match: re.Match) -> str:
+        if self.intuitive:
+            self.doc.hidden_formulas += 1
+            return "\n\n"
+        return "\n\n" + self._token(f'{_BLOCK_P}{self._math_img(match.group(1), True)}</p>') + "\n\n"
 
     def _render_fragment(self, text: str) -> str:
         out = markdown.markdown(self._prepare(text), extensions=["tables", "sane_lists"])
