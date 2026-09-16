@@ -38,6 +38,31 @@ def route_title(ctx: AppContext, route: str) -> str:
     return f"{icon}  {title}"
 
 
+def page_context(ctx: AppContext, route: str) -> str:
+    """A plain-text description of the page, for the optional tutor (E9).
+
+    Only what is already on the learner's screen: the lesson they are reading,
+    or the simulator and the values it currently shows.
+    """
+    from cosmos.gui.search import _clean
+    from cosmos.gui.simulators.registry import SIMULATORS
+
+    kind, _, target = route.partition(":")
+    if kind == "lesson" and target in ctx.curriculum.lessons:
+        lesson = ctx.curriculum.lessons[target]
+        objectives = "; ".join(lesson.objectives)
+        return (f"Lesson {lesson.id} — {lesson.title}\nSummary: {lesson.summary}\n"
+                f"Objectives: {objectives}\n\n{_clean(lesson.body)}")
+    if kind == "sim" and target in SIMULATORS:
+        info = SIMULATORS[target]
+        return f"Simulator {info.id} — {info.title}\n{info.description}"
+    if kind == "glossary" and target in ctx.glossary:
+        term = ctx.glossary[target]
+        return f"Glossary term: {term.term}\n{term.definition}"
+    icon, title = route_parts(ctx, route)
+    return f"The learner is on the page: {title}"
+
+
 def is_noteworthy(route: str) -> bool:
     """Pages a learner can bookmark or attach a note to."""
     kind, _, _target = route.partition(":")

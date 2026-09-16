@@ -27,9 +27,11 @@ from cosmos.gui.pages.reference import ReferencePage
 from cosmos.gui.pages.search_page import SearchBox, SearchPage
 from cosmos.gui.pages.simulators import SimulatorHostPage, SimulatorHubPage
 from cosmos.gui.simulators.registry import SIMULATORS
+from cosmos.gui.routes import page_context
 from cosmos.gui.theme import theme
 from cosmos.gui.widgets.guide_panel import GuidePanel
 from cosmos.gui.widgets.notes_panel import NotesPanel
+from cosmos.gui.widgets.tutor_panel import TutorPanel
 from cosmos.gui.widgets.tour import TourOverlay, TourStep
 from cosmos.progress import LessonStatus
 
@@ -96,6 +98,7 @@ class MainWindow(QMainWindow):
         self._build_sidebar()
         self._build_guide()
         self._build_notes()
+        self._build_tutor()
         self._build_actions()
         self.statusBar().showMessage("Tip: hover over any control for a short explanation.")
 
@@ -195,6 +198,20 @@ class MainWindow(QMainWindow):
         self.guide_dock.raise_()
         self.notes_dock = dock
 
+    def _build_tutor(self) -> None:
+        from cosmos.app import data_path
+
+        self.tutor = TutorPanel(self.ctx, data_path().with_name("tutor.json"))
+        dock = QDockWidget("Tutor", self)
+        dock.setObjectName("tutorDock")
+        dock.setWidget(self.tutor)
+        dock.setFeatures(QDockWidget.DockWidgetClosable | QDockWidget.DockWidgetMovable)
+        dock.setMinimumWidth(300)
+        self.addDockWidget(Qt.RightDockWidgetArea, dock)
+        self.tabifyDockWidget(self.notes_dock, dock)
+        self.guide_dock.raise_()
+        self.tutor_dock = dock
+
     def _build_actions(self) -> None:
         tb = self.addToolBar("Main")
         tb.setObjectName("mainToolbar")
@@ -237,6 +254,10 @@ class MainWindow(QMainWindow):
         self.notes_action.setText("✎ Notes panel")
         self.notes_action.setToolTip("Show or hide the Notes panel (F2)")
         self.notes_action.setShortcut(QKeySequence("F2"))
+        self.tutor_action = self.tutor_dock.toggleViewAction()
+        self.tutor_action.setText("🤖 Tutor")
+        self.tutor_action.setToolTip("Ask the Tutor about this page (F3) — needs your own API key")
+        self.tutor_action.setShortcut(QKeySequence("F3"))
         tour = action("🧭 Tour", "Replay the guided tour of the app", self.start_tour)
         for a in (self.back_action, self.forward_action, home, cont):
             tb.addAction(a)
@@ -248,7 +269,7 @@ class MainWindow(QMainWindow):
         tb.addWidget(spacer)
         tb.addWidget(self.search_box)
         tb.addAction(self.bookmark_action)
-        for a in (self.guide_action, self.notes_action, self.theme_action, tour):
+        for a in (self.guide_action, self.notes_action, self.tutor_action, self.theme_action, tour):
             tb.addAction(a)
         self._update_nav_actions()
 
@@ -271,6 +292,7 @@ class MainWindow(QMainWindow):
         view.addAction(self.theme_action)
         view.addAction(self.guide_action)
         view.addAction(self.notes_action)
+        view.addAction(self.tutor_action)
         view.addAction(self.back_action)
         view.addAction(self.forward_action)
         help_menu = menu.addMenu("&Help")
@@ -301,6 +323,7 @@ class MainWindow(QMainWindow):
             page.simulator.on_shown()
         self.guide.set_context(page.guide_markdown())
         self.notes.set_route(route)
+        self.tutor.set_page(route, page_context(self.ctx, route))
         self._update_bookmark_action()
         self._select_sidebar(route)
         self._update_nav_actions()
@@ -573,6 +596,9 @@ class MainWindow(QMainWindow):
 
     def closeEvent(self, event):  # noqa: N802
         self.notes.save()
+        worker = getattr(self.tutor, "_worker", None)
+        if worker is not None:
+            worker.wait(2000)
         for page in self._sim_pages.values():
             page.simulator.on_hidden()
         self.ctx.store.save()

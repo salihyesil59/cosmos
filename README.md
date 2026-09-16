@@ -51,6 +51,7 @@ on first launch.
 - Tooltips and **?** buttons on every control
 - Progress tracking with a prerequisite map
 - Dark and light themes
+- An optional **Tutor** panel that answers questions with your own API key
 - Export plots as PNG/SVG and data as CSV
 - Presets: Planck 2018, WMAP 9-year, evolving and phantom dark energy, Einstein–de Sitter and more
 - A physics engine verified against [astropy](https://www.astropy.org/), and an
@@ -71,6 +72,16 @@ python main.py
 ```
 
 You can also start the app with `python -m cosmos`.
+
+## Optional: the Tutor
+
+A **Tutor** panel (F3) can answer questions about the page you are reading. It is
+switched off until you paste your own Anthropic API key into it, and nothing
+leaves the computer until you press **Ask**. The key is kept only on this machine,
+and only if you tick *Remember*; `ANTHROPIC_API_KEY` is picked up automatically if
+it is set. Tick *Include the page I am reading* to let the tutor see that lesson
+or simulator, or untick it to send only your question. Answers come from a
+language model and can be wrong: the lessons, not the tutor, are the course.
 
 ## Optional: exact CMB spectra with CAMB
 

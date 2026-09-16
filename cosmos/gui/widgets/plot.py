@@ -3,6 +3,7 @@
 from __future__ import annotations
 
 import csv
+import warnings
 from collections.abc import Callable, Sequence
 
 from matplotlib.backends.backend_qtagg import FigureCanvasQTAgg
@@ -18,6 +19,10 @@ from PySide6.QtWidgets import (
 )
 
 from cosmos.gui.theme import style_axes, style_legend, theme
+
+# Qt sometimes paints a canvas before the docks have settled on their sizes. The figure is
+# redrawn correctly once the widget has its real size, so the layout complaint is noise.
+warnings.filterwarnings("ignore", message="constrained_layout not applied.*", category=UserWarning)
 
 CsvProvider = Callable[[], tuple[Sequence[str], Sequence[Sequence[object]]]]
 
@@ -79,7 +84,14 @@ class PlotWidget(QWidget):
             self.refresh()
         super().showEvent(event)
 
+    MIN_DRAW_PX = 40
+
     def refresh(self) -> None:
+        # A canvas that has not been laid out yet would make matplotlib complain about
+        # collapsed axes; draw it when it becomes visible instead.
+        if self.canvas.width() < self.MIN_DRAW_PX or self.canvas.height() < self.MIN_DRAW_PX:
+            self._dirty = True
+            return
         self._dirty = False
         p = theme().palette
         self.figure.clear()

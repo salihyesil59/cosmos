@@ -48,6 +48,11 @@ you are ready for.
   for the scientists.
 - **Badges** on the Progress page mark what you have achieved.
 
+### Optional help
+
+- **Tutor** (F3) can answer questions about the page you are on. It is off until
+  you paste your own API key, and nothing is sent until you press **Ask**.
+
 ### Finding things again
 
 - **Search** (Ctrl+F) looks through every lesson, glossary term, simulator and
