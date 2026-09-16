@@ -3,10 +3,11 @@
 from __future__ import annotations
 
 from PySide6.QtCore import QSize, Qt
-from PySide6.QtGui import QAction, QColor, QIcon, QKeySequence, QPainter, QPen, QPixmap
+from PySide6.QtGui import QAction, QActionGroup, QColor, QIcon, QKeySequence, QPainter, QPen, QPixmap
 from PySide6.QtWidgets import (
     QDockWidget,
     QMainWindow,
+    QMenu,
     QMessageBox,
     QSizePolicy,
     QStackedWidget,
@@ -15,7 +16,8 @@ from PySide6.QtWidgets import (
     QWidget,
 )
 
-from cosmos import APP_NAME, __version__
+from cosmos import APP_NAME, __version__, i18n
+from cosmos.i18n import tr
 from cosmos.gui.context import AppContext
 from cosmos.gui.pages.glossary import GlossaryPage
 from cosmos.gui.pages.history_page import HistoryPage
@@ -70,7 +72,7 @@ class MainWindow(QMainWindow):
     def __init__(self, ctx: AppContext):
         super().__init__()
         self.ctx = ctx
-        self.setWindowTitle(f"{APP_NAME} — Learn Cosmology")
+        self.setWindowTitle(f"{APP_NAME} — " + tr("Learn Cosmology"))
         self.resize(1440, 900)
         self.setMinimumSize(1100, 700)
 
@@ -100,7 +102,7 @@ class MainWindow(QMainWindow):
         self._build_notes()
         self._build_tutor()
         self._build_actions()
-        self.statusBar().showMessage("Tip: hover over any control for a short explanation.")
+        self.statusBar().showMessage(tr("Tip: hover over any control for a short explanation."))
 
         ctx.signals.navigate.connect(self.navigate)
         ctx.signals.progressChanged.connect(self._refresh_sidebar)
@@ -129,8 +131,8 @@ class MainWindow(QMainWindow):
             tree.addTopLevelItem(item)
             return item
 
-        top("⌂  Home", "home", "Welcome page and where to continue")
-        self.curriculum_item = top("📚  Course", None, "All lessons, grouped by level")
+        top("⌂  " + tr("Home"), "home", tr("Welcome page and where to continue"))
+        self.curriculum_item = top("📚  " + tr("Course"), None, tr("All lessons, grouped by level"))
         self.lesson_items: dict[str, QTreeWidgetItem] = {}
         for level in self.ctx.curriculum.levels:
             lv = QTreeWidgetItem([f"Level {level.number} · {level.title}"])
@@ -144,7 +146,7 @@ class MainWindow(QMainWindow):
                 item.setToolTip(0, lesson.summary)
                 lv.addChild(item)
                 self.lesson_items[lesson_id] = item
-        self.sims_item = top("🧪  Simulators", "sims", "Interactive tools")
+        self.sims_item = top("🧪  " + tr("Simulators"), "sims", tr("Interactive tools"))
         self.sim_items: dict[str, QTreeWidgetItem] = {}
         for info in SIMULATORS.values():
             item = QTreeWidgetItem([f"{info.icon}  {info.title}"])
@@ -152,12 +154,15 @@ class MainWindow(QMainWindow):
             item.setToolTip(0, info.tagline)
             self.sims_item.addChild(item)
             self.sim_items[info.id] = item
-        self.glossary_item = top("📖  Glossary", "glossary", "Definitions of all important terms")
-        self.reference_item = top("∑  Reference", "reference", "Formula sheet, constants, units and models")
-        self.history_item = top("🕰  History", "history", "The discoveries and the people behind them")
-        self.search_item = top("🔎  Search", "search", "Search lessons, glossary, simulators and formulas")
-        self.notes_item = top("📝  Notes & bookmarks", "notes", "Everything you saved")
-        self.progress_item = top("📈  Progress", "progress", "Your progress and the lesson map")
+        self.glossary_item = top("📖  " + tr("Glossary"), "glossary", tr("Definitions of all important terms"))
+        self.reference_item = top("∑  " + tr("Reference"), "reference",
+                                  tr("Formula sheet, constants, units and models"))
+        self.history_item = top("🕰  " + tr("History"), "history",
+                                tr("The discoveries and the people behind them"))
+        self.search_item = top("🔎  " + tr("Search"), "search",
+                               tr("Search lessons, glossary, simulators and formulas"))
+        self.notes_item = top("📝  " + tr("Notes & bookmarks"), "notes", tr("Everything you saved"))
+        self.progress_item = top("📈  " + tr("Progress"), "progress", tr("Your progress and the lesson map"))
         self.curriculum_item.setExpanded(True)
         for i in range(self.curriculum_item.childCount()):
             self.curriculum_item.child(i).setExpanded(True)
@@ -165,7 +170,7 @@ class MainWindow(QMainWindow):
         tree.itemClicked.connect(self._on_tree_click)
         tree.itemActivated.connect(self._on_tree_click)
 
-        dock = QDockWidget("Navigation", self)
+        dock = QDockWidget(tr("Navigation"), self)
         dock.setObjectName("navigationDock")
         dock.setWidget(tree)
         dock.setFeatures(QDockWidget.NoDockWidgetFeatures)
@@ -175,7 +180,7 @@ class MainWindow(QMainWindow):
 
     def _build_guide(self) -> None:
         self.guide = GuidePanel(self.ctx)
-        dock = QDockWidget("Guide", self)
+        dock = QDockWidget(tr("Guide"), self)
         dock.setObjectName("guideDock")
         dock.setWidget(self.guide)
         dock.setFeatures(QDockWidget.DockWidgetClosable | QDockWidget.DockWidgetMovable)
@@ -187,7 +192,7 @@ class MainWindow(QMainWindow):
     def _build_notes(self) -> None:
         self.notes = NotesPanel(self.ctx)
         self.notes.bookmarksChanged.connect(self._refresh_notes)
-        dock = QDockWidget("Notes", self)
+        dock = QDockWidget(tr("Notes"), self)
         dock.setObjectName("notesDock")
         dock.setWidget(self.notes)
         dock.setFeatures(QDockWidget.DockWidgetClosable | QDockWidget.DockWidgetMovable)
@@ -202,7 +207,7 @@ class MainWindow(QMainWindow):
         from cosmos.app import data_path
 
         self.tutor = TutorPanel(self.ctx, data_path().with_name("tutor.json"))
-        dock = QDockWidget("Tutor", self)
+        dock = QDockWidget(tr("Tutor"), self)
         dock.setObjectName("tutorDock")
         dock.setWidget(self.tutor)
         dock.setFeatures(QDockWidget.DockWidgetClosable | QDockWidget.DockWidgetMovable)
@@ -229,36 +234,42 @@ class MainWindow(QMainWindow):
             a.setCheckable(checkable)
             return a
 
-        self.back_action = action("◀ Back", "Go back to the previous page (Alt+Left)", self.go_back, "Alt+Left")
-        self.forward_action = action("Forward ▶", "Go forward (Alt+Right)", self.go_forward, "Alt+Right")
-        home = action("⌂ Home", "Home page (Ctrl+H)", lambda: self.navigate("home"), "Ctrl+H")
-        cont = action("▶ Continue", "Open the next recommended lesson (Ctrl+L)", self.continue_learning, "Ctrl+L")
-        glossary = action("📖 Glossary", "Open the glossary (Ctrl+G)", lambda: self.navigate("glossary"), "Ctrl+G")
-        reference = action("∑ Reference", "Formula sheet, constants and units (Ctrl+R)",
+        self.back_action = action("◀ " + tr("Back"), tr("Go back to the previous page (Alt+Left)"),
+                                  self.go_back, "Alt+Left")
+        self.forward_action = action(tr("Forward") + " ▶", tr("Go forward (Alt+Right)"),
+                                     self.go_forward, "Alt+Right")
+        home = action("⌂ " + tr("Home"), tr("Home page (Ctrl+H)"), lambda: self.navigate("home"), "Ctrl+H")
+        cont = action("▶ " + tr("Continue"), tr("Open the next recommended lesson (Ctrl+L)"),
+                      self.continue_learning, "Ctrl+L")
+        glossary = action("📖 " + tr("Glossary"), tr("Open the glossary (Ctrl+G)"),
+                          lambda: self.navigate("glossary"), "Ctrl+G")
+        reference = action("∑ " + tr("Reference"), tr("Formula sheet, constants and units (Ctrl+R)"),
                            lambda: self.navigate("reference"), "Ctrl+R")
-        history = action("🕰 History", "The history of cosmology and its scientists",
+        history = action("🕰 " + tr("History"), tr("The history of cosmology and its scientists"),
                          lambda: self.navigate("history"))
-        notes = action("📝 Notes", "All your notes and bookmarks (Ctrl+Shift+N)",
+        notes = action("📝 " + tr("Notes"), tr("All your notes and bookmarks (Ctrl+Shift+N)"),
                        lambda: self.navigate("notes"), "Ctrl+Shift+N")
-        self.bookmark_action = action("☆ Bookmark", "Bookmark the current page (Ctrl+D)",
+        self.bookmark_action = action("☆ " + tr("Bookmark"), tr("Bookmark the current page (Ctrl+D)"),
                                       self.toggle_bookmark, "Ctrl+D")
         self.search_box = SearchBox(self.ctx)
-        find = action("🔎 Find", "Search the whole course (Ctrl+F)", self.focus_search, "Ctrl+F")
-        progress = action("📈 Progress", "Your progress and lesson map (Ctrl+P)", lambda: self.navigate("progress"), "Ctrl+P")
-        self.theme_action = action("◐ Theme", "Switch between dark and light theme (Ctrl+T)", self.toggle_theme, "Ctrl+T")
+        find = action("🔎 " + tr("Find"), tr("Search the whole course (Ctrl+F)"), self.focus_search, "Ctrl+F")
+        progress = action("📈 " + tr("Progress"), tr("Your progress and lesson map (Ctrl+P)"),
+                          lambda: self.navigate("progress"), "Ctrl+P")
+        self.theme_action = action("◐ " + tr("Theme"), tr("Switch between dark and light theme (Ctrl+T)"),
+                                   self.toggle_theme, "Ctrl+T")
         self.guide_action = self.guide_dock.toggleViewAction()
-        self.guide_action.setText("💡 Guide")
-        self.guide_action.setToolTip("Show or hide the Guide panel (F1)")
+        self.guide_action.setText("💡 " + tr("Guide"))
+        self.guide_action.setToolTip(tr("Show or hide the Guide panel (F1)"))
         self.guide_action.setShortcut(QKeySequence("F1"))
         self.notes_action = self.notes_dock.toggleViewAction()
-        self.notes_action.setText("✎ Notes panel")
-        self.notes_action.setToolTip("Show or hide the Notes panel (F2)")
+        self.notes_action.setText("✎ " + tr("Notes panel"))
+        self.notes_action.setToolTip(tr("Show or hide the Notes panel (F2)"))
         self.notes_action.setShortcut(QKeySequence("F2"))
         self.tutor_action = self.tutor_dock.toggleViewAction()
-        self.tutor_action.setText("🤖 Tutor")
-        self.tutor_action.setToolTip("Ask the Tutor about this page (F3) — needs your own API key")
+        self.tutor_action.setText("🤖 " + tr("Tutor"))
+        self.tutor_action.setToolTip(tr("Ask the Tutor about this page (F3) — needs your own API key"))
         self.tutor_action.setShortcut(QKeySequence("F3"))
-        tour = action("🧭 Tour", "Replay the guided tour of the app", self.start_tour)
+        tour = action("🧭 " + tr("Tour"), tr("Replay the guided tour of the app"), self.start_tour)
         for a in (self.back_action, self.forward_action, home, cont):
             tb.addAction(a)
         tb.addSeparator()
@@ -274,31 +285,72 @@ class MainWindow(QMainWindow):
         self._update_nav_actions()
 
         menu = self.menuBar()
-        file_menu = menu.addMenu("&File")
-        file_menu.addAction(action("Export notes…", "Save all notes and bookmarks as a Markdown file",
+        file_menu = menu.addMenu(tr("&File"))
+        file_menu.addAction(action(tr("Export notes…"), tr("Save all notes and bookmarks as a Markdown file"),
                                    self.notes_page.export))
         file_menu.addSeparator()
-        file_menu.addAction(action("Quit", "Close Cosmos", self.close, "Ctrl+Q"))
-        learn = menu.addMenu("&Learn")
+        file_menu.addAction(action(tr("Quit"), tr("Close Cosmos"), self.close, "Ctrl+Q"))
+        learn = menu.addMenu(tr("&Learn"))
         for a in (home, cont, glossary, reference, history, progress):
             learn.addAction(a)
         learn.addSeparator()
-        learn.addAction(action("Simulators", "All simulators", lambda: self.navigate("sims")))
+        learn.addAction(action(tr("Simulators"), tr("All simulators"), lambda: self.navigate("sims")))
         learn.addAction(find)
         learn.addSeparator()
         learn.addAction(self.bookmark_action)
         learn.addAction(notes)
-        view = menu.addMenu("&View")
+        view = menu.addMenu(tr("&View"))
         view.addAction(self.theme_action)
         view.addAction(self.guide_action)
         view.addAction(self.notes_action)
         view.addAction(self.tutor_action)
         view.addAction(self.back_action)
         view.addAction(self.forward_action)
-        help_menu = menu.addMenu("&Help")
+        view.addSeparator()
+        view.addMenu(self._language_menu())
+        help_menu = menu.addMenu(tr("&Help"))
         help_menu.addAction(tour)
-        help_menu.addAction(action("How to use Cosmos", "Show help in the Guide panel", self.show_help))
-        help_menu.addAction(action("About Cosmos", "Version and credits", self.show_about))
+        help_menu.addAction(action(tr("How to use Cosmos"), tr("Show help in the Guide panel"), self.show_help))
+        help_menu.addAction(action(tr("About Cosmos"), tr("Version and credits"), self.show_about))
+
+    def _language_menu(self) -> QMenu:
+        """View → Language: every compiled translation found next to the app."""
+        menu = QMenu(tr("Language"), self)
+        menu.setToolTipsVisible(True)
+        current = self.ctx.store.data.language or i18n.system_language()
+        group = QActionGroup(self)
+        group.setExclusive(True)
+        for language in i18n.available_languages():
+            entry = QAction(language.label, self, checkable=True)
+            entry.setChecked(language.code == current)
+            entry.setToolTip(tr("Applies the next time Cosmos starts."))
+            entry.triggered.connect(lambda _=False, code=language.code: self.set_language(code))
+            group.addAction(entry)
+            menu.addAction(entry)
+        menu.addSeparator()
+        hint = QAction(tr("Add a language…"), self)
+        hint.setToolTip(tr("See README: tools/update_translations.py creates the file to translate."))
+        hint.triggered.connect(self.show_language_help)
+        menu.addAction(hint)
+        self.language_menu = menu
+        return menu
+
+    def set_language(self, code: str) -> None:
+        self.ctx.store.data.language = code
+        self.ctx.store.save()
+        QMessageBox.information(
+            self, tr("Language"),
+            tr("The interface language changes the next time you start Cosmos.\n\n"
+               "The course content — lessons, quizzes and the glossary — is written in English."))
+
+    def show_language_help(self) -> None:
+        QMessageBox.information(
+            self, tr("Add a language"),
+            tr("Interface translations live in cosmos/i18n as Qt .ts files.\n\n"
+               "1. python tools/update_translations.py --language <code>\n"
+               "2. Translate the file with Qt Linguist (pyside6-linguist)\n"
+               "3. python tools/update_translations.py --release\n\n"
+               "The new language then appears in this menu."))
 
     # ---------------------------------------------------------- navigation
     def navigate(self, route: str, record: bool = True) -> None:

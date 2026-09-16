@@ -9,7 +9,7 @@ import pytest
 os.environ.setdefault("QT_QPA_PLATFORM", "offscreen")
 
 ROOT = Path(__file__).resolve().parent.parent
-SPEC = ROOT / "packaging" / "cosmos.spec"
+SPEC = ROOT / "tools" / "cosmos.spec"
 ICON = ROOT / "cosmos" / "gui" / "resources" / "cosmos.ico"
 
 
@@ -36,7 +36,7 @@ def test_version_and_selftest_flags(tmp_path, monkeypatch):
 
 
 def test_icon_is_a_multi_size_ico():
-    assert ICON.exists(), "run python packaging/make_icon.py"
+    assert ICON.exists(), "run python tools/make_icon.py"
     header = ICON.read_bytes()[:6]
     assert header[:4] == b"\x00\x00\x01\x00"          # ICONDIR for an .ico file
     images = int.from_bytes(header[4:6], "little")
@@ -60,4 +60,4 @@ def test_spec_bundles_all_content():
 
 @pytest.mark.parametrize("name", ["build_exe.py", "make_icon.py", "cosmos.spec"])
 def test_packaging_files_exist(name):
-    assert (ROOT / "packaging" / name).exists()
+    assert (ROOT / "tools" / name).exists()

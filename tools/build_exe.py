@@ -1,8 +1,8 @@
 """Build the standalone Cosmos executable and verify it (E7).
 
-    python packaging/build_exe.py                 # one file: dist/Cosmos.exe
-    python packaging/build_exe.py --onedir        # a folder: dist/Cosmos/Cosmos.exe (starts faster)
-    python packaging/build_exe.py --skip-verify   # build only
+    python tools/build_exe.py                 # one file: dist/Cosmos.exe
+    python tools/build_exe.py --onedir        # a folder: dist/Cosmos/Cosmos.exe (starts faster)
+    python tools/build_exe.py --skip-verify   # build only
 
 The build takes a few minutes and needs PyInstaller (``pip install -r
 requirements-dev.txt``). After the build the script runs the packaged program
@@ -22,7 +22,7 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent.parent
 sys.path.insert(0, str(ROOT))
-SPEC = ROOT / "packaging" / "cosmos.spec"
+SPEC = ROOT / "tools" / "cosmos.spec"
 DIST = ROOT / "dist"
 BUILD = ROOT / "build"
 

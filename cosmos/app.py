@@ -10,7 +10,7 @@ from PySide6.QtCore import QStandardPaths, QTimer
 from PySide6.QtGui import QFont
 from PySide6.QtWidgets import QApplication
 
-from cosmos import APP_NAME, __version__
+from cosmos import APP_NAME, __version__, i18n
 from cosmos.gui.icons import app_icon
 
 
@@ -31,6 +31,7 @@ def create_window(app: QApplication):
     from cosmos.progress import ProgressStore
 
     store = ProgressStore(data_path())
+    i18n.install(app, store.data.language or i18n.system_language())
     theme().set_theme(store.data.theme)
     theme().apply(app)
     ctx = AppContext(

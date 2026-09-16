@@ -26,6 +26,7 @@ class UserData:
     tour_completed: bool = False
     default_preset: str = "planck18"
     math_view: str = "full"                                         # "full" or "intuitive" lesson view
+    language: str = ""                                              # interface language code; "" follows the system
     last_route: str = "home"
     quiz_best: dict[str, float] = field(default_factory=dict)       # lesson id -> best score 0..1
     completed: dict[str, str] = field(default_factory=dict)         # lesson id -> ISO timestamp

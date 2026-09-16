@@ -50,7 +50,7 @@ on first launch.
 - **Notes and bookmarks**: a private notebook for every page, exportable as Markdown
 - Tooltips and **?** buttons on every control
 - Progress tracking with a prerequisite map
-- Dark and light themes
+- Dark and light themes, and a translatable interface
 - An optional **Tutor** panel that answers questions with your own API key
 - Export plots as PNG/SVG and data as CSV
 - Presets: Planck 2018, WMAP 9-year, evolving and phantom dark energy, Einstein–de Sitter and more
@@ -97,15 +97,29 @@ Pick **CAMB — exact Boltzmann code** in the simulator's *How the spectrum is
 computed* box. Each update then takes about half a second, and results are
 cached. Without `camb` the app behaves exactly as before.
 
+## Optional: another interface language
+
+The course content is English. The interface — menus, buttons, page headings —
+can be translated with the standard Qt tools:
+
+```bash
+python tools/update_translations.py --language de   # writes cosmos/i18n/cosmos_de.ts
+pyside6-linguist cosmos/i18n/cosmos_de.ts           # translate it
+python tools/update_translations.py --release       # compiles cosmos_de.qm
+```
+
+The language then appears in **View → Language** and is used the next time
+Cosmos starts. Without a compiled `.qm` file the app is English, as before.
+
 ## A standalone Windows executable
 
 No Python installation is needed to run a packaged build.
 
 ```bash
 pip install -r requirements-dev.txt
-python packaging/build_exe.py            # one file:  dist/Cosmos.exe   (~100 MB)
-python packaging/build_exe.py --onedir   # a folder:  dist/Cosmos/Cosmos.exe (starts in under a second)
-python packaging/build_exe.py --zip      # also writes dist/Cosmos-<version>-windows.zip
+python tools/build_exe.py            # one file:  dist/Cosmos.exe   (~100 MB)
+python tools/build_exe.py --onedir   # a folder:  dist/Cosmos/Cosmos.exe (starts in under a second)
+python tools/build_exe.py --zip      # also writes dist/Cosmos-<version>-windows.zip
 ```
 
 The build bundles the whole course (lessons, quizzes, glossary, formulas,
@@ -123,7 +137,7 @@ The single-file build unpacks itself on every start (about five seconds); the
 `--onedir` build starts immediately and is the better choice for daily use.
 Progress, notes and bookmarks are stored per user in
 `%APPDATA%\Cosmos\progress.json`, so they survive updating the executable.
-The application icon is drawn by `packaging/make_icon.py`.
+The application icon is drawn by `tools/make_icon.py`.
 
 ## Development
 
