@@ -1,5 +1,6 @@
 -r requirements.txt
 astropy>=6.0
 pytest>=8.0
+camb>=1.5           # optional: exact CMB spectra in simulator S12
 pyinstaller>=6.0
 pillow>=10.0        # packs the application icon into a multi-size .ico
