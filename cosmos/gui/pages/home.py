@@ -144,7 +144,8 @@ class HomePage(QWidget):
             btn = QPushButton(tr("Open level"))
             first = level.lesson_ids[0]
             btn.clicked.connect(lambda _=False, lv=level: self._open_level(lv))
-            btn.setToolTip(f"Opens the first unfinished lesson of this level (starts at {first}).")
+            btn.setToolTip(tr("Opens the first unfinished lesson of this level (starts at {lesson}).")
+                           .format(lesson=first))
             cl.addStretch(1)
             cl.addWidget(btn, 0, Qt.AlignLeft)
             self.levels_grid.addWidget(c, i // 2, i % 2)

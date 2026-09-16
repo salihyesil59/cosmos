@@ -228,7 +228,7 @@ class BalloonSimulator(SimulatorBase):
         self.canvas.update()
 
     def _toggle(self, on: bool) -> None:
-        self.play.setText("⏸ Pause" if on else "▶ Play")
+        self.play.setText(tr("⏸ Pause") if on else tr("▶ Play"))
         if on:
             if self.scale.value() >= A_END - 1e-6:
                 self.scale.setValue(A_START)
@@ -272,12 +272,15 @@ class BalloonSimulator(SimulatorBase):
         far_d, _ = dists[-1]
         a = c.a
         self.facts.setText(
-            f"Scale factor: <b>{a:.2f}</b> (distances × {a / A_START:.2f} since the start)<br><br>"
-            f"Nearest galaxy: comoving {near_d:.2f} cells → proper <b>{near_d * a:.2f}</b> cells<br>"
-            f"Farthest galaxy: comoving {far_d:.2f} cells → proper <b>{far_d * a:.2f}</b> cells<br><br>"
-            f"The farthest galaxy is {far_d / near_d:.1f}× farther away and recedes "
-            f"<b>{far_d / near_d:.1f}× faster</b>: v ∝ d, the Hubble–Lemaître law.<br><br>"
-            "<i>Click another galaxy: the pattern is identical. There is no centre.</i>"
+            tr("Scale factor: <b>{a}</b> (distances × {growth} since the start)<br><br>"
+               "Nearest galaxy: comoving {near} cells → proper <b>{near_proper}</b> cells<br>"
+               "Farthest galaxy: comoving {far} cells → proper <b>{far_proper}</b> cells<br><br>"
+               "The farthest galaxy is {ratio}× farther away and recedes <b>{ratio}× faster</b>: "
+               "v ∝ d, the Hubble–Lemaître law.<br><br>"
+               "<i>Click another galaxy: the pattern is identical. There is no centre.</i>")
+            .format(a=f"{a:.2f}", growth=f"{a / A_START:.2f}", near=f"{near_d:.2f}",
+                    near_proper=f"{near_d * a:.2f}", far=f"{far_d:.2f}", far_proper=f"{far_d * a:.2f}",
+                    ratio=f"{far_d / near_d:.1f}")
         )
 
     def on_hidden(self) -> None:

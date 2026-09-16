@@ -18,6 +18,7 @@ from PySide6.QtWidgets import (
 
 from cosmos import APP_NAME, __version__, i18n
 from cosmos.i18n import tr
+from cosmos.gui.labels import physics
 from cosmos.gui.context import AppContext
 from cosmos.gui.pages.glossary import GlossaryPage
 from cosmos.gui.pages.history_page import HistoryPage
@@ -489,7 +490,8 @@ class MainWindow(QMainWindow):
             status = store.status(cur, lesson_id)
             item.setIcon(0, status_icon(status))
             lesson = cur.lessons[lesson_id]
-            item.setToolTip(0, f"{lesson.summary}\n\nStatus: {status.value}")
+            item.setToolTip(0, lesson.summary + "\n\n"
+                            + tr("Status: {status}").format(status=physics(status.value)))
 
     # ----------------------------------------------------------- commands
     def focus_search(self) -> None:

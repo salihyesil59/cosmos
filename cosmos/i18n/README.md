@@ -20,11 +20,17 @@ Only `.qm` files are loaded at run time; `.ts` files are the editable source.
 
 `cosmos_tr.ts` / `cosmos_tr.qm` are the Turkish pack that ships with the app. It
 covers the window chrome, the pages, the panels, the badges, the Guide panel, the
-guided tour and every simulator's controls, tooltips and guidance. Lesson text and
-the values a simulator reports back are English. Strings that are defined far from
-where they are shown (the badge table or the simulator catalogue, for instance) are
-marked with `tr_noop()` and translated with `tr()` at display time — the update
-script tells lupdate about that alias.
+guided tour, the quiz, the challenges and every simulator — its controls, its
+tooltips and the results it writes out. Lesson text and the names of datasets,
+epochs and galaxies stay English. Strings that are defined far from where they are
+shown (the badge table or the simulator catalogue, for instance) are marked with
+`tr_noop()` and translated with `tr()` at display time — the update script tells
+lupdate about that alias.
+
+`cosmos.physics` knows nothing about Qt, so the prose it returns — a universe's
+fate, its geometry, the unit of a time span — is marked in `cosmos/gui/labels.py`
+and translated with `labels.physics()` where it is shown. A test keeps that table
+in step with the physics layer.
 
 Refreshing a `.ts` is safe: lupdate cannot see the `cosmos` context and marks every
 existing entry obsolete, so `update_translations.py` remembers the translations

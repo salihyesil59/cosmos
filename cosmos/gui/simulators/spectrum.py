@@ -190,27 +190,34 @@ class SpectrumSimulator(SimulatorBase):
         z = self.current_z()
         halpha = spectra.observed_wavelength(656.28, z)
         lines = [
-            f"Redshift z = <b>{z:+.4f}</b>",
-            f"Every wavelength × <b>{1 + z:.4f}</b>",
-            f"Hα (656.3 nm) observed at <b>{halpha:.1f} nm</b> ({spectra.band_name(halpha)})",
+            tr("Redshift z = <b>{z}</b>").format(z=f"{z:+.4f}"),
+            tr("Every wavelength × <b>{factor}</b>").format(factor=f"{1 + z:.4f}"),
+            tr("Hα (656.3 nm) observed at <b>{wavelength} nm</b> ({band})")
+            .format(wavelength=f"{halpha:.1f}", band=spectra.band_name(halpha)),
         ]
         if self.doppler.isChecked():
             v = self.velocity.value()
-            direction = "receding" if v > 0 else "approaching" if v < 0 else "at rest"
-            lines.append(f"Source is <b>{direction}</b> at {abs(v):,.0f} km/s = {abs(v) / 2997.92458:.2f}% of c".replace(",", " "))
-            lines.append(f"Simple estimate z ≈ v/c = {spectra.classical_doppler_z(v):+.4f}")
+            direction = tr("receding") if v > 0 else tr("approaching") if v < 0 else tr("at rest")
+            lines.append(tr("Source is <b>{direction}</b> at {speed} km/s = {fraction}% of c")
+                         .format(direction=direction, speed=f"{abs(v):,.0f}".replace(",", " "),
+                                 fraction=f"{abs(v) / 2997.92458:.2f}"))
+            lines.append(tr("Simple estimate z ≈ v/c = {z}")
+                         .format(z=f"{spectra.classical_doppler_z(v):+.4f}"))
         else:
             a = 1 / (1 + z)
             lines += [
-                f"Universe size at emission: <b>{a:.3f}</b> × today",
-                f"Light travelled for <b>{self.cosmo.lookback_time(z):.2f} billion years</b>",
-                f"Universe was <b>{self.cosmo.age(z):.2f} billion years</b> old (Planck 2018)",
+                tr("Universe size at emission: <b>{a}</b> × today").format(a=f"{a:.3f}"),
+                tr("Light travelled for <b>{years} billion years</b>")
+                .format(years=f"{self.cosmo.lookback_time(z):.2f}"),
+                tr("Universe was <b>{years} billion years</b> old (Planck 2018)")
+                .format(years=f"{self.cosmo.age(z):.2f}"),
             ]
         self.readout.setText("<br>".join(lines))
         if self.challenge_z is None:
-            self.view.set_strips([("Laboratory (rest frame)", 0.0, True), ("Observed", z, True)])
+            self.view.set_strips([(tr("Laboratory (rest frame)"), 0.0, True), (tr("Observed"), z, True)])
         else:
-            self.view.set_strips([("Mystery galaxy", self.challenge_z, False), ("Your guess", z, True)])
+            self.view.set_strips([(tr("Mystery galaxy"), self.challenge_z, False),
+                                  (tr("Your guess"), z, True)])
 
     def _start_challenge(self) -> None:
         self.cosmic.setChecked(True)
@@ -218,8 +225,8 @@ class SpectrumSimulator(SimulatorBase):
         self.check.setEnabled(True)
         self.banner.set_message(
             "info",
-            "<b>Mystery galaxy!</b> Its spectrum is in the upper strip. Move the redshift slider until the lines "
-            "in your guess line up with the mystery spectrum, then press <b>Check my answer</b>.",
+            tr("<b>Mystery galaxy!</b> Its spectrum is in the upper strip. Move the redshift slider until the "
+               "lines in your guess line up with the mystery spectrum, then press <b>Check my answer</b>."),
         )
         self.banner.show()
         self.redshift.setValue(0.01)
@@ -232,13 +239,15 @@ class SpectrumSimulator(SimulatorBase):
         if error < 0.01:
             self.banner.set_message(
                 "success",
-                f"<b>Excellent!</b> The true redshift is z = {self.challenge_z}. Your guess {guess:.3f} is within "
-                f"{error:.1%}. The light left this galaxy {self.cosmo.lookback_time(self.challenge_z):.1f} "
-                "billion years ago.",
+                tr("<b>Excellent!</b> The true redshift is z = {truth}. Your guess {guess} is within {error}. "
+                   "The light left this galaxy {years} billion years ago.")
+                .format(truth=self.challenge_z, guess=f"{guess:.3f}", error=f"{error:.1%}",
+                        years=f"{self.cosmo.lookback_time(self.challenge_z):.1f}"),
             )
             self.challenge_z = None
             self.check.setEnabled(False)
             self.recompute()
         else:
-            hint = "higher" if guess < self.challenge_z else "lower"
-            self.banner.set_message("warning", f"Not yet: the lines do not match. Try a <b>{hint}</b> redshift.")
+            hint = tr("higher") if guess < self.challenge_z else tr("lower")
+            self.banner.set_message("warning", tr("Not yet: the lines do not match. Try a <b>{hint}</b> "
+                                                  "redshift.").format(hint=hint))

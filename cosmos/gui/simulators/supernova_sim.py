@@ -121,14 +121,15 @@ class SupernovaSimulator(SimulatorBase):
         if self.sample.real:
             self.banner.set_message(
                 "success",
-                f"<b>Real measurements.</b> {self.sample.citation}. The fit below is your own, made with "
-                "diagonal errors only, so it will not match the published numbers exactly.")
+                tr("<b>Real measurements.</b> {citation}. The fit below is your own, made with diagonal errors "
+                   "only, so it will not match the published numbers exactly.")
+                .format(citation=self.sample.citation))
         else:
             self.banner.set_message(
                 "info",
-                "<b>Simulated data.</b> These supernovae are generated inside the app to resemble real "
-                "surveys, so you can repeat the 1998 analysis yourself. Switch the sample to Pantheon+ "
-                "for the real measurements.")
+                tr("<b>Simulated data.</b> These supernovae are generated inside the app to resemble real "
+                   "surveys, so you can repeat the 1998 analysis yourself. Switch the sample to Pantheon+ "
+                   "for the real measurements."))
         self.fit = sn.fit_grid(self.sample, n=61)
         self.flat_fit = sn.fit_flat(self.sample)
         self.recompute()
@@ -155,14 +156,16 @@ class SupernovaSimulator(SimulatorBase):
         h0 = self.hubble_constant()
         q0 = om / 2 - ol
         self.summary.setText(
-            f"Best fit: <b>Ωm = {om:.2f}, ΩΛ = {ol:.2f}</b>"
-            + (" (flat)" if self.flat.isChecked() else "") + "<br>"
-            f"Deceleration parameter q0 = <b>{q0:+.2f}</b> "
-            f"({'accelerating' if q0 < 0 else 'decelerating'})<br>"
-            f"Evidence for acceleration: <b>{sigma:.1f}σ</b><br>"
-            f"Evidence for dark energy (ΩΛ > 0, no flatness assumed): {self.fit.dark_energy_sigma:.1f}σ<br>"
-            f"Hubble constant with this calibration: <b>{h0:.1f} km/s/Mpc</b><br>"
-            f"Number of supernovae: {len(self.sample.z)}"
+            tr("Best fit: <b>Ωm = {om}, ΩΛ = {ol}</b>").format(om=f"{om:.2f}", ol=f"{ol:.2f}")
+            + (" " + tr("(flat)") if self.flat.isChecked() else "") + "<br>"
+            + tr("Deceleration parameter q0 = <b>{q0}</b> ({trend})<br>"
+                 "Evidence for acceleration: <b>{sigma}σ</b><br>"
+                 "Evidence for dark energy (ΩΛ > 0, no flatness assumed): {dark_energy}σ<br>"
+                 "Hubble constant with this calibration: <b>{h0} km/s/Mpc</b><br>"
+                 "Number of supernovae: {count}")
+            .format(q0=f"{q0:+.2f}", trend=tr("accelerating") if q0 < 0 else tr("decelerating"),
+                    sigma=f"{sigma:.1f}", dark_energy=f"{self.fit.dark_energy_sigma:.1f}",
+                    h0=f"{h0:.1f}", count=len(self.sample.z))
         )
         for plot in (self.hubble_plot, self.plane_plot, self.h0_plot):
             plot.refresh()

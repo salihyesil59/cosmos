@@ -73,11 +73,12 @@ def best_unit(metres: float) -> str:
 
 def light_time(metres: float) -> str:
     seconds = metres / const.C
-    for size, name in [(const.YEAR * 1e9, "billion years"), (const.YEAR * 1e6, "million years"),
-                       (const.YEAR, "years"), (86400, "days"), (3600, "hours"), (60, "minutes"), (1, "seconds")]:
+    for size, name in [(const.YEAR * 1e9, tr("billion years")), (const.YEAR * 1e6, tr("million years")),
+                       (const.YEAR, tr("years")), (86400, tr("days")), (3600, tr("hours")),
+                       (60, tr("minutes")), (1, tr("seconds"))]:
         if seconds >= size:
             return f"{seconds / size:.3g} {name}"
-    return f"{seconds * 1e9:.3g} nanoseconds"
+    return f"{seconds * 1e9:.3g} " + tr("nanoseconds")
 
 
 class ZoomView(QWidget):
@@ -239,8 +240,9 @@ class PowersOfTenSimulator(SimulatorBase):
         self.view.set_log_width(value)
         view_m = 10**value
         self.width_label.setText(
-            f"Width of view: <b>{view_m:.3g} m</b><br>= <b>{best_unit(view_m)}</b><br>"
-            f"Light needs <b>{light_time(view_m)}</b> to cross it."
+            tr("Width of view: <b>{metres} m</b><br>= <b>{in_units}</b><br>"
+               "Light needs <b>{time}</b> to cross it.")
+            .format(metres=f"{view_m:.3g}", in_units=best_unit(view_m), time=light_time(view_m))
         )
         items = [o for o in OBJECTS if 0.05 * view_m < o.size_m < 1.5 * view_m]
         if items:
@@ -249,7 +251,7 @@ class PowersOfTenSimulator(SimulatorBase):
             self.visible_label.setText(tr("<i>Mostly empty space at this scale. Keep zooming!</i>"))
 
     def _toggle_play(self, on: bool) -> None:
-        self.play.setText("⏸ Pause" if on else "▶ Play")
+        self.play.setText(tr("⏸ Pause") if on else tr("▶ Play"))
         if on:
             self.timer.start()
         else:

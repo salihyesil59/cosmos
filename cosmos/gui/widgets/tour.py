@@ -79,11 +79,12 @@ class TourOverlay(QWidget):
         step = self.steps[self.index]
         if step.before:
             step.before()
-        self.counter.setText(f"Step {self.index + 1} of {len(self.steps)}")
+        self.counter.setText(tr("Step {number} of {total}")
+                             .format(number=self.index + 1, total=len(self.steps)))
         self.title.setText(step.title)
         self.body.setText(step.text)
         self.back.setEnabled(self.index > 0)
-        self.next.setText("Finish" if self.index == len(self.steps) - 1 else "Next")
+        self.next.setText(tr("Finish") if self.index == len(self.steps) - 1 else tr("Next"))
         self.bubble.adjustSize()
         self._place_bubble()
         self.update()

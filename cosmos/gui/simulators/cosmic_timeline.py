@@ -9,11 +9,12 @@ from matplotlib.patches import Patch
 from PySide6.QtCore import Qt, QTimer
 from PySide6.QtWidgets import QComboBox, QGroupBox, QHBoxLayout, QLabel, QPushButton, QVBoxLayout
 
+from cosmos.gui.labels import physics
 from cosmos.gui.simulators.base import SimulatorBase
 from cosmos.gui.theme import theme
 from cosmos.gui.widgets.common import Banner, ParameterSlider, labelled_row
 from cosmos.gui.widgets.plot import PlotWidget
-from cosmos.i18n import tr
+from cosmos.i18n import tr, tr_noop
 from cosmos.physics import constants as const
 from cosmos.physics.timeline import EPOCHS, T_MAX_S, T_MIN_S, YEAR_S, Timeline, format_time
 
@@ -21,26 +22,26 @@ LOG_T_MIN = math.log10(T_MIN_S)
 LOG_T_MAX = math.log10(T_MAX_S)
 
 STATUS_TEXT = {
-    "speculative": "Speculative: no direct evidence yet",
-    "theory": "Well-motivated theory, indirect evidence",
-    "tested": "Physics tested in laboratories and accelerators",
-    "observed": "Directly observed",
+    "speculative": tr_noop("Speculative: no direct evidence yet"),
+    "theory": tr_noop("Well-motivated theory, indirect evidence"),
+    "tested": tr_noop("Physics tested in laboratories and accelerators"),
+    "observed": tr_noop("Directly observed"),
 }
 
 # Reference temperatures to give a feeling for the numbers (kelvin).
 COMPARISONS = [
-    (1e32, "the Planck temperature, where known physics ends"),
-    (1e16, "collisions at the Large Hadron Collider"),
-    (1e12, "heavy-ion collisions that melt protons into quarks"),
-    (1e9, "the hottest nuclear fusion in massive stars"),
-    (1.5e7, "the core of the Sun"),
-    (5800, "the surface of the Sun"),
-    (1500, "a candle flame"),
-    (373, "boiling water"),
-    (293, "a comfortable room"),
-    (77, "liquid nitrogen"),
-    (2.7, "deep space today"),
-    (0.0, "colder than anything in the universe today"),
+    (1e32, tr_noop("the Planck temperature, where known physics ends")),
+    (1e16, tr_noop("collisions at the Large Hadron Collider")),
+    (1e12, tr_noop("heavy-ion collisions that melt protons into quarks")),
+    (1e9, tr_noop("the hottest nuclear fusion in massive stars")),
+    (1.5e7, tr_noop("the core of the Sun")),
+    (5800, tr_noop("the surface of the Sun")),
+    (1500, tr_noop("a candle flame")),
+    (373, tr_noop("boiling water")),
+    (293, tr_noop("a comfortable room")),
+    (77, tr_noop("liquid nitrogen")),
+    (2.7, tr_noop("deep space today")),
+    (0.0, tr_noop("colder than anything in the universe today")),
 ]
 
 TICKS = [(-40, "10⁻⁴⁰ s"), (-30, "10⁻³⁰ s"), (-20, "10⁻²⁰ s"), (-10, "10⁻¹⁰ s"), (0, "1 s"),
@@ -60,22 +61,23 @@ def format_energy(temperature_k: float) -> str:
 
 def format_length(metres: float) -> str:
     if math.isinf(metres):
-        return "infinite"
+        return tr("infinite")
     ly = metres / const.LIGHT_YEAR
     if metres < 1e3:
-        return f"{metres:.3g} m"
+        return f"{metres:.3g} " + tr("m")
     if metres < const.C:
-        return f"{metres / 1e3:,.0f} km".replace(",", " ")
+        return f"{metres / 1e3:,.0f}".replace(",", " ") + " " + tr("km")
     if ly < 1:
         seconds = metres / const.C
-        for scale, unit in ((86400, "light-days"), (3600, "light-hours"), (60, "light-minutes"), (1, "light-seconds")):
+        for scale, unit in ((86400, tr("light-days")), (3600, tr("light-hours")),
+                            (60, tr("light-minutes")), (1, tr("light-seconds"))):
             if seconds >= scale:
                 return f"{seconds / scale:.3g} {unit}"
     if ly < 1e6:
-        return f"{ly:.3g} light-years"
+        return f"{ly:.3g} " + tr("light-years")
     if ly < 1e9:
-        return f"{ly / 1e6:.3g} million light-years"
-    return f"{ly / 1e9:.3g} billion light-years"
+        return f"{ly / 1e6:.3g} " + tr("million light-years")
+    return f"{ly / 1e9:.3g} " + tr("billion light-years")
 
 
 def sci(value: float) -> str:
@@ -178,41 +180,53 @@ class CosmicTimelineSimulator(SimulatorBase):
         temp = tl.temperature_k(t)
         a = tl.scale_factor(t)
         comp = tl.composition(t)
-        self.time_label.setText(format_time(t) + (" (the future)" if t > tl.age_s * 1.02 else ""))
+        self.time_label.setText(format_time(t, unit=physics)
+                                + (" " + tr("(the future)") if t > tl.age_s * 1.02 else ""))
         like = next(text for limit, text in COMPARISONS if temp >= limit * 0.5)
         horizon = tl.particle_horizon_m(t)
+        if abs(a - 1) < 0.02:
+            size = tr("(today's size)")
+        elif a < 1:
+            size = tr("(distances were {factor} times smaller than today)").format(factor=sci(1 / a))
+        else:
+            size = tr("(distances are {factor} times larger than today)").format(factor=sci(a))
+        redshift = (tr("Redshift of light emitted then: z = {z}<br>").format(z=sci(1 / a - 1))
+                    if a < 0.98 else "")
         self.readout.setText(
-            f"Temperature: <b>{sci(temp)} K</b><br>"
-            f"Typical particle energy kT: <b>{format_energy(temp)}</b><br>"
-            f"About as hot as: {like}<br>"
-            f"Scale factor a: <b>{sci(a)}</b> " + (
-                "(today's size)" if abs(a - 1) < 0.02
-                else f"(distances were {sci(1 / a)} times smaller than today)" if a < 1
-                else f"(distances are {sci(a)} times larger than today)") + "<br>"
-            + (f"Redshift of light emitted then: z = {sci(1 / a - 1)}<br>" if a < 0.98 else "")
-            + f"Density: <b>{sci(tl.density_kg_m3(t))} kg/m³</b> (water: 1000)<br>"
-            f"Particle horizon: <b>{format_length(horizon)}</b><br>"
-            f"Energy budget: radiation {100 * comp['radiation']:.3g}%, matter {100 * comp['matter']:.3g}%, "
-            f"dark energy {100 * comp['dark energy']:.3g}%"
+            tr("Temperature: <b>{temperature} K</b><br>"
+               "Typical particle energy kT: <b>{energy}</b><br>"
+               "About as hot as: {comparison}<br>"
+               "Scale factor a: <b>{a}</b> {size}<br>").format(
+                temperature=sci(temp), energy=format_energy(temp), comparison=tr(like),
+                a=sci(a), size=size)
+            + redshift
+            + tr("Density: <b>{density} kg/m³</b> (water: 1000)<br>"
+                 "Particle horizon: <b>{horizon}</b><br>"
+                 "Energy budget: radiation {radiation}%, matter {matter}%, dark energy {dark_energy}%").format(
+                density=sci(tl.density_kg_m3(t)), horizon=format_length(horizon),
+                radiation=f"{100 * comp['radiation']:.3g}", matter=f"{100 * comp['matter']:.3g}",
+                dark_energy=f"{100 * comp['dark energy']:.3g}")
         )
         epochs = tl.epochs_at(t)
         if epochs:
             kinds = {"speculative": "danger", "theory": "warning", "tested": "info", "observed": "success"}
             main = epochs[-1]
             text = "<br>".join(
-                f"<b>{ep.name}.</b> {ep.description} <i>({STATUS_TEXT[ep.status]}"
-                + (f"; lesson {ep.lesson}" if ep.lesson else "") + ")</i>"
+                f"<b>{ep.name}.</b> {ep.description} <i>({tr(STATUS_TEXT[ep.status])}"
+                + ("; " + tr("lesson {id}").format(id=ep.lesson) if ep.lesson else "") + ")</i>"
                 for ep in epochs
             )
             self.banner.set_message(kinds[main.status], text)
         else:
             nxt = next((e for e in EPOCHS if e.start_s > t), None)
             prev = [e for e in EPOCHS if e.start_s <= t]
-            text = f"After <b>{prev[-1].name}</b>" if prev else "Before every known epoch"
+            text = (tr("After <b>{epoch}</b>").format(epoch=prev[-1].name) if prev
+                    else tr("Before every known epoch"))
             if nxt:
-                text += f"; next: <b>{nxt.name}</b> at {format_time(nxt.start_s)}"
+                text += "; " + tr("next: <b>{epoch}</b> at {time}").format(
+                    epoch=nxt.name, time=format_time(nxt.start_s, unit=physics))
             if t < 1e-11:
-                text += ". The physics of this period is not known: numbers are extrapolations."
+                text += ". " + tr("The physics of this period is not known: numbers are extrapolations.")
             self.banner.set_message("info", text + ".")
         self._update_markers()
 
@@ -222,7 +236,7 @@ class CosmicTimelineSimulator(SimulatorBase):
 
     # ---------------------------------------------------------- animation
     def _toggle(self, on: bool) -> None:
-        self.play.setText("⏸ Pause" if on else "▶ Play history")
+        self.play.setText(tr("⏸ Pause") if on else tr("▶ Play history"))
         if on:
             if self.log_time.value() >= LOG_T_MAX - 0.05:
                 self.log_time.setValue(LOG_T_MIN)
@@ -299,7 +313,7 @@ class CosmicTimelineSimulator(SimulatorBase):
         for ep in EPOCHS:
             label = tr("lesson {id}").format(id=ep.lesson)
             link = f" — [{label}](lesson:{ep.lesson})" if ep.lesson else ""
-            lines.append(f"- **{ep.name}** ({format_time(ep.start_s)}){link}")
+            lines.append(f"- **{ep.name}** ({format_time(ep.start_s, unit=physics)}){link}")
         lines += ["", tr("Before about 10⁻¹¹ s the temperatures are extrapolations of known physics. "
                          "After one second they come from the Planck 2018 ΛCDM model.")]
         return "\n".join(lines)

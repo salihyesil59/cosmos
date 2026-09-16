@@ -124,11 +124,12 @@ class QuizWidget(QWidget):
         self.lesson = lesson
         n = len(lesson.quiz)
         self.intro_text.setText(
-            f"This quiz has {n} questions about “{lesson.title}”. After each answer you will see an "
-            f"explanation. Score at least {PASS_SCORE:.0%} to complete the lesson; you can retry "
-            "as often as you like."
+            tr("This quiz has {count} questions about “{lesson}”. After each answer you will see an "
+               "explanation. Score at least {score} to complete the lesson; you can retry as often as "
+               "you like.").format(count=n, lesson=lesson.title, score=f"{PASS_SCORE:.0%}")
         )
-        self.best_label.setText(f"Your best score so far: <b>{best:.0%}</b>" if best is not None else "")
+        self.best_label.setText(tr("Your best score so far: <b>{score}</b>").format(score=f"{best:.0%}")
+                                if best is not None else "")
         self.stack.setCurrentIndex(0)
 
     def start(self) -> None:
@@ -144,8 +145,8 @@ class QuizWidget(QWidget):
         q = self.lesson.quiz[self.index]
         n = len(self.lesson.quiz)
         self.answered = False
-        self.counter.setText(f"Question {self.index + 1} of {n}")
-        self.score_label.setText(f"Correct so far: {self.correct}")
+        self.counter.setText(tr("Question {number} of {total}").format(number=self.index + 1, total=n))
+        self.score_label.setText(tr("Correct so far: {count}").format(count=self.correct))
         self.progress.setRange(0, n)
         self.progress.setValue(self.index)
         self.prompt.setText(q.prompt)
@@ -175,16 +176,17 @@ class QuizWidget(QWidget):
             button.setEnabled(False)
         right = q.choices[q.answer]
         if ok:
-            self.feedback.set_message("success", f"<b>Correct!</b> {q.explanation}")
+            self.feedback.set_message("success", tr("<b>Correct!</b>") + f" {q.explanation}")
         else:
             self.feedback.set_message(
-                "danger", f"<b>Not quite.</b> The right answer is <b>{right}</b>.<br>{q.explanation}"
+                "danger", tr("<b>Not quite.</b> The right answer is <b>{answer}</b>.").format(answer=right)
+                + f"<br>{q.explanation}"
             )
         self.feedback.show()
-        self.score_label.setText(f"Correct so far: {self.correct}")
+        self.score_label.setText(tr("Correct so far: {count}").format(count=self.correct))
         self.check.hide()
         last = self.index == len(self.lesson.quiz) - 1
-        self.next_btn.setText(tr("See results") if last else "Next question")
+        self.next_btn.setText(tr("See results") if last else tr("Next question"))
         self.next_btn.show()
         self.next_btn.setFocus()
 
@@ -196,16 +198,18 @@ class QuizWidget(QWidget):
         n = len(self.lesson.quiz)
         score = self.correct / n
         passed = score >= PASS_SCORE
-        self.result_title.setText(f"You scored {self.correct} / {n} ({score:.0%})")
+        self.result_title.setText(tr("You scored {correct} / {total} ({score})")
+                                  .format(correct=self.correct, total=n, score=f"{score:.0%}"))
         if passed:
             self.result_banner.set_message(
-                "success", "<b>Lesson complete!</b> Great work. The next lessons that build on this one are now ready."
+                "success", tr("<b>Lesson complete!</b> Great work. The next lessons that build on this one "
+                              "are now ready.")
             )
         else:
             self.result_banner.set_message(
                 "warning",
-                f"You need {PASS_SCORE:.0%} to complete the lesson. Review the explanations, "
-                "re-read the parts that felt unclear, and try again.",
+                tr("You need {score} to complete the lesson. Review the explanations, re-read the parts that "
+                   "felt unclear, and try again.").format(score=f"{PASS_SCORE:.0%}"),
             )
         self.next_lesson.setVisible(passed)
         self.stack.setCurrentIndex(2)

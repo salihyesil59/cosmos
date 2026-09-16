@@ -113,7 +113,8 @@ class LessonPage(QWidget):
         lesson = cur.lessons[lesson_id]
         self.lesson = lesson
         level = cur.level_of(lesson_id)
-        self.badge.setText(f"LEVEL {level.number} · {level.title.upper()}")
+        self.badge.setText(tr("LEVEL {number}").format(number=level.number)
+                           + f" · {level.title.upper()}")
         self.title.setText(f"{lesson.id}  {lesson.title}")
         self.summary.setText(lesson.summary)
         self.minutes.setText(tr("≈ {minutes} min read").format(minutes=lesson.minutes))
@@ -221,8 +222,8 @@ class LessonPage(QWidget):
             )
             self.prereq_banner.set_message(
                 "warning",
-                f"This lesson builds on {links}. You can read it now, but it will be easier after "
-                "completing those first.",
+                tr("This lesson builds on {lessons}. You can read it now, but it will be easier after "
+                   "completing those first.").format(lessons=links),
             )
             self.prereq_banner.show()
         else:

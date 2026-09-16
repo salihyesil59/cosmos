@@ -101,11 +101,11 @@ class ChallengeBar(QWidget):
         self.task.setText(challenge.task)
         self.feedback.hide()
         if done:
-            self.feedback.set_message("success", f"<b>Solved.</b> {challenge.success}")
+            self.feedback.set_message("success", tr("<b>Solved.</b>") + f" {challenge.success}")
             self.feedback.show()
 
     def show_hint(self) -> None:
-        self.feedback.set_message("info", f"<b>Hint.</b> {self.current.hint}")
+        self.feedback.set_message("info", tr("<b>Hint.</b>") + f" {self.current.hint}")
         self.feedback.show()
 
     def check(self) -> bool:
@@ -116,15 +116,15 @@ class ChallengeBar(QWidget):
             if first_time:
                 self.solved.emit(challenge.key)
             self.go(self.index)              # refresh the marks, keeping the learner on this challenge
-            message = f"<b>Solved!</b> {challenge.success}"
+            message = tr("<b>Solved!</b>") + f" {challenge.success}"
             if any(not self.ctx.store.is_challenge_done(c.simulator, c.id) for c in self.challenges):
-                message += " Press ▶ for the next challenge."
+                message += " " + tr("Press ▶ for the next challenge.")
             self.feedback.set_message("success", message)
             self.feedback.show()
             return True
         missing = unmet_fields(challenge, state)
-        detail = f" Look again at: {', '.join(missing)}." if missing else ""
-        self.feedback.set_message("warning", "<b>Not yet.</b> The simulator is not in the state the "
-                                             "challenge asks for." + detail)
+        detail = (" " + tr("Look again at: {fields}.").format(fields=", ".join(missing))) if missing else ""
+        self.feedback.set_message("warning", tr("<b>Not yet.</b> The simulator is not in the state the "
+                                                "challenge asks for.") + detail)
         self.feedback.show()
         return False

@@ -88,8 +88,8 @@ class MCMCSimulator(SimulatorBase):
         self.summary.setWordWrap(True)
         self.summary.setTextFormat(Qt.RichText)
         rl.addWidget(self.summary)
-        rl.addWidget(muted_label("The magnitude offset (M and H0 together) is fitted away, so the chain "
-                                 "measures the densities only."))
+        rl.addWidget(muted_label(tr("The magnitude offset (M and H0 together) is fitted away, so the chain "
+                            "measures the densities only.")))
         self.controls.addWidget(results)
         self.finish_controls()
 
@@ -151,7 +151,7 @@ class MCMCSimulator(SimulatorBase):
 
     # ----------------------------------------------------------- animation
     def _animate(self, on: bool) -> None:
-        self.animate_button.setText("⏸ Pause" if on else "Watch it walk")
+        self.animate_button.setText(tr("⏸ Pause") if on else tr("Watch it walk"))
         if on:
             if self.chain is None:
                 self.run()
@@ -183,24 +183,31 @@ class MCMCSimulator(SimulatorBase):
     def _refresh(self, animating: bool = False) -> None:
         chain = self.visible_chain()
         mean, std = chain.mean(), chain.std()
-        lines = [f"Ωm = <b>{mean[0]:.3f} ± {std[0]:.3f}</b>"]
+        lines = [tr("Ωm = <b>{value} ± {error}</b>").format(value=f"{mean[0]:.3f}", error=f"{std[0]:.3f}")]
         if not chain.flat:
-            lines.append(f"ΩΛ = <b>{mean[1]:.3f} ± {std[1]:.3f}</b>")
-            lines.append(f"Correlation between them: <b>{chain.correlation():+.2f}</b>")
+            lines.append(tr("ΩΛ = <b>{value} ± {error}</b>")
+                         .format(value=f"{mean[1]:.3f}", error=f"{std[1]:.3f}"))
+            lines.append(tr("Correlation between them: <b>{value}</b>")
+                         .format(value=f"{chain.correlation():+.2f}"))
         low, high = chain.interval(0)
-        lines.append(f"68% interval for Ωm: {low:.3f} … {high:.3f}")
-        lines.append(f"Acceptance rate: <b>{chain.acceptance:.0%}</b>  (aim for about 25%)")
-        lines.append(f"Steps kept: {len(chain.kept):,} of {len(chain.samples):,}")
+        lines.append(tr("68% interval for Ωm: {low} … {high}")
+                     .format(low=f"{low:.3f}", high=f"{high:.3f}"))
+        lines.append(tr("Acceptance rate: <b>{rate}</b>  (aim for about 25%)")
+                     .format(rate=f"{chain.acceptance:.0%}"))
+        lines.append(tr("Steps kept: {kept} of {total}")
+                     .format(kept=f"{len(chain.kept):,}", total=f"{len(chain.samples):,}"))
         tau, neff = chain.autocorrelation_length(), chain.effective_samples()
         if np.isfinite(tau):
-            lines.append(f"Autocorrelation length: {tau:.0f} steps → <b>{neff:.0f}</b> independent samples")
+            lines.append(tr("Autocorrelation length: {tau} steps → <b>{neff}</b> independent samples")
+                         .format(tau=f"{tau:.0f}", neff=f"{neff:.0f}"))
         if self.chains:
             rhat = inf.gelman_rubin(self.chains, 0)
-            lines.append(f"R̂ from {len(self.chains)} chains: <b>{rhat:.3f}</b> (converged below 1.01)")
+            lines.append(tr("R̂ from {count} chains: <b>{rhat}</b> (converged below 1.01)")
+                         .format(count=len(self.chains), rhat=f"{rhat:.3f}"))
         best_chi2 = inf.chi2(mean[0], mean[1], self.sample)
         fit = inf.goodness_of_fit(best_chi2, len(self.sample.z), 2 if not chain.flat else 1)
-        lines.append(f"χ² at the mean: {fit['chi2']:.0f} for {fit['dof']} degrees of freedom "
-                     f"(χ²/dof = {fit['reduced']:.2f})")
+        lines.append(tr("χ² at the mean: {chi2} for {dof} degrees of freedom (χ²/dof = {reduced})")
+                     .format(chi2=f"{fit['chi2']:.0f}", dof=fit["dof"], reduced=f"{fit['reduced']:.2f}"))
         self.summary.setText("<br>".join(lines))
 
         if not animating:
@@ -212,19 +219,20 @@ class MCMCSimulator(SimulatorBase):
         acceptance = chain.acceptance
         if acceptance < 0.05:
             self.banner.set_message(
-                "warning", "<b>Almost everything is rejected.</b> The proposal step is too large: the walker "
-                           "keeps suggesting universes the data rule out. Make σ smaller.")
+                "warning", tr("<b>Almost everything is rejected.</b> The proposal step is too large: the walker "
+                              "keeps suggesting universes the data rule out. Make σ smaller."))
         elif acceptance > 0.8:
             self.banner.set_message(
-                "warning", "<b>Almost everything is accepted.</b> The steps are so small that the walker "
-                           "barely moves; the cloud looks tight but it has not explored. Make σ larger.")
+                "warning", tr("<b>Almost everything is accepted.</b> The steps are so small that the walker "
+                              "barely moves; the cloud looks tight but it has not explored. Make σ larger."))
         elif self.sample.real:
             self.banner.set_message(
-                "success", f"<b>Real measurement.</b> {self.sample.citation}. The contours below are your own "
-                           "posterior, sampled step by step from these supernovae.")
+                "success", tr("<b>Real measurement.</b> {citation}. The contours below are your own posterior, "
+                              "sampled step by step from these supernovae.").format(citation=self.sample.citation))
         else:
             self.banner.set_message(
-                "info", "<b>Simulated data.</b> The chain works the same way; only the scatter is invented.")
+                "info", tr("<b>Simulated data.</b> The chain works the same way; only the scatter is "
+                           "invented."))
 
     # --------------------------------------------------------------- plots
     def _draw_posterior(self, fig) -> None:

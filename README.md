@@ -102,11 +102,11 @@ cached. Without `camb` the app behaves exactly as before.
 
 The course content is English. The interface — menus, buttons, page headings,
 badges and the panels around the content — is translatable, and **Turkish ships
-with the app**: choose it in **View → Language** and restart. Close to 900 strings
-are translated, including the Guide panel, the guided tour and the controls,
-tooltips and guidance of every simulator. The course itself — lesson text,
-quizzes, the glossary, the formula sheet — and the numbers a simulator reports
-back stay in English.
+with the app**: choose it in **View → Language** and restart. Nearly 1200 strings
+are translated: the Guide panel, the guided tour, the quiz, the challenges and
+every simulator — its controls, its tooltips and the results it reports back.
+The course itself — lesson text, quiz questions, the glossary and the formula
+sheet — stays in English, as do the names of datasets, epochs and galaxies.
 
 To add another language, use the standard Qt tools:
 
