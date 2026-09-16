@@ -8,6 +8,7 @@ from PySide6.QtWidgets import QHBoxLayout, QLineEdit, QListWidget, QListWidgetIt
 from cosmos.gui.context import AppContext
 from cosmos.gui.widgets.common import muted_label, title_label
 from cosmos.gui.widgets.rich_browser import RichBrowser
+from cosmos.i18n import tr
 
 GUIDE = """
 ## Glossary
@@ -28,12 +29,12 @@ class GlossaryPage(QWidget):
         self.ctx = ctx
         root = QVBoxLayout(self)
         root.setContentsMargins(20, 14, 20, 12)
-        root.addWidget(title_label("Glossary"))
+        root.addWidget(title_label(tr("Glossary")))
         root.addWidget(muted_label(f"{len(ctx.glossary)} terms. Search, then click a term to read it."))
         body = QHBoxLayout()
         left = QVBoxLayout()
         self.search = QLineEdit()
-        self.search.setPlaceholderText("Search terms…  (e.g. redshift, parsec, dark matter)")
+        self.search.setPlaceholderText(tr("Search terms…  (e.g. redshift, parsec, dark matter)"))
         self.search.setClearButtonEnabled(True)
         self.search.textChanged.connect(self._filter)
         left.addWidget(self.search)

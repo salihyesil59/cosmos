@@ -18,6 +18,7 @@ from cosmos.gui.context import AppContext
 from cosmos.gui.simulators.registry import SIMULATORS, SimulatorInfo
 from cosmos.gui.widgets.challenge_bar import ChallengeBar
 from cosmos.gui.widgets.common import card, muted_label, title_label
+from cosmos.i18n import tr
 
 HUB_GUIDE = """
 ## Simulators
@@ -46,8 +47,8 @@ class SimulatorHubPage(QWidget):
         scroll.setWidget(host)
         layout = QVBoxLayout(host)
         layout.setContentsMargins(28, 22, 28, 22)
-        layout.addWidget(title_label("Simulators"))
-        layout.addWidget(muted_label("Choose a simulator. Each card lists the lessons it supports."))
+        layout.addWidget(title_label(tr("Simulators")))
+        layout.addWidget(muted_label(tr("Choose a simulator. Each card lists the lessons it supports.")))
         grid = QGridLayout()
         grid.setSpacing(14)
         for i, info in enumerate(SIMULATORS.values()):
@@ -58,7 +59,7 @@ class SimulatorHubPage(QWidget):
             cl.addWidget(muted_label(info.description))
             lessons = ", ".join(info.lessons)
             cl.addWidget(muted_label(f"Supports lessons: {lessons}"))
-            btn = QPushButton("Open simulator")
+            btn = QPushButton(tr("Open simulator"))
             btn.setProperty("role", "primary")
             btn.clicked.connect(lambda _=False, sid=info.id: ctx.navigate(f"sim:{sid}"))
             cl.addStretch(1)

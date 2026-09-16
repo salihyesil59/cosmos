@@ -50,7 +50,7 @@ on first launch.
 - **Notes and bookmarks**: a private notebook for every page, exportable as Markdown
 - Tooltips and **?** buttons on every control
 - Progress tracking with a prerequisite map
-- Dark and light themes, and a translatable interface
+- Dark and light themes; the interface is translatable and ships with Turkish
 - An optional **Tutor** panel that answers questions with your own API key
 - Export plots as PNG/SVG and data as CSV
 - Presets: Planck 2018, WMAP 9-year, evolving and phantom dark energy, Einstein–de Sitter and more
@@ -97,10 +97,15 @@ Pick **CAMB — exact Boltzmann code** in the simulator's *How the spectrum is
 computed* box. Each update then takes about half a second, and results are
 cached. Without `camb` the app behaves exactly as before.
 
-## Optional: another interface language
+## Interface languages
 
-The course content is English. The interface — menus, buttons, page headings —
-can be translated with the standard Qt tools:
+The course content is English. The interface — menus, buttons, page headings,
+badges and the panels around the content — is translatable, and **Turkish ships
+with the app**: choose it in **View → Language** and restart. About 217 strings
+are translated; the lessons, the Guide panel and the simulator controls stay in
+English.
+
+To add another language, use the standard Qt tools:
 
 ```bash
 python tools/update_translations.py --language de   # writes cosmos/i18n/cosmos_de.ts

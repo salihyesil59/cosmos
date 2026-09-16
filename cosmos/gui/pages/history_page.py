@@ -20,6 +20,7 @@ from cosmos.gui.context import AppContext
 from cosmos.gui.theme import theme
 from cosmos.gui.widgets.common import card, muted_label, title_label
 from cosmos.gui.widgets.rich_browser import RichBrowser
+from cosmos.i18n import tr, tr_noop
 
 GUIDE = """
 ## The history of cosmology
@@ -39,10 +40,10 @@ and the science stay together.
 """
 
 KIND_LABELS = {
-    "idea": ("Idea", "accent2"),
-    "theory": ("Theory", "accent"),
-    "observation": ("Observation", "success"),
-    "problem": ("Open problem", "danger"),
+    "idea": (tr_noop("Idea"), "accent2"),
+    "theory": (tr_noop("Theory"), "accent"),
+    "observation": (tr_noop("Observation"), "success"),
+    "problem": (tr_noop("Open problem"), "danger"),
 }
 
 
@@ -55,12 +56,13 @@ class HistoryPage(QWidget):
         root = QVBoxLayout(self)
         root.setContentsMargins(20, 14, 20, 12)
         root.setSpacing(8)
-        root.addWidget(title_label("The history of cosmology"))
+        root.addWidget(title_label(tr("The history of cosmology")))
         root.addWidget(muted_label(
-            f"{len(self.events)} milestones between {self.events[0].year} and {self.events[-1].year}, "
-            f"and {len(self.scientists)} of the people behind them."))
+            tr("{events} milestones between {first} and {last}, and {people} of the people behind them.")
+            .format(events=len(self.events), first=self.events[0].year, last=self.events[-1].year,
+                    people=len(self.scientists))))
         self.search = QLineEdit()
-        self.search.setPlaceholderText("Filter by name, year or keyword…  (e.g. Hubble, 1998, dark matter)")
+        self.search.setPlaceholderText(tr("Filter by name, year or keyword…  (e.g. Hubble, 1998, dark matter)"))
         self.search.setClearButtonEnabled(True)
         self.search.textChanged.connect(self._refresh)
         root.addWidget(self.search)
@@ -81,7 +83,7 @@ class HistoryPage(QWidget):
         tl.addWidget(self.timeline_scroll)
         self.timeline_count = muted_label("")
         tl.addWidget(self.timeline_count)
-        self.tabs.addTab(timeline_host, "🕰  Timeline")
+        self.tabs.addTab(timeline_host, "🕰  " + tr("Timeline"))
 
         people_host = QWidget()
         pl = QHBoxLayout(people_host)
@@ -97,7 +99,7 @@ class HistoryPage(QWidget):
         self.person_view.lessonRequested.connect(lambda i: ctx.navigate(f"lesson:{i}"))
         self.person_view.glossaryRequested.connect(ctx.signals.glossaryRequested)
         pl.addWidget(self.person_view, 2)
-        self.tabs.addTab(people_host, "👩‍🔬  Scientists")
+        self.tabs.addTab(people_host, "👩‍🔬  " + tr("Scientists"))
 
         self._refresh()
         if self.scientists:
@@ -160,7 +162,7 @@ class HistoryPage(QWidget):
                 self.timeline_layout.addWidget(title_label(f"{century}s", "subtitle"))
             self.timeline_layout.addWidget(self._event_card(event, p))
         self.timeline_layout.addStretch(1)
-        self.timeline_count.setText(f"{len(events)} milestones shown")
+        self.timeline_count.setText(tr("{n} milestones shown").format(n=len(events)))
 
     def _event_card(self, event, palette) -> QWidget:
         label, colour_attr = KIND_LABELS.get(event.kind, KIND_LABELS["idea"])
@@ -176,7 +178,7 @@ class HistoryPage(QWidget):
         layout.addWidget(year)
         text = QVBoxLayout()
         text.setSpacing(2)
-        head = QLabel(f"<b>{event.title}</b> &nbsp;<span style='color:{colour}'>{label}</span>")
+        head = QLabel(f"<b>{event.title}</b> &nbsp;<span style='color:{colour}'>{tr(label)}</span>")
         head.setTextFormat(Qt.RichText)
         head.setWordWrap(True)
         text.addWidget(head)
@@ -208,7 +210,7 @@ class HistoryPage(QWidget):
             contribution = QLabel(scientist.contribution)
             contribution.setWordWrap(True)
             layout.addWidget(contribution)
-            read = QPushButton("Read more")
+            read = QPushButton(tr("Read more"))
             read.setProperty("role", "link")
             read.clicked.connect(lambda _=False, s=scientist: self.show_scientist(s))
             layout.addWidget(read, 0, Qt.AlignLeft)

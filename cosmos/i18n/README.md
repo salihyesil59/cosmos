@@ -17,3 +17,10 @@ Cosmos starts. Strings are marked in the source with `cosmos.i18n.tr(...)` and
 are looked up in the `cosmos` context.
 
 Only `.qm` files are loaded at run time; `.ts` files are the editable source.
+
+`cosmos_tr.ts` / `cosmos_tr.qm` are the Turkish pack that ships with the app. It
+covers the window chrome, the pages, the panels and the badges; lesson text, the
+Guide panel and the simulator controls are still English. Strings that are
+defined far from where they are shown (the badge table, for instance) are marked
+with `tr_noop()` and translated with `tr()` at display time — the update script
+tells lupdate about that alias.

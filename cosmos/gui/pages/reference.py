@@ -22,6 +22,7 @@ from cosmos.gui.widgets.common import ParameterSlider, labelled_row, muted_label
 from cosmos.gui.widgets.rich_browser import RichBrowser
 from cosmos.physics import constants as const
 from cosmos.physics.presets import PRESETS
+from cosmos.i18n import tr
 
 GUIDE = """
 ## Reference
@@ -101,12 +102,12 @@ class UnitConverter(QGroupBox):
         self.family = QComboBox()
         self.family.addItems(list(UNIT_FAMILIES))
         self.family.currentTextChanged.connect(self._family_changed)
-        row.addWidget(labelled_row("Quantity", self.family, (
+        row.addWidget(labelled_row(tr("Quantity"), self.family, (
             "Quantity", "Choose what you are converting: a length, a time, a mass, an energy, a speed "
             "or a density.")), 1)
         self.unit = QComboBox()
         self.unit.currentIndexChanged.connect(self._update)
-        row.addWidget(labelled_row("Unit", self.unit), 1)
+        row.addWidget(labelled_row(tr("Unit"), self.unit), 1)
         layout.addLayout(row)
         self.amount = ParameterSlider(
             "Amount", 1e-6, 1e6, 1.0, decimals=6, log=True,
@@ -146,10 +147,10 @@ class ReferencePage(QWidget):
 
         root = QVBoxLayout(self)
         root.setContentsMargins(20, 14, 20, 12)
-        root.addWidget(title_label("Reference"))
+        root.addWidget(title_label(tr("Reference")))
         root.addWidget(muted_label(
-            f"{len(self.formulas)} formulas, {len(CONSTANTS)} constants, unit conversions and the "
-            "parameters of every model in the app."))
+            tr("{formulas} formulas, {constants} constants, unit conversions and the parameters of every "
+               "model in the app.").format(formulas=len(self.formulas), constants=len(CONSTANTS))))
 
         self.tabs = QTabWidget()
         root.addWidget(self.tabs, 1)
@@ -159,14 +160,14 @@ class ReferencePage(QWidget):
         fl = QVBoxLayout(formulas_tab)
         fl.setContentsMargins(0, 8, 0, 0)
         self.search = QLineEdit()
-        self.search.setPlaceholderText("Filter formulas…  (e.g. redshift, Friedmann, horizon, L4.3)")
+        self.search.setPlaceholderText(tr("Filter formulas…  (e.g. redshift, Friedmann, horizon, L4.3)"))
         self.search.setClearButtonEnabled(True)
-        self.search.setToolTip("Show only the formulas whose name, topic, symbols or lesson match.")
+        self.search.setToolTip(tr("Show only the formulas whose name, topic, symbols or lesson match."))
         self.search.textChanged.connect(self._render_formulas)
         fl.addWidget(self.search)
         self.formula_view = self._browser()
         fl.addWidget(self.formula_view, 1)
-        self.tabs.addTab(formulas_tab, "∑  Formulas")
+        self.tabs.addTab(formulas_tab, "∑  " + tr("Formulas"))
 
         # --- constants and units
         units_tab = QWidget()
@@ -179,12 +180,12 @@ class ReferencePage(QWidget):
         self.constants_view.set_markdown_content(self._constants_markdown())
         ul.addWidget(self.constants_view, 1)
         # "&" in a tab label would turn into a keyboard mnemonic.
-        self.tabs.addTab(units_tab, "⚖  Constants && units")
+        self.tabs.addTab(units_tab, "⚖  " + tr("Constants && units"))
 
         # --- models
         self.models_view = self._browser()
         self.models_view.set_markdown_content(self._models_markdown())
-        self.tabs.addTab(self.models_view, "🌌  Models")
+        self.tabs.addTab(self.models_view, "🌌  " + tr("Models"))
 
         self._render_formulas()
 

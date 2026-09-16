@@ -8,6 +8,7 @@ from PySide6.QtWidgets import QHBoxLayout, QLabel, QPushButton, QTextEdit, QVBox
 from cosmos.gui.context import AppContext
 from cosmos.gui.routes import is_noteworthy, route_title
 from cosmos.gui.widgets.common import muted_label
+from cosmos.i18n import tr
 
 SAVE_DELAY_MS = 700
 
@@ -31,18 +32,17 @@ class NotesPanel(QWidget):
         layout.addWidget(self.page_label)
 
         row = QHBoxLayout()
-        self.bookmark_btn = QPushButton("☆  Bookmark this page")
+        self.bookmark_btn = QPushButton(tr("☆  Bookmark this page"))
         self.bookmark_btn.setCheckable(True)
-        self.bookmark_btn.setToolTip("Keep a link to this page in Notes & bookmarks (Ctrl+D).")
+        self.bookmark_btn.setToolTip(tr("Keep a link to this page in Notes & bookmarks (Ctrl+D)."))
         self.bookmark_btn.clicked.connect(self._toggle_bookmark)
         row.addWidget(self.bookmark_btn, 1)
         layout.addLayout(row)
 
         self.editor = QTextEdit()
         self.editor.setObjectName("noteEditor")
-        self.editor.setPlaceholderText(
-            "Your notes about this page…\n\nWrite down what surprised you, a number you want to remember, "
-            "or a question to come back to. Notes are saved automatically on this computer."
+        self.editor.setPlaceholderText(tr("Your notes about this page…\n\nWrite down what surprised you, a number you want to remember, "
+            "or a question to come back to. Notes are saved automatically on this computer.")
         )
         self.editor.setAcceptRichText(False)
         self.editor.textChanged.connect(self._schedule_save)
@@ -51,8 +51,8 @@ class NotesPanel(QWidget):
         self.status = muted_label("")
         layout.addWidget(self.status)
         # "&" in a button label would become a keyboard mnemonic.
-        all_notes = QPushButton("📝  All notes && bookmarks")
-        all_notes.setToolTip("Open the page that lists every note and bookmark, and lets you export them.")
+        all_notes = QPushButton(tr("📝  All notes && bookmarks"))
+        all_notes.setToolTip(tr("Open the page that lists every note and bookmark, and lets you export them."))
         all_notes.clicked.connect(lambda: ctx.navigate("notes"))
         layout.addWidget(all_notes)
 
@@ -71,9 +71,9 @@ class NotesPanel(QWidget):
         self.editor.setEnabled(enabled)
         self.bookmark_btn.setEnabled(enabled)
         if not enabled:
-            self.page_label.setText("This page cannot be bookmarked.")
+            self.page_label.setText(tr("This page cannot be bookmarked."))
             self.bookmark_btn.setChecked(False)
-            self.bookmark_btn.setText("☆  Bookmark this page")
+            self.bookmark_btn.setText(tr("☆  Bookmark this page"))
             self.editor.blockSignals(True)
             self.editor.setPlainText("")
             self.editor.blockSignals(False)
@@ -84,7 +84,7 @@ class NotesPanel(QWidget):
         self.editor.setPlainText(self.ctx.store.note(self.route))
         self.editor.blockSignals(False)
         self._refresh_bookmark()
-        self.status.setText("Saved automatically." if self.ctx.store.note(self.route) else "")
+        self.status.setText(tr("Saved automatically.") if self.ctx.store.note(self.route) else "")
 
     def save(self) -> None:
         self._timer.stop()
@@ -92,7 +92,7 @@ class NotesPanel(QWidget):
             return
         text = self.editor.toPlainText()
         self.ctx.store.set_note(self.route, text)
-        self.status.setText("Saved on this computer." if text.strip() else "")
+        self.status.setText(tr("Saved on this computer.") if text.strip() else "")
 
     def toggle_bookmark(self) -> None:
         if self.route:
@@ -101,7 +101,7 @@ class NotesPanel(QWidget):
 
     # -------------------------------------------------------------- private
     def _schedule_save(self) -> None:
-        self.status.setText("Saving…")
+        self.status.setText(tr("Saving…"))
         self._timer.start()
 
     def _toggle_bookmark(self) -> None:
@@ -114,4 +114,4 @@ class NotesPanel(QWidget):
     def _refresh_bookmark(self) -> None:
         marked = self.ctx.store.is_bookmarked(self.route)
         self.bookmark_btn.setChecked(marked)
-        self.bookmark_btn.setText("★  Bookmarked" if marked else "☆  Bookmark this page")
+        self.bookmark_btn.setText(tr("★  Bookmarked") if marked else "☆  Bookmark this page")

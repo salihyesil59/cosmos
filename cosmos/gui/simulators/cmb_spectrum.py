@@ -22,6 +22,7 @@ from cosmos.gui.theme import theme
 from cosmos.gui.widgets.common import Banner, ParameterSlider, labelled_row
 from cosmos.gui.widgets.plot import PlotWidget
 from cosmos.physics import camb_backend, cmb
+from cosmos.i18n import tr
 
 PATCH_DEG = 20.0
 TEACHING, EXACT = "teaching", "camb"
@@ -141,8 +142,8 @@ class CMBSpectrumSimulator(SimulatorBase):
         tabs = QTabWidget()
         self.plot = PlotWidget(self._draw_spectrum, csv_provider=self._csv, export_name="cmb_power_spectrum")
         self.map_plot = PlotWidget(self._draw_maps, export_name="cmb_sky_patch")
-        tabs.addTab(self.plot, "Power spectrum")
-        tabs.addTab(self.map_plot, "What the sky looks like")
+        tabs.addTab(self.plot, tr("Power spectrum"))
+        tabs.addTab(self.map_plot, tr("What the sky looks like"))
         self.display.addWidget(tabs, 1)
 
         for w in (self.omega_b, self.omega_c, self.h, self.omega_k, self.n_s, self.a_s, self.tau):
