@@ -5,8 +5,9 @@ step: from the very basics (scales, light, gravity) to advanced research topics
 (inflation, CMB physics, structure formation). Every lesson is paired with
 interactive simulators, guidance and quizzes.
 
-The project grows in phases. **Phase 1** builds the core application. Everything
-else lives in the **Backlog** and will be added over time.
+The project grows in phases. **Phase 1** built the core application and **Phase 2**
+worked through the backlog; both are finished. **Phase 3** at the end of this file
+collects what could come next.
 
 Legend: `[x]` done · `[ ]` planned
 
@@ -157,3 +158,52 @@ Legend: `[x]` done · `[ ]` planned
 - [x] `E7` Standalone Windows `.exe` with PyInstaller
 - [x] `E8` Internationalisation (i18n) infrastructure
 - [x] `E9` Optional "Ask the Tutor" AI assistant (user-supplied API key)
+
+---
+
+## Phase 3 — What could come next
+
+Everything above is finished: 43 lessons, 18 simulators, the guidance features,
+real data, a packaged executable, a Turkish interface and the optional CAMB and
+tutor extras. The items below are candidates for the next rounds, written in the
+same style. ★ marks the ones worth doing first.
+
+### Curriculum
+
+**Level 7 — How cosmologists actually work**
+- [ ] ★ `L7.1` Reading a scientific plot: log axes, error bars, confidence contours
+- [ ] ★ `L7.2` From data to a parameter: likelihoods, χ², and what "5σ" means
+- [ ] `L7.3` MCMC in practice: sampling a posterior, degeneracies, convergence
+- [ ] `L7.4` How a survey is built: DESI, Euclid, Rubin and JWST compared
+- [ ] `L7.5` Simulations as experiments: from initial conditions to a mock catalogue
+- [ ] `L7.6` Systematics: the errors that do not shrink with more data
+
+**Additions to existing levels**
+- [ ] ★ `L4.7` Neutrino mass and cosmology: how the lightest particles weigh the universe
+- [ ] `L5.7` CMB polarisation and lensing: E-modes, B-modes and what they carry
+- [ ] `L6.9` Black holes in cosmology: from the first image to primordial black holes
+- [ ] `L0.7` Orders of magnitude: estimating in your head before you compute
+
+### Simulators
+- [ ] ★ `S19` Likelihood & MCMC Explorer: fit a model, watch the chain, read the contours
+- [ ] ★ `S20` Distance Ladder Builder: parallax → Cepheids → supernovae, with error propagation
+- [ ] `S21` Survey Designer: choose area, depth and time, see the error bars you would get
+- [ ] `S22` Standard Siren Explorer: measure H0 from a gravitational-wave merger
+- [ ] `S23` Redshift Survey Slice: build a cone diagram and find the cosmic web in it
+- [ ] `S24` CMB Sky Viewer: a real Planck map, with masking and filtering (needs a download)
+
+### Guidance & learning
+- [ ] ★ `G14` Translate the Guide panel, the tour and the simulator controls (the Turkish pack covers the chrome only)
+- [ ] ★ `G15` Worked problem sets: numeric exercises with checked answers, one per level
+- [ ] `G16` Spaced repetition: bring back quiz questions you got wrong, days later
+- [ ] `G17` Accessibility pass: font scaling, a high-contrast theme, keyboard-only navigation
+- [ ] `G18` Export a lesson (or the whole course) as PDF for printing
+- [ ] `G19` Classroom mode: a progress report a teacher can read, and teacher notes per lesson
+
+### Extras & quality
+- [ ] ★ `E10` Continuous integration: run the tests and build the executable on every push
+- [ ] `E11` macOS and Linux packages (.app bundle, AppImage)
+- [ ] `E12` Faster start: lazy figures and a smaller one-file build
+- [ ] `E13` Update check for the packaged app (opt-in, no telemetry)
+- [ ] `E14` A plugin interface so a teacher can add their own simulator without touching the app
+- [ ] `E15` Real CMB and large-scale-structure data (Planck maps, SDSS catalogue) with a licence check
