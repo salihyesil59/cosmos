@@ -486,3 +486,40 @@ def test_tutor_panel(window):
     assert panel.question.toPlainText() == "Another question"   # the question is given back
     panel.key_edit.clear()
     panel.reset_conversation()
+
+
+def test_real_data_in_the_simulators(window):
+    """Pantheon+ in S16 and SPARC galaxies in S6."""
+    window.navigate("sim:S16")
+    pump()
+    s16 = window.stack.currentWidget().simulator
+    s16.sample_box.setCurrentIndex(s16.sample_box.findData("pantheon"))
+    pump()
+    assert s16.sample.real and len(s16.sample.z) > 1300
+    assert "Real measurements" in s16.banner.label.text()
+    om, ol = s16.best()
+    assert 0.25 < om < 0.42 and 0.5 < ol < 0.8          # the measured cosmology
+    s16.cepheid.setChecked(True)                        # an earlier test left the CMB calibration on
+    assert 71 < s16.hubble_constant() < 75              # with the SH0ES calibration
+    s16.sample_box.setCurrentIndex(s16.sample_box.findData("discovery"))
+    pump()
+    assert not s16.sample.real and "Simulated data" in s16.banner.label.text()
+
+    window.navigate("sim:S6")
+    pump()
+    s6 = window.stack.currentWidget().simulator
+    assert s6.galaxy is None and s6.galaxy_box.count() > 100
+    s6.galaxy_box.setCurrentIndex(s6.galaxy_box.findData("NGC3198"))
+    pump()
+    assert s6.galaxy.name == "NGC3198" and "SPARC" in s6.banner.label.text()
+    assert s6.r_report > 40 and len(s6.data.radius_kpc) == 43
+    s6.halo_on.setChecked(False)
+    s6.mond.setChecked(False)
+    visible_only = s6.rms_residual()
+    s6.halo_on.setChecked(True)
+    s6._fit_halo()
+    assert s6.rms_residual() < visible_only / 3         # the halo rescues the fit
+    assert s6.state()["galaxy"] == "NGC3198"
+    s6.galaxy_box.setCurrentIndex(0)
+    pump()
+    assert s6.galaxy is None and s6.r_report == 30.0

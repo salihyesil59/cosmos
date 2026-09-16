@@ -152,7 +152,7 @@ Legend: `[x]` done · `[ ]` planned
 - [x] `G13` Achievements and badges
 
 ### Extras & quality
-- [ ] `E1+` Pantheon+ supernova sample and SPARC rotation curves (license check, needs download)
+- [x] `E1+` Pantheon+ supernova sample and SPARC rotation curves (license check, needs download)
 - [x] `E6` Optional CAMB/CLASS integration for exact CMB spectra
 - [x] `E7` Standalone Windows `.exe` with PyInstaller
 - [x] `E8` Internationalisation (i18n) infrastructure
