@@ -156,4 +156,4 @@ Legend: `[x]` done · `[ ]` planned
 - [x] `E6` Optional CAMB/CLASS integration for exact CMB spectra
 - [x] `E7` Standalone Windows `.exe` with PyInstaller
 - [ ] `E8` Internationalisation (i18n) infrastructure
-- [ ] `E9` Optional "Ask the Tutor" AI assistant (user-supplied API key)
+- [x] `E9` Optional "Ask the Tutor" AI assistant (user-supplied API key)

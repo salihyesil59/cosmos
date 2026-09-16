@@ -439,3 +439,50 @@ def test_cmb_engines(window):
     s12.backend.setCurrentIndex(0)
     s12.reset()
     assert s12.engine() == "teaching" and s12.state()["engine"] == "teaching"
+
+
+def test_tutor_panel(window):
+    """The tutor stays off until a key is added, and never calls out on its own."""
+    panel = window.tutor
+    panel.synchronous = True
+    calls = []
+
+    def fake_transport(url, headers, payload):
+        calls.append(payload)
+        return {"content": [{"type": "text", "text": "Because the wavelength stretches with space."}]}
+
+    panel.transport = fake_transport
+    window.navigate("lesson:L2.2")
+    pump()
+    assert "L2.2" in panel.page_label.text()
+    assert not panel.ask_button.isEnabled() and "no API key" in panel.status.text()
+
+    panel.question.setPlainText("Why does light redshift?")
+    panel.ask()                                     # without a key nothing may be sent
+    assert calls == [] and panel.question.toPlainText() == "Why does light redshift?"
+
+    panel.key_edit.setText("sk-ant-test")
+    assert panel.ask_button.isEnabled()
+    panel.ask()
+    assert len(calls) == 1
+    assert "Lesson L2.2" in calls[0]["system"]      # the page the learner is on travels with the question
+    assert "redshift" in panel.view.toPlainText().lower()
+    assert panel.question.toPlainText() == ""
+
+    panel.include_context.setChecked(False)         # a second question, without the page
+    panel.reset_conversation()
+    panel.question.setPlainText("And in general?")
+    panel.ask()
+    assert "Lesson L2.2" not in calls[1]["system"]
+
+    def failing_transport(url, headers, payload):
+        raise tutor_error("The API key was refused (401).")
+
+    from cosmos.tutor import TutorError as tutor_error
+    panel.transport = failing_transport
+    panel.question.setPlainText("Another question")
+    panel.ask()
+    assert "refused" in panel.status.text()
+    assert panel.question.toPlainText() == "Another question"   # the question is given back
+    panel.key_edit.clear()
+    panel.reset_conversation()

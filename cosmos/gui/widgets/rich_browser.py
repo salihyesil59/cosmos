@@ -79,6 +79,10 @@ class RichBrowser(QTextBrowser):
             return self._images[key]
         return super().loadResource(kind, url)
 
+    def scroll_to_end(self) -> None:
+        bar = self.verticalScrollBar()
+        bar.setValue(bar.maximum())
+
     def scroll_to_top(self) -> None:
         self.verticalScrollBar().setValue(0)
 
