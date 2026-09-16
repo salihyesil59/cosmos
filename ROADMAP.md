@@ -171,8 +171,8 @@ same style. ★ marks the ones worth doing first.
 ### Curriculum
 
 **Level 7 — How cosmologists actually work**
-- [ ] ★ `L7.1` Reading a scientific plot: log axes, error bars, confidence contours
-- [ ] ★ `L7.2` From data to a parameter: likelihoods, χ², and what "5σ" means
+- [x] ★ `L7.1` Reading a scientific plot: log axes, error bars, confidence contours
+- [x] ★ `L7.2` From data to a parameter: likelihoods, χ², and what "5σ" means
 - [ ] `L7.3` MCMC in practice: sampling a posterior, degeneracies, convergence
 - [ ] `L7.4` How a survey is built: DESI, Euclid, Rubin and JWST compared
 - [ ] `L7.5` Simulations as experiments: from initial conditions to a mock catalogue
@@ -185,7 +185,7 @@ same style. ★ marks the ones worth doing first.
 - [ ] `L0.7` Orders of magnitude: estimating in your head before you compute
 
 ### Simulators
-- [ ] ★ `S19` Likelihood & MCMC Explorer: fit a model, watch the chain, read the contours
+- [x] ★ `S19` Likelihood & MCMC Explorer: fit a model, watch the chain, read the contours
 - [ ] ★ `S20` Distance Ladder Builder: parallax → Cepheids → supernovae, with error propagation
 - [ ] `S21` Survey Designer: choose area, depth and time, see the error bars you would get
 - [ ] `S22` Standard Siren Explorer: measure H0 from a gravitational-wave merger

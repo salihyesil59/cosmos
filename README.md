@@ -12,10 +12,10 @@ on first launch.
 
 ## Features
 
-- **43 lessons in 7 levels**: Foundations, Observational Cosmology, The Expanding
+- **45 lessons in 8 levels**: Foundations, Observational Cosmology, The Expanding
   Universe, Contents of the Universe, Thermal History, CMB & Structure Formation,
-  Advanced Topics
-- **18 simulators**
+  Advanced Topics, How Cosmologists Work
+- **19 simulators**
   - Cosmology Calculator: ages, distances, horizons and recession velocities at any redshift
   - Expansion History Explorer: a(t) and the Ωm–ΩΛ map
   - Powers of Ten Zoom: from a human to the observable universe
@@ -34,16 +34,17 @@ on first launch.
   - Inflation Slow-Roll Simulator: potentials, nₛ and r against Planck and BICEP/Keck
   - Supernova Ia Discovery: fit the real Pantheon+ supernovae and meet the Hubble tension
   - Build Your Own Universe: design a cosmology and grade it against observations
+  - Likelihood & MCMC Explorer: watch a measurement being made, one step at a time
 - **Two ways to read every lesson**: *Intuitive* tells the story in words,
   *With the maths* shows every formula and derivation
-- **215 quiz questions** with explanations; score 70% or more to complete a
+- **228 quiz questions** with explanations; score 70% or more to complete a
   lesson
-- **18 guided challenges** inside the simulators, with hints and automatic checking
+- **21 guided challenges** inside the simulators, with hints and automatic checking
 - **A history of cosmology**: 33 milestones from Copernicus to DESI and 18
   scientist cards, each linked to the lesson that explains the physics
 - **16 badges** earned by learning: finishing levels, perfect quizzes, exploring
   simulators and solving their challenges
-- **142-term glossary**: terms in lessons open their definitions in the Guide panel
+- **152-term glossary**: terms in lessons open their definitions in the Guide panel
 - **Reference page**: a 52-entry formula sheet, physical constants, a unit
   converter and the parameters of every model
 - **Global search** (Ctrl+F) across lesson text, glossary, simulators and formulas

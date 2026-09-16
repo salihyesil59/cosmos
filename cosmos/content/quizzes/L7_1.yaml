@@ -1,0 +1,40 @@
+- question: "Why do cosmology plots so often use logarithmic axes?"
+  choices:
+    - "To make the data look more impressive"
+    - "Because the quantities span many orders of magnitude, and power laws become straight lines"
+    - "Because negative numbers are easier to show"
+    - "Because computers cannot plot large numbers"
+  answer: 1
+  explanation: "Each equal step multiplies by ten, so 10⁻³⁵ seconds and 10¹⁰ years fit on one axis, and a power law y ∝ xⁿ appears as a line of slope n."
+- question: "A plot shows 20 points with 1σ error bars, and every single point sits exactly on the fitted line. What should you suspect?"
+  choices:
+    - "An excellent measurement"
+    - "That the error bars are overestimated, or the model has too many free parameters"
+    - "That the model is wrong"
+    - "Nothing unusual"
+  answer: 1
+  explanation: "With honest 1σ errors about a third of the points should miss the line by more than one error bar. A perfect fit means the uncertainties are too generous."
+- question: "Which kind of uncertainty does NOT shrink when you collect more data?"
+  choices: ["Statistical", "Systematic", "Both shrink", "Neither shrinks"]
+  answer: 1
+  explanation: "Statistical noise falls as 1/√N; a systematic bias repeats in every measurement, so more data does not help."
+- question: "What is a residual plot?"
+  choices:
+    - "The data with the model subtracted, so small deviations become visible"
+    - "The part of the data that was discarded"
+    - "A plot of the error bars alone"
+    - "The data plotted twice"
+  answer: 0
+  explanation: "Raw plots are dominated by the trend everyone agrees on; residuals show the disagreements, which is where discoveries such as the accelerating expansion appeared."
+- question: "In a two-parameter contour plot, what does a strongly tilted ellipse mean?"
+  choices:
+    - "The measurement is wrong"
+    - "The parameters are correlated: one combination is measured well and another poorly"
+    - "The contours were drawn at the wrong confidence level"
+    - "Both parameters are known perfectly"
+  answer: 1
+  explanation: "Supernovae, for example, constrain roughly ΩΛ − Ωm tightly and their sum weakly, so the contour leans."
+- question: "The inner and outer contours of a posterior usually hold which fractions of the probability?"
+  choices: ["50% and 90%", "68% and 95%", "90% and 99%", "95% and 99.7%"]
+  answer: 1
+  explanation: "They correspond to the 1σ and 2σ levels of a Gaussian."

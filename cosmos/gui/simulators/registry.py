@@ -488,6 +488,33 @@ SIMULATORS: dict[str, SimulatorInfo] = {
             class_name="OlbersSimulator",
             icon="✧",
         ),
+        SimulatorInfo(
+            id="S19",
+            title="Likelihood & MCMC Explorer",
+            tagline="Watch a measurement being made, one step at a time.",
+            description=(
+                "Every number in cosmology comes from three pieces: a model, a likelihood that says how well "
+                "it fits the data, and a way to explore the parameters. Here a random walker explores Ωm and "
+                "ΩΛ against real supernovae, and the cloud it leaves behind is the measurement."
+            ),
+            how_to_use=[
+                "Press <b>Run the chain</b>, then <b>Watch it walk</b> to see the walker leave its starting "
+                "corner and settle into the good region.",
+                "Read the mean and the ± in <b>What the chain says</b>: that is the measurement.",
+                "Change the <b>proposal step σ</b> and watch the acceptance rate and the shape of the cloud.",
+                "Press <b>Run 4 chains</b> to check R̂: four walkers from four corners must agree.",
+            ],
+            things_to_try=[
+                "Set σ = 0.005. The acceptance rate goes above 90% — why is the answer still wrong?",
+                "Set σ = 0.4. Almost nothing is accepted; what happens to the effective sample size?",
+                "Tick <b>Assume a flat universe</b>: one parameter instead of two, and a much tighter Ωm.",
+                "Compare the 1998-like sample with Pantheon+: the same method, twenty-five years of data.",
+            ],
+            lessons=["L7.2", "L7.1", "L3.3", "L6.6"],
+            module="cosmos.gui.simulators.mcmc_sim",
+            class_name="MCMCSimulator",
+            icon="⛓",
+        ),
     ]
 }
 

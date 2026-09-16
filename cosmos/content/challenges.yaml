@@ -184,3 +184,35 @@ S17:
     is_true: true
   - field: brightness
     max: 0.2
+S19:
+- id: healthy-chain
+  task: Run a chain whose acceptance rate lands between 20% and 45% — the sign that the proposal step
+    is the right size.
+  hint: Leave the step σ near 0.08. If the acceptance is too high, make σ larger; too low, smaller.
+  success: A well-tuned walker accepts about a quarter of its proposals and explores the whole posterior
+    instead of crawling or bouncing off the walls.
+  check:
+  - field: acceptance
+    min: 0.2
+    max: 0.45
+- id: too-timid
+  task: 'Now break it on purpose: make the steps so small that the walker accepts almost everything (above
+    85%).'
+  hint: Drag the proposal step σ down towards 0.005.
+  success: The cloud looks tight, but it is tight because the walker never went anywhere. High acceptance
+    is not a good sign — the effective sample size collapses.
+  check:
+  - field: acceptance
+    min: 0.85
+- id: flat-precision
+  task: Assume a flat universe and measure Ωm from the real supernovae to better than ±0.03.
+  hint: Tick <b>Assume a flat universe</b>, keep the Pantheon+ sample and use at least 4000 steps.
+  success: One assumption — flatness, which the CMB supplies — turns a broad two-parameter cloud into
+    a measurement of a few percent.
+  check:
+  - field: flat
+    is_true: true
+  - field: sample
+    equals: pantheon
+  - field: om_error
+    max: 0.03
