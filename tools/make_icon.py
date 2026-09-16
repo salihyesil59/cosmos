@@ -2,7 +2,7 @@
 
 Run it after changing the design::
 
-    python packaging/make_icon.py
+    python tools/make_icon.py
 
 The result, ``cosmos/gui/resources/cosmos.ico``, is used both as the window icon
 and as the icon of the packaged executable.

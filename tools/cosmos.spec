@@ -1,6 +1,6 @@
 # PyInstaller specification for the standalone Cosmos executable (E7).
 #
-# Build with:  python packaging/build_exe.py        (or: pyinstaller packaging/cosmos.spec)
+# Build with:  python tools/build_exe.py        (or: pyinstaller tools/cosmos.spec)
 #
 # The course content is plain Markdown and YAML, so it is copied into the bundle
 # keeping the same relative paths the loaders expect (cosmos/content, cosmos/data).
@@ -18,6 +18,9 @@ datas = [
     (str(ROOT / "cosmos" / "data"), "cosmos/data"),
     (str(ROOT / "cosmos" / "gui" / "resources"), "cosmos/gui/resources"),
 ]
+translations = ROOT / "cosmos" / "i18n"
+if any(translations.glob("*.qm")):          # interface translations, when some have been compiled
+    datas.append((str(translations), "cosmos/i18n"))
 
 # Everything the app never imports: test tools, notebook machinery and other GUI toolkits.
 excludes = [
