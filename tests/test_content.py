@@ -80,3 +80,29 @@ def test_figures_exist():
     for lesson in CURRICULUM.lessons.values():
         names.update(re.findall(r"\{\{figure:(\w+)\}\}", lesson.body))
     assert names <= set(figures.available())
+
+
+def test_objectives_are_plain_text():
+    for lesson in CURRICULUM.lessons.values():
+        for objective in lesson.objectives:
+            # A colon in an unquoted YAML list item silently becomes a mapping.
+            assert isinstance(objective, str), f"{lesson.id}: objective {objective!r} is not text"
+
+
+def test_formula_sheet_is_valid():
+    from cosmos.content.loader import load_formulas
+    from cosmos.gui.rendering import math as mathrender
+
+    formulas = load_formulas()
+    assert len(formulas) > 40
+    ids = [f.id for f in formulas]
+    assert len(ids) == len(set(ids))
+    for f in formulas:
+        assert f.title and f.group and f.description
+        mathrender.validate(f.formula)
+        for tex in re.findall(r"\$([^$]+)\$", f.symbols + " " + f.description):
+            mathrender.validate(tex)
+        assert f.lesson is None or f.lesson in CURRICULUM.lessons, f"{f.id}: unknown lesson {f.lesson}"
+    # Every level of the course should be represented somewhere on the sheet.
+    covered = {CURRICULUM.lessons[f.lesson].level for f in formulas if f.lesson}
+    assert covered >= {0, 1, 2, 3, 4, 5, 6}

@@ -145,9 +145,9 @@ Legend: `[x]` done · `[ ]` planned
 ### Guidance & learning
 - [ ] `G7` "Intuitive ↔ Mathematical" view for every lesson
 - [ ] `G8` Step-by-step challenges inside simulators
-- [ ] `G9` Formula sheet and constants/units reference
-- [ ] `G10` Global search across lessons and glossary
-- [ ] `G11` Notes and bookmarks
+- [x] `G9` Formula sheet and constants/units reference
+- [x] `G10` Global search across lessons and glossary
+- [x] `G11` Notes and bookmarks
 - [ ] `G12` Historical timeline of discoveries and scientist cards
 - [ ] `G13` Achievements and badges
 

@@ -291,3 +291,52 @@ def test_history_simulators(window):
     assert s17.sky.coverage < 0.5
     assert s17.scenario.currentData() == "custom"     # editing a control switches to Custom
     s17._new_sky()
+
+
+def test_reference_search_and_notes(window):
+    store = window.ctx.store
+
+    window.navigate("reference")
+    ref = window.reference_page
+    assert len(ref.matching_formulas()) > 40
+    ref.search.setText("Friedmann")
+    assert 0 < len(ref.matching_formulas("Friedmann")) < len(ref.formulas)   # the group plus its members
+    assert "Friedmann" in ref.formula_view.toPlainText()
+    ref.search.clear()
+    ref.tabs.setCurrentIndex(1)
+    ref.converter.family.setCurrentText("Length")
+    ref.converter.unit.setCurrentText("parsecs")
+    ref.converter.amount.setValue(1.0)
+    assert "3.26156" in ref.converter.result.text()          # 1 pc in light-years
+    ref.tabs.setCurrentIndex(2)
+    assert "Planck 2018" in ref.models_view.toPlainText()
+
+    window.search_box.setText("nucleosynthesis")
+    window.search_box.returnPressed.emit()
+    pump()
+    assert window.stack.currentWidget() is window.search_page
+    assert window.search_page.list.count() > 3
+    window.search_page.list.setCurrentRow(0)
+    window.search_page._open_item(window.search_page.list.item(0))
+    pump()
+    assert window.stack.currentWidget() in (window.lesson_page, window.reference_page, window.glossary_page)
+
+    window.navigate("lesson:L1.1")
+    window.notes.editor.setPlainText("A parsec is 3.26 light-years.")
+    window.notes.save()
+    assert store.note("lesson:L1.1") == "A parsec is 3.26 light-years."
+    window.toggle_bookmark()
+    assert store.is_bookmarked("lesson:L1.1") and "Bookmarked" in window.bookmark_action.text()
+    window.navigate("notes")
+    pump()
+    assert "1 bookmarks · 1 notes" in window.notes_page.subtitle.text()
+    assert "3.26 light-years" in window.notes_page.as_markdown()
+    window.notes_page._remove_bookmark("lesson:L1.1")
+    assert not store.is_bookmarked("lesson:L1.1")
+
+    window.navigate("search:xyzzy-not-a-word")
+    pump()
+    assert "Nothing found" in window.search_page.count.text()
+    window.navigate("glossary")                              # notes are disabled where they make no sense
+    window.navigate("search:redshift")
+    assert window.notes.route == ""

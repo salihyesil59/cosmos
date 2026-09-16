@@ -40,6 +40,19 @@ class Level:
 
 
 @dataclass(frozen=True)
+class Formula:
+    """One entry of the formula sheet on the Reference page."""
+
+    id: str
+    group: str
+    title: str
+    formula: str          # mathtext source, without the surrounding $$
+    symbols: str
+    description: str
+    lesson: str | None = None
+
+
+@dataclass(frozen=True)
 class GlossaryTerm:
     key: str
     term: str

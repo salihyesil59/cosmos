@@ -40,6 +40,15 @@ definition here.
 Press **Continue learning** on the home page. It always points to the next lesson
 you are ready for.
 
+### Finding things again
+
+- **Search** (Ctrl+F) looks through every lesson, glossary term, simulator and
+  formula at once.
+- **Reference** (Ctrl+R) is the formula sheet, with constants, unit conversions
+  and the parameters of every model.
+- **Notes** is your private notebook: one note per page, plus bookmarks
+  (Ctrl+D). Everything stays on this computer.
+
 ### Handy controls
 
 - **Back / Forward** in the toolbar move through pages you visited.
