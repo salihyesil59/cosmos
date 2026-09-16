@@ -1,0 +1,186 @@
+# Step-by-step challenges inside the simulators (G8).
+#
+# Keyed by simulator id. Every step has a task, a hint, a success message and a
+# list of conditions on the values the simulator reports in its state():
+# field plus any of min, max, equals, contains, is_true, is_false.
+S1:
+- id: cmb-age
+  task: How old was the universe when the cosmic microwave background was released? Set the redshift to
+    z = 1090 with the Planck 2018 preset.
+  hint: Press the <b>z = 1090 (CMB)</b> shortcut button, or type 1090 into the redshift box.
+  success: Only about 380 000 years — a blink compared with today's 13.8 billion years, and yet the light
+    has been travelling ever since.
+  check:
+  - field: preset
+    equals: planck18
+  - field: z
+    min: 1000
+    max: 1200
+- id: distances-differ
+  task: At z = 3 the luminosity distance is sixteen times the angular-diameter distance. Go there and
+    compare the two rows of the table.
+  hint: Set the redshift to 3; the two distances differ by a factor (1 + z)².
+  success: D_L = (1 + z)² D_A. Distant galaxies look larger than you expect, and far fainter.
+  check:
+  - field: z
+    min: 2.9
+    max: 3.1
+- id: eds-is-younger
+  task: Switch to the Einstein–de Sitter model and find an age below 10 billion years.
+  hint: Choose Einstein–de Sitter in the preset box. Without dark energy the expansion always slowed down,
+    so the universe reaches its present size sooner.
+  success: Younger than the oldest stars — one of the reasons Einstein–de Sitter was abandoned.
+  check:
+  - field: preset
+    equals: eds
+  - field: age_gyr
+    max: 10
+S2:
+- id: find-a-crunch
+  task: Build a universe that ends in a Big Crunch.
+  hint: Gravity has to win. Push Ωm above about 1 and keep ΩΛ near zero.
+  success: With enough matter and no dark energy the expansion stops and reverses.
+  check:
+  - field: fate
+    contains: crunch
+- id: no-big-bang
+  task: Find the strange corner of the Ωm–ΩΛ map where the universe never had a Big Bang.
+  hint: Very large ΩΛ with very little matter — the top-left corner of the map.
+  success: With enough dark energy and little matter, running the clock backwards never reaches zero size.
+    The universe bounces instead.
+  check:
+  - field: fate
+    contains: no big bang
+- id: accelerating-today
+  task: Return to a universe that is accelerating today and older than 13 billion years.
+  hint: 'Planck-like values work: about Ωm = 0.3 and ΩΛ = 0.7.'
+  success: That is our universe. Matter loses, dark energy wins, and the expansion speeds up.
+  check:
+  - field: accelerating
+    is_true: true
+  - field: age_gyr
+    min: 13
+S6:
+- id: kepler-fails
+  task: Turn off both the dark matter halo and MOND, and watch the curve fall away from the measured points.
+  hint: Untick <b>Include a dark matter halo</b> and <b>Use MOND instead of dark matter</b>.
+  success: Visible matter alone predicts a Keplerian fall-off that the data do not show.
+  check:
+  - field: halo
+    is_false: true
+  - field: mond
+    is_false: true
+- id: halo-fit
+  task: 'Switch the halo on and fit the outer points: bring the scatter below 12 km/s.'
+  hint: Raise the halo mass until the model curve flattens on top of the data points.
+  success: A dark halo about ten times heavier than the visible galaxy flattens the curve.
+  check:
+  - field: halo
+    is_true: true
+  - field: rms
+    max: 12
+- id: mond-fit
+  task: Now fit the same galaxy with MOND instead of dark matter.
+  hint: Tick <b>Use MOND instead of dark matter</b>. There is no halo mass to tune; the acceleration scale
+    a₀ does the work.
+  success: MOND fits a single galaxy with no free halo — which is why rotation curves alone cannot decide
+    between the two ideas.
+  check:
+  - field: mond
+    is_true: true
+  - field: rms
+    max: 15
+S10:
+- id: first-second
+  task: Travel to one second after the Big Bang and read a temperature above a billion kelvin.
+  hint: Set the time slider to 0, which means 10⁰ = 1 second, or jump to Neutrino decoupling.
+  success: About 10¹⁰ K — hot enough to create and destroy electron–positron pairs.
+  check:
+  - field: time_s
+    min: 0.3
+    max: 5
+  - field: temperature_k
+    min: 1000000000.0
+- id: matter-takes-over
+  task: Find the era when matter carries more of the energy budget than radiation, before the universe
+    is a million years old.
+  hint: Matter–radiation equality happens near 50 000 years, about 12.2 on the slider.
+  success: From here on gravity can finally build structure out of the tiny ripples.
+  check:
+  - field: dominant
+    equals: matter
+  - field: time_s
+    max: 32000000000000.0
+- id: dark-energy-era
+  task: Move to today and check which component dominates the universe now.
+  hint: Press the <b>Today</b> button.
+  success: Dark energy is about 69% of the energy budget now, and its share keeps growing.
+  check:
+  - field: dominant
+    equals: dark energy
+  - field: time_s
+    min: 3.0e+17
+S11:
+- id: deuterium-baryons
+  task: Weigh the ordinary matter of the universe with deuterium, and land inside the Planck CMB band.
+  hint: Press <b>From deuterium</b> with standard physics; the vertical line should fall inside the green
+    band.
+  success: Two independent measurements, three minutes and 380 000 years after the Big Bang, agree on
+    the same baryon density.
+  check:
+  - field: eta10
+    min: 5.8
+    max: 6.4
+  - field: delta_neff
+    min: -0.01
+    max: 0.01
+- id: lithium-dip
+  task: Find the baryon density at which the least lithium-7 is produced.
+  hint: Slide η₁₀ down towards 2–3 and watch the lithium curve reach its minimum.
+  success: 'The two production channels of lithium cross here. The measured baryon density is not at the
+    dip: that is the lithium problem.'
+  check:
+  - field: eta10
+    min: 1.6
+    max: 3.2
+- id: extra-neutrinos
+  task: Add at least one extra neutrino-like species and push the predicted helium above 0.26.
+  hint: 'Raise ΔN_eff to 1 or more: a faster expansion freezes out more neutrons.'
+  success: Helium counts relativistic species, which is how nucleosynthesis limits new light particles.
+  check:
+  - field: delta_neff
+    min: 0.9
+  - field: yp
+    min: 0.26
+S17:
+- id: blazing-sky
+  task: 'Reproduce Olbers'' paradox: a patch of sky completely covered by stars.'
+  hint: 'Choose the scenario Olbers'' universe: infinite, static and eternal.'
+  success: Every line of sight ends on a star, so the whole sky is as bright as a stellar surface.
+  check:
+  - field: coverage
+    min: 0.98
+- id: age-saves-us
+  task: Keep the stars burning forever but give the universe a finite age, and get the sky below 20% covered.
+  hint: Tick <b>The universe has a finite age</b> and shorten the light-travel distance well below the
+    mean free path λ.
+  success: The finite age alone is enough. In our universe ct is fourteen orders of magnitude shorter
+    than λ.
+  check:
+  - field: finite_age
+    is_true: true
+  - field: coverage
+    max: 0.2
+- id: redshift-only
+  task: 'Now switch the finite age off and darken an eternal sky with expansion alone: bring the brightness
+    below 20%.'
+  hint: Untick the finite age, tick <b>The universe expands</b> and shorten the Hubble length.
+  success: Redshift dimming can darken an eternal sky too, but in our universe it is only a supporting
+    actor.
+  check:
+  - field: finite_age
+    is_false: true
+  - field: expanding
+    is_true: true
+  - field: brightness
+    max: 0.2

@@ -153,6 +153,17 @@ class CosmicTimelineSimulator(SimulatorBase):
     def time_s(self) -> float:
         return 10 ** self.log_time.value()
 
+    def state(self) -> dict:
+        t = self.time_s()
+        return {
+            "time_s": t,
+            "log_time": self.log_time.value(),
+            "temperature_k": self.timeline.temperature_k(t),
+            "scale_factor": self.timeline.scale_factor(t),
+            "dominant": self.timeline.dominant(t),
+            "epochs": ", ".join(e.name for e in self.timeline.epochs_at(t)),
+        }
+
     def _jump(self, index: int) -> None:
         name = self.epoch_box.itemData(index)
         if name is None:

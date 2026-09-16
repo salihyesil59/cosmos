@@ -53,6 +53,43 @@ class Formula:
 
 
 @dataclass(frozen=True)
+class Challenge:
+    """One step of a guided challenge inside a simulator (G8)."""
+
+    id: str
+    simulator: str
+    task: str
+    hint: str
+    success: str
+    check: list[dict]
+
+    @property
+    def key(self) -> str:
+        return f"{self.simulator}/{self.id}"
+
+
+@dataclass(frozen=True)
+class HistoryEvent:
+    """A dated milestone on the history-of-cosmology timeline (G12)."""
+
+    year: int
+    title: str
+    who: str
+    description: str
+    kind: str            # idea | theory | observation | problem
+    lesson: str | None = None
+
+
+@dataclass(frozen=True)
+class Scientist:
+    name: str
+    years: str
+    contribution: str
+    story: str
+    lessons: list[str] = field(default_factory=list)
+
+
+@dataclass(frozen=True)
 class GlossaryTerm:
     key: str
     term: str

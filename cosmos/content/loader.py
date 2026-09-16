@@ -9,7 +9,16 @@ from pathlib import Path
 
 import yaml
 
-from cosmos.content.models import Formula, GlossaryTerm, Lesson, Level, QuizQuestion
+from cosmos.content.models import (
+    Challenge,
+    Formula,
+    GlossaryTerm,
+    HistoryEvent,
+    Lesson,
+    Level,
+    QuizQuestion,
+    Scientist,
+)
 
 CONTENT_DIR = Path(__file__).resolve().parent
 _FRONT_MATTER = re.compile(r"\A---\s*\n(.*?)\n---\s*\n(.*)\Z", re.DOTALL)
@@ -121,3 +130,51 @@ def load_formulas() -> list[Formula]:
         )
         for entry in data
     ]
+
+
+@functools.cache
+def load_challenges() -> dict[str, list[Challenge]]:
+    """Guided challenges, keyed by simulator id."""
+    data = yaml.safe_load((CONTENT_DIR / "challenges.yaml").read_text(encoding="utf-8")) or {}
+    out: dict[str, list[Challenge]] = {}
+    for simulator, steps in data.items():
+        out[simulator] = [
+            Challenge(
+                id=step["id"],
+                simulator=simulator,
+                task=" ".join(step["task"].split()),
+                hint=" ".join(step.get("hint", "").split()),
+                success=" ".join(step.get("success", "").split()),
+                check=list(step.get("check", []) or []),
+            )
+            for step in steps
+        ]
+    return out
+
+
+@functools.cache
+def load_history() -> tuple[list[HistoryEvent], list[Scientist]]:
+    """The timeline of discoveries and the scientist cards."""
+    data = yaml.safe_load((CONTENT_DIR / "history.yaml").read_text(encoding="utf-8")) or {}
+    events = [
+        HistoryEvent(
+            year=int(e["year"]),
+            title=e["title"],
+            who=e["who"],
+            description=e["description"].strip(),
+            kind=e.get("kind", "idea"),
+            lesson=e.get("lesson"),
+        )
+        for e in data.get("events", [])
+    ]
+    scientists = [
+        Scientist(
+            name=s["name"],
+            years=s["years"],
+            contribution=s["contribution"].strip(),
+            story=s["story"].strip(),
+            lessons=list(s.get("lessons", []) or []),
+        )
+        for s in data.get("scientists", [])
+    ]
+    return sorted(events, key=lambda e: e.year), scientists

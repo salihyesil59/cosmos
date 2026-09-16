@@ -54,6 +54,10 @@ class SimulatorBase(QWidget):
     def recompute(self) -> None:
         """Recalculate and redraw. Override in subclasses."""
 
+    def state(self) -> dict:
+        """Values a guided challenge can check. Override in simulators that have challenges."""
+        return {}
+
     def finish_controls(self) -> None:
         self.controls.addStretch(1)
 

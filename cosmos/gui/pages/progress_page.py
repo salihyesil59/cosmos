@@ -2,10 +2,22 @@
 
 from __future__ import annotations
 
-from PySide6.QtWidgets import QHBoxLayout, QLabel, QMessageBox, QPushButton, QVBoxLayout, QWidget
+from PySide6.QtWidgets import (
+    QGridLayout,
+    QHBoxLayout,
+    QLabel,
+    QMessageBox,
+    QProgressBar,
+    QPushButton,
+    QScrollArea,
+    QVBoxLayout,
+    QWidget,
+)
 
+from cosmos.achievements import ACHIEVEMENTS
 from cosmos.gui.context import AppContext
 from cosmos.gui.simulators.registry import SIMULATORS
+from cosmos.gui.theme import repolish
 from cosmos.gui.widgets.common import card, muted_label, title_label
 from cosmos.gui.widgets.prereq_map import PrerequisiteMap
 
@@ -23,10 +35,16 @@ GUIDE = """
 
 Click any box to open that lesson. Drag the map to move around.
 
+### Badges
+
+Badges are earned by learning, not by clicking: finish lessons, score full marks,
+explore the simulators and solve their challenges. Locked badges show how far
+along you are.
+
 ### Resetting
 
-**Reset progress** clears quiz scores and completed lessons. Your theme and
-settings are kept.
+**Reset progress** clears quiz scores, completed lessons, challenges and badges.
+Your notes, bookmarks and settings are kept.
 """
 
 
@@ -64,6 +82,37 @@ class ProgressPage(QWidget):
             self.stat_values[key] = value
         root.addLayout(stats)
 
+        root.addWidget(title_label("Badges", "subtitle"))
+        self.badge_summary = muted_label("")
+        root.addWidget(self.badge_summary)
+        badge_scroll = QScrollArea()
+        badge_scroll.setWidgetResizable(True)
+        badge_scroll.setFixedHeight(250)
+        badge_host = QWidget()
+        self.badge_grid = QGridLayout(badge_host)
+        self.badge_grid.setSpacing(8)
+        badge_scroll.setWidget(badge_host)
+        root.addWidget(badge_scroll)
+        self.badge_widgets = {}
+        for i, achievement in enumerate(ACHIEVEMENTS):
+            c = card()
+            cl = QVBoxLayout(c)
+            cl.setContentsMargins(12, 8, 12, 8)
+            cl.setSpacing(2)
+            title = QLabel(f"{achievement.icon}  {achievement.title}")
+            title.setWordWrap(True)
+            cl.addWidget(title)
+            text = muted_label(achievement.description)
+            cl.addWidget(text)
+            bar = QProgressBar()
+            bar.setTextVisible(False)
+            bar.setFixedHeight(6)
+            cl.addWidget(bar)
+            status = muted_label("")
+            cl.addWidget(status)
+            self.badge_grid.addWidget(c, i // 4, i % 4)
+            self.badge_widgets[achievement.id] = (c, title, bar, status)
+
         root.addWidget(title_label("Lesson map", "subtitle"))
         root.addWidget(muted_label("Click a lesson to open it. Arrows show which lessons build on which."))
         self.map = PrerequisiteMap(ctx)
@@ -86,12 +135,33 @@ class ProgressPage(QWidget):
         self.stat_values["sims"].setText(f"{explored} / {len(SIMULATORS)}")
         nxt = store.next_recommended(cur)
         self.stat_values["next"].setText(nxt or "All done!")
+        self._refresh_badges()
+
+    def _refresh_badges(self) -> None:
+        cur, store = self.ctx.curriculum, self.ctx.store
+        earned = 0
+        for achievement in ACHIEVEMENTS:
+            done, goal = achievement.state(store, cur)
+            unlocked = achievement.id in store.data.achievements or done >= goal
+            frame, title, bar, status = self.badge_widgets[achievement.id]
+            bar.setRange(0, max(goal, 1))
+            bar.setValue(done)
+            bar.setVisible(not unlocked)
+            frame.setProperty("earned", "yes" if unlocked else "no")
+            title.setEnabled(unlocked)
+            when = store.data.achievements.get(achievement.id, "")
+            status.setText(f"Earned {when[:10]}" if unlocked and when else
+                           ("Earned" if unlocked else f"{done} / {goal}"))
+            repolish(frame)
+            earned += int(unlocked)
+        self.badge_summary.setText(f"{earned} of {len(ACHIEVEMENTS)} badges earned")
 
     def _reset(self) -> None:
         answer = QMessageBox.question(
             self,
             "Reset progress",
-            "Clear all quiz scores and completed lessons? This cannot be undone.",
+            "Clear all quiz scores, completed lessons, challenges and badges? Your notes and "
+            "bookmarks are kept. This cannot be undone.",
         )
         if answer == QMessageBox.Yes:
             self.ctx.store.reset()

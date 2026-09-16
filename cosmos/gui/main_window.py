@@ -18,6 +18,7 @@ from PySide6.QtWidgets import (
 from cosmos import APP_NAME, __version__
 from cosmos.gui.context import AppContext
 from cosmos.gui.pages.glossary import GlossaryPage
+from cosmos.gui.pages.history_page import HistoryPage
 from cosmos.gui.pages.home import HomePage
 from cosmos.gui.pages.lesson import LessonPage
 from cosmos.gui.pages.notes_page import NotesPage
@@ -84,10 +85,11 @@ class MainWindow(QMainWindow):
         self.glossary_page = GlossaryPage(ctx)
         self.progress_page = ProgressPage(ctx)
         self.reference_page = ReferencePage(ctx)
+        self.history_page = HistoryPage(ctx)
         self.search_page = SearchPage(ctx)
         self.notes_page = NotesPage(ctx)
         for page in (self.home, self.lesson_page, self.sim_hub, self.glossary_page, self.progress_page,
-                     self.reference_page, self.search_page, self.notes_page):
+                     self.reference_page, self.history_page, self.search_page, self.notes_page):
             self.stack.addWidget(page)
         self.setCentralWidget(self.stack)
 
@@ -100,6 +102,7 @@ class MainWindow(QMainWindow):
         ctx.signals.navigate.connect(self.navigate)
         ctx.signals.progressChanged.connect(self._refresh_sidebar)
         ctx.signals.notesChanged.connect(self._refresh_notes)
+        ctx.signals.progressChanged.connect(self.check_achievements)
         theme().changed.connect(lambda _p: self._refresh_sidebar())
 
     # --------------------------------------------------------------- build
@@ -148,6 +151,7 @@ class MainWindow(QMainWindow):
             self.sim_items[info.id] = item
         self.glossary_item = top("📖  Glossary", "glossary", "Definitions of all important terms")
         self.reference_item = top("∑  Reference", "reference", "Formula sheet, constants, units and models")
+        self.history_item = top("🕰  History", "history", "The discoveries and the people behind them")
         self.search_item = top("🔎  Search", "search", "Search lessons, glossary, simulators and formulas")
         self.notes_item = top("📝  Notes & bookmarks", "notes", "Everything you saved")
         self.progress_item = top("📈  Progress", "progress", "Your progress and the lesson map")
@@ -215,6 +219,8 @@ class MainWindow(QMainWindow):
         glossary = action("📖 Glossary", "Open the glossary (Ctrl+G)", lambda: self.navigate("glossary"), "Ctrl+G")
         reference = action("∑ Reference", "Formula sheet, constants and units (Ctrl+R)",
                            lambda: self.navigate("reference"), "Ctrl+R")
+        history = action("🕰 History", "The history of cosmology and its scientists",
+                         lambda: self.navigate("history"))
         notes = action("📝 Notes", "All your notes and bookmarks (Ctrl+Shift+N)",
                        lambda: self.navigate("notes"), "Ctrl+Shift+N")
         self.bookmark_action = action("☆ Bookmark", "Bookmark the current page (Ctrl+D)",
@@ -253,7 +259,7 @@ class MainWindow(QMainWindow):
         file_menu.addSeparator()
         file_menu.addAction(action("Quit", "Close Cosmos", self.close, "Ctrl+Q"))
         learn = menu.addMenu("&Learn")
-        for a in (home, cont, glossary, reference, progress):
+        for a in (home, cont, glossary, reference, history, progress):
             learn.addAction(a)
         learn.addSeparator()
         learn.addAction(action("Simulators", "All simulators", lambda: self.navigate("sims")))
@@ -298,7 +304,7 @@ class MainWindow(QMainWindow):
         self._update_bookmark_action()
         self._select_sidebar(route)
         self._update_nav_actions()
-        if route in ("home", "progress", "glossary", "sims", "reference", "notes") \
+        if route in ("home", "progress", "glossary", "sims", "reference", "notes", "history") \
                 or route.startswith(("lesson:", "sim:")):
             self.ctx.store.data.last_route = route
             self.ctx.store.save()
@@ -319,6 +325,7 @@ class MainWindow(QMainWindow):
                 self._sim_pages[target] = page
                 self.stack.addWidget(page)
             self.ctx.store.mark_opened("simulator", target)
+            self.check_achievements()
             return self._sim_pages[target]
         if kind == "glossary":
             if target:
@@ -327,6 +334,10 @@ class MainWindow(QMainWindow):
         if kind == "progress":
             self.progress_page.refresh()
             return self.progress_page
+        if kind == "history":
+            self.ctx.store.mark_page_seen("history")
+            self.check_achievements()
+            return self.history_page
         if kind == "reference":
             if target:
                 self.reference_page.show_formula(target)
@@ -383,6 +394,8 @@ class MainWindow(QMainWindow):
             item = self.glossary_item
         elif kind == "reference":
             item = self.reference_item
+        elif kind == "history":
+            item = self.history_item
         elif kind == "search":
             item = self.search_item
         elif kind == "notes":
@@ -418,6 +431,18 @@ class MainWindow(QMainWindow):
         marked = self.ctx.store.is_bookmarked(self._current_route)
         self.bookmark_action.setText("★ Bookmarked" if marked else "☆ Bookmark")
         self.bookmark_action.setEnabled(bool(self.notes.route))
+
+    def check_achievements(self) -> list[str]:
+        """Record anything the learner has just earned and celebrate it."""
+        from cosmos.achievements import BY_ID
+
+        new = self.ctx.store.refresh_achievements(self.ctx.curriculum)
+        if new:
+            names = ", ".join(f"{BY_ID[i].icon} {BY_ID[i].title}" for i in new)
+            self.statusBar().showMessage(f"Badge earned: {names}", 12000)
+            self.progress_page.refresh()
+            self.ctx.signals.achievementsUnlocked.emit(new)
+        return new
 
     def _refresh_notes(self) -> None:
         self.notes_page.refresh()
@@ -483,11 +508,26 @@ class MainWindow(QMainWindow):
                 before=lambda: self.navigate(f"lesson:{self.ctx.curriculum.ordered_ids[0]}"),
             ),
             TourStep(
+                "Two ways to read a lesson",
+                "Every lesson has a <b>View</b> switch at the top right. <b>Intuitive</b> tells the story in "
+                "words, hiding the formulas and derivations; <b>With the maths</b> shows the complete lesson. "
+                "Switch whenever you like — your choice is remembered.",
+                target=lambda: self.lesson_page.view_buttons.buttons()[0],
+            ),
+            TourStep(
                 "Simulators",
                 "Simulators let you experiment. Lessons link to them with <b>Try it</b> boxes, and you "
                 "can open them any time from the sidebar.",
                 target=lambda: self.sidebar,
                 before=lambda: self.sidebar.scrollToItem(self.sims_item),
+            ),
+            TourStep(
+                "Challenges",
+                "Many simulators open with a <b>challenge</b>: a concrete task such as finding a universe "
+                "that ends in a Big Crunch. Set the controls and press <b>Check my answer</b>; hints are "
+                "there if you need them, and solved challenges earn badges.",
+                target=lambda: self.stack.currentWidget().challenge_bar,
+                before=lambda: self.navigate("sim:S2"),
             ),
             TourStep(
                 "Search and the formula sheet",
@@ -509,6 +549,12 @@ class MainWindow(QMainWindow):
                 "Go <b>Back</b> and <b>Forward</b> between pages, open the <b>Glossary</b> and your "
                 "<b>Progress</b> map, toggle the Guide panel, switch the <b>Theme</b>, or replay this tour.",
                 target=lambda: self.toolbar,
+            ),
+            TourStep(
+                "History and badges",
+                "<b>History</b> follows cosmology from Copernicus to the latest surveys, with cards for the "
+                "scientists. <b>Progress</b> shows your lesson map and the <b>badges</b> you have earned.",
+                before=lambda: self.navigate("history"),
             ),
             TourStep(
                 "You're ready",

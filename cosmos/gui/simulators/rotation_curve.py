@@ -104,6 +104,15 @@ class RotationCurveSimulator(SimulatorBase):
         self.mond.toggled.connect(self._mond_toggled)
         self._halo_toggled(False)
 
+    def state(self) -> dict:
+        return {
+            "halo": self.halo_on.isChecked(),
+            "mond": self.mond.isChecked(),
+            "halo_mass": self.halo.value(),
+            "disk_mass": self.disk.value(),
+            "rms": self.rms_residual(),
+        }
+
     def bulge_mass(self) -> float:
         return self.bulge.value() * UNIT
 
@@ -162,6 +171,13 @@ class RotationCurveSimulator(SimulatorBase):
             f"Fit quality χ²/point: <b>{chi2:.1f}</b> (about 1 is a good fit)"
         )
         self.plot.refresh()
+
+    def rms_residual(self) -> float:
+        """Scatter of the model around the data points [km/s], for guided challenges."""
+        r = self.data.radius_kpc
+        bulge, disk, halo = self.components(r)
+        model = self.model_velocity(r, bulge, disk, halo)
+        return float(np.sqrt(np.mean((model - self.data.velocity_km_s) ** 2)))
 
     def _chi2(self, halo_mass: float | None = None) -> float:
         r = self.data.radius_kpc

@@ -112,6 +112,18 @@ class BBNExplorerSimulator(SimulatorBase):
     def _abundances(self, eta):
         return bbn.abundances(eta, self.delta_neff.value(), self.lifetime.value())
 
+    def state(self) -> dict:
+        ab = self.ab if self.ab is not None else self._abundances(self.eta.value())
+        return {
+            "eta10": self.eta.value(),
+            "omega_b_h2": float(bbn.omega_b_h2_from_eta10(self.eta.value())),
+            "delta_neff": self.delta_neff.value(),
+            "neutron_lifetime": self.lifetime.value(),
+            "yp": float(ab.yp),
+            "d_h": float(ab.d_h),
+            "li7_h": float(ab.li7_h),
+        }
+
     def recompute(self) -> None:
         eta = self.eta.value()
         self.ab = self._abundances(eta)

@@ -114,6 +114,19 @@ class ExpansionSimulator(SimulatorBase):
             name=f"Ωm={self.om.value():.2f}, ΩΛ={self.ode.value():.2f}",
         )
 
+    def state(self) -> dict:
+        c = self.cosmology()
+        fate = c.fate()
+        return {
+            "om": self.om.value(),
+            "ode": self.ode.value(),
+            "h0": self.h0.value(),
+            "fate": fate.name.replace("_", " ").lower(),
+            "accelerating": float(c.deceleration_parameter(0)) < 0,
+            "age_gyr": self.history.age if self.history and self.history.age else float("nan"),
+            "geometry": c.geometry,
+        }
+
     def recompute(self) -> None:
         c = self.cosmology()
         self.cosmo = c

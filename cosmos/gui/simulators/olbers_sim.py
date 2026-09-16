@@ -165,6 +165,19 @@ class OlbersSimulator(SimulatorBase):
         hubble = self.hubble.value() if self.expanding.isChecked() else None
         return density, depth, hubble
 
+    def state(self) -> dict:
+        density, depth, hubble = self.parameters()
+        mfp = olbers.mean_free_path(density)
+        return {
+            "coverage": olbers.sky_coverage(depth, mfp),
+            "brightness": olbers.sky_brightness(depth, mfp, hubble),
+            "finite_age": self.finite_age.isChecked(),
+            "lifetimes": self.lifetimes.isChecked(),
+            "expanding": self.expanding.isChecked(),
+            "density": self.density.value(),
+            "mean_free_path": mfp,
+        }
+
     def recompute(self) -> None:
         density, depth, hubble = self.parameters()
         mfp = olbers.mean_free_path(density)

@@ -26,6 +26,8 @@ class RichBrowser(QTextBrowser):
     def __init__(self, parent=None, font_pt: float = 11.0):
         super().__init__(parent)
         self._font_pt = font_pt
+        self._math_view = "full"
+        self.document_info = None      # the last RenderedDocument, for callers that need its counts
         self._markdown = ""
         self._images: dict[str, QImage] = {}
         self.setOpenLinks(False)
@@ -35,6 +37,12 @@ class RichBrowser(QTextBrowser):
         theme().changed.connect(lambda _p: self._rerender())
 
     # ------------------------------------------------------------ content
+    def set_math_view(self, mode: str) -> None:
+        """Switch between the full and the intuitive (formula-free) rendering."""
+        if mode != self._math_view:
+            self._math_view = mode
+            self._rerender()
+
     def set_markdown_content(self, text: str) -> None:
         self._markdown = text
         self._rerender()
@@ -50,8 +58,10 @@ class RichBrowser(QTextBrowser):
             device_ratio=max(1.0, self.devicePixelRatioF()),
             simulator_titles={k: v.title for k, v in SIMULATORS.items()},
             glossary_terms={k: v.definition for k, v in glossary.items()},
+            math_view=self._math_view,
         )
         doc = render_markdown(self._markdown, ctx)
+        self.document_info = doc
         self._images = {}
         for url, png in doc.images.items():
             img = QImage.fromData(png, "PNG")
