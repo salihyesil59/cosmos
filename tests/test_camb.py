@@ -52,3 +52,28 @@ def test_app_works_without_camb(monkeypatch):
     """Everything must degrade to the teaching model when CAMB is missing."""
     monkeypatch.setattr(backend, "version", lambda: None)
     assert backend.available() is False
+
+
+def test_a_broken_spectrum_is_refused(monkeypatch):
+    """A non-finite spectrum must raise, so the simulator can fall back to the teaching model."""
+    import numpy as np
+
+    real_get_results = camb.get_results
+
+    def broken(pars, *args, **kwargs):
+        results = real_get_results(pars, *args, **kwargs)
+
+        class Wrapper:
+            def get_cmb_power_spectra(self, *a, **k):
+                spectra = results.get_cmb_power_spectra(*a, **k)
+                spectra["total"] = np.full_like(spectra["total"], np.nan)
+                return spectra
+
+            def get_derived_params(self):
+                return results.get_derived_params()
+
+        return Wrapper()
+
+    monkeypatch.setattr(camb, "get_results", broken)
+    with pytest.raises(ValueError, match="not finite"):
+        backend.spectrum(cmb.PLANCK)

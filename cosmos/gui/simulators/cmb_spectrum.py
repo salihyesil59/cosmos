@@ -266,8 +266,8 @@ class CMBSpectrumSimulator(SimulatorBase):
             ax.set_xlim(2, cmb.ELL_MAX)
         else:
             ax.set_xlim(0, cmb.ELL_MAX)
-        top = max(float(self.spec.d_ell.max()), float(self.reference.d_ell.max()))
-        ax.set_ylim(0, top * 1.15)
+        top = max(float(np.nanmax(self.spec.d_ell)), float(np.nanmax(self.reference.d_ell)))
+        ax.set_ylim(0, top * 1.15 if np.isfinite(top) and top > 0 else 7000)
         ax.set_xlabel("Multipole ℓ   (angular size ≈ 180° / ℓ)")
         ax.set_ylabel("ℓ(ℓ+1)Cℓ / 2π  (μK²)")
         ax.legend(loc="upper right", fontsize=8)
