@@ -39,9 +39,10 @@ class SupernovaSimulator(SimulatorBase):
             self.sample_box.addItem(sample.label, key)
             self.sample_box.setItemData(self.sample_box.count() - 1, sample.description, Qt.ToolTipRole)
         dl.addWidget(labelled_row("Sample", self.sample_box, (
-            "Simulated samples",
-            "Both samples are generated inside the app from a flat universe with Ωm = 0.3, mimicking the "
-            "numbers, redshifts and scatter of real surveys. They are not real measurements.")))
+            "Three samples",
+            "The first two are generated inside the app from a flat universe with Ωm = 0.3, mimicking the "
+            "numbers, redshifts and scatter of real surveys. The third is the real Pantheon+ compilation "
+            "as published, so the fit you get is the measurement itself.")))
         self.flat = QCheckBox("Assume a flat universe (ΩΛ = 1 − Ωm)")
         self.flat.setToolTip("An extra assumption supported by the CMB. It makes the evidence much stronger.")
         dl.addWidget(self.flat)
@@ -97,8 +98,8 @@ class SupernovaSimulator(SimulatorBase):
         self.controls.addWidget(results)
         self.finish_controls()
 
-        self.display.addWidget(Banner("info", "<b>Simulated data.</b> The supernovae are generated inside the app to "
-                                      "resemble real surveys, so you can repeat the 1998 analysis yourself."))
+        self.banner = Banner("info", "")
+        self.display.addWidget(self.banner)
         tabs = QTabWidget()
         self.hubble_plot = PlotWidget(self._draw_hubble, csv_provider=self._csv, export_name="supernova_hubble_diagram")
         self.plane_plot = PlotWidget(self._draw_plane, export_name="supernova_omega_plane")
@@ -115,6 +116,17 @@ class SupernovaSimulator(SimulatorBase):
     # ------------------------------------------------------------ compute
     def _load_sample(self) -> None:
         self.sample = sn.SAMPLES[self.sample_box.currentData()]()
+        if self.sample.real:
+            self.banner.set_message(
+                "success",
+                f"<b>Real measurements.</b> {self.sample.citation}. The fit below is your own, made with "
+                "diagonal errors only, so it will not match the published numbers exactly.")
+        else:
+            self.banner.set_message(
+                "info",
+                "<b>Simulated data.</b> These supernovae are generated inside the app to resemble real "
+                "surveys, so you can repeat the 1998 analysis yourself. Switch the sample to Pantheon+ "
+                "for the real measurements.")
         self.fit = sn.fit_grid(self.sample, n=61)
         self.flat_fit = sn.fit_flat(self.sample)
         self.recompute()
@@ -167,7 +179,7 @@ class SupernovaSimulator(SimulatorBase):
         ax = fig.add_subplot(grid[0])
         ax2 = fig.add_subplot(grid[1], sharex=ax)
         ax.errorbar(s.z, mu_obs, yerr=s.error, fmt="o", markersize=2.5, color=p.muted, alpha=0.6, elinewidth=0.6,
-                    label="Simulated supernovae")
+                    label="Supernovae (real)" if self.sample.real else "Simulated supernovae")
         ax2.errorbar(s.z, mu_obs - empty_at_data, yerr=s.error, fmt="o", markersize=2.5, color=p.muted, alpha=0.4,
                      elinewidth=0.5)
         # Binned residuals are easier to read.

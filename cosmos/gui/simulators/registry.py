@@ -166,7 +166,10 @@ SIMULATORS: dict[str, SimulatorInfo] = {
                 "Press <b>Fit halo to data</b> to find the halo mass that matches best.",
             ],
             things_to_try=[
-                "Switch off the halo: how does the curve behave at 30 kpc?",
+                "Pick a real galaxy from the <b>Galaxy</b> list: 138 measured curves from the SPARC survey.",
+                "Compare a dwarf (DDO154) with a giant spiral (UGC02885): which needs proportionally more "
+                "dark matter?",
+                "Switch off the halo: how does the curve behave in the outskirts?",
                 "How much dark matter lies inside 30 kpc compared with visible matter?",
                 "Can you fit the data with a heavier disk and no halo? Why not?",
                 "Tick <b>Use MOND</b>: can modified gravity explain the curve without dark matter?",
@@ -362,12 +365,14 @@ SIMULATORS: dict[str, SimulatorInfo] = {
                 "how the Hubble constant changes."
             ),
             how_to_use=[
-                "Choose the <b>1998-like</b> or <b>modern-like</b> simulated sample.",
+                "Choose a sample: two simulated ones, or the real <b>Pantheon+</b> compilation.",
                 "Compare the data with the empty, matter-only and best-fit models in the <b>Hubble diagram</b>.",
                 "Open the <b>Ωm–ΩΛ plane</b> to see which universes the data allow; try <b>Assume a flat universe</b>.",
                 "Switch the <b>calibration</b> and read the Hubble constant.",
             ],
             things_to_try=[
+                "Fit the real Pantheon+ sample. Where does the best fit land, and how many sigma is the "
+                "evidence for acceleration?",
                 "With the 1998-like sample, how strong is the evidence for acceleration with and without flatness?",
                 "Do distant supernovae look brighter or fainter than in an empty universe?",
                 "Which calibration gives a Hubble constant close to Planck, and which close to SH0ES?",

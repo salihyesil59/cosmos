@@ -12,6 +12,7 @@ from dataclasses import dataclass
 
 import numpy as np
 
+from cosmos.physics import datasets
 from cosmos.physics.cosmology import Cosmology
 
 C_KM_S = 299_792.458
@@ -28,6 +29,8 @@ class SupernovaSample:
     z: np.ndarray
     m: np.ndarray        # apparent peak magnitude (standardised)
     error: np.ndarray    # total magnitude uncertainty
+    real: bool = False   # True for measurements, False for the samples generated here
+    citation: str = ""
 
 
 def _generate(key, label, description, z, sigma, seed) -> SupernovaSample:
@@ -65,7 +68,33 @@ def modern_sample(seed: int = 2022) -> SupernovaSample:
     )
 
 
-SAMPLES = {"discovery": discovery_sample, "modern": modern_sample}
+def pantheon_sample(min_z: float = 0.023) -> SupernovaSample:
+    """The real Pantheon+ supernovae, as published (Scolnic et al. 2022).
+
+    Calibrator supernovae (those in galaxies with a Cepheid distance) and the very
+    nearby ones, where peculiar velocities dominate, are left out — the same cut
+    the Pantheon+ cosmology analysis makes. The standardised magnitudes use the
+    SH0ES absolute magnitude already, so they drop straight into the fits here.
+    Only the diagonal errors are bundled, so this is a teaching fit, not the
+    published likelihood.
+    """
+    data = datasets.load_pantheon_plus()
+    keep = (~data.is_calibrator) & (data.z >= min_z)
+    order = np.argsort(data.z[keep])
+    return SupernovaSample(
+        "pantheon",
+        f"Pantheon+ — real data ({int(keep.sum())} supernovae)",
+        "The Pantheon+ compilation: real type Ia supernovae from z = 0.02 to z = 2.26, "
+        "standardised by the Pantheon+ team. Diagonal errors only.",
+        data.z[keep][order],
+        data.m_b_corr[keep][order],
+        data.m_b_corr_err[keep][order],
+        real=True,
+        citation=datasets.PANTHEON_CITATION,
+    )
+
+
+SAMPLES = {"discovery": discovery_sample, "modern": modern_sample, "pantheon": pantheon_sample}
 
 
 def dimensionless_luminosity_distance(z, om, ol) -> np.ndarray:
