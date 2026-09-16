@@ -63,6 +63,10 @@ def spectrum(p: CMBParameters = CMBParameters(), ell_max: int = ELL_MAX) -> CMBS
     ell = np.arange(2, min(ell_max, powers.shape[0] - 1) + 1, dtype=float)
     d_ell = np.asarray(powers[2:len(ell) + 2, 0], dtype=float)      # column 0 is TT, already ℓ(ℓ+1)Cℓ/2π
 
+    if not np.all(np.isfinite(d_ell)) or d_ell.size < 100:
+        # CAMB occasionally returns an unusable spectrum; the caller falls back to the model.
+        raise ValueError("CAMB returned a spectrum that is not finite")
+
     derived = results.get_derived_params()
     r_s = float(derived["rstar"])                                   # Mpc
     d_m = float(derived["DAstar"]) * 1e3                            # Gpc -> Mpc
