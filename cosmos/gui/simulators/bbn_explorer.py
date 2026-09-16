@@ -6,16 +6,17 @@ import numpy as np
 from PySide6.QtCore import Qt
 from PySide6.QtWidgets import QCheckBox, QGroupBox, QHBoxLayout, QLabel, QPushButton, QVBoxLayout
 
+from cosmos.gui.labels import physics
 from cosmos.gui.simulators.base import SimulatorBase
 from cosmos.gui.theme import theme
 from cosmos.gui.widgets.common import Banner, ParameterSlider
 from cosmos.gui.widgets.plot import PlotWidget
-from cosmos.i18n import tr
+from cosmos.i18n import tr, tr_noop
 from cosmos.physics import bbn
 
 ETA_MIN, ETA_MAX = 0.5, 20.0
-LABELS = {"Yp": "Helium-4 (mass fraction Yₚ)", "D/H": "Deuterium D/H", "He3/H": "Helium-3 ³He/H",
-          "Li7/H": "Lithium-7 ⁷Li/H"}
+LABELS = {"Yp": tr_noop("Helium-4 (mass fraction Yₚ)"), "D/H": tr_noop("Deuterium D/H"),
+          "He3/H": tr_noop("Helium-3 ³He/H"), "Li7/H": tr_noop("Lithium-7 ⁷Li/H")}
 
 
 class BBNExplorerSimulator(SimulatorBase):
@@ -130,8 +131,10 @@ class BBNExplorerSimulator(SimulatorBase):
         self.ab = self._abundances(eta)
         omega = float(bbn.omega_b_h2_from_eta10(eta))
         self.omega_label.setText(
-            f"Ω_b h² = <b>{omega:.4f}</b>, so Ω_b = {omega / 0.674**2:.3f} for h = 0.674<br>"
-            f"Planck CMB: Ω_b h² = {bbn.PLANCK_OMEGA_B_H2[0]} ± {bbn.PLANCK_OMEGA_B_H2[1]}"
+            tr("Ω_b h² = <b>{omega}</b>, so Ω_b = {omega_only} for h = 0.674<br>"
+               "Planck CMB: Ω_b h² = {planck} ± {error}")
+            .format(omega=f"{omega:.4f}", omega_only=f"{omega / 0.674**2:.3f}",
+                    planck=bbn.PLANCK_OMEGA_B_H2[0], error=bbn.PLANCK_OMEGA_B_H2[1])
         )
         tension = bbn.tensions(self.ab)
         values = bbn.predicted(self.ab)
@@ -140,30 +143,37 @@ class BBNExplorerSimulator(SimulatorBase):
             obs, err = bbn.OBSERVED[key]
             fmt = "{:.4f}" if key == "Yp" else "{:.3g}"
             mark = "✓" if abs(tension[key]) < 2 else "✗"
-            lines.append(f"{mark} {LABELS[key]}: <b>{fmt.format(value)}</b> "
-                         f"(observed {fmt.format(obs)} ± {fmt.format(err)}; {tension[key]:+.1f}σ)")
+            lines.append(f"{mark} " + tr("{element}: <b>{value}</b> (observed {observed} ± {error}; "
+                                        "{tension}σ)")
+                         .format(element=tr(LABELS[key]), value=fmt.format(value),
+                                 observed=fmt.format(obs), error=fmt.format(err),
+                                 tension=f"{tension[key]:+.1f}"))
         t_d = bbn.deuterium_bottleneck_temperature(eta * 1e-10)
         y_simple, t_nuc = bbn.simple_helium_estimate(eta * 1e-10, self.lifetime.value(), self.delta_neff.value())
         lines += [
             "",
-            f"Deuterium survives below T ≈ <b>{t_d * 1e3:.0f} keV</b> ({t_d * 1.16e10:.2e} K), "
-            f"about <b>{t_nuc / 60:.1f} minutes</b> after the Big Bang",
-            f"Back-of-the-envelope helium (all neutrons left then → ⁴He): Y ≈ {y_simple:.3f}",
-            f"Expansion speed-up during BBN: S = {bbn.speedup_factor(self.delta_neff.value()):.3f}",
+            tr("Deuterium survives below T ≈ <b>{kev} keV</b> ({kelvin} K), about <b>{minutes} minutes</b> "
+               "after the Big Bang").format(kev=f"{t_d * 1e3:.0f}", kelvin=f"{t_d * 1.16e10:.2e}",
+                                            minutes=f"{t_nuc / 60:.1f}"),
+            tr("Back-of-the-envelope helium (all neutrons left then → ⁴He): Y ≈ {value}")
+            .format(value=f"{y_simple:.3f}"),
+            tr("Expansion speed-up during BBN: S = {value}")
+            .format(value=f"{bbn.speedup_factor(self.delta_neff.value()):.3f}"),
         ]
         self.summary.setText("<br>".join(lines))
         good = [k for k, s in tension.items() if abs(s) < 2]
         if len(good) == 4:
-            self.banner.set_message("success", "<b>All four light elements agree with observations.</b>")
+            self.banner.set_message("success", tr("<b>All four light elements agree with observations.</b>"))
         elif set(good) >= {"Yp", "D/H", "He3/H"}:
             self.banner.set_message(
                 "warning",
-                "<b>Helium and deuterium agree, lithium does not.</b> This is the cosmological lithium problem: "
-                "the prediction is about three times the lithium seen in old stars. Most astronomers suspect "
-                "the stars have destroyed some of their lithium.")
+                tr("<b>Helium and deuterium agree, lithium does not.</b> This is the cosmological lithium "
+                   "problem: the prediction is about three times the lithium seen in old stars. Most "
+                   "astronomers suspect the stars have destroyed some of their lithium."))
         else:
-            bad = ", ".join(LABELS[k] for k in tension if k not in good)
-            self.banner.set_message("danger", f"<b>This universe does not match the observed abundances:</b> {bad}.")
+            bad = ", ".join(tr(LABELS[k]) for k in tension if k not in good)
+            self.banner.set_message("danger", tr("<b>This universe does not match the observed abundances:</b> "
+                                                 "{elements}.").format(elements=bad))
         self.plot.refresh()
 
     # ---------------------------------------------------------------- draw

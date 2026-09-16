@@ -8,6 +8,7 @@ import numpy as np
 from PySide6.QtCore import Qt
 from PySide6.QtWidgets import QCheckBox, QComboBox, QGroupBox, QLabel, QVBoxLayout
 
+from cosmos.gui.labels import physics
 from cosmos.gui.simulators.base import SimulatorBase
 from cosmos.gui.theme import theme
 from cosmos.gui.widgets.common import Banner, ParameterSlider, PresetSelector, labelled_row
@@ -109,8 +110,9 @@ class SpacetimeSimulator(SimulatorBase):
         c = self.cosmology()
         fate = c.fate()
         if fate in (Fate.BIG_CRUNCH, Fate.NO_BIG_BANG):
-            self.banner.set_message("warning", f"This universe <b>{fate.value}</b>. The diagram needs a universe "
-                                    "with a Big Bang that keeps expanding: lower Ωm or ΩΛ.")
+            self.banner.set_message("warning", tr("This universe <b>{fate}</b>. The diagram needs a universe "
+                                                  "with a Big Bang that keeps expanding: lower Ωm or ΩΛ.")
+                                    .format(fate=physics(fate.value)))
             self.banner.show()
             self.data = None
             self.plot.refresh()
@@ -133,17 +135,25 @@ class SpacetimeSimulator(SimulatorBase):
         cone = a[past] * (chi_obs - chi[past])
         i_max = int(np.argmax(cone))
         z_obs = 1 / a_obs - 1
-        epoch = f"redshift {z_obs:.2f}" if a_obs < 0.995 else ("today" if a_obs < 1.005 else "future")
+        epoch = (tr("redshift {z}").format(z=f"{z_obs:.2f}") if a_obs < 0.995
+                 else (tr("today") if a_obs < 1.005 else tr("future")))
         event_now = (chi_inf - chi_obs) * a_obs if math.isfinite(chi_inf) else math.inf
         g = MPC_TO_GLY
+        event_text = (tr("none") if math.isinf(event_now)
+                      else tr("{value} billion ly").format(value=f"{event_now * g:.1f}"))
         self.summary.setText(
-            f"Scale factor a = <b>{a_obs:.2f}</b> ({epoch})<br>"
-            f"Age of the universe: <b>{t_obs:.2f} Gyr</b><br>"
-            f"Particle horizon: <b>{chi_obs * a_obs * g:.1f} billion ly</b> (proper)<br>"
-            f"Event horizon: <b>{'none' if math.isinf(event_now) else format(event_now * g, '.1f') + ' billion ly'}</b><br>"
-            f"Hubble sphere: <b>{float(np.interp(math.log(a_obs), np.log(a), hubble)) * g:.1f} billion ly</b><br>"
-            f"Past light cone is widest at <b>{cone[i_max] * g:.1f} billion ly</b>, "
-            f"when the universe was {t[past][i_max]:.1f} Gyr old (a = {a[past][i_max]:.2f})"
+            tr("Scale factor a = <b>{a}</b> ({epoch})<br>"
+               "Age of the universe: <b>{age} Gyr</b><br>"
+               "Particle horizon: <b>{horizon} billion ly</b> (proper)<br>"
+               "Event horizon: <b>{event}</b><br>"
+               "Hubble sphere: <b>{hubble} billion ly</b><br>"
+               "Past light cone is widest at <b>{cone} billion ly</b>, when the universe was {cone_age} Gyr "
+               "old (a = {cone_a})")
+            .format(a=f"{a_obs:.2f}", epoch=epoch, age=f"{t_obs:.2f}",
+                    horizon=f"{chi_obs * a_obs * g:.1f}", event=event_text,
+                    hubble=f"{float(np.interp(math.log(a_obs), np.log(a), hubble)) * g:.1f}",
+                    cone=f"{cone[i_max] * g:.1f}", cone_age=f"{t[past][i_max]:.1f}",
+                    cone_a=f"{a[past][i_max]:.2f}")
         )
         self.plot.refresh()
 

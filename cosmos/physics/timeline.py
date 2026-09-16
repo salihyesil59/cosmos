@@ -9,6 +9,7 @@ of percent. Before about 10⁻¹² s the physics is unknown or speculative.
 from __future__ import annotations
 
 import math
+from collections.abc import Callable
 from dataclasses import dataclass
 
 import numpy as np
@@ -195,21 +196,22 @@ class Timeline:
 _SUPERSCRIPT = str.maketrans("-0123456789", "⁻⁰¹²³⁴⁵⁶⁷⁸⁹")
 
 
-def format_time(time_s: float) -> str:
+def format_time(time_s: float, unit: Callable[[str], str] = str) -> str:
+    """A readable time span. ``unit`` translates the unit word for the interface."""
     if time_s < 1e-3:
         exponent = math.floor(math.log10(time_s))
-        return f"{time_s / 10**exponent:.1f} × 10{str(exponent).translate(_SUPERSCRIPT)} s"
+        return f"{time_s / 10**exponent:.1f} × 10{str(exponent).translate(_SUPERSCRIPT)} {unit('s')}"
     if time_s < 120:
-        return f"{time_s:.3g} s"
+        return f"{time_s:.3g} {unit('s')}"
     if time_s < 2 * 3600:
-        return f"{time_s / 60:.3g} minutes"
+        return f"{time_s / 60:.3g} {unit('minutes')}"
     if time_s < 2 * 86400:
-        return f"{time_s / 3600:.3g} hours"
+        return f"{time_s / 3600:.3g} {unit('hours')}"
     years = time_s / YEAR_S
     if years < 1:
-        return f"{time_s / 86400:.3g} days"
+        return f"{time_s / 86400:.3g} {unit('days')}"
     if years < 1e6:
-        return f"{years:,.0f} years".replace(",", " ")
+        return f"{years:,.0f}".replace(",", " ") + f" {unit('years')}"
     if years < 1e9:
-        return f"{years / 1e6:.3g} million years"
-    return f"{years / 1e9:.3g} billion years"
+        return f"{years / 1e6:.3g} {unit('million years')}"
+    return f"{years / 1e9:.3g} {unit('billion years')}"

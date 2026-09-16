@@ -190,7 +190,7 @@ class HistoryPage(QWidget):
         if event.lesson in self.ctx.curriculum.lessons:
             lesson = self.ctx.curriculum.lessons[event.lesson]
             button = QPushButton(f"{event.lesson} ▶")
-            button.setToolTip(f"Open {event.lesson} {lesson.title}")
+            button.setToolTip(tr("Open {lesson}").format(lesson=f"{event.lesson} {lesson.title}"))
             button.clicked.connect(lambda _=False, lid=event.lesson: self.ctx.navigate(f"lesson:{lid}"))
             layout.addWidget(button, 0, Qt.AlignTop)
         return frame

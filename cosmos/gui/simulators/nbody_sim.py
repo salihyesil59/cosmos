@@ -149,8 +149,8 @@ class NBodySimulator(SimulatorBase):
         self.summary.setWordWrap(True)
         self.summary.setTextFormat(Qt.RichText)
         sl.addWidget(self.summary)
-        sl.addWidget(muted_label("A two-dimensional toy universe in a periodic box. Real simulations are 3D and "
-                                 "use billions of particles, but the physics is the same."))
+        sl.addWidget(muted_label(tr("A two-dimensional toy universe in a periodic box. Real simulations are 3D "
+                            "and use billions of particles, but the physics is the same.")))
         self.controls.addWidget(stats)
         self.finish_controls()
 
@@ -190,7 +190,7 @@ class NBodySimulator(SimulatorBase):
         self._render()
 
     def _toggle(self, on: bool) -> None:
-        self.play.setText("⏸ Pause" if on else "▶ Play")
+        self.play.setText(tr("⏸ Pause") if on else tr("▶ Play"))
         if on:
             if self.sim.growth >= self.D_MAX - 1e-6:
                 self.restart()
@@ -223,20 +223,24 @@ class NBodySimulator(SimulatorBase):
         cmap = colormaps[COLORMAPS[self.cmap.currentText()]]
         rgba = (cmap(np.flipud(img.T)) * 255).astype(np.uint8)
         d = sim.growth
-        epoch = f"z ≈ {1 / d - 1:.1f}" if d < 1 else ("today" if abs(d - 1) < 0.02 else "future")
-        self.canvas.set_image(rgba, f"growth factor D = {d:.2f}  ({epoch} in an Einstein–de Sitter universe)")
+        epoch = (f"z ≈ {1 / d - 1:.1f}" if d < 1
+                 else (tr("today") if abs(d - 1) < 0.02 else tr("future")))
+        self.canvas.set_image(rgba, tr("growth factor D = {d}  ({epoch} in an Einstein–de Sitter universe)")
+                              .format(d=f"{d:.2f}", epoch=epoch))
         sigma = float(sim.density().std())
         collapsed = sim.collapsed_fraction()
         linear = self.linear_start * d
-        phase = ("linear: ripples simply grow" if sigma < 0.3 else
-                 "quasi-linear: sheets and filaments form" if collapsed < 0.05 else
-                 "non-linear: halos collapse and merge")
+        phase = (tr("linear: ripples simply grow") if sigma < 0.3 else
+                 tr("quasi-linear: sheets and filaments form") if collapsed < 0.05 else
+                 tr("non-linear: halos collapse and merge"))
         self.summary.setText(
-            f"Growth factor D: <b>{d:.2f}</b><br>"
-            f"RMS density contrast: <b>{sigma:.2f}</b> (linear theory: {linear:.2f})<br>"
-            f"Particles in dense clumps (δ > 4): <b>{collapsed:.0%}</b><br>"
-            f"Steps: {sim.steps}<br>"
-            f"Stage: <b>{phase}</b>"
+            tr("Growth factor D: <b>{d}</b><br>"
+               "RMS density contrast: <b>{sigma}</b> (linear theory: {linear})<br>"
+               "Particles in dense clumps (δ > 4): <b>{collapsed}</b><br>"
+               "Steps: {steps}<br>"
+               "Stage: <b>{phase}</b>")
+            .format(d=f"{d:.2f}", sigma=f"{sigma:.2f}", linear=f"{linear:.2f}",
+                    collapsed=f"{collapsed:.0%}", steps=sim.steps, phase=phase)
         )
         self.plot.refresh()
 

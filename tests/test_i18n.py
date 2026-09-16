@@ -204,3 +204,44 @@ def test_refreshing_the_ts_keeps_the_translations(tmp_path):
     assert (restored, missing) == (1, 0)
     assert "Evim" in path.read_text(encoding="utf-8")
     assert 'type="unfinished"' not in path.read_text(encoding="utf-8")
+
+
+def test_the_labels_table_covers_the_physics_layer():
+    """G20: every string the physics layer can hand to the interface must be marked."""
+    from cosmos.gui import labels
+    from cosmos.physics.cosmology import _FATE_EXPLANATIONS, Cosmology, Fate
+    from cosmos.physics.timeline import format_time
+    from cosmos.progress import LessonStatus
+
+    assert {f.value for f in Fate} <= set(labels.FATES)
+    assert set(_FATE_EXPLANATIONS.values()) <= set(labels.FATE_EXPLANATIONS)
+    assert {s.value for s in LessonStatus} <= set(labels.LESSON_STATUS)
+    geometries = {Cosmology(H0=70, Om0=om, Ode0=ol).geometry
+                  for om, ol in ((0.3, 0.7), (0.3, 0.2), (0.6, 0.8))}
+    assert geometries <= set(labels.GEOMETRIES)
+
+    seen = set()
+    format_time(1e-20, unit=lambda word: seen.add(word) or word)
+    for seconds in (1.0, 300.0, 1e5, 1e7, 1e9, 1e14, 1e18):
+        format_time(seconds, unit=lambda word: seen.add(word) or word)
+    assert seen <= set(labels.TIME_UNITS), seen - set(labels.TIME_UNITS)
+
+
+def test_the_simulators_report_back_in_turkish(app):
+    """The numbers a simulator writes out are translated, not only its controls."""
+    try:
+        assert i18n.install(app, "tr") is True
+        assert i18n.tr("Age: <b>{age}</b>{crunch}<br>"
+                       "Geometry: <b>{geometry}</b> (Ωk = {curvature})<br>"
+                       "Today: <b>{trend}</b> (q0 = {q0})<br>"
+                       "Hubble time 1/H0: {hubble} billion years<br><br>"
+                       "<span style='color:{colour}'><b>Fate: this universe {fate}.</b></span><br>"
+                       "{explanation}").startswith("Yaş:")
+        assert i18n.tr("accelerating") == "hızlanıyor"
+        assert i18n.tr("flat") == "düz"                      # from the physics layer
+        assert i18n.tr("billion years") == "milyar yıl"
+        assert i18n.tr("Question {number} of {total}").format(number=1, total=5) == "Soru 1 / 5"
+        assert i18n.tr("<b>Solved.</b>") == "<b>Çözüldü.</b>"
+    finally:
+        i18n.install(app, "en")
+    assert i18n.tr("flat") == "flat"

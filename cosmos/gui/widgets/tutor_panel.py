@@ -174,7 +174,7 @@ class TutorPanel(QWidget):
         self.route = route
         self._context = context
         title = route_title(self.ctx, route) if route else ""
-        self.page_label.setText(f"About: {title}" if title else "")
+        self.page_label.setText(tr("About: {page}").format(page=title) if title else "")
         self._refresh_state()
 
     def reset_conversation(self) -> None:
@@ -273,4 +273,4 @@ class TutorPanel(QWidget):
         try:
             self.config.save(self.config_path)
         except OSError as exc:
-            self.status.setText(f"Could not save the tutor settings: {exc}")
+            self.status.setText(tr("Could not save the tutor settings: {error}").format(error=exc))

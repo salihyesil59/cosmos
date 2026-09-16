@@ -7,7 +7,9 @@ from PySide6.QtGui import QBrush, QColor, QFont, QPainter, QPainterPath, QPen
 from PySide6.QtWidgets import QGraphicsItem, QGraphicsScene, QGraphicsView
 
 from cosmos.gui.context import AppContext
+from cosmos.gui.labels import physics
 from cosmos.gui.theme import theme
+from cosmos.i18n import tr
 from cosmos.progress import LessonStatus
 
 NODE_W, NODE_H = 236, 58
@@ -22,7 +24,9 @@ class LessonNode(QGraphicsItem):
         self.hover = False
         self.setAcceptHoverEvents(True)
         self.setCursor(Qt.PointingHandCursor)
-        self.setToolTip(f"{lesson_id} — {title}\nStatus: {status.value}\nClick to open the lesson.")
+        self.setToolTip(f"{lesson_id} — {title}" + "\n"
+                        + tr("Status: {status}").format(status=physics(status.value)) + "\n"
+                        + tr("Click to open the lesson."))
 
     def boundingRect(self):  # noqa: N802
         return QRectF(0, 0, NODE_W, NODE_H)

@@ -20,11 +20,12 @@ from PySide6.QtWidgets import (
     QVBoxLayout,
 )
 
+from cosmos.gui.labels import physics
 from cosmos.gui.simulators.base import SimulatorBase
 from cosmos.gui.theme import theme
 from cosmos.gui.widgets.common import Banner, InfoButton, ParameterSlider, PresetSelector, labelled_row
 from cosmos.gui.widgets.plot import PlotWidget, write_csv
-from cosmos.i18n import tr
+from cosmos.i18n import tr, tr_noop
 from cosmos.physics import constants as const
 from cosmos.physics.cosmology import Cosmology, Fate
 from cosmos.physics.presets import PRESETS
@@ -35,92 +36,93 @@ C_KM_S = const.C / 1e3
 
 EXPLANATIONS = {
     "age0": (
-        "Age of the universe today",
-        "Time since the Big Bang until now, from integrating dt = da/(aH) over the whole expansion history.",
+        tr_noop("Age of the universe today"),
+        tr_noop("Time since the Big Bang until now, from integrating dt = da/(aH) over the whole expansion history."),
     ),
     "agez": (
-        "Age at redshift z",
-        "How old the universe was when the light we see now left the object.",
+        tr_noop("Age at redshift z"),
+        tr_noop("How old the universe was when the light we see now left the object."),
     ),
     "lookback": (
-        "Lookback time",
-        "How long the light has been travelling. Age today minus age at z.",
+        tr_noop("Lookback time"),
+        tr_noop("How long the light has been travelling. Age today minus age at z."),
     ),
     "dc": (
-        "Comoving distance",
-        "The distance to the object today, measured along the expanding grid. It is larger than the "
-        "light-travel distance because space kept expanding while the light was on its way.",
+        tr_noop("Comoving distance"),
+        tr_noop("The distance to the object today, measured along the expanding grid. It is larger than the "
+                "light-travel distance because space kept expanding while the light was on its way."),
     ),
     "dlt": (
-        "Light-travel distance",
-        "Speed of light × lookback time. Often quoted in news reports, but it is not the object's actual "
-        "distance at any single moment.",
+        tr_noop("Light-travel distance"),
+        tr_noop("Speed of light × lookback time. Often quoted in news reports, but it is not the object's actual "
+                "distance at any single moment."),
     ),
     "dl": (
-        "Luminosity distance",
-        "The distance you would infer from the object's brightness using the inverse-square law. It is "
-        "(1 + z) times the comoving distance in a flat universe.",
+        tr_noop("Luminosity distance"),
+        tr_noop("The distance you would infer from the object's brightness using the inverse-square law. It is "
+                "(1 + z) times the comoving distance in a flat universe."),
     ),
     "da": (
-        "Angular diameter distance",
-        "The distance you would infer from the object's apparent size. It is the comoving distance divided "
-        "by (1 + z), and it shrinks again for very distant objects.",
+        tr_noop("Angular diameter distance"),
+        tr_noop("The distance you would infer from the object's apparent size. It is the comoving distance divided "
+                "by (1 + z), and it shrinks again for very distant objects."),
     ),
     "vnow": (
-        "Recession velocity today",
-        "How fast the distance to the object grows today, H0 × comoving distance, in units of the speed of "
-        "light. Values above 1 are allowed: this is the stretching of space, not motion through space.",
+        tr_noop("Recession velocity today"),
+        tr_noop("How fast the distance to the object grows today, H0 × comoving distance, in units of the speed of "
+                "light. Values above 1 are allowed: this is the stretching of space, not motion through space."),
     ),
     "vemit": (
-        "Recession velocity at emission",
-        "How fast the distance was growing when the light was emitted: H(z) × proper distance at that time.",
+        tr_noop("Recession velocity at emission"),
+        tr_noop("How fast the distance was growing when the light was emitted: H(z) × proper distance at that time."),
     ),
     "ph": (
-        "Particle horizon today",
-        "Radius of the observable universe: the comoving distance light has covered since the Big Bang.",
+        tr_noop("Particle horizon today"),
+        tr_noop("Radius of the observable universe: the comoving distance light has covered since the Big Bang."),
     ),
     "eh": (
-        "Event horizon today",
-        "Light emitted today from beyond this distance will never reach us. Only accelerating universes have one.",
+        tr_noop("Event horizon today"),
+        tr_noop("Light emitted today from beyond this distance will never reach us. Only accelerating universes have one."),
     ),
     "mu": (
-        "Distance modulus",
-        "m − M = 5 log10(D_L / 10 pc): how many magnitudes fainter the object appears than it would at 10 pc.",
+        tr_noop("Distance modulus"),
+        tr_noop("m − M = 5 log10(D_L / 10 pc): how many magnitudes fainter the object appears than it would at 10 pc."),
     ),
     "scale": (
-        "Scale at the object",
-        "The physical size that covers one arcsecond on the sky at this redshift.",
+        tr_noop("Scale at the object"),
+        tr_noop("The physical size that covers one arcsecond on the sky at this redshift."),
     ),
     "hz": (
-        "Hubble parameter H(z)",
-        "The expansion rate of the universe at the moment the light was emitted.",
+        tr_noop("Hubble parameter H(z)"),
+        tr_noop("The expansion rate of the universe at the moment the light was emitted."),
     ),
     "a": (
-        "Scale factor a",
-        "a = 1/(1 + z): the size of the universe at emission relative to today.",
+        tr_noop("Scale factor a"),
+        tr_noop("a = 1/(1 + z): the size of the universe at emission relative to today."),
     ),
     "tcmb": (
-        "CMB temperature at z",
-        "T = T0 (1 + z): the temperature of the background radiation when the light was emitted.",
+        tr_noop("CMB temperature at z"),
+        tr_noop("T = T0 (1 + z): the temperature of the background radiation when the light was emitted."),
     ),
     "tnu": (
-        "Neutrino background temperature at z",
-        "T_ν = (4/11)^(1/3) × T_CMB: relic neutrinos are colder because electron–positron annihilation heated "
-        "only the photons.",
+        tr_noop("Neutrino background temperature at z"),
+        tr_noop("T_ν = (4/11)^(1/3) × T_CMB: relic neutrinos are colder because electron–positron annihilation heated "
+                "only the photons."),
     ),
     "ok": (
-        "Curvature Ωk",
-        "Ωk = 1 − Ωr − Ωm − ΩΛ. Zero means flat space, positive open, negative closed.",
+        tr_noop("Curvature Ωk"),
+        tr_noop("Ωk = 1 − Ωr − Ωm − ΩΛ. Zero means flat space, positive open, negative closed."),
     ),
     "rhoc": (
-        "Critical density today",
-        "The density a flat universe needs for the chosen H0, shown also as hydrogen atoms per cubic metre.",
+        tr_noop("Critical density today"),
+        tr_noop("The density a flat universe needs for the chosen H0, shown also as hydrogen atoms per cubic metre."),
     ),
     "q0": (
-        "Deceleration parameter q0",
-        "q0 < 0 means the expansion is accelerating today; q0 > 0 means it is slowing down.",
+        tr_noop("Deceleration parameter q0"),
+        tr_noop("q0 < 0 means the expansion is accelerating today; q0 > 0 means it is slowing down."),
     ),
-    "fate": ("Fate of this universe", "Long-term behaviour determined from the Friedmann equation."),
+    "fate": (tr_noop("Fate of this universe"),
+             tr_noop("Long-term behaviour determined from the Friedmann equation.")),
 }
 
 
@@ -180,20 +182,20 @@ class CalculatorSimulator(SimulatorBase):
             info=(
                 tr("Redshift"),
                 tr("How much the light has been stretched. z ≈ 0.02 nearby galaxies, z ≈ 1–3 distant galaxies, "
-                    "z ≈ 10 the first galaxies, z ≈ 1090 the CMB."),
+                        "z ≈ 10 the first galaxies, z ≈ 1090 the CMB."),
             ),
         )
         tl.addWidget(self.z)
         quick = QVBoxLayout()
         for label, value in [
-            ("Virgo cluster (z = 0.004)", 0.004),
-            ("Distant galaxy (z = 1)", 1.0),
-            ("Galaxy at cosmic noon (z = 2)", 2.0),
-            ("First galaxies (z = 10)", 10.0),
-            ("CMB (z = 1090)", 1090.0),
+            (tr("Virgo cluster (z = 0.004)"), 0.004),
+            (tr("Distant galaxy (z = 1)"), 1.0),
+            (tr("Galaxy at cosmic noon (z = 2)"), 2.0),
+            (tr("First galaxies (z = 10)"), 10.0),
+            (tr("CMB (z = 1090)"), 1090.0),
         ]:
             btn = QPushButton(label)
-            btn.setToolTip(f"Set z = {value}")
+            btn.setToolTip(tr("Set z = {z}").format(z=value))
             btn.clicked.connect(lambda _=False, v=value: self.z.setValue(v))
             quick.addWidget(btn)
         tl.addLayout(quick)
@@ -230,8 +232,8 @@ class CalculatorSimulator(SimulatorBase):
         el.addWidget(self.explain)
         el.addWidget(InfoButton(tr("Many distances"), (
             tr("In an expanding universe 'distance' is ambiguous: the object was closer when the light left, "
-                "and farther when it arrives. Astronomers therefore use several distance measures, each tied "
-                "to a way of observing.")
+                    "and farther when it arrives. Astronomers therefore use several distance measures, each tied "
+                    "to a way of observing.")
         )), 0, Qt.AlignRight)
         split.addWidget(explain_box)
         plots = QTabWidget()
@@ -313,8 +315,8 @@ class CalculatorSimulator(SimulatorBase):
         if not big_bang:
             self.banner.set_message(
                 "warning",
-                "<b>This universe has no Big Bang.</b> Going back in time it never reaches zero size, so ages are "
-                "undefined. Reduce ΩΛ or increase Ωm.",
+                tr("<b>This universe has no Big Bang.</b> Going back in time it never reaches zero size, so ages "
+                       "are undefined. Reduce ΩΛ or increase Ωm."),
             )
             self.banner.show()
         else:
@@ -331,40 +333,45 @@ class CalculatorSimulator(SimulatorBase):
         dl, da = (1 + z) * dm, dm / (1 + z)
         dlt = lookback * const.GYR * const.C / const.MPC
         rhoc = c.critical_density0
+        q0 = float(c.deceleration_parameter(0))
+        trend = tr("accelerating") if q0 < 0 else tr("decelerating")
         rows = [
-            ("age0", "Age of the universe today", self._time(age0)),
-            ("agez", f"Age at z = {z:g}", self._time(agez)),
-            ("lookback", "Lookback time", self._time(lookback)),
-            ("dc", "Comoving distance", self._dist(dc)),
-            ("dlt", "Light-travel distance", self._dist(dlt)),
-            ("dl", "Luminosity distance", self._dist(dl)),
-            ("da", "Angular diameter distance", self._dist(da)),
-            ("vnow", "Recession velocity today", self._speed(c.H0 * dc / C_KM_S)),
-            ("vemit", "Recession velocity at emission", self._speed(float(c.H(z)) * dc / (1 + z) / C_KM_S)),
-            ("mu", "Distance modulus m − M", f"{fmt(5 * math.log10(dl) + 25 if dl > 0 else math.nan)} mag"),
-            ("scale", "Scale: 1 arcsec corresponds to", f"{fmt(da * 1e3 * math.pi / 648000)} kpc"),
-            ("hz", "Hubble parameter H(z)", f"{fmt(float(c.H(z)))} km/s/Mpc"),
-            ("a", "Scale factor a = 1/(1+z)", fmt(1 / (1 + z))),
-            ("tcmb", "CMB temperature at z", f"{fmt(const.T_CMB * (1 + z))} K"),
-            ("tnu", "Neutrino background temperature at z", f"{fmt(RELIC_NEUTRINO_RATIO * const.T_CMB * (1 + z))} K"),
-            ("ok", "Curvature Ωk", f"{fmt(c.Ok0)}  ({c.geometry})"),
-            ("ph", "Particle horizon today", self._dist(c.particle_horizon())),
-            ("eh", "Event horizon today", self._dist(c.event_horizon()) if c.fate() is not Fate.BIG_CRUNCH
-             else "not computed for recollapsing universes"),
-            ("rhoc", "Critical density today", f"{fmt(rhoc)} kg/m³  (≈ {rhoc / const.M_PROTON:.2f} H atoms/m³)"),
-            ("q0", "Deceleration parameter q0", f"{fmt(float(c.deceleration_parameter(0)))}"
-             f"  ({'accelerating' if c.deceleration_parameter(0) < 0 else 'decelerating'})"),
-            ("fate", "Fate", c.fate().value),
+            ("age0", tr("Age of the universe today"), self._time(age0)),
+            ("agez", tr("Age at z = {z}").format(z=f"{z:g}"), self._time(agez)),
+            ("lookback", tr("Lookback time"), self._time(lookback)),
+            ("dc", tr("Comoving distance"), self._dist(dc)),
+            ("dlt", tr("Light-travel distance"), self._dist(dlt)),
+            ("dl", tr("Luminosity distance"), self._dist(dl)),
+            ("da", tr("Angular diameter distance"), self._dist(da)),
+            ("vnow", tr("Recession velocity today"), self._speed(c.H0 * dc / C_KM_S)),
+            ("vemit", tr("Recession velocity at emission"), self._speed(float(c.H(z)) * dc / (1 + z) / C_KM_S)),
+            ("mu", tr("Distance modulus m − M"),
+             f"{fmt(5 * math.log10(dl) + 25 if dl > 0 else math.nan)} " + tr("mag")),
+            ("scale", tr("Scale: 1 arcsec corresponds to"), f"{fmt(da * 1e3 * math.pi / 648000)} kpc"),
+            ("hz", tr("Hubble parameter H(z)"), f"{fmt(float(c.H(z)))} km/s/Mpc"),
+            ("a", tr("Scale factor a = 1/(1+z)"), fmt(1 / (1 + z))),
+            ("tcmb", tr("CMB temperature at z"), f"{fmt(const.T_CMB * (1 + z))} K"),
+            ("tnu", tr("Neutrino background temperature at z"),
+             f"{fmt(RELIC_NEUTRINO_RATIO * const.T_CMB * (1 + z))} K"),
+            ("ok", tr("Curvature Ωk"), f"{fmt(c.Ok0)}  ({physics(c.geometry)})"),
+            ("ph", tr("Particle horizon today"), self._dist(c.particle_horizon())),
+            ("eh", tr("Event horizon today"), self._dist(c.event_horizon()) if c.fate() is not Fate.BIG_CRUNCH
+             else tr("not computed for recollapsing universes")),
+            ("rhoc", tr("Critical density today"),
+             tr("{density} kg/m³  (≈ {atoms} H atoms/m³)").format(
+                 density=fmt(rhoc), atoms=f"{rhoc / const.M_PROTON:.2f}")),
+            ("q0", tr("Deceleration parameter q0"), f"{fmt(q0)}  ({trend})"),
+            ("fate", tr("Fate"), physics(c.fate().value)),
         ]
         self.results = rows
         selected = self.table.currentRow()
         self.table.setRowCount(len(rows))
         for i, (key, name, value) in enumerate(rows):
             name_item = QTableWidgetItem(name)
-            name_item.setToolTip(EXPLANATIONS[key][1])
+            name_item.setToolTip(tr(EXPLANATIONS[key][1]))
             name_item.setData(Qt.UserRole, key)
             value_item = QTableWidgetItem(value)
-            value_item.setToolTip(EXPLANATIONS[key][1])
+            value_item.setToolTip(tr(EXPLANATIONS[key][1]))
             self.table.setItem(i, 0, name_item)
             self.table.setItem(i, 1, value_item)
         if selected >= 0:
@@ -377,25 +384,25 @@ class CalculatorSimulator(SimulatorBase):
         if not math.isfinite(gyr):
             return "—"
         if gyr < 1e-3:
-            return f"{fmt(gyr * 1e9)} years"
+            return f"{fmt(gyr * 1e9)} " + tr("years")
         if gyr < 1:
-            return f"{fmt(gyr * 1e3)} million years"
-        return f"{fmt(gyr)} billion years"
+            return f"{fmt(gyr * 1e3)} " + tr("million years")
+        return f"{fmt(gyr)} " + tr("billion years")
 
     @staticmethod
     def _speed(v_over_c: float) -> str:
         if not math.isfinite(v_over_c):
             return "—"
-        note = "faster than light" if v_over_c > 1 else "slower than light"
+        note = tr("faster than light") if v_over_c > 1 else tr("slower than light")
         return f"{v_over_c:.3f} c  ({note})"
 
     @staticmethod
     def _dist(mpc: float) -> str:
         if math.isinf(mpc):
-            return "infinite"
+            return tr("infinite")
         if not math.isfinite(mpc):
             return "—"
-        return f"{fmt(mpc)} Mpc  ({fmt(mpc * MPC_TO_GLY)} billion ly)"
+        return tr("{mpc} Mpc  ({gly} billion ly)").format(mpc=fmt(mpc), gly=fmt(mpc * MPC_TO_GLY))
 
     def _explain_row(self) -> None:
         row = self.table.currentRow()
@@ -405,7 +412,7 @@ class CalculatorSimulator(SimulatorBase):
         title, text = EXPLANATIONS[key]
         if key == "fate":
             text = self.cosmo.fate().explanation
-        self.explain.setText(f"<b>{title}.</b> {text}")
+        self.explain.setText(f"<b>{tr(title)}.</b> {physics(text) if key == 'fate' else tr(text)}")
 
     # -------------------------------------------------------------- plots
     def _z_grid(self):

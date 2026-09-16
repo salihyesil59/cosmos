@@ -21,18 +21,18 @@ from cosmos.gui.simulators.base import SimulatorBase
 from cosmos.gui.theme import theme
 from cosmos.gui.widgets.common import Banner, ParameterSlider, labelled_row
 from cosmos.gui.widgets.plot import PlotWidget
-from cosmos.i18n import tr
+from cosmos.i18n import tr, tr_noop
 from cosmos.physics import camb_backend, cmb
 
 PATCH_DEG = 20.0
 TEACHING, EXACT = "teaching", "camb"
 
-TEACHING_NOTE = (
+TEACHING_NOTE = tr_noop(
     "<b>Teaching model.</b> Peak positions follow the real sound horizon and distance; peak heights are "
     "approximate (about 15%). Install the optional package <code>camb</code> to switch this simulator to "
     "exact spectra from a Boltzmann code."
 )
-EXACT_NOTE = (
+EXACT_NOTE = tr_noop(
     "<b>CAMB {version}.</b> Every curve on this page is now a full Boltzmann calculation of the lensed "
     "TT spectrum — the same code research papers use. Each update takes about half a second."
 )
@@ -137,7 +137,7 @@ class CMBSpectrumSimulator(SimulatorBase):
         self.controls.addWidget(results)
         self.finish_controls()
 
-        self.banner = Banner("info", TEACHING_NOTE)
+        self.banner = Banner("info", tr(TEACHING_NOTE))
         self.display.addWidget(self.banner)
         tabs = QTabWidget()
         self.plot = PlotWidget(self._draw_spectrum, csv_provider=self._csv, export_name="cmb_power_spectrum")
@@ -160,13 +160,13 @@ class CMBSpectrumSimulator(SimulatorBase):
         # A Boltzmann run takes about half a second, so wait a little longer before recomputing.
         self._update_timer.setInterval(450 if exact else 40)
         if exact:
-            self.banner.set_message("info", EXACT_NOTE.format(version=camb_backend.version()))
+            self.banner.set_message("info", tr(EXACT_NOTE).format(version=camb_backend.version()))
             self.engine_note.setText(tr("Exact spectra. Sliders react after a short pause."))
         else:
-            self.banner.set_message("info", TEACHING_NOTE)
+            self.banner.set_message("info", tr(TEACHING_NOTE))
             self.engine_note.setText(
-                "Instant approximation." if camb_backend.available()
-                else "CAMB is not installed; only the teaching model is available.")
+                tr("Instant approximation.") if camb_backend.available()
+                else tr("CAMB is not installed; only the teaching model is available."))
         self.reference = self._compute(cmb.PLANCK)
         self.recompute()
 
@@ -181,7 +181,8 @@ class CMBSpectrumSimulator(SimulatorBase):
         try:
             spec = camb_backend.spectrum(params)
         except Exception as exc:                     # noqa: BLE001 - CAMB rejects extreme parameters
-            self.banner.set_message("warning", f"<b>CAMB could not compute this universe:</b> {exc}")
+            self.banner.set_message("warning", tr("<b>CAMB could not compute this universe:</b> {error}")
+                                    .format(error=exc))
             spec = cmb.spectrum(params)
         finally:
             QGuiApplication.restoreOverrideCursor()
@@ -233,17 +234,22 @@ class CMBSpectrumSimulator(SimulatorBase):
         rows = []
         for i, (ell, d) in enumerate(peaks[:3]):
             ref = self.reference.peaks[i][0]
-            rows.append(f"Peak {i + 1}: ℓ = <b>{ell:.0f}</b> ({d:.0f} μK²; Planck model ℓ = {ref:.0f})")
+            rows.append(tr("Peak {number}: ℓ = <b>{ell}</b> ({height} μK²; Planck model ℓ = {reference})")
+                        .format(number=i + 1, ell=f"{ell:.0f}", height=f"{d:.0f}", reference=f"{ref:.0f}"))
         ratio = peaks[0][1] / peaks[1][1] if len(peaks) > 1 else float("nan")
         self.summary.setText(
-            "<br>".join(rows)
-            + f"<br>Height ratio peak 1 / peak 2: <b>{ratio:.2f}</b>"
-            + f"<br>Sound horizon at decoupling rₛ: <b>{spec.r_s:.1f} Mpc</b>"
-            + f"<br>Distance to last scattering: <b>{spec.d_m / 1e3:.2f} Gpc</b>"
-            + f"<br>Acoustic angle θ*: <b>{np.degrees(spec.theta_star):.3f}°</b>"
-            + f"<br>Decoupling redshift z*: <b>{spec.z_star:.0f}</b>"
-            + f"<br>Baryon loading R*: <b>{spec.r_star:.2f}</b>"
-            + f"<br>Derived: Ωm = {cosmo.Om0:.3f}, ΩΛ = {cosmo.Ode0:.3f}, age = {cosmo.age():.2f} Gyr"
+            "<br>".join(rows) + "<br>"
+            + tr("Height ratio peak 1 / peak 2: <b>{ratio}</b><br>"
+                 "Sound horizon at decoupling rₛ: <b>{sound_horizon} Mpc</b><br>"
+                 "Distance to last scattering: <b>{distance} Gpc</b><br>"
+                 "Acoustic angle θ*: <b>{angle}°</b><br>"
+                 "Decoupling redshift z*: <b>{z_star}</b><br>"
+                 "Baryon loading R*: <b>{loading}</b><br>"
+                 "Derived: Ωm = {omega_m}, ΩΛ = {omega_lambda}, age = {age} Gyr")
+            .format(ratio=f"{ratio:.2f}", sound_horizon=f"{spec.r_s:.1f}", distance=f"{spec.d_m / 1e3:.2f}",
+                    angle=f"{np.degrees(spec.theta_star):.3f}", z_star=f"{spec.z_star:.0f}",
+                    loading=f"{spec.r_star:.2f}", omega_m=f"{cosmo.Om0:.3f}",
+                    omega_lambda=f"{cosmo.Ode0:.3f}", age=f"{cosmo.age():.2f}")
         )
         self.plot.refresh()
         self.map_plot.refresh()

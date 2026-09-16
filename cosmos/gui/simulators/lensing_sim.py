@@ -235,8 +235,8 @@ class LensingSimulator(SimulatorBase):
     def recompute(self) -> None:
         zl, zs = self.z_lens.value(), self.z_source.value()
         if zs <= zl + 0.01:
-            self.banner.set_message("warning", "The source must be <b>behind</b> the lens: increase the source "
-                                    "redshift or decrease the lens redshift.")
+            self.banner.set_message("warning", tr("The source must be <b>behind</b> the lens: increase the "
+                                                  "source redshift or decrease the lens redshift."))
             self.banner.show()
             self._theta_e = 1.0
             return
@@ -290,17 +290,19 @@ class LensingSimulator(SimulatorBase):
             images = None
             mu = None
         lines = [
-            f"Einstein radius θ_E: <b>{theta_e:.3g}″</b> ({radius_kpc:.3g} kpc at the lens)",
-            f"Mass inside θ_E: <b>{mass:.3g} M☉</b>",
-            f"Distances: D_l = {d_l:.0f} Mpc, D_s = {d_s:.0f} Mpc, D_ls = {d_ls:.0f} Mpc",
-            f"Source offset β: {beta:.2f} θ_E",
+            tr("Einstein radius θ_E: <b>{theta}″</b> ({kpc} kpc at the lens)")
+            .format(theta=f"{theta_e:.3g}", kpc=f"{radius_kpc:.3g}"),
+            tr("Mass inside θ_E: <b>{mass} M☉</b>").format(mass=f"{mass:.3g}"),
+            tr("Distances: D_l = {d_l} Mpc, D_s = {d_s} Mpc, D_ls = {d_ls} Mpc")
+            .format(d_l=f"{d_l:.0f}", d_s=f"{d_s:.0f}", d_ls=f"{d_ls:.0f}"),
+            tr("Source offset β: {beta} θ_E").format(beta=f"{beta:.2f}"),
         ]
         if images is not None and not self.no_lens.isChecked():
-            lines.append(f"Images of a point source: <b>{images}</b>")
-            lines.append(f"Total magnification: <b>{mu:.2f}×</b>")
+            lines.append(tr("Images of a point source: <b>{count}</b>").format(count=images))
+            lines.append(tr("Total magnification: <b>{factor}×</b>").format(factor=f"{mu:.2f}"))
         if self.lens_kind() == "point" and theta_e < 1e-3:
-            lines.append("<i>Such tiny rings cannot be resolved: this is <b>microlensing</b>, seen only as "
-                         "a temporary brightening.</i>")
+            lines.append(tr("<i>Such tiny rings cannot be resolved: this is <b>microlensing</b>, seen only as "
+                            "a temporary brightening.</i>"))
         self.summary.setText("<br>".join(lines))
 
     def guide_extra(self) -> str:

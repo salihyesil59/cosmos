@@ -192,8 +192,9 @@ class SandboxSimulator(SimulatorBase):
         passed = sum(1 for ch in self.checks if ch.passed)
         total = sum(1 for ch in self.checks if ch.passed is not None)
         kind = "success" if passed == total else "warning" if passed >= total - 2 else "danger"
-        self.score.set_message(kind, f"<b>Your universe passes {passed} of {total} observational tests.</b> "
-                               "Open the report card to see which observations agree or disagree.")
+        self.score.set_message(kind, tr("<b>Your universe passes {passed} of {total} observational tests.</b> "
+                                        "Open the report card to see which observations agree or disagree.")
+                               .format(passed=passed, total=total))
         self.report.set_markdown_content(self._report_markdown(c))
         self.expansion_plot.refresh()
         self.cmb_plot.refresh()

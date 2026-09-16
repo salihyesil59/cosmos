@@ -105,32 +105,37 @@ class InflationSimulator(SimulatorBase):
             self.result = inflation.predictions(pot, self.n_star.value(), param)
             self.trajectory = inflation.evolve(pot, param, n_before=max(65.0, self.n_star.value() + 8), extra=2.5)
         except ValueError:
-            self.verdict.set_message("warning", "This parameter value does not give enough inflation. Try another.")
+            self.verdict.set_message("warning", tr("This parameter value does not give enough inflation. "
+                                                   "Try another."))
             return
         r = self.result
         ok = r.consistent
         self.verdict.set_message(
             "success" if ok else "danger",
-            ("<b>Consistent with observations.</b> " if ok else "<b>Ruled out by observations.</b> ")
-            + f"Planck measures nₛ = {inflation.N_S_MEASURED} ± {inflation.N_S_ERROR}; "
-            f"BICEP/Keck limit r < {inflation.R_UPPER_LIMIT}.",
+            (tr("<b>Consistent with observations.</b>") if ok else tr("<b>Ruled out by observations.</b>"))
+            + " " + tr("Planck measures nₛ = {n_s} ± {error}; BICEP/Keck limit r < {limit}.")
+            .format(n_s=inflation.N_S_MEASURED, error=inflation.N_S_ERROR, limit=inflation.R_UPPER_LIMIT),
         )
         self.summary.setText(
-            f"Spectral index nₛ: <b>{r.n_s:.4f}</b><br>"
-            f"Tensor-to-scalar ratio r: <b>{r.r:.4f}</b><br>"
-            f"Slow-roll ε = {r.epsilon:.2e}, η = {r.eta:.2e}<br>"
-            f"Field when CMB scales left: φ* = {r.phi_star:.2f} M_Pl<br>"
-            f"Field at the end: {r.phi_end:.2f} M_Pl<br>"
-            f"Energy scale V*¼: <b>{r.energy_scale_gev:.2e} GeV</b><br>"
-            f"Hubble rate during inflation: {r.hubble_gev:.2e} GeV<br>"
-            f"Full solution: inflation lasted {self.trajectory.end_efold:.1f} e-folds from the start of the run"
+            tr("Spectral index nₛ: <b>{n_s}</b><br>"
+               "Tensor-to-scalar ratio r: <b>{r}</b><br>"
+               "Slow-roll ε = {epsilon}, η = {eta}<br>"
+               "Field when CMB scales left: φ* = {phi_star} M_Pl<br>"
+               "Field at the end: {phi_end} M_Pl<br>"
+               "Energy scale V*¼: <b>{energy} GeV</b><br>"
+               "Hubble rate during inflation: {hubble} GeV<br>"
+               "Full solution: inflation lasted {efolds} e-folds from the start of the run")
+            .format(n_s=f"{r.n_s:.4f}", r=f"{r.r:.4f}", epsilon=f"{r.epsilon:.2e}", eta=f"{r.eta:.2e}",
+                    phi_star=f"{r.phi_star:.2f}", phi_end=f"{r.phi_end:.2f}",
+                    energy=f"{r.energy_scale_gev:.2e}", hubble=f"{r.hubble_gev:.2e}",
+                    efolds=f"{self.trajectory.end_efold:.1f}")
         )
         self.frame = len(self.trajectory.efolds) - 1 if not self.play.isChecked() else self.frame
         self.plot.refresh()
 
     # ---------------------------------------------------------- animation
     def _toggle(self, on: bool) -> None:
-        self.play.setText("⏸ Pause" if on else "▶ Play")
+        self.play.setText(tr("⏸ Pause") if on else tr("▶ Play"))
         if on:
             if self.frame >= len(self.trajectory.efolds) - 1:
                 self.frame = 0

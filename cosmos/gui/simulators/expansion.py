@@ -6,6 +6,7 @@ import numpy as np
 from PySide6.QtCore import Qt
 from PySide6.QtWidgets import QCheckBox, QGroupBox, QHBoxLayout, QLabel, QPushButton, QSplitter, QVBoxLayout
 
+from cosmos.gui.labels import physics
 from cosmos.gui.simulators.base import SimulatorBase
 from cosmos.gui.theme import theme
 from cosmos.gui.widgets.common import ParameterSlider, PresetSelector, labelled_row
@@ -137,16 +138,23 @@ class ExpansionSimulator(SimulatorBase):
         p = theme().palette
         color = {Fate.ACCELERATES_FOREVER: p.accent, Fate.EXPANDS_FOREVER: p.success,
                  Fate.BIG_CRUNCH: p.danger, Fate.NO_BIG_BANG: p.warning}[fate]
-        age = f"{self.history.age:.2f} billion years" if self.history.age else "undefined (no Big Bang)"
+        age = (tr("{years} billion years").format(years=f"{self.history.age:.2f}") if self.history.age
+               else tr("undefined (no Big Bang)"))
         crunch = ""
         if self.history.crunch_time is not None:
-            crunch = f"<br>Big Crunch in: <b>{self.history.crunch_time:.1f} billion years</b>"
+            crunch = "<br>" + tr("Big Crunch in: <b>{years} billion years</b>").format(
+                years=f"{self.history.crunch_time:.1f}")
         self.summary.setText(
-            f"Age: <b>{age}</b>{crunch}<br>"
-            f"Geometry: <b>{c.geometry}</b> (Ωk = {0.0 if abs(c.Ok0) < 5e-4 else c.Ok0:+.3f})<br>"
-            f"Today: <b>{'accelerating' if q0 < 0 else 'decelerating'}</b> (q0 = {q0:+.2f})<br>"
-            f"Hubble time 1/H0: {c.hubble_time:.2f} billion years<br><br>"
-            f"<span style='color:{color}'><b>Fate: this universe {fate.value}.</b></span><br>{fate.explanation}"
+            tr("Age: <b>{age}</b>{crunch}<br>"
+               "Geometry: <b>{geometry}</b> (Ωk = {curvature})<br>"
+               "Today: <b>{trend}</b> (q0 = {q0})<br>"
+               "Hubble time 1/H0: {hubble} billion years<br><br>"
+               "<span style='color:{colour}'><b>Fate: this universe {fate}.</b></span><br>{explanation}")
+            .format(age=age, crunch=crunch, geometry=physics(c.geometry),
+                    curvature=f"{0.0 if abs(c.Ok0) < 5e-4 else c.Ok0:+.3f}",
+                    trend=tr("accelerating") if q0 < 0 else tr("decelerating"), q0=f"{q0:+.2f}",
+                    hubble=f"{c.hubble_time:.2f}", colour=color,
+                    fate=physics(fate.value), explanation=physics(fate.explanation))
         )
         self.a_plot.refresh()
         self.plane.refresh()

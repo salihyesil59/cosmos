@@ -152,6 +152,7 @@ Legend: `[x]` done · `[ ]` planned
 - [x] `G12` Historical timeline of discoveries and scientist cards
 - [x] `G13` Achievements and badges
 - [x] `G14` Turkish for the Guide panel, the tour and the simulator controls
+- [x] `G20` Turkish for what the simulators report back: readouts, banners, quiz and challenges
 
 ### Extras & quality
 - [x] `E1+` Pantheon+ supernova sample and SPARC rotation curves (license check, needs download)

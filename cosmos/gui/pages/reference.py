@@ -136,7 +136,8 @@ class UnitConverter(QGroupBox):
             f"<tr><td align='right'><b>{_sci(base / factor)}</b>&nbsp;</td><td>{name}</td></tr>"
             for name, factor in units
         )
-        self.result.setText(f"<table>{rows}</table><br>In base units: {_sci(base)} {base_unit}")
+        self.result.setText(f"<table>{rows}</table><br>"
+                            + tr("In base units: {value} {unit}").format(value=_sci(base), unit=base_unit))
 
 
 class ReferencePage(QWidget):

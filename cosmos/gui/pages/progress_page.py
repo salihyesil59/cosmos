@@ -135,7 +135,7 @@ class ProgressPage(QWidget):
         explored = len([s for s in store.data.simulators_opened if s in SIMULATORS])
         self.stat_values["sims"].setText(f"{explored} / {len(SIMULATORS)}")
         nxt = store.next_recommended(cur)
-        self.stat_values["next"].setText(nxt or "All done!")
+        self.stat_values["next"].setText(nxt or tr("All done!"))
         self._refresh_badges()
 
     def _refresh_badges(self) -> None:

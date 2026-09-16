@@ -185,32 +185,37 @@ class OlbersSimulator(SimulatorBase):
         self.sky = olbers.generate_sky(density, depth, hubble_length=hubble, seed=self.seed)
         coverage = olbers.sky_coverage(depth, mfp)
         brightness = olbers.sky_brightness(depth, mfp, hubble)
-        depth_text = "infinite" if math.isinf(depth) else f"{depth:.0f}"
+        depth_text = tr("infinite") if math.isinf(depth) else f"{depth:.0f}"
         self.summary.setText(
-            f"Mean free path λ: <b>{mfp:.0f}</b> stellar radii<br>"
-            f"Visible depth: <b>{depth_text}</b>"
+            tr("Mean free path λ: <b>{mfp}</b> stellar radii<br>Visible depth: <b>{depth}</b>")
+            .format(mfp=f"{mfp:.0f}", depth=depth_text)
             + ("" if math.isinf(depth) else f" = {depth / mfp:.2f} λ")
             + "<br>"
-            f"Sky covered by stars: <b>{100 * coverage:.1f}%</b> (this patch {100 * self.sky.coverage:.1f}%)<br>"
-            f"Sky brightness: <b>{100 * brightness:.1f}%</b> of a star's surface "
-            f"(this patch {100 * self.sky.brightness:.1f}%)<br>"
-            f"Stars drawn as discs: {self.sky.n_drawn:,}" + (" (limit reached)" if self.sky.truncated else "")
+            + tr("Sky covered by stars: <b>{coverage}%</b> (this patch {patch}%)<br>"
+                 "Sky brightness: <b>{brightness}%</b> of a star's surface (this patch {patch_brightness}%)<br>"
+                 "Stars drawn as discs: {drawn}")
+            .format(coverage=f"{100 * coverage:.1f}", patch=f"{100 * self.sky.coverage:.1f}",
+                    brightness=f"{100 * brightness:.1f}", patch_brightness=f"{100 * self.sky.brightness:.1f}",
+                    drawn=f"{self.sky.n_drawn:,}")
+            + (" " + tr("(limit reached)") if self.sky.truncated else "")
         )
         if brightness > 0.9:
             self.banner.set_message(
-                "danger", "<b>The paradox:</b> every line of sight ends on a star, so the whole sky blazes like the "
-                "surface of the Sun, day and night.")
+                "danger", tr("<b>The paradox:</b> every line of sight ends on a star, so the whole sky blazes "
+                             "like the surface of the Sun, day and night."))
         elif brightness > 0.3:
             self.banner.set_message(
-                "warning", f"<b>Still a bright sky</b> ({100 * brightness:.0f}% of a star's surface). Try a younger "
-                "universe, shorter-lived stars or faster expansion.")
+                "warning", tr("<b>Still a bright sky</b> ({brightness}% of a star's surface). Try a younger "
+                              "universe, shorter-lived stars or faster expansion.")
+                .format(brightness=f"{100 * brightness:.0f}"))
         else:
-            reasons = [name for name, on in (("the finite age", self.finite_age.isChecked()),
-                                             ("limited stellar lifetimes", self.lifetimes.isChecked()),
-                                             ("redshift dimming", self.expanding.isChecked())) if on]
+            reasons = [name for name, on in ((tr("the finite age"), self.finite_age.isChecked()),
+                                             (tr("limited stellar lifetimes"), self.lifetimes.isChecked()),
+                                             (tr("redshift dimming"), self.expanding.isChecked())) if on]
+            joined = (" " + tr("and") + " ").join(reasons) if reasons else tr("the low density of stars")
             self.banner.set_message(
-                "success", f"<b>A dark night sky</b> ({100 * brightness:.0f}% of a star's surface), thanks to "
-                + (" and ".join(reasons) if reasons else "the low density of stars") + ".")
+                "success", tr("<b>A dark night sky</b> ({brightness}% of a star's surface), thanks to {reason}.")
+                .format(brightness=f"{100 * brightness:.0f}", reason=joined))
         self.plot.refresh()
 
     # ---------------------------------------------------------------- draw

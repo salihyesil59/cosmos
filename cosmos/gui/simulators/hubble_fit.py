@@ -73,8 +73,8 @@ class HubbleFitSimulator(SimulatorBase):
 
     def _dataset_changed(self, *_args) -> None:
         ds = self.data
-        tag = "⚠ Simulated data. " if ds.simulated else "Real historical data. "
-        self.description.setText(tag + ds.description)
+        tag = tr("⚠ Simulated data.") if ds.simulated else tr("Real historical data.")
+        self.description.setText(tag + " " + ds.description)
         self.fit = None
         self.result.setText(tr("Press <b>Find best fit</b> to compute H0 and the Hubble time."))
         self.h0.setValue(300 if ds.key == "hubble1929" else 40)
@@ -85,8 +85,9 @@ class HubbleFitSimulator(SimulatorBase):
         rms = np.sqrt(ssr / len(ds.distance_mpc))
         tH = 1 / const.hubble_to_si(self.h0.value()) / const.GYR if self.h0.value() > 0 else float("inf")
         self.residual.setText(
-            f"Typical miss (RMS residual): <b>{rms:,.0f} km/s</b><br>"
-            f"Hubble time for your slope: <b>{tH:.2f} billion years</b>".replace(",", " ")
+            tr("Typical miss (RMS residual): <b>{rms} km/s</b><br>"
+               "Hubble time for your slope: <b>{hubble_time} billion years</b>")
+            .format(rms=f"{rms:,.0f}".replace(",", " "), hubble_time=f"{tH:.2f}")
         )
         self.plot.refresh()
 
@@ -96,16 +97,19 @@ class HubbleFitSimulator(SimulatorBase):
         f = self.fit
         self.h0.setValue(f.H0)
         comment = (
-            "Hubble's value is about seven times larger than today's because his distances were too small. "
-            f"His Hubble time of {f.hubble_time_gyr:.1f} billion years was shorter than geologists' estimates of the age of the Earth, a real puzzle at the time."
+            tr("Hubble's value is about seven times larger than today's because his distances were too small. "
+               "His Hubble time of {years} billion years was shorter than geologists' estimates of the age of "
+               "the Earth, a real puzzle at the time.").format(years=f"{f.hubble_time_gyr:.1f}")
             if ds.key == "hubble1929"
-            else "Close to modern measurements (67–73 km/s/Mpc). The Hubble time is close to the true age of "
-            "13.8 billion years."
+            else tr("Close to modern measurements (67–73 km/s/Mpc). The Hubble time is close to the true age "
+                    "of 13.8 billion years.")
         )
         self.result.setText(
-            f"H0 = <b>{f.H0:.1f} ± {f.H0_error:.1f} km/s/Mpc</b><br>"
-            f"Hubble time 1/H0 = <b>{f.hubble_time_gyr:.2f} billion years</b><br>"
-            f"Points: {f.n_points}<br><br>{comment}"
+            tr("H0 = <b>{h0} ± {error} km/s/Mpc</b><br>"
+               "Hubble time 1/H0 = <b>{hubble_time} billion years</b><br>"
+               "Points: {points}<br><br>{comment}")
+            .format(h0=f"{f.H0:.1f}", error=f"{f.H0_error:.1f}", hubble_time=f"{f.hubble_time_gyr:.2f}",
+                    points=f.n_points, comment=comment)
         )
 
     def _draw(self, fig) -> None:

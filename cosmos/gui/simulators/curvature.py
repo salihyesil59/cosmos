@@ -9,6 +9,7 @@ from matplotlib.patches import Circle
 from PySide6.QtCore import Qt
 from PySide6.QtWidgets import QGroupBox, QLabel, QTabWidget, QVBoxLayout
 
+from cosmos.gui.labels import physics
 from cosmos.gui.simulators.base import SimulatorBase
 from cosmos.gui.theme import theme
 from cosmos.gui.widgets.common import ParameterSlider, muted_label
@@ -61,9 +62,9 @@ class CurvatureSimulator(SimulatorBase):
         self.summary.setWordWrap(True)
         self.summary.setTextFormat(Qt.RichText)
         rl.addWidget(self.summary)
-        rl.addWidget(muted_label("Closed space behaves like the surface of a sphere, open space like a saddle. "
-                                 "The hyperbolic triangle is drawn in the Poincaré disk: straight lines of that "
-                                 "space appear as circular arcs."))
+        rl.addWidget(muted_label(tr("Closed space behaves like the surface of a sphere, open space like a "
+                            "saddle. The hyperbolic triangle is drawn in the Poincaré disk: straight "
+                            "lines of that space appear as circular arcs.")))
         self.controls.addWidget(results)
         self.finish_controls()
 
@@ -97,18 +98,21 @@ class CurvatureSimulator(SimulatorBase):
                 excess = math.degrees(geometry.angle_sum(min(span, 2.0), k_universe)) - 180
                 excess_text = f"{excess:+.2f}°"
             except ValueError:
-                excess_text = "undefined (too large)"
+                excess_text = tr("undefined (too large)")
             universe = (
-                f"Curvature radius: <b>{radius_gpc:.0f} Gpc</b> "
-                f"({geometry.GEOMETRIES[k_universe]})<br>"
-                f"Observable universe radius: {PARTICLE_HORIZON_GPC:.1f} Gpc = <b>{span:.2f} R</b><br>"
-                f"Angle excess of a triangle with sides that long: <b>{excess_text}</b>"
+                tr("Curvature radius: <b>{radius} Gpc</b> ({geometry})<br>"
+                   "Observable universe radius: {horizon} Gpc = <b>{span} R</b><br>"
+                   "Angle excess of a triangle with sides that long: <b>{excess}</b>")
+                .format(radius=f"{radius_gpc:.0f}", geometry=physics(geometry.GEOMETRIES[k_universe]),
+                        horizon=f"{PARTICLE_HORIZON_GPC:.1f}", span=f"{span:.2f}", excess=excess_text)
             )
         self.summary.setText(
-            f"<b>Triangle angle sums</b> (side {a:.2f} R)<br>"
-            f"Closed: <b>{sums[1]:.1f}°</b> · Flat: <b>{sums[0]:.1f}°</b> · Open: <b>{sums[-1]:.1f}°</b><br><br>"
-            f"<b>Circumference ÷ 2πr</b> (radius {r:.2f} R)<br>"
-            f"Closed: <b>{ratios[1]:.3f}</b> · Flat: <b>1.000</b> · Open: <b>{ratios[-1]:.3f}</b><br><br>"
+            tr("<b>Triangle angle sums</b> (side {side} R)<br>"
+               "Closed: <b>{closed}°</b> · Flat: <b>{flat}°</b> · Open: <b>{open_}°</b><br><br>"
+               "<b>Circumference ÷ 2πr</b> (radius {radius} R)<br>"
+               "Closed: <b>{closed_ratio}</b> · Flat: <b>1.000</b> · Open: <b>{open_ratio}</b><br><br>")
+            .format(side=f"{a:.2f}", closed=f"{sums[1]:.1f}", flat=f"{sums[0]:.1f}", open_=f"{sums[-1]:.1f}",
+                    radius=f"{r:.2f}", closed_ratio=f"{ratios[1]:.3f}", open_ratio=f"{ratios[-1]:.3f}")
             + universe
         )
         for plot in (self.triangles, self.circles, self.sizes):
