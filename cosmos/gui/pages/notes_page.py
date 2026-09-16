@@ -20,6 +20,7 @@ from PySide6.QtWidgets import (
 from cosmos.gui.context import AppContext
 from cosmos.gui.routes import route_title
 from cosmos.gui.widgets.common import card, muted_label, title_label
+from cosmos.i18n import tr
 
 GUIDE = """
 ## Notes & bookmarks
@@ -46,12 +47,12 @@ class NotesPage(QWidget):
         root.setSpacing(8)
         head = QHBoxLayout()
         heading = QVBoxLayout()
-        heading.addWidget(title_label("Notes & bookmarks"))
+        heading.addWidget(title_label(tr("Notes & bookmarks")))
         self.subtitle = muted_label("")
         heading.addWidget(self.subtitle)
         head.addLayout(heading, 1)
-        self.export_btn = QPushButton("⬇  Export as Markdown…")
-        self.export_btn.setToolTip("Save every bookmark and note into one text file.")
+        self.export_btn = QPushButton(tr("⬇  Export as Markdown…"))
+        self.export_btn.setToolTip(tr("Save every bookmark and note into one text file."))
         self.export_btn.clicked.connect(self.export)
         head.addWidget(self.export_btn, 0, Qt.AlignTop)
         root.addLayout(head)
@@ -79,20 +80,19 @@ class NotesPage(QWidget):
                 widget.deleteLater()
         store = self.ctx.store
         bookmarks, notes = list(store.data.bookmarks), dict(store.data.notes)
-        self.subtitle.setText(f"{len(bookmarks)} bookmarks · {len(notes)} notes")
+        self.subtitle.setText(tr("{bookmarks} bookmarks · {notes} notes")
+                              .format(bookmarks=len(bookmarks), notes=len(notes)))
         self.export_btn.setEnabled(bool(bookmarks or notes))
 
-        self.body.addWidget(title_label("Bookmarks", "subtitle"))
+        self.body.addWidget(title_label(tr("Bookmarks"), "subtitle"))
         if not bookmarks:
-            self.body.addWidget(muted_label(
-                "No bookmarks yet. Open any lesson or simulator and press ☆ in the Notes panel (Ctrl+D)."))
+            self.body.addWidget(muted_label(tr("No bookmarks yet. Open any lesson or simulator and press ☆ in the Notes panel (Ctrl+D).")))
         for route in bookmarks:
             self.body.addWidget(self._bookmark_card(route))
 
-        self.body.addWidget(title_label("Notes", "subtitle"))
+        self.body.addWidget(title_label(tr("Notes"), "subtitle"))
         if not notes:
-            self.body.addWidget(muted_label(
-                "No notes yet. The Notes panel on the right of every page is your private notebook."))
+            self.body.addWidget(muted_label(tr("No notes yet. The Notes panel on the right of every page is your private notebook.")))
         for route, text in notes.items():
             self.body.addWidget(self._note_card(route, text))
         self.body.addStretch(1)
@@ -134,7 +134,7 @@ class NotesPage(QWidget):
         label = QLabel(route_title(self.ctx, route))
         label.setWordWrap(True)
         top.addWidget(label, 1)
-        open_btn = QPushButton("Open")
+        open_btn = QPushButton(tr("Open"))
         open_btn.clicked.connect(lambda _=False, r=route: self.ctx.navigate(r))
         top.addWidget(open_btn)
         layout.addLayout(top)
@@ -145,8 +145,8 @@ class NotesPage(QWidget):
 
     def _bookmark_card(self, route: str) -> QWidget:
         frame = self._row(route)
-        remove = QPushButton("Remove")
-        remove.setToolTip("Remove this bookmark. Your note for the page is kept.")
+        remove = QPushButton(tr("Remove"))
+        remove.setToolTip(tr("Remove this bookmark. Your note for the page is kept."))
         remove.clicked.connect(lambda _=False, r=route: self._remove_bookmark(r))
         frame.layout_top.addWidget(remove)
         return frame
@@ -156,7 +156,7 @@ class NotesPage(QWidget):
         preview.setWordWrap(True)
         preview.setProperty("role", "muted")
         frame = self._row(route, preview)
-        delete = QPushButton("Delete note")
+        delete = QPushButton(tr("Delete note"))
         delete.clicked.connect(lambda _=False, r=route: self._delete_note(r))
         frame.layout_top.addWidget(delete)
         return frame

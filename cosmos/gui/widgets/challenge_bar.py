@@ -9,6 +9,7 @@ from cosmos.content.models import Challenge
 from cosmos.gui.challenges import challenge_met, unmet_fields
 from cosmos.gui.context import AppContext
 from cosmos.gui.widgets.common import Banner, card, muted_label
+from cosmos.i18n import tr
 
 
 class ChallengeBar(QWidget):
@@ -40,11 +41,11 @@ class ChallengeBar(QWidget):
         self.progress = muted_label("")
         head.addWidget(self.progress)
         prev_btn = QPushButton("◀")
-        prev_btn.setToolTip("Previous challenge")
+        prev_btn.setToolTip(tr("Previous challenge"))
         prev_btn.setMaximumWidth(36)
         prev_btn.clicked.connect(lambda: self.go(self.index - 1))
         next_btn = QPushButton("▶")
-        next_btn.setToolTip("Next challenge")
+        next_btn.setToolTip(tr("Next challenge"))
         next_btn.setMaximumWidth(36)
         next_btn.clicked.connect(lambda: self.go(self.index + 1))
         head.addWidget(prev_btn)
@@ -57,12 +58,12 @@ class ChallengeBar(QWidget):
         layout.addWidget(self.task)
 
         row = QHBoxLayout()
-        self.check_btn = QPushButton("✓  Check my answer")
+        self.check_btn = QPushButton(tr("✓  Check my answer"))
         self.check_btn.setProperty("role", "primary")
-        self.check_btn.setToolTip("Look at the current settings of the simulator and see whether they "
-                                  "solve the challenge.")
+        self.check_btn.setToolTip(tr("Look at the current settings of the simulator and see whether they "
+                                  "solve the challenge."))
         self.check_btn.clicked.connect(self.check)
-        self.hint_btn = QPushButton("Show a hint")
+        self.hint_btn = QPushButton(tr("Show a hint"))
         self.hint_btn.clicked.connect(self.show_hint)
         row.addWidget(self.check_btn)
         row.addWidget(self.hint_btn)
@@ -93,8 +94,10 @@ class ChallengeBar(QWidget):
                      if self.ctx.store.is_challenge_done(c.simulator, c.id))
         marks = "".join("●" if self.ctx.store.is_challenge_done(c.simulator, c.id) else "○"
                         for c in self.challenges)
-        self.heading.setText(f"🎯  Challenge {self.index + 1} of {len(self.challenges)}")
-        self.progress.setText(f"{marks}   {solved} of {len(self.challenges)} solved")
+        self.heading.setText("🎯  " + tr("Challenge {number} of {total}")
+                             .format(number=self.index + 1, total=len(self.challenges)))
+        self.progress.setText(marks + "   " + tr("{solved} of {total} solved")
+                              .format(solved=solved, total=len(self.challenges)))
         self.task.setText(challenge.task)
         self.feedback.hide()
         if done:

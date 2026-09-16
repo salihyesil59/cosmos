@@ -105,3 +105,38 @@ def test_language_setting_survives_a_restart(tmp_path):
     store.data.language = "de"
     store.save()
     assert ProgressStore(tmp_path / "p.json").data.language == "de"
+
+
+def test_turkish_pack_is_complete(app, monkeypatch):
+    """The bundled Turkish interface: every marked string is translated and loads."""
+    import re
+
+    ts = (ROOT / "cosmos" / "i18n" / "cosmos_tr.ts").read_text(encoding="utf-8")
+    assert 'type="unfinished"' not in ts, "some Turkish strings are still untranslated"
+    assert ts.count("<message>") > 200
+    assert len(re.findall(r"<name>cosmos</name>", ts)) == 1, "the .ts should hold a single context"
+
+    assert (ROOT / "cosmos" / "i18n" / "cosmos_tr.qm").exists()
+    assert i18n.find("tr") is not None and i18n.language_name("tr") == "Türkçe"
+    try:
+        assert i18n.install(app, "tr") is True
+        assert i18n.tr("Home") == "Ana sayfa"
+        assert i18n.tr("Glossary") == "Sözlük"
+        assert i18n.tr("First steps") == "İlk adımlar"              # badge, marked with tr_noop
+        assert i18n.tr("{done} of {total} lessons completed").format(done=2, total=43) == \
+            "43 dersin 2 tanesi tamamlandı"
+    finally:
+        i18n.install(app, "en")
+    assert i18n.tr("Home") == "Home"
+
+
+def test_placeholders_survive_translation():
+    """A translation that loses a {placeholder} would raise at runtime."""
+    import re
+    import xml.etree.ElementTree as ET
+
+    root = ET.parse(ROOT / "cosmos" / "i18n" / "cosmos_tr.ts").getroot()
+    for message in root.iter("message"):
+        source = message.find("source").text or ""
+        translation = message.find("translation").text or ""
+        assert set(re.findall(r"\{(\w+)\}", source)) == set(re.findall(r"\{(\w+)\}", translation)), source

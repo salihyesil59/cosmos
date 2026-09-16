@@ -22,6 +22,7 @@ from cosmos.gui.widgets.common import Banner, muted_label, title_label
 from cosmos.gui.widgets.quiz import QuizWidget
 from cosmos.gui.widgets.rich_browser import RichBrowser
 from cosmos.progress import LessonStatus
+from cosmos.i18n import tr
 
 
 class LessonPage(QWidget):
@@ -41,7 +42,7 @@ class LessonPage(QWidget):
         self.status = muted_label("")
         head.addWidget(self.status)
         head.addStretch(1)
-        head.addWidget(muted_label("View:"))
+        head.addWidget(muted_label(tr("View:")))
         self.view_buttons = QButtonGroup(self)
         for index, (mode, label, tip) in enumerate([
             (INTUITIVE_VIEW, "Intuitive", "Read the ideas in words: formulas, derivations and worked "
@@ -82,24 +83,24 @@ class LessonPage(QWidget):
         self.quiz.finished.connect(self._quiz_finished)
         self.quiz.nextLessonRequested.connect(self._go_next)
         self.quiz.reviewRequested.connect(lambda: self.tabs.setCurrentIndex(0))
-        self.tabs.addTab(self.browser, "📖  Lesson")
-        self.tabs.addTab(self.quiz, "✎  Quiz")
+        self.tabs.addTab(self.browser, "📖  " + tr("Lesson"))
+        self.tabs.addTab(self.quiz, "✎  " + tr("Quiz"))
         root.addWidget(self.tabs, 1)
 
         nav = QHBoxLayout()
-        self.prev_btn = QPushButton("◀ Previous lesson")
+        self.prev_btn = QPushButton(tr("◀ Previous lesson"))
         self.prev_btn.clicked.connect(self._go_prev)
         nav.addWidget(self.prev_btn)
         self.sim_buttons = QHBoxLayout()
         nav.addStretch(1)
         nav.addLayout(self.sim_buttons)
         nav.addStretch(1)
-        self.quiz_btn = QPushButton("Take the quiz ▶")
+        self.quiz_btn = QPushButton(tr("Take the quiz ▶"))
         self.quiz_btn.setObjectName("quizButton")
         self.quiz_btn.setProperty("role", "primary")
         self.quiz_btn.clicked.connect(self._open_quiz)
         nav.addWidget(self.quiz_btn)
-        self.next_btn = QPushButton("Next lesson ▶")
+        self.next_btn = QPushButton(tr("Next lesson ▶"))
         self.next_btn.clicked.connect(self._go_next)
         nav.addWidget(self.next_btn)
         root.addLayout(nav)
@@ -115,7 +116,7 @@ class LessonPage(QWidget):
         self.badge.setText(f"LEVEL {level.number} · {level.title.upper()}")
         self.title.setText(f"{lesson.id}  {lesson.title}")
         self.summary.setText(lesson.summary)
-        self.minutes.setText(f"≈ {lesson.minutes} min read")
+        self.minutes.setText(tr("≈ {minutes} min read").format(minutes=lesson.minutes))
         self._refresh_status()
 
         self._sync_view_buttons()
@@ -205,9 +206,9 @@ class LessonPage(QWidget):
         status = store.status(cur, self.lesson.id)
         best = store.data.quiz_best.get(self.lesson.id)
         text = {
-            LessonStatus.COMPLETED: "✓ Completed",
-            LessonStatus.READY: "● Ready to learn",
-            LessonStatus.NOT_READY: "○ Prerequisites missing",
+            LessonStatus.COMPLETED: "✓ " + tr("Completed"),
+            LessonStatus.READY: "● " + tr("Ready to learn"),
+            LessonStatus.NOT_READY: "○ " + tr("Prerequisites missing"),
         }[status]
         if best is not None:
             text += f" · best quiz score {best:.0%}"

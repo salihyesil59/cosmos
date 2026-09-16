@@ -19,6 +19,7 @@ from PySide6.QtWidgets import (
 from cosmos.content.models import Lesson
 from cosmos.gui.widgets.common import Banner, muted_label, title_label
 from cosmos.progress import PASS_SCORE
+from cosmos.i18n import tr
 
 
 class QuizWidget(QWidget):
@@ -41,12 +42,12 @@ class QuizWidget(QWidget):
         # --- intro page
         intro = QWidget()
         il = QVBoxLayout(intro)
-        il.addWidget(title_label("Check your understanding"))
+        il.addWidget(title_label(tr("Check your understanding")))
         self.intro_text = muted_label("")
         il.addWidget(self.intro_text)
         self.best_label = QLabel()
         il.addWidget(self.best_label)
-        start = QPushButton("Start the quiz")
+        start = QPushButton(tr("Start the quiz"))
         start.setProperty("role", "primary")
         start.clicked.connect(self.start)
         il.addWidget(start, 0, Qt.AlignLeft)
@@ -80,10 +81,10 @@ class QuizWidget(QWidget):
         ql.addWidget(self.feedback)
         buttons = QHBoxLayout()
         buttons.addStretch(1)
-        self.check = QPushButton("Check answer")
+        self.check = QPushButton(tr("Check answer"))
         self.check.setProperty("role", "primary")
         self.check.clicked.connect(self.check_answer)
-        self.next_btn = QPushButton("Next question")
+        self.next_btn = QPushButton(tr("Next question"))
         self.next_btn.setProperty("role", "primary")
         self.next_btn.clicked.connect(self.next_question)
         buttons.addWidget(self.check)
@@ -103,11 +104,11 @@ class QuizWidget(QWidget):
         rl.addWidget(self.result_title)
         rl.addWidget(self.result_banner)
         rb = QHBoxLayout()
-        retry = QPushButton("Try again")
+        retry = QPushButton(tr("Try again"))
         retry.clicked.connect(self.start)
-        review = QPushButton("Review the lesson")
+        review = QPushButton(tr("Review the lesson"))
         review.clicked.connect(self.reviewRequested)
-        self.next_lesson = QPushButton("Next lesson ▶")
+        self.next_lesson = QPushButton(tr("Next lesson ▶"))
         self.next_lesson.setProperty("role", "primary")
         self.next_lesson.clicked.connect(self.nextLessonRequested)
         rb.addWidget(retry)
@@ -183,7 +184,7 @@ class QuizWidget(QWidget):
         self.score_label.setText(f"Correct so far: {self.correct}")
         self.check.hide()
         last = self.index == len(self.lesson.quiz) - 1
-        self.next_btn.setText("See results" if last else "Next question")
+        self.next_btn.setText(tr("See results") if last else "Next question")
         self.next_btn.show()
         self.next_btn.setFocus()
 

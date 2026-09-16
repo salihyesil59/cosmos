@@ -24,6 +24,7 @@ from cosmos.gui.context import AppContext
 from cosmos.gui.routes import route_title
 from cosmos.gui.widgets.common import labelled_row, muted_label
 from cosmos.gui.widgets.rich_browser import RichBrowser
+from cosmos.i18n import tr
 
 CONSOLE_URL = "https://console.anthropic.com/settings/keys"
 
@@ -109,23 +110,23 @@ class TutorPanel(QWidget):
         layout.addLayout(suggestions)
 
         self.question = QTextEdit()
-        self.question.setPlaceholderText("Ask about this page…  (Ctrl+Enter to send)")
+        self.question.setPlaceholderText(tr("Ask about this page…  (Ctrl+Enter to send)"))
         self.question.setAcceptRichText(False)
         self.question.setMaximumHeight(90)
         layout.addWidget(self.question)
 
         row = QHBoxLayout()
-        self.ask_button = QPushButton("Ask")
+        self.ask_button = QPushButton(tr("Ask"))
         self.ask_button.setProperty("role", "primary")
         self.ask_button.clicked.connect(self.ask)
         row.addWidget(self.ask_button)
-        self.include_context = QCheckBox("Include the page I am reading")
+        self.include_context = QCheckBox(tr("Include the page I am reading"))
         self.include_context.setChecked(self.config.include_context)
-        self.include_context.setToolTip("Sends the text of the lesson, or the settings of the simulator, "
-                                        "so the answer fits what you are looking at.")
+        self.include_context.setToolTip(tr("Sends the text of the lesson, or the settings of the simulator, "
+                                        "so the answer fits what you are looking at."))
         self.include_context.toggled.connect(self._context_toggled)
         row.addWidget(self.include_context, 1)
-        clear = QPushButton("New conversation")
+        clear = QPushButton(tr("New conversation"))
         clear.clicked.connect(self.reset_conversation)
         row.addWidget(clear)
         layout.addLayout(row)
@@ -133,13 +134,13 @@ class TutorPanel(QWidget):
         self.status = muted_label("")
         layout.addWidget(self.status)
 
-        connection = QGroupBox("Connection")
+        connection = QGroupBox(tr("Connection"))
         cl = QVBoxLayout(connection)
         self.key_edit = QLineEdit(self.config.api_key)
         self.key_edit.setEchoMode(QLineEdit.Password)
         self.key_edit.setPlaceholderText("sk-ant-…")
         self.key_edit.textChanged.connect(self._key_changed)
-        cl.addWidget(labelled_row("API key", self.key_edit, (
+        cl.addWidget(labelled_row(tr("API key"), self.key_edit, (
             "Your own API key",
             "Cosmos has no account and no server of its own. Use a key from your Anthropic account; the "
             "requests are billed to you. The key is kept on this computer only, and only if you tick "
@@ -150,17 +151,17 @@ class TutorPanel(QWidget):
         index = self.model_box.findData(self.config.model)
         self.model_box.setCurrentIndex(index if index >= 0 else 0)
         self.model_box.currentIndexChanged.connect(self._model_changed)
-        cl.addWidget(labelled_row("Model", self.model_box))
-        self.remember = QCheckBox("Remember the key on this computer (stored as plain text)")
+        cl.addWidget(labelled_row(tr("Model"), self.model_box))
+        self.remember = QCheckBox(tr("Remember the key on this computer (stored as plain text)"))
         self.remember.setChecked(self.config.remember_key)
         self.remember.toggled.connect(self._remember_toggled)
         cl.addWidget(self.remember)
-        get_key = QPushButton("Where do I get a key?")
+        get_key = QPushButton(tr("Where do I get a key?"))
         get_key.setProperty("role", "link")
         get_key.clicked.connect(lambda: QDesktopServices.openUrl(CONSOLE_URL))
         cl.addWidget(get_key, 0, Qt.AlignLeft)
-        cl.addWidget(muted_label("Questions and the page you include are sent to Anthropic. "
-                                 "Nothing leaves this computer until you press Ask."))
+        cl.addWidget(muted_label(tr("Questions and the page you include are sent to Anthropic. "
+                                 "Nothing leaves this computer until you press Ask.")))
         layout.addWidget(connection)
 
         send = QShortcut(QKeySequence("Ctrl+Return"), self.question)
@@ -186,13 +187,13 @@ class TutorPanel(QWidget):
         if not question:
             return
         if not self.config.configured:
-            self.status.setText("Add an API key below to switch the tutor on.")
+            self.status.setText(tr("Add an API key below to switch the tutor on."))
             return
         first = not self.conversation.messages
         self.conversation.add("user", question)
         self.question.clear()
         self._render()
-        self.status.setText("Thinking…")
+        self.status.setText(tr("Thinking…"))
         self.ask_button.setEnabled(False)
         context = self._context if (first and self.include_context.isChecked()) else ""
         if self.synchronous:
@@ -245,9 +246,9 @@ class TutorPanel(QWidget):
     def _refresh_state(self) -> None:
         ready = self.config.configured
         self.ask_button.setEnabled(ready)
-        self.ask_button.setToolTip("Send the question" if ready else "Add an API key first")
+        self.ask_button.setToolTip(tr("Send the question") if ready else "Add an API key first")
         if not ready:
-            self.status.setText("The tutor is off: no API key yet.")
+            self.status.setText(tr("The tutor is off: no API key yet."))
         elif self.status.text().startswith("The tutor is off"):
             self.status.setText("")
 

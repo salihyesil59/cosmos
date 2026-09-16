@@ -20,6 +20,7 @@ from cosmos.gui.simulators.registry import SIMULATORS
 from cosmos.gui.theme import repolish
 from cosmos.gui.widgets.common import card, muted_label, title_label
 from cosmos.gui.widgets.prereq_map import PrerequisiteMap
+from cosmos.i18n import tr
 
 GUIDE = """
 ## Your progress
@@ -56,9 +57,9 @@ class ProgressPage(QWidget):
         root.setContentsMargins(20, 14, 20, 12)
         root.setSpacing(10)
         head = QHBoxLayout()
-        head.addWidget(title_label("Your progress"))
+        head.addWidget(title_label(tr("Your progress")))
         head.addStretch(1)
-        reset = QPushButton("Reset progress…")
+        reset = QPushButton(tr("Reset progress…"))
         reset.clicked.connect(self._reset)
         head.addWidget(reset)
         root.addLayout(head)
@@ -66,10 +67,10 @@ class ProgressPage(QWidget):
         stats = QHBoxLayout()
         self.stat_values = {}
         for key, label in [
-            ("lessons", "Lessons completed"),
-            ("quiz", "Average best quiz score"),
-            ("sims", "Simulators explored"),
-            ("next", "Recommended next"),
+            ("lessons", tr("Lessons completed")),
+            ("quiz", tr("Average best quiz score")),
+            ("sims", tr("Simulators explored")),
+            ("next", tr("Recommended next")),
         ]:
             c = card()
             cl = QVBoxLayout(c)
@@ -82,7 +83,7 @@ class ProgressPage(QWidget):
             self.stat_values[key] = value
         root.addLayout(stats)
 
-        root.addWidget(title_label("Badges", "subtitle"))
+        root.addWidget(title_label(tr("Badges"), "subtitle"))
         self.badge_summary = muted_label("")
         root.addWidget(self.badge_summary)
         badge_scroll = QScrollArea()
@@ -99,10 +100,10 @@ class ProgressPage(QWidget):
             cl = QVBoxLayout(c)
             cl.setContentsMargins(12, 8, 12, 8)
             cl.setSpacing(2)
-            title = QLabel(f"{achievement.icon}  {achievement.title}")
+            title = QLabel(f"{achievement.icon}  {tr(achievement.title)}")
             title.setWordWrap(True)
             cl.addWidget(title)
-            text = muted_label(achievement.description)
+            text = muted_label(tr(achievement.description))
             cl.addWidget(text)
             bar = QProgressBar()
             bar.setTextVisible(False)
@@ -113,8 +114,8 @@ class ProgressPage(QWidget):
             self.badge_grid.addWidget(c, i // 4, i % 4)
             self.badge_widgets[achievement.id] = (c, title, bar, status)
 
-        root.addWidget(title_label("Lesson map", "subtitle"))
-        root.addWidget(muted_label("Click a lesson to open it. Arrows show which lessons build on which."))
+        root.addWidget(title_label(tr("Lesson map"), "subtitle"))
+        root.addWidget(muted_label(tr("Click a lesson to open it. Arrows show which lessons build on which.")))
         self.map = PrerequisiteMap(ctx)
         self.map.setObjectName("prereqMap")
         self.map.lessonClicked.connect(lambda lid: ctx.navigate(f"lesson:{lid}"))
@@ -150,18 +151,19 @@ class ProgressPage(QWidget):
             frame.setProperty("earned", "yes" if unlocked else "no")
             title.setEnabled(unlocked)
             when = store.data.achievements.get(achievement.id, "")
-            status.setText(f"Earned {when[:10]}" if unlocked and when else
-                           ("Earned" if unlocked else f"{done} / {goal}"))
+            status.setText(tr("Earned {date}").format(date=when[:10]) if unlocked and when else
+                           (tr("Earned") if unlocked else f"{done} / {goal}"))
             repolish(frame)
             earned += int(unlocked)
-        self.badge_summary.setText(f"{earned} of {len(ACHIEVEMENTS)} badges earned")
+        self.badge_summary.setText(tr("{earned} of {total} badges earned")
+                                   .format(earned=earned, total=len(ACHIEVEMENTS)))
 
     def _reset(self) -> None:
         answer = QMessageBox.question(
             self,
-            "Reset progress",
-            "Clear all quiz scores, completed lessons, challenges and badges? Your notes and "
-            "bookmarks are kept. This cannot be undone.",
+            tr("Reset progress"),
+            tr("Clear all quiz scores, completed lessons, challenges and badges? Your notes and "
+               "bookmarks are kept. This cannot be undone."),
         )
         if answer == QMessageBox.Yes:
             self.ctx.store.reset()

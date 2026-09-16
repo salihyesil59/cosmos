@@ -39,7 +39,9 @@ def update(language: str | None) -> int:
         print("No .ts files yet. Start one with --language <code>, for example --language de.")
         return 1
     for target in targets:
-        command = [tool("pyside6-lupdate"), *SOURCES, "-ts", str(target)]
+        # tr_noop() marks strings far from where they are shown; teach lupdate to read it too.
+        command = [tool("pyside6-lupdate"), "-tr-function-alias", "QT_TR_NOOP+=tr_noop,QT_TR_NOOP+=_",
+                   *SOURCES, "-ts", str(target)]
         print(f"$ pyside6-lupdate … -ts {target.name}")
         subprocess.run(command, check=True, cwd=ROOT)
         name_context(target)
@@ -54,9 +56,33 @@ def name_context(path: Path) -> None:
     to a class, so it leaves the context empty; the app translates them in the
     ``cosmos`` context.
     """
+    text = path.read_text(encoding="utf-8").replace("<name></name>", f"<name>{CONTEXT}</name>")
+    path.write_text(text, encoding="utf-8")
+    merge_contexts(path)
+
+
+def merge_contexts(path: Path) -> None:
+    """Fold the contexts lupdate created into one, keeping the first translation of each string."""
+    import xml.etree.ElementTree as ET
+
+    tree = ET.parse(path)
+    root = tree.getroot()
+    contexts = [c for c in root.findall("context") if (c.find("name").text or "") == CONTEXT]
+    if len(contexts) < 2:
+        return
+    keeper, *rest = contexts
+    seen = {m.find("source").text for m in keeper.findall("message")}
+    for extra in rest:
+        for message in extra.findall("message"):
+            source = message.find("source").text
+            if source not in seen:
+                keeper.append(message)
+                seen.add(source)
+        root.remove(extra)
+    tree.write(path, encoding="utf-8", xml_declaration=True)
     text = path.read_text(encoding="utf-8")
-    if "<name></name>" in text:
-        path.write_text(text.replace("<name></name>", f"<name>{CONTEXT}</name>", 1), encoding="utf-8")
+    if "<!DOCTYPE TS>" not in text:
+        path.write_text(text.replace("<TS ", "<!DOCTYPE TS><TS ", 1), encoding="utf-8")
 
 
 def release() -> int:

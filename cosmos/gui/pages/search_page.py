@@ -8,6 +8,7 @@ from PySide6.QtWidgets import QLineEdit, QListWidget, QListWidgetItem, QVBoxLayo
 from cosmos.gui.context import AppContext
 from cosmos.gui.search import KIND_LABELS, search
 from cosmos.gui.widgets.common import muted_label, title_label
+from cosmos.i18n import tr
 
 GUIDE = """
 ## Search
@@ -34,11 +35,11 @@ class SearchPage(QWidget):
 
         root = QVBoxLayout(self)
         root.setContentsMargins(20, 14, 20, 12)
-        root.addWidget(title_label("Search"))
-        root.addWidget(muted_label("Lessons, glossary terms, simulators and formulas."))
+        root.addWidget(title_label(tr("Search")))
+        root.addWidget(muted_label(tr("Lessons, glossary terms, simulators and formulas.")))
         self.box = QLineEdit()
         self.box.setObjectName("searchPageBox")
-        self.box.setPlaceholderText("What are you looking for?  (e.g. dark energy, horizon, L4.3, Friedmann)")
+        self.box.setPlaceholderText(tr("What are you looking for?  (e.g. dark energy, horizon, L4.3, Friedmann)"))
         self.box.setClearButtonEnabled(True)
         self.box.textChanged.connect(self._update)
         self.box.returnPressed.connect(self._open_first)
@@ -71,7 +72,7 @@ class SearchPage(QWidget):
         self.hits = search(self.ctx, query)
         self.list.clear()
         if len(query.strip()) < 2:
-            self.count.setText("Type at least two letters.")
+            self.count.setText(tr("Type at least two letters."))
             return
         kinds = {k: sum(1 for h in self.hits if h.kind == k) for k in KIND_LABELS}
         summary = ", ".join(f"{n} {KIND_LABELS[k].lower()}{'s' if n != 1 else ''}"
@@ -103,10 +104,10 @@ class SearchBox(QLineEdit):
         super().__init__(parent)
         self.ctx = ctx
         self.setObjectName("toolbarSearch")
-        self.setPlaceholderText("Search the course…  (Ctrl+F)")
+        self.setPlaceholderText(tr("Search the course…  (Ctrl+F)"))
         self.setClearButtonEnabled(True)
         self.setMaximumWidth(280)
-        self.setToolTip("Search lessons, glossary, simulators and formulas. Press Enter for all results.")
+        self.setToolTip(tr("Search lessons, glossary, simulators and formulas. Press Enter for all results."))
         self.returnPressed.connect(self._go)
 
     def _go(self) -> None:

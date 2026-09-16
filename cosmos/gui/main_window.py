@@ -504,7 +504,7 @@ class MainWindow(QMainWindow):
 
     def _update_bookmark_action(self) -> None:
         marked = self.ctx.store.is_bookmarked(self._current_route)
-        self.bookmark_action.setText("★ Bookmarked" if marked else "☆ Bookmark")
+        self.bookmark_action.setText("★ " + tr("Bookmarked") if marked else "☆ " + tr("Bookmark"))
         self.bookmark_action.setEnabled(bool(self.notes.route))
 
     def check_achievements(self) -> list[str]:
@@ -513,8 +513,8 @@ class MainWindow(QMainWindow):
 
         new = self.ctx.store.refresh_achievements(self.ctx.curriculum)
         if new:
-            names = ", ".join(f"{BY_ID[i].icon} {BY_ID[i].title}" for i in new)
-            self.statusBar().showMessage(f"Badge earned: {names}", 12000)
+            names = ", ".join(f"{BY_ID[i].icon} {tr(BY_ID[i].title)}" for i in new)
+            self.statusBar().showMessage(tr("Badge earned: {names}").format(names=names), 12000)
             self.progress_page.refresh()
             self.ctx.signals.achievementsUnlocked.emit(new)
         return new

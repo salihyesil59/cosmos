@@ -17,6 +17,7 @@ from PySide6.QtWidgets import (
 from cosmos.gui.context import AppContext
 from cosmos.gui.simulators.registry import SIMULATORS
 from cosmos.gui.widgets.common import card, muted_label, title_label
+from cosmos.i18n import tr
 
 GUIDE = """
 ## Welcome to Cosmos
@@ -90,13 +91,11 @@ class HomePage(QWidget):
         hero = card()
         hl = QVBoxLayout(hero)
         hl.setContentsMargins(24, 20, 24, 20)
-        hl.addWidget(title_label("Welcome to Cosmos"))
+        hl.addWidget(title_label(tr("Welcome to Cosmos")))
         hl.addWidget(
-            muted_label(
-                "An interactive course in cosmology — the science of the universe as a whole. Start "
-                "with how big the universe is and how we measure it, and work your way up to the "
-                "expanding universe, dark matter, dark energy and the first minutes after the Big Bang."
-            )
+            muted_label(tr("An interactive course in cosmology — the science of the universe as a whole. Start "
+                           "with how big the universe is and how we measure it, and work your way up to the "
+                           "expanding universe, dark matter, dark energy and the first minutes after the Big Bang."))
         )
         self.progress_label = QLabel()
         self.progress_bar = QProgressBar()
@@ -111,7 +110,7 @@ class HomePage(QWidget):
         self.continue_btn.setMinimumHeight(38)
         self.continue_btn.clicked.connect(self._continue)
         self.continue_hint = muted_label("")
-        tour = QPushButton("Take the guided tour")
+        tour = QPushButton(tr("Take the guided tour"))
         tour.clicked.connect(lambda: ctx.navigate("action:tour"))
         row.addWidget(self.continue_btn)
         row.addWidget(tour)
@@ -121,7 +120,7 @@ class HomePage(QWidget):
         self.layout_.addWidget(hero)
 
         # Levels
-        self.layout_.addWidget(title_label("Course levels", "subtitle"))
+        self.layout_.addWidget(title_label(tr("Course levels"), "subtitle"))
         self.levels_grid = QGridLayout()
         self.levels_grid.setSpacing(12)
         self.layout_.addLayout(self.levels_grid)
@@ -131,7 +130,7 @@ class HomePage(QWidget):
             c.setObjectName(f"levelCard{level.number}")
             cl = QVBoxLayout(c)
             cl.setContentsMargins(16, 14, 16, 14)
-            badge = QLabel(f"LEVEL {level.number}")
+            badge = QLabel(tr("LEVEL {number}").format(number=level.number))
             badge.setProperty("role", "badge")
             cl.addWidget(badge, 0, Qt.AlignLeft)
             cl.addWidget(title_label(level.title, "subtitle"))
@@ -142,7 +141,7 @@ class HomePage(QWidget):
             status = muted_label("")
             cl.addWidget(bar)
             cl.addWidget(status)
-            btn = QPushButton("Open level")
+            btn = QPushButton(tr("Open level"))
             first = level.lesson_ids[0]
             btn.clicked.connect(lambda _=False, lv=level: self._open_level(lv))
             btn.setToolTip(f"Opens the first unfinished lesson of this level (starts at {first}).")
@@ -152,9 +151,9 @@ class HomePage(QWidget):
             self.level_widgets.append((level, bar, status))
 
         # Simulators
-        self.layout_.addWidget(title_label("Simulators", "subtitle"))
+        self.layout_.addWidget(title_label(tr("Simulators"), "subtitle"))
         self.layout_.addWidget(
-            muted_label("Hands-on tools to explore the ideas from the lessons. You can open them at any time.")
+            muted_label(tr("Hands-on tools to explore the ideas from the lessons. You can open them at any time."))
         )
         sims = QGridLayout()
         sims.setSpacing(10)
@@ -179,15 +178,16 @@ class HomePage(QWidget):
         done, total = store.overall_progress(cur)
         self.progress_bar.setRange(0, total)
         self.progress_bar.setValue(done)
-        self.progress_label.setText(f"Course progress: <b>{done}</b> of {total} lessons completed")
+        self.progress_label.setText(
+            tr("Course progress: <b>{done}</b> of {total} lessons completed").format(done=done, total=total))
         nxt = store.next_recommended(cur)
         if nxt is None:
-            self.continue_btn.setText("Review the course")
-            self.continue_hint.setText("You have completed every lesson. Congratulations!")
+            self.continue_btn.setText(tr("Review the course"))
+            self.continue_hint.setText(tr("You have completed every lesson. Congratulations!"))
             self._next = cur.ordered_ids[0]
         else:
             lesson = cur.lessons[nxt]
-            verb = "Start learning" if done == 0 else "Continue learning"
+            verb = tr("Start learning") if done == 0 else tr("Continue learning")
             self.continue_btn.setText(f"▶  {verb}: {lesson.id} {lesson.title}")
             self.continue_hint.setText(lesson.summary)
             self._next = nxt
@@ -195,7 +195,7 @@ class HomePage(QWidget):
             d, t = store.level_progress(cur, level.number)
             bar.setRange(0, t)
             bar.setValue(d)
-            status.setText(f"{d} of {t} lessons completed")
+            status.setText(tr("{done} of {total} lessons completed").format(done=d, total=t))
 
     def _continue(self) -> None:
         self.ctx.navigate(f"lesson:{self._next}")

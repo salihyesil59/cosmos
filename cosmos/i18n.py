@@ -45,6 +45,15 @@ LANGUAGE_NAMES = {
 _installed: list[QTranslator] = []
 
 
+def tr_noop(text: str) -> str:
+    """Mark a string for the translation tools without translating it yet.
+
+    Use it where the text is defined (a table of badges, say) and call :func:`tr`
+    on it where it is shown, so the language can change without a restart.
+    """
+    return text
+
+
 def tr(text: str, disambiguation: str | None = None) -> str:
     """Mark a user-visible string for translation and return it in the active language."""
     return QCoreApplication.translate(CONTEXT, text, disambiguation)
