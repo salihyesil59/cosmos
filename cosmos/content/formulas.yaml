@@ -1,0 +1,418 @@
+# Formula sheet shown on the Reference page (G9).
+# formula: matplotlib mathtext, rendered the same way as formulas inside lessons.
+
+- id: scientific-notation
+  group: Distances and light
+  title: Small-angle distance from parallax
+  formula: 'd\,[\mathrm{pc}] = \frac{1}{p\,[\mathrm{arcsec}]}'
+  symbols: '$d$ distance, $p$ parallax angle measured over half a year'
+  description: The direct geometric distance ladder rung; 1 arcsecond of parallax means 1 parsec.
+  lesson: L1.1
+
+- id: inverse-square
+  group: Distances and light
+  title: Inverse-square law
+  formula: 'F = \frac{L}{4\pi d^2}'
+  symbols: '$F$ observed flux, $L$ luminosity, $d$ distance'
+  description: A standard candle of known luminosity becomes a distance measurement.
+  lesson: L1.2
+
+- id: distance-modulus
+  group: Distances and light
+  title: Distance modulus
+  formula: 'm - M = 5\log_{10}\!\left(\frac{d}{10\ \mathrm{pc}}\right)'
+  symbols: '$m$ apparent magnitude, $M$ absolute magnitude'
+  description: The magnitude system's way of writing the inverse-square law.
+  lesson: L1.2
+
+- id: redshift-definition
+  group: Distances and light
+  title: Redshift
+  formula: 'z = \frac{\lambda_{\mathrm{obs}} - \lambda_{\mathrm{rest}}}{\lambda_{\mathrm{rest}}}'
+  symbols: '$\lambda$ wavelength'
+  description: The fractional stretching of a spectral line, the basic observable of cosmology.
+  lesson: L0.3
+
+- id: relativistic-doppler
+  group: Distances and light
+  title: Relativistic Doppler shift
+  formula: '1 + z = \sqrt{\frac{1 + v/c}{1 - v/c}}'
+  symbols: '$v$ line-of-sight velocity'
+  description: For local motion; never lets a velocity exceed the speed of light.
+  lesson: L0.3
+
+- id: wien
+  group: Distances and light
+  title: Wien displacement law
+  formula: '\lambda_{\mathrm{peak}} \approx \frac{2.90 \times 10^{-3}\ \mathrm{m\,K}}{T}'
+  symbols: '$T$ temperature of a blackbody'
+  description: Hotter bodies glow bluer; the CMB at 2.7 K peaks in the microwaves.
+  lesson: L0.4
+
+- id: stefan-boltzmann
+  group: Distances and light
+  title: Stefan–Boltzmann law
+  formula: 'L = 4\pi R^2 \sigma T^4'
+  symbols: '$R$ radius, $\sigma$ Stefan–Boltzmann constant'
+  description: Total power radiated by a blackbody of radius $R$.
+  lesson: L0.4
+
+- id: hubble-law
+  group: Expansion and redshift
+  title: Hubble–Lemaître law
+  formula: 'v = H_0\, d'
+  symbols: '$v$ recession velocity, $d$ proper distance, $H_0$ Hubble constant'
+  description: The observation that started modern cosmology; a consequence of uniform expansion.
+  lesson: L1.3
+
+- id: hubble-parameter
+  group: Expansion and redshift
+  title: Hubble parameter
+  formula: 'H(t) = \frac{\dot{a}}{a}'
+  symbols: '$a$ scale factor'
+  description: The relative expansion rate; $H_0$ is its value today.
+  lesson: L2.1
+
+- id: scale-factor-redshift
+  group: Expansion and redshift
+  title: Redshift and the scale factor
+  formula: '1 + z = \frac{1}{a}'
+  symbols: '$a$ scale factor when the light was emitted'
+  description: Redshift measures how much the universe has grown since the light left.
+  lesson: L2.2
+
+- id: proper-distance
+  group: Expansion and redshift
+  title: Proper and comoving distance
+  formula: 'D(t) = a(t)\,\chi'
+  symbols: '$\chi$ comoving distance, fixed for objects carried by the expansion'
+  description: Comoving coordinates factor the expansion out of every distance.
+  lesson: L2.1
+
+- id: hubble-radius
+  group: Expansion and redshift
+  title: Hubble radius and Hubble time
+  formula: 'D_H = \frac{c}{H_0}, \qquad t_H = \frac{1}{H_0}'
+  symbols: '$D_H \approx 4\,300$ Mpc, $t_H \approx 14$ billion years'
+  description: Rough size and age scales set by the expansion rate alone.
+  lesson: L1.3
+
+- id: temperature-scaling
+  group: Expansion and redshift
+  title: Cooling by expansion
+  formula: 'T(a) = \frac{T_0}{a} = T_0 (1 + z)'
+  symbols: '$T_0 = 2.7255$ K, the CMB temperature today'
+  description: Wavelengths stretch with the universe, so radiation cools as $1/a$.
+  lesson: L4.2
+
+- id: friedmann-1
+  group: Friedmann equations
+  title: First Friedmann equation
+  formula: 'H^2 = \left(\frac{\dot{a}}{a}\right)^{\!2} = \frac{8\pi G}{3}\rho - \frac{kc^2}{a^2}'
+  symbols: '$\rho$ total energy density over $c^2$, $k$ curvature'
+  description: The expansion rate is set by the contents and the curvature of space.
+  lesson: L2.3
+
+- id: friedmann-2
+  group: Friedmann equations
+  title: Acceleration equation
+  formula: '\frac{\ddot{a}}{a} = -\frac{4\pi G}{3}\left(\rho + \frac{3p}{c^2}\right)'
+  symbols: '$p$ pressure'
+  description: Pressure gravitates too; only negative pressure can accelerate the expansion.
+  lesson: L3.3
+
+- id: fluid-equation
+  group: Friedmann equations
+  title: Fluid (continuity) equation
+  formula: '\dot{\rho} + 3H\left(\rho + \frac{p}{c^2}\right) = 0'
+  symbols: '$\rho$ density, $p$ pressure'
+  description: Energy conservation in an expanding universe.
+  lesson: L2.4
+
+- id: critical-density
+  group: Friedmann equations
+  title: Critical density
+  formula: '\rho_{\mathrm{c}} = \frac{3H^2}{8\pi G} \approx 8.5 \times 10^{-27}\ \mathrm{kg\,m^{-3}}'
+  symbols: 'about five hydrogen atoms per cubic metre today'
+  description: The density that makes space exactly flat.
+  lesson: L2.5
+
+- id: density-parameter
+  group: Friedmann equations
+  title: Density parameters
+  formula: '\Omega_i = \frac{\rho_i}{\rho_{\mathrm{c}}}, \qquad \Omega_{\mathrm{m}} + \Omega_{\Lambda} + \Omega_k = 1'
+  symbols: '$\Omega_k$ is the curvature term, zero in a flat universe'
+  description: Every ingredient measured as a fraction of the critical density.
+  lesson: L2.5
+
+- id: dilution
+  group: Friedmann equations
+  title: How each ingredient dilutes
+  formula: '\rho \propto a^{-3(1+w)}'
+  symbols: 'matter $w = 0$, radiation $w = 1/3$, cosmological constant $w = -1$'
+  description: The equation of state decides how fast a component thins out.
+  lesson: L2.4
+
+- id: expansion-rate
+  group: Friedmann equations
+  title: Expansion rate of a ΛCDM universe
+  formula: 'H(a) = H_0\sqrt{\Omega_{\mathrm{r}}a^{-4} + \Omega_{\mathrm{m}}a^{-3} + \Omega_k a^{-2} + \Omega_{\Lambda}}'
+  symbols: 'the master equation of the Cosmology Calculator'
+  description: Each term takes over in a different era of cosmic history.
+  lesson: L3.4
+
+- id: cpl
+  group: Friedmann equations
+  title: Evolving dark energy (CPL)
+  formula: 'w(a) = w_0 + w_a(1 - a)'
+  symbols: '$w_0$ today, $w_a$ its rate of change'
+  description: The standard two-parameter test of whether dark energy is a cosmological constant.
+  lesson: L6.2
+
+- id: age
+  group: Friedmann equations
+  title: Age of the universe
+  formula: 't_0 = \int_0^1 \frac{da}{a\,H(a)}'
+  symbols: 'about 13.8 billion years for Planck 2018'
+  description: Add up the time the universe spent at each size.
+  lesson: L3.4
+
+- id: comoving-distance
+  group: Distances in cosmology
+  title: Comoving distance
+  formula: '\chi(z) = c\int_0^z \frac{dz''}{H(z'')}'
+  symbols: 'the distance to an object today, expansion factored out'
+  description: The starting point for every other cosmological distance.
+  lesson: L2.7
+
+- id: luminosity-distance
+  group: Distances in cosmology
+  title: Luminosity and angular-diameter distance
+  formula: 'D_L = (1+z)\,\chi, \qquad D_A = \frac{\chi}{1+z}'
+  symbols: '$D_L$ from brightness, $D_A$ from apparent size'
+  description: Two different distances for the same object, related by $D_L = (1+z)^2 D_A$.
+  lesson: L2.7
+
+- id: lookback-time
+  group: Distances in cosmology
+  title: Lookback time
+  formula: 't_{\mathrm{L}}(z) = \int_0^z \frac{dz''}{(1+z'')H(z'')}'
+  symbols: 'how long the light has been travelling'
+  description: Always smaller than the comoving distance divided by $c$, because space grew on the way.
+  lesson: L2.7
+
+- id: particle-horizon
+  group: Distances in cosmology
+  title: Particle horizon
+  formula: 'd_{\mathrm{p}}(t) = a(t)\int_0^t \frac{c\,dt''}{a(t'')} \approx 46\ \mathrm{billion\ ly\ today}'
+  symbols: 'the edge of the observable universe'
+  description: The farthest matter whose light has had time to reach us.
+  lesson: L2.6
+
+- id: event-horizon
+  group: Distances in cosmology
+  title: Event horizon
+  formula: 'd_{\mathrm{e}}(t) = a(t)\int_t^{\infty} \frac{c\,dt''}{a(t'')}'
+  symbols: 'finite when dark energy dominates'
+  description: Events beyond it will never be seen, no matter how long we wait.
+  lesson: L2.6
+
+- id: time-temperature
+  group: Thermal history
+  title: Time and temperature in the radiation era
+  formula: 't \approx \frac{2.42}{\sqrt{g_*}}\left(\frac{\mathrm{MeV}}{T}\right)^{\!2}\ \mathrm{s}'
+  symbols: '$g_*$ relativistic degrees of freedom'
+  description: One second after the Big Bang the universe was at about $10^{10}$ K.
+  lesson: L4.2
+
+- id: radiation-density
+  group: Thermal history
+  title: Energy density of radiation
+  formula: '\varepsilon_{\gamma} = a_{\mathrm{rad}} T^4, \qquad n_{\gamma} \propto T^3'
+  symbols: '$a_{\mathrm{rad}}$ radiation constant'
+  description: Why radiation dominated when the universe was small and hot.
+  lesson: L3.1
+
+- id: neutron-proton
+  group: Thermal history
+  title: Neutron-to-proton ratio at freeze-out
+  formula: '\frac{n}{p} = \exp\!\left(-\frac{\Delta m c^2}{k_{\mathrm{B}}T_{\mathrm{f}}}\right) \approx \frac{1}{6}'
+  symbols: '$\Delta m c^2 = 1.293$ MeV, $T_{\mathrm{f}} \approx 0.8$ MeV'
+  description: The number that fixes how much helium the Big Bang made.
+  lesson: L4.3
+
+- id: helium-fraction
+  group: Thermal history
+  title: Primordial helium fraction
+  formula: 'Y_{\mathrm{p}} = \frac{2(n/p)}{1 + n/p} \approx 0.25'
+  symbols: 'nearly all surviving neutrons end up in helium-4'
+  description: A quarter of ordinary matter by mass, as observed.
+  lesson: L4.3
+
+- id: baryon-photon
+  group: Thermal history
+  title: Baryon-to-photon ratio
+  formula: '\eta_{10} = 273.9\,\Omega_{\mathrm{b}}h^2 \approx 6.1'
+  symbols: 'about one baryon per 1.6 billion photons'
+  description: The single free parameter of Big Bang nucleosynthesis.
+  lesson: L4.3
+
+- id: saha
+  group: Thermal history
+  title: Recombination (Saha equation)
+  formula: '\frac{x^2}{1-x} = \frac{1}{n_{\mathrm{b}}}\left(\frac{m_{\mathrm{e}}k_{\mathrm{B}}T}{2\pi\hbar^2}\right)^{3/2}\!e^{-B/k_{\mathrm{B}}T}'
+  symbols: '$x$ ionised fraction, $B = 13.6$ eV'
+  description: Atoms form at 3000 K, not 158 000 K, because photons hugely outnumber atoms.
+  lesson: L4.4
+
+- id: neutrino-temperature
+  group: Thermal history
+  title: Neutrino background temperature
+  formula: 'T_{\nu} = \left(\frac{4}{11}\right)^{1/3} T_{\gamma} \approx 1.95\ \mathrm{K}'
+  symbols: 'the relic neutrinos are colder than the CMB'
+  description: Electron–positron annihilation heated the photons but not the neutrinos.
+  lesson: L4.5
+
+- id: jeans
+  group: Structure and the CMB
+  title: Jeans length
+  formula: '\lambda_{\mathrm{J}} = c_{\mathrm{s}}\sqrt{\frac{\pi}{G\rho}}'
+  symbols: '$c_{\mathrm{s}}$ sound speed'
+  description: Clouds larger than this collapse; smaller ones bounce back as sound waves.
+  lesson: L5.3
+
+- id: growth
+  group: Structure and the CMB
+  title: Growth of density contrast
+  formula: '\ddot{\delta} + 2H\dot{\delta} = 4\pi G\rho_{\mathrm{m}}\delta, \qquad \delta \propto a\ \ (\text{matter era})'
+  symbols: '$\delta = \delta\rho/\rho$'
+  description: Gravity amplifies tiny ripples, but expansion slows the growth to a crawl.
+  lesson: L5.3
+
+- id: power-spectrum
+  group: Structure and the CMB
+  title: Matter power spectrum
+  formula: 'P(k) = A k^{n_{\mathrm{s}}} T^2(k) D^2(a)'
+  symbols: '$n_{\mathrm{s}} \approx 0.965$, $T(k)$ transfer function, $D$ growth factor'
+  description: How much structure there is on each scale.
+  lesson: L5.4
+
+- id: sound-horizon
+  group: Structure and the CMB
+  title: Sound horizon and the acoustic scale
+  formula: 'r_{\mathrm{s}} = \int_0^{t_*} \frac{c_{\mathrm{s}}\,dt}{a} \approx 147\ \mathrm{Mpc}, \qquad \theta_* = \frac{r_{\mathrm{s}}}{D_A(z_*)}'
+  symbols: '$z_* \approx 1090$ at recombination'
+  description: The standard ruler behind the CMB peaks and baryon acoustic oscillations.
+  lesson: L5.2
+
+- id: cmb-peaks
+  group: Structure and the CMB
+  title: Position of the CMB peaks
+  formula: '\ell_n \approx n\,\frac{\pi}{\theta_*} \approx 220\,n'
+  symbols: '$\ell$ multipole moment'
+  description: The first peak at $\ell \approx 220$ is the flatness measurement of the universe.
+  lesson: L5.1
+
+- id: sigma8
+  group: Structure and the CMB
+  title: Clumpiness parameters
+  formula: 'S_8 = \sigma_8\sqrt{\frac{\Omega_{\mathrm{m}}}{0.3}}'
+  symbols: '$\sigma_8$ density contrast in spheres of 8 Mpc/h'
+  description: The combination measured by weak-lensing surveys, and mildly in tension with the CMB.
+  lesson: L6.6
+
+- id: einstein-radius
+  group: Structure and the CMB
+  title: Einstein radius
+  formula: '\theta_{\mathrm{E}} = \sqrt{\frac{4GM}{c^2}\frac{D_{LS}}{D_L D_S}}'
+  symbols: '$D_L$, $D_S$, $D_{LS}$ observer–lens, observer–source and lens–source distances'
+  description: 'The ring radius of a perfectly aligned gravitational lens: a direct mass measurement.'
+  lesson: L5.6
+
+- id: rotation-curve
+  group: Dark matter and dark energy
+  title: Circular velocity and enclosed mass
+  formula: 'v(r) = \sqrt{\frac{G M(<r)}{r}}'
+  symbols: '$M(<r)$ mass inside radius $r$'
+  description: 'Flat rotation curves imply $M(<r) \propto r$: dark matter halos.'
+  lesson: L3.2
+
+- id: virial
+  group: Dark matter and dark energy
+  title: Virial theorem for clusters
+  formula: '2\langle K\rangle + \langle U\rangle = 0 \ \Rightarrow\ M \sim \frac{\langle v^2\rangle R}{G}'
+  symbols: '$\langle v^2\rangle$ velocity dispersion'
+  description: Zwicky's 1933 weighing of the Coma cluster, the first sign of dark matter.
+  lesson: L3.2
+
+- id: mond
+  group: Dark matter and dark energy
+  title: MOND acceleration scale
+  formula: 'a_0 \approx 1.2 \times 10^{-10}\ \mathrm{m\,s^{-2}}, \qquad v^4 = G M a_0'
+  symbols: 'the baryonic Tully–Fisher relation'
+  description: An alternative to dark matter that works for galaxies but not for clusters or the CMB.
+  lesson: L6.7
+
+- id: deceleration
+  group: Dark matter and dark energy
+  title: Deceleration parameter
+  formula: 'q_0 = \frac{\Omega_{\mathrm{m}}}{2} - \Omega_{\Lambda} \approx -0.55'
+  symbols: 'negative means the expansion is speeding up'
+  description: The quantity the 1998 supernova surveys measured.
+  lesson: L3.3
+
+- id: vacuum-catastrophe
+  group: Dark matter and dark energy
+  title: The cosmological constant problem
+  formula: '\frac{\rho_{\Lambda}^{\mathrm{theory}}}{\rho_{\Lambda}^{\mathrm{observed}}} \sim 10^{120}'
+  symbols: 'quantum field theory vs the measured dark energy density'
+  description: The worst prediction in physics, and a central open problem.
+  lesson: L6.8
+
+- id: slow-roll
+  group: Inflation and the early universe
+  title: Slow-roll parameters
+  formula: '\epsilon = \frac{M_{\mathrm{Pl}}^2}{2}\left(\frac{V''}{V}\right)^{\!2}, \qquad \eta = M_{\mathrm{Pl}}^2\,\frac{V''''}{V}'
+  symbols: '$V$ inflaton potential, $M_{\mathrm{Pl}}$ reduced Planck mass'
+  description: Inflation lasts while the potential is flat, that is while $\epsilon, |\eta| \ll 1$.
+  lesson: L6.3
+
+- id: ns-r
+  group: Inflation and the early universe
+  title: Inflation's observable predictions
+  formula: 'n_{\mathrm{s}} = 1 - 6\epsilon + 2\eta, \qquad r = 16\epsilon'
+  symbols: '$n_{\mathrm{s}} = 0.965 \pm 0.004$ measured, $r < 0.036$'
+  description: How a model of inflation is tested against the CMB.
+  lesson: L6.3
+
+- id: efolds
+  group: Inflation and the early universe
+  title: Number of e-folds
+  formula: 'N = \int H\,dt = \ln\frac{a_{\mathrm{end}}}{a_{\mathrm{start}}} \gtrsim 60'
+  symbols: 'each e-fold multiplies every distance by $e$'
+  description: Sixty e-folds are enough to explain the flatness and horizon puzzles.
+  lesson: L6.3
+
+- id: schwarzschild
+  group: Inflation and the early universe
+  title: Schwarzschild radius
+  formula: 'r_{\mathrm{s}} = \frac{2GM}{c^2}'
+  symbols: '3 km for the Sun, 9 mm for the Earth'
+  description: The size of the event horizon of a non-rotating black hole.
+  lesson: L6.1
+
+- id: planck-units
+  group: Inflation and the early universe
+  title: Planck scale
+  formula: 't_{\mathrm{Pl}} = \sqrt{\frac{\hbar G}{c^5}} \approx 5.4 \times 10^{-44}\ \mathrm{s}'
+  symbols: 'where quantum gravity takes over'
+  description: Known physics cannot describe the universe before this moment.
+  lesson: L6.8
+
+- id: gw-chirp
+  group: Inflation and the early universe
+  title: Gravitational-wave chirp mass
+  formula: '\mathcal{M} = \frac{(m_1 m_2)^{3/5}}{(m_1 + m_2)^{1/5}}'
+  symbols: 'the combination that sets how fast a binary chirps'
+  description: Read off from the signal, it turns mergers into standard sirens.
+  lesson: L6.5

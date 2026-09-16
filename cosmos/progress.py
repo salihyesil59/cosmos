@@ -30,6 +30,8 @@ class UserData:
     completed: dict[str, str] = field(default_factory=dict)         # lesson id -> ISO timestamp
     lessons_opened: list[str] = field(default_factory=list)
     simulators_opened: list[str] = field(default_factory=list)
+    notes: dict[str, str] = field(default_factory=dict)             # route -> the learner's own note
+    bookmarks: list[str] = field(default_factory=list)              # routes, most recent first
 
     @classmethod
     def from_dict(cls, data: dict) -> "UserData":
@@ -76,6 +78,39 @@ class ProgressStore:
         bucket = self.data.lessons_opened if kind == "lesson" else self.data.simulators_opened
         if item_id not in bucket:
             bucket.append(item_id)
+            self.save()
+
+    # ------------------------------------------------ notes and bookmarks
+    def note(self, route: str) -> str:
+        return self.data.notes.get(route, "")
+
+    def set_note(self, route: str, text: str) -> None:
+        text = text.strip()
+        if text == self.note(route):
+            return
+        if text:
+            self.data.notes[route] = text
+        else:
+            self.data.notes.pop(route, None)
+        self.save()
+
+    def is_bookmarked(self, route: str) -> bool:
+        return route in self.data.bookmarks
+
+    def toggle_bookmark(self, route: str) -> bool:
+        """Add or remove a bookmark; returns the new state."""
+        if route in self.data.bookmarks:
+            self.data.bookmarks.remove(route)
+            added = False
+        else:
+            self.data.bookmarks.insert(0, route)
+            added = True
+        self.save()
+        return added
+
+    def remove_bookmark(self, route: str) -> None:
+        if route in self.data.bookmarks:
+            self.data.bookmarks.remove(route)
             self.save()
 
     # ------------------------------------------------------------- queries

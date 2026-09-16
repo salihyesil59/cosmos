@@ -9,7 +9,7 @@ from pathlib import Path
 
 import yaml
 
-from cosmos.content.models import GlossaryTerm, Lesson, Level, QuizQuestion
+from cosmos.content.models import Formula, GlossaryTerm, Lesson, Level, QuizQuestion
 
 CONTENT_DIR = Path(__file__).resolve().parent
 _FRONT_MATTER = re.compile(r"\A---\s*\n(.*?)\n---\s*\n(.*)\Z", re.DOTALL)
@@ -104,3 +104,20 @@ def load_glossary() -> dict[str, GlossaryTerm]:
             lessons=list(entry.get("lessons", []) or []),
         )
     return dict(sorted(terms.items(), key=lambda kv: kv[1].term.lower()))
+
+
+@functools.cache
+def load_formulas() -> list[Formula]:
+    data = yaml.safe_load((CONTENT_DIR / "formulas.yaml").read_text(encoding="utf-8")) or []
+    return [
+        Formula(
+            id=entry["id"],
+            group=entry["group"],
+            title=entry["title"],
+            formula=entry["formula"].strip(),
+            symbols=entry.get("symbols", "").strip(),
+            description=entry.get("description", "").strip(),
+            lesson=entry.get("lesson"),
+        )
+        for entry in data
+    ]

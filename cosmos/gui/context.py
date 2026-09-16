@@ -15,6 +15,7 @@ class AppSignals(QObject):
     navigate = Signal(str)          # route string, e.g. "lesson:L1.2"
     progressChanged = Signal()
     glossaryRequested = Signal(str)  # show a term in the Guide panel
+    notesChanged = Signal()          # a note or bookmark was added, edited or removed
 
 
 @dataclass

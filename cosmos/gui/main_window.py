@@ -20,11 +20,15 @@ from cosmos.gui.context import AppContext
 from cosmos.gui.pages.glossary import GlossaryPage
 from cosmos.gui.pages.home import HomePage
 from cosmos.gui.pages.lesson import LessonPage
+from cosmos.gui.pages.notes_page import NotesPage
 from cosmos.gui.pages.progress_page import ProgressPage
+from cosmos.gui.pages.reference import ReferencePage
+from cosmos.gui.pages.search_page import SearchBox, SearchPage
 from cosmos.gui.pages.simulators import SimulatorHostPage, SimulatorHubPage
 from cosmos.gui.simulators.registry import SIMULATORS
 from cosmos.gui.theme import theme
 from cosmos.gui.widgets.guide_panel import GuidePanel
+from cosmos.gui.widgets.notes_panel import NotesPanel
 from cosmos.gui.widgets.tour import TourOverlay, TourStep
 from cosmos.progress import LessonStatus
 
@@ -79,17 +83,23 @@ class MainWindow(QMainWindow):
         self.sim_hub = SimulatorHubPage(ctx)
         self.glossary_page = GlossaryPage(ctx)
         self.progress_page = ProgressPage(ctx)
-        for page in (self.home, self.lesson_page, self.sim_hub, self.glossary_page, self.progress_page):
+        self.reference_page = ReferencePage(ctx)
+        self.search_page = SearchPage(ctx)
+        self.notes_page = NotesPage(ctx)
+        for page in (self.home, self.lesson_page, self.sim_hub, self.glossary_page, self.progress_page,
+                     self.reference_page, self.search_page, self.notes_page):
             self.stack.addWidget(page)
         self.setCentralWidget(self.stack)
 
         self._build_sidebar()
         self._build_guide()
+        self._build_notes()
         self._build_actions()
         self.statusBar().showMessage("Tip: hover over any control for a short explanation.")
 
         ctx.signals.navigate.connect(self.navigate)
         ctx.signals.progressChanged.connect(self._refresh_sidebar)
+        ctx.signals.notesChanged.connect(self._refresh_notes)
         theme().changed.connect(lambda _p: self._refresh_sidebar())
 
     # --------------------------------------------------------------- build
@@ -137,6 +147,9 @@ class MainWindow(QMainWindow):
             self.sims_item.addChild(item)
             self.sim_items[info.id] = item
         self.glossary_item = top("📖  Glossary", "glossary", "Definitions of all important terms")
+        self.reference_item = top("∑  Reference", "reference", "Formula sheet, constants, units and models")
+        self.search_item = top("🔎  Search", "search", "Search lessons, glossary, simulators and formulas")
+        self.notes_item = top("📝  Notes & bookmarks", "notes", "Everything you saved")
         self.progress_item = top("📈  Progress", "progress", "Your progress and the lesson map")
         self.curriculum_item.setExpanded(True)
         for i in range(self.curriculum_item.childCount()):
@@ -164,6 +177,20 @@ class MainWindow(QMainWindow):
         self.resizeDocks([dock], [340], Qt.Horizontal)
         self.guide_dock = dock
 
+    def _build_notes(self) -> None:
+        self.notes = NotesPanel(self.ctx)
+        self.notes.bookmarksChanged.connect(self._refresh_notes)
+        dock = QDockWidget("Notes", self)
+        dock.setObjectName("notesDock")
+        dock.setWidget(self.notes)
+        dock.setFeatures(QDockWidget.DockWidgetClosable | QDockWidget.DockWidgetMovable)
+        dock.setMinimumWidth(300)
+        self.addDockWidget(Qt.RightDockWidgetArea, dock)
+        # The Guide and the Notes share the right-hand side as tabs; the Guide starts on top.
+        self.tabifyDockWidget(self.guide_dock, dock)
+        self.guide_dock.raise_()
+        self.notes_dock = dock
+
     def _build_actions(self) -> None:
         tb = self.addToolBar("Main")
         tb.setObjectName("mainToolbar")
@@ -186,36 +213,58 @@ class MainWindow(QMainWindow):
         home = action("⌂ Home", "Home page (Ctrl+H)", lambda: self.navigate("home"), "Ctrl+H")
         cont = action("▶ Continue", "Open the next recommended lesson (Ctrl+L)", self.continue_learning, "Ctrl+L")
         glossary = action("📖 Glossary", "Open the glossary (Ctrl+G)", lambda: self.navigate("glossary"), "Ctrl+G")
+        reference = action("∑ Reference", "Formula sheet, constants and units (Ctrl+R)",
+                           lambda: self.navigate("reference"), "Ctrl+R")
+        notes = action("📝 Notes", "All your notes and bookmarks (Ctrl+Shift+N)",
+                       lambda: self.navigate("notes"), "Ctrl+Shift+N")
+        self.bookmark_action = action("☆ Bookmark", "Bookmark the current page (Ctrl+D)",
+                                      self.toggle_bookmark, "Ctrl+D")
+        self.search_box = SearchBox(self.ctx)
+        find = action("🔎 Find", "Search the whole course (Ctrl+F)", self.focus_search, "Ctrl+F")
         progress = action("📈 Progress", "Your progress and lesson map (Ctrl+P)", lambda: self.navigate("progress"), "Ctrl+P")
         self.theme_action = action("◐ Theme", "Switch between dark and light theme (Ctrl+T)", self.toggle_theme, "Ctrl+T")
         self.guide_action = self.guide_dock.toggleViewAction()
         self.guide_action.setText("💡 Guide")
         self.guide_action.setToolTip("Show or hide the Guide panel (F1)")
         self.guide_action.setShortcut(QKeySequence("F1"))
+        self.notes_action = self.notes_dock.toggleViewAction()
+        self.notes_action.setText("✎ Notes panel")
+        self.notes_action.setToolTip("Show or hide the Notes panel (F2)")
+        self.notes_action.setShortcut(QKeySequence("F2"))
         tour = action("🧭 Tour", "Replay the guided tour of the app", self.start_tour)
         for a in (self.back_action, self.forward_action, home, cont):
             tb.addAction(a)
         tb.addSeparator()
-        for a in (glossary, progress):
+        for a in (glossary, reference, progress):
             tb.addAction(a)
         spacer = QWidget()
         spacer.setSizePolicy(QSizePolicy.Expanding, QSizePolicy.Preferred)
         tb.addWidget(spacer)
-        for a in (self.guide_action, self.theme_action, tour):
+        tb.addWidget(self.search_box)
+        tb.addAction(self.bookmark_action)
+        for a in (self.guide_action, self.notes_action, self.theme_action, tour):
             tb.addAction(a)
         self._update_nav_actions()
 
         menu = self.menuBar()
         file_menu = menu.addMenu("&File")
+        file_menu.addAction(action("Export notes…", "Save all notes and bookmarks as a Markdown file",
+                                   self.notes_page.export))
+        file_menu.addSeparator()
         file_menu.addAction(action("Quit", "Close Cosmos", self.close, "Ctrl+Q"))
         learn = menu.addMenu("&Learn")
-        for a in (home, cont, glossary, progress):
+        for a in (home, cont, glossary, reference, progress):
             learn.addAction(a)
         learn.addSeparator()
         learn.addAction(action("Simulators", "All simulators", lambda: self.navigate("sims")))
+        learn.addAction(find)
+        learn.addSeparator()
+        learn.addAction(self.bookmark_action)
+        learn.addAction(notes)
         view = menu.addMenu("&View")
         view.addAction(self.theme_action)
         view.addAction(self.guide_action)
+        view.addAction(self.notes_action)
         view.addAction(self.back_action)
         view.addAction(self.forward_action)
         help_menu = menu.addMenu("&Help")
@@ -245,9 +294,12 @@ class MainWindow(QMainWindow):
         if isinstance(page, SimulatorHostPage):
             page.simulator.on_shown()
         self.guide.set_context(page.guide_markdown())
+        self.notes.set_route(route)
+        self._update_bookmark_action()
         self._select_sidebar(route)
         self._update_nav_actions()
-        if route in ("home", "progress", "glossary", "sims") or route.startswith(("lesson:", "sim:")):
+        if route in ("home", "progress", "glossary", "sims", "reference", "notes") \
+                or route.startswith(("lesson:", "sim:")):
             self.ctx.store.data.last_route = route
             self.ctx.store.save()
 
@@ -275,6 +327,16 @@ class MainWindow(QMainWindow):
         if kind == "progress":
             self.progress_page.refresh()
             return self.progress_page
+        if kind == "reference":
+            if target:
+                self.reference_page.show_formula(target)
+            return self.reference_page
+        if kind == "search":
+            self.search_page.set_query(target)
+            return self.search_page
+        if kind == "notes":
+            self.notes_page.refresh()
+            return self.notes_page
         return None
 
     def go_back(self) -> None:
@@ -319,6 +381,12 @@ class MainWindow(QMainWindow):
             item = self.sims_item
         elif kind == "glossary":
             item = self.glossary_item
+        elif kind == "reference":
+            item = self.reference_item
+        elif kind == "search":
+            item = self.search_item
+        elif kind == "notes":
+            item = self.notes_item
         elif kind == "progress":
             item = self.progress_item
         if item:
@@ -336,6 +404,25 @@ class MainWindow(QMainWindow):
             item.setToolTip(0, f"{lesson.summary}\n\nStatus: {status.value}")
 
     # ----------------------------------------------------------- commands
+    def focus_search(self) -> None:
+        self.search_box.setFocus()
+        self.search_box.selectAll()
+
+    def toggle_bookmark(self) -> None:
+        self.notes_dock.show()
+        self.notes_dock.raise_()
+        self.notes.toggle_bookmark()
+        self._update_bookmark_action()
+
+    def _update_bookmark_action(self) -> None:
+        marked = self.ctx.store.is_bookmarked(self._current_route)
+        self.bookmark_action.setText("★ Bookmarked" if marked else "☆ Bookmark")
+        self.bookmark_action.setEnabled(bool(self.notes.route))
+
+    def _refresh_notes(self) -> None:
+        self.notes_page.refresh()
+        self._update_bookmark_action()
+
     def toggle_theme(self) -> None:
         theme().toggle()
         self.ctx.store.data.theme = theme().name
@@ -357,7 +444,8 @@ class MainWindow(QMainWindow):
             "<p>An interactive course in cosmology, from the basics to advanced topics.</p>"
             "<p>Physics engine verified against astropy. Cosmological parameters from the Planck 2018 "
             "and WMAP 9-year results. Historical data from Hubble (1929).</p>"
-            "<p>Built with Python, PySide6, NumPy, SciPy and Matplotlib.</p>",
+            "<p>Built with Python, PySide6, NumPy, SciPy and Matplotlib.</p>"
+            "<p>Your progress, notes and bookmarks are stored only on this computer.</p>",
         )
 
     def start_tour(self) -> None:
@@ -402,6 +490,21 @@ class MainWindow(QMainWindow):
                 before=lambda: self.sidebar.scrollToItem(self.sims_item),
             ),
             TourStep(
+                "Search and the formula sheet",
+                "The <b>search box</b> (Ctrl+F) looks through lessons, the glossary, the simulators and the "
+                "formula sheet at once. <b>Reference</b> (Ctrl+R) collects every formula, constant and unit "
+                "conversion in one place.",
+                target=lambda: self.search_box,
+            ),
+            TourStep(
+                "Your own notes",
+                "The <b>Notes</b> panel, next to the Guide, is a private notebook: one note per page, saved "
+                "automatically. Press <b>☆ Bookmark</b> (Ctrl+D) to keep a link to a page, and open "
+                "<b>Notes &amp; bookmarks</b> to see or export everything you saved.",
+                target=lambda: self.notes_dock,
+                before=lambda: (self.notes_dock.show(), self.notes_dock.raise_()),
+            ),
+            TourStep(
                 "Toolbar",
                 "Go <b>Back</b> and <b>Forward</b> between pages, open the <b>Glossary</b> and your "
                 "<b>Progress</b> map, toggle the Guide panel, switch the <b>Theme</b>, or replay this tour.",
@@ -423,6 +526,7 @@ class MainWindow(QMainWindow):
         self.ctx.store.save()
 
     def closeEvent(self, event):  # noqa: N802
+        self.notes.save()
         for page in self._sim_pages.values():
             page.simulator.on_hidden()
         self.ctx.store.save()

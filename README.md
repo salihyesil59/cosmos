@@ -37,6 +37,10 @@ on first launch.
 - **215 quiz questions** with explanations; score 70% or more to complete a
   lesson
 - **142-term glossary**: terms in lessons open their definitions in the Guide panel
+- **Reference page**: a 52-entry formula sheet, physical constants, a unit
+  converter and the parameters of every model
+- **Global search** (Ctrl+F) across lesson text, glossary, simulators and formulas
+- **Notes and bookmarks**: a private notebook for every page, exportable as Markdown
 - Tooltips and **?** buttons on every control
 - Progress tracking with a prerequisite map
 - Dark and light themes
@@ -78,11 +82,11 @@ cosmos/
   content/      lessons (Markdown), quizzes and glossary (YAML), curriculum
   data/         bundled observational data
   gui/
-    pages/      home, lesson, simulators, glossary, progress
+    pages/      home, lesson, simulators, glossary, reference, search, notes, progress
     simulators/ one module per simulator + registry with guidance texts
     rendering/  Markdown → Qt rich text, mathtext formulas, lesson figures
     widgets/    Guide panel, tour, quiz, prerequisite map, plots, controls
-  progress.py   learner progress (saved as JSON in the user's app-data folder)
+  progress.py   learner progress, notes and bookmarks (JSON in the user's app-data folder)
 tests/
 ```
 
@@ -101,7 +105,8 @@ On top of standard Markdown they support:
 | `[text](lesson:L1.2)` | link to another lesson |
 
 Add the lesson id to `cosmos/content/curriculum.yaml` and its quiz to
-`cosmos/content/quizzes/`. Run `pytest` to check the new content.
+`cosmos/content/quizzes/`. Entries for the formula sheet live in
+`cosmos/content/formulas.yaml`. Run `pytest` to check the new content.
 
 ## Data sources
 
