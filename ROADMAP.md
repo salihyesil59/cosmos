@@ -154,6 +154,6 @@ Legend: `[x]` done · `[ ]` planned
 ### Extras & quality
 - [ ] `E1+` Pantheon+ supernova sample and SPARC rotation curves (license check, needs download)
 - [ ] `E6` Optional CAMB/CLASS integration for exact CMB spectra
-- [ ] `E7` Standalone Windows `.exe` with PyInstaller
+- [x] `E7` Standalone Windows `.exe` with PyInstaller
 - [ ] `E8` Internationalisation (i18n) infrastructure
 - [ ] `E9` Optional "Ask the Tutor" AI assistant (user-supplied API key)
