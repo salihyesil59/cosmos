@@ -48,8 +48,6 @@ def render_png(name: str, palette: Palette, device_ratio: float = 1.0) -> bytes:
     _REGISTRY[name](fig, palette)
     for ax in fig.axes:
         style_axes(ax, palette)
-        if ax.images:
-            ax.grid(False)  # grid lines on top of pictures only distract
         if ax.get_legend():
             style_legend(ax.get_legend(), palette)
     if fig.get_layout_engine() is None:

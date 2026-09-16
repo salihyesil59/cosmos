@@ -274,7 +274,8 @@ def style_axes(ax, palette: Palette | None = None) -> None:
     ax.xaxis.label.set_color(p.text)
     ax.yaxis.label.set_color(p.text)
     ax.title.set_color(p.text)
-    ax.grid(True, color=p.border, alpha=0.6, linewidth=0.6)
+    if not ax.images:  # grid lines on top of pictures only distract
+        ax.grid(True, color=p.border, alpha=0.6, linewidth=0.6)
     legend = ax.get_legend()
     if legend is not None:
         style_legend(legend, p)

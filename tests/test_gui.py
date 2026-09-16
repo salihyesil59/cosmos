@@ -242,3 +242,52 @@ def test_advanced_simulators(window):
     assert s6._chi2() < 10
     s6._fit_halo()
     assert not s6.mond.isChecked()
+
+
+def test_history_simulators(window):
+    import math
+
+    window.navigate("sim:S10")
+    s10 = window.stack.currentWidget().simulator
+    s10.log_time.setValue(0.0)                       # one second after the Big Bang
+    assert "10<sup>9</sup> K" in s10.readout.text()          # 1e10 K, written as 9.99 × 10^9
+    assert "light-seconds" in s10.readout.text()             # the horizon is a couple of light-seconds
+    assert "Neutrino decoupling" in s10.banner.label.text()
+    s10.epoch_box.setCurrentIndex(s10.epoch_box.findData("Recombination and the CMB"))
+    s10._jump(s10.epoch_box.currentIndex())
+    assert abs(s10.log_time.value() - math.log10(3.7e5 * 3.15576e7)) < 0.01
+    assert "Recombination" in s10.banner.label.text()
+    s10.play.setChecked(True)
+    for _ in range(5):
+        s10._tick()
+    window.navigate("home")
+    assert not s10.play.isChecked()
+
+    window.navigate("sim:S11")
+    s11 = window.stack.currentWidget().simulator
+    s11._from_deuterium()
+    assert 5.5 < s11.eta.value() < 6.5                # deuterium agrees with the CMB baryon density
+    assert "lithium" in s11.banner.label.text()       # helium and deuterium fit, lithium does not
+    planck_yp = float(s11.ab.yp)
+    s11.delta_neff.setValue(2.0)
+    pump()
+    s11.recompute()
+    assert float(s11.ab.yp) > planck_yp + 0.02
+    assert "does not match" in s11.banner.label.text()
+    s11._reset_physics()
+    assert s11.delta_neff.value() == 0.0
+
+    window.navigate("sim:S17")
+    s17 = window.stack.currentWidget().simulator
+    for key in ("olbers", "age", "lifetimes", "expanding"):
+        s17.scenario.setCurrentIndex(s17.scenario.findData(key))
+        pump()
+    s17.scenario.setCurrentIndex(s17.scenario.findData("olbers"))
+    pump()
+    assert s17.sky.coverage == 1.0 and "paradox" in s17.banner.label.text()
+    s17.finite_age.setChecked(True)
+    s17.age.setValue(30.0)
+    s17.recompute()
+    assert s17.sky.coverage < 0.5
+    assert s17.scenario.currentData() == "custom"     # editing a control switches to Custom
+    s17._new_sky()

@@ -206,3 +206,31 @@ def _lensing_images(fig, p: Palette):
         ax.set_xticks([])
         ax.set_yticks([])
         ax.grid(False)
+
+
+@figure("bbn_abundances")
+def _bbn_abundances(fig, p: Palette):
+    from cosmos.physics import bbn
+
+    eta = np.logspace(np.log10(0.8), np.log10(15), 300)
+    ab = bbn.abundances(eta)
+    planck = float(bbn.eta10_from_omega_b_h2(bbn.PLANCK_OMEGA_B_H2[0]))
+    top, middle, bottom = fig.subplots(3, 1, sharex=True, gridspec_kw={"height_ratios": [1, 1.4, 1]})
+    rows = [(top, [("Yp", ab.yp, p.series[0], "⁴He mass fraction Yₚ")]),
+            (middle, [("D/H", ab.d_h, p.series[1], "D/H"), ("He3/H", ab.he3_h, p.series[4], "³He/H")]),
+            (bottom, [("Li7/H", ab.li7_h, p.series[3], "⁷Li/H")])]
+    for ax, series in rows:
+        for key, values, colour, label in series:
+            obs, err = bbn.OBSERVED[key]
+            ax.plot(eta, values, color=colour, linewidth=2, label=label)
+            ax.axhspan(obs - err, obs + err, color=colour, alpha=0.3, linewidth=0)
+        ax.axvspan(planck - 0.1, planck + 0.1, color=p.success, alpha=0.35, linewidth=0)
+        ax.set_xscale("log")
+        ax.legend(loc="best", fontsize=7)
+    top.set_ylim(0.21, 0.27)
+    top.set_title("Light elements from the first minutes (bands: observed; green: CMB baryon density)", fontsize=9)
+    middle.set_yscale("log")
+    middle.set_ylim(3e-6, 3e-4)
+    bottom.set_yscale("log")
+    bottom.set_ylim(8e-11, 2e-9)
+    bottom.set_xlabel("η₁₀ = baryons per 10¹⁰ photons")

@@ -132,14 +132,14 @@ Legend: `[x]` done · `[ ]` planned
 ### Simulators
 - [x] `S8` Curvature Visualizer (triangles on sphere, plane and saddle)
 - [x] `S9` Spacetime / Horizon Diagram (light cones, conformal diagram)
-- [ ] `S10` Interactive Cosmic Timeline
-- [ ] `S11` BBN Abundance Explorer
+- [x] `S10` Interactive Cosmic Timeline
+- [x] `S11` BBN Abundance Explorer
 - [x] `S12` CMB Power Spectrum Explorer (approximate model)
 - [x] `S13` 2D N-body Structure Formation
 - [x] `S14` Gravitational Lensing Simulator
 - [x] `S15` Inflation Slow-Roll Simulator
 - [x] `S16` Supernova Ia Discovery (re-create the 1998 result)
-- [ ] `S17` Olbers' Paradox Simulator
+- [x] `S17` Olbers' Paradox Simulator
 - [x] `S18` Build Your Own Universe (sandbox)
 
 ### Guidance & learning
