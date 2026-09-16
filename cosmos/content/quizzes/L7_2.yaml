@@ -1,0 +1,52 @@
+- question: "For Gaussian errors, minimising χ² is the same as:"
+  choices:
+    - "Maximising the likelihood"
+    - "Minimising the number of parameters"
+    - "Maximising the number of data points"
+    - "Setting all the error bars equal"
+  answer: 0
+  explanation: "−2 ln L = χ² plus a constant, so the two operations find the same best fit."
+- question: "A fit to 1000 points with 3 free parameters gives χ² = 2500. What does that suggest?"
+  choices:
+    - "An excellent fit"
+    - "χ²/dof ≈ 2.5: the model is probably wrong or the error bars are too small"
+    - "The error bars are too large"
+    - "Nothing can be said"
+  answer: 1
+  explanation: "There are 997 degrees of freedom, so each should contribute about 1; 2.5 per point is a poor fit."
+- question: "How far may a single parameter move from its best-fit value before the fit is 5σ worse?"
+  choices: ["Δχ² = 1", "Δχ² = 5", "Δχ² = 25", "Δχ² = 125"]
+  answer: 2
+  explanation: "For one parameter the thresholds are Δχ² = n², so 5σ corresponds to Δχ² = 25."
+- question: "A result is quoted at 5σ. Which statement is correct?"
+  choices:
+    - "The result cannot be wrong"
+    - "Random fluctuations would produce data this extreme about once in 3.5 million times; systematic errors are a separate question"
+    - "The systematic errors are certainly under control"
+    - "The model has been proved"
+  answer: 1
+  explanation: "A sigma counts randomness only. Several historical 5σ claims turned out to be instrumental systematics."
+- question: "Why do cosmologists use MCMC instead of computing χ² on a grid?"
+  choices:
+    - "Grids are less accurate"
+    - "With six or more parameters a grid needs an impossible number of evaluations, while a chain follows the probability"
+    - "MCMC needs no model"
+    - "Because it is faster for one parameter"
+  answer: 1
+  explanation: "A 100-point grid in six dimensions is 10¹² evaluations; a chain samples where the probability actually is."
+- question: "In a Metropolis chain, what happens to a proposal that fits the data worse than the current point?"
+  choices:
+    - "It is always rejected"
+    - "It is always accepted"
+    - "It is accepted with a probability equal to the likelihood ratio"
+    - "The chain stops"
+  answer: 2
+  explanation: "Accepting worse points with probability r is what lets the walker explore the whole distribution instead of sliding into the nearest minimum."
+- question: "Four chains started in four different corners give R̂ = 1.35 for Ωm. What should you do?"
+  choices:
+    - "Quote the mean of the four chains"
+    - "Run longer or fix the proposal step: the chains have not converged"
+    - "Discard three of the chains"
+    - "Report a 5σ detection"
+  answer: 1
+  explanation: "R̂ compares the spread within each chain with the spread between them; well above 1 means they are still describing different distributions."

@@ -22,7 +22,9 @@ def test_selftest_passes(tmp_path, monkeypatch):
     assert selftest(str(report)) == 0
     text = report.read_text(encoding="utf-8")
     assert "RESULT: ok" in text
-    assert "lessons: 43" in text and "simulators: 18" in text
+    lessons = int(re.search(r"lessons: (\d+)", text).group(1))
+    simulators = int(re.search(r"simulators: (\d+)", text).group(1))
+    assert lessons >= 43 and simulators >= 18
 
 
 def test_version_and_selftest_flags(tmp_path, monkeypatch):

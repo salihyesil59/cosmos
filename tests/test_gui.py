@@ -523,3 +523,61 @@ def test_real_data_in_the_simulators(window):
     s6.galaxy_box.setCurrentIndex(0)
     pump()
     assert s6.galaxy is None and s6.r_report == 30.0
+
+
+def test_mcmc_simulator(window):
+    """S19: the chain, its diagnostics and the challenges built on them."""
+    window.navigate("sim:S19")
+    pump()
+    host = window.stack.currentWidget()
+    s19 = host.simulator
+    assert s19.sample.key == "pantheon"
+    state = s19.state()
+    assert 0.1 < state["acceptance"] < 0.6
+    assert 0.2 < state["om_mean"] < 0.5 and 0.4 < state["ol_mean"] < 0.9
+    assert "Ωm" in s19.summary.text() and "Acceptance" in s19.summary.text()
+
+    s19.step_size.setValue(0.004)
+    s19.run()
+    assert s19.state()["acceptance"] > 0.8
+    assert "accepted" in s19.banner.label.text()          # the simulator warns about the tiny steps
+    s19.step_size.setValue(0.08)
+    s19.run()
+
+    s19.flat.setChecked(True)                             # triggers a fresh run
+    assert s19.state()["flat"] and s19.state()["om_error"] < 0.03
+    s19.flat.setChecked(False)
+
+    s19.steps.setValue(1500)
+    s19.run_many()
+    assert s19.state()["chains"] == 4 and s19.state()["rhat"] < 1.15
+
+    s19.animate_button.setChecked(True)                   # reveal the walk step by step
+    for _ in range(3):
+        s19._tick()
+    assert s19.frame > 0
+    window.navigate("home")
+    assert not s19.animate_button.isChecked()
+
+    window.navigate("sim:S19")
+    bar = host.challenge_bar
+    assert bar is not None and len(host.challenges) == 3
+    s19.step_size.setValue(0.004)
+    s19.run()
+    bar.go(1)                                             # the "too timid" challenge
+    assert bar.check() is True
+    s19.step_size.setValue(0.08)
+    s19.run()
+    bar.go(0)
+    assert bar.check() is True
+
+
+def test_level_seven_lessons(window):
+    for lesson_id in ("L7.1", "L7.2"):
+        window.navigate(f"lesson:{lesson_id}")
+        pump()
+        assert window.lesson_page.lesson.id == lesson_id
+        text = window.lesson_page.browser.toPlainText()
+        assert "CSMTOKEN" not in text and "$$" not in text
+    assert "S19" in window.ctx.curriculum.lessons["L7.2"].simulators
+    assert window.ctx.curriculum.levels[-1].number == 7

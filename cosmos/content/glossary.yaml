@@ -1212,3 +1212,90 @@ standard-siren:
     luminosity distance directly from general relativity, without a distance ladder.
   see_also: [gravitational-waves, standard-candle, hubble-constant]
   lessons: [L6.5]
+
+likelihood:
+  term: Likelihood
+  definition: >
+    The probability of obtaining the data you actually have, for a given set of model
+    parameters. Maximising it is how parameters are estimated; for Gaussian errors it is
+    equivalent to minimising χ².
+  see_also: [chi-squared, posterior, mcmc]
+  lessons: [L7.2]
+
+chi-squared:
+  term: Chi-squared (χ²)
+  definition: >
+    The sum of squared differences between data and model, each divided by its own
+    uncertainty. Near one per degree of freedom means a plausible fit; how fast it rises
+    around the minimum gives the error bars.
+  see_also: [likelihood, degrees-of-freedom]
+  lessons: [L7.2, L7.1]
+
+degrees-of-freedom:
+  term: Degrees of freedom
+  definition: >
+    The number of data points minus the number of fitted parameters. Each one is expected
+    to contribute about 1 to χ², so χ² divided by the degrees of freedom should be near 1.
+  see_also: [chi-squared]
+  lessons: [L7.2]
+
+posterior:
+  term: Posterior
+  definition: >
+    What is believed about the parameters after seeing the data: the likelihood multiplied
+    by the prior. The cloud of points an MCMC chain leaves behind is a sample of it.
+  see_also: [likelihood, prior, mcmc]
+  lessons: [L7.2]
+
+prior:
+  term: Prior
+  definition: >
+    What was assumed about the parameters before the data were taken. It matters most when
+    the data are weak; honest analyses always state the priors they used.
+  see_also: [posterior, likelihood]
+  lessons: [L7.2]
+
+mcmc:
+  term: MCMC (Markov chain Monte Carlo)
+  definition: >
+    A random walk through parameter space that visits each region in proportion to its
+    posterior probability. The density of visited points is the measurement, error bars and
+    correlations included.
+  see_also: [posterior, likelihood, convergence]
+  lessons: [L7.2]
+
+convergence:
+  term: Convergence (R-hat)
+  definition: >
+    Whether several MCMC chains started far apart have settled into describing the same
+    distribution. R̂ compares the spread within each chain with the spread between them;
+    values above about 1.01 mean the chains are not finished.
+  see_also: [mcmc]
+  lessons: [L7.2]
+
+systematic-error:
+  term: Systematic error
+  definition: >
+    A bias that repeats in every measurement — a calibration offset, unmodelled dust, a
+    selection effect. Unlike statistical noise it does not shrink as more data are
+    collected, and it is usually what cosmological disputes are about.
+  see_also: [statistical-error, hubble-tension]
+  lessons: [L7.1, L6.6]
+
+statistical-error:
+  term: Statistical error
+  definition: >
+    The random part of a measurement's uncertainty, which shrinks as the square root of the
+    number of measurements. The error bars on a plot usually show one standard deviation of
+    it.
+  see_also: [systematic-error, chi-squared]
+  lessons: [L7.1]
+
+confidence-contour:
+  term: Confidence contour
+  definition: >
+    The region of a two-parameter plane that holds a given fraction (usually 68% or 95%) of
+    the probability. Its tilt shows which combination of the two parameters the data
+    actually measure.
+  see_also: [posterior, systematic-error]
+  lessons: [L7.1]

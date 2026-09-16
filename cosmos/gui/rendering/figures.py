@@ -491,3 +491,4 @@ def _baryon_asymmetry(fig, p: Palette):
 # Figures for later levels register themselves on import.
 from cosmos.gui.rendering import figures_structure  # noqa: E402,F401
 from cosmos.gui.rendering import figures_advanced  # noqa: E402,F401
+from cosmos.gui.rendering import figures_methods  # noqa: E402,F401
