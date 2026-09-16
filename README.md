@@ -53,7 +53,8 @@ on first launch.
 - Dark and light themes
 - Export plots as PNG/SVG and data as CSV
 - Presets: Planck 2018, WMAP 9-year, evolving and phantom dark energy, Einstein–de Sitter and more
-- A physics engine verified against [astropy](https://www.astropy.org/)
+- A physics engine verified against [astropy](https://www.astropy.org/), and an
+  optional [CAMB](https://camb.readthedocs.io) engine for exact CMB spectra
 
 See [ROADMAP.md](ROADMAP.md) for what is planned next.
 
@@ -70,6 +71,20 @@ python main.py
 ```
 
 You can also start the app with `python -m cosmos`.
+
+## Optional: exact CMB spectra with CAMB
+
+The CMB Power Spectrum Explorer (S12) ships with a fast analytic teaching model.
+Install the optional package `camb` and the simulator offers a second engine
+that solves the Boltzmann equations properly:
+
+```bash
+pip install camb
+```
+
+Pick **CAMB — exact Boltzmann code** in the simulator's *How the spectrum is
+computed* box. Each update then takes about half a second, and results are
+cached. Without `camb` the app behaves exactly as before.
 
 ## A standalone Windows executable
 

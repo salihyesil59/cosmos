@@ -152,16 +152,22 @@ def calibration_error() -> float:
     return float(np.sqrt(np.mean(np.log(model / target) ** 2)))
 
 
+def find_peaks(ell: np.ndarray, d_ell: np.ndarray, limit: int = 6) -> list[tuple[float, float]]:
+    """The first acoustic maxima of a spectrum, whoever computed it."""
+    peaks: list[tuple[float, float]] = []
+    for i in range(1, len(d_ell) - 1):
+        if d_ell[i] > d_ell[i - 1] and d_ell[i] >= d_ell[i + 1] and ell[i] > 100:
+            peaks.append((float(ell[i]), float(d_ell[i])))
+        if len(peaks) == limit:
+            break
+    return peaks
+
+
 def spectrum(p: CMBParameters = PLANCK, ell_max: int = ELL_MAX) -> CMBSpectrum:
     ell = np.arange(2, ell_max + 1, dtype=float)
     raw, acoustic = _raw_spectrum(p, ell)
     d_ell = raw * _normalisation()
-    peaks = []
-    for i in range(1, len(d_ell) - 1):
-        if d_ell[i] > d_ell[i - 1] and d_ell[i] >= d_ell[i + 1] and ell[i] > 100:
-            peaks.append((float(ell[i]), float(d_ell[i])))
-        if len(peaks) == 6:
-            break
+    peaks = find_peaks(ell, d_ell)
     return CMBSpectrum(
         ell=ell,
         d_ell=d_ell,

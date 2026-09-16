@@ -411,3 +411,31 @@ def test_history_page(window):
     pump()
     assert "badges earned" in window.progress_page.badge_summary.text()
     assert window.progress_page.badge_widgets["historian"][3].text().startswith("Earned")
+
+
+def test_cmb_engines(window):
+    """S12 offers the exact engine when CAMB is installed, and works without it."""
+    from cosmos.physics import camb_backend
+
+    window.navigate("sim:S12")
+    pump()
+    s12 = window.stack.currentWidget().simulator
+    assert s12.engine() == "teaching"
+    teaching_peak = s12.spec.peaks[0][0]
+    if not camb_backend.available():
+        assert not s12.backend.model().item(1).isEnabled()
+        assert "not installed" in s12.engine_note.text()
+        return
+    s12.backend.setCurrentIndex(1)
+    pump()
+    assert s12.engine() == "camb"
+    assert "CAMB" in s12.banner.label.text()
+    exact_peak = s12.spec.peaks[0][0]
+    assert abs(exact_peak - teaching_peak) / teaching_peak < 0.05    # the two engines agree
+    assert len(s12.reference.ell) == len(s12.spec.ell)               # reference uses the same engine
+    s12.omega_k.setValue(0.08)
+    s12.recompute()
+    assert s12.spec.peaks[0][0] > exact_peak                          # open space moves the peak right
+    s12.backend.setCurrentIndex(0)
+    s12.reset()
+    assert s12.engine() == "teaching" and s12.state()["engine"] == "teaching"
