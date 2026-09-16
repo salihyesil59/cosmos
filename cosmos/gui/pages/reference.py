@@ -22,9 +22,9 @@ from cosmos.gui.widgets.common import ParameterSlider, labelled_row, muted_label
 from cosmos.gui.widgets.rich_browser import RichBrowser
 from cosmos.physics import constants as const
 from cosmos.physics.presets import PRESETS
-from cosmos.i18n import tr
+from cosmos.i18n import tr, tr_noop
 
-GUIDE = """
+GUIDE = tr_noop("""
 ## Reference
 
 Everything the course uses, collected in one place, so you never have to hunt
@@ -39,7 +39,7 @@ through the lessons for a formula or a number.
 
 The same page is the fastest way to remind yourself what a symbol means while
 you work in a simulator.
-"""
+""")
 
 CONSTANTS = [
     ("Speed of light", "c", const.C, "m/s"),
@@ -198,7 +198,7 @@ class ReferencePage(QWidget):
         return view
 
     def guide_markdown(self) -> str:
-        return GUIDE
+        return tr(GUIDE)
 
     def show_formula(self, formula_id: str) -> None:
         """Open the Formulas tab filtered down to one entry (used by search results)."""

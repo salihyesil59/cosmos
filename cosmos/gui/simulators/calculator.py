@@ -24,6 +24,7 @@ from cosmos.gui.simulators.base import SimulatorBase
 from cosmos.gui.theme import theme
 from cosmos.gui.widgets.common import Banner, InfoButton, ParameterSlider, PresetSelector, labelled_row
 from cosmos.gui.widgets.plot import PlotWidget, write_csv
+from cosmos.i18n import tr
 from cosmos.physics import constants as const
 from cosmos.physics.cosmology import Cosmology, Fate
 from cosmos.physics.presets import PRESETS
@@ -142,44 +143,44 @@ class CalculatorSimulator(SimulatorBase):
         self.results: list[tuple[str, str, str]] = []
 
         # ------------------------------------------------------ controls
-        model = QGroupBox("1 · Cosmological model")
+        model = QGroupBox(tr("1 · Cosmological model"))
         ml = QVBoxLayout(model)
         self.preset = PresetSelector()
         ml.addWidget(
             labelled_row(
-                "Preset",
+                tr("Preset"),
                 self.preset,
-                ("Presets", "Well-known sets of parameters. Planck 2018 is the current reference model."),
+                (tr("Presets"), tr("Well-known sets of parameters. Planck 2018 is the current reference model.")),
             )
         )
         self.h0 = ParameterSlider(
-            "H0 (km/s/Mpc)", 40, 100, 67.66, decimals=2,
-            info=("Hubble constant", "Today's expansion rate. Measurements give 67–73 km/s/Mpc."),
+            tr("H0 (km/s/Mpc)"), 40, 100, 67.66, decimals=2,
+            info=(tr("Hubble constant"), tr("Today's expansion rate. Measurements give 67–73 km/s/Mpc.")),
         )
         self.om = ParameterSlider(
-            "Ωm matter", 0.0, 2.0, 0.3097, decimals=4, step=0.01,
-            info=("Matter density", "Ordinary plus dark matter, as a fraction of the critical density."),
+            tr("Ωm matter"), 0.0, 2.0, 0.3097, decimals=4, step=0.01,
+            info=(tr("Matter density"), tr("Ordinary plus dark matter, as a fraction of the critical density.")),
         )
         self.ode = ParameterSlider(
-            "ΩΛ dark energy", -0.5, 2.0, 0.6889, decimals=4, step=0.01,
-            info=("Dark energy density", "Cosmological constant density as a fraction of the critical density."),
+            tr("ΩΛ dark energy"), -0.5, 2.0, 0.6889, decimals=4, step=0.01,
+            info=(tr("Dark energy density"), tr("Cosmological constant density as a fraction of the critical density.")),
         )
-        self.flat = QCheckBox("Keep space flat (sets ΩΛ automatically)")
-        self.flat.setToolTip("When checked, ΩΛ is adjusted automatically so that space stays flat.")
-        self.radiation = QCheckBox("Include radiation (photons, neutrinos)")
-        self.radiation.setToolTip("Radiation matters at very high redshift (z > 1000). Uncheck to see its effect.")
+        self.flat = QCheckBox(tr("Keep space flat (sets ΩΛ automatically)"))
+        self.flat.setToolTip(tr("When checked, ΩΛ is adjusted automatically so that space stays flat."))
+        self.radiation = QCheckBox(tr("Include radiation (photons, neutrinos)"))
+        self.radiation.setToolTip(tr("Radiation matters at very high redshift (z > 1000). Uncheck to see its effect."))
         for w in (self.h0, self.om, self.ode, self.flat, self.radiation):
             ml.addWidget(w)
         self.controls.addWidget(model)
 
-        target = QGroupBox("2 · Object")
+        target = QGroupBox(tr("2 · Object"))
         tl = QVBoxLayout(target)
         self.z = ParameterSlider(
-            "Redshift z", 0.001, 1500, 1.0, decimals=3, log=True,
+            tr("Redshift z"), 0.001, 1500, 1.0, decimals=3, log=True,
             info=(
-                "Redshift",
-                "How much the light has been stretched. z ≈ 0.02 nearby galaxies, z ≈ 1–3 distant galaxies, "
-                "z ≈ 10 the first galaxies, z ≈ 1090 the CMB.",
+                tr("Redshift"),
+                tr("How much the light has been stretched. z ≈ 0.02 nearby galaxies, z ≈ 1–3 distant galaxies, "
+                    "z ≈ 10 the first galaxies, z ≈ 1090 the CMB."),
             ),
         )
         tl.addWidget(self.z)
@@ -198,7 +199,7 @@ class CalculatorSimulator(SimulatorBase):
         tl.addLayout(quick)
         self.controls.addWidget(target)
 
-        export = QPushButton("Export results (CSV)…")
+        export = QPushButton(tr("Export results (CSV)…"))
         export.clicked.connect(self._export_results)
         self.controls.addWidget(export)
         self.finish_controls()
@@ -218,26 +219,26 @@ class CalculatorSimulator(SimulatorBase):
         self.table.setSelectionMode(QAbstractItemView.SingleSelection)
         self.table.itemSelectionChanged.connect(self._explain_row)
         top = QTabWidget()
-        top.addTab(self.table, "Results")
+        top.addTab(self.table, tr("Results"))
         split.addWidget(top)
-        self.explain = QLabel("Click a row to see what the quantity means.")
+        self.explain = QLabel(tr("Click a row to see what the quantity means."))
         self.explain.setWordWrap(True)
         self.explain.setProperty("role", "muted")
         self.explain.setMinimumHeight(48)
-        explain_box = QGroupBox("What does this mean?")
+        explain_box = QGroupBox(tr("What does this mean?"))
         el = QVBoxLayout(explain_box)
         el.addWidget(self.explain)
-        el.addWidget(InfoButton("Many distances", (
-            "In an expanding universe 'distance' is ambiguous: the object was closer when the light left, "
-            "and farther when it arrives. Astronomers therefore use several distance measures, each tied "
-            "to a way of observing."
+        el.addWidget(InfoButton(tr("Many distances"), (
+            tr("In an expanding universe 'distance' is ambiguous: the object was closer when the light left, "
+                "and farther when it arrives. Astronomers therefore use several distance measures, each tied "
+                "to a way of observing.")
         )), 0, Qt.AlignRight)
         split.addWidget(explain_box)
         plots = QTabWidget()
         self.distance_plot = PlotWidget(self._draw_distances, csv_provider=self._curve_csv, export_name="distances_vs_z")
         self.age_plot = PlotWidget(self._draw_ages, csv_provider=self._curve_csv, export_name="age_vs_z")
-        plots.addTab(self.distance_plot, "Distances vs redshift")
-        plots.addTab(self.age_plot, "Age & lookback time")
+        plots.addTab(self.distance_plot, tr("Distances vs redshift"))
+        plots.addTab(self.age_plot, tr("Age & lookback time"))
         split.addWidget(plots)
         split.setSizes([330, 90, 380])
         self.display.addWidget(split, 1)

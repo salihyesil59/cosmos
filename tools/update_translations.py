@@ -39,14 +39,69 @@ def update(language: str | None) -> int:
         print("No .ts files yet. Start one with --language <code>, for example --language de.")
         return 1
     for target in targets:
+        # lupdate cannot see the context our tr() uses, so every old entry looks obsolete to it.
+        # Remember what was already translated and put it back afterwards.
+        previous = existing_translations(target)
         # tr_noop() marks strings far from where they are shown; teach lupdate to read it too.
         command = [tool("pyside6-lupdate"), "-tr-function-alias", "QT_TR_NOOP+=tr_noop,QT_TR_NOOP+=_",
                    *SOURCES, "-ts", str(target)]
         print(f"$ pyside6-lupdate … -ts {target.name}")
         subprocess.run(command, check=True, cwd=ROOT)
         name_context(target)
+        restored, missing = carry_over(target, previous)
         print(f"  {target.relative_to(ROOT)} written ({target.stat().st_size / 1024:.0f} KB)")
+        print(f"  {restored} translation(s) kept, {missing} still to translate")
     return 0
+
+
+def existing_translations(path: Path) -> dict[str, str]:
+    """Source string -> translation for everything already translated in ``path``."""
+    import xml.etree.ElementTree as ET
+
+    if not path.exists():
+        return {}
+    root = ET.parse(path).getroot()
+    done = {}
+    for message in root.iter("message"):
+        translation = message.find("translation")
+        source = message.find("source")
+        if source is None or translation is None or not (translation.text or "").strip():
+            continue
+        # Text is what matters: lupdate marks carried-over entries "unfinished" too.
+        done[source.text] = translation.text
+    return done
+
+
+def carry_over(path: Path, previous: dict[str, str]) -> tuple[int, int]:
+    """Fill the refreshed file with the translations it had before; drop stale entries."""
+    import xml.etree.ElementTree as ET
+
+    tree = ET.parse(path)
+    root = tree.getroot()
+    restored = missing = 0
+    for context in root.findall("context"):
+        for message in list(context.findall("message")):
+            translation = message.find("translation")
+            source = message.find("source")
+            if translation is None or source is None:
+                continue
+            if translation.get("type") in ("obsolete", "vanished"):
+                context.remove(message)          # the string is gone from the code
+                continue
+            known = previous.get(source.text)
+            current = (translation.text or "").strip()
+            if known and current in ("", known.strip()):
+                # lupdate copies the old text across but still calls the entry unfinished.
+                translation.text = known
+                translation.attrib.pop("type", None)
+                restored += 1
+            elif translation.get("type") == "unfinished":
+                missing += 1
+    tree.write(path, encoding="utf-8", xml_declaration=True)
+    text = path.read_text(encoding="utf-8")
+    if "<!DOCTYPE TS>" not in text:
+        path.write_text(text.replace("<TS ", "<!DOCTYPE TS><TS ", 1), encoding="utf-8")
+    return restored, missing
 
 
 def name_context(path: Path) -> None:

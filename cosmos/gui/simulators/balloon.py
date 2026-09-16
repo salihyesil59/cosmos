@@ -12,6 +12,7 @@ from PySide6.QtWidgets import QCheckBox, QGroupBox, QHBoxLayout, QLabel, QPushBu
 from cosmos.gui.simulators.base import SimulatorBase
 from cosmos.gui.theme import theme
 from cosmos.gui.widgets.common import ParameterSlider
+from cosmos.i18n import tr
 
 A_START, A_END = 1.0, 3.0
 N_GALAXIES = 40
@@ -26,7 +27,7 @@ class ExpansionCanvas(QWidget):
         self.setMinimumSize(420, 380)
         self.setSizePolicy(QSizePolicy.Expanding, QSizePolicy.Expanding)
         self.setMouseTracking(True)
-        self.setToolTip("Click a galaxy to stand on it.")
+        self.setToolTip(tr("Click a galaxy to stand on it."))
         rng = random.Random(7)
         # Comoving positions in units of grid cells, centred on the origin.
         self.galaxies = [
@@ -157,48 +158,48 @@ class LightWave(QWidget):
 class BalloonSimulator(SimulatorBase):
     def __init__(self, info, parent=None):
         super().__init__(info, parent)
-        play_box = QGroupBox("Expansion")
+        play_box = QGroupBox(tr("Expansion"))
         pl = QVBoxLayout(play_box)
         row = QHBoxLayout()
-        self.play = QPushButton("▶ Play")
+        self.play = QPushButton(tr("▶ Play"))
         self.play.setCheckable(True)
         self.play.setProperty("role", "primary")
         self.play.toggled.connect(self._toggle)
-        reset = QPushButton("⟲ Reset")
+        reset = QPushButton(tr("⟲ Reset"))
         reset.clicked.connect(self._reset)
         row.addWidget(self.play)
         row.addWidget(reset)
         pl.addLayout(row)
         self.speed = ParameterSlider(
-            "Speed", 0.2, 3.0, 1.0, decimals=1, step=0.1,
-            info=("Animation speed", "Only changes how fast the animation runs, not the physics."),
+            tr("Speed"), 0.2, 3.0, 1.0, decimals=1, step=0.1,
+            info=(tr("Animation speed"), tr("Only changes how fast the animation runs, not the physics.")),
         )
         pl.addWidget(self.speed)
         self.scale = ParameterSlider(
-            "Scale factor a", A_START, A_END, A_START, decimals=4, step=0.05,
-            info=("Scale factor", "Drag to set the size of the universe directly. a = 2 means every distance is "
-                  "twice as large as at the start."),
+            tr("Scale factor a"), A_START, A_END, A_START, decimals=4, step=0.05,
+            info=(tr("Scale factor"), tr("Drag to set the size of the universe directly. a = 2 means every distance is "
+                      "twice as large as at the start.")),
         )
         pl.addWidget(self.scale)
         self.controls.addWidget(play_box)
 
-        show = QGroupBox("Show")
+        show = QGroupBox(tr("Show"))
         sl = QVBoxLayout(show)
-        self.grid_box = QCheckBox("Comoving grid")
+        self.grid_box = QCheckBox(tr("Comoving grid"))
         self.grid_box.setChecked(True)
-        self.grid_box.setToolTip("The grid stretches with space. Galaxies keep their grid coordinates.")
-        self.arrow_box = QCheckBox("Recession velocity arrows")
+        self.grid_box.setToolTip(tr("The grid stretches with space. Galaxies keep their grid coordinates."))
+        self.arrow_box = QCheckBox(tr("Recession velocity arrows"))
         self.arrow_box.setChecked(True)
-        self.arrow_box.setToolTip("Arrow length ∝ recession speed ∝ distance from the galaxy you stand on.")
+        self.arrow_box.setToolTip(tr("Arrow length ∝ recession speed ∝ distance from the galaxy you stand on."))
         sl.addWidget(self.grid_box)
         sl.addWidget(self.arrow_box)
-        self.emit_btn = QPushButton("💡 Emit light")
-        self.emit_btn.setToolTip("Emit a light wave now; watch its wavelength grow as the universe expands.")
+        self.emit_btn = QPushButton(tr("💡 Emit light"))
+        self.emit_btn.setToolTip(tr("Emit a light wave now; watch its wavelength grow as the universe expands."))
         self.emit_btn.clicked.connect(self._emit_light)
         sl.addWidget(self.emit_btn)
         self.controls.addWidget(show)
 
-        facts = QGroupBox("Measurements from your galaxy")
+        facts = QGroupBox(tr("Measurements from your galaxy"))
         fl = QVBoxLayout(facts)
         self.facts = QLabel()
         self.facts.setWordWrap(True)

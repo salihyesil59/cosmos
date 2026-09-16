@@ -14,6 +14,7 @@ from cosmos.gui.theme import theme
 from cosmos.gui.widgets.common import Banner, ParameterSlider, PresetSelector, labelled_row
 from cosmos.gui.widgets.plot import PlotWidget
 from cosmos.gui.widgets.rich_browser import RichBrowser
+from cosmos.i18n import tr
 from cosmos.physics import cmb
 from cosmos.physics import constants as const
 from cosmos.physics.cosmology import Cosmology, Fate
@@ -70,50 +71,50 @@ class SandboxSimulator(SimulatorBase):
         self.reference_spec = cmb.spectrum()
         self.checks: list[Check] = []
 
-        top = QGroupBox("Start from")
+        top = QGroupBox(tr("Start from"))
         tl = QVBoxLayout(top)
         self.preset = PresetSelector()
-        tl.addWidget(labelled_row("Preset", self.preset))
+        tl.addWidget(labelled_row(tr("Preset"), self.preset))
         self.controls.addWidget(top)
 
-        expansion = QGroupBox("1 · Expansion and ingredients")
+        expansion = QGroupBox(tr("1 · Expansion and ingredients"))
         el = QVBoxLayout(expansion)
-        self.h0 = ParameterSlider("H0 (km/s/Mpc)", 40, 100, 67.66, decimals=2, step=0.5)
-        self.ob = ParameterSlider("Ωb ordinary matter", 0.0, 0.3, 0.049, decimals=4, step=0.002)
-        self.oc = ParameterSlider("Ωc dark matter", 0.0, 1.5, 0.2607, decimals=4, step=0.01)
-        self.flat = QCheckBox("Keep space flat (dark energy fills the rest)")
+        self.h0 = ParameterSlider(tr("H0 (km/s/Mpc)"), 40, 100, 67.66, decimals=2, step=0.5)
+        self.ob = ParameterSlider(tr("Ωb ordinary matter"), 0.0, 0.3, 0.049, decimals=4, step=0.002)
+        self.oc = ParameterSlider(tr("Ωc dark matter"), 0.0, 1.5, 0.2607, decimals=4, step=0.01)
+        self.flat = QCheckBox(tr("Keep space flat (dark energy fills the rest)"))
         self.flat.setChecked(True)
-        self.ode = ParameterSlider("ΩΛ dark energy", -0.5, 2.0, 0.6889, decimals=4, step=0.01)
-        self.radiation = QCheckBox("Include radiation (CMB and neutrinos)")
+        self.ode = ParameterSlider(tr("ΩΛ dark energy"), -0.5, 2.0, 0.6889, decimals=4, step=0.01)
+        self.radiation = QCheckBox(tr("Include radiation (CMB and neutrinos)"))
         self.radiation.setChecked(True)
-        self.neff = ParameterSlider("N_eff neutrino species", 0.0, 6.0, 3.046, decimals=2, step=0.1)
+        self.neff = ParameterSlider(tr("N_eff neutrino species"), 0.0, 6.0, 3.046, decimals=2, step=0.1)
         for w in (self.h0, self.ob, self.oc, self.flat, self.ode, self.radiation, self.neff):
             el.addWidget(w)
         self.controls.addWidget(expansion)
 
-        de = QGroupBox("2 · Dark energy")
+        de = QGroupBox(tr("2 · Dark energy"))
         dl = QVBoxLayout(de)
         self.w0 = ParameterSlider(
-            "w0 today", -2.0, 0.0, -1.0, decimals=2, step=0.02,
-            info=("Equation of state today", "w = −1 is a cosmological constant. w < −1 is phantom energy that "
-                  "grows as space expands and can end in a Big Rip."),
+            tr("w0 today"), -2.0, 0.0, -1.0, decimals=2, step=0.02,
+            info=(tr("Equation of state today"), tr("w = −1 is a cosmological constant. w < −1 is phantom energy that "
+                      "grows as space expands and can end in a Big Rip.")),
         )
         self.wa = ParameterSlider(
-            "wa evolution", -2.0, 2.0, 0.0, decimals=2, step=0.05,
-            info=("Evolution", "w(a) = w0 + wa (1 − a). Negative wa means dark energy was stronger in the past "
-                  "and is weakening, as recent DESI results hint."),
+            tr("wa evolution"), -2.0, 2.0, 0.0, decimals=2, step=0.05,
+            info=(tr("Evolution"), tr("w(a) = w0 + wa (1 − a). Negative wa means dark energy was stronger in the past "
+                      "and is weakening, as recent DESI results hint.")),
         )
         dl.addWidget(self.w0)
         dl.addWidget(self.wa)
         self.controls.addWidget(de)
 
-        early = QGroupBox("3 · Early universe")
+        early = QGroupBox(tr("3 · Early universe"))
         yl = QVBoxLayout(early)
-        self.n_s = ParameterSlider("nₛ spectral index", 0.8, 1.2, 0.9665, decimals=4, step=0.005)
+        self.n_s = ParameterSlider(tr("nₛ spectral index"), 0.8, 1.2, 0.9665, decimals=4, step=0.005)
         yl.addWidget(self.n_s)
         self.controls.addWidget(early)
 
-        reset = QPushButton("Reset to Planck 2018")
+        reset = QPushButton(tr("Reset to Planck 2018"))
         reset.clicked.connect(lambda: self.preset.set_key("planck18", emit=True))
         self.controls.addWidget(reset)
         self.finish_controls()
@@ -124,9 +125,9 @@ class SandboxSimulator(SimulatorBase):
         self.report = RichBrowser(font_pt=10.5)
         self.expansion_plot = PlotWidget(self._draw_expansion, export_name="my_universe_expansion")
         self.cmb_plot = PlotWidget(self._draw_cmb, export_name="my_universe_cmb")
-        tabs.addTab(self.report, "Report card")
-        tabs.addTab(self.expansion_plot, "History and contents")
-        tabs.addTab(self.cmb_plot, "CMB")
+        tabs.addTab(self.report, tr("Report card"))
+        tabs.addTab(self.expansion_plot, tr("History and contents"))
+        tabs.addTab(self.cmb_plot, tr("CMB"))
         self.display.addWidget(tabs, 1)
 
         for w in (self.h0, self.ob, self.oc, self.ode, self.neff, self.w0, self.wa, self.n_s):

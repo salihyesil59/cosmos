@@ -17,9 +17,9 @@ from PySide6.QtWidgets import (
 from cosmos.gui.context import AppContext
 from cosmos.gui.simulators.registry import SIMULATORS
 from cosmos.gui.widgets.common import card, muted_label, title_label
-from cosmos.i18n import tr
+from cosmos.i18n import tr, tr_noop
 
-GUIDE = """
+GUIDE = tr_noop("""
 ## Welcome to Cosmos
 
 This panel is your **Guide**. It always explains the page you are on and gives
@@ -69,7 +69,7 @@ you are ready for.
 - **Theme** switches between dark and light.
 - **Tour** replays the guided introduction.
 - Every control with a **?** button has a detailed explanation.
-"""
+""")
 
 
 class HomePage(QWidget):
@@ -159,9 +159,9 @@ class HomePage(QWidget):
         sims.setSpacing(10)
         for i, info in enumerate(SIMULATORS.values()):
             # "&" would otherwise become a keyboard mnemonic and vanish from the label.
-            btn = QPushButton(f"{info.icon}  {info.title}\n{info.tagline}".replace("&", "&&"))
+            btn = QPushButton(f"{info.icon}  {tr(info.title)}\n{tr(info.tagline)}".replace("&", "&&"))
             btn.setStyleSheet("QPushButton { text-align: left; padding: 10px 14px; }")
-            btn.setToolTip(info.description)
+            btn.setToolTip(tr(info.description))
             btn.clicked.connect(lambda _=False, sid=info.id: ctx.navigate(f"sim:{sid}"))
             sims.addWidget(btn, i // 2, i % 2)
         self.layout_.addLayout(sims)
@@ -171,7 +171,7 @@ class HomePage(QWidget):
         self.refresh()
 
     def guide_markdown(self) -> str:
-        return GUIDE
+        return tr(GUIDE)
 
     def refresh(self) -> None:
         cur, store = self.ctx.curriculum, self.ctx.store

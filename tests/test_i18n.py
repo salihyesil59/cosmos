@@ -140,3 +140,67 @@ def test_placeholders_survive_translation():
         source = message.find("source").text or ""
         translation = message.find("translation").text or ""
         assert set(re.findall(r"\{(\w+)\}", source)) == set(re.findall(r"\{(\w+)\}", translation)), source
+
+
+def test_the_guide_panels_and_the_tour_are_marked():
+    """G14: the Guide texts, the tour steps and the simulator guidance all go through tr()."""
+    pages = ["glossary.py", "history_page.py", "home.py", "notes_page.py", "progress_page.py",
+             "reference.py", "search_page.py", "simulators.py"]
+    for name in pages:
+        source = (ROOT / "cosmos" / "gui" / "pages" / name).read_text(encoding="utf-8")
+        assert "tr_noop(" in source, f"{name} defines its guide text without tr_noop()"
+        assert "return tr(" in source, f"{name} shows its guide text without tr()"
+
+    main_window = (ROOT / "cosmos" / "gui" / "main_window.py").read_text(encoding="utf-8")
+    assert main_window.count("TourStep(") == main_window.count("TourStep(\n                tr(")
+
+    registry = (ROOT / "cosmos" / "gui" / "simulators" / "registry.py").read_text(encoding="utf-8")
+    assert registry.count("tr_noop(") > 150, "the simulator guidance is not marked"
+    assert 'title="' not in registry and 'tagline="' not in registry
+
+
+def test_every_simulator_marks_its_controls():
+    directory = ROOT / "cosmos" / "gui" / "simulators"
+    for path in directory.glob("*.py"):
+        if path.name in {"__init__.py", "base.py", "registry.py"}:
+            continue
+        source = path.read_text(encoding="utf-8")
+        assert "from cosmos.i18n import tr" in source, f"{path.name} does not import tr"
+        assert source.count("tr(") >= 8, f"{path.name} marks very few strings"
+
+
+def test_turkish_reaches_the_simulators(app):
+    from cosmos.gui.simulators.registry import SIMULATORS
+
+    info = SIMULATORS["S2"]
+    try:
+        assert i18n.install(app, "tr") is True
+        assert i18n.tr(info.title) == "Genişleme Tarihi Gezgini"
+        assert i18n.tr(info.tagline).startswith("Madde ve karanlık enerji")
+        assert "Ωm" in i18n.tr(info.how_to_use[0])
+        assert i18n.tr("How to use") == "Nasıl kullanılır"
+        assert i18n.tr("Things to try") == "Denenecek şeyler"
+        assert i18n.tr("Save image…") == "Görüntüyü kaydet…"      # the plot toolbar
+        assert i18n.tr("Universe contents") == "Evrenin içeriği"  # a control group box
+        assert i18n.tr("Welcome to Cosmos!") == "Cosmos'a hoş geldiniz!"   # the tour
+    finally:
+        i18n.install(app, "en")
+    assert i18n.tr(info.title) == "Expansion History Explorer"
+
+
+def test_refreshing_the_ts_keeps_the_translations(tmp_path):
+    """A refresh must not throw away work: lupdate cannot see our context."""
+    from tools.update_translations import carry_over, existing_translations
+
+    path = tmp_path / "cosmos_zz.ts"
+    path.write_text(TS_TEMPLATE.format(code="zz", home="Evim"), encoding="utf-8")
+    previous = existing_translations(path)
+    assert previous == {"Home": "Evim"}
+
+    refreshed = TS_TEMPLATE.format(code="zz", home="").replace(
+        "<translation>", '<translation type="unfinished">')
+    path.write_text(refreshed, encoding="utf-8")
+    restored, missing = carry_over(path, previous)
+    assert (restored, missing) == (1, 0)
+    assert "Evim" in path.read_text(encoding="utf-8")
+    assert 'type="unfinished"' not in path.read_text(encoding="utf-8")

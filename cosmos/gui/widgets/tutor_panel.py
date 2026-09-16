@@ -24,7 +24,7 @@ from cosmos.gui.context import AppContext
 from cosmos.gui.routes import route_title
 from cosmos.gui.widgets.common import labelled_row, muted_label
 from cosmos.gui.widgets.rich_browser import RichBrowser
-from cosmos.i18n import tr
+from cosmos.i18n import tr, tr_noop
 
 CONSOLE_URL = "https://console.anthropic.com/settings/keys"
 
@@ -35,7 +35,7 @@ SUGGESTIONS = [
     ("Check me", "I think I understood this as follows — tell me what I have wrong: "),
 ]
 
-INTRO = """
+INTRO = tr_noop("""
 ## Ask the Tutor
 
 This panel is **off until you add your own API key**. Nothing is ever sent
@@ -48,7 +48,7 @@ without you pressing **Ask**.
 
 Answers come from a language model. They can be wrong — the lessons, not the
 tutor, are the course.
-"""
+""")
 
 
 class _AskWorker(QThread):
@@ -94,7 +94,7 @@ class TutorPanel(QWidget):
 
         self.view = RichBrowser(font_pt=10.5)
         self.view.lessonRequested.connect(lambda i: ctx.navigate(f"lesson:{i}"))
-        self.view.set_markdown_content(INTRO)
+        self.view.set_markdown_content(tr(INTRO))
         layout.addWidget(self.view, 1)
 
         self.page_label = muted_label("")
@@ -179,7 +179,7 @@ class TutorPanel(QWidget):
 
     def reset_conversation(self) -> None:
         self.conversation.clear()
-        self.view.set_markdown_content(INTRO)
+        self.view.set_markdown_content(tr(INTRO))
         self.status.setText("")
 
     def ask(self) -> None:
@@ -234,7 +234,7 @@ class TutorPanel(QWidget):
 
     def _render(self) -> None:
         if not self.conversation.messages:
-            self.view.set_markdown_content(INTRO)
+            self.view.set_markdown_content(tr(INTRO))
             return
         parts = []
         for message in self.conversation.messages:

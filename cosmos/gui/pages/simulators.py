@@ -18,9 +18,9 @@ from cosmos.gui.context import AppContext
 from cosmos.gui.simulators.registry import SIMULATORS, SimulatorInfo
 from cosmos.gui.widgets.challenge_bar import ChallengeBar
 from cosmos.gui.widgets.common import card, muted_label, title_label
-from cosmos.i18n import tr
+from cosmos.i18n import tr, tr_noop
 
-HUB_GUIDE = """
+HUB_GUIDE = tr_noop("""
 ## Simulators
 
 Simulators are small laboratories. Each one focuses on a single idea from the
@@ -32,7 +32,7 @@ course and lets you change the parameters yourself.
 - Hover over any control to see a short explanation; click **?** for more.
 - Plots can be saved as images, and data can be exported as CSV files.
 - Nothing you do in a simulator can break anything: experiment freely!
-"""
+""")
 
 
 class SimulatorHubPage(QWidget):
@@ -55,10 +55,10 @@ class SimulatorHubPage(QWidget):
             c = card()
             cl = QVBoxLayout(c)
             cl.setContentsMargins(16, 14, 16, 14)
-            cl.addWidget(title_label(f"{info.icon}  {info.id} · {info.title}", "subtitle"))
-            cl.addWidget(muted_label(info.description))
+            cl.addWidget(title_label(f"{info.icon}  {info.id} · {tr(info.title)}", "subtitle"))
+            cl.addWidget(muted_label(tr(info.description)))
             lessons = ", ".join(info.lessons)
-            cl.addWidget(muted_label(f"Supports lessons: {lessons}"))
+            cl.addWidget(muted_label(tr("Supports lessons: {lessons}").format(lessons=lessons)))
             btn = QPushButton(tr("Open simulator"))
             btn.setProperty("role", "primary")
             btn.clicked.connect(lambda _=False, sid=info.id: ctx.navigate(f"sim:{sid}"))
@@ -69,7 +69,7 @@ class SimulatorHubPage(QWidget):
         layout.addStretch(1)
 
     def guide_markdown(self) -> str:
-        return HUB_GUIDE
+        return tr(HUB_GUIDE)
 
 
 class SimulatorHostPage(QWidget):
@@ -82,13 +82,13 @@ class SimulatorHostPage(QWidget):
         root.setContentsMargins(16, 12, 16, 10)
         root.setSpacing(6)
         head = QHBoxLayout()
-        badge = QLabel(f"SIMULATOR {info.id}")
+        badge = QLabel(tr("SIMULATOR") + f" {info.id}")
         badge.setProperty("role", "badge")
         head.addWidget(badge)
         head.addStretch(1)
         root.addLayout(head)
-        root.addWidget(title_label(f"{info.icon}  {info.title}"))
-        root.addWidget(muted_label(info.description))
+        root.addWidget(title_label(f"{info.icon}  {tr(info.title)}"))
+        root.addWidget(muted_label(tr(info.description)))
         self.simulator = info.create()
         self.challenges = load_challenges().get(info.id, [])
         self.challenge_bar = None
@@ -104,21 +104,21 @@ class SimulatorHostPage(QWidget):
     def guide_markdown(self) -> str:
         info = self.info
         cur = self.ctx.curriculum
-        lines = [f"## {info.title}", "", info.description, "", "### How to use", ""]
-        lines += [f"{i}. {step}" for i, step in enumerate(info.how_to_use, 1)]
-        lines += ["", "### Things to try", ""]
-        lines += [f"- {t}" for t in info.things_to_try]
+        lines = [f"## {tr(info.title)}", "", tr(info.description), "", "### " + tr("How to use"), ""]
+        lines += [f"{i}. {tr(step)}" for i, step in enumerate(info.how_to_use, 1)]
+        lines += ["", "### " + tr("Things to try"), ""]
+        lines += [f"- {tr(t)}" for t in info.things_to_try]
         lessons = [lid for lid in info.lessons if lid in cur.lessons]
         if lessons:
-            lines += ["", "### Related lessons", ""]
+            lines += ["", "### " + tr("Related lessons"), ""]
             lines += [f"- [{lid} {cur.lessons[lid].title}](lesson:{lid})" for lid in lessons]
         if self.challenges:
             solved = sum(1 for c in self.challenges
                          if self.ctx.store.is_challenge_done(c.simulator, c.id))
-            lines += ["", "### Challenges", "",
-                      f"This simulator has {len(self.challenges)} guided challenges "
-                      f"({solved} solved). Read the task at the top, set the controls, then press "
-                      "**Check my answer**."]
+            lines += ["", "### " + tr("Challenges"), "",
+                      tr("This simulator has {total} guided challenges ({solved} solved). Read the task at "
+                         "the top, set the controls, then press **Check my answer**.")
+                      .format(total=len(self.challenges), solved=solved)]
         extra = getattr(self.simulator, "guide_extra", None)
         if extra:
             lines += ["", extra()]

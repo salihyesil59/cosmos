@@ -134,8 +134,9 @@ class LessonPage(QWidget):
                 item.widget().deleteLater()
         for sid in lesson.simulators:
             info = SIMULATORS[sid]
-            btn = QPushButton(f"{info.icon} {info.title}".replace("&", "&&"))  # keep "&" visible
-            btn.setToolTip(f"Open the {info.title}: {info.tagline}")
+            btn = QPushButton(f"{info.icon} {tr(info.title)}".replace("&", "&&"))  # keep "&" visible
+            btn.setToolTip(tr("Open the {title}: {tagline}")
+                           .format(title=tr(info.title), tagline=tr(info.tagline)))
             btn.clicked.connect(lambda _=False, s=sid: self.ctx.navigate(f"sim:{s}"))
             self.sim_buttons.addWidget(btn)
 
@@ -232,26 +233,29 @@ class LessonPage(QWidget):
             return ""
         lesson = self.lesson
         cur = self.ctx.curriculum
-        lines = [f"## {lesson.id} {lesson.title}", "", lesson.summary, "", "### How to study this lesson", ""]
+        lines = [f"## {lesson.id} {lesson.title}", "", lesson.summary, "",
+                 "### " + tr("How to study this lesson"), ""]
         lines += [
-            "1. Read the lesson from top to bottom. Formulas are explained in words right after they appear.",
-            "   Prefer the ideas without the algebra? Switch the **View** at the top right to *Intuitive*.",
-            "2. Click the coloured glossary terms to see definitions here without losing your place.",
-            "3. When you see a **Try it** box, open the simulator, experiment, then come back.",
-            "4. Finish with the **Quiz** tab. Every answer comes with an explanation.",
+            tr("1. Read the lesson from top to bottom. Formulas are explained in words right after they "
+               "appear.\n   Prefer the ideas without the algebra? Switch the **View** at the top right to "
+               "*Intuitive*.\n"
+               "2. Click the coloured glossary terms to see definitions here without losing your place.\n"
+               "3. When you see a **Try it** box, open the simulator, experiment, then come back.\n"
+               "4. Finish with the **Quiz** tab. Every answer comes with an explanation."),
             "",
         ]
         if lesson.prerequisites:
-            lines.append("### Builds on")
+            lines.append("### " + tr("Builds on"))
             lines += [f"- [{p} {cur.lessons[p].title}](lesson:{p})" for p in lesson.prerequisites]
             lines.append("")
         if lesson.simulators:
-            lines.append("### Related simulators")
-            lines += [f"- [{SIMULATORS[s].title}](sim:{s}): {SIMULATORS[s].tagline}" for s in lesson.simulators]
+            lines.append("### " + tr("Related simulators"))
+            lines += [f"- [{tr(SIMULATORS[s].title)}](sim:{s}): {tr(SIMULATORS[s].tagline)}"
+                      for s in lesson.simulators]
             lines.append("")
         followers = [lid for lid, les in cur.lessons.items() if lesson.id in les.prerequisites]
         if followers:
-            lines.append("### Leads to")
+            lines.append("### " + tr("Leads to"))
             lines += [f"- [{f} {cur.lessons[f].title}](lesson:{f})" for f in followers]
         return "\n".join(lines)
 

@@ -12,6 +12,7 @@ from PySide6.QtWidgets import QComboBox, QGroupBox, QLabel, QPushButton, QSizePo
 
 from cosmos.gui.simulators.base import SimulatorBase
 from cosmos.gui.widgets.common import ParameterSlider, labelled_row
+from cosmos.i18n import tr
 from cosmos.physics import constants as const
 
 LOG_MIN, LOG_MAX = -1.0, 27.5
@@ -89,7 +90,7 @@ class ZoomView(QWidget):
         self.setSizePolicy(QSizePolicy.Expanding, QSizePolicy.Expanding)
         rng = random.Random(10)
         self.stars = [(rng.random(), rng.random(), rng.random()) for _ in range(260)]
-        self.setToolTip("Scroll the mouse wheel to zoom in and out.")
+        self.setToolTip(tr("Scroll the mouse wheel to zoom in and out."))
 
     def set_log_width(self, value: float) -> None:
         self.log_width = min(max(value, LOG_MIN), LOG_MAX)
@@ -184,30 +185,30 @@ class ZoomView(QWidget):
 class PowersOfTenSimulator(SimulatorBase):
     def __init__(self, info, parent=None):
         super().__init__(info, parent)
-        box = QGroupBox("Zoom")
+        box = QGroupBox(tr("Zoom"))
         bl = QVBoxLayout(box)
         self.slider = ParameterSlider(
-            "Field of view: 10^x metres", LOG_MIN, LOG_MAX, 0.5, decimals=2, step=0.1,
-            info=("Powers of ten", "Each whole step multiplies the width of the view by ten."),
+            tr("Field of view: 10^x metres"), LOG_MIN, LOG_MAX, 0.5, decimals=2, step=0.1,
+            info=(tr("Powers of ten"), tr("Each whole step multiplies the width of the view by ten.")),
         )
         bl.addWidget(self.slider)
-        self.play = QPushButton("▶ Play")
+        self.play = QPushButton(tr("▶ Play"))
         self.play.setCheckable(True)
-        self.play.setToolTip("Fly automatically from the current scale outward. Click again to pause.")
+        self.play.setToolTip(tr("Fly automatically from the current scale outward. Click again to pause."))
         self.play.toggled.connect(self._toggle_play)
         bl.addWidget(self.play)
         self.direction = QComboBox()
-        self.direction.addItems(["Zoom out", "Zoom in"])
-        bl.addWidget(labelled_row("Direction", self.direction))
+        self.direction.addItems([tr("Zoom out"), tr("Zoom in")])
+        bl.addWidget(labelled_row(tr("Direction"), self.direction))
         self.jump = QComboBox()
-        self.jump.addItem("Choose an object…")
+        self.jump.addItem(tr("Choose an object…"))
         for obj in OBJECTS:
             self.jump.addItem(obj.name)
         self.jump.activated.connect(self._jump_to)
-        bl.addWidget(labelled_row("Jump to", self.jump))
+        bl.addWidget(labelled_row(tr("Jump to"), self.jump))
         self.controls.addWidget(box)
 
-        readout = QGroupBox("At this scale")
+        readout = QGroupBox(tr("At this scale"))
         rl = QVBoxLayout(readout)
         self.width_label = QLabel()
         self.width_label.setWordWrap(True)
@@ -215,7 +216,7 @@ class PowersOfTenSimulator(SimulatorBase):
         rl.addWidget(self.width_label)
         self.controls.addWidget(readout)
 
-        visible = QGroupBox("What you are looking at")
+        visible = QGroupBox(tr("What you are looking at"))
         vl = QVBoxLayout(visible)
         self.visible_label = QLabel()
         self.visible_label.setWordWrap(True)
@@ -245,7 +246,7 @@ class PowersOfTenSimulator(SimulatorBase):
         if items:
             self.visible_label.setText("<br><br>".join(f"<b>{o.name}</b><br>{o.description}" for o in items))
         else:
-            self.visible_label.setText("<i>Mostly empty space at this scale. Keep zooming!</i>")
+            self.visible_label.setText(tr("<i>Mostly empty space at this scale. Keep zooming!</i>"))
 
     def _toggle_play(self, on: bool) -> None:
         self.play.setText("⏸ Pause" if on else "▶ Play")

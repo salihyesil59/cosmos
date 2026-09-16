@@ -149,9 +149,9 @@ class MainWindow(QMainWindow):
         self.sims_item = top("🧪  " + tr("Simulators"), "sims", tr("Interactive tools"))
         self.sim_items: dict[str, QTreeWidgetItem] = {}
         for info in SIMULATORS.values():
-            item = QTreeWidgetItem([f"{info.icon}  {info.title}"])
+            item = QTreeWidgetItem([f"{info.icon}  {tr(info.title)}"])
             item.setData(0, ROUTE_ROLE, f"sim:{info.id}")
-            item.setToolTip(0, info.tagline)
+            item.setToolTip(0, tr(info.tagline))
             self.sims_item.addChild(item)
             self.sim_items[info.id] = item
         self.glossary_item = top("📖  " + tr("Glossary"), "glossary", tr("Definitions of all important terms"))
@@ -551,90 +551,90 @@ class MainWindow(QMainWindow):
     def start_tour(self) -> None:
         steps = [
             TourStep(
-                "Welcome to Cosmos!",
-                "This short tour shows you around. It takes less than a minute. You can leave with "
-                "<b>Skip tour</b> or the Esc key and replay it later from the <b>Tour</b> button.",
+                tr("Welcome to Cosmos!"),
+                tr("This short tour shows you around. It takes less than a minute. You can leave with "
+                   "<b>Skip tour</b> or the Esc key and replay it later from the <b>Tour</b> button."),
                 before=lambda: self.navigate("home"),
             ),
             TourStep(
-                "Navigation",
-                "The sidebar lists the whole course. Lessons are grouped into levels. The icon next to each "
-                "lesson shows its status: <b>filled with ✓</b> = completed, <b>ring</b> = ready, "
-                "<b>small grey circle</b> = prerequisites missing.",
+                tr("Navigation"),
+                tr("The sidebar lists the whole course. Lessons are grouped into levels. The icon next to each "
+                   "lesson shows its status: <b>filled with ✓</b> = completed, <b>ring</b> = ready, "
+                   "<b>small grey circle</b> = prerequisites missing."),
                 target=lambda: self.sidebar,
             ),
             TourStep(
-                "Start here",
-                "This button always takes you to the next lesson you are ready for. If you are new to "
-                "cosmology, simply follow it.",
+                tr("Start here"),
+                tr("This button always takes you to the next lesson you are ready for. If you are new to "
+                   "cosmology, simply follow it."),
                 target=lambda: self.home.continue_btn,
             ),
             TourStep(
-                "The Guide panel",
-                "The Guide explains the page you are on: how to use it, what to try and where to go next. "
-                "When you click a coloured term in a lesson, its definition appears here too.",
+                tr("The Guide panel"),
+                tr("The Guide explains the page you are on: how to use it, what to try and where to go next. "
+                   "When you click a coloured term in a lesson, its definition appears here too."),
                 target=lambda: self.guide_dock,
             ),
             TourStep(
-                "Lessons and quizzes",
-                "Each lesson has a <b>Lesson</b> tab with explanations, formulas and figures, and a "
-                "<b>Quiz</b> tab. Score at least 70% to complete the lesson.",
+                tr("Lessons and quizzes"),
+                tr("Each lesson has a <b>Lesson</b> tab with explanations, formulas and figures, and a "
+                   "<b>Quiz</b> tab. Score at least 70% to complete the lesson."),
                 target=lambda: self.lesson_page.tabs,
                 before=lambda: self.navigate(f"lesson:{self.ctx.curriculum.ordered_ids[0]}"),
             ),
             TourStep(
-                "Two ways to read a lesson",
-                "Every lesson has a <b>View</b> switch at the top right. <b>Intuitive</b> tells the story in "
-                "words, hiding the formulas and derivations; <b>With the maths</b> shows the complete lesson. "
-                "Switch whenever you like — your choice is remembered.",
+                tr("Two ways to read a lesson"),
+                tr("Every lesson has a <b>View</b> switch at the top right. <b>Intuitive</b> tells the story in "
+                   "words, hiding the formulas and derivations; <b>With the maths</b> shows the complete lesson. "
+                   "Switch whenever you like — your choice is remembered."),
                 target=lambda: self.lesson_page.view_buttons.buttons()[0],
             ),
             TourStep(
-                "Simulators",
-                "Simulators let you experiment. Lessons link to them with <b>Try it</b> boxes, and you "
-                "can open them any time from the sidebar.",
+                tr("Simulators"),
+                tr("Simulators let you experiment. Lessons link to them with <b>Try it</b> boxes, and you "
+                   "can open them any time from the sidebar."),
                 target=lambda: self.sidebar,
                 before=lambda: self.sidebar.scrollToItem(self.sims_item),
             ),
             TourStep(
-                "Challenges",
-                "Many simulators open with a <b>challenge</b>: a concrete task such as finding a universe "
-                "that ends in a Big Crunch. Set the controls and press <b>Check my answer</b>; hints are "
-                "there if you need them, and solved challenges earn badges.",
+                tr("Challenges"),
+                tr("Many simulators open with a <b>challenge</b>: a concrete task such as finding a universe "
+                   "that ends in a Big Crunch. Set the controls and press <b>Check my answer</b>; hints are "
+                   "there if you need them, and solved challenges earn badges."),
                 target=lambda: self.stack.currentWidget().challenge_bar,
                 before=lambda: self.navigate("sim:S2"),
             ),
             TourStep(
-                "Search and the formula sheet",
-                "The <b>search box</b> (Ctrl+F) looks through lessons, the glossary, the simulators and the "
-                "formula sheet at once. <b>Reference</b> (Ctrl+R) collects every formula, constant and unit "
-                "conversion in one place.",
+                tr("Search and the formula sheet"),
+                tr("The <b>search box</b> (Ctrl+F) looks through lessons, the glossary, the simulators and the "
+                   "formula sheet at once. <b>Reference</b> (Ctrl+R) collects every formula, constant and unit "
+                   "conversion in one place."),
                 target=lambda: self.search_box,
             ),
             TourStep(
-                "Your own notes",
-                "The <b>Notes</b> panel, next to the Guide, is a private notebook: one note per page, saved "
-                "automatically. Press <b>☆ Bookmark</b> (Ctrl+D) to keep a link to a page, and open "
-                "<b>Notes &amp; bookmarks</b> to see or export everything you saved.",
+                tr("Your own notes"),
+                tr("The <b>Notes</b> panel, next to the Guide, is a private notebook: one note per page, saved "
+                   "automatically. Press <b>☆ Bookmark</b> (Ctrl+D) to keep a link to a page, and open "
+                   "<b>Notes &amp; bookmarks</b> to see or export everything you saved."),
                 target=lambda: self.notes_dock,
                 before=lambda: (self.notes_dock.show(), self.notes_dock.raise_()),
             ),
             TourStep(
-                "Toolbar",
-                "Go <b>Back</b> and <b>Forward</b> between pages, open the <b>Glossary</b> and your "
-                "<b>Progress</b> map, toggle the Guide panel, switch the <b>Theme</b>, or replay this tour.",
+                tr("Toolbar"),
+                tr("Go <b>Back</b> and <b>Forward</b> between pages, open the <b>Glossary</b> and your "
+                   "<b>Progress</b> map, toggle the Guide panel, switch the <b>Theme</b>, or replay this tour."),
                 target=lambda: self.toolbar,
             ),
             TourStep(
-                "History and badges",
-                "<b>History</b> follows cosmology from Copernicus to the latest surveys, with cards for the "
-                "scientists. <b>Progress</b> shows your lesson map and the <b>badges</b> you have earned.",
+                tr("History and badges"),
+                tr("<b>History</b> follows cosmology from Copernicus to the latest surveys, with cards for the "
+                   "scientists. <b>Progress</b> shows your lesson map and the <b>badges</b> you have earned."),
                 before=lambda: self.navigate("history"),
             ),
             TourStep(
-                "You're ready",
-                "Every control has a tooltip, and <b>?</b> buttons give detailed explanations. "
-                "Enjoy exploring the universe!",
+                tr("You're ready"),
+                tr("Every control has a tooltip, and <b>?</b> buttons give detailed explanations. "
+                   "Enjoy exploring the universe!"),
                 before=lambda: self.navigate("home"),
             ),
         ]

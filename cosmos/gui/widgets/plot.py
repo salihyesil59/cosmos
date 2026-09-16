@@ -19,6 +19,7 @@ from PySide6.QtWidgets import (
 )
 
 from cosmos.gui.theme import style_axes, style_legend, theme
+from cosmos.i18n import tr
 
 # Qt sometimes paints a canvas before the docks have settled on their sizes. The figure is
 # redrawn correctly once the widget has its real size, so the layout complaint is noise.
@@ -59,13 +60,13 @@ class PlotWidget(QWidget):
         if toolbar:
             bar = QHBoxLayout()
             bar.addStretch(1)
-            save = QPushButton("Save image…")
-            save.setToolTip("Save this plot as a PNG or SVG image.")
+            save = QPushButton(tr("Save image…"))
+            save.setToolTip(tr("Save this plot as a PNG or SVG image."))
             save.clicked.connect(self.export_image)
             bar.addWidget(save)
             if csv_provider:
-                data = QPushButton("Export data (CSV)…")
-                data.setToolTip("Save the numbers behind this plot as a CSV file (opens in Excel).")
+                data = QPushButton(tr("Export data (CSV)…"))
+                data.setToolTip(tr("Save the numbers behind this plot as a CSV file (opens in Excel)."))
                 data.clicked.connect(self.export_csv)
                 bar.addWidget(data)
             layout.addLayout(bar)
@@ -106,26 +107,28 @@ class PlotWidget(QWidget):
     # ------------------------------------------------------------ export
     def export_image(self) -> None:
         path, _ = QFileDialog.getSaveFileName(
-            self, "Save plot", f"{self._name}.png", "PNG image (*.png);;SVG vector image (*.svg)"
+            self, tr("Save plot"), f"{self._name}.png",
+            tr("PNG image (*.png);;SVG vector image (*.svg)")
         )
         if not path:
             return
         try:
             self.figure.savefig(path, dpi=200, facecolor=self.figure.get_facecolor())
         except OSError as exc:
-            QMessageBox.warning(self, "Could not save", str(exc))
+            QMessageBox.warning(self, tr("Could not save"), str(exc))
 
     def export_csv(self) -> None:
         if not self._csv:
             return
-        path, _ = QFileDialog.getSaveFileName(self, "Export data", f"{self._name}.csv", "CSV file (*.csv)")
+        path, _ = QFileDialog.getSaveFileName(self, tr("Export data"), f"{self._name}.csv",
+                                                  tr("CSV file (*.csv)"))
         if not path:
             return
         headers, rows = self._csv()
         try:
             write_csv(path, headers, rows)
         except OSError as exc:
-            QMessageBox.warning(self, "Could not save", str(exc))
+            QMessageBox.warning(self, tr("Could not save"), str(exc))
 
 
 def write_csv(path: str, headers: Sequence[str], rows: Sequence[Sequence[object]]) -> None:

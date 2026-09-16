@@ -20,9 +20,9 @@ from PySide6.QtWidgets import (
 from cosmos.gui.context import AppContext
 from cosmos.gui.routes import route_title
 from cosmos.gui.widgets.common import card, muted_label, title_label
-from cosmos.i18n import tr
+from cosmos.i18n import tr, tr_noop
 
-GUIDE = """
+GUIDE = tr_noop("""
 ## Notes & bookmarks
 
 Everything you saved while working through the course.
@@ -35,7 +35,7 @@ Everything you saved while working through the course.
 
 Notes live on this computer only, in the same file as your progress. Nothing is
 uploaded anywhere.
-"""
+""")
 
 
 class NotesPage(QWidget):
@@ -68,7 +68,7 @@ class NotesPage(QWidget):
         self.refresh()
 
     def guide_markdown(self) -> str:
-        return GUIDE
+        return tr(GUIDE)
 
     # ------------------------------------------------------------------ api
     def refresh(self) -> None:
@@ -102,15 +102,17 @@ class NotesPage(QWidget):
         if not (store.data.bookmarks or store.data.notes):
             return
         suggestion = str(Path.home() / "cosmos-notes.md")
-        path, _ = QFileDialog.getSaveFileName(self, "Export notes", suggestion, "Markdown (*.md);;Text (*.txt)")
+        path, _ = QFileDialog.getSaveFileName(self, tr("Export notes"), suggestion,
+                                          tr("Markdown (*.md);;Text (*.txt)"))
         if not path:
             return
         try:
             Path(path).write_text(self.as_markdown(), encoding="utf-8")
         except OSError as exc:
-            QMessageBox.warning(self, "Export failed", f"The file could not be written:\n{exc}")
+            QMessageBox.warning(self, tr("Export failed"),
+                               tr("The file could not be written:") + f"\n{exc}")
             return
-        self.subtitle.setText(f"Exported to {path}")
+        self.subtitle.setText(tr("Exported to {path}").format(path=path))
 
     def as_markdown(self) -> str:
         store = self.ctx.store
@@ -168,7 +170,8 @@ class NotesPage(QWidget):
 
     def _delete_note(self, route: str) -> None:
         confirm = QMessageBox.question(
-            self, "Delete note", f"Delete your note for {route_title(self.ctx, route)}?")
+            self, tr("Delete note"),
+            tr("Delete your note for {page}?").format(page=route_title(self.ctx, route)))
         if confirm is QMessageBox.Yes:
             self.ctx.store.set_note(route, "")
             self.refresh()

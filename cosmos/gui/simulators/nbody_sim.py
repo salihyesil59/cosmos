@@ -25,6 +25,7 @@ from cosmos.gui.simulators.base import SimulatorBase
 from cosmos.gui.theme import theme
 from cosmos.gui.widgets.common import InfoButton, ParameterSlider, labelled_row, muted_label
 from cosmos.gui.widgets.plot import PlotWidget
+from cosmos.i18n import tr
 from cosmos.physics.nbody import NBodyConfig, NBodySimulation
 
 COLORMAPS = {"Magma": "magma", "Inferno": "inferno", "Viridis": "viridis", "Cubehelix": "cubehelix"}
@@ -68,23 +69,23 @@ class NBodySimulator(SimulatorBase):
         super().__init__(info, parent)
         self.history: list[tuple[float, float]] = []
 
-        ic = QGroupBox("1 · Initial ripples")
+        ic = QGroupBox(tr("1 · Initial ripples"))
         il = QVBoxLayout(ic)
         self.index = ParameterSlider(
-            "Spectral index n", -2.5, 0.5, -1.0, decimals=2, step=0.1,
-            info=("Power spectrum slope", "Initial fluctuations have power P(k) ∝ kⁿ. Smaller n puts more power on "
-                  "large scales (big coherent structures); larger n gives more small clumps."),
+            tr("Spectral index n"), -2.5, 0.5, -1.0, decimals=2, step=0.1,
+            info=(tr("Power spectrum slope"), tr("Initial fluctuations have power P(k) ∝ kⁿ. Smaller n puts more power on "
+                      "large scales (big coherent structures); larger n gives more small clumps.")),
         )
         self.strength = ParameterSlider(
-            "Fluctuation strength", 0.4, 2.0, 1.0, decimals=2, step=0.05,
-            info=("Amplitude", "RMS density contrast per grid cell when the growth factor reaches D = 1. "
-                  "Stronger ripples collapse earlier."),
+            tr("Fluctuation strength"), 0.4, 2.0, 1.0, decimals=2, step=0.05,
+            info=(tr("Amplitude"), tr("RMS density contrast per grid cell when the growth factor reaches D = 1. "
+                      "Stronger ripples collapse earlier.")),
         )
         il.addWidget(self.index)
         il.addWidget(self.strength)
         dm_row = QHBoxLayout()
-        self.cold = QRadioButton("Cold dark matter")
-        self.warm = QRadioButton("Warm dark matter")
+        self.cold = QRadioButton(tr("Cold dark matter"))
+        self.warm = QRadioButton(tr("Warm dark matter"))
         self.cold.setChecked(True)
         group = QButtonGroup(self)
         group.addButton(self.cold)
@@ -92,57 +93,57 @@ class NBodySimulator(SimulatorBase):
         dm_row.addWidget(self.cold)
         dm_row.addWidget(self.warm)
         dm_row.addWidget(InfoButton(
-            "Cold or warm?",
-            "Cold dark matter particles move slowly, so fluctuations survive on all scales. Warm dark matter "
-            "particles move fast enough early on to smooth out the smallest ripples, so fewer small halos form.",
+            tr("Cold or warm?"),
+            tr("Cold dark matter particles move slowly, so fluctuations survive on all scales. Warm dark matter "
+                "particles move fast enough early on to smooth out the smallest ripples, so fewer small halos form."),
         ))
         il.addLayout(dm_row)
         self.cutoff = ParameterSlider(
-            "Free-streaming scale (cells)", 1.0, 12.0, 5.0, decimals=1, step=0.5,
-            info=("Cutoff", "Fluctuations smaller than this are erased in the warm dark matter model."),
+            tr("Free-streaming scale (cells)"), 1.0, 12.0, 5.0, decimals=1, step=0.5,
+            info=(tr("Cutoff"), tr("Fluctuations smaller than this are erased in the warm dark matter model.")),
         )
         il.addWidget(self.cutoff)
         self.seed = QSpinBox()
         self.seed.setRange(1, 9999)
         self.seed.setValue(42)
-        self.seed.setToolTip("Different numbers give different random universes with the same statistics.")
-        il.addWidget(labelled_row("Random seed", self.seed))
+        self.seed.setToolTip(tr("Different numbers give different random universes with the same statistics."))
+        il.addWidget(labelled_row(tr("Random seed"), self.seed))
         self.resolution = QComboBox()
-        self.resolution.addItem("96 × 96 particles (fast)", 96)
-        self.resolution.addItem("128 × 128 particles", 128)
-        self.resolution.addItem("192 × 192 particles (detailed)", 192)
+        self.resolution.addItem(tr("96 × 96 particles (fast)"), 96)
+        self.resolution.addItem(tr("128 × 128 particles"), 128)
+        self.resolution.addItem(tr("192 × 192 particles (detailed)"), 192)
         self.resolution.setCurrentIndex(1)
-        il.addWidget(labelled_row("Resolution", self.resolution))
-        new = QPushButton("Apply and restart")
-        new.setToolTip("Create new initial conditions with these settings.")
+        il.addWidget(labelled_row(tr("Resolution"), self.resolution))
+        new = QPushButton(tr("Apply and restart"))
+        new.setToolTip(tr("Create new initial conditions with these settings."))
         new.clicked.connect(self.restart)
         il.addWidget(new)
         self.controls.addWidget(ic)
 
-        run = QGroupBox("2 · Run")
+        run = QGroupBox(tr("2 · Run"))
         rl = QVBoxLayout(run)
         buttons = QHBoxLayout()
-        self.play = QPushButton("▶ Play")
+        self.play = QPushButton(tr("▶ Play"))
         self.play.setProperty("role", "primary")
         self.play.setCheckable(True)
         self.play.toggled.connect(self._toggle)
-        step = QPushButton("Step")
-        step.setToolTip("Advance a little bit")
+        step = QPushButton(tr("Step"))
+        step.setToolTip(tr("Advance a little bit"))
         step.clicked.connect(lambda: self._advance(3))
-        reset = QPushButton("Reset")
+        reset = QPushButton(tr("Reset"))
         reset.clicked.connect(self.restart)
         for b in (self.play, step, reset):
             buttons.addWidget(b)
         rl.addLayout(buttons)
-        self.speed = ParameterSlider("Speed (steps per frame)", 1, 8, 2, decimals=0, step=1)
+        self.speed = ParameterSlider(tr("Speed (steps per frame)"), 1, 8, 2, decimals=0, step=1)
         rl.addWidget(self.speed)
         self.cmap = QComboBox()
         self.cmap.addItems(list(COLORMAPS))
         self.cmap.currentIndexChanged.connect(self._render)
-        rl.addWidget(labelled_row("Colours", self.cmap))
+        rl.addWidget(labelled_row(tr("Colours"), self.cmap))
         self.controls.addWidget(run)
 
-        stats = QGroupBox("What is happening")
+        stats = QGroupBox(tr("What is happening"))
         sl = QVBoxLayout(stats)
         self.summary = QLabel()
         self.summary.setWordWrap(True)

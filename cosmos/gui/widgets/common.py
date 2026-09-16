@@ -18,6 +18,7 @@ from PySide6.QtWidgets import (
 )
 
 from cosmos.gui.theme import repolish
+from cosmos.i18n import tr
 from cosmos.physics.presets import PRESETS
 
 
@@ -202,12 +203,12 @@ class PresetSelector(QComboBox):
     def __init__(self, include_custom: bool = True, parent: QWidget | None = None):
         super().__init__(parent)
         if include_custom:
-            self.addItem("Custom (your own values)", "custom")
-            self.setItemData(0, "Values you set with the controls below.", Qt.ToolTipRole)
+            self.addItem(tr("Custom (your own values)"), "custom")
+            self.setItemData(0, tr("Values you set with the controls below."), Qt.ToolTipRole)
         for key, preset in PRESETS.items():
             self.addItem(preset.label, key)
             self.setItemData(self.count() - 1, preset.description, Qt.ToolTipRole)
-        self.setToolTip("Load the parameters of a well-known cosmological model.")
+        self.setToolTip(tr("Load the parameters of a well-known cosmological model."))
         self.currentIndexChanged.connect(self._emit)
 
     def _emit(self, _index: int):

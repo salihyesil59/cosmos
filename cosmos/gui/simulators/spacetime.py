@@ -12,15 +12,16 @@ from cosmos.gui.simulators.base import SimulatorBase
 from cosmos.gui.theme import theme
 from cosmos.gui.widgets.common import Banner, ParameterSlider, PresetSelector, labelled_row
 from cosmos.gui.widgets.plot import PlotWidget
+from cosmos.i18n import tr, tr_noop
 from cosmos.physics import constants as const
 from cosmos.physics.cosmology import Cosmology, Fate
 from cosmos.physics.presets import PRESETS
 
 MPC_TO_GLY = const.MPC / const.LIGHT_YEAR / 1e9
 COORDINATES = {
-    "proper": "Proper distance vs cosmic time",
-    "comoving": "Comoving distance vs cosmic time",
-    "conformal": "Comoving distance vs conformal time (light at 45°)",
+    "proper": tr_noop("Proper distance vs cosmic time"),
+    "comoving": tr_noop("Comoving distance vs cosmic time"),
+    "conformal": tr_noop("Comoving distance vs conformal time (light at 45°)"),
 }
 GALAXY_COMOVING_GLY = (4, 10, 20, 30, 40, 60)
 
@@ -30,39 +31,39 @@ class SpacetimeSimulator(SimulatorBase):
         super().__init__(info, parent)
         self.data = None
 
-        model = QGroupBox("1 · Universe")
+        model = QGroupBox(tr("1 · Universe"))
         ml = QVBoxLayout(model)
         self.preset = PresetSelector()
-        ml.addWidget(labelled_row("Preset", self.preset))
-        self.om = ParameterSlider("Ωm matter", 0.05, 1.0, 0.3097, decimals=3, step=0.01)
-        self.ode = ParameterSlider("ΩΛ dark energy", 0.0, 1.5, 0.6889, decimals=3, step=0.01)
+        ml.addWidget(labelled_row(tr("Preset"), self.preset))
+        self.om = ParameterSlider(tr("Ωm matter"), 0.05, 1.0, 0.3097, decimals=3, step=0.01)
+        self.ode = ParameterSlider(tr("ΩΛ dark energy"), 0.0, 1.5, 0.6889, decimals=3, step=0.01)
         ml.addWidget(self.om)
         ml.addWidget(self.ode)
         self.controls.addWidget(model)
 
-        view = QGroupBox("2 · Diagram")
+        view = QGroupBox(tr("2 · Diagram"))
         vl = QVBoxLayout(view)
         self.coords = QComboBox()
         for key, label in COORDINATES.items():
-            self.coords.addItem(label, key)
-        vl.addWidget(labelled_row("Coordinates", self.coords, (
-            "Coordinates",
-            "Proper distance is the real distance at each moment. Comoving distance removes the expansion, "
-            "so galaxies stay at fixed positions. In conformal time light always travels at 45°.")))
+            self.coords.addItem(tr(label), key)
+        vl.addWidget(labelled_row(tr("Coordinates"), self.coords, (
+            tr("Coordinates"),
+            tr("Proper distance is the real distance at each moment. Comoving distance removes the expansion, "
+                "so galaxies stay at fixed positions. In conformal time light always travels at 45°."))))
         self.observe = ParameterSlider(
-            "Observer's scale factor a", 0.1, 2.5, 1.0, decimals=2, step=0.05,
-            info=("Observation time", "Move the observer through cosmic history: a = 1 is today, a = 0.5 when the "
-                  "universe was half its present size, a = 2 in the future."),
+            tr("Observer's scale factor a"), 0.1, 2.5, 1.0, decimals=2, step=0.05,
+            info=(tr("Observation time"), tr("Move the observer through cosmic history: a = 1 is today, a = 0.5 when the "
+                      "universe was half its present size, a = 2 in the future.")),
         )
         vl.addWidget(self.observe)
         self.toggles = {}
         for key, label, default in [
-            ("past", "Past light cone (what you see)", True),
-            ("future", "Future light cone (where your light goes)", False),
-            ("particle", "Particle horizon", True),
-            ("event", "Event horizon", True),
-            ("hubble", "Hubble sphere", True),
-            ("galaxies", "Galaxy worldlines", True),
+            ("past", tr("Past light cone (what you see)"), True),
+            ("future", tr("Future light cone (where your light goes)"), False),
+            ("particle", tr("Particle horizon"), True),
+            ("event", tr("Event horizon"), True),
+            ("hubble", tr("Hubble sphere"), True),
+            ("galaxies", tr("Galaxy worldlines"), True),
         ]:
             box = QCheckBox(label)
             box.setChecked(default)
@@ -71,7 +72,7 @@ class SpacetimeSimulator(SimulatorBase):
             self.toggles[key] = box
         self.controls.addWidget(view)
 
-        results = QGroupBox("At the observer's time")
+        results = QGroupBox(tr("At the observer's time"))
         rl = QVBoxLayout(results)
         self.summary = QLabel()
         self.summary.setWordWrap(True)

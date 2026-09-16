@@ -21,8 +21,8 @@ from cosmos.gui.simulators.base import SimulatorBase
 from cosmos.gui.theme import theme
 from cosmos.gui.widgets.common import Banner, ParameterSlider, labelled_row
 from cosmos.gui.widgets.plot import PlotWidget
-from cosmos.physics import camb_backend, cmb
 from cosmos.i18n import tr
+from cosmos.physics import camb_backend, cmb
 
 PATCH_DEG = 20.0
 TEACHING, EXACT = "teaching", "camb"
@@ -47,88 +47,88 @@ class CMBSpectrumSimulator(SimulatorBase):
         self.reference = cmb.spectrum(base)
         self.spec = self.reference
 
-        matter = QGroupBox("1 · Contents of the universe")
+        matter = QGroupBox(tr("1 · Contents of the universe"))
         ml = QVBoxLayout(matter)
         self.omega_b = ParameterSlider(
-            "Ωb h²  ordinary matter", 0.005, 0.05, base.omega_b, decimals=4, step=0.001,
-            info=("Baryon density", "More baryons make the plasma heavier. Compressions (odd peaks: 1st, 3rd) "
-                  "get stronger than rarefactions (even peaks), and damping moves to smaller scales."),
+            tr("Ωb h²  ordinary matter"), 0.005, 0.05, base.omega_b, decimals=4, step=0.001,
+            info=(tr("Baryon density"), tr("More baryons make the plasma heavier. Compressions (odd peaks: 1st, 3rd) "
+                      "get stronger than rarefactions (even peaks), and damping moves to smaller scales.")),
         )
         self.omega_c = ParameterSlider(
-            "Ωc h²  dark matter", 0.03, 0.4, base.omega_c, decimals=4, step=0.005,
-            info=("Cold dark matter density", "More dark matter means matter dominates earlier, so gravitational "
-                  "potentials decay less and the radiation driving that boosts the peaks weakens."),
+            tr("Ωc h²  dark matter"), 0.03, 0.4, base.omega_c, decimals=4, step=0.005,
+            info=(tr("Cold dark matter density"), tr("More dark matter means matter dominates earlier, so gravitational "
+                      "potentials decay less and the radiation driving that boosts the peaks weakens.")),
         )
         self.h = ParameterSlider(
-            "h = H0 / 100", 0.5, 0.9, base.h, decimals=4, step=0.005,
-            info=("Hubble constant", "Changes the distance to the last scattering surface and therefore the angle "
-                  "the sound horizon covers. The peaks shift sideways."),
+            tr("h = H0 / 100"), 0.5, 0.9, base.h, decimals=4, step=0.005,
+            info=(tr("Hubble constant"), tr("Changes the distance to the last scattering surface and therefore the angle "
+                      "the sound horizon covers. The peaks shift sideways.")),
         )
         self.omega_k = ParameterSlider(
-            "Ωk  curvature", -0.15, 0.15, 0.0, decimals=3, step=0.005,
-            info=("Spatial curvature", "Positive (open): light rays diverge, spots look smaller, peaks move to "
-                  "higher ℓ. Negative (closed): spots look larger, peaks move to lower ℓ. Dark energy is "
-                  "adjusted so that the total adds up."),
+            tr("Ωk  curvature"), -0.15, 0.15, 0.0, decimals=3, step=0.005,
+            info=(tr("Spatial curvature"), tr("Positive (open): light rays diverge, spots look smaller, peaks move to "
+                      "higher ℓ. Negative (closed): spots look larger, peaks move to lower ℓ. Dark energy is "
+                      "adjusted so that the total adds up.")),
         )
         for w in (self.omega_b, self.omega_c, self.h, self.omega_k):
             ml.addWidget(w)
         self.controls.addWidget(matter)
 
-        early = QGroupBox("2 · Initial fluctuations and reionisation")
+        early = QGroupBox(tr("2 · Initial fluctuations and reionisation"))
         el = QVBoxLayout(early)
         self.n_s = ParameterSlider(
-            "nₛ  spectral index", 0.8, 1.2, base.n_s, decimals=4, step=0.005,
-            info=("Spectral index", "nₛ = 1 means equal strength on all scales. Values below 1 (Planck: 0.965) "
-                  "give slightly weaker small-scale fluctuations, as predicted by inflation."),
+            tr("nₛ  spectral index"), 0.8, 1.2, base.n_s, decimals=4, step=0.005,
+            info=(tr("Spectral index"), tr("nₛ = 1 means equal strength on all scales. Values below 1 (Planck: 0.965) "
+                      "give slightly weaker small-scale fluctuations, as predicted by inflation.")),
         )
         self.a_s = ParameterSlider(
-            "Aₛ × 10⁹  amplitude", 1.0, 4.0, base.a_s * 1e9, decimals=3, step=0.05,
-            info=("Amplitude", "Overall strength of the primordial fluctuations. Scales the whole spectrum."),
+            tr("Aₛ × 10⁹  amplitude"), 1.0, 4.0, base.a_s * 1e9, decimals=3, step=0.05,
+            info=(tr("Amplitude"), tr("Overall strength of the primordial fluctuations. Scales the whole spectrum.")),
         )
         self.tau = ParameterSlider(
-            "τ  reionisation optical depth", 0.0, 0.2, base.tau, decimals=3, step=0.005,
-            info=("Optical depth", "When the first stars reionised the universe, free electrons scattered some CMB "
-                  "photons again, smoothing small-scale fluctuations by a factor e^(−2τ)."),
+            tr("τ  reionisation optical depth"), 0.0, 0.2, base.tau, decimals=3, step=0.005,
+            info=(tr("Optical depth"), tr("When the first stars reionised the universe, free electrons scattered some CMB "
+                      "photons again, smoothing small-scale fluctuations by a factor e^(−2τ).")),
         )
         for w in (self.n_s, self.a_s, self.tau):
             el.addWidget(w)
         self.controls.addWidget(early)
 
-        engine = QGroupBox("3 · How the spectrum is computed")
+        engine = QGroupBox(tr("3 · How the spectrum is computed"))
         gl = QVBoxLayout(engine)
         self.backend = QComboBox()
-        self.backend.addItem("Teaching model (instant)", TEACHING)
-        self.backend.addItem("CAMB — exact Boltzmann code", EXACT)
+        self.backend.addItem(tr("Teaching model (instant)"), TEACHING)
+        self.backend.addItem(tr("CAMB — exact Boltzmann code"), EXACT)
         if not camb_backend.available():
             self.backend.model().item(1).setEnabled(False)
             self.backend.setItemData(1, "Not installed. Run: pip install camb", Qt.ToolTipRole)
-        gl.addWidget(labelled_row("Engine", self.backend, (
-            "Two engines",
-            "The teaching model is an analytic approximation that reacts instantly, which is what you want "
-            "while dragging a slider. CAMB solves the Boltzmann equations properly: slower, but exact. "
-            "Comparing the two is a good way to see what the approximation gets right.")))
+        gl.addWidget(labelled_row(tr("Engine"), self.backend, (
+            tr("Two engines"),
+            tr("The teaching model is an analytic approximation that reacts instantly, which is what you want "
+                "while dragging a slider. CAMB solves the Boltzmann equations properly: slower, but exact. "
+                "Comparing the two is a good way to see what the approximation gets right."))))
         self.engine_note = QLabel()
         self.engine_note.setWordWrap(True)
         self.engine_note.setProperty("role", "muted")
         gl.addWidget(self.engine_note)
         self.controls.addWidget(engine)
 
-        view = QGroupBox("4 · Display")
+        view = QGroupBox(tr("4 · Display"))
         vl = QVBoxLayout(view)
-        self.show_reference = QCheckBox("Show the Planck 2018 model for comparison")
+        self.show_reference = QCheckBox(tr("Show the Planck 2018 model for comparison"))
         self.show_reference.setChecked(True)
-        self.log_axis = QCheckBox("Logarithmic ℓ axis")
-        self.show_peaks = QCheckBox("Mark the acoustic peaks")
+        self.log_axis = QCheckBox(tr("Logarithmic ℓ axis"))
+        self.show_peaks = QCheckBox(tr("Mark the acoustic peaks"))
         self.show_peaks.setChecked(True)
         for w in (self.show_reference, self.log_axis, self.show_peaks):
             vl.addWidget(w)
             w.toggled.connect(self.schedule_update)
-        reset = QPushButton("Reset to Planck 2018")
+        reset = QPushButton(tr("Reset to Planck 2018"))
         reset.clicked.connect(self.reset)
         vl.addWidget(reset)
         self.controls.addWidget(view)
 
-        results = QGroupBox("What the model gives")
+        results = QGroupBox(tr("What the model gives"))
         rl = QVBoxLayout(results)
         self.summary = QLabel()
         self.summary.setWordWrap(True)
@@ -161,7 +161,7 @@ class CMBSpectrumSimulator(SimulatorBase):
         self._update_timer.setInterval(450 if exact else 40)
         if exact:
             self.banner.set_message("info", EXACT_NOTE.format(version=camb_backend.version()))
-            self.engine_note.setText("Exact spectra. Sliders react after a short pause.")
+            self.engine_note.setText(tr("Exact spectra. Sliders react after a short pause."))
         else:
             self.banner.set_message("info", TEACHING_NOTE)
             self.engine_note.setText(
@@ -226,7 +226,7 @@ class CMBSpectrumSimulator(SimulatorBase):
         cosmo = params.cosmology()
         valid = cosmo.has_big_bang() and cosmo.Ode0 > -0.5
         if not valid:
-            self.summary.setText("<b>This combination has no Big Bang.</b> Reduce the curvature or dark matter.")
+            self.summary.setText(tr("<b>This combination has no Big Bang.</b> Reduce the curvature or dark matter."))
             return
         self.spec = spec = self._compute(params)
         peaks = spec.peaks
@@ -303,13 +303,15 @@ class CMBSpectrumSimulator(SimulatorBase):
         }
 
     def guide_extra(self) -> str:
-        engines = ("Both engines are available: compare them with the **Engine** box."
+        engines = (tr("Both engines are available: compare them with the **Engine** box.")
                    if camb_backend.available()
-                   else "Only the teaching model is available here. `pip install camb` adds the exact engine.")
+                   else tr("Only the teaching model is available here. `pip install camb` adds the exact "
+                           "engine."))
         return (
-            f"### Two engines\n\n{engines}\n\n"
-            "### Reading the spectrum\n\n"
-            "- **Left (ℓ < 50):** regions larger than the horizon at decoupling, the flat Sachs–Wolfe plateau.\n"
-            "- **Peaks:** sound waves caught at maximum compression (1, 3, 5) or rarefaction (2, 4).\n"
-            "- **Right (ℓ > 1300):** photon diffusion erases the smallest ripples (Silk damping)."
+            "### " + tr("Two engines") + f"\n\n{engines}\n\n"
+            + "### " + tr("Reading the spectrum") + "\n\n"
+            + tr("- **Left (ℓ < 50):** regions larger than the horizon at decoupling, the flat Sachs–Wolfe "
+                 "plateau.\n"
+                 "- **Peaks:** sound waves caught at maximum compression (1, 3, 5) or rarefaction (2, 4).\n"
+                 "- **Right (ℓ > 1300):** photon diffusion erases the smallest ripples (Silk damping).")
         )
