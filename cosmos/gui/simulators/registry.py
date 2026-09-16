@@ -402,6 +402,87 @@ SIMULATORS: dict[str, SimulatorInfo] = {
             class_name="SandboxSimulator",
             icon="✦",
         ),
+        SimulatorInfo(
+            id="S10",
+            title="Interactive Cosmic Timeline",
+            tagline="From the Planck era to the far future on one slider.",
+            description=(
+                "Slide through 60 orders of magnitude of cosmic time. At every moment the timeline shows the "
+                "temperature, the typical particle energy, the density, the size of the observable universe and "
+                "what dominated the energy budget, together with the epoch you are in and how well we know it."
+            ),
+            how_to_use=[
+                "Drag the <b>time slider</b>; it is logarithmic, so each step of 1 is a factor of ten in time.",
+                "Or pick an epoch from <b>Jump to an epoch</b>, or press <b>Play history</b>.",
+                "Read <b>The universe at this moment</b> for temperature, energy, density and horizon size.",
+                "The coloured bands show how confident we are: red speculative, yellow theory, blue tested in "
+                "laboratories, green directly observed.",
+            ],
+            things_to_try=[
+                "Find the moment when the universe was as hot as the core of the Sun. Which epoch is it?",
+                "When did matter overtake radiation, and dark energy overtake matter?",
+                "How large was the observable universe at the end of nucleosynthesis?",
+                "Go 100 billion years into the future. What happens to the temperature?",
+            ],
+            lessons=["L4.1", "L4.2", "L4.5", "L6.4"],
+            module="cosmos.gui.simulators.cosmic_timeline",
+            class_name="CosmicTimelineSimulator",
+            icon="⧗",
+        ),
+        SimulatorInfo(
+            id="S11",
+            title="BBN Abundance Explorer",
+            tagline="How the first three minutes made hydrogen, helium and lithium.",
+            description=(
+                "Big Bang nucleosynthesis predicts how much helium, deuterium, helium-3 and lithium formed in the "
+                "first minutes, depending on the density of ordinary matter. Change the baryon density, add extra "
+                "neutrino species or change the neutron lifetime, and compare the predictions with the observed "
+                "abundances and with the CMB."
+            ),
+            how_to_use=[
+                "Move <b>η₁₀</b>, the number of baryons per ten billion photons. The vertical line marks your value.",
+                "The coloured horizontal bands are the observed abundances; the green vertical band is the "
+                "baryon density measured from the CMB.",
+                "Use <b>Change the physics</b> to add extra relativistic species or change the neutron lifetime.",
+                "The right-hand panel shows neutrons decaying while the universe waits for deuterium to survive.",
+            ],
+            things_to_try=[
+                "Press <b>From deuterium</b>. Does the result land inside the CMB band?",
+                "Find the lithium minimum. Can any baryon density fit lithium and deuterium together?",
+                "Set ΔN_eff = 1. How much does helium change, and could the observations allow it?",
+                "Lengthen the neutron lifetime to 888 s, the beam-experiment value. What happens to helium?",
+            ],
+            lessons=["L4.3", "L4.2", "L4.5"],
+            module="cosmos.gui.simulators.bbn_explorer",
+            class_name="BBNExplorerSimulator",
+            icon="⚛",
+        ),
+        SimulatorInfo(
+            id="S17",
+            title="Olbers' Paradox Simulator",
+            tagline="Why is the night sky dark?",
+            description=(
+                "Look at a patch of sky in a universe full of stars. If the universe were infinite, static and "
+                "eternal, every line of sight would end on a star and the sky would blaze. Switch on a finite age, "
+                "stellar lifetimes or expansion and watch the sky go dark."
+            ),
+            how_to_use=[
+                "Start with <b>Olbers' universe</b>: the patch is completely covered by stars.",
+                "Tick <b>The universe has a finite age</b> and shorten the light-travel distance.",
+                "Try <b>Stars shine for a limited time</b> and <b>The universe expands</b> as well.",
+                "Compare the plots: the brightness curve and the shell argument show why each change works.",
+            ],
+            things_to_try=[
+                "Keep an infinite age but lower the star density. Does the sky ever get dark?",
+                "Which is more effective in our universe, the finite age or redshift dimming? (Read "
+                "<b>Our universe</b>.)",
+                "Find the light-travel distance at which half of the sky is covered.",
+            ],
+            lessons=["L0.6"],
+            module="cosmos.gui.simulators.olbers_sim",
+            class_name="OlbersSimulator",
+            icon="✧",
+        ),
     ]
 }
 
