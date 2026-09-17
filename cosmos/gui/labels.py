@@ -56,6 +56,25 @@ LADDER_PRESETS = [
     tr_noop("A future Gaia-era ladder"),
 ]
 
+# Survey programmes and tracers of the Survey Designer (survey.PRESETS_SURVEY, survey.TRACERS).
+SURVEYS = [
+    tr_noop("BOSS CMASS style (2014)"),
+    tr_noop("DESI luminous red galaxies (2021–26)"),
+    tr_noop("DESI quasars (2021–26)"),
+    tr_noop("Euclid spectroscopic style (2023–29)"),
+    tr_noop("A small pilot survey"),
+    tr_noop("Bright galaxies (BGS)"),
+    tr_noop("The brightest nearby galaxies: dense but only a small volume."),
+    tr_noop("Luminous red galaxies (LRG)"),
+    tr_noop("Massive, old, strongly clustered galaxies: the classic BAO tracer."),
+    tr_noop("Emission-line galaxies (ELG)"),
+    tr_noop("Star-forming galaxies with bright [O II] lines: numerous at high redshift, weakly clustered."),
+    tr_noop("Quasars (QSO)"),
+    tr_noop("Rare but luminous: they reach far, but so few that shot noise dominates."),
+    tr_noop("Hα emitters (space infrared)"),
+    tr_noop("Galaxies seen in Hα with a slitless spectrograph from space, as Euclid does."),
+]
+
 # The status of a lesson, as LessonStatus spells it.
 LESSON_STATUS = [tr_noop("completed"), tr_noop("ready"), tr_noop("not ready")]
 

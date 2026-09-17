@@ -63,6 +63,8 @@ EXPECTED = {
     "p7-neff": 20000 * 0.8 / 80,
     "p7-quadrature": math.sqrt(1.3**2 + 1.0**2 + 0.5**2),
     "p7-derived-error": math.sqrt(0.068**2 / 4 + 0.095**2 - 0.88 * 0.068 * 0.095),
+    "p7-effective-volume": 10 * (1 / (1 + 1)) ** 2,
+    "p7-systematic-floor": math.hypot(0.4, 0.3),
 }
 
 

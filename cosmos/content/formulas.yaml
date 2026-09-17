@@ -456,3 +456,19 @@
   symbols: '$f_\nu$ the neutrino share of the matter'
   description: Free streaming keeps neutrinos out of small clumps and slows their growth.
   lesson: L4.7
+
+- id: effective-volume
+  group: Measurement and statistics
+  title: Effective volume of a galaxy survey
+  formula: 'V_{\mathrm{eff}} = V \left(\frac{\bar n P}{1 + \bar n P}\right)^2'
+  symbols: '$\bar n$ galaxy density, $P$ clustering power at the BAO scale'
+  description: BAO distance errors fall as one over its square root; for fixed N the optimum is at n̄P = 1.
+  lesson: L7.4
+
+- id: systematic-floor
+  group: Measurement and statistics
+  title: Statistical and systematic errors
+  formula: '\sigma_{\mathrm{total}}^2 = \frac{\sigma_1^2}{N} + \sigma_{\mathrm{sys}}^2'
+  symbols: '$\sigma_1$ the error of one object, $N$ objects'
+  description: The statistical term shrinks with more data; the systematic floor does not.
+  lesson: L7.6

@@ -494,3 +494,4 @@ from cosmos.gui.rendering import figures_advanced  # noqa: E402,F401
 from cosmos.gui.rendering import figures_methods  # noqa: E402,F401
 from cosmos.gui.rendering import figures_inference  # noqa: E402,F401
 from cosmos.gui.rendering import figures_neutrinos  # noqa: E402,F401
+from cosmos.gui.rendering import figures_surveys  # noqa: E402,F401

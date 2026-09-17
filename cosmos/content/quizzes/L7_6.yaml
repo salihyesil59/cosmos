@@ -1,0 +1,44 @@
+- question: "A survey quadruples its number of galaxies. What happens to a systematic error?"
+  choices:
+    - "It halves"
+    - "It falls by a factor of four"
+    - "It stays the same"
+    - "It disappears"
+  answer: 2
+  explanation: "Systematic errors do not average away; only the statistical error falls, here by a factor of two."
+- question: "The statistical error of a measurement is 0.2% and its systematic floor 0.5%. What is the total error?"
+  choices: ["0.3%", "0.54%", "0.7%", "0.5%"]
+  answer: 1
+  explanation: "Independent errors add in quadrature: √(0.2² + 0.5²) = 0.54%."
+- question: "Why are the distant galaxies in a flux-limited catalogue brighter on average than the population?"
+  choices:
+    - "Distant galaxies really are brighter"
+    - "Only the most luminous ones are bright enough to be detected: Malmquist bias"
+    - "Redshift makes galaxies brighter"
+    - "Dust brightens distant objects"
+  answer: 1
+  explanation: "Far away, the fainter members fall below the detection limit, so the catalogue keeps only the bright tail."
+- question: "What is a null test?"
+  choices:
+    - "A test that the software returns zero"
+    - "Splitting the data in ways that should not matter and checking that every half agrees"
+    - "Measuring with the telescope shutter closed only"
+    - "Setting all parameters to zero"
+  answer: 1
+  explanation: "North against south, early against late, red against blue: a disagreement between halves reveals a systematic."
+- question: "What is the purpose of blinding an analysis?"
+  choices:
+    - "To keep the data secret from other teams"
+    - "To stop the analysts from — consciously or not — tuning the method until the answer looks right"
+    - "To reduce the statistical error"
+    - "To speed up the computation"
+  answer: 1
+  explanation: "The true result stays hidden until every test has passed and the method is frozen."
+- question: "Two measurements of H0 disagree at 5σ. What would settle whether a systematic error is responsible?"
+  choices:
+    - "Ten times more data of the same kind"
+    - "An independent method with different systematics"
+    - "Averaging the two values"
+    - "Increasing the quoted error bars"
+  answer: 1
+  explanation: "More of the same data would reproduce a hidden bias; methods such as red-giant calibrations, sirens or lensed quasars test it independently."

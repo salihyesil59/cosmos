@@ -303,72 +303,147 @@
         <translation>Geleceğin Gaia dönemi merdiveni</translation>
     </message>
     <message>
-        <location filename="../gui/labels.py" line="60" />
+        <location filename="../gui/labels.py" line="61" />
+        <source>BOSS CMASS style (2014)</source>
+        <translation>BOSS CMASS tarzı (2014)</translation>
+    </message>
+    <message>
+        <location filename="../gui/labels.py" line="62" />
+        <source>DESI luminous red galaxies (2021–26)</source>
+        <translation>DESI ışıklı kırmızı gökadalar (2021–26)</translation>
+    </message>
+    <message>
+        <location filename="../gui/labels.py" line="63" />
+        <source>DESI quasars (2021–26)</source>
+        <translation>DESI kuasarlar (2021–26)</translation>
+    </message>
+    <message>
+        <location filename="../gui/labels.py" line="64" />
+        <source>Euclid spectroscopic style (2023–29)</source>
+        <translation>Euclid spektroskopik tarzı (2023–29)</translation>
+    </message>
+    <message>
+        <location filename="../gui/labels.py" line="65" />
+        <source>A small pilot survey</source>
+        <translation>Küçük bir öncü tarama</translation>
+    </message>
+    <message>
+        <location filename="../gui/labels.py" line="66" />
+        <source>Bright galaxies (BGS)</source>
+        <translation>Parlak gökadalar (BGS)</translation>
+    </message>
+    <message>
+        <location filename="../gui/labels.py" line="67" />
+        <source>The brightest nearby galaxies: dense but only a small volume.</source>
+        <translation>Yakındaki en parlak gökadalar: yoğun ama yalnızca küçük bir hacim.</translation>
+    </message>
+    <message>
+        <location filename="../gui/labels.py" line="68" />
+        <source>Luminous red galaxies (LRG)</source>
+        <translation>Işıklı kırmızı gökadalar (LRG)</translation>
+    </message>
+    <message>
+        <location filename="../gui/labels.py" line="69" />
+        <source>Massive, old, strongly clustered galaxies: the classic BAO tracer.</source>
+        <translation>Kütleli, yaşlı, güçlü kümelenen gökadalar: klasik BAO izleyicisi.</translation>
+    </message>
+    <message>
+        <location filename="../gui/labels.py" line="70" />
+        <source>Emission-line galaxies (ELG)</source>
+        <translation>Salma çizgili gökadalar (ELG)</translation>
+    </message>
+    <message>
+        <location filename="../gui/labels.py" line="71" />
+        <source>Star-forming galaxies with bright [O II] lines: numerous at high redshift, weakly clustered.</source>
+        <translation>Parlak [O II] çizgileri olan yıldız oluşturan gökadalar: yüksek kırmızıya kaymada çok sayıda, zayıf kümelenen.</translation>
+    </message>
+    <message>
+        <location filename="../gui/labels.py" line="72" />
+        <source>Quasars (QSO)</source>
+        <translation>Kuasarlar (QSO)</translation>
+    </message>
+    <message>
+        <location filename="../gui/labels.py" line="73" />
+        <source>Rare but luminous: they reach far, but so few that shot noise dominates.</source>
+        <translation>Seyrek ama çok parlak: uzağa uzanırlar, ama o kadar azdırlar ki atış gürültüsü baskın olur.</translation>
+    </message>
+    <message>
+        <location filename="../gui/labels.py" line="74" />
+        <source>Hα emitters (space infrared)</source>
+        <translation>Hα salan gökadalar (uzay kızılötesi)</translation>
+    </message>
+    <message>
+        <location filename="../gui/labels.py" line="75" />
+        <source>Galaxies seen in Hα with a slitless spectrograph from space, as Euclid does.</source>
+        <translation>Euclid'in yaptığı gibi uzaydan yarıksız bir spektrografla Hα'da görülen gökadalar.</translation>
+    </message>
+    <message>
+        <location filename="../gui/labels.py" line="79" />
         <source>completed</source>
         <translation>tamamlandı</translation>
     </message>
     <message>
-        <location filename="../gui/labels.py" line="60" />
+        <location filename="../gui/labels.py" line="79" />
         <source>ready</source>
         <translation>hazır</translation>
     </message>
     <message>
-        <location filename="../gui/labels.py" line="60" />
+        <location filename="../gui/labels.py" line="79" />
         <source>not ready</source>
         <translation>hazır değil</translation>
     </message>
     <message>
-        <location filename="../gui/labels.py" line="64" />
+        <location filename="../gui/labels.py" line="83" />
         <source>s</source>
         <translation>s</translation>
     </message>
     <message>
-        <location filename="../gui/labels.py" line="64" />
+        <location filename="../gui/labels.py" line="83" />
         <location filename="../gui/simulators/powers_of_ten.py" line="78" />
         <source>minutes</source>
         <translation>dakika</translation>
     </message>
     <message>
-        <location filename="../gui/labels.py" line="64" />
+        <location filename="../gui/labels.py" line="83" />
         <location filename="../gui/simulators/powers_of_ten.py" line="77" />
         <source>hours</source>
         <translation>saat</translation>
     </message>
     <message>
-        <location filename="../gui/labels.py" line="64" />
+        <location filename="../gui/labels.py" line="83" />
         <location filename="../gui/simulators/powers_of_ten.py" line="77" />
         <source>days</source>
         <translation>gün</translation>
     </message>
     <message>
-        <location filename="../gui/labels.py" line="65" />
+        <location filename="../gui/labels.py" line="84" />
         <location filename="../gui/simulators/calculator.py" line="387" />
         <location filename="../gui/simulators/powers_of_ten.py" line="77" />
         <source>years</source>
         <translation>yıl</translation>
     </message>
     <message>
-        <location filename="../gui/labels.py" line="65" />
+        <location filename="../gui/labels.py" line="84" />
         <location filename="../gui/simulators/calculator.py" line="389" />
         <location filename="../gui/simulators/powers_of_ten.py" line="76" />
         <source>million years</source>
         <translation>milyon yıl</translation>
     </message>
     <message>
-        <location filename="../gui/labels.py" line="65" />
+        <location filename="../gui/labels.py" line="84" />
         <location filename="../gui/simulators/calculator.py" line="390" />
         <location filename="../gui/simulators/powers_of_ten.py" line="76" />
         <source>billion years</source>
         <translation>milyar yıl</translation>
     </message>
     <message>
-        <location filename="../gui/labels.py" line="66" />
+        <location filename="../gui/labels.py" line="85" />
         <location filename="../gui/simulators/powers_of_ten.py" line="78" />
         <source>seconds</source>
         <translation>saniye</translation>
     </message>
     <message>
-        <location filename="../gui/labels.py" line="66" />
+        <location filename="../gui/labels.py" line="85" />
         <location filename="../gui/simulators/powers_of_ten.py" line="81" />
         <source>nanoseconds</source>
         <translation>nanosaniye</translation>
@@ -3693,6 +3768,7 @@ parametreleri kendiniz değiştirmenize izin verir.
     <message>
         <location filename="../gui/simulators/ladder_sim.py" line="37" />
         <location filename="../gui/simulators/olbers_sim.py" line="24" />
+        <location filename="../gui/simulators/survey_sim.py" line="29" />
         <source>Custom</source>
         <translation>Özel</translation>
     </message>
@@ -5875,6 +5951,66 @@ En büyük terimi yarıya indirmek, en küçüğünü tamamen yok etmekten çok 
         <translation>Gerçek H0'ı 67,4 yapın. 73'ü 5σ ile elemek için merdivenin ne kadar duyarlı olması gerekir?</translation>
     </message>
     <message>
+        <location filename="../gui/simulators/registry.py" line="552" />
+        <source>Survey Designer</source>
+        <translation>Tarama Tasarlayıcı</translation>
+    </message>
+    <message>
+        <location filename="../gui/simulators/registry.py" line="553" />
+        <source>Choose area, depth and time, and see the error bars you would get.</source>
+        <translation>Alanı, derinliği ve süreyi seçin; alacağınız hata çubuklarını görün.</translation>
+    </message>
+    <message>
+        <location filename="../gui/simulators/registry.py" line="555" />
+        <source>A redshift survey measures the expansion history through the baryon acoustic oscillation scale. Pick a tracer, a redshift range, a sky area and an amount of telescope time, and the forecast shows how precisely each redshift slice would be measured — and whether the survey is limited by its volume, by too few galaxies, or by systematic errors.</source>
+        <translation>Bir kırmızıya kayma taraması genişleme tarihini baryon akustik salınım ölçeğiyle ölçer. Bir izleyici, bir kırmızıya kayma aralığı, bir gökyüzü alanı ve bir teleskop zamanı seçin; öngörü her kırmızıya kayma diliminin ne kadar duyarlı ölçüleceğini ve taramanın hacmiyle mi, çok az gökadayla mı yoksa sistematik hatalarla mı sınırlandığını gösterir.</translation>
+    </message>
+    <message>
+        <location filename="../gui/simulators/registry.py" line="561" />
+        <source>Start from a &lt;b&gt;programme&lt;/b&gt; such as BOSS, DESI or Euclid, or build your own.</source>
+        <translation>BOSS, DESI ya da Euclid gibi bir &lt;b&gt;programdan&lt;/b&gt; başlayın ya da kendinizinkini kurun.</translation>
+    </message>
+    <message>
+        <location filename="../gui/simulators/registry.py" line="562" />
+        <source>Change the &lt;b&gt;tracer&lt;/b&gt;, the redshift range and the &lt;b&gt;target density&lt;/b&gt;, and watch n̄P.</source>
+        <translation>&lt;b&gt;İzleyiciyi&lt;/b&gt;, kırmızıya kayma aralığını ve &lt;b&gt;hedef yoğunluğunu&lt;/b&gt; değiştirin; n̄P'yi izleyin.</translation>
+    </message>
+    <message>
+        <location filename="../gui/simulators/registry.py" line="563" />
+        <source>Set the &lt;b&gt;sky area&lt;/b&gt; and the &lt;b&gt;telescope time&lt;/b&gt;; if the spectra run out, the density is diluted.</source>
+        <translation>&lt;b&gt;Gökyüzü alanını&lt;/b&gt; ve &lt;b&gt;teleskop zamanını&lt;/b&gt; ayarlayın; spektrumlar yetmezse yoğunluk seyrelir.</translation>
+    </message>
+    <message>
+        <location filename="../gui/simulators/registry.py" line="565" />
+        <source>Open &lt;b&gt;Wide or deep?&lt;/b&gt; to see the best area for the galaxies you can afford.</source>
+        <translation>Karşılayabildiğiniz gökadalar için en iyi alanı görmek için &lt;b&gt;Geniş mi derin mi?&lt;/b&gt; sekmesini açın.</translation>
+    </message>
+    <message>
+        <location filename="../gui/simulators/registry.py" line="566" />
+        <source>Add a &lt;b&gt;systematic floor&lt;/b&gt; to see when more data stops helping.</source>
+        <translation>Daha çok verinin ne zaman işe yaramadığını görmek için bir &lt;b&gt;sistematik taban&lt;/b&gt; ekleyin.</translation>
+    </message>
+    <message>
+        <location filename="../gui/simulators/registry.py" line="569" />
+        <source>Compare the BOSS and DESI programmes: what gives DESI its factor of two?</source>
+        <translation>BOSS ve DESI programlarını karşılaştırın: DESI'ye iki katlık üstünlüğünü ne veriyor?</translation>
+    </message>
+    <message>
+        <location filename="../gui/simulators/registry.py" line="570" />
+        <source>Choose quasars. Why does doubling their density help more than doubling the area?</source>
+        <translation>Kuasarları seçin. Yoğunluklarını ikiye katlamak neden alanı ikiye katlamaktan daha çok işe yarıyor?</translation>
+    </message>
+    <message>
+        <location filename="../gui/simulators/registry.py" line="571" />
+        <source>Keep the number of galaxies fixed and find the area where the error is smallest.</source>
+        <translation>Gökada sayısını sabit tutun ve hatanın en küçük olduğu alanı bulun.</translation>
+    </message>
+    <message>
+        <location filename="../gui/simulators/registry.py" line="572" />
+        <source>With a 0.3% systematic floor, how many years are worth observing?</source>
+        <translation>%0,3'lük bir sistematik tabanla kaç yıl gözlem yapmaya değer?</translation>
+    </message>
+    <message>
         <location filename="../gui/simulators/rotation_curve.py" line="33" />
         <location filename="../gui/simulators/rotation_curve.py" line="40" />
         <source>Galaxy</source>
@@ -6787,6 +6923,227 @@ En büyük terimi yarıya indirmek, en küçüğünü tamamen yok etmekten çok 
         <location filename="../gui/simulators/supernova_sim.py" line="161" />
         <source>Deceleration parameter q0 = &lt;b&gt;{q0}&lt;/b&gt; ({trend})&lt;br&gt;Evidence for acceleration: &lt;b&gt;{sigma}σ&lt;/b&gt;&lt;br&gt;Evidence for dark energy (ΩΛ &gt; 0, no flatness assumed): {dark_energy}σ&lt;br&gt;Hubble constant with this calibration: &lt;b&gt;{h0} km/s/Mpc&lt;/b&gt;&lt;br&gt;Number of supernovae: {count}</source>
         <translation>Yavaşlama parametresi q0 = &lt;b&gt;{q0}&lt;/b&gt; ({trend})&lt;br&gt;Hızlanma kanıtı: &lt;b&gt;{sigma}σ&lt;/b&gt;&lt;br&gt;Karanlık enerji kanıtı (ΩΛ &gt; 0, düzlük varsayılmadan): {dark_energy}σ&lt;br&gt;Bu kalibrasyonla Hubble sabiti: &lt;b&gt;{h0} km/s/Mpc&lt;/b&gt;&lt;br&gt;Süpernova sayısı: {count}</translation>
+    </message>
+    <message>
+        <location filename="../gui/simulators/survey_sim.py" line="26" />
+        <source>0 · Start from</source>
+        <translation>0 · Şuradan başla</translation>
+    </message>
+    <message>
+        <location filename="../gui/simulators/survey_sim.py" line="32" />
+        <source>Programme</source>
+        <translation>Program</translation>
+    </message>
+    <message>
+        <location filename="../gui/simulators/survey_sim.py" line="33" />
+        <source>Programmes</source>
+        <translation>Programlar</translation>
+    </message>
+    <message>
+        <location filename="../gui/simulators/survey_sim.py" line="34" />
+        <source>Survey designs in the style of real projects. The forecasts are approximate and use one tracer at a time; real surveys observe several at once.</source>
+        <translation>Gerçek projeler tarzında tarama tasarımları. Öngörüler yaklaşıktır ve bir seferde tek bir izleyici kullanır; gerçek taramalar birkaçını aynı anda gözler.</translation>
+    </message>
+    <message>
+        <location filename="../gui/simulators/survey_sim.py" line="38" />
+        <source>1 · What to observe</source>
+        <translation>1 · Neyi gözleyeceksiniz</translation>
+    </message>
+    <message>
+        <location filename="../gui/simulators/survey_sim.py" line="44" />
+        <source>Tracer</source>
+        <translation>İzleyici</translation>
+    </message>
+    <message>
+        <location filename="../gui/simulators/survey_sim.py" line="45" />
+        <source>Tracers</source>
+        <translation>İzleyiciler</translation>
+    </message>
+    <message>
+        <location filename="../gui/simulators/survey_sim.py" line="46" />
+        <source>Different kinds of galaxy trace the same cosmic web with a different bias: strongly clustered ones give a stronger signal per galaxy.</source>
+        <translation>Farklı türde gökadalar aynı kozmik ağı farklı bir yanlılıkla izler: güçlü kümelenenler gökada başına daha güçlü bir sinyal verir.</translation>
+    </message>
+    <message>
+        <location filename="../gui/simulators/survey_sim.py" line="48" />
+        <source>Lowest redshift</source>
+        <translation>En düşük kırmızıya kayma</translation>
+    </message>
+    <message>
+        <location filename="../gui/simulators/survey_sim.py" line="49" />
+        <source>Highest redshift</source>
+        <translation>En yüksek kırmızıya kayma</translation>
+    </message>
+    <message>
+        <location filename="../gui/simulators/survey_sim.py" line="51" />
+        <source>Target density n̄ (h/Mpc)³</source>
+        <translation>Hedef yoğunluğu n̄ (h/Mpc)³</translation>
+    </message>
+    <message>
+        <location filename="../gui/simulators/survey_sim.py" line="52" />
+        <source>Shot noise</source>
+        <translation>Atış gürültüsü</translation>
+    </message>
+    <message>
+        <location filename="../gui/simulators/survey_sim.py" line="53" />
+        <source>With too few galaxies you cannot trace the web: the measurement is limited by shot noise. The product n̄P tells you which regime you are in — below 1 shot noise dominates, well above 1 extra galaxies barely help.</source>
+        <translation>Çok az gökadayla ağı izleyemezsiniz: ölçüm atış gürültüsüyle sınırlanır. n̄P çarpımı hangi rejimde olduğunuzu söyler — 1'in altında atış gürültüsü baskındır, 1'in çok üstünde fazladan gökadalar neredeyse hiç işe yaramaz.</translation>
+    </message>
+    <message>
+        <location filename="../gui/simulators/survey_sim.py" line="61" />
+        <source>2 · Where and for how long</source>
+        <translation>2 · Nerede ve ne kadar süre</translation>
+    </message>
+    <message>
+        <location filename="../gui/simulators/survey_sim.py" line="64" />
+        <source>Sky area (deg²)</source>
+        <translation>Gökyüzü alanı (derece²)</translation>
+    </message>
+    <message>
+        <location filename="../gui/simulators/survey_sim.py" line="65" />
+        <source>Sample variance</source>
+        <translation>Örneklem varyansı</translation>
+    </message>
+    <message>
+        <location filename="../gui/simulators/survey_sim.py" line="66" />
+        <source>A survey can only average over the patches of the universe it covers. More area means more independent patches: the whole sky is about 41 000 deg², and a ground telescope sees roughly half of it.</source>
+        <translation>Bir tarama yalnızca kapsadığı evren parçaları üzerinden ortalama alabilir. Daha çok alan daha çok bağımsız parça demektir: tüm gökyüzü yaklaşık 41 000 derece²'dir ve yerdeki bir teleskop bunun kabaca yarısını görür.</translation>
+    </message>
+    <message>
+        <location filename="../gui/simulators/survey_sim.py" line="71" />
+        <source>Spectra per field (fibres)</source>
+        <translation>Alan başına spektrum (fiber)</translation>
+    </message>
+    <message>
+        <location filename="../gui/simulators/survey_sim.py" line="72" />
+        <source>Multiplexing</source>
+        <translation>Çoklu gözlem</translation>
+    </message>
+    <message>
+        <location filename="../gui/simulators/survey_sim.py" line="73" />
+        <source>DESI's 5000 robotic fibres take 5000 spectra at once; BOSS had 1000. A space slitless spectrograph records everything in its field.</source>
+        <translation>DESI'nin 5000 robotik fiberi aynı anda 5000 spektrum alır; BOSS'ta 1000 vardı. Uzaydaki yarıksız bir spektrograf görüş alanındaki her şeyi kaydeder.</translation>
+    </message>
+    <message>
+        <location filename="../gui/simulators/survey_sim.py" line="76" />
+        <source>Fields per night</source>
+        <translation>Gece başına alan</translation>
+    </message>
+    <message>
+        <location filename="../gui/simulators/survey_sim.py" line="77" />
+        <source>Usable nights per year</source>
+        <translation>Yılda kullanılabilir gece</translation>
+    </message>
+    <message>
+        <location filename="../gui/simulators/survey_sim.py" line="78" />
+        <source>Years</source>
+        <translation>Yıl</translation>
+    </message>
+    <message>
+        <location filename="../gui/simulators/survey_sim.py" line="83" />
+        <source>3 · Systematics</source>
+        <translation>3 · Sistematikler</translation>
+    </message>
+    <message>
+        <location filename="../gui/simulators/survey_sim.py" line="86" />
+        <source>Systematic floor (%)</source>
+        <translation>Sistematik taban (%)</translation>
+    </message>
+    <message>
+        <location filename="../gui/simulators/survey_sim.py" line="87" />
+        <source>An error that does not average away</source>
+        <translation>Ortalamayla kaybolmayan bir hata</translation>
+    </message>
+    <message>
+        <location filename="../gui/simulators/survey_sim.py" line="88" />
+        <source>Imaging calibration, redshift failures or the modelling of non-linear physics set a minimum error. It is added in quadrature and does not shrink with more galaxies.</source>
+        <translation>Görüntü kalibrasyonu, kırmızıya kayma başarısızlıkları ya da doğrusal olmayan fiziğin modellenmesi en küçük bir hata belirler. Kareleri toplamıyla eklenir ve daha çok gökadayla küçülmez.</translation>
+    </message>
+    <message>
+        <location filename="../gui/simulators/survey_sim.py" line="94" />
+        <source>The forecast</source>
+        <translation>Öngörü</translation>
+    </message>
+    <message>
+        <location filename="../gui/simulators/survey_sim.py" line="100" />
+        <source>Teaching forecast: BAO distance errors from the effective volume, calibrated on BOSS. Good to tens of percent.</source>
+        <translation>Öğretici öngörü: etkin hacimden BAO uzaklık hataları, BOSS'a göre kalibre edilmiş. Yüzde onlar düzeyinde doğru.</translation>
+    </message>
+    <message>
+        <location filename="../gui/simulators/survey_sim.py" line="110" />
+        <source>BAO distances</source>
+        <translation>BAO uzaklıkları</translation>
+    </message>
+    <message>
+        <location filename="../gui/simulators/survey_sim.py" line="111" />
+        <source>Wide or deep?</source>
+        <translation>Geniş mi derin mi?</translation>
+    </message>
+    <message>
+        <location filename="../gui/simulators/survey_sim.py" line="171" />
+        <source>shot-noise limited</source>
+        <translation>atış gürültüsüyle sınırlı</translation>
+    </message>
+    <message>
+        <location filename="../gui/simulators/survey_sim.py" line="172" />
+        <source>sample-variance limited</source>
+        <translation>örneklem varyansıyla sınırlı</translation>
+    </message>
+    <message>
+        <location filename="../gui/simulators/survey_sim.py" line="172" />
+        <source>balanced</source>
+        <translation>dengeli</translation>
+    </message>
+    <message>
+        <location filename="../gui/simulators/survey_sim.py" line="174" />
+        <source>BAO distance precision: &lt;b&gt;{stat}%&lt;/b&gt; statistical, &lt;b&gt;{total}%&lt;/b&gt; with systematics</source>
+        <translation>BAO uzaklık duyarlılığı: istatistiksel &lt;b&gt;%{stat}&lt;/b&gt;, sistematiklerle &lt;b&gt;%{total}&lt;/b&gt;</translation>
+    </message>
+    <message>
+        <location filename="../gui/simulators/survey_sim.py" line="176" />
+        <source>Volume {volume} (Gpc/h)³, effective volume {effective} (Gpc/h)³</source>
+        <translation>Hacim {volume} (Gpc/h)³, etkin hacim {effective} (Gpc/h)³</translation>
+    </message>
+    <message>
+        <location filename="../gui/simulators/survey_sim.py" line="178" />
+        <source>n̄P = &lt;b&gt;{np}&lt;/b&gt;: {regime}</source>
+        <translation>n̄P = &lt;b&gt;{np}&lt;/b&gt;: {regime}</translation>
+    </message>
+    <message>
+        <location filename="../gui/simulators/survey_sim.py" line="179" />
+        <source>Galaxies needed {needed} million, spectra available {available} million</source>
+        <translation>Gereken gökada {needed} milyon, kullanılabilir spektrum {available} milyon</translation>
+    </message>
+    <message>
+        <location filename="../gui/simulators/survey_sim.py" line="186" />
+        <source>&lt;b&gt;Not enough telescope time.&lt;/b&gt; The programme can take only {fraction} of the spectra it needs, so the density drops to {density} (h/Mpc)³. Observe longer, use more fibres, or cover less sky.</source>
+        <translation>&lt;b&gt;Teleskop zamanı yetmiyor.&lt;/b&gt; Program gereken spektrumların yalnızca {fraction} kadarını alabiliyor, bu yüzden yoğunluk {density} (h/Mpc)³'e düşüyor. Daha uzun gözleyin, daha çok fiber kullanın ya da daha az gökyüzü kaplayın.</translation>
+    </message>
+    <message>
+        <location filename="../gui/simulators/survey_sim.py" line="193" />
+        <source>&lt;b&gt;The systematic floor dominates.&lt;/b&gt; The statistical error ({stat}%) is already below the floor ({floor}%): more galaxies or more years would not improve the result.</source>
+        <translation>&lt;b&gt;Sistematik taban baskın.&lt;/b&gt; İstatistiksel hata (%{stat}) zaten tabanın (%{floor}) altında: daha çok gökada ya da daha çok yıl sonucu iyileştirmez.</translation>
+    </message>
+    <message>
+        <location filename="../gui/simulators/survey_sim.py" line="199" />
+        <source>&lt;b&gt;Forecast.&lt;/b&gt; {galaxies} million redshifts over {area} deg² measure the expansion history to {total}% in {bins} redshift slices.</source>
+        <translation>&lt;b&gt;Öngörü.&lt;/b&gt; {area} derece² üzerindeki {galaxies} milyon kırmızıya kayma, genişleme tarihini {bins} kırmızıya kayma diliminde %{total} duyarlılıkla ölçer.</translation>
+    </message>
+    <message>
+        <location filename="../gui/simulators/survey_sim.py" line="290" />
+        <source>The two numbers that decide a survey</source>
+        <translation>Bir taramayı belirleyen iki sayı</translation>
+    </message>
+    <message>
+        <location filename="../gui/simulators/survey_sim.py" line="291" />
+        <source>- **Volume** sets how many independent patches of the cosmic web you average over.
+- **n̄P**, the galaxy density times the clustering power, says whether you have enough galaxies to see each patch.
+
+Together they give the effective volume, $V_\mathrm{eff} = V\,[\bar nP/(1+\bar nP)]^2$, and the distance error falls as $1/\sqrt{V_\mathrm{eff}}$.</source>
+        <translation>- **Hacim**, kozmik ağın kaç bağımsız parçası üzerinden ortalama aldığınızı belirler.
+- **n̄P**, gökada yoğunluğu ile kümelenme gücünün çarpımı, her parçayı görmeye yetecek kadar gökadanız olup olmadığını söyler.
+
+İkisi birlikte etkin hacmi verir, $V_\mathrm{eff} = V\,[\bar nP/(1+\bar nP)]^2$, ve uzaklık hatası $1/\sqrt{V_\mathrm{eff}}$ ile düşer.</translation>
     </message>
     <message>
         <location filename="../gui/widgets/challenge_bar.py" line="44" />

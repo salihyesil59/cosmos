@@ -252,7 +252,7 @@ SIMULATORS: dict[str, SimulatorInfo] = {
                 tr_noop("Compare n = −2 with n = 0: which one forms large filaments, which one many small clumps?"),
                 tr_noop("Run the same seed with warm dark matter. What happens to the smallest halos?"),
             ],
-            lessons=["L5.3", "L5.4", "L5.5", "L1.4", "L4.7"],
+            lessons=["L5.3", "L5.4", "L5.5", "L1.4", "L4.7", "L7.4"],
             module="cosmos.gui.simulators.nbody_sim",
             class_name="NBodySimulator",
             icon="⁂",
@@ -379,7 +379,7 @@ SIMULATORS: dict[str, SimulatorInfo] = {
                 tr_noop("Do distant supernovae look brighter or fainter than in an empty universe?"),
                 tr_noop("Which calibration gives a Hubble constant close to Planck, and which close to SH0ES?"),
             ],
-            lessons=["L6.6", "L3.3", "L1.1"],
+            lessons=["L6.6", "L3.3", "L1.1", "L7.6"],
             module="cosmos.gui.simulators.supernova_sim",
             class_name="SupernovaSimulator",
             icon="✶",
@@ -542,10 +542,39 @@ SIMULATORS: dict[str, SimulatorInfo] = {
                 tr_noop("Set a parallax offset of +20 µas: how many σ does the toy H0 move, and would you notice?"),
                 tr_noop("Set the true H0 to 67.4. How precise must the ladder be to rule out 73 at 5σ?"),
             ],
-            lessons=["L7.3", "L1.1", "L6.6"],
+            lessons=["L7.3", "L7.6", "L1.1", "L6.6"],
             module="cosmos.gui.simulators.ladder_sim",
             class_name="LadderSimulator",
             icon="🪜",
+        ),
+        SimulatorInfo(
+            id="S21",
+            title=tr_noop("Survey Designer"),
+            tagline=tr_noop("Choose area, depth and time, and see the error bars you would get."),
+            description=tr_noop(
+                "A redshift survey measures the expansion history through the baryon acoustic oscillation "
+                "scale. Pick a tracer, a redshift range, a sky area and an amount of telescope time, and the "
+                "forecast shows how precisely each redshift slice would be measured — and whether the survey "
+                "is limited by its volume, by too few galaxies, or by systematic errors."
+            ),
+            how_to_use=[
+                tr_noop("Start from a <b>programme</b> such as BOSS, DESI or Euclid, or build your own."),
+                tr_noop("Change the <b>tracer</b>, the redshift range and the <b>target density</b>, and watch n̄P."),
+                tr_noop("Set the <b>sky area</b> and the <b>telescope time</b>; if the spectra run out, the density "
+                        "is diluted."),
+                tr_noop("Open <b>Wide or deep?</b> to see the best area for the galaxies you can afford."),
+                tr_noop("Add a <b>systematic floor</b> to see when more data stops helping."),
+            ],
+            things_to_try=[
+                tr_noop("Compare the BOSS and DESI programmes: what gives DESI its factor of two?"),
+                tr_noop("Choose quasars. Why does doubling their density help more than doubling the area?"),
+                tr_noop("Keep the number of galaxies fixed and find the area where the error is smallest."),
+                tr_noop("With a 0.3% systematic floor, how many years are worth observing?"),
+            ],
+            lessons=["L7.4", "L7.6", "L5.2"],
+            module="cosmos.gui.simulators.survey_sim",
+            class_name="SurveySimulator",
+            icon="🗺",
         ),
     ]
 }
