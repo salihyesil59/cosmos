@@ -15,6 +15,7 @@ from PySide6.QtWidgets import (
 )
 
 from cosmos.achievements import ACHIEVEMENTS
+from cosmos.content.loader import load_problems
 from cosmos.gui.context import AppContext
 from cosmos.gui.simulators.registry import SIMULATORS
 from cosmos.gui.theme import repolish
@@ -70,6 +71,7 @@ class ProgressPage(QWidget):
             ("lessons", tr("Lessons completed")),
             ("quiz", tr("Average best quiz score")),
             ("sims", tr("Simulators explored")),
+            ("problems", tr("Problems solved")),
             ("next", tr("Recommended next")),
         ]:
             c = card()
@@ -134,6 +136,8 @@ class ProgressPage(QWidget):
         self.stat_values["quiz"].setText("–" if avg is None else f"{avg:.0%}")
         explored = len([s for s in store.data.simulators_opened if s in SIMULATORS])
         self.stat_values["sims"].setText(f"{explored} / {len(SIMULATORS)}")
+        total_problems = sum(len(s.problems) for s in load_problems())
+        self.stat_values["problems"].setText(f"{len(store.data.problems_solved)} / {total_problems}")
         nxt = store.next_recommended(cur)
         self.stat_values["next"].setText(nxt or tr("All done!"))
         self._refresh_badges()

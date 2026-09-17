@@ -196,7 +196,7 @@ since (the course now has 47 lessons and 20 simulators).
 - [ ] `S24` CMB Sky Viewer: a real Planck map, with masking and filtering (needs a download)
 
 ### Guidance & learning
-- [ ] ★ `G15` Worked problem sets: numeric exercises with checked answers, one per level
+- [x] ★ `G15` Worked problem sets: numeric exercises with checked answers, one per level
 - [ ] `G16` Spaced repetition: bring back quiz questions you got wrong, days later
 - [ ] `G17` Accessibility pass: font scaling, a high-contrast theme, keyboard-only navigation
 - [ ] `G18` Export a lesson (or the whole course) as PDF for printing

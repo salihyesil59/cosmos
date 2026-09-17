@@ -12,6 +12,7 @@ STATIC_TITLES = {
     "reference": ("∑", "Reference"),
     "notes": ("📝", "Notes & bookmarks"),
     "search": ("🔎", "Search"),
+    "problems": ("✏", "Problem sets"),
 }
 
 
@@ -26,6 +27,12 @@ def route_parts(ctx: AppContext, route: str) -> tuple[str, str]:
         return SIMULATORS[target].icon, SIMULATORS[target].title
     if kind == "glossary" and target in ctx.glossary:
         return "🔤", f"{ctx.glossary[target].term} (glossary)"
+    if kind == "problems" and target:
+        from cosmos.content.loader import load_problems
+
+        problem = next((p for s in load_problems() for p in s.problems if p.id == target), None)
+        if problem:
+            return "✏", f"{problem.title} (problem, level {problem.level})"
     if kind == "search" and target:
         return "🔎", f"Search: {target}"
     if kind in STATIC_TITLES:
@@ -59,6 +66,14 @@ def page_context(ctx: AppContext, route: str) -> str:
     if kind == "glossary" and target in ctx.glossary:
         term = ctx.glossary[target]
         return f"Glossary term: {term.term}\n{term.definition}"
+    if kind == "problems" and target:
+        from cosmos.content.loader import load_problems
+
+        problem = next((p for s in load_problems() for p in s.problems if p.id == target), None)
+        if problem:
+            # The statement only: the tutor should help the learner reach the answer, not hand it over.
+            return (f"Worked problem (level {problem.level}, lesson {problem.lesson}): {problem.title}\n"
+                    f"{problem.statement}\nAnswer unit: {problem.unit or 'none'}")
     icon, title = route_parts(ctx, route)
     return f"The learner is on the page: {title}"
 
@@ -66,4 +81,4 @@ def page_context(ctx: AppContext, route: str) -> str:
 def is_noteworthy(route: str) -> bool:
     """Pages a learner can bookmark or attach a note to."""
     kind, _, _target = route.partition(":")
-    return kind in ("lesson", "sim", "glossary", "sims", "home", "progress", "reference")
+    return kind in ("lesson", "sim", "glossary", "sims", "home", "progress", "reference", "problems")

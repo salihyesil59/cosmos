@@ -69,6 +69,32 @@ class Challenge:
 
 
 @dataclass(frozen=True)
+class Problem:
+    """A worked numeric exercise with a checked answer (G15)."""
+
+    id: str
+    level: int
+    lesson: str
+    title: str
+    statement: str
+    answer: float
+    unit: str = ""
+    tolerance: float = 0.02          # relative
+    difficulty: int = 1              # 1 to 3
+    hints: list[str] = field(default_factory=list)
+    solution: str = ""
+    simulator: str | None = None
+
+
+@dataclass(frozen=True)
+class ProblemSet:
+    level: int
+    title: str
+    intro: str
+    problems: list[Problem]
+
+
+@dataclass(frozen=True)
 class HistoryEvent:
     """A dated milestone on the history-of-cosmology timeline (G12)."""
 

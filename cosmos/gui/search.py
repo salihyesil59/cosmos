@@ -5,20 +5,22 @@ from __future__ import annotations
 import re
 from dataclasses import dataclass
 
-from cosmos.content.loader import load_formulas
+from cosmos.content.loader import load_formulas, load_problems
 from cosmos.gui.context import AppContext
 from cosmos.i18n import tr, tr_noop
 
 KIND_LABELS = {"lesson": tr_noop("Lesson"), "glossary": tr_noop("Term"),
-               "simulator": tr_noop("Simulator"), "formula": tr_noop("Formula")}
+               "simulator": tr_noop("Simulator"), "formula": tr_noop("Formula"),
+               "problem": tr_noop("Problem")}
 # Singular and plural for the "3 lessons, 1 term" summary line.
 KIND_COUNTS = {
     "lesson": (tr_noop("{n} lesson"), tr_noop("{n} lessons")),
     "glossary": (tr_noop("{n} term"), tr_noop("{n} terms")),
     "simulator": (tr_noop("{n} simulator"), tr_noop("{n} simulators")),
     "formula": (tr_noop("{n} formula"), tr_noop("{n} formulas")),
+    "problem": (tr_noop("{n} problem"), tr_noop("{n} problems")),
 }
-KIND_ICONS = {"lesson": "📖", "glossary": "🔤", "simulator": "🧪", "formula": "∑"}
+KIND_ICONS = {"lesson": "📖", "glossary": "🔤", "simulator": "🧪", "formula": "∑", "problem": "✏"}
 SNIPPET_CHARS = 150
 
 
@@ -114,6 +116,15 @@ def search(ctx: AppContext, query: str, limit: int = 60) -> list[SearchHit]:
         if score:
             hits.append(SearchHit("formula", f"reference:{formula.id}", formula.title, formula.group,
                                   _clean(formula.symbols or formula.description), score))
+
+    for problem_set in load_problems():
+        for problem in problem_set.problems:
+            score = _score(needle, [(problem.title, 90), (problem.id, 60), (problem.statement, 25),
+                                    (problem.lesson, 50)])
+            if score:
+                hits.append(SearchHit("problem", f"problems:{problem.id}", problem.title,
+                                      f"Level {problem.level} · {problem.lesson}",
+                                      _snippet(problem.statement, needle), score))
 
     hits.sort(key=lambda h: (-h.score, h.title))
     return hits[:limit]

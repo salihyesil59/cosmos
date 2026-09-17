@@ -81,9 +81,9 @@ class GuidePanel(QWidget):
         ]
         parts = []
         if links:
-            parts.append("See also: " + ", ".join(links))
+            parts.append(tr("See also:") + " " + ", ".join(links))
         if lesson_links:
-            parts.append("Lessons: " + ", ".join(lesson_links))
+            parts.append(tr("Lessons:") + " " + ", ".join(lesson_links))
         self.term_links.setText("<br>".join(parts))
         self.term_links.setVisible(bool(parts))
         self.term_card.show()

@@ -679,3 +679,44 @@ def test_new_lessons_render(window):
     assert "S20" in lessons["L7.3"].simulators and "S20" in lessons["L1.1"].simulators
     order = window.ctx.curriculum.ordered_ids
     assert order.index("L4.7") < order.index("L5.1")
+
+
+
+def test_problem_sets_page(window):
+    """G15: pick a problem, get feedback, reveal hints and the solution, earn progress."""
+    window.navigate("problems:p0-proxima")
+    pump()
+    page = window.problems_page
+    assert window.stack.currentWidget() is page and page.current.id == "p0-proxima"
+    assert page.tree.topLevelItemCount() == len(window.ctx.curriculum.levels)
+    assert "768.07" in page.view.toPlainText()
+    assert not page.solution_btn.isEnabled()                   # try first
+
+    page.answer.setText("42.46")
+    page.check()
+    assert "10^+1" in page.feedback.label.text()               # a power-of-ten slip
+    assert page.solution_btn.isEnabled()
+    page.show_hint()
+    assert "parsec" in page.view.toPlainText()
+    page.answer.setText("4,25")
+    page.check()
+    assert window.ctx.store.is_problem_solved("p0-proxima")
+    assert window.ctx.store.data.problems_solved["p0-proxima"] == 2
+    page.show_solution()
+    assert "Worked solution" in page.view.toPlainText()
+
+    page._step(1)
+    assert page.current.id == "p0-sunlight" and page.hints_shown == 0
+    page.answer.setText("not a number")
+    page.check()
+    assert "p0-sunlight" not in window.ctx.store.data.problem_attempts   # invalid input costs nothing
+
+    window.navigate("lesson:L0.2")
+    pump()
+    assert "route:problems:p0-proxima" in window.lesson_page.guide_markdown()
+    window.navigate("progress")
+    pump()
+    assert window.progress_page.stat_values["problems"].text().startswith("1 /")
+    from cosmos.gui.search import search
+
+    assert any(h.route == "problems:p5-bao-angle" for h in search(window.ctx, "BAO ruler"))

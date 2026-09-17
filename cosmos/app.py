@@ -49,7 +49,7 @@ def selftest(report_path: str | None = None) -> int:
     Used to verify a packaged build: ``Cosmos.exe --selftest report.txt``.
     """
     os.environ.setdefault("QT_QPA_PLATFORM", "offscreen")
-    from cosmos.content.loader import load_challenges, load_formulas, load_history
+    from cosmos.content.loader import load_challenges, load_formulas, load_history, load_problems
     from cosmos.gui.simulators.registry import SIMULATORS
 
     app = QApplication.instance() or QApplication([])
@@ -66,13 +66,14 @@ def selftest(report_path: str | None = None) -> int:
         ("formulas", len(load_formulas())),
         ("challenges", sum(len(v) for v in load_challenges().values())),
         ("history events", len(load_history()[0])),
+        ("problems", sum(len(s.problems) for s in load_problems())),
     ]
     for name, count in checks:
         lines.append(f"{name}: {count}")
         if count == 0:
             failures.append(f"no {name} were bundled")
 
-    routes = ["home", "sims", "glossary", "reference", "history", "notes", "progress",
+    routes = ["home", "sims", "glossary", "reference", "history", "notes", "progress", "problems",
               f"lesson:{curriculum.ordered_ids[0]}", "sim:S1", "search:redshift"]
     for route in routes:
         try:
