@@ -3,13 +3,14 @@
 # Keyed by simulator id. Every step has a task, a hint, a success message and a
 # list of conditions on the values the simulator reports in its state():
 # field plus any of min, max, equals, contains, is_true, is_false.
+
 S1:
 - id: cmb-age
-  task: How old was the universe when the cosmic microwave background was released? Set the redshift to
-    z = 1090 with the Planck 2018 preset.
+  task: How old was the universe when the cosmic microwave background was released? Set the redshift to z = 1090
+    with the Planck 2018 preset.
   hint: Press the <b>z = 1090 (CMB)</b> shortcut button, or type 1090 into the redshift box.
-  success: Only about 380 000 years — a blink compared with today's 13.8 billion years, and yet the light
-    has been travelling ever since.
+  success: Only about 380 000 years — a blink compared with today's 13.8 billion years, and yet the light has been
+    travelling ever since.
   check:
   - field: preset
     equals: planck18
@@ -17,8 +18,8 @@ S1:
     min: 1000
     max: 1200
 - id: distances-differ
-  task: At z = 3 the luminosity distance is sixteen times the angular-diameter distance. Go there and
-    compare the two rows of the table.
+  task: At z = 3 the luminosity distance is sixteen times the angular-diameter distance. Go there and compare the
+    two rows of the table.
   hint: Set the redshift to 3; the two distances differ by a factor (1 + z)².
   success: D_L = (1 + z)² D_A. Distant galaxies look larger than you expect, and far fainter.
   check:
@@ -27,8 +28,8 @@ S1:
     max: 3.1
 - id: eds-is-younger
   task: Switch to the Einstein–de Sitter model and find an age below 10 billion years.
-  hint: Choose Einstein–de Sitter in the preset box. Without dark energy the expansion always slowed down,
-    so the universe reaches its present size sooner.
+  hint: Choose Einstein–de Sitter in the preset box. Without dark energy the expansion always slowed down, so the
+    universe reaches its present size sooner.
   success: Younger than the oldest stars — one of the reasons Einstein–de Sitter was abandoned.
   check:
   - field: preset
@@ -46,8 +47,8 @@ S2:
 - id: no-big-bang
   task: Find the strange corner of the Ωm–ΩΛ map where the universe never had a Big Bang.
   hint: Very large ΩΛ with very little matter — the top-left corner of the map.
-  success: With enough dark energy and little matter, running the clock backwards never reaches zero size.
-    The universe bounces instead.
+  success: With enough dark energy and little matter, running the clock backwards never reaches zero size. The universe
+    bounces instead.
   check:
   - field: fate
     contains: no big bang
@@ -81,10 +82,10 @@ S6:
     max: 12
 - id: mond-fit
   task: Now fit the same galaxy with MOND instead of dark matter.
-  hint: Tick <b>Use MOND instead of dark matter</b>. There is no halo mass to tune; the acceleration scale
-    a₀ does the work.
-  success: MOND fits a single galaxy with no free halo — which is why rotation curves alone cannot decide
-    between the two ideas.
+  hint: Tick <b>Use MOND instead of dark matter</b>. There is no halo mass to tune; the acceleration scale a₀ does
+    the work.
+  success: MOND fits a single galaxy with no free halo — which is why rotation curves alone cannot decide between
+    the two ideas.
   check:
   - field: mond
     is_true: true
@@ -102,8 +103,8 @@ S10:
   - field: temperature_k
     min: 1000000000.0
 - id: matter-takes-over
-  task: Find the era when matter carries more of the energy budget than radiation, before the universe
-    is a million years old.
+  task: Find the era when matter carries more of the energy budget than radiation, before the universe is a million
+    years old.
   hint: Matter–radiation equality happens near 50 000 years, about 12.2 on the slider.
   success: From here on gravity can finally build structure out of the tiny ripples.
   check:
@@ -123,10 +124,9 @@ S10:
 S11:
 - id: deuterium-baryons
   task: Weigh the ordinary matter of the universe with deuterium, and land inside the Planck CMB band.
-  hint: Press <b>From deuterium</b> with standard physics; the vertical line should fall inside the green
-    band.
-  success: Two independent measurements, three minutes and 380 000 years after the Big Bang, agree on
-    the same baryon density.
+  hint: Press <b>From deuterium</b> with standard physics; the vertical line should fall inside the green band.
+  success: Two independent measurements, three minutes and 380 000 years after the Big Bang, agree on the same baryon
+    density.
   check:
   - field: eta10
     min: 5.8
@@ -137,8 +137,8 @@ S11:
 - id: lithium-dip
   task: Find the baryon density at which the least lithium-7 is produced.
   hint: Slide η₁₀ down towards 2–3 and watch the lithium curve reach its minimum.
-  success: 'The two production channels of lithium cross here. The measured baryon density is not at the
-    dip: that is the lithium problem.'
+  success: 'The two production channels of lithium cross here. The measured baryon density is not at the dip: that
+    is the lithium problem.'
   check:
   - field: eta10
     min: 1.6
@@ -162,21 +162,19 @@ S17:
     min: 0.98
 - id: age-saves-us
   task: Keep the stars burning forever but give the universe a finite age, and get the sky below 20% covered.
-  hint: Tick <b>The universe has a finite age</b> and shorten the light-travel distance well below the
-    mean free path λ.
-  success: The finite age alone is enough. In our universe ct is fourteen orders of magnitude shorter
-    than λ.
+  hint: Tick <b>The universe has a finite age</b> and shorten the light-travel distance well below the mean free
+    path λ.
+  success: The finite age alone is enough. In our universe ct is fourteen orders of magnitude shorter than λ.
   check:
   - field: finite_age
     is_true: true
   - field: coverage
     max: 0.2
 - id: redshift-only
-  task: 'Now switch the finite age off and darken an eternal sky with expansion alone: bring the brightness
-    below 20%.'
+  task: 'Now switch the finite age off and darken an eternal sky with expansion alone: bring the brightness below
+    20%.'
   hint: Untick the finite age, tick <b>The universe expands</b> and shorten the Hubble length.
-  success: Redshift dimming can darken an eternal sky too, but in our universe it is only a supporting
-    actor.
+  success: Redshift dimming can darken an eternal sky too, but in our universe it is only a supporting actor.
   check:
   - field: finite_age
     is_false: true
@@ -184,31 +182,45 @@ S17:
     is_true: true
   - field: brightness
     max: 0.2
+S18:
+- id: heavy-neutrinos
+  task: Give the neutrinos a total mass of at least 0.4 eV and keep Ωm between 0.29 and 0.33 by removing cold dark
+    matter.
+  hint: Raise <b>Σmν</b>, then lower <b>Ωc dark matter</b> until the total matter test passes again.
+  success: 'The expansion hardly notices — matter is matter — but the neutrino test fails: that much hot matter
+    would smooth away the small-scale structure galaxy surveys see.'
+  check:
+  - field: sum_mnu
+    min: 0.4
+  - field: omega_m
+    min: 0.29
+    max: 0.33
+  - field: neutrino_test
+    is_false: true
 S19:
 - id: healthy-chain
-  task: Run a chain whose acceptance rate lands between 20% and 45% — the sign that the proposal step
-    is the right size.
+  task: Run a chain whose acceptance rate lands between 20% and 45% — the sign that the proposal step is the right
+    size.
   hint: Leave the step σ near 0.08. If the acceptance is too high, make σ larger; too low, smaller.
-  success: A well-tuned walker accepts about a quarter of its proposals and explores the whole posterior
-    instead of crawling or bouncing off the walls.
+  success: A well-tuned walker accepts about a quarter of its proposals and explores the whole posterior instead
+    of crawling or bouncing off the walls.
   check:
   - field: acceptance
     min: 0.2
     max: 0.45
 - id: too-timid
-  task: 'Now break it on purpose: make the steps so small that the walker accepts almost everything (above
-    85%).'
+  task: 'Now break it on purpose: make the steps so small that the walker accepts almost everything (above 85%).'
   hint: Drag the proposal step σ down towards 0.005.
-  success: The cloud looks tight, but it is tight because the walker never went anywhere. High acceptance
-    is not a good sign — the effective sample size collapses.
+  success: The cloud looks tight, but it is tight because the walker never went anywhere. High acceptance is not
+    a good sign — the effective sample size collapses.
   check:
   - field: acceptance
     min: 0.85
 - id: flat-precision
   task: Assume a flat universe and measure Ωm from the real supernovae to better than ±0.03.
   hint: Tick <b>Assume a flat universe</b>, keep the Pantheon+ sample and use at least 4000 steps.
-  success: One assumption — flatness, which the CMB supplies — turns a broad two-parameter cloud into
-    a measurement of a few percent.
+  success: One assumption — flatness, which the CMB supplies — turns a broad two-parameter cloud into a measurement
+    of a few percent.
   check:
   - field: flat
     is_true: true
@@ -216,3 +228,53 @@ S19:
     equals: pantheon
   - field: om_error
     max: 0.03
+- id: break-the-degeneracy
+  task: Without assuming flatness, combine the supernovae with a second probe and measure ΩΛ to better than ±0.04.
+  hint: Choose <b>+ CMB geometry</b> as the second probe. Its band crosses the supernova ellipse.
+  success: Each probe alone allows a long strip; together only the crossing survives. That is how the standard cosmological
+    parameters are measured to a percent.
+  check:
+  - field: flat
+    is_false: true
+  - field: probe
+    equals: cmb
+  - field: ol_error
+    max: 0.04
+S20:
+- id: weakest-rung
+  task: Choose the Hubble Key Project programme and bring the total uncertainty on H0 below 3.5% while keeping at
+    most 12 calibrator galaxies and at most 50 Hubble-flow supernovae.
+  hint: Open <b>Error budget</b>. Improve the rung with the longest bar first — probably the parallaxes.
+  success: Errors add in quadrature, so the biggest term decides. Space astrometry turned the first rung from the
+    weakest into one of the best.
+  check:
+  - field: error_percent
+    max: 3.5
+  - field: n_hosts
+    max: 12
+  - field: n_flow
+    max: 50
+- id: systematic-survives
+  task: Add a parallax zero-point offset of at least +15 µas and use 500 or more Hubble-flow supernovae. Make the
+    systematic shift larger than 1.5 km/s/Mpc.
+  hint: Drag <b>Parallax zero-point offset</b> to +20 and <b>Supernovae in the Hubble flow</b> above 500.
+  success: The statistical error keeps shrinking, the bias does not. More of the same data can never reveal a systematic
+    error — only an independent method can.
+  check:
+  - field: parallax_offset
+    min: 15
+  - field: n_flow
+    min: 500
+  - field: systematic_shift
+    min: 1.5
+- id: monte-carlo-check
+  task: Press <b>Repeat 300×</b> and confirm that the spread of the repeated measurements matches the quoted error
+    bar to within 20%.
+  hint: Leave the systematics at zero; the Monte Carlo spread appears under <b>Your H0</b>.
+  success: Simulating the whole measurement many times is the brute-force check of any error propagation — the same
+    idea as sampling a posterior with a chain.
+  check:
+  - field: mc_runs
+    min: 100
+  - field: mc_mismatch
+    max: 0.2

@@ -561,7 +561,7 @@ def test_mcmc_simulator(window):
 
     window.navigate("sim:S19")
     bar = host.challenge_bar
-    assert bar is not None and len(host.challenges) == 3
+    assert bar is not None and len(host.challenges) == 4
     s19.step_size.setValue(0.004)
     s19.run()
     bar.go(1)                                             # the "too timid" challenge
@@ -581,3 +581,101 @@ def test_level_seven_lessons(window):
         assert "CSMTOKEN" not in text and "$$" not in text
     assert "S19" in window.ctx.curriculum.lessons["L7.2"].simulators
     assert window.ctx.curriculum.levels[-1].number == 7
+
+
+
+def test_second_probe_and_derived_parameters(window):
+    """S19 for L7.3: combining with the CMB breaks the degeneracy; derived q0 comes from the samples."""
+    window.navigate("sim:S19")
+    pump()
+    host = window.stack.currentWidget()
+    s19 = host.simulator
+    s19.flat.setChecked(False)
+    s19.steps.setValue(4000)
+    s19.step_size.setValue(0.08)
+    s19.probe_box.setCurrentIndex(s19.probe_box.findData("none"))
+    s19.run()
+    alone = s19.state()
+    s19.probe_box.setCurrentIndex(s19.probe_box.findData("cmb"))    # runs again with smaller steps
+    combined = s19.state()
+    assert combined["probe"] == "cmb" and s19.step_size.value() < 0.05
+    assert combined["ol_error"] < alone["ol_error"] / 2.5
+    assert 0.15 < combined["acceptance"] < 0.7
+    assert combined["q0_error"] < alone["q0_error"]
+    assert "q0" in s19.summary.text()
+    bar = host.challenge_bar
+    bar.go(3)
+    assert bar.check() is True
+    s19.probe_box.setCurrentIndex(s19.probe_box.findData("none"))
+
+
+def test_distance_ladder_simulator(window):
+    """S20: three rungs, an error budget, a Monte Carlo check and a systematic that survives."""
+    window.navigate("sim:S20")
+    pump()
+    host = window.stack.currentWidget()
+    s20 = host.simulator
+    s20.preset.setCurrentIndex(s20.preset.findData("key_project"))
+    state = s20.state()
+    assert state["preset"] == "key_project" and state["dominant"] == "parallax"
+    assert 4 < state["error_percent"] < 15
+    assert "H0" in s20.summary.text()
+
+    s20.n_parallax.setValue(40)
+    s20.parallax_error.setValue(20)
+    s20.n_hosts.setValue(12)
+    s20.recompute()
+    state = s20.state()
+    assert state["preset"] == "custom" and state["error_percent"] < 3.5
+    bar = host.challenge_bar
+    assert bar is not None and len(host.challenges) == 3
+    bar.go(0)
+    assert bar.check() is True
+
+    s20.run_monte_carlo()
+    assert s20.state()["mc_runs"] == 300 and s20.state()["mc_mismatch"] < 0.35
+
+    s20.parallax_offset.setValue(20)
+    s20.n_flow.setValue(600)
+    s20.recompute()
+    assert s20.state()["systematic_shift"] > 1.5
+    bar.go(1)
+    assert bar.check() is True
+    for plot in (s20.rungs_plot, s20.budget_plot):
+        plot.refresh()
+    s20.parallax_offset.setValue(0)
+
+
+def test_neutrino_mass_in_the_sandbox(window):
+    """S18 for L4.7: massive neutrinos are matter, and too much of them fails the report card."""
+    window.navigate("sim:S18")
+    pump()
+    host = window.stack.currentWidget()
+    s18 = host.simulator
+    s18.preset.set_key("planck18", emit=True)
+    assert s18.state()["neutrino_test"] is True
+    base_om = s18.state()["omega_m"]
+    s18.mnu.setValue(0.5)
+    s18.recompute()
+    assert s18.state()["omega_m"] > base_om + 0.009 and s18.state()["neutrino_test"] is False
+    s18.oc.setValue(s18.oc.value() - (s18.state()["omega_m"] - base_om))
+    s18.recompute()
+    bar = host.challenge_bar
+    assert bar is not None
+    bar.go(0)
+    assert bar.check() is True
+    assert "Neutrino" in s18.report.toPlainText()
+    s18.preset.set_key("planck18", emit=True)
+
+
+def test_new_lessons_render(window):
+    for lesson_id in ("L7.3", "L4.7"):
+        window.navigate(f"lesson:{lesson_id}")
+        pump()
+        assert window.lesson_page.lesson.id == lesson_id
+        text = window.lesson_page.browser.toPlainText()
+        assert "CSMTOKEN" not in text and "$$" not in text
+    lessons = window.ctx.curriculum.lessons
+    assert "S20" in lessons["L7.3"].simulators and "S20" in lessons["L1.1"].simulators
+    order = window.ctx.curriculum.ordered_ids
+    assert order.index("L4.7") < order.index("L5.1")

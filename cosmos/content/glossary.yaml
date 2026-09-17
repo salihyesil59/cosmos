@@ -95,8 +95,8 @@ cepheid:
     A pulsating giant star whose pulsation period is tightly related to its
     luminosity (the Leavitt law). This makes Cepheids standard candles for measuring
     distances to nearby galaxies.
-  see_also: [standard-candle, distance-ladder]
-  lessons: [L1.1]
+  see_also: [standard-candle, distance-ladder, leavitt-law]
+  lessons: [L1.1, L7.3]
 
 closed-universe:
   term: Closed universe
@@ -232,8 +232,8 @@ distance-ladder:
     The chain of methods (radar, parallax, Cepheids, Type Ia supernovae, redshift)
     in which each method is calibrated by the one below it to measure ever larger
     distances.
-  see_also: [parallax, cepheid, type-ia-supernova]
-  lessons: [L1.1]
+  see_also: [parallax, cepheid, type-ia-supernova, leavitt-law]
+  lessons: [L1.1, L7.3]
 
 doppler-effect:
   term: Doppler effect
@@ -473,8 +473,8 @@ neutrino:
     A very light, electrically neutral particle that interacts only weakly. Neutrinos
     decoupled about one second after the Big Bang and still fill the universe as a
     cosmic neutrino background.
-  see_also: [decoupling, radiation]
-  lessons: [L4.1, L4.5, L6.8]
+  see_also: [decoupling, radiation, neutrino-oscillation]
+  lessons: [L4.1, L4.5, L4.7, L6.8]
 
 nucleosynthesis:
   term: Big Bang nucleosynthesis (BBN)
@@ -814,8 +814,8 @@ cosmic-neutrino-background:
     The relic neutrinos that decoupled about one second after the Big Bang. They fill
     space with about 336 neutrinos per cubic centimetre at a temperature of 1.95 K,
     but have not been detected directly.
-  see_also: [neutrino, cmb, effective-neutrino-number]
-  lessons: [L4.5]
+  see_also: [neutrino, cmb, effective-neutrino-number, free-streaming]
+  lessons: [L4.5, L4.7]
 
 cp-violation:
   term: CP violation
@@ -989,8 +989,8 @@ matter-power-spectrum:
   definition: >
     The strength of matter density fluctuations as a function of wavenumber
     k = 2π/λ. It peaks near k ≈ 0.016 h/Mpc, the matter–radiation equality scale.
-  see_also: [transfer-function, sigma8, correlation-function]
-  lessons: [L5.4]
+  see_also: [transfer-function, sigma8, correlation-function, free-streaming]
+  lessons: [L5.4, L4.7]
 
 multipole:
   term: Multipole (ℓ)
@@ -1261,8 +1261,8 @@ mcmc:
     A random walk through parameter space that visits each region in proportion to its
     posterior probability. The density of visited points is the measurement, error bars and
     correlations included.
-  see_also: [posterior, likelihood, convergence]
-  lessons: [L7.2]
+  see_also: [posterior, likelihood, convergence, effective-sample-size]
+  lessons: [L7.2, L7.3]
 
 convergence:
   term: Convergence (R-hat)
@@ -1280,7 +1280,7 @@ systematic-error:
     selection effect. Unlike statistical noise it does not shrink as more data are
     collected, and it is usually what cosmological disputes are about.
   see_also: [statistical-error, hubble-tension]
-  lessons: [L7.1, L6.6]
+  lessons: [L7.1, L6.6, L7.3]
 
 statistical-error:
   term: Statistical error
@@ -1299,3 +1299,69 @@ confidence-contour:
     actually measure.
   see_also: [posterior, systematic-error]
   lessons: [L7.1]
+
+parameter-degeneracy:
+  term: Parameter degeneracy
+  definition: >
+    A direction in parameter space along which different combinations fit the data almost
+    equally well, so the data measure a combination of the parameters rather than each one.
+    It shows up as a long, tilted contour and is broken by adding a measurement that
+    constrains a different direction.
+  see_also: [confidence-contour, posterior, marginalisation]
+  lessons: [L7.3]
+
+marginalisation:
+  term: Marginalisation
+  definition: >
+    Removing a parameter you are not interested in by integrating the posterior over it.
+    With MCMC samples it is trivial: simply ignore that column. The histograms along the
+    edges of a contour plot are marginal distributions.
+  see_also: [posterior, mcmc, parameter-degeneracy]
+  lessons: [L7.3]
+
+effective-sample-size:
+  term: Effective sample size
+  definition: >
+    The number of statistically independent samples in a correlated chain: the chain length
+    divided by the autocorrelation length. A long but sticky chain may contain only a few
+    dozen independent samples.
+  see_also: [mcmc, convergence]
+  lessons: [L7.3]
+
+leavitt-law:
+  term: Leavitt law (period–luminosity relation)
+  definition: >
+    Cepheid variable stars that pulsate more slowly are intrinsically brighter, following a
+    straight line between absolute magnitude and the logarithm of the period. Discovered by
+    Henrietta Swan Leavitt in 1912, it turns a measured period into a distance.
+  see_also: [cepheid, distance-ladder, standard-candle]
+  lessons: [L1.1, L7.3]
+
+neutrino-oscillation:
+  term: Neutrino oscillation
+  definition: >
+    The change of a neutrino from one flavour to another as it travels. It happens only
+    because the flavours are mixtures of states with different masses, so its discovery in
+    1998 proved that neutrinos have mass. Oscillations measure differences of squared
+    masses, not the masses themselves.
+  see_also: [neutrino, neutrino-mass-ordering]
+  lessons: [L4.7]
+
+neutrino-mass-ordering:
+  term: Neutrino mass ordering
+  definition: >
+    Whether the two closely spaced neutrino mass states are the lighter pair (normal
+    ordering) or the heavier pair (inverted ordering). The normal ordering needs a mass sum
+    of at least 0.059 eV, the inverted one at least 0.099 eV.
+  see_also: [neutrino-oscillation, neutrino]
+  lessons: [L4.7]
+
+free-streaming:
+  term: Free streaming
+  definition: >
+    Fast-moving particles such as relic neutrinos travel out of regions smaller than the
+    distance they cover, smoothing out density fluctuations on those scales. It is why
+    massive neutrinos suppress the small-scale matter power spectrum, and why hot dark
+    matter cannot form galaxies.
+  see_also: [neutrino, matter-power-spectrum, dark-matter]
+  lessons: [L4.7]

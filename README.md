@@ -12,10 +12,10 @@ on first launch.
 
 ## Features
 
-- **45 lessons in 8 levels**: Foundations, Observational Cosmology, The Expanding
+- **47 lessons in 8 levels**: Foundations, Observational Cosmology, The Expanding
   Universe, Contents of the Universe, Thermal History, CMB & Structure Formation,
   Advanced Topics, How Cosmologists Work
-- **19 simulators**
+- **20 simulators**
   - Cosmology Calculator: ages, distances, horizons and recession velocities at any redshift
   - Expansion History Explorer: a(t) and the Ωm–ΩΛ map
   - Powers of Ten Zoom: from a human to the observable universe
@@ -33,19 +33,20 @@ on first launch.
   - Gravitational Lensing Simulator: arcs, multiple images and Einstein rings
   - Inflation Slow-Roll Simulator: potentials, nₛ and r against Planck and BICEP/Keck
   - Supernova Ia Discovery: fit the real Pantheon+ supernovae and meet the Hubble tension
-  - Build Your Own Universe: design a cosmology and grade it against observations
-  - Likelihood & MCMC Explorer: watch a measurement being made, one step at a time
+  - Build Your Own Universe: design a cosmology (neutrino mass included) and grade it against observations
+  - Likelihood & MCMC Explorer: watch a measurement being made, combine probes, derive parameters
+  - Distance Ladder Builder: parallax → Cepheids → supernovae, with the error budget of H0
 - **Two ways to read every lesson**: *Intuitive* tells the story in words,
   *With the maths* shows every formula and derivation
-- **228 quiz questions** with explanations; score 70% or more to complete a
+- **242 quiz questions** with explanations; score 70% or more to complete a
   lesson
-- **21 guided challenges** inside the simulators, with hints and automatic checking
+- **26 guided challenges** inside the simulators, with hints and automatic checking
 - **A history of cosmology**: 33 milestones from Copernicus to DESI and 18
   scientist cards, each linked to the lesson that explains the physics
 - **16 badges** earned by learning: finishing levels, perfect quizzes, exploring
   simulators and solving their challenges
-- **152-term glossary**: terms in lessons open their definitions in the Guide panel
-- **Reference page**: a 52-entry formula sheet, physical constants, a unit
+- **159-term glossary**: terms in lessons open their definitions in the Guide panel
+- **Reference page**: a 57-entry formula sheet, physical constants, a unit
   converter and the parameters of every model
 - **Global search** (Ctrl+F) across lesson text, glossary, simulators and formulas
 - **Notes and bookmarks**: a private notebook for every page, exportable as Markdown
@@ -156,6 +157,10 @@ pytest
 
 The tests check the physics against astropy, validate all course content (links,
 quizzes, formulas) and open every page and simulator headlessly.
+
+GitHub Actions runs the same suite on Windows and Linux for every push and pull
+request (`.github/workflows/ci.yml`). Pushes to `main` then build `Cosmos.exe`,
+run its self-test and keep it for 14 days as a downloadable artifact of the run.
 
 ### Project layout
 

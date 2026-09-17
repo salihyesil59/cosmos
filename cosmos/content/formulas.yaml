@@ -416,3 +416,43 @@
   symbols: 'the combination that sets how fast a binary chirps'
   description: Read off from the signal, it turns mergers into standard sirens.
   lesson: L6.5
+
+- id: combined-likelihood
+  group: Measurement and statistics
+  title: Combining independent measurements
+  formula: '\chi^2_{\mathrm{total}} = \chi^2_A + \chi^2_B'
+  symbols: 'the likelihoods multiply, so the χ² values add'
+  description: How probes that constrain different directions break each other's degeneracies.
+  lesson: L7.3
+
+- id: effective-samples
+  group: Measurement and statistics
+  title: Effective sample size of a chain
+  formula: 'N_{\mathrm{eff}} = N / \tau'
+  symbols: '$N$ steps, $\tau$ autocorrelation length'
+  description: How many independent samples a correlated MCMC chain really contains.
+  lesson: L7.3
+
+- id: quadrature
+  group: Measurement and statistics
+  title: Independent errors in quadrature
+  formula: '\frac{\sigma_{H_0}}{H_0} = \sqrt{\sigma_1^2 + \sigma_2^2 + \sigma_3^2}'
+  symbols: 'fractional errors of the three rungs of the distance ladder'
+  description: The largest term dominates, so improve the weakest rung first.
+  lesson: L7.3
+
+- id: neutrino-density
+  group: Thermal history
+  title: Density of massive relic neutrinos
+  formula: '\Omega_\nu h^2 = \frac{\Sigma m_\nu}{93.14\ \mathrm{eV}}'
+  symbols: '$\Sigma m_\nu$ the sum of the three neutrino masses'
+  description: Neutrinos heavier than about a milli-electronvolt are matter today.
+  lesson: L4.7
+
+- id: neutrino-suppression
+  group: Structure and the CMB
+  title: Small-scale suppression by neutrino mass
+  formula: '\frac{\Delta P}{P} \approx -8 f_\nu, \quad f_\nu = \Omega_\nu / \Omega_{\mathrm{m}}'
+  symbols: '$f_\nu$ the neutrino share of the matter'
+  description: Free streaming keeps neutrinos out of small clumps and slows their growth.
+  lesson: L4.7

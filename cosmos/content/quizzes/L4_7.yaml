@@ -1,0 +1,48 @@
+- question: "What do neutrino oscillation experiments measure?"
+  choices:
+    - "The mass of each neutrino"
+    - "Differences between the squared masses"
+    - "The sum of the three masses"
+    - "Only whether neutrinos exist"
+  answer: 1
+  explanation: "Oscillations depend on Δm², so they prove the masses differ but cannot fix the overall scale."
+- question: "Why is there a minimum possible value for the sum of the neutrino masses?"
+  choices:
+    - "Because cosmology measured it"
+    - "Because the measured mass differences require it even if the lightest neutrino is massless"
+    - "Because KATRIN detected the mass"
+    - "There is no minimum"
+  answer: 1
+  explanation: "With the lightest mass set to zero the splittings still give Σmν ≈ 0.059 eV (normal) or 0.099 eV (inverted)."
+- question: "Relic neutrinos with Σmν = 0.06 eV today behave like:"
+  choices:
+    - "Radiation"
+    - "Matter, adding Ων h² = Σmν / 93.14 eV"
+    - "Dark energy"
+    - "Nothing: they have decayed"
+  answer: 1
+  explanation: "Their temperature is only 1.95 K, so any neutrino heavier than about 10⁻³ eV is non-relativistic today and counts as matter."
+- question: "Why do massive neutrinos reduce the matter power spectrum on small scales?"
+  choices:
+    - "They annihilate with dark matter"
+    - "They move too fast to fall into small clumps, so they weaken the gravity that grows them"
+    - "They absorb light from galaxies"
+    - "They increase the expansion rate today"
+  answer: 1
+  explanation: "Free streaming keeps the neutrino share of the matter smooth below the free-streaming length: ΔP/P ≈ −8 fν."
+- question: "Why can neutrinos not be the dark matter?"
+  choices:
+    - "They are not dark"
+    - "They are too hot: they would erase the small structures from which galaxies form"
+    - "They are too heavy"
+    - "They do not feel gravity"
+  answer: 1
+  explanation: "Hot dark matter smooths out small scales. Galaxies require cold dark matter; neutrinos are only a small hot admixture."
+- question: "The DESI limit Σmν < 0.064 eV (95%) is interesting because:"
+  choices:
+    - "It proves the inverted ordering"
+    - "It already disfavours the inverted ordering and leaves little room above the normal-ordering floor"
+    - "It is larger than the KATRIN limit"
+    - "It measures the mass of each neutrino separately"
+  answer: 1
+  explanation: "The inverted ordering needs at least 0.099 eV and the normal ordering 0.059 eV: floor and ceiling are now almost touching."

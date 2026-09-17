@@ -16,7 +16,7 @@ import math
 from dataclasses import dataclass, field
 
 import numpy as np
-from scipy import stats
+from scipy import ndimage, stats
 
 from cosmos.physics.supernovae import SupernovaSample, dimensionless_luminosity_distance
 
@@ -45,6 +45,43 @@ def in_bounds(om: float, ol: float, bounds: dict[str, tuple[float, float]]) -> b
     return (bounds["om"][0] <= om <= bounds["om"][1]) and (bounds["ol"][0] <= ol <= bounds["ol"][1])
 
 
+# ------------------------------------------------------------ second probes (L7.3)
+@dataclass(frozen=True)
+class Probe:
+    """A second measurement, summarised as a Gaussian constraint on one combination of Ωm and ΩΛ."""
+
+    key: str
+    label: str
+    description: str
+    om_weight: float = 0.0           # the constrained combination is om_weight·Ωm + ol_weight·ΩΛ
+    ol_weight: float = 0.0
+    value: float = 0.0
+    error: float = math.inf
+
+    def log_prior(self, om: float, ol: float) -> float:
+        if not math.isfinite(self.error):
+            return 0.0
+        combination = self.om_weight * om + self.ol_weight * ol
+        return -0.5 * ((combination - self.value) / self.error) ** 2
+
+
+PROBES: dict[str, Probe] = {
+    "none": Probe("none", "Supernovae only", "No second measurement: the supernovae decide alone."),
+    "cmb": Probe("cmb", "+ CMB geometry (Ωm + ΩΛ = 1.00 ± 0.02)",
+                 "The acoustic scale of the CMB says space is close to flat: Ωm + ΩΛ ≈ 1.",
+                 om_weight=1.0, ol_weight=1.0, value=1.0, error=0.02),
+    "bao": Probe("bao", "+ BAO matter density (Ωm = 0.30 ± 0.02)",
+                 "Baryon acoustic oscillations with a sound-horizon prior pin down the matter density.",
+                 om_weight=1.0, ol_weight=0.0, value=0.30, error=0.02),
+}
+
+
+def log_posterior(om: float, ol: float, sample: SupernovaSample, probe: str = "none") -> float:
+    """Likelihood of the supernovae times the second probe: the product of independent measurements."""
+    value = log_likelihood(om, ol, sample)
+    return value + PROBES[probe].log_prior(om, ol) if math.isfinite(value) else value
+
+
 @dataclass
 class Chain:
     """A Metropolis–Hastings chain and everything the interface shows about it."""
@@ -55,6 +92,7 @@ class Chain:
     flat: bool                           # ΩΛ was tied to 1 − Ωm
     burn_in: int = 0
     label: str = ""
+    probe: str = "none"
 
     @property
     def acceptance(self) -> float:
@@ -101,14 +139,15 @@ class Chain:
 
 def run_chain(sample: SupernovaSample, steps: int = 4000, step_size: float = 0.08,
               start: tuple[float, float] = (0.5, 0.5), seed: int = 1, flat: bool = False,
-              bounds: dict[str, tuple[float, float]] | None = None, burn_in_fraction: float = 0.2) -> Chain:
+              bounds: dict[str, tuple[float, float]] | None = None, burn_in_fraction: float = 0.2,
+              probe: str = "none") -> Chain:
     """Metropolis–Hastings: propose, compare, accept or stay."""
     bounds = bounds or DEFAULT_BOUNDS
     rng = np.random.default_rng(seed)
     om, ol = start
     if flat:
         ol = 1 - om
-    current = log_likelihood(om, ol, sample)
+    current = log_posterior(om, ol, sample, probe)
     samples = np.empty((steps, 2))
     posts = np.empty(steps)
     accepted = 0
@@ -116,13 +155,35 @@ def run_chain(sample: SupernovaSample, steps: int = 4000, step_size: float = 0.0
         proposal_om = om + rng.normal(0, step_size)
         proposal_ol = (1 - proposal_om) if flat else ol + rng.normal(0, step_size * 1.4)
         if in_bounds(proposal_om, proposal_ol, bounds):
-            candidate = log_likelihood(proposal_om, proposal_ol, sample)
+            candidate = log_posterior(proposal_om, proposal_ol, sample, probe)
             if math.log(rng.random()) < candidate - current:
                 om, ol, current = proposal_om, proposal_ol, candidate
                 accepted += 1
         samples[i] = (om, ol)
         posts[i] = current
-    return Chain(samples, posts, accepted, flat, burn_in=int(steps * burn_in_fraction))
+    return Chain(samples, posts, accepted, flat, burn_in=int(steps * burn_in_fraction), probe=probe)
+
+
+def derived_parameters(chain: Chain) -> dict[str, tuple[float, float]]:
+    """Any function of the parameters, with its error bar, straight from the samples.
+
+    No error propagation formula is needed: compute the quantity for every sample
+    and take the mean and spread of the result. Correlations are included for free.
+    """
+    om, ol = chain.kept[:, 0], chain.kept[:, 1]
+    q0 = om / 2 - ol
+    omega_k = 1 - om - ol
+    return {
+        "q0": (float(q0.mean()), float(q0.std(ddof=1))),
+        "omega_k": (float(omega_k.mean()), float(omega_k.std(ddof=1))),
+        "accelerating": (float(np.mean(q0 < 0)), 0.0),
+    }
+
+
+def naive_q0_error(chain: Chain) -> float:
+    """The error on q0 = Ωm/2 − ΩΛ if the correlation between Ωm and ΩΛ were ignored."""
+    std = chain.std()
+    return float(math.hypot(0.5 * std[0], std[1]))
 
 
 def gelman_rubin(chains: list[Chain], index: int = 0) -> float:
@@ -159,9 +220,12 @@ class Posterior:
         return (0.5 * (self.x_edges[1:] + self.x_edges[:-1]), 0.5 * (self.y_edges[1:] + self.y_edges[:-1]))
 
 
-def posterior_map(chain: Chain, bins: int = 45) -> Posterior:
+def posterior_map(chain: Chain, bins: int = 45, smooth: float = 0.0) -> Posterior:
+    """A 2D histogram of the kept samples; ``smooth`` (in bins) blurs the shot noise of a short chain."""
     x, y = chain.kept[:, 0], chain.kept[:, 1]
     density, x_edges, y_edges = np.histogram2d(x, y, bins=bins)
+    if smooth > 0:
+        density = ndimage.gaussian_filter(density, smooth)
     return Posterior(x_edges, y_edges, density.T, credible_levels(density))
 
 

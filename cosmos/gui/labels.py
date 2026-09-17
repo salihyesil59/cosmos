@@ -39,6 +39,23 @@ FATE_EXPLANATIONS = [
             "high-redshift objects and the CMB."),
 ]
 
+# Second probes of the MCMC explorer (inference.PROBES).
+PROBES = [
+    tr_noop("Supernovae only"),
+    tr_noop("No second measurement: the supernovae decide alone."),
+    tr_noop("+ CMB geometry (Ωm + ΩΛ = 1.00 ± 0.02)"),
+    tr_noop("The acoustic scale of the CMB says space is close to flat: Ωm + ΩΛ ≈ 1."),
+    tr_noop("+ BAO matter density (Ωm = 0.30 ± 0.02)"),
+    tr_noop("Baryon acoustic oscillations with a sound-horizon prior pin down the matter density."),
+]
+
+# Observing programmes of the distance ladder (ladder.PRESETS).
+LADDER_PRESETS = [
+    tr_noop("Hubble Key Project style (2001)"),
+    tr_noop("SH0ES style (2022)"),
+    tr_noop("A future Gaia-era ladder"),
+]
+
 # The status of a lesson, as LessonStatus spells it.
 LESSON_STATUS = [tr_noop("completed"), tr_noop("ready"), tr_noop("not ready")]
 
