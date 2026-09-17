@@ -35,6 +35,8 @@ class UserData:
     notes: dict[str, str] = field(default_factory=dict)             # route -> the learner's own note
     bookmarks: list[str] = field(default_factory=list)              # routes, most recent first
     challenges_done: list[str] = field(default_factory=list)        # "S1/redshift-1100"
+    problems_solved: dict[str, int] = field(default_factory=dict)   # problem id -> attempts it took
+    problem_attempts: dict[str, int] = field(default_factory=dict)  # problem id -> attempts so far
     pages_seen: list[str] = field(default_factory=list)             # route kinds the learner has visited
     achievements: dict[str, str] = field(default_factory=dict)      # achievement id -> ISO timestamp
 
@@ -104,6 +106,20 @@ class ProgressStore:
 
     def is_challenge_done(self, simulator_id: str, challenge_id: str) -> bool:
         return f"{simulator_id}/{challenge_id}" in self.data.challenges_done
+
+    def record_problem_attempt(self, problem_id: str, correct: bool) -> bool:
+        """Count an attempt at a worked problem; returns True the first time it is solved."""
+        if problem_id in self.data.problems_solved:
+            return False
+        attempts = self.data.problem_attempts.get(problem_id, 0) + 1
+        self.data.problem_attempts[problem_id] = attempts
+        if correct:
+            self.data.problems_solved[problem_id] = attempts
+        self.save()
+        return correct
+
+    def is_problem_solved(self, problem_id: str) -> bool:
+        return problem_id in self.data.problems_solved
 
     # ------------------------------------------------------- achievements
     def refresh_achievements(self, curriculum: Curriculum) -> list[str]:

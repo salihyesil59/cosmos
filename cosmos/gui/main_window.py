@@ -25,6 +25,7 @@ from cosmos.gui.pages.history_page import HistoryPage
 from cosmos.gui.pages.home import HomePage
 from cosmos.gui.pages.lesson import LessonPage
 from cosmos.gui.pages.notes_page import NotesPage
+from cosmos.gui.pages.problems_page import ProblemsPage
 from cosmos.gui.pages.progress_page import ProgressPage
 from cosmos.gui.pages.reference import ReferencePage
 from cosmos.gui.pages.search_page import SearchBox, SearchPage
@@ -93,8 +94,10 @@ class MainWindow(QMainWindow):
         self.history_page = HistoryPage(ctx)
         self.search_page = SearchPage(ctx)
         self.notes_page = NotesPage(ctx)
+        self.problems_page = ProblemsPage(ctx)
         for page in (self.home, self.lesson_page, self.sim_hub, self.glossary_page, self.progress_page,
-                     self.reference_page, self.history_page, self.search_page, self.notes_page):
+                     self.reference_page, self.history_page, self.search_page, self.notes_page,
+                     self.problems_page):
             self.stack.addWidget(page)
         self.setCentralWidget(self.stack)
 
@@ -155,6 +158,8 @@ class MainWindow(QMainWindow):
             item.setToolTip(0, tr(info.tagline))
             self.sims_item.addChild(item)
             self.sim_items[info.id] = item
+        self.problems_item = top("✏  " + tr("Problem sets"), "problems",
+                                 tr("Worked numeric problems with checked answers, one set per level"))
         self.glossary_item = top("📖  " + tr("Glossary"), "glossary", tr("Definitions of all important terms"))
         self.reference_item = top("∑  " + tr("Reference"), "reference",
                                   tr("Formula sheet, constants, units and models"))
@@ -380,7 +385,7 @@ class MainWindow(QMainWindow):
         self._update_bookmark_action()
         self._select_sidebar(route)
         self._update_nav_actions()
-        if route in ("home", "progress", "glossary", "sims", "reference", "notes", "history") \
+        if route in ("home", "progress", "glossary", "sims", "reference", "notes", "history", "problems") \
                 or route.startswith(("lesson:", "sim:")):
             self.ctx.store.data.last_route = route
             self.ctx.store.save()
@@ -424,6 +429,10 @@ class MainWindow(QMainWindow):
         if kind == "notes":
             self.notes_page.refresh()
             return self.notes_page
+        if kind == "problems":
+            if target:
+                self.problems_page.select(target)
+            return self.problems_page
         return None
 
     def go_back(self) -> None:
@@ -476,6 +485,8 @@ class MainWindow(QMainWindow):
             item = self.search_item
         elif kind == "notes":
             item = self.notes_item
+        elif kind == "problems":
+            item = self.problems_item
         elif kind == "progress":
             item = self.progress_item
         if item:

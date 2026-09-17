@@ -14,6 +14,7 @@ from PySide6.QtWidgets import (
     QWidget,
 )
 
+from cosmos.content.loader import load_problems
 from cosmos.content.models import Lesson
 from cosmos.gui.context import AppContext
 from cosmos.gui.simulators.registry import SIMULATORS
@@ -253,6 +254,11 @@ class LessonPage(QWidget):
             lines.append("### " + tr("Related simulators"))
             lines += [f"- [{tr(SIMULATORS[s].title)}](sim:{s}): {tr(SIMULATORS[s].tagline)}"
                       for s in lesson.simulators]
+            lines.append("")
+        practice = [p for s in load_problems() for p in s.problems if p.lesson == lesson.id]
+        if practice:
+            lines.append("### " + tr("Practise"))
+            lines += [f"- [✏ {p.title}](route:problems:{p.id})" for p in practice]
             lines.append("")
         followers = [lid for lid, les in cur.lessons.items() if lesson.id in les.prerequisites]
         if followers:

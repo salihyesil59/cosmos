@@ -30,7 +30,7 @@ def test_search_finds_lessons_and_terms(ctx):
 
 def test_search_covers_every_source(ctx):
     kinds = {h.kind for q in ("horizon", "helium", "lensing", "Friedmann") for h in search(ctx, q)}
-    assert kinds == {"lesson", "glossary", "simulator", "formula"}
+    assert kinds == {"lesson", "glossary", "simulator", "formula", "problem"}
     formula_hits = [h for h in search(ctx, "Friedmann") if h.kind == "formula"]
     assert formula_hits and formula_hits[0].route.startswith("reference:")
 

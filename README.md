@@ -43,12 +43,15 @@ on first launch.
 - **26 guided challenges** inside the simulators, with hints and automatic checking
 - **A history of cosmology**: 33 milestones from Copernicus to DESI and 18
   scientist cards, each linked to the lesson that explains the physics
-- **16 badges** earned by learning: finishing levels, perfect quizzes, exploring
-  simulators and solving their challenges
+- **40 worked problems** in eight sets, one per level: type a number and the app
+  checks it, spots a wrong power of ten or sign, and offers hints and a worked
+  solution
+- **19 badges** earned by learning: finishing levels, perfect quizzes, exploring
+  simulators, solving their challenges and working through the problem sets
 - **159-term glossary**: terms in lessons open their definitions in the Guide panel
 - **Reference page**: a 57-entry formula sheet, physical constants, a unit
   converter and the parameters of every model
-- **Global search** (Ctrl+F) across lesson text, glossary, simulators and formulas
+- **Global search** (Ctrl+F) across lesson text, glossary, simulators, formulas and problems
 - **Notes and bookmarks**: a private notebook for every page, exportable as Markdown
 - Tooltips and **?** buttons on every control
 - Progress tracking with a prerequisite map
@@ -196,7 +199,8 @@ On top of standard Markdown they support:
 
 Add the lesson id to `cosmos/content/curriculum.yaml` and its quiz to
 `cosmos/content/quizzes/`. Entries for the formula sheet live in
-`cosmos/content/formulas.yaml`, simulator challenges in `challenges.yaml` and
+`cosmos/content/formulas.yaml`, simulator challenges in `challenges.yaml`, worked
+problems in `problems.yaml` and
 the timeline in `history.yaml`. A `:::math` callout marks a derivation, which
 the intuitive lesson view hides. Run `pytest` to check the new content.
 

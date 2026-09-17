@@ -1,0 +1,665 @@
+# Worked problem sets (G15): one set per level, numeric answers checked by the app.
+#
+# answer     the correct value, in the unit shown to the learner
+# tolerance  relative: an answer within tolerance × |answer| counts as correct
+# hints      revealed one at a time; solution shown on request
+# Every answer is recomputed from the physics engine in tests/test_problems.py.
+- level: 0
+  title: Distances, light and gravity
+  intro: 'Unit conversions and first estimates: the tools every later calculation relies on.'
+  problems:
+  - id: p0-proxima
+    lesson: L0.2
+    title: The nearest star
+    difficulty: 1
+    statement: The parallax of Proxima Centauri is 768.07 milliarcseconds. How far away is it in **light-years**?
+    answer: 4.246
+    unit: light-years
+    tolerance: 0.02
+    hints:
+    - A star with a parallax of 1 arcsecond is 1 parsec away; distance in parsecs = 1 / parallax in arcseconds.
+    - Convert the parallax to arcseconds first (0.76807″), then use 1 pc = 3.2616 light-years.
+    solution: |
+      1. Parallax in arcseconds: $p = 0.76807''$.
+      2. Distance: $d = 1/p = 1.302\ \mathrm{pc}$.
+      3. In light-years: $1.302 \times 3.2616 = 4.25$ light-years.
+    simulator: S3
+  - id: p0-sunlight
+    lesson: L0.2
+    title: Eight minutes in the past
+    difficulty: 1
+    statement: How many **minutes** does light need to travel one astronomical unit, from the Sun to the Earth?
+    answer: 8.317
+    unit: minutes
+    tolerance: 0.02
+    hints:
+    - Time = distance / speed.
+    - 1 AU = 1.496 × 10¹¹ m and c = 2.998 × 10⁸ m/s. Divide, then convert seconds to minutes.
+    solution: |
+      1. $t = \mathrm{AU}/c = 1.496\times10^{11} / 2.998\times10^{8} = 499\ \mathrm{s}$.
+      2. $499\ \mathrm{s} / 60 = 8.32$ minutes: we always see the Sun as it was eight minutes ago.
+  - id: p0-halpha
+    lesson: L0.3
+    title: A receding galaxy
+    difficulty: 1
+    statement: The hydrogen Hα line, emitted at 656.28 nm, is observed in a galaxy at 721.93 nm. Using the low-speed
+      approximation v ≈ cz, how fast is the galaxy receding, in **km/s**?
+    answer: 29990.0
+    unit: km/s
+    tolerance: 0.02
+    hints:
+    - Redshift z = (observed − emitted) / emitted.
+    - z = 0.1000, and c = 299 792 km/s.
+    solution: |
+      1. $z = (721.93 - 656.28)/656.28 = 0.1000$.
+      2. $v \approx cz = 299\,792 \times 0.1000 = 29\,990\ \mathrm{km/s}$.
+
+      At this speed the simple formula is already about 5% off; the relativistic Doppler formula and, for galaxies,
+      the cosmological redshift of Level 2 do better.
+    simulator: S4
+  - id: p0-andromeda
+    lesson: L0.2
+    title: Andromeda in megaparsecs
+    difficulty: 1
+    statement: The Andromeda galaxy is 2.54 million light-years away. What is that in **megaparsecs**?
+    answer: 0.7788
+    unit: Mpc
+    tolerance: 0.02
+    hints:
+    - 1 parsec = 3.2616 light-years, and 1 Mpc = 10⁶ pc.
+    - 'First convert to parsecs: 2.54 × 10⁶ / 3.2616.'
+    solution: |
+      1. $2.54\times10^{6}\ \mathrm{ly} / 3.2616 = 7.79\times10^{5}\ \mathrm{pc}$.
+      2. $= 0.779\ \mathrm{Mpc}$. Cosmologists use megaparsecs because even the nearest big galaxy is below one.
+  - id: p0-galaxy-mass
+    lesson: L0.4
+    title: Weighing the Milky Way
+    difficulty: 2
+    statement: The Sun orbits the centre of the Milky Way at 230 km/s at a distance of 8.2 kpc. Treating the orbit
+      as circular, how much mass lies inside it, in **solar masses**?
+    answer: 100900000000.0
+    unit: M☉
+    tolerance: 0.03
+    hints:
+    - 'For a circular orbit gravity supplies the centripetal force: GM/r² = v²/r.'
+    - 'M = v² r / G. Use SI units: v = 2.3 × 10⁵ m/s, 1 kpc = 3.086 × 10¹⁹ m, M☉ = 1.989 × 10³⁰ kg.'
+    solution: |
+      1. $M = v^2 r / G$.
+      2. $r = 8.2 \times 3.086\times10^{19} = 2.53\times10^{20}\ \mathrm{m}$.
+      3. $M = (2.3\times10^5)^2 \times 2.53\times10^{20} / 6.674\times10^{-11} = 2.0\times10^{41}\ \mathrm{kg}$.
+      4. Dividing by the solar mass: $\approx 1.0\times10^{11}\ M_\odot$.
+    simulator: S6
+- level: 1
+  title: Measuring the universe
+  intro: The distance ladder, the Hubble law and the first relic of the Big Bang.
+  problems:
+  - id: p1-hubble-law
+    lesson: L1.2
+    title: Hubble's law
+    difficulty: 1
+    statement: A galaxy lies 150 Mpc away. With H0 = 70 km/s/Mpc, what is its recession velocity in **km/s**?
+    answer: 10500.0
+    unit: km/s
+    tolerance: 0.02
+    hints:
+    - v = H0 × d.
+    - 'The units work out directly: (km/s/Mpc) × Mpc = km/s.'
+    solution: |
+      $v = H_0 d = 70 \times 150 = 10\,500\ \mathrm{km/s}$.
+    simulator: S5
+  - id: p1-hubble-time
+    lesson: L1.2
+    title: The Hubble time
+    difficulty: 1
+    statement: What is the Hubble time 1/H0 for H0 = 70 km/s/Mpc, in **billions of years**?
+    answer: 13.97
+    unit: Gyr
+    tolerance: 0.02
+    hints:
+    - 'Convert H0 to 1/s: divide by the number of kilometres in a megaparsec (3.086 × 10¹⁹).'
+    - 'A handy shortcut: 1/H0 = 977.8 / H0 Gyr when H0 is in km/s/Mpc.'
+    solution: |
+      1. $H_0 = 70 / 3.086\times10^{19} = 2.27\times10^{-18}\ \mathrm{s^{-1}}$.
+      2. $1/H_0 = 4.41\times10^{17}\ \mathrm{s} = 13.97\ \mathrm{Gyr}$.
+
+      Close to the true age of 13.8 Gyr — a coincidence of our epoch, as Level 3 explains.
+    simulator: S1
+  - id: p1-cepheid
+    lesson: L1.1
+    title: A Cepheid distance
+    difficulty: 2
+    statement: A Cepheid whose period implies an absolute magnitude M = −4.0 is observed at apparent magnitude m
+      = 24.5. How far away is it, in **Mpc**? Ignore dust.
+    answer: 5.012
+    unit: Mpc
+    tolerance: 0.02
+    hints:
+    - The distance modulus is m − M = 5 log₁₀(d / 10 pc).
+    - m − M = 28.5, so d = 10^((28.5 + 5)/5) parsecs.
+    solution: |
+      1. $\mu = m - M = 24.5 - (-4.0) = 28.5$.
+      2. $d = 10^{(\mu + 5)/5}\ \mathrm{pc} = 10^{6.7}\ \mathrm{pc} = 5.01\times10^{6}\ \mathrm{pc}$.
+      3. $d = 5.0\ \mathrm{Mpc}$: a nearby galaxy, well within reach of Cepheids.
+    simulator: S20
+  - id: p1-supernova
+    lesson: L1.1
+    title: A standard candle
+    difficulty: 2
+    statement: A type Ia supernova peaks at apparent magnitude m = 16.2. Its absolute magnitude is M = −19.3. How
+      far away is it, in **Mpc**?
+    answer: 125.9
+    unit: Mpc
+    tolerance: 0.02
+    hints:
+    - 'Same distance modulus as for a Cepheid: m − M = 5 log₁₀(d / 10 pc).'
+    - m − M = 35.5.
+    solution: |
+      1. $\mu = 16.2 + 19.3 = 35.5$.
+      2. $d = 10^{(35.5+5)/5}\ \mathrm{pc} = 10^{8.1}\ \mathrm{pc} = 126\ \mathrm{Mpc}$.
+    simulator: S16
+  - id: p1-cmb-peak
+    lesson: L1.5
+    title: Where the CMB is brightest
+    difficulty: 1
+    statement: The cosmic microwave background is a black body at 2.7255 K. At what wavelength, in **millimetres**,
+      does its spectrum peak? Use Wien's law with b = 2.898 × 10⁻³ m K.
+    answer: 1.063
+    unit: mm
+    tolerance: 0.02
+    hints:
+    - 'Wien''s displacement law: λ_max = b / T.'
+    - The result comes out in metres; multiply by 1000.
+    solution: |
+      $\lambda_\max = b/T = 2.898\times10^{-3} / 2.7255 = 1.063\times10^{-3}\ \mathrm{m} = 1.06\ \mathrm{mm}$:
+      microwaves, which is why the CMB was found with a radio antenna.
+- level: 2
+  title: The expanding universe
+  intro: Scale factor, critical density and the distance measures of an expanding universe.
+  problems:
+  - id: p2-scale-factor
+    lesson: L2.1
+    title: Size of the universe at z = 6
+    difficulty: 1
+    statement: Light from a galaxy at redshift z = 6 was emitted when the universe was how many **percent** of its
+      present size?
+    answer: 14.29
+    unit: '%'
+    tolerance: 0.02
+    hints:
+    - The scale factor at emission is a = 1/(1 + z).
+    - a = 1/7; express it as a percentage.
+    solution: |
+      $a = 1/(1+z) = 1/7 = 0.143$: all cosmic distances were 14.3% of today's.
+    simulator: S7
+  - id: p2-critical-density
+    lesson: L2.4
+    title: The critical density
+    difficulty: 2
+    statement: What is the critical density of the universe today for H0 = 67.66 km/s/Mpc? Give it as the equivalent
+      number of **hydrogen atoms per cubic metre** (m_H = 1.673 × 10⁻²⁷ kg).
+    answer: 5.141
+    unit: atoms/m³
+    tolerance: 0.03
+    hints:
+    - ρc = 3 H0² / (8πG), with H0 in 1/s.
+    - H0 = 67.66 / 3.086 × 10¹⁹ s⁻¹ = 2.193 × 10⁻¹⁸ s⁻¹; ρc ≈ 8.6 × 10⁻²⁷ kg/m³.
+    solution: |
+      1. $H_0 = 2.193\times10^{-18}\ \mathrm{s^{-1}}$.
+      2. $\rho_c = 3H_0^2/(8\pi G) = 8.60\times10^{-27}\ \mathrm{kg\,m^{-3}}$.
+      3. Divided by the proton mass: about **5.1 hydrogen atoms per cubic metre**. The universe is emptier than
+         any laboratory vacuum.
+    simulator: S1
+  - id: p2-hubble-radius
+    lesson: L2.6
+    title: The Hubble radius
+    difficulty: 1
+    statement: What is the Hubble radius c/H0 for H0 = 67.66 km/s/Mpc, in **Gpc**?
+    answer: 4.431
+    unit: Gpc
+    tolerance: 0.02
+    hints:
+    - c/H0 with c in km/s and H0 in km/s/Mpc gives megaparsecs.
+    - 299 792 / 67.66 Mpc, then divide by 1000.
+    solution: |
+      $c/H_0 = 299\,792 / 67.66 = 4431\ \mathrm{Mpc} = 4.43\ \mathrm{Gpc}$. Galaxies beyond this distance recede
+      faster than light today.
+    simulator: S1
+  - id: p2-luminosity-distance
+    lesson: L2.7
+    title: Luminosity distance at z = 1
+    difficulty: 2
+    statement: In the Planck 2018 model, what is the luminosity distance to an object at z = 1, in **Gpc**? (Use
+      the Cosmology Calculator.)
+    answer: 6.797
+    unit: Gpc
+    tolerance: 0.02
+    hints:
+    - Open the Cosmology Calculator (S1), keep the Planck 2018 preset and set z = 1.
+    - The table gives the luminosity distance in Mpc; divide by 1000. It is (1 + z) times the comoving distance.
+    solution: |
+      The calculator integrates $D_C = c\int_0^z dz'/H(z')$ and multiplies by $(1+z)$:
+      $D_L = 2 \times 3.40\ \mathrm{Gpc} = 6.80\ \mathrm{Gpc}$ — over 22 billion light-years for light that travelled
+      less than 8 billion years.
+    simulator: S1
+  - id: p2-angular-size
+    lesson: L2.7
+    title: How big does a galaxy look?
+    difficulty: 3
+    statement: A galaxy 30 kpc across lies at z = 1 in the Planck 2018 model. What angle does it cover on the sky,
+      in **arcseconds**? The angular diameter distance there is given by the Cosmology Calculator.
+    answer: 3.642
+    unit: arcsec
+    tolerance: 0.03
+    hints:
+    - θ = size / D_A, in radians. D_A at z = 1 is about 1.70 Gpc.
+    - Convert kpc and Gpc to the same unit, then multiply radians by 206 265 to get arcseconds.
+    solution: |
+      1. $D_A(z=1) = 1.699\ \mathrm{Gpc} = 1.699\times10^{6}\ \mathrm{kpc}$.
+      2. $\theta = 30 / 1.699\times10^{6} = 1.77\times10^{-5}\ \mathrm{rad}$.
+      3. $\times 206\,265 = 3.6''$. Large galaxies at z = 1 are only a few arcseconds across.
+    simulator: S1
+- level: 3
+  title: What the universe is made of
+  intro: Equations of state, dark matter from rotation, dark energy and the age of the universe.
+  problems:
+  - id: p3-equality
+    lesson: L3.1
+    title: Matter–radiation equality
+    difficulty: 2
+    statement: Matter density falls as a⁻³ and radiation as a⁻⁴. With Ωm = 0.3097 and Ωr = 9.14 × 10⁻⁵ today, at
+      what redshift were their densities equal?
+    answer: 3387.0
+    unit: ''
+    tolerance: 0.02
+    hints:
+    - The ratio ρm/ρr grows in proportion to a.
+    - 'Equality: 1 + z = Ωm / Ωr.'
+    solution: |
+      $\rho_m/\rho_r = (\Omega_m/\Omega_r)\,a$, which equals 1 at $a = \Omega_r/\Omega_m$, so
+      $1 + z_\mathrm{eq} = 0.3097 / 9.14\times10^{-5} = 3388$ and $z_\mathrm{eq} \approx 3390$.
+    simulator: S1
+  - id: p3-dark-energy-takes-over
+    lesson: L3.3
+    title: When dark energy took over
+    difficulty: 2
+    statement: With Ωm = 0.31 and ΩΛ = 0.69 today, at what redshift were the densities of matter and dark energy
+      equal?
+    answer: 0.3057
+    unit: ''
+    tolerance: 0.03
+    hints:
+    - Dark energy density is constant, matter density goes as (1 + z)³.
+    - Solve Ωm (1 + z)³ = ΩΛ.
+    solution: |
+      $(1+z)^3 = \Omega_\Lambda/\Omega_m = 2.226$, so $1 + z = 1.306$ and $z = 0.31$ — about 3.6 billion years ago,
+      very recently in cosmic terms.
+    simulator: S2
+  - id: p3-deceleration
+    lesson: L3.3
+    title: Is the expansion accelerating?
+    difficulty: 1
+    statement: Ignoring radiation, the deceleration parameter today is q0 = Ωm/2 − ΩΛ. What is q0 for Ωm = 0.31
+      and ΩΛ = 0.69?
+    answer: -0.535
+    unit: ''
+    tolerance: 0.02
+    hints:
+    - Just substitute.
+    - A negative q0 means the expansion is accelerating.
+    solution: |
+      $q_0 = 0.155 - 0.69 = -0.535$. Negative: the expansion is speeding up.
+    simulator: S2
+  - id: p3-eds-age
+    lesson: L3.5
+    title: The age of a matter-only universe
+    difficulty: 1
+    statement: An Einstein–de Sitter universe (Ωm = 1) has age t0 = (2/3)/H0. What would its age be for H0 = 67.66
+      km/s/Mpc, in **Gyr**?
+    answer: 9.634
+    unit: Gyr
+    tolerance: 0.02
+    hints:
+    - First compute the Hubble time 1/H0 = 977.8 / 67.66 Gyr.
+    - Multiply by 2/3.
+    solution: |
+      $1/H_0 = 14.45\ \mathrm{Gyr}$, so $t_0 = 9.63\ \mathrm{Gyr}$ — younger than the oldest stars, one of the
+      reasons this model was abandoned.
+    simulator: S1
+  - id: p3-halo-mass
+    lesson: L3.2
+    title: Dark matter from a flat rotation curve
+    difficulty: 2
+    statement: A spiral galaxy has a flat rotation curve at 220 km/s out to 50 kpc. What mass lies inside 50 kpc,
+      in **solar masses**? (Enter scientific notation such as 5e11.)
+    answer: 562700000000.0
+    unit: M☉
+    tolerance: 0.03
+    hints:
+    - M(<r) = v² r / G for a circular orbit.
+    - Use SI units and divide the result by 1.989 × 10³⁰ kg.
+    solution: |
+      1. $r = 50\ \mathrm{kpc} = 1.543\times10^{21}\ \mathrm{m}$.
+      2. $M = (2.2\times10^5)^2 \times 1.543\times10^{21} / 6.674\times10^{-11} = 1.12\times10^{42}\ \mathrm{kg}$.
+      3. $M = 5.6\times10^{11}\ M_\odot$ — several times the mass in stars and gas.
+    simulator: S6
+- level: 4
+  title: The hot early universe
+  intro: Temperatures, relic particles and the first nuclei.
+  problems:
+  - id: p4-cmb-temperature
+    lesson: L4.2
+    title: The temperature at last scattering
+    difficulty: 1
+    statement: The CMB was released at z = 1089. What was the temperature of the universe then, in **kelvin**?
+    answer: 2971.0
+    unit: K
+    tolerance: 0.02
+    hints:
+    - Temperature scales as T = T0 (1 + z).
+    - T0 = 2.7255 K.
+    solution: |
+      $T = 2.7255 \times 1090 = 2971\ \mathrm{K}$: cool enough for hydrogen atoms to survive.
+    simulator: S10
+  - id: p4-helium
+    lesson: L4.3
+    title: Helium from neutrons
+    difficulty: 1
+    statement: When nucleosynthesis starts there is about one neutron for every seven protons. If every neutron
+      ends up in helium-4, what is the helium mass fraction Yₚ?
+    answer: 0.25
+    unit: ''
+    tolerance: 0.02
+    hints:
+    - A helium-4 nucleus holds 2 neutrons and 2 protons.
+    - Yₚ = 2(n/p) / (1 + n/p).
+    solution: |
+      Out of 16 nucleons, 2 are neutrons and 14 protons. The 2 neutrons pair with 2 protons into one helium
+      nucleus of mass 4: $Y_p = 4/16 = 2(1/7)/(1 + 1/7) = 0.25$.
+    simulator: S11
+  - id: p4-neutrino-temperature
+    lesson: L4.5
+    title: The neutrino background
+    difficulty: 1
+    statement: Electron–positron annihilation heated the photons but not the neutrinos, so T_ν = (4/11)^(1/3) T_CMB.
+      What is the temperature of the cosmic neutrino background today, in **kelvin**?
+    answer: 1.945
+    unit: K
+    tolerance: 0.02
+    hints:
+    - (4/11)^(1/3) ≈ 0.714.
+    - Multiply by 2.7255 K.
+    solution: |
+      $T_\nu = 0.7138 \times 2.7255 = 1.945\ \mathrm{K}$.
+  - id: p4-photons
+    lesson: L4.2
+    title: Counting CMB photons
+    difficulty: 3
+    statement: The number density of black-body photons is n = (2ζ(3)/π²)(kT/ħc)³ with ζ(3) = 1.202. How many CMB
+      photons are there per **cubic centimetre** today?
+    answer: 410.7
+    unit: per cm³
+    tolerance: 0.03
+    hints:
+    - kT/ħc has units of 1/m. With T = 2.7255 K it is 1.19 × 10³ m⁻¹.
+    - Cube it, multiply by 2ζ(3)/π² ≈ 0.2436, and convert from m⁻³ to cm⁻³ (divide by 10⁶).
+    solution: |
+      1. $kT/\hbar c = (1.381\times10^{-23}\times2.7255)/(1.0546\times10^{-34}\times2.998\times10^{8})
+         = 1190\ \mathrm{m^{-1}}$.
+      2. $n = 0.2436 \times 1190^3 = 4.11\times10^{8}\ \mathrm{m^{-3}} = 411\ \mathrm{cm^{-3}}$.
+
+      About a billion photons for every proton in the universe.
+  - id: p4-neutrino-density
+    lesson: L4.7
+    title: How much matter is in neutrinos?
+    difficulty: 1
+    statement: Neutrinos with a total mass Σmν = 0.06 eV have Ων h² = Σmν / 93.14 eV. With h = 0.674, what is Ων?
+    answer: 0.001418
+    unit: ''
+    tolerance: 0.02
+    hints:
+    - First Ων h² = 0.06 / 93.14.
+    - Then divide by h² = 0.4543.
+    solution: |
+      $\Omega_\nu h^2 = 6.44\times10^{-4}$, so $\Omega_\nu = 1.42\times10^{-3}$ — about half a percent of all matter.
+    simulator: S18
+- level: 5
+  title: Sound waves, growth and lensing
+  intro: The acoustic scale, the growth of structure and gravitational lensing.
+  problems:
+  - id: p5-acoustic-scale
+    lesson: L5.1
+    title: The acoustic multipole
+    difficulty: 2
+    statement: The CMB sound horizon subtends θ* = 0.010411 radians. What multipole ℓ_A = π/θ* does that correspond
+      to?
+    answer: 301.8
+    unit: ''
+    tolerance: 0.02
+    hints:
+    - A feature of angular size θ corresponds roughly to ℓ ≈ π/θ.
+    - Just divide.
+    solution: |
+      $\ell_A = \pi / 0.010411 = 302$. The first peak sits at $\ell \approx 220$, below $\ell_A$, because of the
+      phase shift of the oscillations and the potentials — but $\ell_A$ is what fixes the pattern.
+    simulator: S12
+  - id: p5-bao-angle
+    lesson: L5.2
+    title: The BAO ruler on the sky
+    difficulty: 2
+    statement: The BAO scale is 147.1 Mpc (comoving). In the Planck 2018 model, what angle does it cover at z =
+      0.5, in **degrees**? The transverse comoving distance there is given by the Cosmology Calculator.
+    answer: 4.328
+    unit: °
+    tolerance: 0.03
+    hints:
+    - θ = r_s / D_M(z), where both lengths are comoving.
+    - D_M(0.5) ≈ 1947 Mpc. Convert radians to degrees.
+    solution: |
+      1. $D_M(0.5) = 1947\ \mathrm{Mpc}$.
+      2. $\theta = 147.1/1947 = 0.0756\ \mathrm{rad} = 4.33^\circ$ — about nine full Moons.
+    simulator: S1
+  - id: p5-growth
+    lesson: L5.3
+    title: Growing a fluctuation
+    difficulty: 1
+    statement: In matter domination a density contrast grows in proportion to the scale factor, δ ∝ a. A fluctuation
+      with δ = 10⁻³ at z = 1089 has what δ at z = 9?
+    answer: 0.109
+    unit: ''
+    tolerance: 0.02
+    hints:
+    - δ ∝ a ∝ 1/(1 + z).
+    - The ratio of scale factors is 1090 / 10.
+    solution: |
+      $\delta = 10^{-3} \times 1090/10 = 0.109$. Still linear — but at this rate it reaches order unity and
+      collapses before z ≈ 0.
+    simulator: S13
+  - id: p5-einstein-radius
+    lesson: L5.6
+    title: An Einstein ring
+    difficulty: 3
+    statement: A point-like mass of 10¹² M☉ lies at D_l = 1 Gpc in front of a source at D_s = 2 Gpc, with D_ls =
+      1 Gpc. What is the Einstein radius θ_E = √(4GM/c² · D_ls/(D_l D_s)), in **arcseconds**?
+    answer: 2.018
+    unit: arcsec
+    tolerance: 0.03
+    hints:
+    - 4GM/c² for 10¹² M☉ is 5.91 × 10¹⁵ m.
+    - D_ls/(D_l D_s) = 1/(2 Gpc), with 1 Gpc = 3.086 × 10²⁵ m. The square root gives radians.
+    solution: |
+      1. $4GM/c^2 = 5.91\times10^{15}\ \mathrm{m}$.
+      2. $D_{ls}/(D_l D_s) = 1/(6.17\times10^{25}\ \mathrm{m})$.
+      3. $\theta_E = \sqrt{9.57\times10^{-11}} = 9.78\times10^{-6}\ \mathrm{rad} = 2.0''$: a typical galaxy-scale ring.
+    simulator: S14
+  - id: p5-collapse-time
+    lesson: L5.5
+    title: How long does a halo take to collapse?
+    difficulty: 2
+    statement: A dark matter halo has a mean density of 200 times the critical density today (ρc = 8.60 × 10⁻²⁷
+      kg/m³). What is its free-fall time t_ff = √(3π / (32 G ρ)), in **Gyr**?
+    answer: 1.605
+    unit: Gyr
+    tolerance: 0.03
+    hints:
+    - ρ = 200 ρc = 1.72 × 10⁻²⁴ kg/m³.
+    - The result is in seconds; 1 Gyr = 3.156 × 10¹⁶ s.
+    solution: |
+      $t_\mathrm{ff} = \sqrt{3\pi/(32 \times 6.674\times10^{-11} \times 1.72\times10^{-24})} = 5.07\times10^{16}\ \mathrm{s}
+      = 1.6\ \mathrm{Gyr}$ — halos have had time to assemble many times over.
+    simulator: S13
+- level: 6
+  title: Advanced topics
+  intro: Black holes, inflation, standard sirens and the tensions of today.
+  problems:
+  - id: p6-schwarzschild
+    lesson: L6.1
+    title: The Sun as a black hole
+    difficulty: 1
+    statement: What would the Schwarzschild radius r_s = 2GM/c² of the Sun be, in **km**?
+    answer: 2.953
+    unit: km
+    tolerance: 0.02
+    hints:
+    - Substitute M☉ = 1.989 × 10³⁰ kg.
+    - The result is in metres; divide by 1000.
+    solution: |
+      $r_s = 2 \times 6.674\times10^{-11} \times 1.989\times10^{30} / (2.998\times10^8)^2 = 2953\ \mathrm{m} = 2.95\ \mathrm{km}$.
+    simulator: S8
+  - id: p6-efolds
+    lesson: L6.3
+    title: How much inflation?
+    difficulty: 1
+    statement: Inflation must stretch the universe by a factor of about 10²⁶. How many **e-folds** N is that, where
+      the stretch factor is e^N?
+    answer: 59.87
+    unit: e-folds
+    tolerance: 0.02
+    hints:
+    - N = ln(10²⁶).
+    - ln(10) = 2.3026.
+    solution: |
+      $N = 26 \ln 10 = 59.9$ — the "about 60 e-folds" quoted everywhere.
+    simulator: S15
+  - id: p6-phi-squared
+    lesson: L6.3
+    title: Gravitational waves from φ² inflation
+    difficulty: 1
+    statement: For the simplest inflaton potential V ∝ φ² the tensor-to-scalar ratio is r = 8/N*. What is r for
+      N* = 60?
+    answer: 0.1333
+    unit: ''
+    tolerance: 0.02
+    hints:
+    - Just divide.
+    - Compare with the BICEP/Keck limit r < 0.036.
+    solution: |
+      $r = 8/60 = 0.133$, nearly four times the BICEP/Keck limit: the φ² model is ruled out.
+    simulator: S15
+  - id: p6-siren
+    lesson: L6.5
+    title: A standard siren
+    difficulty: 1
+    statement: The gravitational waves of a neutron-star merger give a distance of 43.8 Mpc; its host galaxy recedes
+      at 3017 km/s (corrected for its own motion). What value of H0 follows, in **km/s/Mpc**?
+    answer: 68.88
+    unit: km/s/Mpc
+    tolerance: 0.02
+    hints:
+    - 'At this distance Hubble''s law is enough: H0 = v / d.'
+    - Divide the velocity by the distance.
+    solution: |
+      $H_0 = 3017/43.8 = 68.9\ \mathrm{km/s/Mpc}$, from a single event and without any distance ladder.
+    simulator: S1
+  - id: p6-tension
+    lesson: L6.6
+    title: How big is the Hubble tension?
+    difficulty: 2
+    statement: SH0ES measures H0 = 73.04 ± 1.04 and Planck infers 67.4 ± 0.5 km/s/Mpc. Assuming independent Gaussian
+      errors, by how many **σ** do they differ?
+    answer: 4.888
+    unit: σ
+    tolerance: 0.02
+    hints:
+    - The difference is 5.64 km/s/Mpc.
+    - Its error is √(1.04² + 0.5²).
+    solution: |
+      $\sigma = \sqrt{1.04^2 + 0.5^2} = 1.154$, so the difference is $5.64/1.154 = 4.9\sigma$.
+    simulator: S20
+- level: 7
+  title: Working like a cosmologist
+  intro: Goodness of fit, significance, chains and error budgets.
+  problems:
+  - id: p7-chi2-dof
+    lesson: L7.2
+    title: Is the fit good?
+    difficulty: 1
+    statement: A model with 3 free parameters fitted to 1590 supernovae gives χ² = 1540. What is χ² per degree of
+      freedom?
+    answer: 0.9704
+    unit: ''
+    tolerance: 0.02
+    hints:
+    - Degrees of freedom = data points − fitted parameters.
+    - 1590 − 3 = 1587.
+    solution: |
+      $\chi^2/\mathrm{dof} = 1540/1587 = 0.970$: a perfectly acceptable fit.
+    simulator: S19
+  - id: p7-three-sigma
+    lesson: L7.2
+    title: The threshold for 3σ
+    difficulty: 1
+    statement: For a single parameter, how large must Δχ² above the minimum be to exclude a value at **3σ**?
+    answer: 9.0
+    unit: ''
+    tolerance: 0.02
+    hints:
+    - For one parameter Δχ² = n² for nσ.
+    - Square the number of sigmas.
+    solution: |
+      $\Delta\chi^2 = 3^2 = 9$. (For a two-parameter contour the threshold would be 11.8.)
+  - id: p7-neff
+    lesson: L7.3
+    title: Independent samples
+    difficulty: 1
+    statement: A chain has 20 000 steps. The first 20% are discarded as burn-in, and the autocorrelation length
+      of the rest is 80 steps. How many **independent samples** does it contain?
+    answer: 200.0
+    unit: samples
+    tolerance: 0.02
+    hints:
+    - 'Remove the burn-in first: 16 000 steps remain.'
+    - N_eff = N / τ.
+    solution: |
+      $N_\mathrm{eff} = 16\,000/80 = 200$ — far fewer than the 20 000 points plotted.
+    simulator: S19
+  - id: p7-quadrature
+    lesson: L7.3
+    title: An error budget
+    difficulty: 1
+    statement: The three rungs of a distance ladder contribute independent errors of 1.3%, 1.0% and 0.5% to H0.
+      What is the total uncertainty, in **percent**?
+    answer: 1.715
+    unit: '%'
+    tolerance: 0.02
+    hints:
+    - Independent errors add in quadrature.
+    - √(1.3² + 1.0² + 0.5²).
+    solution: |
+      $\sqrt{1.69 + 1.00 + 0.25} = \sqrt{2.94} = 1.71\%$. Removing the 0.5% term entirely would only bring it to 1.64%.
+    simulator: S20
+  - id: p7-derived-error
+    lesson: L7.3
+    title: An error that depends on a correlation
+    difficulty: 3
+    statement: A chain gives σ(Ωm) = 0.068, σ(ΩΛ) = 0.095 and a correlation ρ = 0.88. What is the uncertainty on
+      q0 = Ωm/2 − ΩΛ? Use σ² = σm²/4 + σΛ² − ρ σm σΛ.
+    answer: 0.06705
+    unit: ''
+    tolerance: 0.03
+    hints:
+    - 'Compute the three terms: 0.001156, 0.009025 and 0.005685.'
+    - Add the first two, subtract the third, take the square root.
+    solution: |
+      $\sigma^2 = 0.001156 + 0.009025 - 0.005685 = 0.004496$, so $\sigma_{q_0} = 0.067$. Ignoring the correlation
+      would have given 0.101.
+    simulator: S19

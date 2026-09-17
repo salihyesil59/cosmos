@@ -16,6 +16,8 @@ from cosmos.content.models import (
     HistoryEvent,
     Lesson,
     Level,
+    Problem,
+    ProblemSet,
     QuizQuestion,
     Scientist,
 )
@@ -150,6 +152,34 @@ def load_challenges() -> dict[str, list[Challenge]]:
             for step in steps
         ]
     return out
+
+
+@functools.cache
+def load_problems() -> list[ProblemSet]:
+    """The worked problem sets, one per level (G15)."""
+    data = yaml.safe_load((CONTENT_DIR / "problems.yaml").read_text(encoding="utf-8")) or []
+    sets = []
+    for entry in data:
+        level = int(entry["level"])
+        problems = [
+            Problem(
+                id=p["id"],
+                level=level,
+                lesson=p["lesson"],
+                title=p["title"],
+                statement=" ".join(p["statement"].split()),
+                answer=float(p["answer"]),
+                unit=p.get("unit", "") or "",
+                tolerance=float(p.get("tolerance", 0.02)),
+                difficulty=int(p.get("difficulty", 1)),
+                hints=[" ".join(h.split()) for h in p.get("hints", []) or []],
+                solution=p.get("solution", "").strip(),
+                simulator=p.get("simulator"),
+            )
+            for p in entry.get("problems", [])
+        ]
+        sets.append(ProblemSet(level, entry["title"], " ".join(entry.get("intro", "").split()), problems))
+    return sorted(sets, key=lambda s: s.level)
 
 
 @functools.cache

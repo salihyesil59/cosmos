@@ -57,6 +57,17 @@ def _all_simulators() -> int:
     return len(SIMULATORS)
 
 
+def _problem_sets_finished(store) -> int:
+    from cosmos.content.loader import load_problems
+
+    return sum(1 for problem_set in load_problems()
+               if all(p.id in store.data.problems_solved for p in problem_set.problems))
+
+
+def _first_try(store) -> int:
+    return sum(1 for attempts in store.data.problems_solved.values() if attempts == 1)
+
+
 def _challenges_total() -> int:
     from cosmos.content.loader import load_challenges
 
@@ -104,6 +115,15 @@ ACHIEVEMENTS: list[Achievement] = [
     Achievement("challenge-master", _("Challenge master"), "🏆",
                 _("Finish every simulator challenge."),
                 lambda s, c: (len(s.data.challenges_done), _challenges_total())),
+    Achievement("problem-solver", _("Problem solver"), "✏",
+                _("Solve ten worked problems."),
+                lambda s, c: (len(s.data.problems_solved), 10)),
+    Achievement("problem-set", _("Worked through"), "📐",
+                _("Solve every problem of one level's set."),
+                lambda s, c: (_problem_sets_finished(s), 1)),
+    Achievement("first-try", _("Sharp shooter"), "🏹",
+                _("Solve five problems at the first attempt."),
+                lambda s, c: (_first_try(s), 5)),
     Achievement("note-taker", _("Note-taker"), "📝",
                 _("Write notes on three pages."),
                 lambda s, c: (len(s.data.notes), 3)),
