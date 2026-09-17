@@ -12,10 +12,10 @@ on first launch.
 
 ## Features
 
-- **47 lessons in 8 levels**: Foundations, Observational Cosmology, The Expanding
+- **49 lessons in 8 levels**: Foundations, Observational Cosmology, The Expanding
   Universe, Contents of the Universe, Thermal History, CMB & Structure Formation,
   Advanced Topics, How Cosmologists Work
-- **20 simulators**
+- **21 simulators**
   - Cosmology Calculator: ages, distances, horizons and recession velocities at any redshift
   - Expansion History Explorer: a(t) and the Ωm–ΩΛ map
   - Powers of Ten Zoom: from a human to the observable universe
@@ -36,20 +36,21 @@ on first launch.
   - Build Your Own Universe: design a cosmology (neutrino mass included) and grade it against observations
   - Likelihood & MCMC Explorer: watch a measurement being made, combine probes, derive parameters
   - Distance Ladder Builder: parallax → Cepheids → supernovae, with the error budget of H0
+  - Survey Designer: choose area, depth and time, and forecast the BAO error bars
 - **Two ways to read every lesson**: *Intuitive* tells the story in words,
   *With the maths* shows every formula and derivation
-- **242 quiz questions** with explanations; score 70% or more to complete a
+- **254 quiz questions** with explanations; score 70% or more to complete a
   lesson
-- **26 guided challenges** inside the simulators, with hints and automatic checking
+- **29 guided challenges** inside the simulators, with hints and automatic checking
 - **A history of cosmology**: 33 milestones from Copernicus to DESI and 18
   scientist cards, each linked to the lesson that explains the physics
-- **40 worked problems** in eight sets, one per level: type a number and the app
+- **42 worked problems** in eight sets, one per level: type a number and the app
   checks it, spots a wrong power of ten or sign, and offers hints and a worked
   solution
 - **19 badges** earned by learning: finishing levels, perfect quizzes, exploring
   simulators, solving their challenges and working through the problem sets
-- **159-term glossary**: terms in lessons open their definitions in the Guide panel
-- **Reference page**: a 57-entry formula sheet, physical constants, a unit
+- **167-term glossary**: terms in lessons open their definitions in the Guide panel
+- **Reference page**: a 59-entry formula sheet, physical constants, a unit
   converter and the parameters of every model
 - **Global search** (Ctrl+F) across lesson text, glossary, simulators, formulas and problems
 - **Notes and bookmarks**: a private notebook for every page, exportable as Markdown

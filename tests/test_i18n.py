@@ -219,6 +219,10 @@ def test_the_labels_table_covers_the_physics_layer():
     from cosmos.physics import inference, ladder
     assert {t for probe in inference.PROBES.values() for t in (probe.label, probe.description)} <= set(labels.PROBES)
     assert {label for label, _settings in ladder.PRESETS.values()} <= set(labels.LADDER_PRESETS)
+    from cosmos.physics import survey
+    texts = {label for label, _s in survey.PRESETS_SURVEY.values()}
+    texts |= {t for tracer in survey.TRACERS.values() for t in (tracer.label, tracer.description)}
+    assert texts <= set(labels.SURVEYS)
     geometries = {Cosmology(H0=70, Om0=om, Ode0=ol).geometry
                   for om, ol in ((0.3, 0.7), (0.3, 0.2), (0.6, 0.8))}
     assert geometries <= set(labels.GEOMETRIES)

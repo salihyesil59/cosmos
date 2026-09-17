@@ -1279,8 +1279,8 @@ systematic-error:
     A bias that repeats in every measurement — a calibration offset, unmodelled dust, a
     selection effect. Unlike statistical noise it does not shrink as more data are
     collected, and it is usually what cosmological disputes are about.
-  see_also: [statistical-error, hubble-tension]
-  lessons: [L7.1, L6.6, L7.3]
+  see_also: [statistical-error, hubble-tension, null-test]
+  lessons: [L7.1, L6.6, L7.3, L7.6]
 
 statistical-error:
   term: Statistical error
@@ -1365,3 +1365,75 @@ free-streaming:
     matter cannot form galaxies.
   see_also: [neutrino, matter-power-spectrum, dark-matter]
   lessons: [L4.7]
+
+effective-volume:
+  term: Effective volume
+  definition: >
+    The volume a galaxy survey is worth once shot noise is taken into account:
+    V_eff = V [n̄P / (1 + n̄P)]². A survey with too few galaxies behaves as if it had mapped
+    only a small part of its real volume. BAO distance errors scale as 1/√V_eff.
+  see_also: [shot-noise, sample-variance, redshift-survey]
+  lessons: [L7.4]
+
+shot-noise:
+  term: Shot noise
+  definition: >
+    The noise that comes from sampling a smooth density field with a finite number of
+    discrete objects. Its power is 1/n̄; it dominates when the galaxy density times the
+    clustering power, n̄P, is below about 1.
+  see_also: [effective-volume, sample-variance]
+  lessons: [L7.4]
+
+sample-variance:
+  term: Sample variance (cosmic variance)
+  definition: >
+    The uncertainty that comes from observing only a finite piece of the universe, whose
+    structures are one random realisation. It can be reduced only by covering more volume;
+    on the largest scales even the whole observable universe is a single sample.
+  see_also: [effective-volume, shot-noise]
+  lessons: [L7.4]
+
+galaxy-bias:
+  term: Galaxy bias
+  definition: >
+    How much more strongly a population of galaxies clusters than the underlying matter.
+    Massive red galaxies, living in the densest regions, have a high bias; star-forming
+    galaxies a lower one. A higher bias means more signal per galaxy.
+  see_also: [redshift-survey, matter-power-spectrum]
+  lessons: [L7.4]
+
+photometric-redshift:
+  term: Photometric redshift
+  definition: >
+    A redshift estimated from the brightness of a galaxy in a few broad filters instead of
+    from spectral lines. It is cheap enough for billions of galaxies but uncertain by a few
+    percent in 1 + z, which blurs the map along the line of sight.
+  see_also: [redshift, redshift-survey, weak-lensing]
+  lessons: [L7.4, L7.6]
+
+malmquist-bias:
+  term: Malmquist bias
+  definition: >
+    In a sample limited by apparent brightness, distant objects are detected only if they
+    are intrinsically bright, so the catalogue is brighter on average than the population.
+    Uncorrected, it makes distant standard candles look closer than they are.
+  see_also: [standard-candle, systematic-error]
+  lessons: [L7.6]
+
+null-test:
+  term: Null test
+  definition: >
+    A check that splits the data in ways that should not change the result — two halves
+    of the sky, early and late observations, red and blue galaxies — and verifies that
+    the halves agree. A failed null test reveals a systematic error.
+  see_also: [systematic-error, blinding]
+  lessons: [L7.6]
+
+blinding:
+  term: Blinding
+  definition: >
+    Hiding the true result of an analysis, for instance by shifting the data by an unknown
+    amount, until the method has been tested and frozen. It stops analysts from tuning
+    their choices, consciously or not, towards an expected answer.
+  see_also: [null-test, systematic-error]
+  lessons: [L7.6]

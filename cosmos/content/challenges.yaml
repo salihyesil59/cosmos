@@ -278,3 +278,38 @@ S20:
     min: 100
   - field: mc_mismatch
     max: 0.2
+S21:
+- id: half-percent
+  task: Design a survey that measures the BAO distance to better than 0.5% in total, with at most five years of
+    observing and no more than 15 000 deg².
+  hint: 'The DESI programme with luminous red galaxies is close. Watch n̄P: if it is far above 1, spend the galaxies
+    on more volume instead.'
+  success: Half a percent on the expansion history — the precision that lets surveys test whether dark energy evolves.
+  check:
+  - field: total_percent
+    max: 0.5
+  - field: years
+    max: 5
+  - field: area
+    max: 15000
+- id: beat-shot-noise
+  task: Choose quasars as the tracer, then raise their density until the survey is no longer shot-noise limited
+    (n̄P above 1).
+  hint: Select <b>Quasars</b>, then drag the <b>target density</b> up. If the spectra run out, add years or fibres.
+  success: Quasars are rare, so every extra one counts until n̄P reaches about 1 — after that, only more volume
+    helps.
+  check:
+  - field: tracer
+    equals: qso
+  - field: n_p
+    min: 1.0
+- id: floor-wins
+  task: Add a systematic floor of at least 0.25% and design a survey whose statistical error is already below it.
+  hint: Set the <b>Systematic floor</b> to 0.3% and start from a large programme such as DESI or Euclid.
+  success: 'Past this point more years or more galaxies buy almost nothing: the systematics, not the statistics,
+    now decide the result.'
+  check:
+  - field: floor
+    min: 0.25
+  - field: stat_below_floor
+    is_true: true

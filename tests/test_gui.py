@@ -720,3 +720,51 @@ def test_problem_sets_page(window):
     from cosmos.gui.search import search
 
     assert any(h.route == "problems:p5-bao-angle" for h in search(window.ctx, "BAO ruler"))
+
+
+
+def test_survey_designer(window):
+    """S21: presets, regimes, dilution, the systematic floor and the challenges."""
+    window.navigate("sim:S21")
+    pump()
+    host = window.stack.currentWidget()
+    s21 = host.simulator
+    s21.preset.setCurrentIndex(s21.preset.findData("desi_lrg"))
+    state = s21.state()
+    assert state["tracer"] == "lrg" and state["n_p"] > 3 and 0.3 < state["total_percent"] < 0.5
+    bar = host.challenge_bar
+    assert bar is not None and len(host.challenges) == 3
+    bar.go(0)
+    assert bar.check() is True
+
+    s21.tracer.setCurrentIndex(s21.tracer.findData("qso"))       # resets the range and density
+    s21.recompute()
+    assert s21.state()["n_p"] < 1 and s21.state()["preset"] == "custom"
+    s21.density.setValue(3e-4)
+    s21.years.setValue(1)
+    s21.recompute()
+    assert s21.state()["diluted"] and "telescope time" in s21.banner.label.text()
+    s21.years.setValue(10)
+    s21.recompute()
+    bar.go(1)
+    assert bar.check() is True
+
+    s21.preset.setCurrentIndex(s21.preset.findData("euclid"))
+    s21.floor.setValue(0.4)
+    s21.recompute()
+    assert s21.state()["stat_below_floor"]
+    bar.go(2)
+    assert bar.check() is True
+    for plot in (s21.distance_plot, s21.tradeoff_plot):
+        plot.refresh()
+    s21.floor.setValue(0.0)
+
+
+def test_survey_and_systematics_lessons(window):
+    for lesson_id in ("L7.4", "L7.6"):
+        window.navigate(f"lesson:{lesson_id}")
+        pump()
+        text = window.lesson_page.browser.toPlainText()
+        assert "CSMTOKEN" not in text and "$$" not in text
+    assert "S21" in window.ctx.curriculum.lessons["L7.4"].simulators
+    assert window.ctx.curriculum.levels[-1].lesson_ids[-1] == "L7.6"

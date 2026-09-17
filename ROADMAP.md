@@ -169,7 +169,7 @@ Everything above is finished: 43 lessons, 18 simulators, the guidance features,
 real data, a packaged executable, a Turkish interface and the optional CAMB and
 tutor extras. The items below are candidates for the next rounds, written in the
 same style. ★ marks the ones worth doing first; ticked items have been added
-since (the course now has 47 lessons and 20 simulators).
+since (the course now has 49 lessons and 21 simulators).
 
 ### Curriculum
 
@@ -177,9 +177,9 @@ since (the course now has 47 lessons and 20 simulators).
 - [x] ★ `L7.1` Reading a scientific plot: log axes, error bars, confidence contours
 - [x] ★ `L7.2` From data to a parameter: likelihoods, χ², and what "5σ" means
 - [x] `L7.3` MCMC in practice: sampling a posterior, degeneracies, convergence
-- [ ] `L7.4` How a survey is built: DESI, Euclid, Rubin and JWST compared
+- [x] `L7.4` How a survey is built: DESI, Euclid, Rubin and JWST compared
 - [ ] `L7.5` Simulations as experiments: from initial conditions to a mock catalogue
-- [ ] `L7.6` Systematics: the errors that do not shrink with more data
+- [x] `L7.6` Systematics: the errors that do not shrink with more data
 
 **Additions to existing levels**
 - [x] ★ `L4.7` Neutrino mass and cosmology: how the lightest particles weigh the universe
@@ -190,7 +190,7 @@ since (the course now has 47 lessons and 20 simulators).
 ### Simulators
 - [x] ★ `S19` Likelihood & MCMC Explorer: fit a model, watch the chain, read the contours
 - [x] ★ `S20` Distance Ladder Builder: parallax → Cepheids → supernovae, with error propagation
-- [ ] `S21` Survey Designer: choose area, depth and time, see the error bars you would get
+- [x] `S21` Survey Designer: choose area, depth and time, see the error bars you would get
 - [ ] `S22` Standard Siren Explorer: measure H0 from a gravitational-wave merger
 - [ ] `S23` Redshift Survey Slice: build a cone diagram and find the cosmic web in it
 - [ ] `S24` CMB Sky Viewer: a real Planck map, with masking and filtering (needs a download)

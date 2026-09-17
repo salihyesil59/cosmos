@@ -663,3 +663,33 @@
       $\sigma^2 = 0.001156 + 0.009025 - 0.005685 = 0.004496$, so $\sigma_{q_0} = 0.067$. Ignoring the correlation
       would have given 0.101.
     simulator: S19
+  - id: p7-effective-volume
+    lesson: L7.4
+    title: How much volume is a survey worth?
+    difficulty: 1
+    statement: A survey maps 10 (Gpc/h)³ with a galaxy density such that n̄P = 1 at the BAO scale. What is its
+      **effective volume**, in (Gpc/h)³?
+    answer: 2.5
+    unit: (Gpc/h)³
+    tolerance: 0.02
+    hints:
+    - V_eff = V [n̄P / (1 + n̄P)]².
+    - With n̄P = 1 the bracket is 1/2.
+    solution: |
+      $V_\mathrm{eff} = 10 \times (1/2)^2 = 2.5\ (\mathrm{Gpc}/h)^3$: shot noise costs three quarters of the volume.
+    simulator: S21
+  - id: p7-systematic-floor
+    lesson: L7.6
+    title: When the floor takes over
+    difficulty: 1
+    statement: A BAO measurement has a statistical error of 0.4% and a systematic floor of 0.3%. What is the total
+      error, in **percent**?
+    answer: 0.5
+    unit: '%'
+    tolerance: 0.02
+    hints:
+    - Independent errors add in quadrature.
+    - √(0.4² + 0.3²).
+    solution: |
+      $\sqrt{0.16 + 0.09} = 0.5\%$. Even a perfect survey would stay at 0.3%.
+    simulator: S21
