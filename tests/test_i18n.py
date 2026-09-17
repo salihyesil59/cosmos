@@ -216,6 +216,9 @@ def test_the_labels_table_covers_the_physics_layer():
     assert {f.value for f in Fate} <= set(labels.FATES)
     assert set(_FATE_EXPLANATIONS.values()) <= set(labels.FATE_EXPLANATIONS)
     assert {s.value for s in LessonStatus} <= set(labels.LESSON_STATUS)
+    from cosmos.physics import inference, ladder
+    assert {t for probe in inference.PROBES.values() for t in (probe.label, probe.description)} <= set(labels.PROBES)
+    assert {label for label, _settings in ladder.PRESETS.values()} <= set(labels.LADDER_PRESETS)
     geometries = {Cosmology(H0=70, Om0=om, Ode0=ol).geometry
                   for om, ol in ((0.3, 0.7), (0.3, 0.2), (0.6, 0.8))}
     assert geometries <= set(labels.GEOMETRIES)

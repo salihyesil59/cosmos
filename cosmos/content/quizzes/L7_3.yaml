@@ -1,0 +1,60 @@
+- question: "The supernova contours in the Ωm–ΩΛ plane form a long, tilted ellipse. What does the long axis mean?"
+  choices:
+    - "The chain has not converged along that direction"
+    - "A degeneracy: combinations along it fit the data almost equally well"
+    - "The error bars of the supernovae are too large"
+    - "Ωm and ΩΛ are uncorrelated"
+  answer: 1
+  explanation: "More matter and more dark energy change the distances in opposite ways, so universes along that line predict nearly the same supernova brightnesses."
+- question: "Two independent experiments are combined. What happens to their χ² values?"
+  choices:
+    - "They are averaged"
+    - "They are added, because the likelihoods multiply"
+    - "The smaller one is kept"
+    - "They are multiplied"
+  answer: 1
+  explanation: "Independent likelihoods multiply, and −2 ln L turns a product into a sum: χ²_total = χ²_A + χ²_B."
+- question: "Why does adding the CMB shrink the supernova error on ΩΛ about fourfold, although the CMB alone says nothing about ΩΛ?"
+  choices:
+    - "The CMB has more data points"
+    - "Its constraint Ωm + ΩΛ ≈ 1 runs across the supernova degeneracy, so only a small patch fits both"
+    - "The CMB is measured with a better telescope"
+    - "Because the CMB removes systematic errors from supernovae"
+  answer: 1
+  explanation: "Each probe allows a long strip in a different direction; their product is the small overlap where they cross."
+- question: "A chain of 10 000 steps has an autocorrelation length of 250 steps. How many independent samples does it contain?"
+  choices: ["10 000", "About 2500", "About 40", "250"]
+  answer: 2
+  explanation: "N_eff = N / τ = 10 000 / 250 = 40. A smooth-looking trace can still hold very little independent information."
+- question: "Four chains started far apart give R̂ = 1.15. What should you conclude?"
+  choices:
+    - "The chains have converged well"
+    - "The walkers have not yet explored the same distribution: run longer or fix the proposal"
+    - "The model is wrong"
+    - "The error bars are 15% too small"
+  answer: 1
+  explanation: "R̂ compares the spread between chains with the spread within them; values above about 1.01 mean they disagree."
+- question: "How do you get the error bar on q0 = Ωm/2 − ΩΛ from an MCMC chain?"
+  choices:
+    - "Add the errors of Ωm and ΩΛ in quadrature"
+    - "Compute q0 for every sample and take the spread of the results"
+    - "It cannot be obtained without a new chain"
+    - "Take the error of ΩΛ, which dominates"
+  answer: 1
+  explanation: "Samples propagate errors automatically, including the correlation between Ωm and ΩΛ that the simple quadrature sum ignores."
+- question: "A distance ladder has rung errors of 1.9%, 1.4% and 0.6%. Which improvement lowers the total error most?"
+  choices:
+    - "Making the 0.6% rung perfect"
+    - "Halving the 1.9% rung"
+    - "Halving the 1.4% rung"
+    - "They all help equally"
+  answer: 1
+  explanation: "Independent errors add in quadrature (total ≈ 2.4%). Removing 0.6% gives 2.33%; halving 1.9% gives about 1.8%."
+- question: "A parallax zero-point error shifts H0 by 2 km/s/Mpc. What happens if you observe ten times more Hubble-flow supernovae?"
+  choices:
+    - "The shift shrinks by a factor of √10"
+    - "The statistical error shrinks, but the shift stays"
+    - "The shift disappears"
+    - "The shift grows"
+  answer: 1
+  explanation: "A systematic error moves every measurement the same way. Only an independent calibration can reveal it."

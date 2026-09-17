@@ -252,7 +252,7 @@ SIMULATORS: dict[str, SimulatorInfo] = {
                 tr_noop("Compare n = −2 with n = 0: which one forms large filaments, which one many small clumps?"),
                 tr_noop("Run the same seed with warm dark matter. What happens to the smallest halos?"),
             ],
-            lessons=["L5.3", "L5.4", "L5.5", "L1.4"],
+            lessons=["L5.3", "L5.4", "L5.5", "L1.4", "L4.7"],
             module="cosmos.gui.simulators.nbody_sim",
             class_name="NBodySimulator",
             icon="⁂",
@@ -404,7 +404,7 @@ SIMULATORS: dict[str, SimulatorInfo] = {
                 tr_noop("Set w0 = −1.3: when does the Big Rip happen?"),
                 tr_noop("Can you find a universe very different from ΛCDM that passes every test?"),
             ],
-            lessons=["L6.2", "L6.7", "L6.8"],
+            lessons=["L6.2", "L6.7", "L6.8", "L4.7"],
             module="cosmos.gui.simulators.sandbox",
             class_name="SandboxSimulator",
             icon="✦",
@@ -512,10 +512,40 @@ SIMULATORS: dict[str, SimulatorInfo] = {
                 tr_noop("Tick <b>Assume a flat universe</b>: one parameter instead of two, and a much tighter Ωm."),
                 tr_noop("Compare the 1998-like sample with Pantheon+: the same method, twenty-five years of data."),
             ],
-            lessons=["L7.2", "L7.1", "L3.3", "L6.6"],
+            lessons=["L7.2", "L7.3", "L7.1", "L3.3", "L6.6"],
             module="cosmos.gui.simulators.mcmc_sim",
             class_name="MCMCSimulator",
             icon="⛓",
+        ),
+        SimulatorInfo(
+            id="S20",
+            title=tr_noop("Distance Ladder Builder"),
+            tagline=tr_noop("Climb from parallax to H0 and follow every error bar."),
+            description=tr_noop(
+                "The local Hubble constant rests on three rungs: parallaxes calibrate Cepheids, Cepheids "
+                "calibrate type Ia supernovae, and distant supernovae measure the expansion. Design the "
+                "observing programme, watch the uncertainty of each rung flow into H0, and see why a "
+                "systematic error survives any amount of data. The measurements are simulated."
+            ),
+            how_to_use=[
+                tr_noop("Choose an <b>observing programme</b>, or set the numbers of stars and supernovae yourself."),
+                tr_noop("Read <b>The three rungs</b>: each panel is one step of the ladder with its own fit."),
+                tr_noop("Open <b>Error budget</b> to see how much each rung contributes to the uncertainty of H0."),
+                tr_noop("Press <b>Repeat 300×</b> to check the error bar by rerunning the whole measurement."),
+                tr_noop("Add a <b>systematic</b> — a parallax zero-point offset or crowding — and compare the shift "
+                        "with the error bar."),
+            ],
+            things_to_try=[
+                tr_noop("Start from the Key Project preset. Which rung limits it, and what does fixing only that "
+                        "rung achieve?"),
+                tr_noop("Add 2000 Hubble-flow supernovae. Why does the total error barely move?"),
+                tr_noop("Set a parallax offset of +20 µas: how many σ does the toy H0 move, and would you notice?"),
+                tr_noop("Set the true H0 to 67.4. How precise must the ladder be to rule out 73 at 5σ?"),
+            ],
+            lessons=["L7.3", "L1.1", "L6.6"],
+            module="cosmos.gui.simulators.ladder_sim",
+            class_name="LadderSimulator",
+            icon="🪜",
         ),
     ]
 }

@@ -492,3 +492,5 @@ def _baryon_asymmetry(fig, p: Palette):
 from cosmos.gui.rendering import figures_structure  # noqa: E402,F401
 from cosmos.gui.rendering import figures_advanced  # noqa: E402,F401
 from cosmos.gui.rendering import figures_methods  # noqa: E402,F401
+from cosmos.gui.rendering import figures_inference  # noqa: E402,F401
+from cosmos.gui.rendering import figures_neutrinos  # noqa: E402,F401

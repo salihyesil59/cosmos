@@ -6,6 +6,7 @@ import numpy as np
 from PySide6.QtCore import Qt, QTimer
 from PySide6.QtWidgets import QCheckBox, QComboBox, QGroupBox, QHBoxLayout, QLabel, QPushButton, QTabWidget, QVBoxLayout
 
+from cosmos.gui.labels import physics
 from cosmos.gui.simulators.base import SimulatorBase
 from cosmos.gui.theme import theme
 from cosmos.gui.widgets.common import Banner, ParameterSlider, labelled_row, muted_label
@@ -39,6 +40,15 @@ class MCMCSimulator(SimulatorBase):
         self.flat = QCheckBox(tr("Assume a flat universe (ΩΛ = 1 − Ωm)"))
         self.flat.setToolTip(tr("One parameter instead of two. The chain then explores a line, not a plane."))
         dl.addWidget(self.flat)
+        self.probe_box = QComboBox()
+        for key, probe in inf.PROBES.items():
+            self.probe_box.addItem(physics(probe.label), key)
+            self.probe_box.setItemData(self.probe_box.count() - 1, physics(probe.description), Qt.ToolTipRole)
+        dl.addWidget(labelled_row(tr("Second probe"), self.probe_box, (
+            tr("Combining measurements"),
+            tr("Independent measurements multiply: the posterior is the supernova likelihood times the "
+               "second probe. Supernovae alone allow a long diagonal band; a probe that constrains a "
+               "different direction cuts it down to a small patch."))))
         self.controls.addWidget(data)
 
         walk = QGroupBox(tr("2 · The chain"))
@@ -107,6 +117,7 @@ class MCMCSimulator(SimulatorBase):
         self.timer.timeout.connect(self._tick)
         self.sample_box.currentIndexChanged.connect(self._sample_changed)
         self.flat.toggled.connect(self.run)
+        self.probe_box.currentIndexChanged.connect(self._probe_changed)
         self._sample_changed()
 
     # ------------------------------------------------------------- running
@@ -126,6 +137,7 @@ class MCMCSimulator(SimulatorBase):
             seed=int(self.seed.value()),
             flat=self.flat.isChecked(),
             burn_in_fraction=self.burn_in.value(),
+            probe=self.probe(),
         )
         self.frame = len(self.chain.samples)
         self._refresh()
@@ -136,12 +148,21 @@ class MCMCSimulator(SimulatorBase):
         self.chains = [
             inf.run_chain(self.sample, steps=int(self.steps.value()), step_size=self.step_size.value(),
                           start=start, seed=int(self.seed.value()) + i, flat=self.flat.isChecked(),
-                          burn_in_fraction=self.burn_in.value())
+                          burn_in_fraction=self.burn_in.value(), probe=self.probe())
             for i, start in enumerate(starts)
         ]
         self.chain = self.chains[0]
         self.frame = len(self.chain.samples)
         self._refresh()
+
+    def probe(self) -> str:
+        return self.probe_box.currentData() or "none"
+
+    def _probe_changed(self, *_args) -> None:
+        # A second probe shrinks the posterior about fourfold, so the walker needs smaller steps
+        # to keep a healthy acceptance rate. The learner can still change it afterwards.
+        self.step_size.setValue(0.08 if self.probe() == "none" else 0.025, emit=False)
+        self.run()
 
     def recompute(self) -> None:
         if self.chain is None:
@@ -208,6 +229,17 @@ class MCMCSimulator(SimulatorBase):
         fit = inf.goodness_of_fit(best_chi2, len(self.sample.z), 2 if not chain.flat else 1)
         lines.append(tr("χ² at the mean: {chi2} for {dof} degrees of freedom (χ²/dof = {reduced})")
                      .format(chi2=f"{fit['chi2']:.0f}", dof=fit["dof"], reduced=f"{fit['reduced']:.2f}"))
+        if not chain.flat and len(chain.kept) > 10:
+            derived = inf.derived_parameters(chain)
+            q0, q0_error = derived["q0"]
+            lines.append("")
+            lines.append(tr("Derived from the samples: q0 = <b>{q0} ± {error}</b> "
+                            "(ignoring the correlation would give ± {naive})")
+                         .format(q0=f"{q0:+.3f}", error=f"{q0_error:.3f}",
+                                 naive=f"{inf.naive_q0_error(chain):.3f}"))
+            lines.append(tr("Ωk = {value} ± {error}; accelerating in {fraction} of the samples")
+                         .format(value=f"{derived['omega_k'][0]:+.3f}", error=f"{derived['omega_k'][1]:.3f}",
+                                 fraction=f"{derived['accelerating'][0]:.1%}"))
         self.summary.setText("<br>".join(lines))
 
         if not animating:
@@ -255,7 +287,7 @@ class MCMCSimulator(SimulatorBase):
         top = fig.add_subplot(grid[0, 0], sharex=main)
         right = fig.add_subplot(grid[1, 1], sharey=main)
 
-        posterior = inf.posterior_map(chain)
+        posterior = inf.posterior_map(chain, bins=40, smooth=1.2)
         x_centres, y_centres = posterior.centres
         main.plot(chain.samples[:, 0], chain.samples[:, 1], color=p.muted, linewidth=0.35, alpha=0.35,
                   label="the walk")
@@ -266,11 +298,18 @@ class MCMCSimulator(SimulatorBase):
                      colors=p.series[0], linewidths=1.2)
         if self.grid is not None:
             main.plot([self.grid.best_om], [self.grid.best_ol], "*", color=p.accent2, markersize=13,
-                      label="grid best fit")
+                      label="best fit, supernovae alone")
         main.plot([kept[:, 0].mean()], [kept[:, 1].mean()], "o", color=p.text, markersize=6,
                   label="chain mean")
         line = np.linspace(-0.5, 2.0, 10)
         main.plot(1 - line, line, color=p.success, linestyle=":", linewidth=1.2, label="flat universe")
+        probe = inf.PROBES[chain.probe]
+        if probe.key == "cmb":
+            main.fill_between(line, 1 - line - 2 * probe.error, 1 - line + 2 * probe.error,
+                              color=p.accent2, alpha=0.12, linewidth=0, label="CMB geometry (2σ)")
+        elif probe.key == "bao":
+            main.axvspan(probe.value - 2 * probe.error, probe.value + 2 * probe.error,
+                         color=p.accent2, alpha=0.12, linewidth=0, label="BAO Ωm (2σ)")
         # Frame the cloud itself, with room for the flat line and the grid best fit.
         mean, std = kept.mean(axis=0), kept.std(axis=0, ddof=1)
         pad = np.maximum(4 * std, [0.08, 0.12])
@@ -330,6 +369,10 @@ class MCMCSimulator(SimulatorBase):
             "om_mean": float(mean[0]),
             "om_error": float(std[0]),
             "ol_mean": float(mean[1]),
+            "ol_error": float(std[1]),
+            "probe": self.probe(),
+            "q0_error": inf.derived_parameters(chain)["q0"][1] if not chain.flat else float("nan"),
+            "accelerating_fraction": inf.derived_parameters(chain)["accelerating"][0],
             "chains": len(self.chains),
             "rhat": inf.gelman_rubin(self.chains, 0) if self.chains else float("nan"),
         }

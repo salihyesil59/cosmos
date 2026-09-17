@@ -228,72 +228,117 @@
         <translation>Zamanda geriye gidildiğinde evren asla sıfır boyuta küçülmez: karanlık enerji o kadar baskındır ki evren ya en küçük bir boyutta 'sekmiştir' ya da hep genişliyordur. Bu tür modeller yüksek kırmızıya kaymalı nesnelerin ve KMF'nin gözlemleriyle çelişir.</translation>
     </message>
     <message>
-        <location filename="../gui/labels.py" line="43" />
+        <location filename="../gui/labels.py" line="44" />
+        <source>Supernovae only</source>
+        <translation>Yalnızca süpernovalar</translation>
+    </message>
+    <message>
+        <location filename="../gui/labels.py" line="45" />
+        <source>No second measurement: the supernovae decide alone.</source>
+        <translation>İkinci ölçüm yok: kararı yalnızca süpernovalar verir.</translation>
+    </message>
+    <message>
+        <location filename="../gui/labels.py" line="46" />
+        <source>+ CMB geometry (Ωm + ΩΛ = 1.00 ± 0.02)</source>
+        <translation>+ KMF geometrisi (Ωm + ΩΛ = 1,00 ± 0,02)</translation>
+    </message>
+    <message>
+        <location filename="../gui/labels.py" line="47" />
+        <source>The acoustic scale of the CMB says space is close to flat: Ωm + ΩΛ ≈ 1.</source>
+        <translation>KMF'nin akustik ölçeği uzayın neredeyse düz olduğunu söyler: Ωm + ΩΛ ≈ 1.</translation>
+    </message>
+    <message>
+        <location filename="../gui/labels.py" line="48" />
+        <source>+ BAO matter density (Ωm = 0.30 ± 0.02)</source>
+        <translation>+ BAO madde yoğunluğu (Ωm = 0,30 ± 0,02)</translation>
+    </message>
+    <message>
+        <location filename="../gui/labels.py" line="49" />
+        <source>Baryon acoustic oscillations with a sound-horizon prior pin down the matter density.</source>
+        <translation>Ses ufku önceliğiyle birlikte baryon akustik salınımları madde yoğunluğunu sabitler.</translation>
+    </message>
+    <message>
+        <location filename="../gui/labels.py" line="54" />
+        <source>Hubble Key Project style (2001)</source>
+        <translation>Hubble Anahtar Projesi tarzı (2001)</translation>
+    </message>
+    <message>
+        <location filename="../gui/labels.py" line="55" />
+        <source>SH0ES style (2022)</source>
+        <translation>SH0ES tarzı (2022)</translation>
+    </message>
+    <message>
+        <location filename="../gui/labels.py" line="56" />
+        <source>A future Gaia-era ladder</source>
+        <translation>Geleceğin Gaia dönemi merdiveni</translation>
+    </message>
+    <message>
+        <location filename="../gui/labels.py" line="60" />
         <source>completed</source>
         <translation>tamamlandı</translation>
     </message>
     <message>
-        <location filename="../gui/labels.py" line="43" />
+        <location filename="../gui/labels.py" line="60" />
         <source>ready</source>
         <translation>hazır</translation>
     </message>
     <message>
-        <location filename="../gui/labels.py" line="43" />
+        <location filename="../gui/labels.py" line="60" />
         <source>not ready</source>
         <translation>hazır değil</translation>
     </message>
     <message>
-        <location filename="../gui/labels.py" line="47" />
+        <location filename="../gui/labels.py" line="64" />
         <source>s</source>
         <translation>s</translation>
     </message>
     <message>
-        <location filename="../gui/labels.py" line="47" />
+        <location filename="../gui/labels.py" line="64" />
         <location filename="../gui/simulators/powers_of_ten.py" line="78" />
         <source>minutes</source>
         <translation>dakika</translation>
     </message>
     <message>
-        <location filename="../gui/labels.py" line="47" />
+        <location filename="../gui/labels.py" line="64" />
         <location filename="../gui/simulators/powers_of_ten.py" line="77" />
         <source>hours</source>
         <translation>saat</translation>
     </message>
     <message>
-        <location filename="../gui/labels.py" line="47" />
+        <location filename="../gui/labels.py" line="64" />
         <location filename="../gui/simulators/powers_of_ten.py" line="77" />
         <source>days</source>
         <translation>gün</translation>
     </message>
     <message>
-        <location filename="../gui/labels.py" line="48" />
+        <location filename="../gui/labels.py" line="65" />
         <location filename="../gui/simulators/calculator.py" line="387" />
         <location filename="../gui/simulators/powers_of_ten.py" line="77" />
         <source>years</source>
         <translation>yıl</translation>
     </message>
     <message>
-        <location filename="../gui/labels.py" line="48" />
+        <location filename="../gui/labels.py" line="65" />
         <location filename="../gui/simulators/calculator.py" line="389" />
         <location filename="../gui/simulators/powers_of_ten.py" line="76" />
         <source>million years</source>
         <translation>milyon yıl</translation>
     </message>
     <message>
-        <location filename="../gui/labels.py" line="48" />
+        <location filename="../gui/labels.py" line="65" />
         <location filename="../gui/simulators/calculator.py" line="390" />
         <location filename="../gui/simulators/powers_of_ten.py" line="76" />
         <source>billion years</source>
         <translation>milyar yıl</translation>
     </message>
     <message>
-        <location filename="../gui/labels.py" line="49" />
+        <location filename="../gui/labels.py" line="66" />
         <location filename="../gui/simulators/powers_of_ten.py" line="78" />
         <source>seconds</source>
         <translation>saniye</translation>
     </message>
     <message>
-        <location filename="../gui/labels.py" line="49" />
+        <location filename="../gui/labels.py" line="66" />
         <location filename="../gui/simulators/powers_of_ten.py" line="81" />
         <source>nanoseconds</source>
         <translation>nanosaniye</translation>
@@ -1824,7 +1869,7 @@ parametreleri kendiniz değiştirmenize izin verir.
         <location filename="../gui/simulators/balloon.py" line="231" />
         <location filename="../gui/simulators/cosmic_timeline.py" line="239" />
         <location filename="../gui/simulators/inflation_sim.py" line="138" />
-        <location filename="../gui/simulators/mcmc_sim.py" line="154" />
+        <location filename="../gui/simulators/mcmc_sim.py" line="175" />
         <location filename="../gui/simulators/nbody_sim.py" line="193" />
         <location filename="../gui/simulators/powers_of_ten.py" line="254" />
         <source>⏸ Pause</source>
@@ -2235,7 +2280,7 @@ parametreleri kendiniz değiştirmenize izin verir.
     <message>
         <location filename="../gui/simulators/calculator.py" line="153" />
         <location filename="../gui/simulators/expansion.py" line="33" />
-        <location filename="../gui/simulators/sandbox.py" line="77" />
+        <location filename="../gui/simulators/sandbox.py" line="92" />
         <location filename="../gui/simulators/spacetime.py" line="38" />
         <source>Preset</source>
         <translation>Hazır ayar</translation>
@@ -2243,6 +2288,7 @@ parametreleri kendiniz değiştirmenize izin verir.
     <message>
         <location filename="../gui/simulators/calculator.py" line="155" />
         <location filename="../gui/simulators/expansion.py" line="34" />
+        <location filename="../gui/simulators/ladder_sim.py" line="41" />
         <source>Presets</source>
         <translation>Hazır ayarlar</translation>
     </message>
@@ -2254,7 +2300,7 @@ parametreleri kendiniz değiştirmenize izin verir.
     <message>
         <location filename="../gui/simulators/calculator.py" line="159" />
         <location filename="../gui/simulators/expansion.py" line="46" />
-        <location filename="../gui/simulators/sandbox.py" line="82" />
+        <location filename="../gui/simulators/sandbox.py" line="97" />
         <source>H0 (km/s/Mpc)</source>
         <translation>H0 (km/s/Mpc)</translation>
     </message>
@@ -2262,6 +2308,7 @@ parametreleri kendiniz değiştirmenize izin verir.
         <location filename="../gui/simulators/calculator.py" line="160" />
         <location filename="../gui/simulators/cmb_spectrum.py" line="64" />
         <location filename="../gui/simulators/expansion.py" line="47" />
+        <location filename="../gui/simulators/sandbox.py" line="48" />
         <location filename="../gui/simulators/supernova_sim.py" line="111" />
         <source>Hubble constant</source>
         <translation>Hubble sabiti</translation>
@@ -2291,7 +2338,7 @@ parametreleri kendiniz değiştirmenize izin verir.
     <message>
         <location filename="../gui/simulators/calculator.py" line="167" />
         <location filename="../gui/simulators/expansion.py" line="41" />
-        <location filename="../gui/simulators/sandbox.py" line="87" />
+        <location filename="../gui/simulators/sandbox.py" line="102" />
         <location filename="../gui/simulators/spacetime.py" line="40" />
         <source>ΩΛ dark energy</source>
         <translation>ΩΛ karanlık enerji</translation>
@@ -2674,7 +2721,7 @@ parametreleri kendiniz değiştirmenize izin verir.
     </message>
     <message>
         <location filename="../gui/simulators/cmb_spectrum.py" line="126" />
-        <location filename="../gui/simulators/sandbox.py" line="117" />
+        <location filename="../gui/simulators/sandbox.py" line="139" />
         <source>Reset to Planck 2018</source>
         <translation>Planck 2018'e sıfırla</translation>
     </message>
@@ -3378,6 +3425,277 @@ parametreleri kendiniz değiştirmenize izin verir.
         <translation>Spektral indis nₛ: &lt;b&gt;{n_s}&lt;/b&gt;&lt;br&gt;Tensör–skaler oranı r: &lt;b&gt;{r}&lt;/b&gt;&lt;br&gt;Yavaş yuvarlanma ε = {epsilon}, η = {eta}&lt;br&gt;KMF ölçekleri ayrıldığındaki alan: φ* = {phi_star} M_Pl&lt;br&gt;Sondaki alan: {phi_end} M_Pl&lt;br&gt;Enerji ölçeği V*¼: &lt;b&gt;{energy} GeV&lt;/b&gt;&lt;br&gt;Şişme sırasındaki Hubble hızı: {hubble} GeV&lt;br&gt;Tam çözüm: şişme, çalıştırmanın başlangıcından itibaren {efolds} e-katlanma sürdü</translation>
     </message>
     <message>
+        <location filename="../gui/simulators/ladder_sim.py" line="20" />
+        <source>1 · Parallaxes → Leavitt law</source>
+        <translation>1 · Paralakslar → Leavitt yasası</translation>
+    </message>
+    <message>
+        <location filename="../gui/simulators/ladder_sim.py" line="21" />
+        <source>2 · Cepheid hosts → supernova M_B</source>
+        <translation>2 · Sefeid barındıran gökadalar → süpernova M_B</translation>
+    </message>
+    <message>
+        <location filename="../gui/simulators/ladder_sim.py" line="22" />
+        <source>3 · Hubble-flow supernovae → H0</source>
+        <translation>3 · Hubble akışındaki süpernovalar → H0</translation>
+    </message>
+    <message>
+        <location filename="../gui/simulators/ladder_sim.py" line="34" />
+        <source>0 · The toy universe</source>
+        <translation>0 · Oyuncak evren</translation>
+    </message>
+    <message>
+        <location filename="../gui/simulators/ladder_sim.py" line="37" />
+        <location filename="../gui/simulators/olbers_sim.py" line="24" />
+        <source>Custom</source>
+        <translation>Özel</translation>
+    </message>
+    <message>
+        <location filename="../gui/simulators/ladder_sim.py" line="40" />
+        <source>Observing programme</source>
+        <translation>Gözlem programı</translation>
+    </message>
+    <message>
+        <location filename="../gui/simulators/ladder_sim.py" line="42" />
+        <source>Toy versions of real programmes: how many stars and supernovae they measured and how precisely. The numbers they produce here are simulated, not the published results.</source>
+        <translation>Gerçek programların oyuncak sürümleri: kaç yıldız ve süpernovayı ne duyarlılıkla ölçtükleri. Burada ürettikleri sayılar benzetimdir, yayımlanmış sonuçlar değildir.</translation>
+    </message>
+    <message>
+        <location filename="../gui/simulators/ladder_sim.py" line="45" />
+        <source>True H0 of the toy universe</source>
+        <translation>Oyuncak evrenin gerçek H0 değeri</translation>
+    </message>
+    <message>
+        <location filename="../gui/simulators/ladder_sim.py" line="46" />
+        <source>Why can you set the truth?</source>
+        <translation>Gerçeği neden siz belirleyebiliyorsunuz?</translation>
+    </message>
+    <message>
+        <location filename="../gui/simulators/ladder_sim.py" line="47" />
+        <source>In a simulation you know the answer, so you can see whether the ladder recovers it. Real astronomers never get this luxury — which is why systematic errors are so hard to catch.</source>
+        <translation>Bir benzetimde cevabı bilirsiniz, böylece merdivenin onu bulup bulmadığını görebilirsiniz. Gerçek gökbilimcilerin böyle bir lüksü yoktur — sistematik hataları yakalamak bu yüzden bu kadar zordur.</translation>
+    </message>
+    <message>
+        <location filename="../gui/simulators/ladder_sim.py" line="51" />
+        <location filename="../gui/simulators/mcmc_sim.py" line="74" />
+        <location filename="../gui/simulators/nbody_sim.py" line="110" />
+        <source>Random seed</source>
+        <translation>Rastgelelik tohumu</translation>
+    </message>
+    <message>
+        <location filename="../gui/simulators/ladder_sim.py" line="59" />
+        <source>Milky Way Cepheids with parallaxes</source>
+        <translation>Paralaksı ölçülmüş Samanyolu Sefeidleri</translation>
+    </message>
+    <message>
+        <location filename="../gui/simulators/ladder_sim.py" line="60" />
+        <source>The first rung</source>
+        <translation>İlk basamak</translation>
+    </message>
+    <message>
+        <location filename="../gui/simulators/ladder_sim.py" line="61" />
+        <source>Parallax is pure geometry: the tiny shift of a star as the Earth orbits the Sun. It gives the distance to nearby Cepheids, and so their true brightness.</source>
+        <translation>Paralaks saf geometridir: Dünya Güneş'in çevresinde dolanırken bir yıldızın gökyüzünde yaptığı minik kayma. Yakın Sefeidlerin uzaklığını, dolayısıyla gerçek parlaklıklarını verir.</translation>
+    </message>
+    <message>
+        <location filename="../gui/simulators/ladder_sim.py" line="65" />
+        <source>Parallax error (µas)</source>
+        <translation>Paralaks hatası (µas)</translation>
+    </message>
+    <message>
+        <location filename="../gui/simulators/ladder_sim.py" line="66" />
+        <source>Micro-arcseconds</source>
+        <translation>Mikro yay saniyesi</translation>
+    </message>
+    <message>
+        <location filename="../gui/simulators/ladder_sim.py" line="67" />
+        <source>A µas is the width of a coin on the Moon seen from Earth. Hipparcos reached about 1000 µas, HST spatial scanning and Gaia about 20–30 µas for these stars.</source>
+        <translation>Bir µas, Ay'daki bir madeni paranın Dünya'dan görünen genişliğidir. Hipparcos yaklaşık 1000 µas'a, HST uzaysal tarama ve Gaia bu yıldızlar için yaklaşık 20–30 µas'a ulaştı.</translation>
+    </message>
+    <message>
+        <location filename="../gui/simulators/ladder_sim.py" line="71" />
+        <source>Parallax zero-point offset (µas) — systematic</source>
+        <translation>Paralaks sıfır noktası kayması (µas) — sistematik</translation>
+    </message>
+    <message>
+        <location filename="../gui/simulators/ladder_sim.py" line="72" />
+        <source>A systematic error</source>
+        <translation>Sistematik bir hata</translation>
+    </message>
+    <message>
+        <location filename="../gui/simulators/ladder_sim.py" line="73" />
+        <source>If every parallax is off by the same small amount, averaging more stars does not help. Gaia's parallax zero point is corrected at the level of about 10–20 µas.</source>
+        <translation>Her paralaks aynı küçük miktarda kaymışsa daha çok yıldızın ortalamasını almak işe yaramaz. Gaia'nın paralaks sıfır noktası yaklaşık 10–20 µas düzeyinde düzeltilir.</translation>
+    </message>
+    <message>
+        <location filename="../gui/simulators/ladder_sim.py" line="83" />
+        <source>Galaxies with Cepheids and a supernova</source>
+        <translation>Hem Sefeid hem süpernova barındıran gökadalar</translation>
+    </message>
+    <message>
+        <location filename="../gui/simulators/ladder_sim.py" line="84" />
+        <source>The bottleneck</source>
+        <translation>Darboğaz</translation>
+    </message>
+    <message>
+        <location filename="../gui/simulators/ladder_sim.py" line="85" />
+        <source>A type Ia supernova must explode in a galaxy close enough for HST or JWST to resolve its Cepheids. Only about one such event happens every year or two.</source>
+        <translation>Bir Ia süpernovası, HST ya da JWST'nin Sefeidlerini ayırt edebileceği kadar yakın bir gökadada patlamalıdır. Bu tür bir olay ancak bir iki yılda bir gerçekleşir.</translation>
+    </message>
+    <message>
+        <location filename="../gui/simulators/ladder_sim.py" line="88" />
+        <source>Cepheids per galaxy</source>
+        <translation>Gökada başına Sefeid</translation>
+    </message>
+    <message>
+        <location filename="../gui/simulators/ladder_sim.py" line="90" />
+        <source>Leavitt law scatter (mag)</source>
+        <translation>Leavitt yasası saçılması (kadir)</translation>
+    </message>
+    <message>
+        <location filename="../gui/simulators/ladder_sim.py" line="91" />
+        <source>Intrinsic scatter</source>
+        <translation>İçsel saçılma</translation>
+    </message>
+    <message>
+        <location filename="../gui/simulators/ladder_sim.py" line="92" />
+        <source>Cepheids of the same period are not exactly equally bright. Near-infrared observations reduce the scatter and the effect of dust.</source>
+        <translation>Aynı periyottaki Sefeidler tam olarak eşit parlaklıkta değildir. Yakın kızılötesi gözlemler saçılmayı ve tozun etkisini azaltır.</translation>
+    </message>
+    <message>
+        <location filename="../gui/simulators/ladder_sim.py" line="96" />
+        <source>Crowding bias (mag) — systematic</source>
+        <translation>Kalabalık yanlılığı (kadir) — sistematik</translation>
+    </message>
+    <message>
+        <location filename="../gui/simulators/ladder_sim.py" line="97" />
+        <source>Blended stars</source>
+        <translation>Karışan yıldızlar</translation>
+    </message>
+    <message>
+        <location filename="../gui/simulators/ladder_sim.py" line="98" />
+        <source>In a distant galaxy a Cepheid can blend with its neighbours and look brighter than it is. Positive values make every host look closer. JWST's sharper images test exactly this.</source>
+        <translation>Uzak bir gökadada bir Sefeid komşularıyla karışıp olduğundan parlak görünebilir. Pozitif değerler her gökadayı daha yakın gösterir. JWST'nin daha keskin görüntüleri tam olarak bunu sınar.</translation>
+    </message>
+    <message>
+        <location filename="../gui/simulators/ladder_sim.py" line="108" />
+        <source>Supernovae in the Hubble flow</source>
+        <translation>Hubble akışındaki süpernovalar</translation>
+    </message>
+    <message>
+        <location filename="../gui/simulators/ladder_sim.py" line="109" />
+        <source>Far enough to ignore local motions</source>
+        <translation>Yerel hareketleri göz ardı edecek kadar uzak</translation>
+    </message>
+    <message>
+        <location filename="../gui/simulators/ladder_sim.py" line="110" />
+        <source>Between z ≈ 0.023 and 0.15 the expansion dominates over the galaxies' own motions, yet the result hardly depends on dark energy.</source>
+        <translation>z ≈ 0,023 ile 0,15 arasında genişleme gökadaların kendi hareketlerine baskın gelir, üstelik sonuç karanlık enerjiye neredeyse hiç bağlı değildir.</translation>
+    </message>
+    <message>
+        <location filename="../gui/simulators/ladder_sim.py" line="113" />
+        <source>Supernova scatter (mag)</source>
+        <translation>Süpernova saçılması (kadir)</translation>
+    </message>
+    <message>
+        <location filename="../gui/simulators/ladder_sim.py" line="119" />
+        <source>🔭 New observation</source>
+        <translation>🔭 Yeni gözlem</translation>
+    </message>
+    <message>
+        <location filename="../gui/simulators/ladder_sim.py" line="121" />
+        <source>The same programme with new random measurement errors.</source>
+        <translation>Aynı program, yeni rastgele ölçüm hatalarıyla.</translation>
+    </message>
+    <message>
+        <location filename="../gui/simulators/ladder_sim.py" line="123" />
+        <source>Repeat {count}×</source>
+        <translation>{count}× tekrarla</translation>
+    </message>
+    <message>
+        <location filename="../gui/simulators/ladder_sim.py" line="124" />
+        <source>Run the whole ladder many times: the spread of H0 is the real error bar.</source>
+        <translation>Merdiveni baştan sona defalarca çalıştırın: H0'ın saçılması gerçek hata çubuğudur.</translation>
+    </message>
+    <message>
+        <location filename="../gui/simulators/ladder_sim.py" line="130" />
+        <source>Your H0</source>
+        <translation>Sizin H0'ınız</translation>
+    </message>
+    <message>
+        <location filename="../gui/simulators/ladder_sim.py" line="136" />
+        <source>Simulated measurements. Real ladders add anchors such as the LMC and NGC 4258, and fit everything at once.</source>
+        <translation>Benzetilmiş ölçümler. Gerçek merdivenler LMC ve NGC 4258 gibi çapalar ekler ve her şeyi aynı anda uydurur.</translation>
+    </message>
+    <message>
+        <location filename="../gui/simulators/ladder_sim.py" line="146" />
+        <source>The three rungs</source>
+        <translation>Üç basamak</translation>
+    </message>
+    <message>
+        <location filename="../gui/simulators/ladder_sim.py" line="147" />
+        <source>Error budget</source>
+        <translation>Hata bütçesi</translation>
+    </message>
+    <message>
+        <location filename="../gui/simulators/ladder_sim.py" line="219" />
+        <source>H0 = &lt;b&gt;{h0} ± {error} km/s/Mpc&lt;/b&gt; ({percent}%)</source>
+        <translation>H0 = &lt;b&gt;{h0} ± {error} km/s/Mpc&lt;/b&gt; (%{percent})</translation>
+    </message>
+    <message>
+        <location filename="../gui/simulators/ladder_sim.py" line="221" />
+        <source>True value of this toy universe: {truth}; off by {miss}</source>
+        <translation>Bu oyuncak evrenin gerçek değeri: {truth}; sapma {miss}</translation>
+    </message>
+    <message>
+        <location filename="../gui/simulators/ladder_sim.py" line="226" />
+        <source>{rung}: ± {percent}%</source>
+        <translation>{rung}: ± %{percent}</translation>
+    </message>
+    <message>
+        <location filename="../gui/simulators/ladder_sim.py" line="228" />
+        <source>Systematic shift, not in the error bar: &lt;b&gt;{shift} km/s/Mpc&lt;/b&gt;</source>
+        <translation>Hata çubuğunda olmayan sistematik kayma: &lt;b&gt;{shift} km/s/Mpc&lt;/b&gt;</translation>
+    </message>
+    <message>
+        <location filename="../gui/simulators/ladder_sim.py" line="231" />
+        <source>{count} repeats: mean {mean}, spread ± {spread}</source>
+        <translation>{count} tekrar: ortalama {mean}, saçılma ± {spread}</translation>
+    </message>
+    <message>
+        <location filename="../gui/simulators/ladder_sim.py" line="234" />
+        <source>Difference from Planck (67.4 ± 0.5): &lt;b&gt;{sigma}σ&lt;/b&gt;</source>
+        <translation>Planck'tan (67,4 ± 0,5) fark: &lt;b&gt;{sigma}σ&lt;/b&gt;</translation>
+    </message>
+    <message>
+        <location filename="../gui/simulators/ladder_sim.py" line="241" />
+        <source>&lt;b&gt;The systematic error is larger than the error bar.&lt;/b&gt; H0 is shifted by {shift} km/s/Mpc, and no amount of extra data will reveal it — only an independent check can.</source>
+        <translation>&lt;b&gt;Sistematik hata, hata çubuğundan büyük.&lt;/b&gt; H0 {shift} km/s/Mpc kaymış durumda ve hiçbir miktarda ek veri bunu ortaya çıkaramaz — ancak bağımsız bir denetim çıkarabilir.</translation>
+    </message>
+    <message>
+        <location filename="../gui/simulators/ladder_sim.py" line="247" />
+        <source>&lt;b&gt;Simulated ladder.&lt;/b&gt; The weakest rung right now is &lt;b&gt;{rung}&lt;/b&gt;: improving the others hardly changes the total, because errors add in quadrature.</source>
+        <translation>&lt;b&gt;Benzetilmiş merdiven.&lt;/b&gt; Şu anki en zayıf basamak &lt;b&gt;{rung}&lt;/b&gt;: hatalar kareleri toplamıyla birleştiği için diğerlerini iyileştirmek toplamı neredeyse değiştirmez.</translation>
+    </message>
+    <message>
+        <location filename="../gui/simulators/ladder_sim.py" line="373" />
+        <source>How the errors combine</source>
+        <translation>Hatalar nasıl birleşir</translation>
+    </message>
+    <message>
+        <location filename="../gui/simulators/ladder_sim.py" line="374" />
+        <source>The three rungs are independent, so their percentage errors add **in quadrature**:
+
+$$\sigma_{H_0}/H_0 = \sqrt{\sigma_1^2 + \sigma_2^2 + \sigma_3^2}$$
+
+Halving the largest term helps far more than eliminating the smallest. A **systematic** shift is different: it moves the answer without widening the error bar, and repeating the measurement reproduces it faithfully.</source>
+        <translation>Üç basamak birbirinden bağımsızdır, bu yüzden yüzde hataları **kareleri toplamıyla** birleşir:
+
+$$\sigma_{H_0}/H_0 = \sqrt{\sigma_1^2 + \sigma_2^2 + \sigma_3^2}$$
+
+En büyük terimi yarıya indirmek, en küçüğünü tamamen yok etmekten çok daha fazla işe yarar. **Sistematik** bir kayma farklıdır: hata çubuğunu genişletmeden cevabı kaydırır ve ölçümü yinelemek onu sadakatle yeniden üretir.</translation>
+    </message>
+    <message>
         <location filename="../gui/simulators/lensing_sim.py" line="29" />
         <source>Point mass (star, black hole)</source>
         <translation>Nokta kütle (yıldız, kara delik)</translation>
@@ -3575,211 +3893,230 @@ parametreleri kendiniz değiştirmenize izin verir.
         <translation>Dolayısıyla halkanın boyutunu ölçmek, karanlık madde dahil olmak üzere merceği **tartar**.</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/mcmc_sim.py" line="29" />
+        <location filename="../gui/simulators/mcmc_sim.py" line="30" />
         <source>1 · The data</source>
         <translation>1 · Veri</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/mcmc_sim.py" line="35" />
+        <location filename="../gui/simulators/mcmc_sim.py" line="36" />
         <location filename="../gui/simulators/supernova_sim.py" line="42" />
         <source>Sample</source>
         <translation>Örneklem</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/mcmc_sim.py" line="36" />
+        <location filename="../gui/simulators/mcmc_sim.py" line="37" />
         <source>What the likelihood sees</source>
         <translation>Olabilirliğin gördüğü</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/mcmc_sim.py" line="37" />
+        <location filename="../gui/simulators/mcmc_sim.py" line="38" />
         <source>Every supernova contributes one term to χ². The real Pantheon+ sample is the default; the simulated ones let you see what fewer or noisier measurements would give.</source>
         <translation>Her süpernova χ²'ye bir terim katar. Varsayılan, gerçek Pantheon+ örneklemidir; benzetilmiş olanlar daha az ya da daha gürültülü ölçümlerin ne vereceğini görmenizi sağlar.</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/mcmc_sim.py" line="39" />
+        <location filename="../gui/simulators/mcmc_sim.py" line="40" />
         <location filename="../gui/simulators/supernova_sim.py" line="47" />
         <source>Assume a flat universe (ΩΛ = 1 − Ωm)</source>
         <translation>Düz bir evren varsay (ΩΛ = 1 − Ωm)</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/mcmc_sim.py" line="40" />
+        <location filename="../gui/simulators/mcmc_sim.py" line="41" />
         <source>One parameter instead of two. The chain then explores a line, not a plane.</source>
         <translation>İki yerine tek parametre. Zincir o zaman bir düzlemi değil, bir doğruyu tarar.</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/mcmc_sim.py" line="44" />
+        <location filename="../gui/simulators/mcmc_sim.py" line="47" />
+        <source>Second probe</source>
+        <translation>İkinci gözlem</translation>
+    </message>
+    <message>
+        <location filename="../gui/simulators/mcmc_sim.py" line="48" />
+        <source>Combining measurements</source>
+        <translation>Ölçümleri birleştirmek</translation>
+    </message>
+    <message>
+        <location filename="../gui/simulators/mcmc_sim.py" line="49" />
+        <source>Independent measurements multiply: the posterior is the supernova likelihood times the second probe. Supernovae alone allow a long diagonal band; a probe that constrains a different direction cuts it down to a small patch.</source>
+        <translation>Bağımsız ölçümler çarpılır: sonsal dağılım, süpernova olabilirliği ile ikinci gözlemin çarpımıdır. Süpernovalar tek başına uzun, çapraz bir kuşağa izin verir; başka bir yönü kısıtlayan bir gözlem onu küçük bir yamaya indirir.</translation>
+    </message>
+    <message>
+        <location filename="../gui/simulators/mcmc_sim.py" line="54" />
         <source>2 · The chain</source>
         <translation>2 · Zincir</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/mcmc_sim.py" line="47" />
+        <location filename="../gui/simulators/mcmc_sim.py" line="57" />
         <source>Steps</source>
         <translation>Adımlar</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/mcmc_sim.py" line="48" />
+        <location filename="../gui/simulators/mcmc_sim.py" line="58" />
         <source>Length of the chain</source>
         <translation>Zincirin uzunluğu</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/mcmc_sim.py" line="49" />
+        <location filename="../gui/simulators/mcmc_sim.py" line="59" />
         <source>Each step proposes a new universe and accepts or rejects it. More steps mean a smoother posterior, but the useful number is the effective sample size, not the raw count.</source>
         <translation>Her adım yeni bir evren önerir ve onu kabul ya da reddeder. Daha çok adım daha pürüzsüz bir sonsal dağılım demektir, ama işe yarayan sayı ham adım sayısı değil, etkin örneklem büyüklüğüdür.</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/mcmc_sim.py" line="53" />
+        <location filename="../gui/simulators/mcmc_sim.py" line="63" />
         <source>Proposal step σ</source>
         <translation>Öneri adımı σ</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/mcmc_sim.py" line="54" />
+        <location filename="../gui/simulators/mcmc_sim.py" line="64" />
         <source>How far each proposal jumps</source>
         <translation>Her önerinin ne kadar uzağa sıçradığı</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/mcmc_sim.py" line="55" />
+        <location filename="../gui/simulators/mcmc_sim.py" line="65" />
         <source>Too small and the walker crawls, accepting almost everything but exploring nothing. Too large and almost every proposal is rejected. An acceptance rate around 0.25 is healthy.</source>
         <translation>Çok küçükse yürüyücü sürünür: neredeyse her şeyi kabul eder ama hiçbir yeri taramaz. Çok büyükse önerilerin neredeyse tamamı reddedilir. 0,25 dolaylarında bir kabul oranı sağlıklıdır.</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/mcmc_sim.py" line="59" />
+        <location filename="../gui/simulators/mcmc_sim.py" line="69" />
         <source>Burn-in (fraction)</source>
         <translation>Isınma (kesir)</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/mcmc_sim.py" line="60" />
+        <location filename="../gui/simulators/mcmc_sim.py" line="70" />
         <source>Throwing away the start</source>
         <translation>Başlangıcı atmak</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/mcmc_sim.py" line="61" />
+        <location filename="../gui/simulators/mcmc_sim.py" line="71" />
         <source>The walker begins wherever you put it, not in the good region. The first steps are discarded so they do not bias the answer.</source>
         <translation>Yürüyücü, iyi bölgede değil, onu bıraktığınız yerde başlar. İlk adımlar sonucu yanıltmasın diye atılır.</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/mcmc_sim.py" line="64" />
-        <location filename="../gui/simulators/nbody_sim.py" line="110" />
-        <source>Random seed</source>
-        <translation>Rastgelelik tohumu</translation>
-    </message>
-    <message>
-        <location filename="../gui/simulators/mcmc_sim.py" line="68" />
+        <location filename="../gui/simulators/mcmc_sim.py" line="78" />
         <source>▶ Run the chain</source>
         <translation>▶ Zinciri çalıştır</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/mcmc_sim.py" line="71" />
-        <location filename="../gui/simulators/mcmc_sim.py" line="154" />
+        <location filename="../gui/simulators/mcmc_sim.py" line="81" />
+        <location filename="../gui/simulators/mcmc_sim.py" line="175" />
         <source>Watch it walk</source>
         <translation>Yürüyüşü izle</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/mcmc_sim.py" line="73" />
+        <location filename="../gui/simulators/mcmc_sim.py" line="83" />
         <source>Reveal the chain step by step.</source>
         <translation>Zinciri adım adım ortaya çıkarın.</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/mcmc_sim.py" line="78" />
+        <location filename="../gui/simulators/mcmc_sim.py" line="88" />
         <source>Run {count} chains and check convergence</source>
         <translation>{count} zincir çalıştır ve yakınsamayı denetle</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/mcmc_sim.py" line="80" />
+        <location filename="../gui/simulators/mcmc_sim.py" line="90" />
         <source>Start four walkers from different corners and compare them with R̂.</source>
         <translation>Dört yürüyücüyü farklı köşelerden başlatıp R̂ ile karşılaştırın.</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/mcmc_sim.py" line="85" />
+        <location filename="../gui/simulators/mcmc_sim.py" line="95" />
         <source>What the chain says</source>
         <translation>Zincirin söyledikleri</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/mcmc_sim.py" line="91" />
+        <location filename="../gui/simulators/mcmc_sim.py" line="101" />
         <source>The magnitude offset (M and H0 together) is fitted away, so the chain measures the densities only.</source>
         <translation>Kadir kayması (M ile H0 birlikte) uydurularak elenir, bu yüzden zincir yalnızca yoğunlukları ölçer.</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/mcmc_sim.py" line="101" />
+        <location filename="../gui/simulators/mcmc_sim.py" line="111" />
         <source>Posterior</source>
         <translation>Sonsal dağılım</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/mcmc_sim.py" line="102" />
+        <location filename="../gui/simulators/mcmc_sim.py" line="112" />
         <source>Walk and χ²</source>
         <translation>Yürüyüş ve χ²</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/mcmc_sim.py" line="186" />
+        <location filename="../gui/simulators/mcmc_sim.py" line="207" />
         <source>Ωm = &lt;b&gt;{value} ± {error}&lt;/b&gt;</source>
         <translation>Ωm = &lt;b&gt;{value} ± {error}&lt;/b&gt;</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/mcmc_sim.py" line="188" />
+        <location filename="../gui/simulators/mcmc_sim.py" line="209" />
         <source>ΩΛ = &lt;b&gt;{value} ± {error}&lt;/b&gt;</source>
         <translation>ΩΛ = &lt;b&gt;{value} ± {error}&lt;/b&gt;</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/mcmc_sim.py" line="190" />
+        <location filename="../gui/simulators/mcmc_sim.py" line="211" />
         <source>Correlation between them: &lt;b&gt;{value}&lt;/b&gt;</source>
         <translation>Aralarındaki ilinti: &lt;b&gt;{value}&lt;/b&gt;</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/mcmc_sim.py" line="193" />
+        <location filename="../gui/simulators/mcmc_sim.py" line="214" />
         <source>68% interval for Ωm: {low} … {high}</source>
         <translation>Ωm için %68 aralığı: {low} … {high}</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/mcmc_sim.py" line="195" />
+        <location filename="../gui/simulators/mcmc_sim.py" line="216" />
         <source>Acceptance rate: &lt;b&gt;{rate}&lt;/b&gt;  (aim for about 25%)</source>
         <translation>Kabul oranı: &lt;b&gt;{rate}&lt;/b&gt;  (yaklaşık %25 hedefleyin)</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/mcmc_sim.py" line="197" />
+        <location filename="../gui/simulators/mcmc_sim.py" line="218" />
         <source>Steps kept: {kept} of {total}</source>
         <translation>Tutulan adım: {total} adımın {kept} tanesi</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/mcmc_sim.py" line="201" />
+        <location filename="../gui/simulators/mcmc_sim.py" line="222" />
         <source>Autocorrelation length: {tau} steps → &lt;b&gt;{neff}&lt;/b&gt; independent samples</source>
         <translation>Özilinti uzunluğu: {tau} adım → &lt;b&gt;{neff}&lt;/b&gt; bağımsız örneklem</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/mcmc_sim.py" line="205" />
+        <location filename="../gui/simulators/mcmc_sim.py" line="226" />
         <source>R̂ from {count} chains: &lt;b&gt;{rhat}&lt;/b&gt; (converged below 1.01)</source>
         <translation>{count} zincirden R̂: &lt;b&gt;{rhat}&lt;/b&gt; (1,01'in altı yakınsamış demektir)</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/mcmc_sim.py" line="209" />
+        <location filename="../gui/simulators/mcmc_sim.py" line="230" />
         <source>χ² at the mean: {chi2} for {dof} degrees of freedom (χ²/dof = {reduced})</source>
         <translation>Ortalamadaki χ²: {dof} serbestlik derecesi için {chi2} (χ²/sd = {reduced})</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/mcmc_sim.py" line="222" />
+        <location filename="../gui/simulators/mcmc_sim.py" line="236" />
+        <source>Derived from the samples: q0 = &lt;b&gt;{q0} ± {error}&lt;/b&gt; (ignoring the correlation would give ± {naive})</source>
+        <translation>Örneklemlerden türetilen: q0 = &lt;b&gt;{q0} ± {error}&lt;/b&gt; (ilinti göz ardı edilseydi ± {naive} çıkardı)</translation>
+    </message>
+    <message>
+        <location filename="../gui/simulators/mcmc_sim.py" line="240" />
+        <source>Ωk = {value} ± {error}; accelerating in {fraction} of the samples</source>
+        <translation>Ωk = {value} ± {error}; örneklemlerin {fraction} kadarında genişleme hızlanıyor</translation>
+    </message>
+    <message>
+        <location filename="../gui/simulators/mcmc_sim.py" line="254" />
         <source>&lt;b&gt;Almost everything is rejected.&lt;/b&gt; The proposal step is too large: the walker keeps suggesting universes the data rule out. Make σ smaller.</source>
         <translation>&lt;b&gt;Neredeyse her şey reddediliyor.&lt;/b&gt; Öneri adımı çok büyük: yürüyücü sürekli verinin elediği evrenleri öneriyor. σ'yı küçültün.</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/mcmc_sim.py" line="226" />
+        <location filename="../gui/simulators/mcmc_sim.py" line="258" />
         <source>&lt;b&gt;Almost everything is accepted.&lt;/b&gt; The steps are so small that the walker barely moves; the cloud looks tight but it has not explored. Make σ larger.</source>
         <translation>&lt;b&gt;Neredeyse her şey kabul ediliyor.&lt;/b&gt; Adımlar o kadar küçük ki yürüyücü neredeyse hiç hareket etmiyor; bulut dar görünür ama hiçbir yeri taramamıştır. σ'yı büyütün.</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/mcmc_sim.py" line="230" />
+        <location filename="../gui/simulators/mcmc_sim.py" line="262" />
         <source>&lt;b&gt;Real measurement.&lt;/b&gt; {citation}. The contours below are your own posterior, sampled step by step from these supernovae.</source>
         <translation>&lt;b&gt;Gerçek ölçüm.&lt;/b&gt; {citation}. Aşağıdaki eş olasılık eğrileri, bu süpernovalardan adım adım örneklenen kendi sonsal dağılımınızdır.</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/mcmc_sim.py" line="234" />
+        <location filename="../gui/simulators/mcmc_sim.py" line="266" />
         <source>&lt;b&gt;Simulated data.&lt;/b&gt; The chain works the same way; only the scatter is invented.</source>
         <translation>&lt;b&gt;Benzetilmiş veri.&lt;/b&gt; Zincir tıpatıp aynı çalışır; yalnızca saçılma uydurmadır.</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/mcmc_sim.py" line="339" />
+        <location filename="../gui/simulators/mcmc_sim.py" line="382" />
         <source>What the numbers mean</source>
         <translation>Sayıların anlamı</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/mcmc_sim.py" line="340" />
+        <location filename="../gui/simulators/mcmc_sim.py" line="383" />
         <source>- **Acceptance rate** — the fraction of proposals the walker took. Near 25% is healthy for two parameters; 1% or 95% both mean the step size is wrong.
 - **Autocorrelation length** — how many steps before the walker forgets where it was. The effective sample size is the chain length divided by it.
 - **R̂** — four walkers started far apart should end up describing the same distribution. Above 1.01 they have not met yet.
@@ -3985,11 +4322,6 @@ parametreleri kendiniz değiştirmenize izin verir.
         <location filename="../gui/simulators/olbers_sim.py" line="23" />
         <source>Infinitely old but expanding (steady state)</source>
         <translation>Sonsuz yaşlı ama genişleyen (durağan durum)</translation>
-    </message>
-    <message>
-        <location filename="../gui/simulators/olbers_sim.py" line="24" />
-        <source>Custom</source>
-        <translation>Özel</translation>
     </message>
     <message>
         <location filename="../gui/simulators/olbers_sim.py" line="35" />
@@ -5237,6 +5569,66 @@ parametreleri kendiniz değiştirmenize izin verir.
         <translation>1998 benzeri örneklemi Pantheon+ ile karşılaştırın: aynı yöntem, yirmi beş yıllık veri.</translation>
     </message>
     <message>
+        <location filename="../gui/simulators/registry.py" line="522" />
+        <source>Distance Ladder Builder</source>
+        <translation>Uzaklık Merdiveni Kurucu</translation>
+    </message>
+    <message>
+        <location filename="../gui/simulators/registry.py" line="523" />
+        <source>Climb from parallax to H0 and follow every error bar.</source>
+        <translation>Paralakstan H0'a tırmanın ve her hata çubuğunu izleyin.</translation>
+    </message>
+    <message>
+        <location filename="../gui/simulators/registry.py" line="525" />
+        <source>The local Hubble constant rests on three rungs: parallaxes calibrate Cepheids, Cepheids calibrate type Ia supernovae, and distant supernovae measure the expansion. Design the observing programme, watch the uncertainty of each rung flow into H0, and see why a systematic error survives any amount of data. The measurements are simulated.</source>
+        <translation>Yerel Hubble sabiti üç basamağa dayanır: paralakslar Sefeidleri, Sefeidler Ia süpernovalarını kalibre eder, uzak süpernovalar da genişlemeyi ölçer. Gözlem programını tasarlayın, her basamağın belirsizliğinin H0'a nasıl aktığını izleyin ve sistematik bir hatanın neden her miktarda veriye direndiğini görün. Ölçümler benzetimdir.</translation>
+    </message>
+    <message>
+        <location filename="../gui/simulators/registry.py" line="531" />
+        <source>Choose an &lt;b&gt;observing programme&lt;/b&gt;, or set the numbers of stars and supernovae yourself.</source>
+        <translation>Bir &lt;b&gt;gözlem programı&lt;/b&gt; seçin ya da yıldız ve süpernova sayılarını kendiniz belirleyin.</translation>
+    </message>
+    <message>
+        <location filename="../gui/simulators/registry.py" line="532" />
+        <source>Read &lt;b&gt;The three rungs&lt;/b&gt;: each panel is one step of the ladder with its own fit.</source>
+        <translation>&lt;b&gt;Üç basamak&lt;/b&gt; sekmesini okuyun: her panel, kendi uyumuyla merdivenin bir adımıdır.</translation>
+    </message>
+    <message>
+        <location filename="../gui/simulators/registry.py" line="533" />
+        <source>Open &lt;b&gt;Error budget&lt;/b&gt; to see how much each rung contributes to the uncertainty of H0.</source>
+        <translation>Her basamağın H0 belirsizliğine ne kadar katkı yaptığını görmek için &lt;b&gt;Hata bütçesi&lt;/b&gt; sekmesini açın.</translation>
+    </message>
+    <message>
+        <location filename="../gui/simulators/registry.py" line="534" />
+        <source>Press &lt;b&gt;Repeat 300×&lt;/b&gt; to check the error bar by rerunning the whole measurement.</source>
+        <translation>Ölçümün tamamını yeniden çalıştırarak hata çubuğunu denetlemek için &lt;b&gt;300× tekrarla&lt;/b&gt; düğmesine basın.</translation>
+    </message>
+    <message>
+        <location filename="../gui/simulators/registry.py" line="535" />
+        <source>Add a &lt;b&gt;systematic&lt;/b&gt; — a parallax zero-point offset or crowding — and compare the shift with the error bar.</source>
+        <translation>Bir &lt;b&gt;sistematik&lt;/b&gt; ekleyin — paralaks sıfır noktası kayması ya da kalabalık — ve kaymayı hata çubuğuyla karşılaştırın.</translation>
+    </message>
+    <message>
+        <location filename="../gui/simulators/registry.py" line="539" />
+        <source>Start from the Key Project preset. Which rung limits it, and what does fixing only that rung achieve?</source>
+        <translation>Anahtar Proje hazır ayarından başlayın. Onu hangi basamak sınırlıyor ve yalnızca o basamağı düzeltmek ne kazandırıyor?</translation>
+    </message>
+    <message>
+        <location filename="../gui/simulators/registry.py" line="541" />
+        <source>Add 2000 Hubble-flow supernovae. Why does the total error barely move?</source>
+        <translation>Hubble akışına 2000 süpernova ekleyin. Toplam hata neden neredeyse hiç değişmiyor?</translation>
+    </message>
+    <message>
+        <location filename="../gui/simulators/registry.py" line="542" />
+        <source>Set a parallax offset of +20 µas: how many σ does the toy H0 move, and would you notice?</source>
+        <translation>+20 µas paralaks kayması koyun: oyuncak H0 kaç σ kayıyor, bunu fark eder miydiniz?</translation>
+    </message>
+    <message>
+        <location filename="../gui/simulators/registry.py" line="543" />
+        <source>Set the true H0 to 67.4. How precise must the ladder be to rule out 73 at 5σ?</source>
+        <translation>Gerçek H0'ı 67,4 yapın. 73'ü 5σ ile elemek için merdivenin ne kadar duyarlı olması gerekir?</translation>
+    </message>
+    <message>
         <location filename="../gui/simulators/rotation_curve.py" line="33" />
         <location filename="../gui/simulators/rotation_curve.py" line="40" />
         <source>Galaxy</source>
@@ -5433,104 +5825,306 @@ parametreleri kendiniz değiştirmenize izin verir.
         <translation>Görünür maddeden gelen hız: &lt;b&gt;{visible} km/s&lt;/b&gt;&lt;br&gt;Model toplamı: &lt;b&gt;{total} km/s&lt;/b&gt; (veri ≈ {observed} km/s)&lt;br&gt;Görünür maddenin kütlesi: {mass_visible} M☉&lt;br&gt;Modelin gerektirdiği kütle: {mass_total} M☉&lt;br&gt;{share_label}: &lt;b&gt;{share}&lt;/b&gt;&lt;br&gt;Uyum kalitesi χ²/nokta: &lt;b&gt;{chi2}&lt;/b&gt; (yaklaşık 1 iyi bir uyumdur)</translation>
     </message>
     <message>
+        <location filename="../gui/simulators/sandbox.py" line="45" />
+        <source>Older than the oldest stars</source>
+        <translation>En yaşlı yıldızlardan yaşlı</translation>
+    </message>
+    <message>
+        <location filename="../gui/simulators/sandbox.py" line="46" />
+        <source>no Big Bang</source>
+        <translation>Büyük Patlama yok</translation>
+    </message>
+    <message>
+        <location filename="../gui/simulators/sandbox.py" line="47" />
+        <source>Globular clusters and white dwarfs contain stars about 12–13.5 billion years old.</source>
+        <translation>Küresel kümeler ve beyaz cüceler yaklaşık 12–13,5 milyar yaşında yıldızlar içerir.</translation>
+    </message>
+    <message>
+        <location filename="../gui/simulators/sandbox.py" line="49" />
+        <source>The CMB gives about 67, Cepheids and supernovae about 73; values outside this range are excluded.</source>
+        <translation>KMF yaklaşık 67, Sefeidler ve süpernovalar yaklaşık 73 verir; bu aralığın dışındaki değerler elenmiştir.</translation>
+    </message>
+    <message>
+        <location filename="../gui/simulators/sandbox.py" line="51" />
+        <source>Flat space</source>
+        <translation>Düz uzay</translation>
+    </message>
+    <message>
+        <location filename="../gui/simulators/sandbox.py" line="52" />
+        <source>The CMB acoustic scale combined with BAO shows that space is flat to about 0.2%.</source>
+        <translation>KMF akustik ölçeği BAO ile birleştirildiğinde uzayın yaklaşık %0,2 duyarlılıkla düz olduğunu gösterir.</translation>
+    </message>
+    <message>
+        <location filename="../gui/simulators/sandbox.py" line="53" />
+        <source>Ordinary matter</source>
+        <translation>Sıradan madde</translation>
+    </message>
+    <message>
+        <location filename="../gui/simulators/sandbox.py" line="55" />
+        <source>Big Bang nucleosynthesis (deuterium) and the CMB peak heights agree on this value.</source>
+        <translation>Büyük Patlama çekirdek sentezi (döteryum) ve KMF tepe yükseklikleri bu değerde uzlaşır.</translation>
+    </message>
+    <message>
+        <location filename="../gui/simulators/sandbox.py" line="56" />
+        <source>Total matter</source>
+        <translation>Toplam madde</translation>
+    </message>
+    <message>
+        <location filename="../gui/simulators/sandbox.py" line="57" />
+        <source>Measured by the CMB, baryon acoustic oscillations and galaxy clusters.</source>
+        <translation>KMF, baryon akustik salınımları ve gökada kümeleriyle ölçülür.</translation>
+    </message>
+    <message>
+        <location filename="../gui/simulators/sandbox.py" line="58" />
+        <source>Accelerating today</source>
+        <translation>Bugün hızlanıyor</translation>
+    </message>
+    <message>
+        <location filename="../gui/simulators/sandbox.py" line="59" />
+        <source>Type Ia supernovae show that the expansion is speeding up.</source>
+        <translation>Ia türü süpernovalar genişlemenin hızlandığını gösterir.</translation>
+    </message>
+    <message>
+        <location filename="../gui/simulators/sandbox.py" line="60" />
+        <source>First CMB peak</source>
+        <translation>İlk KMF tepesi</translation>
+    </message>
+    <message>
+        <location filename="../gui/simulators/sandbox.py" line="62" />
+        <source>The position of the first acoustic peak measures geometry and distances (teaching model).</source>
+        <translation>İlk akustik tepenin konumu geometriyi ve uzaklıkları ölçer (öğretici model).</translation>
+    </message>
+    <message>
+        <location filename="../gui/simulators/sandbox.py" line="64" />
+        <source>Radiation and neutrinos</source>
+        <translation>Işınım ve nötrinolar</translation>
+    </message>
+    <message>
+        <location filename="../gui/simulators/sandbox.py" line="65" />
+        <source>no radiation</source>
+        <translation>ışınım yok</translation>
+    </message>
+    <message>
+        <location filename="../gui/simulators/sandbox.py" line="66" />
+        <source>CMB present, N_eff = 3.0 ± 0.4</source>
+        <translation>KMF var, N_eff = 3,0 ± 0,4</translation>
+    </message>
+    <message>
+        <location filename="../gui/simulators/sandbox.py" line="67" />
+        <source>The CMB exists, and BBN plus CMB measure about three neutrino species.</source>
+        <translation>KMF vardır ve BBN ile KMF birlikte yaklaşık üç nötrino türü ölçer.</translation>
+    </message>
+    <message>
+        <location filename="../gui/simulators/sandbox.py" line="68" />
+        <source>Neutrino mass</source>
+        <translation>Nötrino kütlesi</translation>
+    </message>
+    <message>
+        <location filename="../gui/simulators/sandbox.py" line="70" />
+        <source>Oscillation experiments need at least 0.06 eV; the CMB with BAO allows at most about 0.12 eV, and DESI now pushes that limit below 0.07 eV.</source>
+        <translation>Salınım deneyleri en az 0,06 eV gerektirir; BAO ile birlikte KMF en fazla yaklaşık 0,12 eV'ye izin verir ve DESI şimdi bu sınırı 0,07 eV'nin altına itiyor.</translation>
+    </message>
+    <message>
+        <location filename="../gui/simulators/sandbox.py" line="72" />
+        <source>Dark energy behaviour</source>
+        <translation>Karanlık enerjinin davranışı</translation>
+    </message>
+    <message>
         <location filename="../gui/simulators/sandbox.py" line="74" />
+        <source>Supernovae, BAO and the CMB allow a cosmological constant or a mildly evolving dark energy.</source>
+        <translation>Süpernovalar, BAO ve KMF kozmolojik sabite ya da hafifçe evrilen bir karanlık enerjiye izin verir.</translation>
+    </message>
+    <message>
+        <location filename="../gui/simulators/sandbox.py" line="89" />
         <source>Start from</source>
         <translation>Şuradan başla</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/sandbox.py" line="80" />
+        <location filename="../gui/simulators/sandbox.py" line="95" />
         <source>1 · Expansion and ingredients</source>
         <translation>1 · Genişleme ve bileşenler</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/sandbox.py" line="83" />
+        <location filename="../gui/simulators/sandbox.py" line="98" />
         <source>Ωb ordinary matter</source>
         <translation>Ωb sıradan madde</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/sandbox.py" line="84" />
+        <location filename="../gui/simulators/sandbox.py" line="99" />
         <source>Ωc dark matter</source>
         <translation>Ωc karanlık madde</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/sandbox.py" line="85" />
+        <location filename="../gui/simulators/sandbox.py" line="100" />
         <source>Keep space flat (dark energy fills the rest)</source>
         <translation>Uzayı düz tut (gerisini karanlık enerji doldurur)</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/sandbox.py" line="88" />
+        <location filename="../gui/simulators/sandbox.py" line="103" />
         <source>Include radiation (CMB and neutrinos)</source>
         <translation>Işınımı dahil et (KMF ve nötrinolar)</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/sandbox.py" line="90" />
+        <location filename="../gui/simulators/sandbox.py" line="105" />
         <source>N_eff neutrino species</source>
         <translation>N_eff nötrino türü</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/sandbox.py" line="95" />
+        <location filename="../gui/simulators/sandbox.py" line="107" />
+        <source>Σmν neutrino mass (eV)</source>
+        <translation>Σmν nötrino kütlesi (eV)</translation>
+    </message>
+    <message>
+        <location filename="../gui/simulators/sandbox.py" line="108" />
+        <source>The sum of the neutrino masses</source>
+        <translation>Nötrino kütlelerinin toplamı</translation>
+    </message>
+    <message>
+        <location filename="../gui/simulators/sandbox.py" line="109" />
+        <source>Relic neutrinos with mass behave like matter today: Ων h² = Σmν / 93.14 eV. They are added to Ωm, but they are hot — they stream out of small clumps — so they cannot replace cold dark matter. Oscillations require at least 0.06 eV.</source>
+        <translation>Kütleli kalıntı nötrinolar bugün madde gibi davranır: Ων h² = Σmν / 93,14 eV. Ωm'ye eklenirler, ama sıcaktırlar — küçük yumaklardan akıp giderler — bu yüzden soğuk karanlık maddenin yerini tutamazlar. Salınımlar en az 0,06 eV gerektirir.</translation>
+    </message>
+    <message>
+        <location filename="../gui/simulators/sandbox.py" line="117" />
         <source>2 · Dark energy</source>
         <translation>2 · Karanlık enerji</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/sandbox.py" line="98" />
+        <location filename="../gui/simulators/sandbox.py" line="120" />
         <source>w0 today</source>
         <translation>bugünkü w0</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/sandbox.py" line="99" />
+        <location filename="../gui/simulators/sandbox.py" line="121" />
         <source>Equation of state today</source>
         <translation>Bugünkü hâl denklemi</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/sandbox.py" line="99" />
+        <location filename="../gui/simulators/sandbox.py" line="121" />
         <source>w = −1 is a cosmological constant. w &lt; −1 is phantom energy that grows as space expands and can end in a Big Rip.</source>
         <translation>w = −1 bir kozmolojik sabittir. w &lt; −1, uzay genişledikçe büyüyen ve Büyük Yırtılma ile bitebilen hayalet enerjidir.</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/sandbox.py" line="103" />
+        <location filename="../gui/simulators/sandbox.py" line="125" />
         <source>wa evolution</source>
         <translation>wa evrimi</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/sandbox.py" line="104" />
+        <location filename="../gui/simulators/sandbox.py" line="126" />
         <source>Evolution</source>
         <translation>Evrim</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/sandbox.py" line="104" />
+        <location filename="../gui/simulators/sandbox.py" line="126" />
         <source>w(a) = w0 + wa (1 − a). Negative wa means dark energy was stronger in the past and is weakening, as recent DESI results hint.</source>
         <translation>w(a) = w0 + wa (1 − a). Negatif wa, karanlık enerjinin geçmişte daha güçlü olduğunu ve zayıfladığını gösterir; son DESI sonuçları da buna işaret ediyor.</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/sandbox.py" line="111" />
+        <location filename="../gui/simulators/sandbox.py" line="133" />
         <source>3 · Early universe</source>
         <translation>3 · Erken evren</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/sandbox.py" line="113" />
+        <location filename="../gui/simulators/sandbox.py" line="135" />
         <source>nₛ spectral index</source>
         <translation>nₛ spektral indis</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/sandbox.py" line="128" />
+        <location filename="../gui/simulators/sandbox.py" line="150" />
+        <location filename="../gui/simulators/sandbox.py" line="254" />
         <source>Report card</source>
         <translation>Karne</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/sandbox.py" line="129" />
+        <location filename="../gui/simulators/sandbox.py" line="151" />
         <source>History and contents</source>
         <translation>Tarih ve içerik</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/sandbox.py" line="130" />
+        <location filename="../gui/simulators/sandbox.py" line="152" />
         <source>CMB</source>
         <translation>KMF</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/sandbox.py" line="195" />
+        <location filename="../gui/simulators/sandbox.py" line="223" />
         <source>&lt;b&gt;Your universe passes {passed} of {total} observational tests.&lt;/b&gt; Open the report card to see which observations agree or disagree.</source>
         <translation>&lt;b&gt;Evreniniz {total} gözlem sınavının {passed} tanesini geçiyor.&lt;/b&gt; Hangi gözlemlerin uyuştuğunu ya da uyuşmadığını görmek için karneyi açın.</translation>
+    </message>
+    <message>
+        <location filename="../gui/simulators/sandbox.py" line="232" />
+        <location filename="../gui/simulators/sandbox.py" line="255" />
+        <source>Your universe</source>
+        <translation>Sizin evreniniz</translation>
+    </message>
+    <message>
+        <location filename="../gui/simulators/sandbox.py" line="234" />
+        <source>- **Age:** {years} billion years</source>
+        <translation>- **Yaş:** {years} milyar yıl</translation>
+    </message>
+    <message>
+        <location filename="../gui/simulators/sandbox.py" line="236" />
+        <source>- **Age:** undefined, this universe has no Big Bang</source>
+        <translation>- **Yaş:** tanımsız, bu evrende Büyük Patlama yok</translation>
+    </message>
+    <message>
+        <location filename="../gui/simulators/sandbox.py" line="237" />
+        <source>- **Geometry:** {geometry} (Ωk = {curvature})</source>
+        <translation>- **Geometri:** {geometry} (Ωk = {curvature})</translation>
+    </message>
+    <message>
+        <location filename="../gui/simulators/sandbox.py" line="239" />
+        <source>- **Today:** matter {matter}, dark energy {dark_energy}, radiation {radiation}</source>
+        <translation>- **Bugün:** madde {matter}, karanlık enerji {dark_energy}, ışınım {radiation}</translation>
+    </message>
+    <message>
+        <location filename="../gui/simulators/sandbox.py" line="241" />
+        <source>- **Neutrinos:** Σmν = {mass} eV, Ων = {omega} ({fraction} of the matter)</source>
+        <translation>- **Nötrinolar:** Σmν = {mass} eV, Ων = {omega} (maddenin {fraction} kadarı)</translation>
+    </message>
+    <message>
+        <location filename="../gui/simulators/sandbox.py" line="244" />
+        <source>- **Fate:** {fate}. {explanation}</source>
+        <translation>- **Kader:** {fate}. {explanation}</translation>
+    </message>
+    <message>
+        <location filename="../gui/simulators/sandbox.py" line="247" />
+        <source>- **Big Rip in:** {years} billion years</source>
+        <translation>- **Büyük Yırtılma'ya kalan:** {years} milyar yıl</translation>
+    </message>
+    <message>
+        <location filename="../gui/simulators/sandbox.py" line="251" />
+        <source>- **Acceleration began:** at redshift ≈ {z}</source>
+        <translation>- **Hızlanmanın başladığı an:** kırmızıya kayma ≈ {z}</translation>
+    </message>
+    <message>
+        <location filename="../gui/simulators/sandbox.py" line="253" />
+        <source>- **Matter–radiation equality:** z ≈ {z}</source>
+        <translation>- **Madde–ışınım eşitliği:** z ≈ {z}</translation>
+    </message>
+    <message>
+        <location filename="../gui/simulators/sandbox.py" line="255" />
+        <source>Test</source>
+        <translation>Sınav</translation>
+    </message>
+    <message>
+        <location filename="../gui/simulators/sandbox.py" line="255" />
+        <source>Required</source>
+        <translation>Gereken</translation>
+    </message>
+    <message>
+        <location filename="../gui/simulators/sandbox.py" line="260" />
+        <source>Why these tests</source>
+        <translation>Bu sınavlar neden var</translation>
+    </message>
+    <message>
+        <location filename="../gui/simulators/sandbox.py" line="262" />
+        <source>About these tests</source>
+        <translation>Bu sınavlar hakkında</translation>
+    </message>
+    <message>
+        <location filename="../gui/simulators/sandbox.py" line="263" />
+        <source>The requirements are rounded summaries of current measurements, not exact statistical limits.</source>
+        <translation>Gereksinimler güncel ölçümlerin yuvarlanmış özetleridir, kesin istatistiksel sınırlar değildir.</translation>
     </message>
     <message>
         <location filename="../gui/simulators/spacetime.py" line="23" />
