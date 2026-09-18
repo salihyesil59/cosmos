@@ -227,7 +227,7 @@ SIMULATORS: dict[str, SimulatorInfo] = {
                 tr_noop("Double Ωb h². Which peaks grow and which shrink?"),
                 tr_noop("Set τ = 0.15. Which part of the spectrum is suppressed?"),
             ],
-            lessons=["L5.1", "L5.2", "L2.5", "L4.4"],
+            lessons=["L5.1", "L5.7", "L4.4", "L3.2", "L2.5"],
             module="cosmos.gui.simulators.cmb_spectrum",
             class_name="CMBSpectrumSimulator",
             icon="∿",
@@ -575,6 +575,40 @@ SIMULATORS: dict[str, SimulatorInfo] = {
             module="cosmos.gui.simulators.survey_sim",
             class_name="SurveySimulator",
             icon="🗺",
+        ),
+        SimulatorInfo(
+            id="S22",
+            title=tr_noop("Standard Siren Explorer"),
+            tagline=tr_noop("Measure H₀ from a gravitational-wave merger."),
+            description=tr_noop(
+                "A merging pair of neutron stars or black holes gives its own distance away: relativity "
+                "fixes the amplitude of the wave, so the strain that arrives here is a distance with no "
+                "calibration behind it. Add the redshift of the host galaxy and you have H₀ without a "
+                "single rung of the distance ladder — if you can find the host, and if you can tell how "
+                "the binary was tilted."
+            ),
+            how_to_use=[
+                tr_noop("Start from <b>GW170817</b>, the one merger so far whose host galaxy was identified."),
+                tr_noop("Watch the <b>chirp</b>: its rising frequency gives the masses, its amplitude the "
+                        "distance."),
+                tr_noop("Open <b>Distance vs inclination</b> to see why the distance error is so lopsided."),
+                tr_noop("Change the <b>detector network</b>: sensitivity sets the reach, the number of sites "
+                        "sets the sky area."),
+                tr_noop("Turn off <b>the host galaxy is known</b> to make it a dark siren and watch the "
+                        "candidates multiply."),
+                tr_noop("Raise the <b>number of events</b> until the error crosses the 2% line."),
+            ],
+            things_to_try=[
+                tr_noop("Reproduce GW170817: 40 Mpc, SNR 32, H₀ to about 15%. Which error dominates?"),
+                tr_noop("Move the same merger to 400 Mpc. What happens first — the SNR or the host?"),
+                tr_noop("Compare a face-on and an edge-on binary at the same distance. Which is measured better?"),
+                tr_noop("How many bright sirens does it take to beat the Hubble tension at 2%?"),
+                tr_noop("Switch to the Einstein Telescope. How far can a neutron-star merger be heard?"),
+            ],
+            lessons=["L6.5", "L6.9", "L6.6", "L1.2"],
+            module="cosmos.gui.simulators.siren_sim",
+            class_name="SirenSimulator",
+            icon="〰",
         ),
         SimulatorInfo(
             id="S23",

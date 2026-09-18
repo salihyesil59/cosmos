@@ -828,3 +828,101 @@ def test_simulation_and_estimation_lessons(window):
         assert "CSMTOKEN" not in text and "$$" not in text
     assert "S23" in window.ctx.curriculum.lessons["L7.5"].simulators
     assert window.ctx.curriculum.levels[0].lesson_ids[-1] == "L0.7"
+
+
+def test_standard_siren_explorer(window):
+    """S22: GW170817, the inclination degeneracy, dark sirens and combining events."""
+    window.navigate("sim:S22")
+    pump()
+    host = window.stack.currentWidget()
+    s22 = host.simulator
+    assert s22.preset.currentData() == "gw170817"
+    state = s22.state()
+    assert state["snr"] == pytest.approx(32.4, rel=1e-3)
+    assert state["detected"] and state["sky_area"] < 50
+    assert 10 < state["h0_percent"] < 25
+    assert state["time_in_band"] > 60          # a neutron-star binary chirps for minutes
+
+    bar = host.challenge_bar
+    assert bar is not None and len(host.challenges) == 3
+    bar.go(0)
+    assert bar.check() is True
+
+    s22.m1.setValue(30.0)
+    s22.m2.setValue(30.0)
+    s22.distance.setValue(1200.0)
+    s22.network.setCurrentIndex(s22.network.findData("o4"))
+    s22.host_known.setChecked(False)
+    s22.recompute()
+    dark = s22.state()
+    assert dark["snr"] > 20 and dark["h0_percent"] > 50
+    assert dark["time_in_band"] < 5            # heavy binaries are in band for a moment
+    assert "dark siren" in s22.banner.label.text()
+    bar.go(1)
+    assert bar.check() is True
+
+    s22.preset.setCurrentIndex(s22.preset.findData("et"))
+    s22.recompute()
+    assert s22.state()["h0_percent"] < 2.0
+    bar.go(2)
+    assert bar.check() is True
+
+    s22.distance.setValue(3000.0)
+    s22.network.setCurrentIndex(s22.network.findData("o2"))
+    s22.recompute()
+    assert not s22.state()["detected"] and "Too quiet" in s22.banner.label.text()
+
+    header, rows = s22._csv()
+    assert len(header) == 3 and rows
+    for plot in (s22.wave_plot, s22.degeneracy_plot, s22.h0_plot, s22.events_plot):
+        plot.refresh()
+
+
+def test_cmb_polarisation_tabs(window):
+    """S12 gained E modes, TE and the B-mode budget for L5.7."""
+    window.navigate("sim:S12")
+    pump()
+    host = window.stack.currentWidget()
+    s12 = host.simulator
+    state = s12.state()
+    assert 350 < state["ee_first_peak"] < 500
+    assert 30 < state["ee_peak"] < 60
+    assert state["r"] == 0.0 and not state["tensor_above_foregrounds"]
+
+    bar = host.challenge_bar
+    assert bar is not None and len(host.challenges) == 3
+    bar.go(0)
+    assert bar.check() is True
+
+    s12.tensor_r.setValue(0.1)
+    s12.recompute()
+    assert s12.state()["tensor_above_foregrounds"]
+    bar.go(1)
+    assert bar.check() is True
+
+    s12.tensor_r.setValue(0.008)
+    s12.dust.setValue(0.0)
+    s12.a_lens.setValue(0.1)
+    s12.recompute()
+    assert s12.state()["tensor_above_foregrounds"]
+    bar.go(2)
+    assert bar.check() is True
+
+    header, rows = s12._csv_polarisation()
+    assert len(header) == 6 and len(rows) == len(s12.pol.ell)
+    for plot in (s12.plot, s12.pol_plot, s12.bb_plot, s12.map_plot):
+        plot.refresh()
+    s12.reset()
+    assert s12.state()["r"] == 0.0 and s12.state()["a_lens"] == 1.0
+
+
+def test_polarisation_and_black_hole_lessons(window):
+    for lesson_id in ("L5.7", "L6.9"):
+        window.navigate(f"lesson:{lesson_id}")
+        pump()
+        text = window.lesson_page.browser.toPlainText()
+        assert "CSMTOKEN" not in text and "$$" not in text
+    assert "S22" in window.ctx.curriculum.lessons["L6.9"].simulators
+    assert "S22" in window.ctx.curriculum.lessons["L6.5"].simulators
+    assert window.ctx.curriculum.levels[6].lesson_ids[-1] == "L6.9"
+    assert window.ctx.curriculum.levels[5].lesson_ids[-1] == "L5.7"

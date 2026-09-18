@@ -225,6 +225,10 @@ def test_the_labels_table_covers_the_physics_layer():
     assert texts <= set(labels.SURVEYS)
     from cosmos.physics import mock
     assert {label for label, _s in mock.PRESETS_MOCK.values()} <= set(labels.MOCK_SURVEYS)
+    from cosmos.physics import sirens
+    texts = {label for label, _s in sirens.PRESETS_SIREN.values()}
+    texts |= {t for net in sirens.NETWORKS.values() for t in (net.label, net.description)}
+    assert texts <= set(labels.SIRENS)
     geometries = {Cosmology(H0=70, Om0=om, Ode0=ol).geometry
                   for om, ol in ((0.3, 0.7), (0.3, 0.2), (0.6, 0.8))}
     assert geometries <= set(labels.GEOMETRIES)

@@ -92,7 +92,22 @@ class CMBSpectrum:
         return self.r_s / self.d_m
 
 
-def _raw_spectrum(p: CMBParameters, ell: np.ndarray):
+def _smooth(values: np.ndarray, ell_a: float) -> np.ndarray:
+    """Projection onto the sky smears each wavenumber over a range of multipoles."""
+    width = max(CALIBRATION["smoothing"] * ell_a, 1.0)
+    kernel_x = np.arange(-int(4 * width), int(4 * width) + 1)
+    kernel = np.exp(-0.5 * (kernel_x / width) ** 2)
+    padded = np.pad(values, len(kernel_x) // 2, mode="edge")
+    return np.convolve(padded, kernel / kernel.sum(), mode="valid")
+
+
+def _components(p: CMBParameters, ell: np.ndarray) -> dict:
+    """The tight-coupling oscillator, before anything is squared or added up.
+
+    ``monopole`` is the compression of the plasma and ``dipole`` its velocity. The
+    temperature spectrum is built mostly from the monopole; polarisation comes only
+    from the dipole, which is why the two are out of phase with each other.
+    """
     c = p.cosmology()
     acoustic = structure.acoustic_scale(c)
     ell_a, r_star = acoustic["ell_A"], acoustic["R_star"]
@@ -111,27 +126,30 @@ def _raw_spectrum(p: CMBParameters, ell: np.ndarray):
     # so the baryon-loading offset shrinks where the driving is strong.
     monopole = -amp * np.cos(theta) + cal["offset"] * r * (1 + r) ** 0.25 * 3 / driving
     dipole = amp * (1 + r) ** -0.5 * np.sin(theta) / math.sqrt(3)
-    acoustic_power = monopole**2 + cal["doppler"] * dipole**2
-
-    # Projection onto the sky smears each wavenumber over a range of multipoles.
-    width = max(cal["smoothing"] * ell_a, 1.0)
-    kernel_x = np.arange(-int(4 * width), int(4 * width) + 1)
-    kernel = np.exp(-0.5 * (kernel_x / width) ** 2)
-    padded = np.pad(acoustic_power, len(kernel_x) // 2, mode="edge")
-    acoustic_power = np.convolve(padded, kernel / kernel.sum(), mode="valid")
 
     # Diffusion damping: projected scale grows with the distance, shrinks with fewer baryons.
     ell_d = (cal["damping_ell"] * (ell_a / 301.5) * (p.omega_b / 0.02242) ** 0.25
              * (p.omega_m / 0.14175) ** 0.1)
-    damping = np.exp(-((ell / ell_d) ** cal["damping_power"]))
+    return {
+        "acoustic": acoustic,
+        "ell_a": ell_a,
+        "ell_d": ell_d,
+        "monopole": monopole,
+        "dipole": dipole,
+        "damping": np.exp(-((ell / ell_d) ** cal["damping_power"])),
+        # Large scales outside the horizon at decoupling only see the Sachs–Wolfe plateau.
+        "transition": 1 / (1 + (ell / (0.25 * ell_a)) ** -4),
+        "tilt": (ell / 80.0) ** (p.n_s - 1),
+        "reion": math.exp(-2 * p.tau) + (1 - math.exp(-2 * p.tau)) / (1 + (ell / 15.0) ** 2),
+    }
 
-    # Large scales outside the horizon at decoupling only see the Sachs–Wolfe plateau.
-    transition = 1 / (1 + (ell / (0.25 * ell_a)) ** -4)
-    shape = transition * acoustic_power * damping + (1 - transition) * cal["plateau"]
 
-    tilt = (ell / 80.0) ** (p.n_s - 1)
-    reion = math.exp(-2 * p.tau) + (1 - math.exp(-2 * p.tau)) / (1 + (ell / 15.0) ** 2)
-    return shape * tilt * reion * p.a_s / 2.1e-9, acoustic
+def _raw_spectrum(p: CMBParameters, ell: np.ndarray):
+    cal = CALIBRATION
+    c = _components(p, ell)
+    acoustic_power = _smooth(c["monopole"] ** 2 + cal["doppler"] * c["dipole"] ** 2, c["ell_a"])
+    shape = c["transition"] * acoustic_power * c["damping"] + (1 - c["transition"]) * cal["plateau"]
+    return shape * c["tilt"] * c["reion"] * p.a_s / 2.1e-9, c["acoustic"]
 
 
 def _normalisation() -> float:
@@ -178,6 +196,104 @@ def spectrum(p: CMBParameters = PLANCK, ell_max: int = ELL_MAX) -> CMBSpectrum:
         r_star=acoustic["R_star"],
         peaks=peaks,
     )
+
+
+# ------------------------------------------------------------------ polarisation
+# Thomson scattering turns a quadrupole in the radiation into linear polarisation, and
+# the quadrupole seen by an electron at last scattering is produced by the *velocity* of
+# the plasma. So polarisation follows the dipole term, which is why the E-mode peaks sit
+# where the temperature peaks do not. It is also generated only during the short time the
+# plasma is decoupling, which suppresses it on large scales.
+POLARISATION = {
+    "ell_gen": 780.0,        # below this the finite thickness of last scattering suppresses E modes
+    "gen_power": 2.5,        # how steeply that suppression sets in
+    "ee_peak": 45.0,         # μK², the height of the EE spectrum near ℓ ≈ 1000
+    "te_peak": 150.0,        # μK², the largest swing of the temperature–polarisation cross-spectrum
+    "reion_ee": 0.14,        # μK² in the reionisation bump at ℓ ≈ 5 for τ = 0.0561
+    "lensing_bb": 0.10,      # μK² at the ℓ ≈ 1000 peak of the lensing B modes
+    "tensor_bb": 0.30,       # μK² at ℓ ≈ 80 per unit tensor-to-scalar ratio r
+    "tensor_reion": 0.15,    # μK² in the ℓ ≈ 5 tensor bump per unit r, for τ = 0.0561
+    "dust_150": 0.013,       # μK² at ℓ = 80: polarised dust in a clean patch at 150 GHz
+}
+BICEP_LIMIT_R = 0.036        # BICEP/Keck + Planck, 95% upper limit on r (2021)
+
+
+@dataclass(frozen=True)
+class PolarisationSpectra:
+    ell: np.ndarray
+    ee: np.ndarray                # D_ℓ^EE [μK²]
+    te: np.ndarray                # D_ℓ^TE [μK²], and it changes sign
+    bb_lensing: np.ndarray        # B modes made by lensing of the E modes
+    bb_tensor: np.ndarray         # B modes from primordial gravitational waves
+    bb_dust: np.ndarray           # polarised emission from our own Galaxy
+    r: float
+    a_lens: float
+
+    @property
+    def bb_total(self) -> np.ndarray:
+        return self.bb_lensing + self.bb_tensor + self.bb_dust
+
+    def at(self, values: np.ndarray, ell: float) -> float:
+        return float(np.interp(ell, self.ell, values))
+
+
+def _lognormal_bump(ell: np.ndarray, centre: float, width: float) -> np.ndarray:
+    return np.exp(-0.5 * (np.log(np.maximum(ell, 1e-3) / centre) / width) ** 2)
+
+
+_POL_NORM: tuple[float, float] | None = None
+
+
+def _polarisation_normalisation() -> tuple[float, float]:
+    """Amplitudes of EE and TE, fixed once on the Planck model.
+
+    They must be constants, not per-spectrum rescalings: otherwise changing τ or A_s
+    would move the whole spectrum and then be normalised straight back out, hiding the
+    very degeneracy the low-ℓ bump exists to break.
+    """
+    global _POL_NORM
+    if _POL_NORM is None:
+        _POL_NORM = (1.0, 1.0)
+        planck = polarisation(PLANCK)
+        _POL_NORM = (POLARISATION["ee_peak"] / float(planck.ee.max()),
+                     POLARISATION["te_peak"] / float(np.abs(planck.te).max()))
+    return _POL_NORM
+
+
+def polarisation(p: CMBParameters = PLANCK, r: float = 0.0, a_lens: float = 1.0,
+                 dust: float | None = None, ell_max: int = ELL_MAX) -> PolarisationSpectra:
+    """E modes, the TE cross-spectrum and the two kinds of B mode.
+
+    Amplitudes are calibrated so that the Planck 2018 model gives the measured EE peak
+    (about 45 μK² near ℓ = 1000) and the observed lensing B-mode level; the *shapes* come
+    from the same oscillator as the temperature spectrum, so changing a parameter moves
+    the polarisation peaks in the way it really does. Tens of percent, no better.
+    """
+    ell = np.arange(2, ell_max + 1, dtype=float)
+    pol = POLARISATION
+    c = _components(p, ell)
+    scalar = p.a_s / 2.1e-9
+
+    # Polarisation is only generated while the plasma decouples, so it dies away on
+    # scales much larger than the thickness of the last-scattering surface.
+    x = (ell / pol["ell_gen"]) ** pol["gen_power"]
+    envelope = x / (1 + x) * c["damping"] * c["tilt"] * scalar * math.exp(-2 * p.tau)
+
+    ee_norm, te_norm = _polarisation_normalisation()
+    ee = _smooth(c["dipole"] ** 2, c["ell_a"]) * envelope * ee_norm
+    # Rescattering after reionisation makes a bump at the horizon size of that epoch.
+    ee += pol["reion_ee"] * (p.tau / 0.0561) ** 2 * _lognormal_bump(ell, 5.0, 0.55)
+    te = -_smooth(c["monopole"] * c["dipole"], c["ell_a"]) * envelope * te_norm
+
+    # Lensing deflects the E modes and shuffles a little of their power into B modes.
+    bb_lensing = a_lens * pol["lensing_bb"] * _lognormal_bump(ell, 1000.0, 1.2)
+    # Tensors make B modes directly: one bump at the horizon at recombination, one at
+    # the horizon at reionisation. Inside the horizon the waves have already decayed.
+    bb_tensor = r * (pol["tensor_bb"] * _lognormal_bump(ell, 80.0, 0.85)
+                     + pol["tensor_reion"] * (p.tau / 0.0561) ** 2 * _lognormal_bump(ell, 5.0, 0.6))
+    amplitude = pol["dust_150"] if dust is None else dust
+    bb_dust = amplitude * (ell / 80.0) ** -0.42          # measured Galactic dust slope at 150 GHz
+    return PolarisationSpectra(ell, ee, te, bb_lensing, bb_tensor, bb_dust, r, a_lens)
 
 
 def sky_patch(spec: CMBSpectrum, size_deg: float = 20.0, n: int = 256, seed: int = 11) -> np.ndarray:

@@ -5,6 +5,7 @@ from __future__ import annotations
 from dataclasses import replace
 
 import numpy as np
+from matplotlib.ticker import NullFormatter, ScalarFormatter
 from PySide6.QtCore import Qt
 from PySide6.QtGui import QGuiApplication
 from PySide6.QtWidgets import (
@@ -113,7 +114,35 @@ class CMBSpectrumSimulator(SimulatorBase):
         gl.addWidget(self.engine_note)
         self.controls.addWidget(engine)
 
-        view = QGroupBox(tr("4 · Display"))
+        pol = QGroupBox(tr("4 · Polarisation"))
+        pl = QVBoxLayout(pol)
+        self.tensor_r = ParameterSlider(
+            tr("Tensor-to-scalar ratio r"), 0.0, 0.3, 0.0, decimals=3, step=0.005,
+            info=(tr("The signature of inflation"),
+                  tr("Gravitational waves from inflation are the only thing that can make B modes at "
+                     "recombination. Their strength relative to the density ripples is r, and measuring it "
+                     "would give the energy scale at which inflation happened.")),
+        )
+        self.a_lens = ParameterSlider(
+            tr("Lensing amplitude A_lens"), 0.0, 1.5, 1.0, decimals=2, step=0.05,
+            info=(tr("Delensing"),
+                  tr("Lensing by the matter between us and the CMB bends the E modes and turns a little of "
+                     "them into B modes. That foreground of our own making can be subtracted if the matter "
+                     "distribution is known well enough: A_lens = 0.1 means 90% removed.")),
+        )
+        self.dust = ParameterSlider(
+            tr("Polarised dust at ℓ = 80 (μK²)"), 0.0, 0.1, cmb.POLARISATION["dust_150"],
+            decimals=4, step=0.002,
+            info=(tr("The Galaxy is in the way"),
+                  tr("Spinning dust grains in the Milky Way align with the magnetic field and emit polarised "
+                     "light, with B modes of their own. In 2014 BICEP2 announced r = 0.2 from a signal that "
+                     "turned out to be mostly this.")),
+        )
+        for w in (self.tensor_r, self.a_lens, self.dust):
+            pl.addWidget(w)
+        self.controls.addWidget(pol)
+
+        view = QGroupBox(tr("5 · Display"))
         vl = QVBoxLayout(view)
         self.show_reference = QCheckBox(tr("Show the Planck 2018 model for comparison"))
         self.show_reference.setChecked(True)
@@ -142,11 +171,17 @@ class CMBSpectrumSimulator(SimulatorBase):
         tabs = QTabWidget()
         self.plot = PlotWidget(self._draw_spectrum, csv_provider=self._csv, export_name="cmb_power_spectrum")
         self.map_plot = PlotWidget(self._draw_maps, export_name="cmb_sky_patch")
+        self.pol_plot = PlotWidget(self._draw_polarisation, csv_provider=self._csv_polarisation,
+                                   export_name="cmb_polarisation")
+        self.bb_plot = PlotWidget(self._draw_bmodes, export_name="cmb_b_modes")
         tabs.addTab(self.plot, tr("Power spectrum"))
+        tabs.addTab(self.pol_plot, tr("E modes and TE"))
+        tabs.addTab(self.bb_plot, tr("B modes"))
         tabs.addTab(self.map_plot, tr("What the sky looks like"))
         self.display.addWidget(tabs, 1)
 
-        for w in (self.omega_b, self.omega_c, self.h, self.omega_k, self.n_s, self.a_s, self.tau):
+        for w in (self.omega_b, self.omega_c, self.h, self.omega_k, self.n_s, self.a_s, self.tau,
+                  self.tensor_r, self.a_lens, self.dust):
             w.valueChanged.connect(self.schedule_update)
         self.backend.currentIndexChanged.connect(self._backend_changed)
         self._backend_changed()
@@ -209,6 +244,7 @@ class CMBSpectrumSimulator(SimulatorBase):
         for slider, value in [
             (self.omega_b, base.omega_b), (self.omega_c, base.omega_c), (self.h, base.h), (self.omega_k, 0.0),
             (self.n_s, base.n_s), (self.a_s, base.a_s * 1e9), (self.tau, base.tau),
+            (self.tensor_r, 0.0), (self.a_lens, 1.0), (self.dust, cmb.POLARISATION["dust_150"]),
         ]:
             slider.setValue(value, emit=False)
         self.recompute()
@@ -251,8 +287,10 @@ class CMBSpectrumSimulator(SimulatorBase):
                     loading=f"{spec.r_star:.2f}", omega_m=f"{cosmo.Om0:.3f}",
                     omega_lambda=f"{cosmo.Ode0:.3f}", age=f"{cosmo.age():.2f}")
         )
-        self.plot.refresh()
-        self.map_plot.refresh()
+        self.pol = cmb.polarisation(params, r=self.tensor_r.value(), a_lens=self.a_lens.value(),
+                                    dust=self.dust.value())
+        for plot in (self.plot, self.pol_plot, self.bb_plot, self.map_plot):
+            plot.refresh()
 
     # ------------------------------------------------------------- plots
     def _draw_spectrum(self, fig) -> None:
@@ -293,6 +331,67 @@ class CMBSpectrumSimulator(SimulatorBase):
             ax.set_xlabel("degrees")
         fig.suptitle("Simulated 20° × 20° sky patches with the same random seed", fontsize=9, color=p.text)
 
+    def _draw_polarisation(self, fig) -> None:
+        p = theme().palette
+        pol = self.pol
+        top, bottom = fig.subplots(2, 1, sharex=True, gridspec_kw={"height_ratios": [1, 1], "hspace": 0.12})
+        top.plot(pol.ell, pol.ee, color=p.series[0], linewidth=2, label="EE (E modes)")
+        scaled = self.spec.d_ell / 120.0
+        top.plot(self.spec.ell, scaled, color=p.muted, linewidth=1.1, linestyle="--",
+                 label="TT / 120, for comparison")
+        for ell, height in cmb.find_peaks(pol.ell, pol.ee, limit=4):
+            top.scatter([ell], [height], color=p.accent2, s=16, zorder=4)
+        top.set_ylabel("E-mode power (μK²)", fontsize=8)
+        top.set_ylim(0, max(float(np.nanmax(pol.ee)), 1.0) * 1.2)
+        top.legend(fontsize=7.5, loc="upper left")
+        top.set_title("E-mode peaks fall where the temperature peaks do not", fontsize=9)
+
+        bottom.axhline(0, color=p.border, linewidth=1)
+        bottom.plot(pol.ell, pol.te, color=p.series[1], linewidth=1.8, label="TE (temperature × E)")
+        bottom.set_xlabel("Multipole ℓ", fontsize=8)
+        bottom.set_ylabel("TE cross-power (μK²)", fontsize=8)
+        bottom.legend(fontsize=7.5, loc="upper left")
+        for axis in (top, bottom):
+            axis.set_xlim(2, cmb.ELL_MAX)
+            axis.tick_params(labelsize=7)
+
+    def _draw_bmodes(self, fig) -> None:
+        p = theme().palette
+        pol = self.pol
+        ax = fig.add_subplot()
+        ax.plot(pol.ell, pol.bb_lensing, color=p.muted, linewidth=1.8,
+                label=f"lensing B modes (A_lens = {pol.a_lens:.2f})")
+        ax.plot(pol.ell, pol.bb_dust, color=p.warning, linewidth=1.6, linestyle="-.",
+                label="polarised Galactic dust")
+        limit = cmb.polarisation(self.parameters(), r=cmb.BICEP_LIMIT_R, dust=0.0)
+        ax.plot(pol.ell, limit.bb_tensor, color=p.border, linewidth=1.2, linestyle=":",
+                label=f"r = {cmb.BICEP_LIMIT_R} (today's upper limit)")
+        if pol.r > 0:
+            ax.plot(pol.ell, pol.bb_tensor, color=p.series[0], linewidth=2.2,
+                    label=f"primordial B modes, r = {pol.r:.3f}")
+        ax.plot(pol.ell, pol.bb_total, color=p.danger, linewidth=1.3, linestyle="--", label="what you measure")
+        ax.set_xscale("log")
+        ax.set_yscale("log")
+        ax.set_xlim(2, cmb.ELL_MAX)
+        ax.set_ylim(1e-5, 1.0)
+        for axis in (ax.xaxis,):
+            axis.set_major_formatter(ScalarFormatter())
+            axis.set_minor_formatter(NullFormatter())
+        ax.set_xticks([2, 10, 80, 300, 1000, 2500])
+        ax.axvline(80, color=p.border, linewidth=0.9, linestyle=":")
+        ax.text(80, 0.6, " ℓ = 80: where inflation would show", color=p.muted, fontsize=7, va="top")
+        ax.set_xlabel("Multipole ℓ")
+        ax.set_ylabel("B-mode power (μK²)")
+        ax.set_title("B modes: a curl in the polarisation that density ripples cannot make", fontsize=9)
+        ax.legend(fontsize=7.5, loc="lower right")
+
+    def _csv_polarisation(self):
+        pol = self.pol
+        rows = [[f"{l:.0f}", f"{ee:.4f}", f"{te:.4f}", f"{bl:.6f}", f"{bt:.6f}", f"{bd:.6f}"]
+                for l, ee, te, bl, bt, bd in zip(pol.ell, pol.ee, pol.te, pol.bb_lensing, pol.bb_tensor,
+                                                 pol.bb_dust)]
+        return ["ell", "EE_uK2", "TE_uK2", "BB_lensing", "BB_tensor", "BB_dust"], rows
+
     def _csv(self):
         rows = [[f"{l:.0f}", f"{d:.3f}", f"{r:.3f}"]
                 for l, d, r in zip(self.spec.ell, self.spec.d_ell, self.reference.d_ell)]
@@ -306,6 +405,18 @@ class CMBSpectrumSimulator(SimulatorBase):
             "omega_k": self.omega_k.value(),
             "h": self.h.value(),
             "first_peak": self.spec.peaks[0][0] if self.spec.peaks else float("nan"),
+            "tau": self.tau.value(),
+            "r": self.pol.r,
+            "a_lens": self.pol.a_lens,
+            "dust": self.dust.value(),
+            "ee_peak": max(float(np.nanmax(self.pol.ee)), 0.0),
+            "ee_first_peak": (cmb.find_peaks(self.pol.ell, self.pol.ee, limit=1) or [(float("nan"),)])[0][0],
+            "bb_tensor_80": self.pol.at(self.pol.bb_tensor, 80),
+            "bb_lensing_80": self.pol.at(self.pol.bb_lensing, 80),
+            "bb_dust_80": self.pol.at(self.pol.bb_dust, 80),
+            "tensor_above_foregrounds": (self.pol.at(self.pol.bb_tensor, 80)
+                                         > self.pol.at(self.pol.bb_lensing, 80)
+                                         + self.pol.at(self.pol.bb_dust, 80)),
         }
 
     def guide_extra(self) -> str:

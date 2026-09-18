@@ -169,7 +169,7 @@ Everything above is finished: 43 lessons, 18 simulators, the guidance features,
 real data, a packaged executable, a Turkish interface and the optional CAMB and
 tutor extras. The items below are candidates for the next rounds, written in the
 same style. ★ marks the ones worth doing first; ticked items have been added
-since (the course now has 51 lessons and 22 simulators).
+since (the course now has 53 lessons and 23 simulators).
 
 ### Curriculum
 
@@ -183,15 +183,15 @@ since (the course now has 51 lessons and 22 simulators).
 
 **Additions to existing levels**
 - [x] ★ `L4.7` Neutrino mass and cosmology: how the lightest particles weigh the universe
-- [ ] `L5.7` CMB polarisation and lensing: E-modes, B-modes and what they carry
-- [ ] `L6.9` Black holes in cosmology: from the first image to primordial black holes
+- [x] `L5.7` CMB polarisation and lensing: E-modes, B-modes and what they carry
+- [x] `L6.9` Black holes in cosmology: from the first image to primordial black holes
 - [x] `L0.7` Orders of magnitude: estimating in your head before you compute
 
 ### Simulators
 - [x] ★ `S19` Likelihood & MCMC Explorer: fit a model, watch the chain, read the contours
 - [x] ★ `S20` Distance Ladder Builder: parallax → Cepheids → supernovae, with error propagation
 - [x] `S21` Survey Designer: choose area, depth and time, see the error bars you would get
-- [ ] `S22` Standard Siren Explorer: measure H0 from a gravitational-wave merger
+- [x] `S22` Standard Siren Explorer: measure H0 from a gravitational-wave merger
 - [x] `S23` Redshift Survey Slice: build a cone diagram and find the cosmic web in it
 - [ ] `S24` CMB Sky Viewer: a real Planck map, with masking and filtering (needs a download)
 
