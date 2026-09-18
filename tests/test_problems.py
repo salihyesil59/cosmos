@@ -69,6 +69,11 @@ EXPECTED = {
     "p7-redshift-space": 600 / 100,
     "p0-year-seconds": 365 * 24 * 3600,
     "p0-hubble-time": 1 / (70 * const.KM_S_MPC_TO_SI) / GYR,
+    "p5-optical-depth": math.exp(-2 * 0.056),
+    "p5-inflation-scale": 1.0e16 * (0.01 / 0.01) ** 0.25,
+    "p6-schwarzschild": 2 * G * 6.5e9 * MSUN / C**2 / const.AU,
+    "p6-hawking": const.HBAR * C**3 / (8 * math.pi * G * 10 * MSUN * const.K_B),
+    "p6-horizon-mass": 1.0 / 1e5,
 }
 
 

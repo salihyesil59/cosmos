@@ -496,3 +496,35 @@
   symbols: '$H_0 \approx 70$ km/s/Mpc'
   description: Two numbers worth carrying in your head; almost every cosmological estimate starts from one of them.
   lesson: L0.7
+
+- id: inflation-energy-scale
+  group: Inflation and the early universe
+  title: Energy scale of inflation from r
+  formula: 'V^{1/4} \approx 1.0\times10^{16}\ \mathrm{GeV}\left(\frac{r}{0.01}\right)^{1/4}'
+  symbols: '$r$ the tensor-to-scalar ratio, measured from B modes at $\ell \approx 80$'
+  description: A B-mode detection would be a measurement of physics a trillion times beyond the LHC.
+  lesson: L5.7
+
+- id: siren-strain
+  group: Measurement and statistics
+  title: Strain of an inspiralling binary
+  formula: 'h = \frac{4}{D_L}\left(\frac{G\mathcal{M}_c}{c^2}\right)^{5/3}\left(\frac{\pi f}{c}\right)^{2/3}'
+  symbols: '$\mathcal{M}_c$ the chirp mass, $f$ the wave frequency, $D_L$ the luminosity distance'
+  description: Nothing in it was calibrated on anything, which is what makes a merger a standard siren.
+  lesson: L6.5
+
+- id: black-hole-shadow
+  group: Dark matter and dark energy
+  title: Angular size of a black hole shadow
+  formula: '\theta_{\mathrm{shadow}} = \frac{2\sqrt{27}\,GM}{c^2 D} \approx 5.2\,\frac{r_s}{D}'
+  symbols: '$r_s = 2GM/c^2$ the Schwarzschild radius, $D$ the distance'
+  description: It depends only on mass and distance, so measuring it tests the metric itself.
+  lesson: L6.9
+
+- id: hawking-temperature
+  group: Dark matter and dark energy
+  title: Hawking temperature
+  formula: 'T_H = \frac{\hbar c^3}{8\pi G M k_B} \approx 6\times10^{-8}\ \mathrm{K}\,\frac{M_\odot}{M}'
+  symbols: '$M$ the mass of the black hole'
+  description: Colder than the CMB for anything astrophysical, so real black holes only grow.
+  lesson: L6.9

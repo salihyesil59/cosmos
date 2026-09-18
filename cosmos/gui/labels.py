@@ -84,6 +84,28 @@ MOCK_SURVEYS = [
     tr_noop("The true universe: no observing effects at all"),
 ]
 
+# Events and detector networks of the Standard Siren Explorer (sirens.PRESETS_SIREN, sirens.NETWORKS).
+SIRENS = [
+    tr_noop("GW170817: the first standard siren (2017)"),
+    tr_noop("GW190425: no counterpart, no host (2019)"),
+    tr_noop("A dark siren: black holes, no light"),
+    tr_noop("Fifty bright sirens from one observing run"),
+    tr_noop("Einstein Telescope: a siren catalogue"),
+    tr_noop("Two detectors only"),
+    tr_noop("With sites on one continent a merger can be found but barely located: "
+            "GW190425 landed in a patch of 8400 deg²."),
+    tr_noop("LIGO–Virgo, 2017 (O2)"),
+    tr_noop("The network that detected GW170817, with Virgo only just sensitive enough."),
+    tr_noop("LIGO–Virgo–KAGRA, 2023 (O4)"),
+    tr_noop("Today's network: two LIGO detectors, Virgo and KAGRA."),
+    tr_noop("Advanced detectors at design sensitivity"),
+    tr_noop("What the current instruments were built to reach."),
+    tr_noop("A+ upgrade (late 2020s)"),
+    tr_noop("Upgraded mirrors and squeezed light, with LIGO-India joining."),
+    tr_noop("Einstein Telescope (2030s)"),
+    tr_noop("A ten-kilometre underground triangle: thousands of events a year, out to high redshift."),
+]
+
 # The status of a lesson, as LessonStatus spells it.
 LESSON_STATUS = [tr_noop("completed"), tr_noop("ready"), tr_noop("not ready")]
 

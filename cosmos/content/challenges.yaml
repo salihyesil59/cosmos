@@ -152,6 +152,45 @@ S11:
     min: 0.9
   - field: yp
     min: 0.26
+S12:
+- id: interleaved-peaks
+  task: 'Find the first E-mode peak and check that it lands between the first two temperature peaks: look for it
+    between ℓ = 350 and ℓ = 500.'
+  hint: Open the <b>E modes and TE</b> tab with the Planck parameters. The dashed grey curve is the temperature
+    spectrum, scaled down.
+  success: Temperature comes from the plasma's compression, polarisation from its velocity — a quarter cycle apart,
+    like a pendulum's position and speed.
+  check:
+  - field: ee_first_peak
+    min: 350
+    max: 500
+- id: bicep-trap
+  task: With the default dust level, raise the tensor-to-scalar ratio r until the primordial B modes rise above
+    dust plus lensing at ℓ = 80.
+  hint: Open the <b>B modes</b> tab and drag <b>r</b>. Watch where the blue curve crosses the others.
+  success: It takes r ≈ 0.08 — nearly what BICEP2 announced in 2014, and why a signal that size looked so convincing
+    before the dust was measured properly.
+  check:
+  - field: tensor_above_foregrounds
+    is_true: true
+  - field: r
+    min: 0.05
+  - field: dust
+    min: 0.01
+- id: delensing
+  task: 'Detect a small primordial signal the hard way: set r to 0.01 or less, clean the patch of dust, and delens
+    to A_lens = 0.2 or better until the tensor B modes win at ℓ = 80.'
+  hint: Set <b>r</b> near 0.01, drag <b>polarised dust</b> down towards zero, then lower the <b>lensing amplitude</b>.
+  success: 'This is the programme for the next decade: many frequencies to kill the dust, a lensing map to subtract
+    the rest, and enough detectors to see what is left.'
+  check:
+  - field: r
+    max: 0.01
+    min: 0.002
+  - field: a_lens
+    max: 0.2
+  - field: tensor_above_foregrounds
+    is_true: true
 S17:
 - id: blazing-sky
   task: 'Reproduce Olbers'' paradox: a patch of sky completely covered by stars.'
@@ -313,6 +352,44 @@ S21:
     min: 0.25
   - field: stat_below_floor
     is_true: true
+S22:
+- id: first-siren
+  task: 'Reproduce GW170817: a 1.46 + 1.27 M☉ merger at 40 Mpc seen by the 2017 network, with a signal-to-noise
+    ratio above 30 and a localisation better than 50 deg².'
+  hint: The <b>GW170817</b> preset sets it up. Read the signal-to-noise ratio and the sky area in the summary.
+  success: One event, no distance ladder, and an H₀ that landed between Planck and SH0ES — which is exactly why
+    sirens are worth building a decade of detectors for.
+  check:
+  - field: snr
+    min: 30
+  - field: sky_area
+    max: 50
+  - field: host_known
+    is_true: true
+- id: lost-in-the-dark
+  task: Make a loud black-hole merger — signal-to-noise above 20 — that nonetheless measures H₀ to worse than 50%,
+    by taking away the host galaxy.
+  hint: Set both masses near 30 M☉, move it out to several hundred Mpc, and uncheck <b>the host galaxy is known</b>.
+  success: Loudness is not the problem. Without a counterpart every galaxy in the volume is a candidate, and that
+    is what a dark siren costs.
+  check:
+  - field: snr
+    min: 20
+  - field: host_known
+    is_false: true
+  - field: h0_percent
+    min: 50
+- id: beat-the-tension
+  task: Combine enough bright sirens to measure H₀ to better than 2%, the precision the Hubble tension calls for.
+  hint: Keep the host known and raise <b>the number of events</b>. Better detectors make each event count for more,
+    so fewer are needed.
+  success: 'Two percent from gravitational waves alone: sharp enough to judge between the early and late measurements
+    without trusting either ladder.'
+  check:
+  - field: host_known
+    is_true: true
+  - field: h0_percent
+    max: 2.0
 S23:
 - id: clean-web
   task: 'Map the cosmic web with no observing effects in the way: at least 2500 galaxies, no magnitude limit and

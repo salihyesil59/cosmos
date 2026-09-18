@@ -44,7 +44,7 @@ levels:
       The frozen sound waves in the cosmic microwave background, the baryon acoustic
       ruler, how gravity grows tiny ripples into the cosmic web, and how lensing maps
       the dark matter.
-    lessons: [L5.1, L5.2, L5.3, L5.4, L5.5, L5.6]
+    lessons: [L5.1, L5.2, L5.3, L5.4, L5.5, L5.6, L5.7]
 
   - number: 6
     title: Advanced Topics
@@ -52,7 +52,7 @@ levels:
       The mathematics of general relativity behind cosmology, inflation, the epoch of
       reionisation, gravitational waves, today's tensions, alternatives to ΛCDM and the
       open problems at the frontier of the field.
-    lessons: [L6.1, L6.2, L6.3, L6.4, L6.5, L6.6, L6.7, L6.8]
+    lessons: [L6.1, L6.2, L6.3, L6.4, L6.5, L6.6, L6.7, L6.8, L6.9]
 
   - number: 7
     title: How Cosmologists Work

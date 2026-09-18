@@ -540,6 +540,39 @@
       $t_\mathrm{ff} = \sqrt{3\pi/(32 \times 6.674\times10^{-11} \times 1.72\times10^{-24})} = 5.07\times10^{16}\ \mathrm{s}
       = 1.6\ \mathrm{Gyr}$ — halos have had time to assemble many times over.
     simulator: S13
+  - id: p5-optical-depth
+    lesson: L5.7
+    title: How much the peaks are damped
+    difficulty: 1
+    statement: Reionisation gives an optical depth $\tau = 0.056$. By what **factor** are the CMB acoustic
+      peaks suppressed?
+    answer: 0.8941
+    unit: ''
+    tolerance: 0.01
+    hints:
+    - The suppression of the power spectrum is e^(−2τ).
+    - e^(−0.112).
+    solution: |
+      $e^{-2\tau} = e^{-0.112} = 0.894$: about 11% of the power is scattered away. Because only the
+      product $A_s e^{-2\tau}$ is measured from temperature alone, τ has to come from the low-ℓ
+      polarisation before $A_s$ — and hence $\sigma_8$ — can be pinned down.
+    simulator: S12
+  - id: p5-inflation-scale
+    lesson: L5.7
+    title: The energy scale of inflation
+    difficulty: 2
+    statement: If B modes were detected with $r = 0.01$, at what energy scale did inflation happen, in
+      **GeV**? Use $V^{1/4} = 1.0\times10^{16}\,\mathrm{GeV}\,(r/0.01)^{1/4}$.
+    answer: 1.0e16
+    unit: GeV
+    tolerance: 0.02
+    hints:
+    - The formula is written so that r = 0.01 is the reference point.
+    - (0.01/0.01)^(1/4) = 1.
+    solution: |
+      $V^{1/4} = 1.0\times10^{16}$ GeV — a trillion times the energy of the LHC, and the reason a
+      B-mode detection would matter far beyond cosmology.
+    simulator: S12
 - level: 6
   title: Advanced topics
   intro: Black holes, inflation, standard sirens and the tensions of today.
@@ -618,6 +651,57 @@
     solution: |
       $\sigma = \sqrt{1.04^2 + 0.5^2} = 1.154$, so the difference is $5.64/1.154 = 4.9\sigma$.
     simulator: S20
+  - id: p6-schwarzschild
+    lesson: L6.9
+    title: The horizon of a giant
+    difficulty: 1
+    statement: What is the Schwarzschild radius of the 6.5 × 10⁹ M☉ black hole M87*, in **astronomical
+      units**? Use $r_s = 2GM/c^2$ and 1 AU = 1.496 × 10¹¹ m.
+    answer: 128.3
+    unit: AU
+    tolerance: 0.03
+    hints:
+    - 'r_s = 2GM/c² with G = 6.674 × 10⁻¹¹, M☉ = 1.989 × 10³⁰ kg, c = 2.998 × 10⁸ m/s.'
+    - The Sun''s Schwarzschild radius is 2.95 km; scale it by 6.5 × 10⁹.
+    solution: |
+      1. $r_s(M_\odot) = 2GM_\odot/c^2 = 2953\ \mathrm{m}$.
+      2. $r_s = 6.5\times10^{9} \times 2953 = 1.92\times10^{13}\ \mathrm{m}$.
+      3. Dividing by 1.496×10¹¹ m/AU gives about **128 AU** — three times Neptune's orbit.
+    simulator: S22
+  - id: p6-hawking
+    lesson: L6.9
+    title: Colder than the sky
+    difficulty: 1
+    statement: What is the Hawking temperature of a 10 M☉ black hole, in **kelvin**? Use
+      $T_H = 6.17\times10^{-8}\,\mathrm{K}\,(M_\odot/M)$.
+    answer: 6.17e-9
+    unit: K
+    tolerance: 0.02
+    hints:
+    - The temperature is inversely proportional to the mass.
+    - Divide the solar-mass value by 10.
+    solution: |
+      $T_H = 6.17\times10^{-8}/10 = 6.2\times10^{-9}$ K — a hundred million times colder than the 2.7 K
+      microwave background, which is why this black hole absorbs far more than it emits and is still
+      growing.
+    simulator: S22
+  - id: p6-horizon-mass
+    lesson: L6.9
+    title: A black hole as a clock
+    difficulty: 2
+    statement: A primordial black hole forms when the horizon mass is its own. If the horizon mass is
+      $10^{5}\,M_\odot\,(t/1\,\mathrm{s})$, at what **time** after the Big Bang did a one-solar-mass
+      primordial black hole form, in seconds?
+    answer: 1.0e-5
+    unit: s
+    tolerance: 0.05
+    hints:
+    - Set the horizon mass equal to 1 M☉ and solve for t.
+    - t = 1 / 10⁵ s.
+    solution: |
+      $10^{5}\,(t/1\,\mathrm{s}) = 1 \Rightarrow t = 10^{-5}$ s — around the time quarks were
+      condensing into protons and neutrons. The mass of a primordial black hole reads off when it formed.
+    simulator: S22
 - level: 7
   title: Working like a cosmologist
   intro: Goodness of fit, significance, chains and error budgets.

@@ -1505,3 +1505,100 @@ dimensional-analysis:
     dimensionless factor in front.
   see_also: [order-of-magnitude]
   lessons: [L0.7]
+
+e-mode:
+  term: E mode
+  definition: >
+    The curl-free part of a polarisation pattern on the sky, whose directions point
+    radially towards or tangentially around a spot. Density perturbations at the
+    last-scattering surface produce E modes and nothing else, so the E-mode power
+    spectrum of the CMB is a direct check on the acoustic picture.
+  see_also: [b-mode, cmb-polarisation, optical-depth]
+  lessons: [L5.7]
+
+b-mode:
+  term: B mode
+  definition: >
+    The curl part of a polarisation pattern, swirling around a spot with a handedness.
+    Scalar density ripples cannot make it, so a primordial B mode would mean
+    gravitational waves from inflation. Lensing of the E modes makes a smaller one that
+    has already been detected.
+  see_also: [e-mode, cmb-lensing, tensor-to-scalar-ratio]
+  lessons: [L5.7]
+
+cmb-polarisation:
+  term: CMB polarisation
+  definition: >
+    The few-percent linear polarisation of the microwave background, produced by Thomson
+    scattering off electrons that see a quadrupole in the radiation around them. Because
+    that quadrupole comes from the plasma's velocity, the polarisation peaks fall where
+    the temperature peaks do not.
+  see_also: [e-mode, b-mode, cmb]
+  lessons: [L5.7]
+
+cmb-lensing:
+  term: CMB lensing
+  definition: >
+    The deflection of microwave-background photons, by a few arcminutes each, by all the
+    matter between the last-scattering surface and us. It smooths the acoustic peaks,
+    converts some E modes into B modes, and measures how much structure has grown.
+  see_also: [weak-lensing, b-mode, sigma8]
+  lessons: [L5.7, L5.6]
+
+tensor-to-scalar-ratio:
+  term: Tensor-to-scalar ratio r
+  definition: >
+    The power in primordial gravitational waves divided by the power in density
+    perturbations. It fixes the energy scale of inflation, V^(1/4) ≈ 10^16 GeV (r/0.01)^(1/4),
+    and would be measured from B modes at ℓ ≈ 80. The limit today is r < 0.036.
+  see_also: [b-mode, inflation, gravitational-waves]
+  lessons: [L5.7, L6.3]
+
+schwarzschild-radius:
+  term: Schwarzschild radius
+  definition: >
+    The radius of the event horizon of a non-rotating black hole, r_s = 2GM/c². It grows
+    in proportion to the mass, so the mean density inside falls as 1/M²: a supermassive
+    black hole is less dense than water.
+  see_also: [event-horizon, black-hole-shadow]
+  lessons: [L6.9, L6.1]
+
+black-hole-shadow:
+  term: Black hole shadow
+  definition: >
+    The dark region an observer sees around a black hole, where light rays traced
+    backwards end on the horizon instead of escaping. Its angular diameter is
+    2√27 GM/c²D, about 2.6 times the horizon radius, and depends only on mass and
+    distance — which makes imaging it a test of general relativity.
+  see_also: [schwarzschild-radius, event-horizon]
+  lessons: [L6.9]
+
+primordial-black-hole:
+  term: Primordial black hole
+  definition: >
+    A black hole formed in the very early universe from an unusually large density
+    fluctuation rather than from a star. Its mass is roughly the horizon mass at the time
+    of formation, c³t/G, so it reads off when it formed. Most mass windows are now closed
+    as a dark-matter candidate; an asteroid-mass one survives.
+  see_also: [dark-matter, hawking-radiation, schwarzschild-radius]
+  lessons: [L6.9]
+
+hawking-radiation:
+  term: Hawking radiation
+  definition: >
+    The thermal radiation a black hole emits, at a temperature inversely proportional to
+    its mass: about 6×10⁻⁸ K for one solar mass. Every astrophysical black hole is far
+    colder than the CMB and so is still growing; evaporation matters only for primordial
+    holes below about 10¹⁵ g, which would be exploding now.
+  see_also: [primordial-black-hole, event-horizon]
+  lessons: [L6.9]
+
+pair-instability:
+  term: Pair instability
+  definition: >
+    The runaway that destroys a very massive star whose helium core is hot enough to turn
+    photons into electron–positron pairs: the pressure support drops, the core collapses
+    and ignites explosively, and nothing is left behind. It is why black holes between
+    about 50 and 120 M☉ are not expected.
+  see_also: [primordial-black-hole, standard-siren]
+  lessons: [L6.9]

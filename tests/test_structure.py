@@ -163,3 +163,79 @@ def test_warm_dark_matter_removes_small_scale_structure():
     cold.run_to(1.0)
     warm.run_to(1.0)
     assert warm.collapsed_fraction() < cold.collapsed_fraction()
+
+
+def test_polarisation_peaks_interleave_with_the_temperature():
+    """L5.7: temperature comes from compression, polarisation from velocity."""
+    tt = cmb.spectrum()
+    pol = cmb.polarisation()
+    ee_peaks = [l for l, _v in cmb.find_peaks(pol.ell, pol.ee, limit=4)]
+    tt_peaks = [l for l, _v in tt.peaks[:5]]
+    # Every E-mode peak sits between two temperature peaks.
+    for ell in ee_peaks[:3]:
+        below = [t for t in tt_peaks if t < ell]
+        above = [t for t in tt_peaks if t > ell]
+        assert below and above, ell
+        assert max(below) + 60 < ell < min(above) - 60, (ell, tt_peaks)
+    # Measured EE peaks sit near ell = 400, 690, 990.
+    for measured, published in zip(ee_peaks, (400, 690, 990, 1290)):
+        assert abs(measured - published) < 0.1 * published
+
+
+def test_polarisation_is_suppressed_on_large_scales():
+    pol = cmb.polarisation()
+    assert pol.at(pol.ee, 1000) > 50 * pol.at(pol.ee, 100)
+    assert pol.at(pol.ee, 100) > pol.at(pol.ee, 30)
+    assert 30 < float(pol.ee.max()) < 60           # Planck measures about 45 uK^2
+
+
+def test_the_reionisation_bump_scales_as_tau_squared():
+    low = cmb.polarisation(cmb.CMBParameters(tau=0.03))
+    high = cmb.polarisation(cmb.CMBParameters(tau=0.09))
+    assert high.at(high.ee, 5) / low.at(low.ee, 5) == pytest.approx((0.09 / 0.03) ** 2, rel=0.1)
+    # And the acoustic peaks are damped by exp(-2 tau) at the same time.
+    assert high.ee.max() / low.ee.max() == pytest.approx(math.exp(-2 * (0.09 - 0.03)), rel=0.05)
+
+
+def test_te_oscillates_and_changes_sign():
+    pol = cmb.polarisation()
+    assert pol.te.min() < -100 and pol.te.max() > 100
+    crossings = np.sum(np.diff(np.sign(pol.te[50:1500])) != 0)
+    assert crossings > np.sum(np.diff(np.sign(pol.ee[50:1500] - pol.ee[50:1500].mean())) != 0)
+
+
+def test_b_modes_have_the_right_budget():
+    """L5.7: lensing, dust and inflation, and which wins at ell = 80."""
+    pol = cmb.polarisation(r=0.1)
+    assert pol.at(pol.bb_lensing, 1000) == pytest.approx(cmb.POLARISATION["lensing_bb"], rel=0.02)
+    assert pol.at(pol.bb_tensor, 80) == pytest.approx(0.1 * cmb.POLARISATION["tensor_bb"], rel=0.02)
+    # Lensing peaks at small scales, tensors at ell = 80 and then die inside the horizon.
+    assert pol.at(pol.bb_lensing, 1000) > 5 * pol.at(pol.bb_lensing, 80)
+    assert pol.at(pol.bb_tensor, 80) > 3 * pol.at(pol.bb_tensor, 500)
+    assert pol.bb_total.shape == pol.ell.shape
+
+    # BICEP2 announced r = 0.2; at today's limit the signal is no larger than the lensing.
+    limit = cmb.polarisation(r=cmb.BICEP_LIMIT_R)
+    assert limit.at(limit.bb_tensor, 80) < 1.5 * limit.at(limit.bb_lensing, 80)
+    assert cmb.polarisation(r=0.2).at(cmb.polarisation(r=0.2).bb_tensor, 80) > 4 * limit.at(
+        limit.bb_lensing, 80)
+
+
+def test_delensing_and_a_clean_patch_uncover_a_small_signal():
+    dirty = cmb.polarisation(r=0.005, a_lens=1.0, dust=0.05)
+    assert dirty.at(dirty.bb_tensor, 80) < dirty.at(dirty.bb_lensing, 80) + dirty.at(dirty.bb_dust, 80)
+    clean = cmb.polarisation(r=0.005, a_lens=0.1, dust=0.0)
+    assert clean.at(clean.bb_tensor, 80) > clean.at(clean.bb_lensing, 80) + clean.at(clean.bb_dust, 80)
+    assert clean.at(clean.bb_lensing, 80) == pytest.approx(0.1 * dirty.at(dirty.bb_lensing, 80), rel=1e-9)
+
+
+def test_the_temperature_spectrum_is_untouched_by_the_refactor():
+    """The components helper must reproduce the calibrated TT model exactly."""
+    ell = np.arange(2, 400, dtype=float)
+    c = cmb._components(cmb.PLANCK, ell)
+    power = cmb._smooth(c["monopole"] ** 2 + cmb.CALIBRATION["doppler"] * c["dipole"] ** 2, c["ell_a"])
+    shape = c["transition"] * power * c["damping"] + (1 - c["transition"]) * cmb.CALIBRATION["plateau"]
+    expected = shape * c["tilt"] * c["reion"] * cmb.PLANCK.a_s / 2.1e-9
+    raw, _acoustic = cmb._raw_spectrum(cmb.PLANCK, ell)
+    assert np.allclose(raw, expected)
+    assert cmb.calibration_error() < 0.2

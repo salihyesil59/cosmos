@@ -12,10 +12,10 @@ on first launch.
 
 ## Features
 
-- **51 lessons in 8 levels**: Foundations, Observational Cosmology, The Expanding
+- **53 lessons in 8 levels**: Foundations, Observational Cosmology, The Expanding
   Universe, Contents of the Universe, Thermal History, CMB & Structure Formation,
   Advanced Topics, How Cosmologists Work
-- **22 simulators**
+- **23 simulators**
   - Cosmology Calculator: ages, distances, horizons and recession velocities at any redshift
   - Expansion History Explorer: a(t) and the Ωm–ΩΛ map
   - Powers of Ten Zoom: from a human to the observable universe
@@ -28,7 +28,7 @@ on first launch.
   - Interactive Cosmic Timeline: 60 orders of magnitude of cosmic history on one slider
   - BBN Abundance Explorer: the light elements made in the first three minutes
   - Olbers' Paradox Simulator: why the night sky is dark
-  - CMB Power Spectrum Explorer: acoustic peaks and simulated sky patches
+  - CMB Power Spectrum Explorer: acoustic peaks, E and B modes, and simulated sky patches
   - 2D N-body Structure Formation: gravity builds the cosmic web
   - Gravitational Lensing Simulator: arcs, multiple images and Einstein rings
   - Inflation Slow-Roll Simulator: potentials, nₛ and r against Planck and BICEP/Keck
@@ -37,21 +37,22 @@ on first launch.
   - Likelihood & MCMC Explorer: watch a measurement being made, combine probes, derive parameters
   - Distance Ladder Builder: parallax → Cepheids → supernovae, with the error budget of H0
   - Survey Designer: choose area, depth and time, and forecast the BAO error bars
+  - Standard Siren Explorer: measure H₀ from a merger, with no distance ladder at all
   - Redshift Survey Slice: build a mock catalogue and watch observing distort the cosmic web
 - **Two ways to read every lesson**: *Intuitive* tells the story in words,
   *With the maths* shows every formula and derivation
-- **269 quiz questions** with explanations; score 70% or more to complete a
+- **287 quiz questions** with explanations; score 70% or more to complete a
   lesson
-- **32 guided challenges** inside the simulators, with hints and automatic checking
+- **38 guided challenges** inside the simulators, with hints and automatic checking
 - **A history of cosmology**: 33 milestones from Copernicus to DESI and 18
   scientist cards, each linked to the lesson that explains the physics
-- **46 worked problems** in eight sets, one per level: type a number and the app
+- **51 worked problems** in eight sets, one per level: type a number and the app
   checks it, spots a wrong power of ten or sign, and offers hints and a worked
   solution
 - **19 badges** earned by learning: finishing levels, perfect quizzes, exploring
   simulators, solving their challenges and working through the problem sets
-- **174-term glossary**: terms in lessons open their definitions in the Guide panel
-- **Reference page**: a 62-entry formula sheet, physical constants, a unit
+- **184-term glossary**: terms in lessons open their definitions in the Guide panel
+- **Reference page**: a 66-entry formula sheet, physical constants, a unit
   converter and the parameters of every model
 - **Global search** (Ctrl+F) across lesson text, glossary, simulators, formulas and problems
 - **Notes and bookmarks**: a private notebook for every page, exportable as Markdown

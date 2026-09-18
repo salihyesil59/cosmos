@@ -403,72 +403,157 @@
         <translation>Gerçek evren: hiçbir gözlem etkisi yok</translation>
     </message>
     <message>
-        <location filename="../gui/labels.py" line="88" />
+        <location filename="../gui/labels.py" line="89" />
+        <source>GW170817: the first standard siren (2017)</source>
+        <translation>GW170817: ilk standart siren (2017)</translation>
+    </message>
+    <message>
+        <location filename="../gui/labels.py" line="90" />
+        <source>GW190425: no counterpart, no host (2019)</source>
+        <translation>GW190425: karşılık yok, konak yok (2019)</translation>
+    </message>
+    <message>
+        <location filename="../gui/labels.py" line="91" />
+        <source>A dark siren: black holes, no light</source>
+        <translation>Karanlık bir siren: karadelikler, ışık yok</translation>
+    </message>
+    <message>
+        <location filename="../gui/labels.py" line="92" />
+        <source>Fifty bright sirens from one observing run</source>
+        <translation>Bir gözlem döneminden elli parlak siren</translation>
+    </message>
+    <message>
+        <location filename="../gui/labels.py" line="93" />
+        <source>Einstein Telescope: a siren catalogue</source>
+        <translation>Einstein Teleskobu: bir siren kataloğu</translation>
+    </message>
+    <message>
+        <location filename="../gui/labels.py" line="94" />
+        <source>Two detectors only</source>
+        <translation>Yalnızca iki dedektör</translation>
+    </message>
+    <message>
+        <location filename="../gui/labels.py" line="95" />
+        <source>With sites on one continent a merger can be found but barely located: GW190425 landed in a patch of 8400 deg².</source>
+        <translation>İstasyonlar tek bir kıtadayken bir birleşme bulunabilir ama zar zor konumlandırılır: GW190425, 8400 derece²'lik bir yamaya düştü.</translation>
+    </message>
+    <message>
+        <location filename="../gui/labels.py" line="97" />
+        <source>LIGO–Virgo, 2017 (O2)</source>
+        <translation>LIGO–Virgo, 2017 (O2)</translation>
+    </message>
+    <message>
+        <location filename="../gui/labels.py" line="98" />
+        <source>The network that detected GW170817, with Virgo only just sensitive enough.</source>
+        <translation>GW170817'yi saptayan ağ; Virgo ancak yetecek kadar duyarlıydı.</translation>
+    </message>
+    <message>
+        <location filename="../gui/labels.py" line="99" />
+        <source>LIGO–Virgo–KAGRA, 2023 (O4)</source>
+        <translation>LIGO–Virgo–KAGRA, 2023 (O4)</translation>
+    </message>
+    <message>
+        <location filename="../gui/labels.py" line="100" />
+        <source>Today's network: two LIGO detectors, Virgo and KAGRA.</source>
+        <translation>Bugünkü ağ: iki LIGO dedektörü, Virgo ve KAGRA.</translation>
+    </message>
+    <message>
+        <location filename="../gui/labels.py" line="101" />
+        <source>Advanced detectors at design sensitivity</source>
+        <translation>Tasarım duyarlılığındaki ileri dedektörler</translation>
+    </message>
+    <message>
+        <location filename="../gui/labels.py" line="102" />
+        <source>What the current instruments were built to reach.</source>
+        <translation>Bugünkü araçların ulaşmak üzere yapıldığı düzey.</translation>
+    </message>
+    <message>
+        <location filename="../gui/labels.py" line="103" />
+        <source>A+ upgrade (late 2020s)</source>
+        <translation>A+ yükseltmesi (2020'lerin sonu)</translation>
+    </message>
+    <message>
+        <location filename="../gui/labels.py" line="104" />
+        <source>Upgraded mirrors and squeezed light, with LIGO-India joining.</source>
+        <translation>Yenilenmiş aynalar ve sıkıştırılmış ışık; LIGO-Hindistan da katılıyor.</translation>
+    </message>
+    <message>
+        <location filename="../gui/labels.py" line="105" />
+        <source>Einstein Telescope (2030s)</source>
+        <translation>Einstein Teleskobu (2030'lar)</translation>
+    </message>
+    <message>
+        <location filename="../gui/labels.py" line="106" />
+        <source>A ten-kilometre underground triangle: thousands of events a year, out to high redshift.</source>
+        <translation>On kilometrelik yeraltı üçgeni: yılda binlerce olay, yüksek kırmızıya kaymaya dek.</translation>
+    </message>
+    <message>
+        <location filename="../gui/labels.py" line="110" />
         <source>completed</source>
         <translation>tamamlandı</translation>
     </message>
     <message>
-        <location filename="../gui/labels.py" line="88" />
+        <location filename="../gui/labels.py" line="110" />
         <source>ready</source>
         <translation>hazır</translation>
     </message>
     <message>
-        <location filename="../gui/labels.py" line="88" />
+        <location filename="../gui/labels.py" line="110" />
         <source>not ready</source>
         <translation>hazır değil</translation>
     </message>
     <message>
-        <location filename="../gui/labels.py" line="92" />
+        <location filename="../gui/labels.py" line="114" />
         <source>s</source>
         <translation>s</translation>
     </message>
     <message>
-        <location filename="../gui/labels.py" line="92" />
+        <location filename="../gui/labels.py" line="114" />
         <location filename="../gui/simulators/powers_of_ten.py" line="78" />
         <source>minutes</source>
         <translation>dakika</translation>
     </message>
     <message>
-        <location filename="../gui/labels.py" line="92" />
+        <location filename="../gui/labels.py" line="114" />
         <location filename="../gui/simulators/powers_of_ten.py" line="77" />
         <source>hours</source>
         <translation>saat</translation>
     </message>
     <message>
-        <location filename="../gui/labels.py" line="92" />
+        <location filename="../gui/labels.py" line="114" />
         <location filename="../gui/simulators/powers_of_ten.py" line="77" />
         <source>days</source>
         <translation>gün</translation>
     </message>
     <message>
-        <location filename="../gui/labels.py" line="93" />
+        <location filename="../gui/labels.py" line="115" />
         <location filename="../gui/simulators/calculator.py" line="387" />
         <location filename="../gui/simulators/powers_of_ten.py" line="77" />
         <source>years</source>
         <translation>yıl</translation>
     </message>
     <message>
-        <location filename="../gui/labels.py" line="93" />
+        <location filename="../gui/labels.py" line="115" />
         <location filename="../gui/simulators/calculator.py" line="389" />
         <location filename="../gui/simulators/powers_of_ten.py" line="76" />
         <source>million years</source>
         <translation>milyon yıl</translation>
     </message>
     <message>
-        <location filename="../gui/labels.py" line="93" />
+        <location filename="../gui/labels.py" line="115" />
         <location filename="../gui/simulators/calculator.py" line="390" />
         <location filename="../gui/simulators/powers_of_ten.py" line="76" />
         <source>billion years</source>
         <translation>milyar yıl</translation>
     </message>
     <message>
-        <location filename="../gui/labels.py" line="94" />
+        <location filename="../gui/labels.py" line="116" />
         <location filename="../gui/simulators/powers_of_ten.py" line="78" />
         <source>seconds</source>
         <translation>saniye</translation>
     </message>
     <message>
-        <location filename="../gui/labels.py" line="94" />
+        <location filename="../gui/labels.py" line="116" />
         <location filename="../gui/simulators/powers_of_ten.py" line="81" />
         <source>nanoseconds</source>
         <translation>nanosaniye</translation>
@@ -2652,7 +2737,7 @@ parametreleri kendiniz değiştirmenize izin verir.
     </message>
     <message>
         <location filename="../gui/simulators/calculator.py" line="160" />
-        <location filename="../gui/simulators/cmb_spectrum.py" line="64" />
+        <location filename="../gui/simulators/cmb_spectrum.py" line="65" />
         <location filename="../gui/simulators/expansion.py" line="47" />
         <location filename="../gui/simulators/sandbox.py" line="48" />
         <location filename="../gui/simulators/supernova_sim.py" line="111" />
@@ -2894,250 +2979,310 @@ parametreleri kendiniz değiştirmenize izin verir.
         <translation>{mpc} Mpc  ({gly} milyar ışık yılı)</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/cmb_spectrum.py" line="31" />
+        <location filename="../gui/simulators/cmb_spectrum.py" line="32" />
         <source>&lt;b&gt;Teaching model.&lt;/b&gt; Peak positions follow the real sound horizon and distance; peak heights are approximate (about 15%). Install the optional package &lt;code&gt;camb&lt;/code&gt; to switch this simulator to exact spectra from a Boltzmann code.</source>
         <translation>&lt;b&gt;Öğretici model.&lt;/b&gt; Tepe konumları gerçek ses ufkunu ve uzaklığı izler; tepe yükseklikleri yaklaşıktır (yaklaşık %15). Bu simülatörü bir Boltzmann kodundan gelen tam tayflara geçirmek için isteğe bağlı &lt;code&gt;camb&lt;/code&gt; paketini kurun.</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/cmb_spectrum.py" line="36" />
+        <location filename="../gui/simulators/cmb_spectrum.py" line="37" />
         <source>&lt;b&gt;CAMB {version}.&lt;/b&gt; Every curve on this page is now a full Boltzmann calculation of the lensed TT spectrum — the same code research papers use. Each update takes about half a second.</source>
         <translation>&lt;b&gt;CAMB {version}.&lt;/b&gt; Bu sayfadaki her eğri artık merceklenmiş TT tayfının tam bir Boltzmann hesabıdır — araştırma makalelerinin kullandığı kodun aynısı. Her güncelleme yaklaşık yarım saniye sürer.</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/cmb_spectrum.py" line="50" />
+        <location filename="../gui/simulators/cmb_spectrum.py" line="51" />
         <source>1 · Contents of the universe</source>
         <translation>1 · Evrenin içeriği</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/cmb_spectrum.py" line="53" />
+        <location filename="../gui/simulators/cmb_spectrum.py" line="54" />
         <source>Ωb h²  ordinary matter</source>
         <translation>Ωb h²  sıradan madde</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/cmb_spectrum.py" line="54" />
+        <location filename="../gui/simulators/cmb_spectrum.py" line="55" />
         <source>Baryon density</source>
         <translation>Baryon yoğunluğu</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/cmb_spectrum.py" line="54" />
+        <location filename="../gui/simulators/cmb_spectrum.py" line="55" />
         <source>More baryons make the plasma heavier. Compressions (odd peaks: 1st, 3rd) get stronger than rarefactions (even peaks), and damping moves to smaller scales.</source>
         <translation>Daha çok baryon plazmayı ağırlaştırır. Sıkışmalar (tek tepeler: 1., 3.) seyrelmelerden (çift tepeler) daha güçlü olur ve sönümleme daha küçük ölçeklere kayar.</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/cmb_spectrum.py" line="58" />
+        <location filename="../gui/simulators/cmb_spectrum.py" line="59" />
         <source>Ωc h²  dark matter</source>
         <translation>Ωc h²  karanlık madde</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/cmb_spectrum.py" line="59" />
+        <location filename="../gui/simulators/cmb_spectrum.py" line="60" />
         <source>Cold dark matter density</source>
         <translation>Soğuk karanlık madde yoğunluğu</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/cmb_spectrum.py" line="59" />
+        <location filename="../gui/simulators/cmb_spectrum.py" line="60" />
         <source>More dark matter means matter dominates earlier, so gravitational potentials decay less and the radiation driving that boosts the peaks weakens.</source>
         <translation>Daha çok karanlık madde, maddenin daha erken baskın olması demektir; kütleçekim potansiyelleri daha az sönümlenir ve tepeleri yükselten ışınım sürüklemesi zayıflar.</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/cmb_spectrum.py" line="63" />
+        <location filename="../gui/simulators/cmb_spectrum.py" line="64" />
         <source>h = H0 / 100</source>
         <translation>h = H0 / 100</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/cmb_spectrum.py" line="64" />
+        <location filename="../gui/simulators/cmb_spectrum.py" line="65" />
         <source>Changes the distance to the last scattering surface and therefore the angle the sound horizon covers. The peaks shift sideways.</source>
         <translation>Son saçılma yüzeyine olan uzaklığı, dolayısıyla ses ufkunun kapladığı açıyı değiştirir. Tepeler yana kayar.</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/cmb_spectrum.py" line="68" />
+        <location filename="../gui/simulators/cmb_spectrum.py" line="69" />
         <source>Ωk  curvature</source>
         <translation>Ωk  eğrilik</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/cmb_spectrum.py" line="69" />
+        <location filename="../gui/simulators/cmb_spectrum.py" line="70" />
         <source>Spatial curvature</source>
         <translation>Uzaysal eğrilik</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/cmb_spectrum.py" line="69" />
+        <location filename="../gui/simulators/cmb_spectrum.py" line="70" />
         <source>Positive (open): light rays diverge, spots look smaller, peaks move to higher ℓ. Negative (closed): spots look larger, peaks move to lower ℓ. Dark energy is adjusted so that the total adds up.</source>
         <translation>Pozitif (açık): ışınlar ıraksar, lekeler daha küçük görünür, tepeler yüksek ℓ'ye kayar. Negatif (kapalı): lekeler daha büyük görünür, tepeler düşük ℓ'ye kayar. Toplam tutsun diye karanlık enerji ayarlanır.</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/cmb_spectrum.py" line="77" />
+        <location filename="../gui/simulators/cmb_spectrum.py" line="78" />
         <source>2 · Initial fluctuations and reionisation</source>
         <translation>2 · İlksel dalgalanmalar ve yeniden iyonlaşma</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/cmb_spectrum.py" line="80" />
+        <location filename="../gui/simulators/cmb_spectrum.py" line="81" />
         <source>nₛ  spectral index</source>
         <translation>nₛ  spektral indis</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/cmb_spectrum.py" line="81" />
+        <location filename="../gui/simulators/cmb_spectrum.py" line="82" />
         <source>Spectral index</source>
         <translation>Spektral indis</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/cmb_spectrum.py" line="81" />
+        <location filename="../gui/simulators/cmb_spectrum.py" line="82" />
         <source>nₛ = 1 means equal strength on all scales. Values below 1 (Planck: 0.965) give slightly weaker small-scale fluctuations, as predicted by inflation.</source>
         <translation>nₛ = 1 tüm ölçeklerde eşit güç demektir. 1'in altındaki değerler (Planck: 0,965) küçük ölçekli dalgalanmaları biraz zayıflatır; şişme kuramının öngörüsü de budur.</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/cmb_spectrum.py" line="85" />
+        <location filename="../gui/simulators/cmb_spectrum.py" line="86" />
         <source>Aₛ × 10⁹  amplitude</source>
         <translation>Aₛ × 10⁹  genlik</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/cmb_spectrum.py" line="86" />
+        <location filename="../gui/simulators/cmb_spectrum.py" line="87" />
         <location filename="../gui/simulators/nbody_sim.py" line="81" />
         <source>Amplitude</source>
         <translation>Genlik</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/cmb_spectrum.py" line="86" />
+        <location filename="../gui/simulators/cmb_spectrum.py" line="87" />
         <source>Overall strength of the primordial fluctuations. Scales the whole spectrum.</source>
         <translation>İlksel dalgalanmaların genel gücü. Tüm tayfı ölçekler.</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/cmb_spectrum.py" line="89" />
+        <location filename="../gui/simulators/cmb_spectrum.py" line="90" />
         <source>τ  reionisation optical depth</source>
         <translation>τ  yeniden iyonlaşma optik derinliği</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/cmb_spectrum.py" line="90" />
+        <location filename="../gui/simulators/cmb_spectrum.py" line="91" />
         <source>Optical depth</source>
         <translation>Optik derinlik</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/cmb_spectrum.py" line="90" />
+        <location filename="../gui/simulators/cmb_spectrum.py" line="91" />
         <source>When the first stars reionised the universe, free electrons scattered some CMB photons again, smoothing small-scale fluctuations by a factor e^(−2τ).</source>
         <translation>İlk yıldızlar evreni yeniden iyonlaştırdığında serbest elektronlar bazı KMF fotonlarını yeniden saçtı ve küçük ölçekli dalgalanmaları e^(−2τ) çarpanıyla yumuşattı.</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/cmb_spectrum.py" line="97" />
+        <location filename="../gui/simulators/cmb_spectrum.py" line="98" />
         <source>3 · How the spectrum is computed</source>
         <translation>3 · Tayf nasıl hesaplanıyor</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/cmb_spectrum.py" line="100" />
+        <location filename="../gui/simulators/cmb_spectrum.py" line="101" />
         <source>Teaching model (instant)</source>
         <translation>Öğretici model (anında)</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/cmb_spectrum.py" line="101" />
+        <location filename="../gui/simulators/cmb_spectrum.py" line="102" />
         <source>CAMB — exact Boltzmann code</source>
         <translation>CAMB — tam Boltzmann kodu</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/cmb_spectrum.py" line="105" />
+        <location filename="../gui/simulators/cmb_spectrum.py" line="106" />
         <source>Engine</source>
         <translation>Motor</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/cmb_spectrum.py" line="106" />
-        <location filename="../gui/simulators/cmb_spectrum.py" line="317" />
+        <location filename="../gui/simulators/cmb_spectrum.py" line="107" />
+        <location filename="../gui/simulators/cmb_spectrum.py" line="428" />
         <source>Two engines</source>
         <translation>İki motor</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/cmb_spectrum.py" line="107" />
+        <location filename="../gui/simulators/cmb_spectrum.py" line="108" />
         <source>The teaching model is an analytic approximation that reacts instantly, which is what you want while dragging a slider. CAMB solves the Boltzmann equations properly: slower, but exact. Comparing the two is a good way to see what the approximation gets right.</source>
         <translation>Öğretici model, bir kaydırıcıyı sürüklerken istediğiniz gibi anında tepki veren analitik bir yaklaşıklıktır. CAMB, Boltzmann denklemlerini gerçekten çözer: daha yavaş ama kesin. İkisini karşılaştırmak, yaklaşıklığın neyi doğru yakaladığını görmenin iyi bir yoludur.</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/cmb_spectrum.py" line="116" />
-        <source>4 · Display</source>
-        <translation>4 · Görünüm</translation>
+        <location filename="../gui/simulators/cmb_spectrum.py" line="117" />
+        <source>4 · Polarisation</source>
+        <translation>4 · Polarizasyon</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/cmb_spectrum.py" line="118" />
+        <location filename="../gui/simulators/cmb_spectrum.py" line="120" />
+        <source>Tensor-to-scalar ratio r</source>
+        <translation>Tensör–skaler oranı r</translation>
+    </message>
+    <message>
+        <location filename="../gui/simulators/cmb_spectrum.py" line="121" />
+        <source>The signature of inflation</source>
+        <translation>Şişmenin imzası</translation>
+    </message>
+    <message>
+        <location filename="../gui/simulators/cmb_spectrum.py" line="122" />
+        <source>Gravitational waves from inflation are the only thing that can make B modes at recombination. Their strength relative to the density ripples is r, and measuring it would give the energy scale at which inflation happened.</source>
+        <translation>Yeniden birleşme sırasında B kiplerini yaratabilecek tek şey şişmeden gelen kütleçekim dalgalarıdır. Bunların yoğunluk dalgacıklarına göre gücü r'dir ve onu ölçmek şişmenin gerçekleştiği enerji ölçeğini verir.</translation>
+    </message>
+    <message>
+        <location filename="../gui/simulators/cmb_spectrum.py" line="127" />
+        <source>Lensing amplitude A_lens</source>
+        <translation>Merceklenme genliği A_lens</translation>
+    </message>
+    <message>
+        <location filename="../gui/simulators/cmb_spectrum.py" line="128" />
+        <source>Delensing</source>
+        <translation>Mercek giderme</translation>
+    </message>
+    <message>
+        <location filename="../gui/simulators/cmb_spectrum.py" line="129" />
+        <source>Lensing by the matter between us and the CMB bends the E modes and turns a little of them into B modes. That foreground of our own making can be subtracted if the matter distribution is known well enough: A_lens = 0.1 means 90% removed.</source>
+        <translation>Bizimle KMAI arasındaki maddenin merceklemesi E kiplerini büker ve bir kısmını B kiplerine çevirir. Kendi yarattığımız bu ön plan, madde dağılımı yeterince iyi bilinirse çıkarılabilir: A_lens = 0,1 %90'ının kaldırıldığı anlamına gelir.</translation>
+    </message>
+    <message>
+        <location filename="../gui/simulators/cmb_spectrum.py" line="134" />
+        <source>Polarised dust at ℓ = 80 (μK²)</source>
+        <translation>ℓ = 80'de polarize toz (μK²)</translation>
+    </message>
+    <message>
+        <location filename="../gui/simulators/cmb_spectrum.py" line="136" />
+        <source>The Galaxy is in the way</source>
+        <translation>Samanyolu araya giriyor</translation>
+    </message>
+    <message>
+        <location filename="../gui/simulators/cmb_spectrum.py" line="137" />
+        <source>Spinning dust grains in the Milky Way align with the magnetic field and emit polarised light, with B modes of their own. In 2014 BICEP2 announced r = 0.2 from a signal that turned out to be mostly this.</source>
+        <translation>Samanyolu'ndaki dönen toz taneleri manyetik alanla hizalanır ve kendi B kiplerini taşıyan polarize ışık yayar. 2014'te BICEP2, büyük ölçüde bundan ibaret çıkan bir sinyalden r = 0,2 duyurdu.</translation>
+    </message>
+    <message>
+        <location filename="../gui/simulators/cmb_spectrum.py" line="145" />
+        <source>5 · Display</source>
+        <translation>5 · Görünüm</translation>
+    </message>
+    <message>
+        <location filename="../gui/simulators/cmb_spectrum.py" line="147" />
         <source>Show the Planck 2018 model for comparison</source>
         <translation>Karşılaştırma için Planck 2018 modelini göster</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/cmb_spectrum.py" line="120" />
+        <location filename="../gui/simulators/cmb_spectrum.py" line="149" />
         <source>Logarithmic ℓ axis</source>
         <translation>Logaritmik ℓ ekseni</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/cmb_spectrum.py" line="121" />
+        <location filename="../gui/simulators/cmb_spectrum.py" line="150" />
         <source>Mark the acoustic peaks</source>
         <translation>Akustik tepeleri işaretle</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/cmb_spectrum.py" line="126" />
+        <location filename="../gui/simulators/cmb_spectrum.py" line="155" />
         <location filename="../gui/simulators/sandbox.py" line="139" />
         <source>Reset to Planck 2018</source>
         <translation>Planck 2018'e sıfırla</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/cmb_spectrum.py" line="131" />
+        <location filename="../gui/simulators/cmb_spectrum.py" line="160" />
         <source>What the model gives</source>
         <translation>Modelin verdikleri</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/cmb_spectrum.py" line="145" />
+        <location filename="../gui/simulators/cmb_spectrum.py" line="177" />
         <source>Power spectrum</source>
         <translation>Güç spektrumu</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/cmb_spectrum.py" line="146" />
+        <location filename="../gui/simulators/cmb_spectrum.py" line="178" />
+        <source>E modes and TE</source>
+        <translation>E kipleri ve TE</translation>
+    </message>
+    <message>
+        <location filename="../gui/simulators/cmb_spectrum.py" line="179" />
+        <source>B modes</source>
+        <translation>B kipleri</translation>
+    </message>
+    <message>
+        <location filename="../gui/simulators/cmb_spectrum.py" line="180" />
         <source>What the sky looks like</source>
         <translation>Gökyüzü nasıl görünüyor</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/cmb_spectrum.py" line="164" />
+        <location filename="../gui/simulators/cmb_spectrum.py" line="199" />
         <source>Exact spectra. Sliders react after a short pause.</source>
         <translation>Tam tayflar. Kaydırıcılar kısa bir duraklamadan sonra tepki verir.</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/cmb_spectrum.py" line="168" />
+        <location filename="../gui/simulators/cmb_spectrum.py" line="203" />
         <source>Instant approximation.</source>
         <translation>Anında yaklaşıklık.</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/cmb_spectrum.py" line="169" />
+        <location filename="../gui/simulators/cmb_spectrum.py" line="204" />
         <source>CAMB is not installed; only the teaching model is available.</source>
         <translation>CAMB kurulu değil; yalnızca öğretici model kullanılabilir.</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/cmb_spectrum.py" line="184" />
+        <location filename="../gui/simulators/cmb_spectrum.py" line="219" />
         <source>&lt;b&gt;CAMB could not compute this universe:&lt;/b&gt; {error}</source>
         <translation>&lt;b&gt;CAMB bu evreni hesaplayamadı:&lt;/b&gt; {error}</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/cmb_spectrum.py" line="230" />
+        <location filename="../gui/simulators/cmb_spectrum.py" line="266" />
         <source>&lt;b&gt;This combination has no Big Bang.&lt;/b&gt; Reduce the curvature or dark matter.</source>
         <translation>&lt;b&gt;Bu bileşimde Büyük Patlama yok.&lt;/b&gt; Eğriliği ya da karanlık maddeyi azaltın.</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/cmb_spectrum.py" line="237" />
+        <location filename="../gui/simulators/cmb_spectrum.py" line="273" />
         <source>Peak {number}: ℓ = &lt;b&gt;{ell}&lt;/b&gt; ({height} μK²; Planck model ℓ = {reference})</source>
         <translation>Tepe {number}: ℓ = &lt;b&gt;{ell}&lt;/b&gt; ({height} μK²; Planck modeli ℓ = {reference})</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/cmb_spectrum.py" line="242" />
+        <location filename="../gui/simulators/cmb_spectrum.py" line="278" />
         <source>Height ratio peak 1 / peak 2: &lt;b&gt;{ratio}&lt;/b&gt;&lt;br&gt;Sound horizon at decoupling rₛ: &lt;b&gt;{sound_horizon} Mpc&lt;/b&gt;&lt;br&gt;Distance to last scattering: &lt;b&gt;{distance} Gpc&lt;/b&gt;&lt;br&gt;Acoustic angle θ*: &lt;b&gt;{angle}°&lt;/b&gt;&lt;br&gt;Decoupling redshift z*: &lt;b&gt;{z_star}&lt;/b&gt;&lt;br&gt;Baryon loading R*: &lt;b&gt;{loading}&lt;/b&gt;&lt;br&gt;Derived: Ωm = {omega_m}, ΩΛ = {omega_lambda}, age = {age} Gyr</source>
         <translation>1. tepenin 2. tepeye yükseklik oranı: &lt;b&gt;{ratio}&lt;/b&gt;&lt;br&gt;Ayrışmadaki ses ufku rₛ: &lt;b&gt;{sound_horizon} Mpc&lt;/b&gt;&lt;br&gt;Son saçılmaya uzaklık: &lt;b&gt;{distance} Gpc&lt;/b&gt;&lt;br&gt;Akustik açı θ*: &lt;b&gt;{angle}°&lt;/b&gt;&lt;br&gt;Ayrışma kırmızıya kayması z*: &lt;b&gt;{z_star}&lt;/b&gt;&lt;br&gt;Baryon yükü R*: &lt;b&gt;{loading}&lt;/b&gt;&lt;br&gt;Türetilen: Ωm = {omega_m}, ΩΛ = {omega_lambda}, yaş = {age} Gyr</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/cmb_spectrum.py" line="312" />
+        <location filename="../gui/simulators/cmb_spectrum.py" line="423" />
         <source>Both engines are available: compare them with the **Engine** box.</source>
         <translation>Her iki motor da kullanılabilir: **Motor** kutusuyla karşılaştırın.</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/cmb_spectrum.py" line="314" />
+        <location filename="../gui/simulators/cmb_spectrum.py" line="425" />
         <source>Only the teaching model is available here. `pip install camb` adds the exact engine.</source>
         <translation>Burada yalnızca öğretici model var. `pip install camb` tam motoru ekler.</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/cmb_spectrum.py" line="318" />
+        <location filename="../gui/simulators/cmb_spectrum.py" line="429" />
         <source>Reading the spectrum</source>
         <translation>Tayfı okumak</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/cmb_spectrum.py" line="319" />
+        <location filename="../gui/simulators/cmb_spectrum.py" line="430" />
         <source>- **Left (ℓ &lt; 50):** regions larger than the horizon at decoupling, the flat Sachs–Wolfe plateau.
 - **Peaks:** sound waves caught at maximum compression (1, 3, 5) or rarefaction (2, 4).
 - **Right (ℓ &gt; 1300):** photon diffusion erases the smallest ripples (Silk damping).</source>
@@ -3793,7 +3938,8 @@ parametreleri kendiniz değiştirmenize izin verir.
     <message>
         <location filename="../gui/simulators/ladder_sim.py" line="37" />
         <location filename="../gui/simulators/olbers_sim.py" line="24" />
-        <location filename="../gui/simulators/slice_sim.py" line="29" />
+        <location filename="../gui/simulators/siren_sim.py" line="31" />
+        <location filename="../gui/simulators/slice_sim.py" line="30" />
         <location filename="../gui/simulators/survey_sim.py" line="29" />
         <source>Custom</source>
         <translation>Özel</translation>
@@ -3827,7 +3973,7 @@ parametreleri kendiniz değiştirmenize izin verir.
         <location filename="../gui/simulators/ladder_sim.py" line="51" />
         <location filename="../gui/simulators/mcmc_sim.py" line="74" />
         <location filename="../gui/simulators/nbody_sim.py" line="110" />
-        <location filename="../gui/simulators/slice_sim.py" line="41" />
+        <location filename="../gui/simulators/slice_sim.py" line="42" />
         <source>Random seed</source>
         <translation>Rastgelelik tohumu</translation>
     </message>
@@ -6039,71 +6185,141 @@ En büyük terimi yarıya indirmek, en küçüğünü tamamen yok etmekten çok 
     </message>
     <message>
         <location filename="../gui/simulators/registry.py" line="581" />
+        <source>Standard Siren Explorer</source>
+        <translation>Standart Siren Gezgini</translation>
+    </message>
+    <message>
+        <location filename="../gui/simulators/registry.py" line="582" />
+        <source>Measure H₀ from a gravitational-wave merger.</source>
+        <translation>Bir kütleçekim dalgası birleşmesinden H₀'ı ölçün.</translation>
+    </message>
+    <message>
+        <location filename="../gui/simulators/registry.py" line="584" />
+        <source>A merging pair of neutron stars or black holes gives its own distance away: relativity fixes the amplitude of the wave, so the strain that arrives here is a distance with no calibration behind it. Add the redshift of the host galaxy and you have H₀ without a single rung of the distance ladder — if you can find the host, and if you can tell how the binary was tilted.</source>
+        <translation>Birleşen bir nötron yıldızı ya da karadelik çifti kendi uzaklığını ele verir: görelilik dalganın genliğini belirler, bu yüzden buraya ulaşan gerinim arkasında hiçbir kalibrasyon olmayan bir uzaklıktır. Buna konak gökadanın kırmızıya kaymasını ekleyin ve uzaklık merdiveninin tek bir basamağı olmadan H₀'ı elde edin — konağı bulabilirseniz ve çiftin ne kadar eğik olduğunu söyleyebilirseniz.</translation>
+    </message>
+    <message>
+        <location filename="../gui/simulators/registry.py" line="591" />
+        <source>Start from &lt;b&gt;GW170817&lt;/b&gt;, the one merger so far whose host galaxy was identified.</source>
+        <translation>Şu ana dek konak gökadası belirlenmiş tek birleşme olan &lt;b&gt;GW170817&lt;/b&gt;'den başlayın.</translation>
+    </message>
+    <message>
+        <location filename="../gui/simulators/registry.py" line="592" />
+        <source>Watch the &lt;b&gt;chirp&lt;/b&gt;: its rising frequency gives the masses, its amplitude the distance.</source>
+        <translation>&lt;b&gt;Cıvıltıyı&lt;/b&gt; izleyin: yükselen frekansı kütleleri, genliği uzaklığı verir.</translation>
+    </message>
+    <message>
+        <location filename="../gui/simulators/registry.py" line="594" />
+        <source>Open &lt;b&gt;Distance vs inclination&lt;/b&gt; to see why the distance error is so lopsided.</source>
+        <translation>Uzaklık hatasının neden bu kadar çarpık olduğunu görmek için &lt;b&gt;Uzaklık ve eğiklik&lt;/b&gt; sekmesini açın.</translation>
+    </message>
+    <message>
+        <location filename="../gui/simulators/registry.py" line="595" />
+        <source>Change the &lt;b&gt;detector network&lt;/b&gt;: sensitivity sets the reach, the number of sites sets the sky area.</source>
+        <translation>&lt;b&gt;Dedektör ağını&lt;/b&gt; değiştirin: duyarlılık erişimi, istasyon sayısı gökyüzü alanını belirler.</translation>
+    </message>
+    <message>
+        <location filename="../gui/simulators/registry.py" line="597" />
+        <source>Turn off &lt;b&gt;the host galaxy is known&lt;/b&gt; to make it a dark siren and watch the candidates multiply.</source>
+        <translation>Karanlık bir sirene dönüştürmek için &lt;b&gt;konak gökada biliniyor&lt;/b&gt; seçeneğini kapatın ve adayların nasıl çoğaldığını izleyin.</translation>
+    </message>
+    <message>
+        <location filename="../gui/simulators/registry.py" line="599" />
+        <source>Raise the &lt;b&gt;number of events&lt;/b&gt; until the error crosses the 2% line.</source>
+        <translation>Hata %2 çizgisini geçene dek &lt;b&gt;olay sayısını&lt;/b&gt; yükseltin.</translation>
+    </message>
+    <message>
+        <location filename="../gui/simulators/registry.py" line="602" />
+        <source>Reproduce GW170817: 40 Mpc, SNR 32, H₀ to about 15%. Which error dominates?</source>
+        <translation>GW170817'yi yeniden üretin: 40 Mpc, SNR 32, H₀ yaklaşık %15. Hangi hata baskın?</translation>
+    </message>
+    <message>
+        <location filename="../gui/simulators/registry.py" line="603" />
+        <source>Move the same merger to 400 Mpc. What happens first — the SNR or the host?</source>
+        <translation>Aynı birleşmeyi 400 Mpc'ye taşıyın. Önce hangisi tükenir — SNR mi, konak mı?</translation>
+    </message>
+    <message>
+        <location filename="../gui/simulators/registry.py" line="604" />
+        <source>Compare a face-on and an edge-on binary at the same distance. Which is measured better?</source>
+        <translation>Aynı uzaklıkta yüzü dönük ve kenarı dönük bir çifti karşılaştırın. Hangisi daha iyi ölçülür?</translation>
+    </message>
+    <message>
+        <location filename="../gui/simulators/registry.py" line="605" />
+        <source>How many bright sirens does it take to beat the Hubble tension at 2%?</source>
+        <translation>Hubble gerilimini %2'de aşmak kaç parlak siren gerektirir?</translation>
+    </message>
+    <message>
+        <location filename="../gui/simulators/registry.py" line="606" />
+        <source>Switch to the Einstein Telescope. How far can a neutron-star merger be heard?</source>
+        <translation>Einstein Teleskobu'na geçin. Bir nötron yıldızı birleşmesi ne kadar uzaktan duyulabilir?</translation>
+    </message>
+    <message>
+        <location filename="../gui/simulators/registry.py" line="615" />
         <source>Redshift Survey Slice</source>
         <translation>Kırmızıya Kayma Taraması Dilimi</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/registry.py" line="582" />
+        <location filename="../gui/simulators/registry.py" line="616" />
         <source>Build a cone diagram and find the cosmic web in it.</source>
         <translation>Bir koni diyagramı kurun ve içindeki kozmik ağı bulun.</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/registry.py" line="584" />
+        <location filename="../gui/simulators/registry.py" line="618" />
         <source>A mock catalogue: a simulated universe, observed the way a telescope would observe it. Galaxies are sampled from a density field grown from random initial conditions, then placed at the distance their redshift implies. Switch the observing effects on one at a time and watch what each of them does to the map — and to the clustering measured from it.</source>
         <translation>Sahte bir katalog: benzetilmiş bir evren, bir teleskobun gözleyeceği gibi gözlenmiş. Gökadalar rastgele başlangıç koşullarından büyütülen bir yoğunluk alanından örneklenir, sonra kırmızıya kaymalarının gösterdiği uzaklığa konur. Gözlem etkilerini teker teker açın ve her birinin haritaya — ve haritadan ölçülen kümelenmeye — ne yaptığını izleyin.</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/registry.py" line="590" />
+        <location filename="../gui/simulators/registry.py" line="624" />
         <source>Start from a &lt;b&gt;survey&lt;/b&gt;: CfA2 and SDSS are the real slices, &lt;b&gt;the true universe&lt;/b&gt; has no observing effects at all.</source>
         <translation>Bir &lt;b&gt;taramadan&lt;/b&gt; başlayın: CfA2 ve SDSS gerçek dilimlerdir, &lt;b&gt;gerçek evrende&lt;/b&gt; ise hiçbir gözlem etkisi yoktur.</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/registry.py" line="592" />
+        <location filename="../gui/simulators/registry.py" line="626" />
         <source>Read the &lt;b&gt;cone diagram&lt;/b&gt;: we are at the point, distance grows outwards, and the filaments and voids are the cosmic web.</source>
         <translation>&lt;b&gt;Koni diyagramını&lt;/b&gt; okuyun: uçtaki nokta biziz, uzaklık dışa doğru artar, ve liflerle boşluklar kozmik ağdır.</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/registry.py" line="594" />
+        <location filename="../gui/simulators/registry.py" line="628" />
         <source>Open &lt;b&gt;Truth vs observed&lt;/b&gt; to see the same galaxies with and without their motions.</source>
         <translation>Aynı gökadaları hareketleriyle ve hareketleri olmadan görmek için &lt;b&gt;Gerçek ile gözlenen&lt;/b&gt; sekmesini açın.</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/registry.py" line="595" />
+        <location filename="../gui/simulators/registry.py" line="629" />
         <source>Raise the &lt;b&gt;cluster velocity dispersion&lt;/b&gt; until the fingers of God are unmistakable.</source>
         <translation>Tanrı'nın parmakları açıkça görünene dek &lt;b&gt;küme hız dağılımını&lt;/b&gt; yükseltin.</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/registry.py" line="596" />
+        <location filename="../gui/simulators/registry.py" line="630" />
         <source>Set an &lt;b&gt;apparent magnitude limit&lt;/b&gt; and watch the &lt;b&gt;Selection&lt;/b&gt; tab: the far edge empties out because of the telescope, not the universe.</source>
         <translation>Bir &lt;b&gt;görünür kadir sınırı&lt;/b&gt; koyun ve &lt;b&gt;Seçim&lt;/b&gt; sekmesini izleyin: uzak kenar evren yüzünden değil, teleskop yüzünden boşalır.</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/registry.py" line="598" />
+        <location filename="../gui/simulators/registry.py" line="632" />
         <source>Change the &lt;b&gt;random seed&lt;/b&gt;: a different universe, the same statistics.</source>
         <translation>&lt;b&gt;Rastgele tohumu&lt;/b&gt; değiştirin: farklı bir evren, aynı istatistikler.</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/registry.py" line="601" />
+        <location filename="../gui/simulators/registry.py" line="635" />
         <source>Compare the true universe with the observed one. Which structures move, and which way?</source>
         <translation>Gerçek evreni gözlenenle karşılaştırın. Hangi yapılar, hangi yöne kayıyor?</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/registry.py" line="602" />
+        <location filename="../gui/simulators/registry.py" line="636" />
         <source>Turn the peculiar velocities off but keep the cluster dispersion. What is left?</source>
         <translation>Öz hızları kapatın ama küme dağılımını koruyun. Geriye ne kalıyor?</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/registry.py" line="603" />
+        <location filename="../gui/simulators/registry.py" line="637" />
         <source>Raise the redshift error to 0.02. How much of the cosmic web survives?</source>
         <translation>Kırmızıya kayma hatasını 0,02'ye çıkarın. Kozmik ağın ne kadarı ayakta kalıyor?</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/registry.py" line="604" />
+        <location filename="../gui/simulators/registry.py" line="638" />
         <source>In the correlation function, find the scale below which the mock has no structure.</source>
         <translation>Korelasyon fonksiyonunda, sahte evrenin altında hiç yapı taşımadığı ölçeği bulun.</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/registry.py" line="605" />
+        <location filename="../gui/simulators/registry.py" line="639" />
         <source>Raise the bias to 2.5. The galaxies clump harder — does ξ change shape or only height?</source>
         <translation>Yanlılığı 2,5'e çıkarın. Gökadalar daha güçlü kümeleniyor — ξ'nin biçimi mi değişiyor, yoksa yalnızca yüksekliği mi?</translation>
     </message>
@@ -6606,253 +6822,467 @@ En büyük terimi yarıya indirmek, en küçüğünü tamamen yok etmekten çok 
         <translation>Gereksinimler güncel ölçümlerin yuvarlanmış özetleridir, kesin istatistiksel sınırlar değildir.</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/slice_sim.py" line="26" />
+        <location filename="../gui/simulators/siren_sim.py" line="28" />
+        <location filename="../gui/simulators/slice_sim.py" line="27" />
         <location filename="../gui/simulators/survey_sim.py" line="26" />
         <source>0 · Start from</source>
         <translation>0 · Şuradan başla</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/slice_sim.py" line="32" />
+        <location filename="../gui/simulators/siren_sim.py" line="34" />
+        <source>Event</source>
+        <translation>Olay</translation>
+    </message>
+    <message>
+        <location filename="../gui/simulators/siren_sim.py" line="35" />
+        <source>Real and imagined mergers</source>
+        <translation>Gerçek ve hayali birleşmeler</translation>
+    </message>
+    <message>
+        <location filename="../gui/simulators/siren_sim.py" line="36" />
+        <source>GW170817 is the only standard siren so far with an identified host galaxy. The others show what happens without one, and what the next generation of detectors will do.</source>
+        <translation>GW170817, şimdiye dek konak gökadası belirlenmiş tek standart sirendir. Diğerleri konak olmadığında ne olduğunu ve yeni kuşak dedektörlerin neler yapacağını gösterir.</translation>
+    </message>
+    <message>
+        <location filename="../gui/simulators/siren_sim.py" line="40" />
+        <source>1 · The merger</source>
+        <translation>1 · Birleşme</translation>
+    </message>
+    <message>
+        <location filename="../gui/simulators/siren_sim.py" line="43" />
+        <source>First mass (M☉)</source>
+        <translation>Birinci kütle (M☉)</translation>
+    </message>
+    <message>
+        <location filename="../gui/simulators/siren_sim.py" line="44" />
+        <source>Chirp mass</source>
+        <translation>Cıvıltı kütlesi</translation>
+    </message>
+    <message>
+        <location filename="../gui/simulators/siren_sim.py" line="45" />
+        <source>The wave depends on the two masses almost only through the combination M_c = (m₁m₂)^(3/5)/(m₁+m₂)^(1/5). Heavier binaries radiate more, so they are heard further away — but they merge at a lower frequency and last a shorter time in band.</source>
+        <translation>Dalga, iki kütleye neredeyse yalnızca M_c = (m₁m₂)^(3/5)/(m₁+m₂)^(1/5) birleşimiyle bağlıdır. Daha ağır çiftler daha çok ışıma yapar, bu yüzden daha uzaktan duyulurlar — ama daha düşük bir frekansta birleşir ve bantta daha kısa kalırlar.</translation>
+    </message>
+    <message>
+        <location filename="../gui/simulators/siren_sim.py" line="49" />
+        <source>Second mass (M☉)</source>
+        <translation>İkinci kütle (M☉)</translation>
+    </message>
+    <message>
+        <location filename="../gui/simulators/siren_sim.py" line="50" />
+        <source>True distance (Mpc)</source>
+        <translation>Gerçek uzaklık (Mpc)</translation>
+    </message>
+    <message>
+        <location filename="../gui/simulators/siren_sim.py" line="52" />
+        <source>Inclination ι (°)</source>
+        <translation>Eğiklik ι (°)</translation>
+    </message>
+    <message>
+        <location filename="../gui/simulators/siren_sim.py" line="53" />
+        <source>Face-on or edge-on</source>
+        <translation>Yüzü dönük mü, kenarı dönük mü</translation>
+    </message>
+    <message>
+        <location filename="../gui/simulators/siren_sim.py" line="54" />
+        <source>The angle between the orbital axis and our line of sight. A face-on binary is almost three times louder than an edge-on one, so a distant face-on merger and a nearby edge-on one make nearly the same signal. This is the degeneracy that limits every siren.</source>
+        <translation>Yörünge ekseniyle görüş doğrultumuz arasındaki açı. Yüzü dönük bir çift, kenarı dönük olandan neredeyse üç kat daha gürültülüdür; bu yüzden uzaktaki yüzü dönük bir birleşme ile yakındaki kenarı dönük bir birleşme neredeyse aynı sinyali verir. Her sireni sınırlayan dejenerasyon budur.</translation>
+    </message>
+    <message>
+        <location filename="../gui/simulators/siren_sim.py" line="63" />
+        <source>2 · Who is listening</source>
+        <translation>2 · Kim dinliyor</translation>
+    </message>
+    <message>
+        <location filename="../gui/simulators/siren_sim.py" line="69" />
+        <source>Detector network</source>
+        <translation>Dedektör ağı</translation>
+    </message>
+    <message>
+        <location filename="../gui/simulators/siren_sim.py" line="70" />
+        <source>Why the number of sites matters</source>
+        <translation>İstasyon sayısı neden önemli</translation>
+    </message>
+    <message>
+        <location filename="../gui/simulators/siren_sim.py" line="71" />
+        <source>Sensitivity sets how far a merger can be heard. The number of widely separated sites sets how well it can be &lt;b&gt;located&lt;/b&gt;: the sky position comes from the difference in arrival times, so two detectors give a ring and three give a patch.</source>
+        <translation>Duyarlılık bir birleşmenin ne kadar uzaktan duyulabileceğini belirler. Birbirinden uzak istasyon sayısı ise onun ne kadar iyi &lt;b&gt;konumlandırılabileceğini&lt;/b&gt; belirler: gökyüzü konumu varış zamanlarındaki farktan gelir, bu yüzden iki dedektör bir halka, üçü bir yama verir.</translation>
+    </message>
+    <message>
+        <location filename="../gui/simulators/siren_sim.py" line="76" />
+        <source>3 · Finding the redshift</source>
+        <translation>3 · Kırmızıya kaymayı bulmak</translation>
+    </message>
+    <message>
+        <location filename="../gui/simulators/siren_sim.py" line="78" />
+        <source>A counterpart was seen: the host galaxy is known</source>
+        <translation>Bir karşılık görüldü: konak gökada biliniyor</translation>
+    </message>
+    <message>
+        <location filename="../gui/simulators/siren_sim.py" line="82" />
+        <source>Uncertainty on the host's velocity (km/s)</source>
+        <translation>Konağın hızındaki belirsizlik (km/s)</translation>
+    </message>
+    <message>
+        <location filename="../gui/simulators/siren_sim.py" line="83" />
+        <source>Peculiar velocity</source>
+        <translation>Öz hız</translation>
+    </message>
+    <message>
+        <location filename="../gui/simulators/siren_sim.py" line="84" />
+        <source>A galaxy's redshift is the expansion plus its own motion through its group or cluster, which is a few hundred km/s. Nearby, that is the dominant error: at 40 Mpc it is 5% of the recession velocity.</source>
+        <translation>Bir gökadanın kırmızıya kayması, genişleme artı kendi grubu ya da kümesi içindeki hareketidir; bu da saniyede birkaç yüz kilometredir. Yakında baskın hata budur: 40 Mpc'de uzaklaşma hızının %5'i eder.</translation>
+    </message>
+    <message>
+        <location filename="../gui/simulators/siren_sim.py" line="89" />
+        <source>Number of events like this one</source>
+        <translation>Bunun gibi olay sayısı</translation>
+    </message>
+    <message>
+        <location filename="../gui/simulators/siren_sim.py" line="90" />
+        <source>One siren is not enough</source>
+        <translation>Tek siren yetmez</translation>
+    </message>
+    <message>
+        <location filename="../gui/simulators/siren_sim.py" line="91" />
+        <source>Each event gives an independent measurement, so the error falls as 1/√N. The question every forecast asks is how many events it takes to say something the Hubble tension has to answer to.</source>
+        <translation>Her olay bağımsız bir ölçüm verir, bu yüzden hata 1/√N ile düşer. Her öngörünün sorduğu soru, Hubble geriliminin yanıt vermek zorunda kalacağı bir şey söylemek için kaç olay gerektiğidir.</translation>
+    </message>
+    <message>
+        <location filename="../gui/simulators/siren_sim.py" line="99" />
+        <source>The measurement</source>
+        <translation>Ölçüm</translation>
+    </message>
+    <message>
+        <location filename="../gui/simulators/siren_sim.py" line="105" />
+        <source>Teaching model, calibrated on GW170817. Localisation areas and dark-siren penalties are good to a factor of a few.</source>
+        <translation>GW170817'ye göre kalibre edilmiş öğretici model. Konumlandırma alanları ve karanlık siren cezaları birkaç kat mertebesinde doğrudur.</translation>
+    </message>
+    <message>
+        <location filename="../gui/simulators/siren_sim.py" line="117" />
+        <source>The chirp</source>
+        <translation>Cıvıltı</translation>
+    </message>
+    <message>
+        <location filename="../gui/simulators/siren_sim.py" line="118" />
+        <source>Distance vs inclination</source>
+        <translation>Uzaklık ve eğiklik</translation>
+    </message>
+    <message>
+        <location filename="../gui/simulators/siren_sim.py" line="119" />
+        <source>H₀ from this event</source>
+        <translation>Bu olaydan H₀</translation>
+    </message>
+    <message>
+        <location filename="../gui/simulators/siren_sim.py" line="120" />
+        <source>How many sirens?</source>
+        <translation>Kaç siren?</translation>
+    </message>
+    <message>
+        <location filename="../gui/simulators/siren_sim.py" line="180" />
+        <source>Signal-to-noise &lt;b&gt;{snr}&lt;/b&gt;, chirp mass {mchirp} M☉, horizon {horizon} Mpc</source>
+        <translation>Sinyal-gürültü oranı &lt;b&gt;{snr}&lt;/b&gt;, cıvıltı kütlesi {mchirp} M☉, ufuk {horizon} Mpc</translation>
+    </message>
+    <message>
+        <location filename="../gui/simulators/siren_sim.py" line="183" />
+        <source>In the detector band for {seconds} s before merging</source>
+        <translation>Birleşmeden önce {seconds} s boyunca dedektör bandında</translation>
+    </message>
+    <message>
+        <location filename="../gui/simulators/siren_sim.py" line="185" />
+        <source>Distance &lt;b&gt;{distance}&lt;/b&gt; (+{high} / −{low}) Mpc, that is {percent}%</source>
+        <translation>Uzaklık &lt;b&gt;{distance}&lt;/b&gt; (+{high} / −{low}) Mpc, yani %{percent}</translation>
+    </message>
+    <message>
+        <location filename="../gui/simulators/siren_sim.py" line="188" />
+        <source>Localised to {area} deg², {candidates} candidate host galaxies</source>
+        <translation>{area} derece²'ye konumlandırıldı, {candidates} aday konak gökada</translation>
+    </message>
+    <message>
+        <location filename="../gui/simulators/siren_sim.py" line="191" />
+        <source>H₀ = &lt;b&gt;{h0} ± {error}&lt;/b&gt; km/s/Mpc from {events} event(s), that is {percent}%</source>
+        <translation>{events} olaydan H₀ = &lt;b&gt;{h0} ± {error}&lt;/b&gt; km/s/Mpc, yani %{percent}</translation>
+    </message>
+    <message>
+        <location filename="../gui/simulators/siren_sim.py" line="200" />
+        <source>&lt;b&gt;Too quiet to claim.&lt;/b&gt; A signal-to-noise ratio of {snr} is below the threshold of 8: this merger would be lost in the noise. Move it closer, make it heavier, or wait for a better network.</source>
+        <translation>&lt;b&gt;İddia edilemeyecek kadar sessiz.&lt;/b&gt; {snr}'lik bir sinyal-gürültü oranı 8 eşiğinin altındadır: bu birleşme gürültüde kaybolurdu. Daha yakına getirin, daha ağır yapın ya da daha iyi bir ağı bekleyin.</translation>
+    </message>
+    <message>
+        <location filename="../gui/simulators/siren_sim.py" line="206" />
+        <source>&lt;b&gt;A dark siren.&lt;/b&gt; With no counterpart, all {candidates} galaxies in the localisation volume are candidates. The right one still counts, but one event is {factor} times weaker than it would be with a known host.</source>
+        <translation>&lt;b&gt;Karanlık bir siren.&lt;/b&gt; Karşılık olmadığında, konumlandırma hacmindeki {candidates} gökadanın hepsi adaydır. Doğru olan yine de sayılır, ama tek bir olay konak bilindiğindekine göre {factor} kat daha zayıftır.</translation>
+    </message>
+    <message>
+        <location filename="../gui/simulators/siren_sim.py" line="214" />
+        <source>&lt;b&gt;Better than two percent.&lt;/b&gt; At {percent}% this measurement is sharp enough to say which side of the Hubble tension it falls on — with no distance ladder at all.</source>
+        <translation>&lt;b&gt;Yüzde ikiden iyi.&lt;/b&gt; %{percent} ile bu ölçüm, Hubble geriliminin hangi tarafına düştüğünü söyleyecek kadar keskindir — hem de hiç uzaklık merdiveni kullanmadan.</translation>
+    </message>
+    <message>
+        <location filename="../gui/simulators/siren_sim.py" line="221" />
+        <source>&lt;b&gt;H₀ to {percent}% from gravitational waves alone.&lt;/b&gt; It would take about {needed} events like this one to reach 2%, the precision the Hubble tension calls for.</source>
+        <translation>&lt;b&gt;Yalnızca kütleçekim dalgalarından H₀'a %{percent}.&lt;/b&gt; Hubble geriliminin gerektirdiği duyarlılık olan %2'ye ulaşmak için bunun gibi yaklaşık {needed} olay gerekirdi.</translation>
+    </message>
+    <message>
+        <location filename="../gui/simulators/siren_sim.py" line="385" />
+        <source>Why a siren needs no ladder</source>
+        <translation>Bir siren neden merdivene ihtiyaç duymaz</translation>
+    </message>
+    <message>
+        <location filename="../gui/simulators/siren_sim.py" line="386" />
+        <source>General relativity fixes the amplitude of the wave a binary radiates, so the strain that arrives here gives the luminosity distance outright:
+
+$$h \propto \frac{1}{D_L}\,(\mathcal{M}_c)^{5/3} f^{2/3}.$$
+
+Nothing in that expression was calibrated on anything. The chirp gives $\mathcal{M}_c$, the amplitude then gives $D_L$, and a host galaxy gives $z$ — which is the whole measurement of $H_0$, in one event, with no rung below it to go wrong.</source>
+        <translation>Genel görelilik, bir çiftin ışıdığı dalganın genliğini belirler; bu yüzden buraya ulaşan gerinim ışınım uzaklığını doğrudan verir:
+
+$$h \propto \frac{1}{D_L}\,(\mathcal{M}_c)^{5/3} f^{2/3}.$$
+
+Bu ifadedeki hiçbir şey herhangi bir şeye göre kalibre edilmemiştir. Cıvıltı $\mathcal{M}_c$'yi, genlik $D_L$'yi, konak gökada da $z$'yi verir — bu da tek bir olayda, altında yanlış gidebilecek hiçbir basamak olmadan, $H_0$ ölçümünün tamamıdır.</translation>
+    </message>
+    <message>
+        <location filename="../gui/simulators/slice_sim.py" line="33" />
         <source>Survey</source>
         <translation>Tarama</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/slice_sim.py" line="33" />
+        <location filename="../gui/simulators/slice_sim.py" line="34" />
         <source>Mock catalogues</source>
         <translation>Sahte kataloglar</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/slice_sim.py" line="34" />
+        <location filename="../gui/simulators/slice_sim.py" line="35" />
         <source>Each choice observes the same simulated universe in a different way. Compare any of them with &lt;b&gt;the true universe&lt;/b&gt; to see what the observing did.</source>
         <translation>Her seçenek aynı benzetilmiş evreni başka bir biçimde gözler. Gözlemin ne yaptığını görmek için herhangi birini &lt;b&gt;gerçek evrenle&lt;/b&gt; karşılaştırın.</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/slice_sim.py" line="38" />
+        <location filename="../gui/simulators/slice_sim.py" line="39" />
         <source>1 · The simulated universe</source>
         <translation>1 · Benzetilmiş evren</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/slice_sim.py" line="42" />
+        <location filename="../gui/simulators/slice_sim.py" line="43" />
         <source>One universe out of many</source>
         <translation>Birçok evrenden biri</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/slice_sim.py" line="43" />
+        <location filename="../gui/simulators/slice_sim.py" line="44" />
         <source>The initial conditions are a random draw. Change the seed and you get a different universe with exactly the same statistics — which is why a measurement made in one of them has an error bar at all.</source>
         <translation>Başlangıç koşulları rastgele bir çekilişten gelir. Tohumu değiştirdiğinizde tam olarak aynı istatistiklere sahip farklı bir evren elde edersiniz — bir ölçümün hata çubuğu olmasının nedeni zaten budur.</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/slice_sim.py" line="48" />
+        <location filename="../gui/simulators/slice_sim.py" line="49" />
         <source>Galaxy bias b</source>
         <translation>Gökada yanlılığı b</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/slice_sim.py" line="49" />
+        <location filename="../gui/simulators/slice_sim.py" line="50" />
         <source>Galaxies are not matter</source>
         <translation>Gökadalar madde değildir</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/slice_sim.py" line="50" />
+        <location filename="../gui/simulators/slice_sim.py" line="51" />
         <source>Galaxies form in the densest places, so they clump harder than the matter does: 1 + δ_galaxies = (1 + δ_matter)^b, roughly. Red massive galaxies have b ≈ 2, blue star-forming ones b ≈ 1.</source>
         <translation>Gökadalar en yoğun yerlerde oluşur, bu yüzden maddeden daha güçlü kümelenirler: kabaca 1 + δ_gökada = (1 + δ_madde)^b. Kırmızı kütleli gökadalarda b ≈ 2, mavi yıldız oluşturanlarda b ≈ 1'dir.</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/slice_sim.py" line="55" />
+        <location filename="../gui/simulators/slice_sim.py" line="56" />
         <source>Galaxies per (Mpc/h)³</source>
         <translation>(Mpc/h)³ başına gökada</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/slice_sim.py" line="60" />
+        <location filename="../gui/simulators/slice_sim.py" line="61" />
         <source>2 · The slice you observe</source>
         <translation>2 · Gözlediğiniz dilim</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/slice_sim.py" line="62" />
+        <location filename="../gui/simulators/slice_sim.py" line="63" />
         <source>Opening angle (°)</source>
         <translation>Açılma açısı (°)</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/slice_sim.py" line="64" />
+        <location filename="../gui/simulators/slice_sim.py" line="65" />
         <source>Slice thickness (°)</source>
         <translation>Dilim kalınlığı (°)</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/slice_sim.py" line="65" />
+        <location filename="../gui/simulators/slice_sim.py" line="66" />
         <source>Why a slice?</source>
         <translation>Neden bir dilim?</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/slice_sim.py" line="66" />
+        <location filename="../gui/simulators/slice_sim.py" line="67" />
         <source>A three-dimensional map cannot be drawn on paper. Taking a thin wedge of the sky and plotting distance against angle gives the cone diagram in which the cosmic web was first seen, in 1986.</source>
         <translation>Üç boyutlu bir harita kâğıda çizilemez. Gökyüzünden ince bir kama alıp uzaklığı açıya karşı çizmek, kozmik ağın 1986'da ilk kez görüldüğü koni diyagramını verir.</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/slice_sim.py" line="70" />
+        <location filename="../gui/simulators/slice_sim.py" line="71" />
         <source>Depth (Mpc/h)</source>
         <translation>Derinlik (Mpc/h)</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/slice_sim.py" line="75" />
+        <location filename="../gui/simulators/slice_sim.py" line="76" />
         <source>3 · What observing does to it</source>
         <translation>3 · Gözlemin ona yaptıkları</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/slice_sim.py" line="77" />
+        <location filename="../gui/simulators/slice_sim.py" line="78" />
         <source>Peculiar velocities (redshift-space distortions)</source>
         <translation>Öz hızlar (kırmızıya kayma uzayı bozulmaları)</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/slice_sim.py" line="81" />
+        <location filename="../gui/simulators/slice_sim.py" line="82" />
         <source>Cluster velocity dispersion (km/s)</source>
         <translation>Küme hız dağılımı (km/s)</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/slice_sim.py" line="82" />
+        <location filename="../gui/simulators/slice_sim.py" line="83" />
         <source>Fingers of God</source>
         <translation>Tanrı'nın parmakları</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/slice_sim.py" line="83" />
+        <location filename="../gui/simulators/slice_sim.py" line="84" />
         <source>Galaxies inside a cluster orbit at hundreds of km/s. A redshift cannot tell that motion from distance, so the cluster is smeared into a spike pointing straight at us.</source>
         <translation>Bir kümenin içindeki gökadalar saniyede yüzlerce kilometreyle dolanır. Kırmızıya kayma bu hareketi uzaklıktan ayırt edemez, bu yüzden küme doğrudan bize bakan bir sivri uca yayılır.</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/slice_sim.py" line="87" />
+        <location filename="../gui/simulators/slice_sim.py" line="88" />
         <source>Apparent magnitude limit (0 = none)</source>
         <translation>Görünür kadir sınırı (0 = yok)</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/slice_sim.py" line="88" />
+        <location filename="../gui/simulators/slice_sim.py" line="89" />
         <source>A flux-limited catalogue</source>
         <translation>Akı sınırlı bir katalog</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/slice_sim.py" line="89" />
+        <location filename="../gui/simulators/slice_sim.py" line="90" />
         <source>A telescope sees down to a fixed brightness, so far away only the rare luminous galaxies make the list. The catalogue thins out with distance — and the galaxies left in it are not a fair sample.</source>
         <translation>Bir teleskop sabit bir parlaklığa kadar görür, bu yüzden uzakta yalnızca seyrek rastlanan ışıklı gökadalar listeye girer. Katalog uzaklıkla seyrelir — ve içinde kalan gökadalar adil bir örneklem değildir.</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/slice_sim.py" line="94" />
+        <location filename="../gui/simulators/slice_sim.py" line="95" />
         <source>Redshift error σ_z / (1+z)</source>
         <translation>Kırmızıya kayma hatası σ_z / (1+z)</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/slice_sim.py" line="95" />
+        <location filename="../gui/simulators/slice_sim.py" line="96" />
         <source>Spectra or colours?</source>
         <translation>Tayf mı, renk mi?</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/slice_sim.py" line="96" />
+        <location filename="../gui/simulators/slice_sim.py" line="97" />
         <source>A spectrum gives a redshift to one part in ten thousand. Estimating it from a few filters is far cheaper but uncertain by a few percent, which smears the map along the line of sight far more than any peculiar velocity.</source>
         <translation>Bir tayf kırmızıya kaymayı on binde bir duyarlılıkla verir. Onu birkaç süzgeçten kestirmek çok daha ucuzdur ama yüzde birkaç belirsizdir; bu da haritayı görüş doğrultusunda herhangi bir öz hızdan çok daha fazla bulanıklaştırır.</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/slice_sim.py" line="104" />
+        <location filename="../gui/simulators/slice_sim.py" line="105" />
         <source>The catalogue</source>
         <translation>Katalog</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/slice_sim.py" line="110" />
+        <location filename="../gui/simulators/slice_sim.py" line="111" />
         <source>Teaching mock: a lognormal density field, not an N-body simulation. Below the cell size of about 4 Mpc/h it has no structure at all.</source>
         <translation>Öğretici sahte katalog: bir N-cisim benzetimi değil, log-normal bir yoğunluk alanı. Yaklaşık 4 Mpc/h'lik hücre boyutunun altında hiç yapı taşımaz.</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/slice_sim.py" line="122" />
+        <location filename="../gui/simulators/slice_sim.py" line="123" />
         <source>Cone diagram</source>
         <translation>Koni diyagramı</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/slice_sim.py" line="123" />
+        <location filename="../gui/simulators/slice_sim.py" line="124" />
         <source>Truth vs observed</source>
         <translation>Gerçek ile gözlenen</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/slice_sim.py" line="124" />
+        <location filename="../gui/simulators/slice_sim.py" line="125" />
         <source>Selection</source>
         <translation>Seçim</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/slice_sim.py" line="125" />
+        <location filename="../gui/simulators/slice_sim.py" line="126" />
         <source>Correlation function</source>
         <translation>Korelasyon fonksiyonu</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/slice_sim.py" line="190" />
+        <location filename="../gui/simulators/slice_sim.py" line="191" />
         <source>&lt;b&gt;{galaxies}&lt;/b&gt; galaxies, median redshift &lt;b&gt;{z}&lt;/b&gt;</source>
         <translation>&lt;b&gt;{galaxies}&lt;/b&gt; gökada, ortanca kırmızıya kayma &lt;b&gt;{z}&lt;/b&gt;</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/slice_sim.py" line="192" />
+        <location filename="../gui/simulators/slice_sim.py" line="193" />
         <source>Line-of-sight velocities: {rms} km/s rms, which move a galaxy by {shift} Mpc/h</source>
         <translation>Görüş doğrultusundaki hızlar: {rms} km/s karekök ortalama, bir gökadayı {shift} Mpc/h kaydırır</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/slice_sim.py" line="194" />
+        <location filename="../gui/simulators/slice_sim.py" line="195" />
         <source>Radial stretch in the densest regions: &lt;b&gt;{finger} Mpc/h&lt;/b&gt;</source>
         <translation>En yoğun bölgelerdeki ışınsal gerilme: &lt;b&gt;{finger} Mpc/h&lt;/b&gt;</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/slice_sim.py" line="196" />
+        <location filename="../gui/simulators/slice_sim.py" line="197" />
         <source>Completeness {complete}, growth rate f = {f}</source>
         <translation>Tamlık {complete}, büyüme hızı f = {f}</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/slice_sim.py" line="204" />
+        <location filename="../gui/simulators/slice_sim.py" line="205" />
         <source>&lt;b&gt;Only {galaxies} galaxies.&lt;/b&gt; The slice is too sparse to see the cosmic web. Raise the density, widen the slice, or relax the magnitude limit.</source>
         <translation>&lt;b&gt;Yalnızca {galaxies} gökada.&lt;/b&gt; Dilim kozmik ağı görmek için fazla seyrek. Yoğunluğu artırın, dilimi genişletin ya da kadir sınırını gevşetin.</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/slice_sim.py" line="210" />
+        <location filename="../gui/simulators/slice_sim.py" line="211" />
         <source>&lt;b&gt;The redshifts are blurred.&lt;/b&gt; An error of {sigma} in z moves a galaxy by about {blur} Mpc/h — far more than any peculiar velocity, and enough to wash the filaments out.</source>
         <translation>&lt;b&gt;Kırmızıya kaymalar bulanık.&lt;/b&gt; z'deki {sigma}'lık bir hata bir gökadayı yaklaşık {blur} Mpc/h kaydırır — herhangi bir öz hızdan çok daha fazla, ve lifleri silip atmaya yeter.</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/slice_sim.py" line="217" />
+        <location filename="../gui/simulators/slice_sim.py" line="218" />
         <source>&lt;b&gt;A flux-limited catalogue.&lt;/b&gt; At the far edge only {drop} of the galaxies are bright enough to be seen, so the thinning out there is the telescope, not the universe.</source>
         <translation>&lt;b&gt;Akı sınırlı bir katalog.&lt;/b&gt; Uzak kenarda gökadaların yalnızca {drop} kadarı görülecek kadar parlaktır, yani oradaki seyrelme evren değil teleskoptur.</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/slice_sim.py" line="223" />
+        <location filename="../gui/simulators/slice_sim.py" line="224" />
         <source>&lt;b&gt;The true universe.&lt;/b&gt; No velocities, no selection: this is where the galaxies really are. Every other setting shows what a telescope would have made of it.</source>
         <translation>&lt;b&gt;Gerçek evren.&lt;/b&gt; Hız yok, seçim yok: gökadalar gerçekten burada. Diğer her ayar, bir teleskobun bundan ne çıkaracağını gösterir.</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/slice_sim.py" line="228" />
+        <location filename="../gui/simulators/slice_sim.py" line="229" />
         <source>&lt;b&gt;Redshift space.&lt;/b&gt; Each galaxy is drawn at the distance its redshift implies, so infall squashes the filaments and cluster orbits stretch them towards us.</source>
         <translation>&lt;b&gt;Kırmızıya kayma uzayı.&lt;/b&gt; Her gökada kırmızıya kaymasının gösterdiği uzaklığa çizilir, bu yüzden içe düşüş lifleri yassıltır, küme yörüngeleri de onları bize doğru uzatır.</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/slice_sim.py" line="255" />
+        <location filename="../gui/simulators/slice_sim.py" line="256" />
         <source>us</source>
         <translation>biz</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/slice_sim.py" line="266" />
+        <location filename="../gui/simulators/slice_sim.py" line="267" />
         <source>Where the galaxies really are</source>
         <translation>Gökadaların gerçekte bulunduğu yer</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/slice_sim.py" line="269" />
+        <location filename="../gui/simulators/slice_sim.py" line="270" />
         <source>Where their redshifts put them</source>
         <translation>Kırmızıya kaymalarının onları koyduğu yer</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/slice_sim.py" line="280" />
+        <location filename="../gui/simulators/slice_sim.py" line="282" />
         <source>How the catalogue thins out with distance</source>
         <translation>Kataloğun uzaklıkla nasıl seyreldiği</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/slice_sim.py" line="303" />
+        <location filename="../gui/simulators/slice_sim.py" line="314" />
         <source>Clustering measured from the mock, by counting pairs</source>
         <translation>Çiftler sayılarak sahte kataloğdan ölçülen kümelenme</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/slice_sim.py" line="343" />
+        <location filename="../gui/simulators/slice_sim.py" line="354" />
         <source>Two spaces, one universe</source>
         <translation>İki uzay, tek evren</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/slice_sim.py" line="344" />
+        <location filename="../gui/simulators/slice_sim.py" line="355" />
         <source>A redshift is not a distance. What a survey plots is
 
 $$s = r + \frac{(1+z)\,v_\parallel}{H(z)},$$
