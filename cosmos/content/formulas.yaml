@@ -472,3 +472,27 @@
   symbols: '$\sigma_1$ the error of one object, $N$ objects'
   description: The statistical term shrinks with more data; the systematic floor does not.
   lesson: L7.6
+
+- id: covariance-from-mocks
+  group: Measurement and statistics
+  title: Covariance matrix from mock catalogues
+  formula: 'C_{ij} = \frac{1}{N-1}\sum_{n=1}^{N}\left(x_i^{(n)} - \bar x_i\right)\left(x_j^{(n)} - \bar x_j\right)'
+  symbols: '$x_i^{(n)}$ the measurement in bin $i$ from mock $n$, $N$ the number of mocks'
+  description: How the error bars and their correlations in a survey measurement are actually obtained.
+  lesson: L7.5
+
+- id: redshift-space-position
+  group: Measurement and statistics
+  title: Redshift space
+  formula: 's = r + \frac{(1+z)\,v_\parallel}{H(z)}'
+  symbols: '$r$ true comoving distance, $v_\parallel$ line-of-sight peculiar velocity'
+  description: A redshift is distance plus motion; the difference is signal, not noise.
+  lesson: L7.5
+
+- id: hubble-time-estimate
+  group: Expansion and geometry
+  title: Hubble time and Hubble distance
+  formula: 't_H = \frac{1}{H_0} \approx 14\ \mathrm{Gyr}, \qquad D_H = \frac{c}{H_0} \approx 4300\ \mathrm{Mpc}'
+  symbols: '$H_0 \approx 70$ km/s/Mpc'
+  description: Two numbers worth carrying in your head; almost every cosmological estimate starts from one of them.
+  lesson: L0.7

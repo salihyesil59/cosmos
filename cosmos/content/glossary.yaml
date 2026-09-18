@@ -1437,3 +1437,71 @@ blinding:
     their choices, consciously or not, towards an expected answer.
   see_also: [null-test, systematic-error]
   lessons: [L7.6]
+
+mock-catalogue:
+  term: Mock catalogue
+  definition: >
+    A simulated data file built to look exactly like a real one: the same columns,
+    sky footprint, flux limit and measurement errors, but made from a simulation whose
+    cosmology is known. Analyses are validated by checking that they recover that
+    cosmology from the mock.
+  see_also: [n-body-simulation, covariance-matrix, sample-variance]
+  lessons: [L7.5]
+
+zeldovich-approximation:
+  term: Zel'dovich approximation
+  definition: >
+    The first-order solution for gravitational collapse: instead of integrating the
+    forces, each particle is simply displaced from its starting point along the gradient
+    of the initial potential. It is exact while fluctuations are small and is used to set
+    the initial conditions of almost every simulation.
+  see_also: [n-body-simulation, mock-catalogue, hierarchical-structure-formation]
+  lessons: [L7.5]
+
+redshift-space-distortion:
+  term: Redshift-space distortion
+  definition: >
+    The apparent displacement of galaxies in a map because a redshift measures distance
+    plus the galaxy's own line-of-sight motion. Coherent infall squashes structures along
+    the line of sight (the Kaiser effect); random orbits inside clusters stretch them into
+    fingers pointing at the observer.
+  see_also: [peculiar-velocity, redshift-survey, growth-factor]
+  lessons: [L7.5, L1.4]
+
+covariance-matrix:
+  term: Covariance matrix
+  definition: >
+    The table of how the uncertainties in a set of measurements move together. Its
+    diagonal holds the squared error bars; the off-diagonal entries say how strongly a
+    fluctuation in one bin drags another with it. For a real survey it is usually measured
+    from thousands of mock catalogues.
+  see_also: [mock-catalogue, statistical-error, sample-variance]
+  lessons: [L7.5, L7.2]
+
+selection-function:
+  term: Selection function
+  definition: >
+    The probability that an object which exists is actually in the catalogue, as a function
+    of distance, brightness, colour and position on the sky. A flux-limited survey keeps only
+    the luminous tail far away, so the selection function — not the universe — explains most
+    of the thinning out with distance.
+  see_also: [malmquist-bias, mock-catalogue, redshift-survey]
+  lessons: [L7.5, L7.6]
+
+order-of-magnitude:
+  term: Order-of-magnitude estimate
+  definition: >
+    A calculation done to the nearest power of ten, using rounded numbers and no calculator,
+    to find out roughly what the answer should be. Its purpose is to catch mistakes and to
+    judge whether a measurement is even possible, not to compete with a precise computation.
+  see_also: [dimensional-analysis]
+  lessons: [L0.7]
+
+dimensional-analysis:
+  term: Dimensional analysis
+  definition: >
+    Checking or reconstructing a formula from the units of the quantities in it. It can prove
+    an equation wrong in seconds and often gives the shape of the right answer, but never the
+    dimensionless factor in front.
+  see_also: [order-of-magnitude]
+  lessons: [L0.7]

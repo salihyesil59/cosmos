@@ -313,3 +313,41 @@ S21:
     min: 0.25
   - field: stat_below_floor
     is_true: true
+S23:
+- id: clean-web
+  task: 'Map the cosmic web with no observing effects in the way: at least 2500 galaxies, no magnitude limit and
+    no redshift error.'
+  hint: Start from <b>Volume limited</b> and raise the density until the count passes 2500.
+  success: 'This is where the galaxies really are: filaments, knots and the voids between them, with nothing added
+    by the telescope.'
+  check:
+  - field: galaxies
+    min: 2500
+  - field: magnitude_limit
+    max: 0.0
+  - field: redshift_error
+    max: 0.0
+- id: fingers-of-god
+  task: 'Make the fingers of God unmistakable: a cluster velocity dispersion of at least 900 km/s that stretches
+    the densest regions by more than 8 Mpc/h.'
+  hint: Drag <b>Cluster velocity dispersion</b> up and watch the readout for the radial stretch.
+  success: A cluster is a blob in space and a spike in redshift. Every real cone diagram has them, and they all
+    point straight at us.
+  check:
+  - field: fingers
+    min: 900
+  - field: finger_length
+    min: 8.0
+- id: telescope-not-universe
+  task: Build a flux-limited catalogue in which fewer than 5% of the galaxies at the far edge are bright enough
+    to be seen, while keeping at least 600 galaxies in the slice.
+  hint: Set the <b>apparent magnitude limit</b> near 17 and raise the density to keep enough galaxies.
+  success: The map empties out with distance — and that is the telescope, not the universe. Correcting for it is
+    what a selection function is for.
+  check:
+  - field: magnitude_limit
+    min: 10.0
+  - field: density_drop
+    max: 0.05
+  - field: galaxies
+    min: 600

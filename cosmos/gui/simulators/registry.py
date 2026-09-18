@@ -99,7 +99,7 @@ SIMULATORS: dict[str, SimulatorInfo] = {
                 tr_noop("Find the scale where light needs one year to cross the view."),
                 tr_noop("Notice how empty space is between stars compared with between galaxies."),
             ],
-            lessons=["L0.1", "L0.2", "L1.4"],
+            lessons=["L0.1", "L0.2", "L0.7", "L1.4"],
             module="cosmos.gui.simulators.powers_of_ten",
             class_name="PowersOfTenSimulator",
             icon="⊙",
@@ -575,6 +575,39 @@ SIMULATORS: dict[str, SimulatorInfo] = {
             module="cosmos.gui.simulators.survey_sim",
             class_name="SurveySimulator",
             icon="🗺",
+        ),
+        SimulatorInfo(
+            id="S23",
+            title=tr_noop("Redshift Survey Slice"),
+            tagline=tr_noop("Build a cone diagram and find the cosmic web in it."),
+            description=tr_noop(
+                "A mock catalogue: a simulated universe, observed the way a telescope would observe it. "
+                "Galaxies are sampled from a density field grown from random initial conditions, then placed "
+                "at the distance their redshift implies. Switch the observing effects on one at a time and "
+                "watch what each of them does to the map — and to the clustering measured from it."
+            ),
+            how_to_use=[
+                tr_noop("Start from a <b>survey</b>: CfA2 and SDSS are the real slices, <b>the true universe</b> "
+                        "has no observing effects at all."),
+                tr_noop("Read the <b>cone diagram</b>: we are at the point, distance grows outwards, and the "
+                        "filaments and voids are the cosmic web."),
+                tr_noop("Open <b>Truth vs observed</b> to see the same galaxies with and without their motions."),
+                tr_noop("Raise the <b>cluster velocity dispersion</b> until the fingers of God are unmistakable."),
+                tr_noop("Set an <b>apparent magnitude limit</b> and watch the <b>Selection</b> tab: the far edge "
+                        "empties out because of the telescope, not the universe."),
+                tr_noop("Change the <b>random seed</b>: a different universe, the same statistics."),
+            ],
+            things_to_try=[
+                tr_noop("Compare the true universe with the observed one. Which structures move, and which way?"),
+                tr_noop("Turn the peculiar velocities off but keep the cluster dispersion. What is left?"),
+                tr_noop("Raise the redshift error to 0.02. How much of the cosmic web survives?"),
+                tr_noop("In the correlation function, find the scale below which the mock has no structure."),
+                tr_noop("Raise the bias to 2.5. The galaxies clump harder — does ξ change shape or only height?"),
+            ],
+            lessons=["L7.5", "L1.4", "L5.4", "L7.4"],
+            module="cosmos.gui.simulators.slice_sim",
+            class_name="SliceSimulator",
+            icon="🕸",
         ),
     ]
 }

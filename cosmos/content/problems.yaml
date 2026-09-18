@@ -89,6 +89,39 @@
       3. $M = (2.3\times10^5)^2 \times 2.53\times10^{20} / 6.674\times10^{-11} = 2.0\times10^{41}\ \mathrm{kg}$.
       4. Dividing by the solar mass: $\approx 1.0\times10^{11}\ M_\odot$.
     simulator: S6
+  - id: p0-year-seconds
+    lesson: L0.7
+    title: A year in seconds
+    difficulty: 1
+    statement: Estimate the number of **seconds in a year** without a calculator, then give the answer to three
+      significant figures.
+    answer: 3.156e7
+    unit: s
+    tolerance: 0.01
+    hints:
+    - 365 days × 24 hours × 60 minutes × 60 seconds.
+    - Round as you go - 365 × 24 ≈ 8 800 hours, and there are 3 600 seconds in an hour.
+    solution: |
+      $365 \times 24 \times 3600 = 3.156\times10^{7}\ \mathrm{s}$. The handy approximation
+      $\pi\times10^{7}$ is accurate to half a percent.
+    simulator: S3
+  - id: p0-hubble-time
+    lesson: L0.7
+    title: The age of the universe, in your head
+    difficulty: 2
+    statement: Using $H_0 = 70$ km/s/Mpc, estimate the Hubble time $1/H_0$ in **billions of years**.
+    answer: 13.97
+    unit: Gyr
+    tolerance: 0.02
+    hints:
+    - Convert H₀ to inverse seconds - 1 Mpc = 3.086 × 10¹⁹ km.
+    - H₀ = 70 / 3.086×10¹⁹ s⁻¹ ≈ 2.27×10⁻¹⁸ s⁻¹; invert, then divide by 3.156×10⁷ s per year.
+    solution: |
+      1. $H_0 = 70/(3.086\times10^{19}) = 2.27\times10^{-18}\ \mathrm{s^{-1}}$.
+      2. $1/H_0 = 4.41\times10^{17}\ \mathrm{s}$.
+      3. Divide by $3.156\times10^{7}$ s/yr: $1.40\times10^{10}$ years, or about 14 billion.
+      The true age, 13.8 Gyr, is close for reasons that took Level 3 to explain.
+    simulator: S1
 - level: 1
   title: Measuring the universe
   intro: The distance ladder, the Hubble law and the first relic of the Big Bang.
@@ -693,3 +726,36 @@
     solution: |
       $\sqrt{0.16 + 0.09} = 0.5\%$. Even a perfect survey would stay at 0.3%.
     simulator: S21
+  - id: p7-effective-volume-mock
+    lesson: L7.5
+    title: How many mocks?
+    difficulty: 2
+    statement: A covariance matrix is estimated from N mock catalogues for a measurement in 20 bins. The fractional
+      error on each estimated variance is about $\sqrt{2/(N-1)}$. How many mocks are needed for that error to be
+      **2 percent**?
+    answer: 5001
+    unit: mocks
+    tolerance: 0.02
+    hints:
+    - Set √(2/(N−1)) = 0.02 and solve for N.
+    - 2/(N−1) = 0.0004, so N − 1 = 5000.
+    solution: |
+      $\sqrt{2/(N-1)} = 0.02 \Rightarrow N - 1 = 2/0.0004 = 5000$, so $N = 5001$.
+      This is why surveys build thousands of fast approximate mocks rather than a handful of N-body runs.
+    simulator: S23
+  - id: p7-redshift-space
+    lesson: L7.5
+    title: How far a velocity moves a galaxy
+    difficulty: 1
+    statement: A galaxy at low redshift falls towards a cluster at 600 km/s along our line of sight. With
+      $H_0 = 100h$ km/s/Mpc, by how much does its redshift displace it in the map, in **Mpc/h**?
+    answer: 6.0
+    unit: Mpc/h
+    tolerance: 0.02
+    hints:
+    - In comoving Mpc/h the shift is v / (100 km/s per Mpc/h).
+    - 600 / 100 = 6.
+    solution: |
+      $\Delta s = v_\parallel / H_0 = 600/100 = 6\ \mathrm{Mpc}/h$ — comparable to the size of a
+      cluster, which is exactly why fingers of God are so obvious.
+    simulator: S23

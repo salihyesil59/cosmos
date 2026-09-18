@@ -65,6 +65,10 @@ EXPECTED = {
     "p7-derived-error": math.sqrt(0.068**2 / 4 + 0.095**2 - 0.88 * 0.068 * 0.095),
     "p7-effective-volume": 10 * (1 / (1 + 1)) ** 2,
     "p7-systematic-floor": math.hypot(0.4, 0.3),
+    "p7-effective-volume-mock": 2 / 0.02**2 + 1,
+    "p7-redshift-space": 600 / 100,
+    "p0-year-seconds": 365 * 24 * 3600,
+    "p0-hubble-time": 1 / (70 * const.KM_S_MPC_TO_SI) / GYR,
 }
 
 
@@ -162,7 +166,10 @@ def test_attempts_and_badges(tmp_path):
     for problem in SETS[0].problems:
         store.record_problem_attempt(problem.id, True)
     assert BY_ID["problem-set"].is_earned(store, CURRICULUM)
-    assert BY_ID["first-try"].state(store, CURRICULUM) == (4, 5)
+    # Every problem of the set but p0-proxima, which needed two attempts, counts as a first try;
+    # state() caps the count at the badge's goal.
+    solved_first_try, target = BY_ID["first-try"].state(store, CURRICULUM)
+    assert target == 5 and solved_first_try == min(len(SETS[0].problems) - 1, target)
     assert not BY_ID["problem-solver"].is_earned(store, CURRICULUM)
     reloaded = ProgressStore(tmp_path / "p.json")
     assert reloaded.is_problem_solved("p0-andromeda")

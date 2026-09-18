@@ -75,6 +75,15 @@ SURVEYS = [
     tr_noop("Galaxies seen in Hα with a slitless spectrograph from space, as Euclid does."),
 ]
 
+# Mock surveys of the Redshift Survey Slice (mock.PRESETS_MOCK).
+MOCK_SURVEYS = [
+    tr_noop("CfA2 style: the Great Wall slice (1989)"),
+    tr_noop("SDSS main galaxy sample style (2005)"),
+    tr_noop("Volume limited: the same density everywhere"),
+    tr_noop("Photometric redshifts: colours instead of spectra"),
+    tr_noop("The true universe: no observing effects at all"),
+]
+
 # The status of a lesson, as LessonStatus spells it.
 LESSON_STATUS = [tr_noop("completed"), tr_noop("ready"), tr_noop("not ready")]
 

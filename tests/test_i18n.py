@@ -223,6 +223,8 @@ def test_the_labels_table_covers_the_physics_layer():
     texts = {label for label, _s in survey.PRESETS_SURVEY.values()}
     texts |= {t for tracer in survey.TRACERS.values() for t in (tracer.label, tracer.description)}
     assert texts <= set(labels.SURVEYS)
+    from cosmos.physics import mock
+    assert {label for label, _s in mock.PRESETS_MOCK.values()} <= set(labels.MOCK_SURVEYS)
     geometries = {Cosmology(H0=70, Om0=om, Ode0=ol).geometry
                   for om, ol in ((0.3, 0.7), (0.3, 0.2), (0.6, 0.8))}
     assert geometries <= set(labels.GEOMETRIES)
