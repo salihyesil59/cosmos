@@ -1,0 +1,56 @@
+- question: "What is the main reason cosmologists run simulations?"
+  choices:
+    - "To make pictures for press releases"
+    - "To test an analysis in a universe where the right answer is known"
+    - "To replace observations"
+    - "To prove that ΛCDM is correct"
+  answer: 1
+  explanation: "A simulation is the only place where a measurement can be compared with the truth, because the cosmology was an input."
+- question: "Two simulations use the same cosmology but different random seeds. What differs?"
+  choices:
+    - "The statistics of the density field"
+    - "Where each individual filament, cluster and void happens to be"
+    - "The value of H0"
+    - "Nothing: the seed only affects the run time"
+  answer: 1
+  explanation: "The seed picks one realisation out of many. The statistics are identical; the particular structures are not. That spread is cosmic variance."
+- question: "Why is a galaxy recipe (halo occupation, semi-analytic model) needed at all?"
+  choices:
+    - "Gravity is too slow to compute"
+    - "Gas physics, star formation and feedback cannot be followed from first principles across a Gpc box"
+    - "Dark matter does not cluster"
+    - "Telescopes cannot see dark matter"
+  answer: 1
+  explanation: "An N-body run gives dark-matter haloes; turning them into observable galaxies needs a tuned recipe, and results that depend strongly on it are statements about the recipe."
+- question: "What is a mock catalogue?"
+  choices:
+    - "A list of galaxies that turned out not to exist"
+    - "A simulated data file with the same columns, geometry and selection as the real one"
+    - "A catalogue of simulations"
+    - "The output of an N-body code before any processing"
+  answer: 1
+  explanation: "The box has to be observed — light cone, redshifts, footprint, flux limit, measurement errors — before it looks like data."
+- question: "How is the covariance matrix of a survey measurement usually obtained?"
+  choices:
+    - "Analytically, from the survey geometry"
+    - "From the scatter of the same measurement across many independent mock catalogues"
+    - "By repeating the observations"
+    - "It is assumed to be diagonal"
+  answer: 1
+  explanation: "Thousands of fast approximate mocks are measured the same way as the data; how their answers scatter is the error bar."
+- question: "A simulation has a particle mass of 10⁹ solar masses. What can it say about dwarf galaxies of 10⁷ solar masses?"
+  choices:
+    - "That they are rare"
+    - "Nothing: they are below its resolution"
+    - "That they do not exist"
+    - "That they are more common than predicted"
+  answer: 1
+  explanation: "Below the resolution there is no information, and absence in the simulation is not a prediction of absence in the universe."
+- question: "Why do fast approximate methods such as lognormal fields remain useful next to full N-body runs?"
+  choices:
+    - "They are more accurate"
+    - "They get the large-scale statistics and the covariance right cheaply enough to run thousands of times"
+    - "They include gas physics"
+    - "They need no cosmology as input"
+  answer: 1
+  explanation: "A covariance matrix needs many realisations, not perfect small-scale structure — so cheap mocks are exactly the right tool."

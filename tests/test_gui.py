@@ -768,3 +768,63 @@ def test_survey_and_systematics_lessons(window):
         assert "CSMTOKEN" not in text and "$$" not in text
     assert "S21" in window.ctx.curriculum.lessons["L7.4"].simulators
     assert window.ctx.curriculum.levels[-1].lesson_ids[-1] == "L7.6"
+
+
+def test_redshift_survey_slice(window):
+    """S23: presets, observing effects switched on one at a time, and the challenges."""
+    window.navigate("sim:S23")
+    pump()
+    host = window.stack.currentWidget()
+    s23 = host.simulator
+    assert s23.preset.currentData() == "sdss"
+    state = s23.state()
+    assert state["galaxies"] > 800 and state["completeness"] < 0.2
+    assert "flux-limited" in s23.banner.label.text()
+
+    s23.preset.setCurrentIndex(s23.preset.findData("truth"))
+    truth = s23.state()
+    assert truth["rms_velocity"] == 0.0 and truth["finger_length"] == 0.0
+    assert truth["completeness"] == 1.0 and "true universe" in s23.banner.label.text()
+
+    bar = host.challenge_bar
+    assert bar is not None and len(host.challenges) == 3
+    s23.density.setValue(4e-3)
+    s23.recompute()
+    bar.go(0)
+    assert bar.check() is True
+
+    s23.fingers.setValue(1200)
+    s23.recompute()
+    assert s23.state()["finger_length"] > 8.0
+    bar.go(1)
+    assert bar.check() is True
+    # Fingers of God stretch the small scales; coherent infall squashes the large ones.
+    assert s23.state()["smearing"] < 1.0
+
+    s23.preset.setCurrentIndex(s23.preset.findData("photometric"))
+    s23.photo_z.setValue(0.02)
+    s23.recompute()
+    assert "blurred" in s23.banner.label.text()
+    assert s23.state()["redshift_error"] == 0.02
+
+    s23.preset.setCurrentIndex(s23.preset.findData("sdss"))
+    s23.magnitude.setValue(17.0)
+    s23.density.setValue(3e-2)
+    s23.recompute()
+    bar.go(2)
+    assert bar.check() is True
+
+    header, rows = s23._csv()
+    assert len(header) == 6 and len(rows) == len(s23.catalogue)
+    for plot in (s23.cone_plot, s23.compare_plot, s23.profile_plot, s23.xi_plot):
+        plot.refresh()
+
+
+def test_simulation_and_estimation_lessons(window):
+    for lesson_id in ("L7.5", "L0.7"):
+        window.navigate(f"lesson:{lesson_id}")
+        pump()
+        text = window.lesson_page.browser.toPlainText()
+        assert "CSMTOKEN" not in text and "$$" not in text
+    assert "S23" in window.ctx.curriculum.lessons["L7.5"].simulators
+    assert window.ctx.curriculum.levels[0].lesson_ids[-1] == "L0.7"

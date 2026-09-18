@@ -5,7 +5,7 @@ levels:
       No background needed. How big is the universe, how do we measure distances,
       what can light tell us, what is gravity, how did our picture of the cosmos
       develop, and why is the night sky dark?
-    lessons: [L0.1, L0.2, L0.3, L0.4, L0.5, L0.6]
+    lessons: [L0.1, L0.2, L0.3, L0.4, L0.5, L0.6, L0.7]
 
   - number: 1
     title: Observational Cosmology
@@ -60,4 +60,4 @@ levels:
       The craft behind the results: how to read the plots the field argues with, and
       how a table of measurements becomes a number with an error bar on it, how the
       surveys behind those numbers are designed, and how to trust the error bar.
-    lessons: [L7.1, L7.2, L7.3, L7.4, L7.6]
+    lessons: [L7.1, L7.2, L7.3, L7.4, L7.5, L7.6]
