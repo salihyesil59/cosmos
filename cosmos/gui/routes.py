@@ -13,6 +13,7 @@ STATIC_TITLES = {
     "notes": ("📝", "Notes & bookmarks"),
     "search": ("🔎", "Search"),
     "problems": ("✏", "Problem sets"),
+    "review": ("🔁", "Review"),
 }
 
 

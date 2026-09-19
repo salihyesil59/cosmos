@@ -926,3 +926,133 @@ def test_polarisation_and_black_hole_lessons(window):
     assert "S22" in window.ctx.curriculum.lessons["L6.5"].simulators
     assert window.ctx.curriculum.levels[6].lesson_ids[-1] == "L6.9"
     assert window.ctx.curriculum.levels[5].lesson_ids[-1] == "L5.7"
+
+
+def test_review_page_and_a_full_session(window):
+    """G16: a missed question comes back, and answering it moves it up a box."""
+    from datetime import date, timedelta
+
+    store = window.ctx.store
+    store.forget_reviews()
+    window.navigate("review")
+    pump()
+    page = window.review_page
+    assert window.stack.currentWidget() is page
+    assert "deck is empty" in page.due_label.text()
+    assert not page.start_btn.isVisible()
+
+    today = date(2026, 5, 4)
+    page.today = lambda: today
+    store.record_question("L0.1", 0, False, today - timedelta(days=1))
+    store.record_question("L0.2", 2, False, today - timedelta(days=1))
+    page.refresh()
+    pump()
+    assert len(page._items) == 2
+    assert "2 question(s) are due" in page.due_label.text()
+    assert page.start_btn.isVisible()
+    # Every card names the lesson it came from, since a session mixes them.
+    assert all(item.source.startswith(item.lesson_id) for item in page._items)
+
+    page.start()
+    pump()
+    assert page.stack.currentIndex() == 1
+    quiz = page.quiz
+    assert quiz.review_mode and quiz.source_label.isVisible()
+    for _ in range(len(quiz.items)):
+        quiz.group.button(quiz.items[quiz.index].question.answer).setChecked(True)
+        quiz.check_answer()
+        quiz.next_question()
+    pump()
+    assert quiz.correct == 2
+    assert not quiz.next_lesson.isVisible() and not quiz.retry_button.isVisible()
+    assert store.data.reviews_cleared >= 1
+    assert all(entry["box"] == 2 for entry in store.data.review.values())
+    assert store.due_reviews(today) == []
+
+    page.refresh()
+    assert "Nothing due today" in page.due_label.text()
+    store.forget_reviews()
+    window.navigate("home")
+
+
+def test_a_wrong_quiz_answer_joins_the_deck(window):
+    """The lesson quiz feeds the review deck without the learner doing anything."""
+    store = window.ctx.store
+    store.forget_reviews()
+    window.navigate("lesson:L0.1")
+    pump()
+    quiz = window.lesson_page.quiz
+    quiz.start()
+    wrong = (quiz.items[0].question.answer + 1) % len(quiz.items[0].question.choices)
+    quiz.group.button(wrong).setChecked(True)
+    quiz.check_answer()
+    assert "L0.1#0" in store.data.review
+    assert store.data.review["L0.1#0"]["box"] == 1
+    window._update_review_action()
+    assert window.review_action.text() == "🔁 " + "Review"      # not due until tomorrow
+    store.forget_reviews()
+
+
+def test_text_size_and_themes(window):
+    """G17: three themes, scalable text, and both are remembered."""
+    from cosmos.gui import theme as theme_module
+    from cosmos.gui.theme import THEME_ORDER, theme
+
+    assert set(THEME_ORDER) == {"dark", "light", "contrast"}
+    start = theme().name
+    seen = []
+    for _ in range(len(THEME_ORDER)):
+        window.toggle_theme()
+        seen.append(theme().name)
+        assert window.ctx.store.data.theme == theme().name
+        assert window.theme_actions[theme().name].isChecked()
+    assert sorted(seen) == sorted(THEME_ORDER)
+    assert theme().name == start
+
+    window.set_theme("contrast")
+    palette = theme().palette
+    assert palette.bg == "#000000" and palette.text == "#ffffff"
+
+    window.set_text_size(1.0)
+    window.change_text_size(+2)
+    assert theme().scale == pytest.approx(1.0 + 2 * theme_module.SCALE_STEP)
+    assert window.ctx.store.data.font_scale == theme().scale
+    # The stylesheet really does get bigger, and the range is clamped.
+    big = QApplication.instance().styleSheet()
+    window.set_text_size(0.1)
+    assert theme().scale == theme_module.MIN_SCALE
+    small = QApplication.instance().styleSheet()
+    assert big != small
+    window.set_text_size(99)
+    assert theme().scale == theme_module.MAX_SCALE
+    window.set_text_size(1.0)
+    window.set_theme(start)
+
+
+def test_keyboard_navigation(window):
+    """G17: F6 walks the regions and every command is reachable without a mouse."""
+    window.navigate("home")
+    pump()
+    areas = window.focus_areas()
+    assert window.sidebar in areas and len(areas) >= 2
+    for _ in range(len(areas) + 1):
+        window.cycle_focus()
+        pump()
+        focused = window.focusWidget()
+        assert focused is not None
+        here = window.focus_areas()
+        assert any(a is focused or a.isAncestorOf(focused) for a in here), (
+            type(focused).__name__, [type(a).__name__ for a in here])
+
+    rows = dict((text, keys) for text, keys in window.shortcut_rows())
+    for command in ("Home", "Find", "Progress", "Review", "Larger text", "Smaller text",
+                    "Reset text size", "Move focus to the next area"):
+        assert command in rows, command
+    assert rows["Reset text size"] == "Ctrl+0"
+    assert "F6" == rows["Move focus to the next area"]
+    assert len({keys for keys in rows.values()}) == len(rows), "no two commands share a shortcut"
+
+    window.show_shortcuts()
+    pump()
+    text = window.guide.browser.toPlainText()
+    assert "Keyboard shortcuts" in text and "Ctrl+0" in text

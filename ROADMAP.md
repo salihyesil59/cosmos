@@ -197,8 +197,8 @@ since (the course now has 53 lessons and 23 simulators).
 
 ### Guidance & learning
 - [x] ★ `G15` Worked problem sets: numeric exercises with checked answers, one per level
-- [ ] `G16` Spaced repetition: bring back quiz questions you got wrong, days later
-- [ ] `G17` Accessibility pass: font scaling, a high-contrast theme, keyboard-only navigation
+- [x] `G16` Spaced repetition: bring back quiz questions you got wrong, days later
+- [x] `G17` Accessibility pass: font scaling, a high-contrast theme, keyboard-only navigation
 - [ ] `G18` Export a lesson (or the whole course) as PDF for printing
 - [ ] `G19` Classroom mode: a progress report a teacher can read, and teacher notes per lesson
 

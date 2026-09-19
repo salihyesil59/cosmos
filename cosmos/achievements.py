@@ -68,6 +68,15 @@ def _first_try(store) -> int:
     return sum(1 for attempts in store.data.problems_solved.values() if attempts == 1)
 
 
+def _cards_learned(store) -> int:
+    """G16: questions that entered the review deck and were answered right five times.
+
+    A learned card leaves the deck, so it is counted by the lapses that are no longer
+    waiting: every question ever missed, minus the ones still due.
+    """
+    return max(store.data.review_learned, 0)
+
+
 def _challenges_total() -> int:
     from cosmos.content.loader import load_challenges
 
@@ -130,6 +139,12 @@ ACHIEVEMENTS: list[Achievement] = [
     Achievement("curator", _("Curator"), "⭐",
                 _("Bookmark five pages."),
                 lambda s, c: (len(s.data.bookmarks), 5)),
+    Achievement("reviewer", _("Second time round"), "🔁",
+                _("Clear a review session: answer every question that was due."),
+                lambda s, c: (int(s.data.reviews_cleared > 0), 1)),
+    Achievement("spaced-out", _("It stuck"), "🧠",
+                _("Learn five questions for good: five correct reviews in a row for each."),
+                lambda s, c: (_cards_learned(s), 5)),
     Achievement("historian", _("Historian"), "🏛",
                 _("Read the history of cosmology from Copernicus to today."),
                 lambda s, c: (int("history" in s.data.pages_seen), 1)),
