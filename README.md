@@ -57,6 +57,11 @@ on first launch.
 - **Global search** (Ctrl+F) across lesson text, glossary, simulators, formulas and problems
 - **Spaced repetition**: every quiz question you get wrong comes back the next day,
   then after 3, 7, 16 and 35 days until you have it for good
+- **Print anything**: one lesson, one level or the whole course as a PDF, with its
+  figures, its quiz and an answer key
+- **Classroom mode**: a progress report a teacher can read, and teacher notes for
+  every lesson — the misconception that always comes up, a discussion question and
+  what to demonstrate
 - **Notes and bookmarks**: a private notebook for every page, exportable as Markdown
 - Tooltips and **?** buttons on every control
 - Progress tracking with a prerequisite map

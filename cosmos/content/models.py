@@ -116,6 +116,25 @@ class Scientist:
 
 
 @dataclass(frozen=True)
+class TeacherNote:
+    """What a teacher should watch for in one lesson (G19)."""
+
+    lesson: str
+    misconception: str
+    discussion: str
+    demonstrate: str
+
+    def markdown(self, labels: dict[str, str] | None = None) -> str:
+        """The note as Markdown, for the Guide panel and for printing."""
+        names = labels or {"misconception": "Common misconception",
+                           "discussion": "Discussion question",
+                           "demonstrate": "Show them"}
+        return "\n\n".join(
+            f"**{names[field]}.** {getattr(self, field)}"
+            for field in ("misconception", "discussion", "demonstrate"))
+
+
+@dataclass(frozen=True)
 class GlossaryTerm:
     key: str
     term: str

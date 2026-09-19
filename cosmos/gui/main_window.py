@@ -27,6 +27,7 @@ from cosmos.gui.pages.home import HomePage
 from cosmos.gui.pages.lesson import LessonPage
 from cosmos.gui.pages.notes_page import NotesPage
 from cosmos.gui.pages.problems_page import ProblemsPage
+from cosmos.gui.pages.classroom_page import ClassroomPage
 from cosmos.gui.pages.review_page import ReviewPage
 from cosmos.gui.pages.progress_page import ProgressPage
 from cosmos.gui.pages.reference import ReferencePage
@@ -122,9 +123,10 @@ class MainWindow(QMainWindow):
         self.notes_page = NotesPage(ctx)
         self.problems_page = ProblemsPage(ctx)
         self.review_page = ReviewPage(ctx)
+        self.classroom_page = ClassroomPage(ctx)
         for page in (self.home, self.lesson_page, self.sim_hub, self.glossary_page, self.progress_page,
                      self.reference_page, self.history_page, self.search_page, self.notes_page,
-                     self.problems_page, self.review_page):
+                     self.problems_page, self.review_page, self.classroom_page):
             self.stack.addWidget(page)
         self.setCentralWidget(self.stack)
 
@@ -139,6 +141,7 @@ class MainWindow(QMainWindow):
         ctx.signals.progressChanged.connect(self._refresh_sidebar)
         ctx.signals.progressChanged.connect(self._update_review_action)
         ctx.signals.notesChanged.connect(self._refresh_notes)
+        ctx.signals.statusMessage.connect(lambda text: self.statusBar().showMessage(text, 8000))
         ctx.signals.progressChanged.connect(self.check_achievements)
         theme().changed.connect(lambda _p: self._refresh_sidebar())
 
@@ -199,6 +202,8 @@ class MainWindow(QMainWindow):
         self.review_item = top("🔁  " + tr("Review"), "review",
                                tr("Quiz questions you got wrong, brought back on a schedule"))
         self.progress_item = top("📈  " + tr("Progress"), "progress", tr("Your progress and the lesson map"))
+        self.classroom_item = top("🎓  " + tr("Classroom"), "classroom",
+                                  tr("A progress report to hand on, and teacher notes per lesson"))
         self.curriculum_item.setExpanded(True)
         for i in range(self.curriculum_item.childCount()):
             self.curriculum_item.child(i).setExpanded(True)
@@ -348,12 +353,28 @@ class MainWindow(QMainWindow):
         file_menu.addAction(action(tr("Export notes…"), tr("Save all notes and bookmarks as a Markdown file"),
                                    self.notes_page.export))
         file_menu.addSeparator()
+        self.print_lesson_action = action(
+            tr("Print this lesson as PDF…"),
+            tr("Save the lesson you are reading, with its figures and quiz, as a PDF (Ctrl+P is Progress; "
+               "this is Ctrl+Shift+P)"),
+            self.export_lesson_pdf, "Ctrl+Shift+P")
+        file_menu.addAction(self.print_lesson_action)
+        file_menu.addAction(action(tr("Print this level as PDF…"),
+                                   tr("Every lesson of one level, each starting on a new page"),
+                                   self.export_level_pdf))
+        file_menu.addAction(action(tr("Print the whole course as PDF…"),
+                                   tr("All lessons in one file. It is long; give it a moment."),
+                                   self.export_course_pdf))
+        file_menu.addSeparator()
         file_menu.addAction(action(tr("Quit"), tr("Close Cosmos"), self.close, "Ctrl+Q"))
         learn = menu.addMenu(tr("&Learn"))
         for a in (home, cont, glossary, reference, history, progress, self.review_action):
             learn.addAction(a)
         learn.addSeparator()
         learn.addAction(action(tr("Simulators"), tr("All simulators"), lambda: self.navigate("sims")))
+        learn.addAction(action("🎓 " + tr("Classroom"),
+                               tr("A progress report to hand on, and teacher notes per lesson"),
+                               lambda: self.navigate("classroom")))
         learn.addAction(find)
         learn.addSeparator()
         learn.addAction(self.bookmark_action)
@@ -473,7 +494,7 @@ class MainWindow(QMainWindow):
         self._select_sidebar(route)
         self._update_nav_actions()
         if route in ("home", "progress", "glossary", "sims", "reference", "notes", "history", "problems",
-                     "review") \
+                     "review", "classroom") \
                 or route.startswith(("lesson:", "sim:")):
             self.ctx.store.data.last_route = route
             self.ctx.store.save()
@@ -489,6 +510,9 @@ class MainWindow(QMainWindow):
         if kind == "review":
             self.review_page.refresh()
             return self.review_page
+        if kind == "classroom":
+            self.classroom_page.refresh()
+            return self.classroom_page
         if kind == "sims":
             return self.sim_hub
         if kind == "sim" and target in SIMULATORS:
@@ -706,6 +730,65 @@ class MainWindow(QMainWindow):
                          "page and the side panels.")]
         self.guide_dock.show()
         self.guide.set_context("## " + tr("Keyboard shortcuts") + "\n\n" + "\n".join(lines))
+
+    # ------------------------------------------------------------- printing
+    def _pdf_options(self, title: str, subtitle: str):
+        from cosmos.content.loader import load_teacher_notes
+        from cosmos.gui.pages.classroom_page import note_labels
+        from cosmos.gui.rendering.pdf import PdfOptions
+
+        notes = {}
+        if self.ctx.store.data.classroom:
+            labels = note_labels()
+            notes = {key: note.markdown(labels) for key, note in load_teacher_notes().items()}
+        return PdfOptions(title=title, subtitle=subtitle, math_view=self.ctx.store.data.math_view,
+                          teacher_notes=notes)
+
+    def _save_pdf(self, suggested: str, lessons, subtitle: str) -> None:
+        """Ask where to put the file, render it, and say what happened."""
+        from PySide6.QtWidgets import QApplication, QFileDialog, QMessageBox
+
+        from cosmos.gui.rendering import pdf
+
+        if not lessons:
+            return
+        path, _filter = QFileDialog.getSaveFileName(self, tr("Save as PDF"), suggested, "PDF (*.pdf)")
+        if not path:
+            return
+        options = self._pdf_options(APP_NAME, subtitle)
+        QApplication.setOverrideCursor(Qt.WaitCursor)
+        try:
+            pages = pdf.export(path, pdf.course_markdown(list(lessons), options), options)
+        except OSError as error:
+            QApplication.restoreOverrideCursor()
+            QMessageBox.warning(self, tr("Could not save the PDF"), str(error))
+            return
+        finally:
+            if QApplication.overrideCursor() is not None:
+                QApplication.restoreOverrideCursor()
+        self.statusBar().showMessage(
+            tr("Saved {pages} page(s) to {path}").format(pages=pages, path=path), 8000)
+
+    def export_lesson_pdf(self) -> None:
+        lesson = self.lesson_page.lesson if self.stack.currentWidget() is self.lesson_page else None
+        if lesson is None:
+            self.statusBar().showMessage(tr("Open a lesson first, then print it."), 5000)
+            return
+        self._save_pdf(f"{lesson.id.replace('.', '_')}.pdf", [lesson], lesson.title)
+
+    def export_level_pdf(self) -> None:
+        cur = self.ctx.curriculum
+        lesson = self.lesson_page.lesson if self.stack.currentWidget() is self.lesson_page else None
+        number = lesson.level if lesson is not None else 0
+        level = next((lv for lv in cur.levels if lv.number == number), cur.levels[0])
+        lessons = [cur.lessons[i] for i in level.lesson_ids]
+        self._save_pdf(f"cosmos_level_{level.number}.pdf", lessons,
+                       tr("Level {number} · {title}").format(number=level.number, title=level.title))
+
+    def export_course_pdf(self) -> None:
+        cur = self.ctx.curriculum
+        self._save_pdf("cosmos_course.pdf", [cur.lessons[i] for i in cur.ordered_ids],
+                       tr("The whole course"))
 
     def show_help(self) -> None:
         self.guide_dock.show()

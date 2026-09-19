@@ -78,6 +78,8 @@ class LessonPage(QWidget):
         self.browser = RichBrowser(font_pt=11.5)
         self.browser.setObjectName("lessonBrowser")
         self.browser.glossaryRequested.connect(ctx.signals.glossaryRequested)
+        # Classroom mode can be switched on or off while a lesson is open (G19).
+        ctx.signals.progressChanged.connect(self._refresh_teacher_notes)
         self.browser.simulatorRequested.connect(lambda s: ctx.navigate(f"sim:{s}"))
         self.browser.lessonRequested.connect(lambda i: ctx.navigate(f"lesson:{i}"))
         self.quiz = QuizWidget()
@@ -87,6 +89,9 @@ class LessonPage(QWidget):
         self.quiz.reviewRequested.connect(lambda: self.tabs.setCurrentIndex(0))
         self.tabs.addTab(self.browser, "📖  " + tr("Lesson"))
         self.tabs.addTab(self.quiz, "✎  " + tr("Quiz"))
+        self.teacher = RichBrowser(font_pt=11.0)
+        self.teacher_tab = self.tabs.addTab(self.teacher, "🎓  " + tr("Teacher notes"))
+        self.tabs.setTabVisible(self.teacher_tab, False)
         root.addWidget(self.tabs, 1)
 
         nav = QHBoxLayout()
@@ -128,6 +133,7 @@ class LessonPage(QWidget):
         self.browser.set_markdown_content(body)
         self.browser.scroll_to_top()
         self.quiz.load(lesson, store.data.quiz_best.get(lesson_id))
+        self._load_teacher_notes(lesson_id)
         self.tabs.setCurrentIndex(0)
 
         while self.sim_buttons.count():
@@ -268,6 +274,22 @@ class LessonPage(QWidget):
         return "\n".join(lines)
 
     # ------------------------------------------------------------ handlers
+    def _refresh_teacher_notes(self) -> None:
+        if self.lesson is not None:
+            self._load_teacher_notes(self.lesson.id)
+
+    def _load_teacher_notes(self, lesson_id: str) -> None:
+        """G19: in classroom mode the lesson gains a tab of notes for whoever is teaching."""
+        from cosmos.content.loader import load_teacher_notes
+        from cosmos.gui.pages.classroom_page import note_labels
+
+        note = load_teacher_notes().get(lesson_id)
+        on = bool(self.ctx.store.data.classroom and note)
+        self.tabs.setTabVisible(self.teacher_tab, on)
+        if on:
+            self.teacher.set_markdown_content(
+                "## " + tr("Teacher notes") + "\n\n" + note.markdown(note_labels()))
+
     def _open_quiz(self) -> None:
         self.tabs.setCurrentIndex(1)
 

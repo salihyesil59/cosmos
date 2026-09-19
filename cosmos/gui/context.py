@@ -17,6 +17,7 @@ class AppSignals(QObject):
     glossaryRequested = Signal(str)  # show a term in the Guide panel
     notesChanged = Signal()          # a note or bookmark was added, edited or removed
     achievementsUnlocked = Signal(list)  # ids of achievements earned just now
+    statusMessage = Signal(str)     # a line for the status bar, from any page
 
 
 @dataclass

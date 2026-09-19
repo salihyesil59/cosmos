@@ -1056,3 +1056,96 @@ def test_keyboard_navigation(window):
     pump()
     text = window.guide.browser.toPlainText()
     assert "Keyboard shortcuts" in text and "Ctrl+0" in text
+
+
+def test_printing_lessons_to_pdf(window, tmp_path, monkeypatch):
+    """G18: a lesson, a level and the whole course can be saved as PDF."""
+    from PySide6.QtWidgets import QFileDialog
+
+    target = tmp_path / "out.pdf"
+    monkeypatch.setattr(QFileDialog, "getSaveFileName",
+                        staticmethod(lambda *a, **k: (str(target), "PDF (*.pdf)")))
+
+    window.navigate("home")
+    pump()
+    window.export_lesson_pdf()
+    assert "Open a lesson first" in window.statusBar().currentMessage()
+    assert not target.exists()
+
+    window.navigate("lesson:L0.6")
+    pump()
+    window.export_lesson_pdf()
+    assert "Saved" in window.statusBar().currentMessage()
+    assert target.read_bytes().startswith(b"%PDF")
+    one_lesson = target.stat().st_size
+
+    window.export_level_pdf()
+    assert "Saved" in window.statusBar().currentMessage()
+    assert target.stat().st_size > one_lesson, "a whole level must be longer than one lesson"
+
+    # Cancelling the dialog leaves the file alone.
+    before = target.stat().st_size
+    monkeypatch.setattr(QFileDialog, "getSaveFileName", staticmethod(lambda *a, **k: ("", "")))
+    window.export_course_pdf()
+    assert target.stat().st_size == before
+
+
+def test_classroom_page_and_mode(window, tmp_path, monkeypatch):
+    """G19: the report, the teacher-notes tab and the exports."""
+    from PySide6.QtWidgets import QFileDialog
+
+    store = window.ctx.store
+    window.navigate("classroom")
+    pump()
+    page = window.classroom_page
+    assert window.stack.currentWidget() is page
+    assert not page.mode.isChecked() and not store.data.classroom
+    text = page.browser.toPlainText()
+    assert "Progress report" in text and "By level" in text
+    assert page.guide_markdown()
+
+    # The teacher-notes tab follows the switch, even on a lesson already open.
+    window.navigate("lesson:L1.2")
+    pump()
+    lesson_page = window.lesson_page
+    assert not lesson_page.tabs.isTabVisible(lesson_page.teacher_tab)
+    page.mode.setChecked(True)
+    pump()
+    assert store.data.classroom
+    assert lesson_page.tabs.isTabVisible(lesson_page.teacher_tab)
+    notes = lesson_page.teacher.toPlainText()
+    assert "Common misconception" in notes and "Show them" in notes
+    page.mode.setChecked(False)
+    pump()
+    assert not lesson_page.tabs.isTabVisible(lesson_page.teacher_tab)
+
+    # Markdown export, with and without the notes appended.
+    plain = tmp_path / "report.md"
+    monkeypatch.setattr(QFileDialog, "getSaveFileName",
+                        staticmethod(lambda *a, **k: (str(plain), "Markdown (*.md)")))
+    page.export_markdown()
+    body = plain.read_text(encoding="utf-8")
+    assert body.startswith("# ") and "Teacher notes" not in body
+
+    page.mode.setChecked(True)
+    pump()
+    page.export_markdown()
+    with_notes = plain.read_text(encoding="utf-8")
+    assert "Teacher notes" in with_notes and len(with_notes) > 3 * len(body)
+
+    # And the same report as a PDF.
+    pdf_path = tmp_path / "report.pdf"
+    monkeypatch.setattr(QFileDialog, "getSaveFileName",
+                        staticmethod(lambda *a, **k: (str(pdf_path), "PDF (*.pdf)")))
+    page.export_pdf()
+    assert pdf_path.read_bytes().startswith(b"%PDF")
+    assert "Saved" in window.statusBar().currentMessage()
+
+    # In classroom mode a printed lesson carries its notes.
+    from cosmos.content.loader import load_teacher_notes
+    options = window._pdf_options("Cosmos", "x")
+    assert options.teacher_notes and len(options.teacher_notes) == len(load_teacher_notes())
+    page.mode.setChecked(False)
+    pump()
+    assert window._pdf_options("Cosmos", "x").teacher_notes == {}
+    store.forget_reviews()

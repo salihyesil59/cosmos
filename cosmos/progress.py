@@ -42,6 +42,7 @@ class UserData:
     review_learned: int = 0                                         # cards that left the deck for good
     reviews_cleared: int = 0                                        # review sessions answered in full
     font_scale: float = 1.0                                         # interface text size, 0.8 to 1.6
+    classroom: bool = False                                         # G19: show teacher notes in lessons
     achievements: dict[str, str] = field(default_factory=dict)      # achievement id -> ISO timestamp
 
     @classmethod
@@ -75,7 +76,7 @@ class ProgressStore:
         self.data = UserData(theme=kept.theme, default_preset=kept.default_preset, tour_completed=True,
                              math_view=kept.math_view, notes=dict(kept.notes),
                              bookmarks=list(kept.bookmarks), language=kept.language,
-                             font_scale=kept.font_scale)
+                             font_scale=kept.font_scale, classroom=kept.classroom)
         self.save()
 
     # ----------------------------------------------------------- recording
