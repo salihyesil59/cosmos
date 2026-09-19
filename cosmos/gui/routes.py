@@ -14,6 +14,7 @@ STATIC_TITLES = {
     "search": ("🔎", "Search"),
     "problems": ("✏", "Problem sets"),
     "review": ("🔁", "Review"),
+    "classroom": ("🎓", "Classroom"),
 }
 
 

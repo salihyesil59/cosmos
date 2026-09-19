@@ -20,6 +20,7 @@ from cosmos.content.models import (
     ProblemSet,
     QuizQuestion,
     Scientist,
+    TeacherNote,
 )
 
 CONTENT_DIR = Path(__file__).resolve().parent
@@ -180,6 +181,21 @@ def load_problems() -> list[ProblemSet]:
         ]
         sets.append(ProblemSet(level, entry["title"], " ".join(entry.get("intro", "").split()), problems))
     return sorted(sets, key=lambda s: s.level)
+
+
+@functools.cache
+def load_teacher_notes() -> dict[str, TeacherNote]:
+    """Classroom-mode notes, keyed by lesson id (G19)."""
+    data = yaml.safe_load((CONTENT_DIR / "teacher_notes.yaml").read_text(encoding="utf-8")) or {}
+    return {
+        lesson_id: TeacherNote(
+            lesson=lesson_id,
+            misconception=" ".join(entry["misconception"].split()),
+            discussion=" ".join(entry["discussion"].split()),
+            demonstrate=" ".join(entry["demonstrate"].split()),
+        )
+        for lesson_id, entry in data.items()
+    }
 
 
 @functools.cache

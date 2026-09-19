@@ -1,0 +1,622 @@
+# Teacher notes (G19): what to watch for when teaching each lesson.
+#
+# Three fields per lesson, all required:
+#   misconception  the thing learners reliably get wrong here, and the correction
+#   discussion     a question to put to the room; it has no one-line answer
+#   demonstrate    what to show live, usually in a simulator, and what to point at
+#
+# These are shown in the app only when Classroom mode is on, and can be printed
+# with the lesson.
+
+L0.1:
+  misconception: >
+    That "the universe is expanding into something". Nothing in this lesson implies an
+    outside. Expansion is a change of distances between things, not motion into empty
+    space that was already there.
+  discussion: >
+    If the Milky Way is 10⁵ light years across and the nearest large galaxy is 2.5 × 10⁶
+    light years away, galaxies are separated by about 25 times their own size. Stars are
+    separated by tens of millions of times their size. Why does that difference matter
+    for what happens when galaxies collide?
+  demonstrate: >
+    S3, flying out one power of ten at a time. Stop at 10¹⁶ m and ask what is in the
+    frame — almost nothing. Stop again at 10²³ m and note that the picture is suddenly
+    full again.
+
+L0.2:
+  misconception: >
+    That a light year is a time. Write "light × year" on the board once and keep pointing
+    at it. The parsec causes the opposite trouble: learners treat it as arbitrary when it
+    is defined by the measurement it comes from.
+  discussion: >
+    Why did astronomers invent the parsec instead of using light years, given that light
+    years are easier to explain?
+  demonstrate: >
+    S3 with the distance readout, and problem p0-proxima: parallax of 0.768″ gives 1.30
+    pc. Do it once on the board so the reciprocal is seen, not recited.
+
+L0.3:
+  misconception: >
+    That redshift means the object is "moving away fast" in the everyday sense. At this
+    stage say only that the lines have shifted; the difference between Doppler and
+    cosmological redshift is L2.2 and it is worth waiting for.
+  discussion: >
+    A spectrum is a list of which colours are missing. How can a missing colour tell you
+    what an object is made of, how hot it is and how fast it is moving?
+  demonstrate: >
+    S4 with the hydrogen lines, sliding the redshift up. Ask the class to call out when
+    Hα leaves the visible range.
+
+L0.4:
+  misconception: >
+    That the rubber-sheet picture explains gravity. It shows curvature causing motion,
+    but the sheet is curved *by gravity pulling the ball down* — the picture assumes what
+    it is meant to explain. Say so out loud; learners notice it and lose confidence if
+    nobody does.
+  discussion: >
+    Newton called gravity a force and Einstein called it geometry. Both predict the
+    orbit of the Earth to high accuracy. In what sense is one of them more right?
+  demonstrate: >
+    S9, the light cones. Show a light cone tipping as it approaches a mass, and connect
+    that to "gravity bends the paths available, not just the speed".
+
+L0.5:
+  misconception: >
+    That the Church alone stopped heliocentrism. The serious scientific objection was
+    real: if the Earth moves, the stars should show parallax, and nobody could measure
+    any. They were right to ask; the stars were simply much further away than anyone
+    guessed.
+  discussion: >
+    Which piece of evidence should have convinced a careful seventeenth-century
+    astronomer, and why did it take until 1838 to settle?
+  demonstrate: >
+    The History page timeline, walking from Copernicus to Hubble and stopping at the
+    gaps. Ask what was missing in each gap — usually an instrument.
+
+L0.6:
+  misconception: >
+    That expansion solves the paradox. Redshift helps, but the decisive fact is the
+    *finite age*: light from distant stars has not had time to arrive. Learners who leave
+    with "expansion makes the sky dark" have the wrong answer.
+  discussion: >
+    Olbers' paradox is an argument from an observation everyone has made. What other
+    everyday observations put a real constraint on cosmology?
+  demonstrate: >
+    S17 with an infinite static universe first (the sky saturates), then switch on the
+    finite age alone and watch it go dark before touching the redshift.
+
+L0.7:
+  misconception: >
+    That estimating is a lesser form of calculating. It is a different tool with a
+    different job: an estimate tells you whether a measurement is possible at all, and
+    catches the wrong exponent that a calculator will happily return.
+  discussion: >
+    Fermi estimated the yield of an atomic bomb by watching scraps of paper blow past.
+    What made that a legitimate measurement rather than a guess?
+  demonstrate: >
+    Do the critical-density estimate on the board without a calculator, then open S1 and
+    compare. The 20% disagreement is the point, not a failure.
+
+L1.1:
+  misconception: >
+    That each rung is measured independently. The ladder is a chain: every rung is
+    calibrated by the one below it, so an error low down moves everything above it. This
+    is exactly why the Hubble tension is hard to settle.
+  discussion: >
+    Why can no single method reach from the Solar System to a distant galaxy? What
+    changes as you go out?
+  demonstrate: >
+    S20. Introduce a systematic shift in the parallax rung and watch H₀ move without any
+    rung above it looking wrong.
+
+L1.2:
+  misconception: >
+    That the Hubble law means we are at the centre. Every observer in an expanding
+    universe sees the same law. Draw it: three dots on a stretching line, measured from
+    each one in turn.
+  discussion: >
+    Hubble's own value was about seven times too large and implied a universe younger
+    than the Earth. Should that have been treated as a refutation?
+  demonstrate: >
+    S5 with Hubble's 1929 data, then the modern sample. The scatter in the old data is
+    the real story.
+
+L1.3:
+  misconception: >
+    That "the universe is homogeneous" contradicts the existence of galaxies. It is a
+    statement about large enough scales, roughly 100 Mpc and up. Below that the universe
+    is extremely lumpy and the principle says nothing.
+  discussion: >
+    The cosmological principle cannot be proved — we see from one place at one time.
+    What would it take to disprove it?
+  demonstrate: >
+    S23, widening the slice. At 50 Mpc the map is all structure; at 300 Mpc it starts to
+    look statistically the same everywhere.
+
+L1.4:
+  misconception: >
+    That the cosmic web is made of galaxies. The galaxies are the lights on it; the
+    structure is dark matter, and the filaments would be there with no stars at all.
+  discussion: >
+    Voids take up most of the volume but hold few galaxies. Is a void empty?
+  demonstrate: >
+    S23 with the true universe preset, then S16 growing the same web from a smooth start.
+
+L1.5:
+  misconception: >
+    That Penzias and Wilson set out to find the CMB. They spent a year eliminating
+    pigeons. The discovery was an unexplained residual that would not go away — which is
+    what most discoveries look like from inside.
+  discussion: >
+    A signal you cannot get rid of is either a fault or a result. How do you tell?
+  demonstrate: >
+    S12 and the blackbody spectrum: 2.725 K, the best blackbody ever measured, and the
+    error bars smaller than the line width.
+
+L2.1:
+  misconception: >
+    Confusing comoving with proper distance, and then concluding that galaxies "move"
+    through space as the universe expands. In comoving coordinates they sit still; the
+    coordinate grid itself stretches.
+  discussion: >
+    If a galaxy's comoving distance never changes, in what sense is it receding?
+  demonstrate: >
+    S7, the balloon, with the comoving grid switched on. Mark two dots and show that the
+    grid labels never change while the ruler distance does.
+
+L2.2:
+  misconception: >
+    That cosmological redshift is a Doppler shift from recession. It is the stretching of
+    the wave during its journey. The clearest test: at z > 1.4 the naive Doppler
+    interpretation gives a speed above c, and nothing is wrong.
+  discussion: >
+    Galaxies beyond the Hubble radius recede faster than light, yet we see them. Why is
+    that not a violation of relativity?
+  demonstrate: >
+    S4 in cosmic-expansion mode next to S1 at z = 2: the universe was a third of its
+    present size, and the wavelength tripled.
+
+L2.3:
+  misconception: >
+    That the Friedmann equations are a special-relativity result. They come from general
+    relativity, though the first one has a Newtonian shadow that is worth showing — and
+    worth flagging as a coincidence of the mathematics, not a derivation.
+  discussion: >
+    The first Friedmann equation looks like energy conservation for a shell of matter.
+    What is doing the work that Newton's version cannot do?
+  demonstrate: >
+    S2, sweeping Ωm and ΩΛ across the map and watching a(t) change shape — recollapse,
+    coasting, acceleration.
+
+L2.4:
+  misconception: >
+    That Ω = 1 means the universe contains "exactly enough" matter. It means the total
+    density equals the critical value; dark energy counts, and it is most of it. A
+    universe can be flat and still expand for ever.
+  discussion: >
+    Why is the critical density defined by the expansion rate rather than by the matter
+    in it?
+  demonstrate: >
+    S18. Build a universe with Ωm = 1 and no dark energy, then check its age against the
+    oldest stars. The failure is instructive.
+
+L2.5:
+  misconception: >
+    That a closed universe must be finite and a flat one infinite. Flat space can be
+    finite if its topology wraps, and the measurement only tells us about curvature, not
+    about topology.
+  discussion: >
+    Planck measures Ωk = 0.000 ± 0.002. What have we learned, and what have we not?
+  demonstrate: >
+    S8. Draw a triangle on each geometry and read the angle sum; then shrink it and watch
+    all three approach 180°.
+
+L2.6:
+  misconception: >
+    That the Hubble sphere is the edge of what we can see. It is not: we routinely
+    observe galaxies outside it. The particle horizon is the limit, and it is larger.
+  discussion: >
+    Light emitted today by a distant galaxy may never reach us. Which horizon decides,
+    and why does dark energy change the answer?
+  demonstrate: >
+    S9, the conformal diagram. Trace one photon from a galaxy beyond the Hubble sphere
+    and watch it arrive anyway.
+
+L2.7:
+  misconception: >
+    That there is one distance. In an expanding universe the luminosity distance,
+    angular-diameter distance and light-travel distance disagree, and the disagreement
+    grows with z. Insisting on "the" distance is the error.
+  discussion: >
+    Angular-diameter distance has a maximum near z ≈ 1.6, so a galaxy further away can
+    look *bigger*. What is happening physically?
+  demonstrate: >
+    S1 at z = 1, 3 and 1090, reading the four distance rows each time and letting the
+    class see them diverge.
+
+L3.1:
+  misconception: >
+    That dark energy is a substance filling space that could run out. With w = −1 its
+    density stays constant as the universe expands, which is what makes it so strange.
+  discussion: >
+    Radiation dilutes as a⁻⁴, matter as a⁻³, dark energy not at all. What does that imply
+    about which one dominated when?
+  demonstrate: >
+    S2 with the density curves, showing the two crossings and where we sit now.
+
+L3.2:
+  misconception: >
+    That dark matter is one observation that might be explained away. It is at least five
+    independent ones — rotation curves, clusters, lensing, the CMB peaks, structure
+    formation — and they agree on the amount.
+  discussion: >
+    Which piece of evidence would be the hardest for a modified-gravity theory to
+    reproduce, and why?
+  demonstrate: >
+    S6 with a real SPARC galaxy: fit it with visible matter alone, then add the halo.
+    Then switch to MOND and note that it also fits, which is the honest complication.
+
+L3.3:
+  misconception: >
+    That the supernovae looked brighter than expected. They looked *fainter* — further
+    away than a decelerating universe allows. Getting the direction wrong makes the rest
+    of the argument incoherent.
+  discussion: >
+    Two teams announced the same surprising result within weeks. Why did that matter more
+    than either result alone?
+  demonstrate: >
+    S16 with the real Pantheon+ data. Fit Ωm = 1, ΩΛ = 0 and show the systematic
+    residual, then release ΩΛ.
+
+L3.4:
+  misconception: >
+    That ΛCDM is a theory of everything cosmological. It is six numbers and a great many
+    assumptions; it fits superbly and explains neither Λ nor the dark matter particle.
+  discussion: >
+    Six parameters fit thousands of data points. Is that impressive, or does it just mean
+    the data are not very constraining?
+  demonstrate: >
+    S18. Let the class set the six parameters and grade the universe they get.
+
+L3.5:
+  misconception: >
+    That 1/H₀ is the age. It is close — within 3% — but only by a coincidence between the
+    early deceleration and the late acceleration. Say "and it needn't have been" every
+    time.
+  discussion: >
+    In an Einstein–de Sitter universe the age is (2/3)/H₀. Why is our universe older than
+    that?
+  demonstrate: >
+    S2, reading the age at three points on the Ωm–ΩΛ map: Einstein–de Sitter, Planck
+    2018, and an empty universe. Then S1 at z = 0 for the integral done properly.
+
+L4.1:
+  misconception: >
+    That the early universe was "small". The *observable* part was small; the universe
+    may have been infinite then as now. Density is the quantity that changed.
+  discussion: >
+    The timeline spans 60 orders of magnitude in time. Which parts are tested by
+    experiment and which are extrapolation?
+  demonstrate: >
+    S11, sliding from the Planck time to today and stopping where the physics stops being
+    laboratory physics — around nucleosynthesis.
+
+L4.2:
+  misconception: >
+    That the CMB has cooled because the photons lost energy to something. The energy is
+    not conserved in the usual sense in an expanding spacetime; the wavelength stretches
+    with a, and that is the whole story.
+  discussion: >
+    T ∝ 1/a is simple. Why does the *matter* temperature not follow the same law after
+    decoupling?
+  demonstrate: >
+    S1 with the CMB temperature at several redshifts, and the measured T(z) from quasar
+    absorption lines if you have a few minutes.
+
+L4.3:
+  misconception: >
+    That nucleosynthesis made all the elements. It made hydrogen, helium, a little
+    lithium and essentially nothing else. Carbon and everything above it is stellar.
+  discussion: >
+    Deuterium abundance measures the baryon density to a few percent, and it agrees with
+    the CMB. Two completely different epochs, one number. What does that buy us?
+  demonstrate: >
+    S10. Move the baryon density and watch helium barely change while deuterium swings by
+    an order of magnitude.
+
+L4.4:
+  misconception: >
+    That recombination is when the universe became transparent *and* when the CMB was
+    emitted, at a sharp moment. It took tens of thousands of years, which is why the
+    last-scattering surface has a thickness — and that thickness is what limits
+    polarisation on large scales.
+  discussion: >
+    Why did recombination happen at 3000 K rather than at the 157 000 K that hydrogen's
+    binding energy suggests?
+  demonstrate: >
+    S12's sky patch at the default parameters, then with ten times fewer baryons.
+
+L4.5:
+  misconception: >
+    That the neutrino background is hypothetical. It is inferred from the expansion rate
+    with high confidence (Neff = 3.0 ± 0.2) even though no neutrino from it has been
+    caught directly.
+  discussion: >
+    The neutrino background is a thousand times more numerous than the CMB per cubic
+    centimetre of energy, yet undetected. What would it take?
+  demonstrate: >
+    S18 with Neff, and S10 showing how Neff changes the helium yield.
+
+L4.6:
+  misconception: >
+    That the matter excess is large. It is one part in a billion; everything else
+    annihilated. The universe we live in is the rounding error.
+  discussion: >
+    Sakharov's three conditions are each individually plausible. Why has no model
+    combining them been confirmed?
+  demonstrate: >
+    The baryogenesis figure, and the arithmetic: 10⁹ + 1 against 10⁹.
+
+L4.7:
+  misconception: >
+    That cosmology measures neutrino masses individually. It measures the *sum*, and only
+    through its effect on structure growth. Oscillation experiments measure the
+    differences. Neither gives the individual masses alone.
+  discussion: >
+    Cosmology's bound, Σm < 0.072 eV, is now in tension with the inverted mass ordering.
+    What could be wrong — the neutrinos, or the cosmological model?
+  demonstrate: >
+    S18 with the Σmν slider, watching σ8 and the report card fail as the mass rises.
+
+L5.1:
+  misconception: >
+    That the peaks are "sound we can hear". They are frozen standing waves in the
+    photon–baryon plasma, imaged once. There is no ongoing oscillation to listen to.
+  discussion: >
+    The first peak position measures the curvature of space. How does an angle on the sky
+    become a statement about geometry?
+  demonstrate: >
+    S12. Move Ωk and watch the whole spectrum slide sideways; move Ωb and watch the odd
+    peaks grow while the even ones do not.
+
+L5.2:
+  misconception: >
+    That the BAO scale is a physical object out there. It is a preferred separation, a
+    small bump in the correlation function at 150 Mpc, not a ring anyone can point to.
+  discussion: >
+    The same sound horizon appears in the CMB at z = 1100 and in galaxies at z = 0.5.
+    What does using one ruler at two epochs actually measure?
+  demonstrate: >
+    S21 with BOSS, then DESI, then Euclid, reading the error bar each time.
+
+L5.3:
+  misconception: >
+    That structure grew exponentially. In a matter-dominated universe it grows as a —
+    linearly with the scale factor, which is slow. That slowness is precisely why dark
+    matter is needed: baryons alone started too late.
+  discussion: >
+    Density contrasts were 10⁻⁵ at recombination and are 10⁵ in a galaxy today. Linear
+    growth gives a factor of 1000. Where did the rest come from?
+  demonstrate: >
+    S16, running the same initial field with and without the early head start dark matter
+    provides.
+
+L5.4:
+  misconception: >
+    That the turnover in P(k) is a feature of the initial conditions. It is set by the
+    horizon size at matter–radiation equality; the primordial spectrum is a featureless
+    power law.
+  discussion: >
+    A scale-invariant spectrum has nₛ = 1, and we measure 0.965. Why is that small
+    deviation a big deal?
+  demonstrate: >
+    S23's correlation function, and the point where the mock has no structure — a good
+    moment to talk about resolution limits in general.
+
+L5.5:
+  misconception: >
+    That simulation particles are dark-matter particles. Each weighs 10⁸ solar masses or
+    more. A simulation resolves structures made of many particles and says nothing below
+    that.
+  discussion: >
+    Bottom-up growth predicts many more small halos than we see galaxies. Is that a
+    failure of ΛCDM or of our understanding of star formation?
+  demonstrate: >
+    S16, then S23's seed slider: four universes with identical statistics and completely
+    different structures.
+
+L5.6:
+  misconception: >
+    That lensing magnifies the way a glass lens does, preserving the picture. It shears
+    and multiplies images; there is no focal plane and no single image.
+  discussion: >
+    Weak lensing measures a 1% distortion on galaxies whose intrinsic shapes are 30%
+    elliptical. How is that possible?
+  demonstrate: >
+    S14, moving the source behind the lens until the Einstein ring closes.
+
+L5.7:
+  misconception: >
+    That B modes mean inflation. Lensing makes B modes too, and so does Galactic dust —
+    which is exactly what caught BICEP2. Only a primordial B mode at ℓ ≈ 80, after dust
+    and lensing are removed, would mean gravitational waves.
+  discussion: >
+    A detection of r would measure physics at 10¹⁶ GeV. What would a *non-detection* at
+    r < 0.001 tell us?
+  demonstrate: >
+    S12's B-modes tab. Raise r with the default dust until the primordial curve wins at
+    ℓ = 80 — it takes r ≈ 0.08, close to what BICEP2 announced.
+
+L6.1:
+  misconception: >
+    That the metric is a formula for distance in the usual sense. It is the rule for
+    measuring intervals, and in spacetime the interval can be zero along a path of
+    enormous length. Do a light-like interval on the board early.
+  discussion: >
+    The FLRW metric assumes homogeneity and isotropy from the start. How much of
+    cosmology's success is a consequence of that assumption?
+  demonstrate: >
+    S9, switching coordinate systems for the same physical situation and showing that the
+    light cones move while the physics does not.
+
+L6.2:
+  misconception: >
+    That the derivation "proves" the Friedmann equations. It shows they follow from
+    Einstein's equations plus the FLRW assumption. Both inputs are choices.
+  discussion: >
+    The cosmological constant can be moved between the geometry side and the matter side
+    of the field equations. Does that change the physics?
+  demonstrate: >
+    Work the stress–energy tensor for a perfect fluid on the board; it is short, and
+    seeing it once makes the rest feel less like magic.
+
+L6.3:
+  misconception: >
+    That inflation explains the Big Bang. It explains the *initial conditions* — flatness,
+    horizon, the spectrum of ripples. What happened before, and what started inflation,
+    are not answered.
+  discussion: >
+    Inflation is often praised for making predictions and criticised for being able to
+    accommodate anything. Which is it?
+  demonstrate: >
+    S15, comparing potentials against the Planck and BICEP/Keck contours. Quadratic
+    inflation is excluded — show it failing.
+
+L6.4:
+  misconception: >
+    That reionisation was a single moment. It was patchy and extended over hundreds of
+    millions of years, bubbles first. The optical depth is an average over all of it.
+  discussion: >
+    The 21-cm signal would map the dark ages directly. Why has nobody done it yet?
+  demonstrate: >
+    S12's τ slider next to the reionisation bump in the E-mode spectrum (S12's
+    polarisation tab).
+
+L6.5:
+  misconception: >
+    That LIGO detects the wave "passing through" the detector like sound. It measures a
+    fractional change in length of 10⁻²¹ — a thousandth of a proton across four
+    kilometres — and everything else in the instrument exists to rule out other causes.
+  discussion: >
+    GW170817 arrived 1.7 s before its gamma rays after 130 million years. What does that
+    constrain?
+  demonstrate: >
+    S22 with GW170817, then the same merger at 400 Mpc. The signal survives; the host
+    galaxy does not.
+
+L6.6:
+  misconception: >
+    That the Hubble tension is a disagreement about a measurement. Both measurements are
+    good. The disagreement is between a *direct* measurement of H₀ and a value *inferred*
+    from the early universe through ΛCDM — so ΛCDM is one of the suspects.
+  discussion: >
+    Which would you bet on: an unknown systematic in one of the measurements, or new
+    physics? What evidence would change your mind?
+  demonstrate: >
+    S20, hunting for a systematic big enough to close the gap, and S22 showing how many
+    sirens it would take to arbitrate.
+
+L6.7:
+  misconception: >
+    That MOND is obviously wrong. It fits galaxy rotation curves better than ΛCDM does,
+    with one parameter. It fails on clusters and the CMB. Teaching it as a strawman
+    teaches the wrong lesson about how theories are judged.
+  discussion: >
+    What is the minimum a rival to ΛCDM must reproduce before it deserves attention?
+  demonstrate: >
+    S6 with a real galaxy: fit the halo, then fit MOND, then show a cluster where MOND
+    still needs dark matter.
+
+L6.8:
+  misconception: >
+    That these problems are close to being solved. Several have been open for forty
+    years. Presenting them as nearly settled misrepresents the field to exactly the
+    students who might work on them.
+  discussion: >
+    Which of the open problems is most likely to be resolved by a measurement rather than
+    by a theory?
+  demonstrate: >
+    Nothing to simulate here. Ask the class to rank the problems by how likely each is to
+    fall in their lifetime, and to defend the ranking.
+
+L6.9:
+  misconception: >
+    That the Event Horizon Telescope photographed an event horizon. It imaged the
+    *shadow*, which is 2.6 times larger in radius because light bends around the hole.
+  discussion: >
+    Supermassive black holes track their galaxies through the M–σ relation. How can an
+    object a few AU across be correlated with one a hundred thousand light years across?
+  demonstrate: >
+    S22 with two 30 M☉ black holes at 500 Mpc: loud, well measured, and useless for H₀
+    because there is no host.
+
+L7.1:
+  misconception: >
+    That an error bar means "the answer is definitely in here". It is one standard
+    deviation: about a third of correct measurements fall outside it, and that is the
+    expected behaviour, not a failure.
+  discussion: >
+    Why do cosmologists plot almost everything on logarithmic axes, and what does that
+    hide?
+  demonstrate: >
+    S19's contour plot. Show the 68% and 95% regions and count how many mock points land
+    outside.
+
+L7.2:
+  misconception: >
+    That 5σ means "99.99994% certain the claim is true". It is the probability of the
+    data given the null hypothesis, not the probability of the hypothesis given the data.
+    Make the class say it the right way round once.
+  discussion: >
+    Particle physics demands 5σ; medicine often accepts 2σ. What makes the right
+    threshold different in different fields?
+  demonstrate: >
+    S19. Fit a model, then change the assumed errors and watch the significance move
+    without the data changing at all.
+
+L7.3:
+  misconception: >
+    That a converged chain means the answer is right. Convergence means the sampler has
+    explored the posterior of *the model you wrote down*. A wrong model converges just as
+    happily.
+  discussion: >
+    Two probes with different degeneracy directions constrain far more together than
+    either does alone. Why is that not double counting?
+  demonstrate: >
+    S19, running with one probe and then two, and watching the banana close into an
+    ellipse.
+
+L7.4:
+  misconception: >
+    That a bigger survey is always better. For a fixed number of galaxies there is an
+    optimum area, where n̄P ≈ 1. Beyond it, spreading thinner loses more than the extra
+    volume gains.
+  discussion: >
+    Spectroscopy gives exact redshifts for tens of millions of galaxies; imaging gives
+    rough ones for billions. Which would you build, and for which question?
+  demonstrate: >
+    S21's "Wide or deep?" tab with the galaxy count held fixed: the error has a clear
+    minimum, and it is not at the largest area anyone could survey.
+
+L7.5:
+  misconception: >
+    That a simulation is evidence. It shows what follows from the assumptions fed into
+    it. The evidence is the agreement — or disagreement — with data.
+  discussion: >
+    Error bars in modern papers come from thousands of simulated universes. What has to
+    be true of those simulations for the error bars to mean anything?
+  demonstrate: >
+    S23's seed slider, run through five values. Same cosmology, different universes; that
+    spread is cosmic variance and it is measurable.
+
+L7.6:
+  misconception: >
+    That taking more data eventually removes any error. A systematic does not shrink with
+    N. Once the statistical error drops below the floor, more observing time buys
+    nothing.
+  discussion: >
+    A team finds a 3σ anomaly. What should they do before publishing, and what should
+    they do before believing it themselves?
+  demonstrate: >
+    S21 with a 0.3% systematic floor. Add years of observing and watch the total error
+    stop moving.
