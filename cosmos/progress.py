@@ -43,6 +43,8 @@ class UserData:
     reviews_cleared: int = 0                                        # review sessions answered in full
     font_scale: float = 1.0                                         # interface text size, 0.8 to 1.6
     classroom: bool = False                                         # G19: show teacher notes in lessons
+    update_check: str = "ask"                                       # E13: "ask", "on" or "off"
+    update_last_checked: str = ""                                   # ISO date of the last look
     achievements: dict[str, str] = field(default_factory=dict)      # achievement id -> ISO timestamp
 
     @classmethod
@@ -76,7 +78,8 @@ class ProgressStore:
         self.data = UserData(theme=kept.theme, default_preset=kept.default_preset, tour_completed=True,
                              math_view=kept.math_view, notes=dict(kept.notes),
                              bookmarks=list(kept.bookmarks), language=kept.language,
-                             font_scale=kept.font_scale, classroom=kept.classroom)
+                             font_scale=kept.font_scale, classroom=kept.classroom,
+                             update_check=kept.update_check)
         self.save()
 
     # ----------------------------------------------------------- recording

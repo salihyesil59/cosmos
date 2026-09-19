@@ -21,7 +21,6 @@ from cosmos.gui.context import AppContext
 from cosmos.gui.widgets.common import ParameterSlider, labelled_row, muted_label, title_label
 from cosmos.gui.widgets.rich_browser import RichBrowser
 from cosmos.physics import constants as const
-from cosmos.physics.presets import PRESETS
 from cosmos.i18n import tr, tr_noop
 
 GUIDE = tr_noop("""
@@ -178,16 +177,25 @@ class ReferencePage(QWidget):
         self.converter.setMaximumWidth(640)
         ul.addWidget(self.converter, 0, Qt.AlignLeft)
         self.constants_view = self._browser()
-        self.constants_view.set_markdown_content(self._constants_markdown())
         ul.addWidget(self.constants_view, 1)
         # "&" in a tab label would turn into a keyboard mnemonic.
         self.tabs.addTab(units_tab, "⚖  " + tr("Constants && units"))
 
         # --- models
         self.models_view = self._browser()
-        self.models_view.set_markdown_content(self._models_markdown())
         self.tabs.addTab(self.models_view, "🌌  " + tr("Models"))
 
+        # Filled on the first visit (E12): rendering these needs matplotlib and the
+        # physics engine, and nothing on the home page wants either.
+        self._filled = False
+
+    def refresh(self) -> None:
+        """Render the sheet. Cheap after the first call."""
+        if self._filled:
+            return
+        self._filled = True
+        self.constants_view.set_markdown_content(self._constants_markdown())
+        self.models_view.set_markdown_content(self._models_markdown())
         self._render_formulas()
 
     def _browser(self) -> RichBrowser:
@@ -272,6 +280,8 @@ class ReferencePage(QWidget):
                  "Every preset available in the simulators. Ωk = 1 − Ωm − ΩΛ; a negative Ωk means "
                  "a closed universe.", "",
                  "| Model | H₀ | Ωm | ΩΛ | Ωb | Ωk | w₀, wa | Age (Gyr) |", "|---|---|---|---|---|---|---|---|"]
+        from cosmos.physics.presets import PRESETS   # E12: numpy and scipy, on demand
+
         for preset in PRESETS.values():
             c = preset.cosmology
             omega_k = 1 - c.Om0 - c.Ode0
@@ -283,6 +293,8 @@ class ReferencePage(QWidget):
             lines.append(f"| {preset.label} | {c.H0:g} | {c.Om0:g} | {c.Ode0:g} | {c.Ob0:g} | "
                          f"{omega_k:+.3f} | {w} | {age} |")
         lines += ["", "## What the presets mean", ""]
+        from cosmos.physics.presets import PRESETS   # E12: numpy and scipy, on demand
+
         for preset in PRESETS.values():
             lines.append(f"- **{preset.label}** — {preset.description}")
         lines += ["", "Open the [Cosmology Calculator](sim:S1) or "
