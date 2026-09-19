@@ -5,14 +5,19 @@ from __future__ import annotations
 import functools
 import io
 
-import matplotlib
-
-matplotlib.use("QtAgg")
-
-from matplotlib import mathtext, rc_context  # noqa: E402
-from matplotlib.font_manager import FontProperties  # noqa: E402
-
 SCREEN_DPI = 96
+
+
+@functools.cache
+def _engine():
+    """matplotlib, imported on the first formula rather than at start-up (E12)."""
+    import matplotlib
+
+    matplotlib.use("QtAgg")
+    from matplotlib import mathtext, rc_context
+    from matplotlib.font_manager import FontProperties
+
+    return mathtext, rc_context, FontProperties
 
 
 class MathError(ValueError):
@@ -26,6 +31,7 @@ def render_png(tex: str, color: str, size_pt: float, device_ratio: float = 1.0) 
     The image is rendered at ``device_ratio`` times the screen resolution so it
     stays crisp on high-DPI displays.
     """
+    mathtext, rc_context, FontProperties = _engine()
     buf = io.BytesIO()
     try:
         with rc_context({"mathtext.fontset": "cm", "savefig.transparent": True, "figure.facecolor": "none"}):

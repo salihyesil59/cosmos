@@ -41,7 +41,19 @@ def create_window(app: QApplication):
         store=store,
         signals=AppSignals(),
     )
+    ctx.plugins = load_plugins(store.path)
     return MainWindow(ctx)
+
+
+def load_plugins(data_file):
+    """E14: pick up any simulator a teacher dropped in the plugins folder."""
+    from cosmos.gui.simulators.registry import SIMULATORS, register_plugins
+    from cosmos import plugins
+
+    plugins.ensure_folder(data_file)
+    loaded = plugins.discover(data_file, taken=set(SIMULATORS))
+    register_plugins(loaded.plugins)
+    return loaded
 
 
 def selftest(report_path: str | None = None) -> int:
@@ -118,6 +130,11 @@ def run(argv: list[str] | None = None) -> int:
     store = window.ctx.store
     last = store.data.last_route or "home"
     window.navigate(last)
+    QTimer.singleShot(200, window.report_plugins)
     if not store.data.tour_completed:
         QTimer.singleShot(400, window.start_tour)
+    else:
+        # E13: ask about update checks once, and only after the tour is out of the way.
+        QTimer.singleShot(1500, window.offer_update_check)
+        QTimer.singleShot(2500, window.check_for_updates)
     return app.exec()

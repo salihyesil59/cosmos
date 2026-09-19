@@ -62,6 +62,8 @@ on first launch.
 - **Classroom mode**: a progress report a teacher can read, and teacher notes for
   every lesson — the misconception that always comes up, a discussion question and
   what to demonstrate
+- **Your own simulators**: drop a Python file in the plugins folder and it appears in
+  the list, no changes to the app
 - **Notes and bookmarks**: a private notebook for every page, exportable as Markdown
 - Tooltips and **?** buttons on every control
 - Progress tracking with a prerequisite map
@@ -69,6 +71,8 @@ on first launch.
   to 160%, visible keyboard focus, and every command reachable without a mouse
 - The interface is translatable and ships with a full Turkish pack
 - An optional **Tutor** panel that answers questions with your own API key
+- An optional, opt-in **update check** — it asks GitHub for the latest release number
+  and sends nothing at all, not even a count
 - Export plots as PNG/SVG and data as CSV
 - Presets: Planck 2018, WMAP 9-year, evolving and phantom dark energy, Einstein–de Sitter and more
 - A physics engine verified against [astropy](https://www.astropy.org/), and an

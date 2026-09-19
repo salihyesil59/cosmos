@@ -24,6 +24,18 @@ from cosmos.content.models import (
 )
 
 CONTENT_DIR = Path(__file__).resolve().parent
+
+
+def _read_yaml(text: str):
+    """Parse YAML with libyaml when PyYAML was built with it (E12: it is 8× faster)."""
+    return yaml.load(text, Loader=_LOADER)
+
+
+try:
+    _LOADER = yaml.CSafeLoader
+except AttributeError:                      # a PyYAML built without libyaml
+    _LOADER = yaml.SafeLoader
+
 _FRONT_MATTER = re.compile(r"\A---\s*\n(.*?)\n---\s*\n(.*)\Z", re.DOTALL)
 
 
@@ -54,7 +66,7 @@ def parse_lesson(text: str, lesson_id: str) -> tuple[dict, str]:
     match = _FRONT_MATTER.match(text.replace("\r\n", "\n"))
     if not match:
         raise ValueError(f"lesson {lesson_id} has no YAML front matter")
-    meta = yaml.safe_load(match.group(1)) or {}
+    meta = _read_yaml(match.group(1)) or {}
     return meta, match.group(2)
 
 
@@ -62,7 +74,7 @@ def _load_quiz(stem: str) -> list[QuizQuestion]:
     path = CONTENT_DIR / "quizzes" / f"{stem}.yaml"
     if not path.exists():
         return []
-    data = yaml.safe_load(path.read_text(encoding="utf-8")) or []
+    data = _read_yaml(path.read_text(encoding="utf-8")) or []
     return [
         QuizQuestion(
             prompt=q["question"].strip(),
@@ -76,7 +88,7 @@ def _load_quiz(stem: str) -> list[QuizQuestion]:
 
 @functools.cache
 def load_curriculum() -> Curriculum:
-    spec = yaml.safe_load((CONTENT_DIR / "curriculum.yaml").read_text(encoding="utf-8"))
+    spec = _read_yaml((CONTENT_DIR / "curriculum.yaml").read_text(encoding="utf-8"))
     levels: list[Level] = []
     lessons: dict[str, Lesson] = {}
     for lv in spec["levels"]:
@@ -105,7 +117,7 @@ def load_curriculum() -> Curriculum:
 
 @functools.cache
 def load_glossary() -> dict[str, GlossaryTerm]:
-    data = yaml.safe_load((CONTENT_DIR / "glossary.yaml").read_text(encoding="utf-8"))
+    data = _read_yaml((CONTENT_DIR / "glossary.yaml").read_text(encoding="utf-8"))
     terms = {}
     for key, entry in data.items():
         terms[key] = GlossaryTerm(
@@ -120,7 +132,7 @@ def load_glossary() -> dict[str, GlossaryTerm]:
 
 @functools.cache
 def load_formulas() -> list[Formula]:
-    data = yaml.safe_load((CONTENT_DIR / "formulas.yaml").read_text(encoding="utf-8")) or []
+    data = _read_yaml((CONTENT_DIR / "formulas.yaml").read_text(encoding="utf-8")) or []
     return [
         Formula(
             id=entry["id"],
@@ -138,7 +150,7 @@ def load_formulas() -> list[Formula]:
 @functools.cache
 def load_challenges() -> dict[str, list[Challenge]]:
     """Guided challenges, keyed by simulator id."""
-    data = yaml.safe_load((CONTENT_DIR / "challenges.yaml").read_text(encoding="utf-8")) or {}
+    data = _read_yaml((CONTENT_DIR / "challenges.yaml").read_text(encoding="utf-8")) or {}
     out: dict[str, list[Challenge]] = {}
     for simulator, steps in data.items():
         out[simulator] = [
@@ -158,7 +170,7 @@ def load_challenges() -> dict[str, list[Challenge]]:
 @functools.cache
 def load_problems() -> list[ProblemSet]:
     """The worked problem sets, one per level (G15)."""
-    data = yaml.safe_load((CONTENT_DIR / "problems.yaml").read_text(encoding="utf-8")) or []
+    data = _read_yaml((CONTENT_DIR / "problems.yaml").read_text(encoding="utf-8")) or []
     sets = []
     for entry in data:
         level = int(entry["level"])
@@ -186,7 +198,7 @@ def load_problems() -> list[ProblemSet]:
 @functools.cache
 def load_teacher_notes() -> dict[str, TeacherNote]:
     """Classroom-mode notes, keyed by lesson id (G19)."""
-    data = yaml.safe_load((CONTENT_DIR / "teacher_notes.yaml").read_text(encoding="utf-8")) or {}
+    data = _read_yaml((CONTENT_DIR / "teacher_notes.yaml").read_text(encoding="utf-8")) or {}
     return {
         lesson_id: TeacherNote(
             lesson=lesson_id,
@@ -201,7 +213,7 @@ def load_teacher_notes() -> dict[str, TeacherNote]:
 @functools.cache
 def load_history() -> tuple[list[HistoryEvent], list[Scientist]]:
     """The timeline of discoveries and the scientist cards."""
-    data = yaml.safe_load((CONTENT_DIR / "history.yaml").read_text(encoding="utf-8")) or {}
+    data = _read_yaml((CONTENT_DIR / "history.yaml").read_text(encoding="utf-8")) or {}
     events = [
         HistoryEvent(
             year=int(e["year"]),

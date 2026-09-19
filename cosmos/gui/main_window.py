@@ -142,6 +142,7 @@ class MainWindow(QMainWindow):
         ctx.signals.progressChanged.connect(self._update_review_action)
         ctx.signals.notesChanged.connect(self._refresh_notes)
         ctx.signals.statusMessage.connect(lambda text: self.statusBar().showMessage(text, 8000))
+        ctx.signals.updateFound.connect(self._update_result)
         ctx.signals.progressChanged.connect(self.check_achievements)
         theme().changed.connect(lambda _p: self._refresh_sidebar())
 
@@ -397,6 +398,22 @@ class MainWindow(QMainWindow):
         help_menu.addAction(action(tr("How to use Cosmos"), tr("Show help in the Guide panel"), self.show_help))
         help_menu.addAction(action(tr("Keyboard shortcuts"), tr("Every command you can reach without the mouse"),
                                    self.show_shortcuts))
+        help_menu.addAction(action(tr("Simulator plugins…"),
+                                   tr("Add your own simulator by dropping a Python file in a folder"),
+                                   self.show_plugins))
+        help_menu.addSeparator()
+        self.update_action = action(tr("Check for updates now"),
+                                    tr("Ask GitHub whether a newer Cosmos has been released. Nothing about "
+                                       "you or this computer is sent."),
+                                    lambda: self.check_for_updates(manual=True))
+        help_menu.addAction(self.update_action)
+        self.auto_update_action = action(
+            tr("Check for updates on start-up"),
+            tr("Look once a day, in the background. Off by default; nothing is ever uploaded."),
+            self.set_auto_update, checkable=True)
+        self.auto_update_action.setChecked(self.ctx.store.data.update_check == "on")
+        help_menu.addAction(self.auto_update_action)
+        help_menu.addSeparator()
         help_menu.addAction(action(tr("About Cosmos"), tr("Version and credits"), self.show_about))
 
     def _theme_menu(self) -> QMenu:
@@ -535,6 +552,7 @@ class MainWindow(QMainWindow):
             self.check_achievements()
             return self.history_page
         if kind == "reference":
+            self.reference_page.refresh()
             if target:
                 self.reference_page.show_formula(target)
             return self.reference_page
@@ -790,6 +808,151 @@ class MainWindow(QMainWindow):
         self._save_pdf("cosmos_course.pdf", [cur.lessons[i] for i in cur.ordered_ids],
                        tr("The whole course"))
 
+    # ------------------------------------------------------- plugins (E14)
+    def plugins_folder(self):
+        from cosmos import plugins
+
+        return plugins.folder(self.ctx.store.path)
+
+    def report_plugins(self) -> None:
+        """Say what the plugins folder produced, if anything went wrong or right."""
+        loaded = getattr(self.ctx, "plugins", None)
+        if loaded is None:
+            return
+        if loaded.errors:
+            names = ", ".join(name for name, _message in loaded.errors)
+            self.statusBar().showMessage(
+                tr("{count} plugin(s) could not be loaded ({names}). See Help → Simulator plugins.")
+                .format(count=len(loaded.errors), names=names), 15000)
+        elif loaded.plugins:
+            self.statusBar().showMessage(
+                tr("Loaded {count} simulator plugin(s).").format(count=len(loaded.plugins)), 8000)
+
+    def show_plugins(self) -> None:
+        """Explain plugins in the Guide panel, with whatever happened this time."""
+        from PySide6.QtCore import QUrl
+        from PySide6.QtGui import QDesktopServices
+
+        from cosmos import plugins
+
+        target = plugins.ensure_folder(self.ctx.store.path)
+        loaded = getattr(self.ctx, "plugins", None)
+        lines = [
+            "## " + tr("Simulator plugins"),
+            "",
+            tr("You can add your own simulator without changing Cosmos. Put one Python file in this "
+               "folder and restart:"),
+            "",
+            f"`{target}`",
+            "",
+            tr("The folder contains a README with a complete example. A plugin is ordinary Python and "
+               "runs with the same permissions as Cosmos itself, so only add files you wrote or trust."),
+            "",
+        ]
+        if loaded is not None and loaded.plugins:
+            lines += ["### " + tr("Loaded"), ""]
+            lines += [f"- **{plugin.id}** {plugin.title} — {plugin.tagline}" for plugin in loaded.plugins]
+            lines.append("")
+        if loaded is not None and loaded.errors:
+            lines += ["### " + tr("Not loaded"), ""]
+            lines += [f"- **{name}** — `{message}`" for name, message in loaded.errors]
+            lines.append("")
+        if loaded is None or (not loaded.plugins and not loaded.errors):
+            lines += [tr("No plugins are installed."), ""]
+        self.guide_dock.show()
+        self.guide.set_context("\n".join(lines))
+        QDesktopServices.openUrl(QUrl.fromLocalFile(str(target)))
+
+    # ------------------------------------------------------- updates (E13)
+    def set_auto_update(self, on: bool) -> None:
+        self.ctx.store.data.update_check = "on" if on else "off"
+        self.ctx.store.save()
+        self.statusBar().showMessage(
+            tr("Cosmos will look for updates once a day.") if on
+            else tr("Cosmos will not look for updates."), 6000)
+        if on:
+            self.check_for_updates()
+
+    def offer_update_check(self) -> None:
+        """Ask once, on a later start-up, whether the app may look for updates."""
+        from PySide6.QtWidgets import QMessageBox
+
+        if self.ctx.store.data.update_check != "ask":
+            return
+        box = QMessageBox(self)
+        box.setWindowTitle(tr("Check for updates?"))
+        box.setText(tr("Shall Cosmos look for a newer version once a day?"))
+        box.setInformativeText(
+            tr("It asks GitHub for the latest release number and nothing else. No information about you, "
+               "this computer or your progress is sent, and there is no identifier of any kind. You can "
+               "change this at any time under Help."))
+        yes = box.addButton(tr("Yes, check daily"), QMessageBox.AcceptRole)
+        box.addButton(tr("No, thanks"), QMessageBox.RejectRole)
+        box.exec()
+        self.ctx.store.data.update_check = "on" if box.clickedButton() is yes else "off"
+        self.ctx.store.save()
+        self.auto_update_action.setChecked(self.ctx.store.data.update_check == "on")
+        if self.ctx.store.data.update_check == "on":
+            self.check_for_updates()
+
+    def check_for_updates(self, manual: bool = False) -> bool:
+        """Start a check on a worker thread. Returns True if one was started."""
+        from datetime import date
+
+        from PySide6.QtCore import QThreadPool, QRunnable, Slot
+
+        from cosmos import updates
+
+        data = self.ctx.store.data
+        if not manual and not updates.should_check(data.update_check == "on", data.update_last_checked):
+            return False
+        data.update_last_checked = date.today().isoformat()
+        self.ctx.store.save()
+        if manual:
+            self.statusBar().showMessage(tr("Looking for a newer version…"), 4000)
+
+        signals = self.ctx.signals          # not the window: it may close while we wait
+
+        class _Check(QRunnable):
+            @Slot()
+            def run(self):                       # noqa: D102 (Qt override)
+                release = updates.check(__version__)
+                try:
+                    # Back onto the GUI thread; a failed check says nothing unless asked.
+                    signals.updateFound.emit(release.version if release else "",
+                                             release.url if release else "",
+                                             release.short_notes if release else "",
+                                             manual)
+                except RuntimeError:
+                    pass                         # the window went away first; nothing to report
+
+        QThreadPool.globalInstance().start(_Check())
+        return True
+
+    def _update_result(self, version: str, url: str, notes: str, manual: bool) -> None:
+        if not version:
+            if manual:
+                self.statusBar().showMessage(
+                    tr("No newer version found — or the check could not reach GitHub."), 8000)
+            return
+        self.statusBar().showMessage(
+            tr("Cosmos {version} is available.").format(version=version), 0)
+        from PySide6.QtWidgets import QMessageBox
+
+        box = QMessageBox(self)
+        box.setWindowTitle(tr("A newer Cosmos is available"))
+        box.setText(tr("Version {version} has been released.").format(version=version))
+        if notes:
+            box.setInformativeText(notes)
+        open_page = box.addButton(tr("Open the release page"), QMessageBox.AcceptRole)
+        box.addButton(tr("Later"), QMessageBox.RejectRole)
+        box.exec()
+        if box.clickedButton() is open_page:
+            from PySide6.QtGui import QDesktopServices
+            from PySide6.QtCore import QUrl
+
+            QDesktopServices.openUrl(QUrl(url))
+
     def show_help(self) -> None:
         self.guide_dock.show()
         self.guide.set_context(self.home.guide_markdown())
@@ -905,6 +1068,9 @@ class MainWindow(QMainWindow):
         self.ctx.store.save()
 
     def closeEvent(self, event):  # noqa: N802
+        from PySide6.QtCore import QThreadPool
+
+        QThreadPool.globalInstance().waitForDone(3000)   # an update check may still be waiting
         self.notes.save()
         worker = getattr(self.tutor, "_worker", None)
         if worker is not None:

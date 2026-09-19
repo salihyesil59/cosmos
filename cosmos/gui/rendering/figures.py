@@ -34,11 +34,13 @@ def figure(name):
 
 
 def available() -> list[str]:
+    _load_all()
     return sorted(_REGISTRY)
 
 
 @functools.lru_cache(maxsize=64)
 def render_png(name: str, palette: Palette, device_ratio: float = 1.0) -> bytes:
+    _load_all()
     if name not in _REGISTRY:
         raise KeyError(f"unknown figure {name!r}")
     dpi = 100 * device_ratio
@@ -488,12 +490,21 @@ def _baryon_asymmetry(fig, p: Palette):
     ax.legend(loc="lower left", fontsize=8)
 
 
-# Figures for later levels register themselves on import.
-from cosmos.gui.rendering import figures_structure  # noqa: E402,F401
-from cosmos.gui.rendering import figures_advanced  # noqa: E402,F401
-from cosmos.gui.rendering import figures_methods  # noqa: E402,F401
-from cosmos.gui.rendering import figures_inference  # noqa: E402,F401
-from cosmos.gui.rendering import figures_neutrinos  # noqa: E402,F401
-from cosmos.gui.rendering import figures_surveys  # noqa: E402,F401
-from cosmos.gui.rendering import figures_mocks  # noqa: E402,F401
-from cosmos.gui.rendering import figures_blackholes  # noqa: E402,F401
+# Figures for later levels live in their own modules. They are imported the first
+# time a figure is asked for rather than here, which keeps them out of start-up.
+_EXTRA_MODULES = (
+    "figures_structure", "figures_advanced", "figures_methods", "figures_inference",
+    "figures_neutrinos", "figures_surveys", "figures_mocks", "figures_blackholes",
+)
+_loaded = False
+
+
+def _load_all() -> None:
+    global _loaded
+    if _loaded:
+        return
+    _loaded = True                  # set first: the modules import this one back
+    import importlib
+
+    for name in _EXTRA_MODULES:
+        importlib.import_module(f"cosmos.gui.rendering.{name}")

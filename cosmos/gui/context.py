@@ -18,6 +18,7 @@ class AppSignals(QObject):
     notesChanged = Signal()          # a note or bookmark was added, edited or removed
     achievementsUnlocked = Signal(list)  # ids of achievements earned just now
     statusMessage = Signal(str)     # a line for the status bar, from any page
+    updateFound = Signal(str, str, str, bool)   # E13: version, url, notes, asked-for-it
 
 
 @dataclass
@@ -26,6 +27,7 @@ class AppContext:
     glossary: dict[str, GlossaryTerm]
     store: ProgressStore
     signals: AppSignals
+    plugins: object = None          # E14: what the plugins folder produced, if anything
 
     def navigate(self, route: str) -> None:
         self.signals.navigate.emit(route)

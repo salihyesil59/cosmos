@@ -21,7 +21,7 @@ from dataclasses import dataclass, field
 
 import markdown
 
-from cosmos.gui.rendering import figures, math as mathrender
+from cosmos.gui.rendering import math as mathrender
 from cosmos.gui.theme import Palette
 
 SCREEN_PT_TO_PX = 96 / 72
@@ -131,6 +131,8 @@ class _Renderer:
         return self._callout("try", f"Try it: {title}", f"<p style='margin:0;'>{body}</p>{link}")
 
     def _figure(self, name: str) -> str:
+        from cosmos.gui.rendering import figures      # E12: matplotlib, only when needed
+
         png = figures.render_png(name, self.ctx.palette, self.ctx.device_ratio)
         return f'{_BLOCK_P}{self._image(f"figure:{name}", png)}</p>'
 

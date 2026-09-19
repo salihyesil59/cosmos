@@ -22,8 +22,15 @@ class SimulatorInfo:
     icon: str = "◆"
     extra: dict = field(default_factory=dict)
 
+    @property
+    def is_plugin(self) -> bool:
+        """True for a simulator loaded from the plugins folder (E14)."""
+        return "plugin" in self.extra
+
     def create(self, **kwargs):
-        cls = getattr(importlib.import_module(self.module), self.class_name)
+        plugin = self.extra.get("plugin")
+        cls = (plugin.simulator if plugin is not None
+               else getattr(importlib.import_module(self.module), self.class_name))
         return cls(self, **kwargs)
 
 
@@ -646,5 +653,35 @@ SIMULATORS: dict[str, SimulatorInfo] = {
     ]
 }
 
-# Keep simulators in numerical order regardless of when they were added.
-SIMULATORS = dict(sorted(SIMULATORS.items(), key=lambda item: int(item[0][1:])))
+# Keep simulators in numerical order regardless of when they were added. Plugins
+# use P-numbers and sort after every built-in S-number (E14).
+def _order(item) -> tuple[int, int]:
+    key = item[0]
+    return (0 if key.startswith("S") else 1, int(key[1:]))
+
+
+SIMULATORS = dict(sorted(SIMULATORS.items(), key=_order))
+BUILTIN_IDS = frozenset(SIMULATORS)
+
+
+def register_plugins(plugins) -> list[str]:
+    """Add plugin simulators to the catalogue. Returns the ids that were added."""
+    from cosmos.plugins import to_info
+
+    added = []
+    for plugin in plugins:
+        if plugin.id in SIMULATORS:
+            continue
+        SIMULATORS[plugin.id] = to_info(plugin)
+        added.append(plugin.id)
+    if added:
+        ordered = sorted(SIMULATORS.items(), key=_order)
+        SIMULATORS.clear()
+        SIMULATORS.update(ordered)
+    return added
+
+
+def forget_plugins() -> None:
+    """Drop every plugin simulator. Used by the tests."""
+    for key in [k for k in SIMULATORS if k not in BUILTIN_IDS]:
+        del SIMULATORS[key]

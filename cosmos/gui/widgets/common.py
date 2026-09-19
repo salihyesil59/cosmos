@@ -19,7 +19,6 @@ from PySide6.QtWidgets import (
 
 from cosmos.gui.theme import repolish
 from cosmos.i18n import tr
-from cosmos.physics.presets import PRESETS
 
 
 class InfoPopup(QFrame):
@@ -205,6 +204,8 @@ class PresetSelector(QComboBox):
         if include_custom:
             self.addItem(tr("Custom (your own values)"), "custom")
             self.setItemData(0, tr("Values you set with the controls below."), Qt.ToolTipRole)
+        from cosmos.physics.presets import PRESETS      # E12: numpy and scipy, on demand
+
         for key, preset in PRESETS.items():
             self.addItem(preset.label, key)
             self.setItemData(self.count() - 1, preset.description, Qt.ToolTipRole)
