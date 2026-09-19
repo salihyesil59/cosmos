@@ -82,6 +82,7 @@ class LessonPage(QWidget):
         self.browser.lessonRequested.connect(lambda i: ctx.navigate(f"lesson:{i}"))
         self.quiz = QuizWidget()
         self.quiz.finished.connect(self._quiz_finished)
+        self.quiz.answered_question.connect(self._question_answered)
         self.quiz.nextLessonRequested.connect(self._go_next)
         self.quiz.reviewRequested.connect(lambda: self.tabs.setCurrentIndex(0))
         self.tabs.addTab(self.browser, "📖  " + tr("Lesson"))
@@ -272,6 +273,11 @@ class LessonPage(QWidget):
 
     def _tab_changed(self, index: int) -> None:
         self.quiz_btn.setVisible(index == 0)
+
+    def _question_answered(self, lesson_id: str, index: int, correct: bool) -> None:
+        """G16: a question answered wrongly joins the spaced-repetition deck."""
+        if self.ctx.store.record_question(lesson_id, index, correct):
+            self.ctx.signals.progressChanged.emit()
 
     def _quiz_finished(self, score: float) -> None:
         if not self.lesson:

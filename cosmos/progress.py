@@ -6,7 +6,7 @@ import enum
 import json
 import os
 from dataclasses import asdict, dataclass, field
-from datetime import datetime
+from datetime import date, datetime
 from pathlib import Path
 
 from cosmos.content.loader import Curriculum
@@ -38,6 +38,10 @@ class UserData:
     problems_solved: dict[str, int] = field(default_factory=dict)   # problem id -> attempts it took
     problem_attempts: dict[str, int] = field(default_factory=dict)  # problem id -> attempts so far
     pages_seen: list[str] = field(default_factory=list)             # route kinds the learner has visited
+    review: dict[str, dict] = field(default_factory=dict)           # "L1.2#3" -> spaced-repetition card
+    review_learned: int = 0                                         # cards that left the deck for good
+    reviews_cleared: int = 0                                        # review sessions answered in full
+    font_scale: float = 1.0                                         # interface text size, 0.8 to 1.6
     achievements: dict[str, str] = field(default_factory=dict)      # achievement id -> ISO timestamp
 
     @classmethod
@@ -70,7 +74,8 @@ class ProgressStore:
         kept = self.data
         self.data = UserData(theme=kept.theme, default_preset=kept.default_preset, tour_completed=True,
                              math_view=kept.math_view, notes=dict(kept.notes),
-                             bookmarks=list(kept.bookmarks))
+                             bookmarks=list(kept.bookmarks), language=kept.language,
+                             font_scale=kept.font_scale)
         self.save()
 
     # ----------------------------------------------------------- recording
@@ -120,6 +125,61 @@ class ProgressStore:
 
     def is_problem_solved(self, problem_id: str) -> bool:
         return problem_id in self.data.problems_solved
+
+    # -------------------------------------------------- spaced repetition
+    def record_question(self, lesson_id: str, index: int, correct: bool, today=None) -> bool:
+        """Update the review deck after one quiz question. True if the card changed.
+
+        A question answered wrongly joins the deck (or drops back to the first box).
+        Answering a card correctly promotes it, and a card that passes the last box
+        has been learned and leaves.
+        """
+        from cosmos import review
+
+        identifier = review.card_id(lesson_id, index)
+        before = self.data.review.get(identifier)
+        after = review.after_answer(before, correct, today or date.today())
+        if after == before:
+            return False
+        if after is None:
+            self.data.review.pop(identifier, None)
+            if before is not None:
+                self.data.review_learned += 1     # it passed the last box and is learned
+        else:
+            self.data.review[identifier] = after
+        self.save()
+        return True
+
+    def record_review_session(self, total: int, correct: int) -> bool:
+        """Count a review session. True if every question that was due came back right."""
+        cleared = total > 0 and correct == total
+        if cleared:
+            self.data.reviews_cleared += 1
+            self.save()
+        return cleared
+
+    def due_reviews(self, today=None) -> list:
+        """Cards that should be reviewed now, oldest first."""
+        from cosmos import review
+
+        return review.due(self.data.review, today or date.today())
+
+    def review_summary(self, today=None) -> dict:
+        from cosmos import review
+
+        return review.summary(self.data.review, today or date.today())
+
+    def forget_reviews(self, lesson_id: str | None = None) -> int:
+        """Drop cards from the deck; all of them, or only one lesson's."""
+        from cosmos import review
+
+        doomed = [k for k in self.data.review
+                  if lesson_id is None or review.split_card_id(k)[0] == lesson_id]
+        for key in doomed:
+            del self.data.review[key]
+        if doomed:
+            self.save()
+        return len(doomed)
 
     # ------------------------------------------------------- achievements
     def refresh_achievements(self, curriculum: Curriculum) -> list[str]:

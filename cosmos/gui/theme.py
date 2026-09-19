@@ -72,12 +72,44 @@ LIGHT = Palette(
     series=("#2f6fdb", "#d9822b", "#1f9d57", "#c9384a", "#7c4dcc", "#0f8fa3", "#1b2233"),
 )
 
-THEMES = {"dark": DARK, "light": LIGHT}
+# A deliberately harsh palette for anyone who needs the contrast (G17): pure white on
+# near-black, every accent pushed to the brightest version that still reads as itself.
+# Every pair here clears the WCAG AAA ratio of 7:1 against its background.
+HIGH_CONTRAST = Palette(
+    name="contrast",
+    bg="#000000",
+    surface="#0a0a0a",
+    surface_alt="#1c1c1c",
+    border="#8c8c8c",
+    text="#ffffff",
+    muted="#d6d6d6",
+    accent="#7fd4ff",
+    accent_text="#000000",
+    accent2="#ffd24d",
+    success="#69f0a5",
+    warning="#ffd24d",
+    danger="#ff8e8e",
+    link="#9fdcff",
+    series=("#7fd4ff", "#ffd24d", "#69f0a5", "#ff8e8e", "#d7a8ff", "#6fe5f5", "#ffffff"),
+)
+
+THEMES = {"dark": DARK, "light": LIGHT, "contrast": HIGH_CONTRAST}
+THEME_ORDER = ("dark", "light", "contrast")
+
+# Interface text can be scaled for readability; every point size below is multiplied by it.
+MIN_SCALE, MAX_SCALE, SCALE_STEP = 0.8, 1.6, 0.1
+BASE_POINT_SIZE = 10.0
 
 
-def _stylesheet(p: Palette) -> str:
+def _pt(size: float, scale: float) -> str:
+    """A point size in the stylesheet, scaled for readability (G17)."""
+    return f"{max(size * scale, 6.0):.1f}pt"
+
+
+def _stylesheet(p: Palette, scale: float = 1.0) -> str:
+    focus = p.accent if p.name != "contrast" else p.accent2
     return f"""
-    QWidget {{ color: {p.text}; font-size: 10pt; }}
+    QWidget {{ color: {p.text}; font-size: {_pt(10, scale)}; }}
     QMainWindow, QDialog {{ background: {p.bg}; }}
     QToolTip {{
         background: {p.surface_alt}; color: {p.text}; border: 1px solid {p.border};
@@ -118,14 +150,14 @@ def _stylesheet(p: Palette) -> str:
     QFrame[banner="danger"] {{
         background: {p.mix(p.danger, 0.15)}; border: 1px solid {p.mix(p.danger, 0.5)}; border-radius: 8px;
     }}
-    QLabel[role="title"] {{ font-size: 20pt; font-weight: 600; }}
-    QLabel[role="subtitle"] {{ font-size: 13pt; font-weight: 600; }}
+    QLabel[role="title"] {{ font-size: {_pt(20, scale)}; font-weight: 600; }}
+    QLabel[role="subtitle"] {{ font-size: {_pt(13, scale)}; font-weight: 600; }}
     QLabel[role="muted"] {{ color: {p.muted}; }}
     QLabel[role="badge"] {{
         background: {p.mix(p.accent, 0.25)}; color: {p.text}; border-radius: 9px; padding: 2px 9px;
-        font-size: 9pt; font-weight: 600;
+        font-size: {_pt(9, scale)}; font-weight: 600;
     }}
-    QLabel[role="value"] {{ font-size: 15pt; font-weight: 600; color: {p.accent}; }}
+    QLabel[role="value"] {{ font-size: {_pt(15, scale)}; font-weight: 600; color: {p.accent}; }}
 
     QPushButton {{
         background: {p.surface_alt}; border: 1px solid {p.border}; border-radius: 6px; padding: 6px 14px;
@@ -198,6 +230,22 @@ def _stylesheet(p: Palette) -> str:
     QScrollBar:horizontal {{ background: transparent; height: 10px; }}
     QScrollBar::handle:horizontal {{ background: {p.border}; border-radius: 5px; min-width: 30px; }}
     QSplitter::handle {{ background: {p.border}; }}
+
+    /* G17 — keyboard navigation. Every control that can take focus says so clearly,
+       which is what makes the app usable without ever touching the mouse. */
+    QPushButton:focus, QToolButton:focus, QComboBox:focus, QLineEdit:focus,
+    QSpinBox:focus, QDoubleSpinBox:focus, QCheckBox:focus, QRadioButton:focus,
+    QSlider:focus, QTabBar::tab:focus {{
+        border: 2px solid {focus};
+        outline: none;
+    }}
+    QTreeWidget#sidebar::item:focus, QListWidget::item:focus {{
+        border: 2px solid {focus}; border-radius: 5px;
+    }}
+    QTextBrowser:focus, QTableWidget:focus, QListWidget:focus, QTreeWidget:focus,
+    QScrollArea:focus {{
+        border: 2px solid {focus};
+    }}
     """
 
 
@@ -206,9 +254,10 @@ class ThemeManager(QObject):
 
     changed = Signal(object)
 
-    def __init__(self, name: str = "dark"):
+    def __init__(self, name: str = "dark", scale: float = 1.0):
         super().__init__()
         self._palette = THEMES.get(name, DARK)
+        self._scale = clamp_scale(scale)
 
     @property
     def palette(self) -> Palette:
@@ -217,6 +266,10 @@ class ThemeManager(QObject):
     @property
     def name(self) -> str:
         return self._palette.name
+
+    @property
+    def scale(self) -> float:
+        return self._scale
 
     def apply(self, app: QApplication | None = None) -> None:
         app = app or QApplication.instance()
@@ -243,7 +296,10 @@ class ThemeManager(QObject):
         qp.setColor(QPalette.Disabled, QPalette.Text, QColor(p.muted))
         qp.setColor(QPalette.Disabled, QPalette.ButtonText, QColor(p.muted))
         app.setPalette(qp)
-        app.setStyleSheet(_stylesheet(p))
+        font = app.font()
+        font.setPointSizeF(BASE_POINT_SIZE * self._scale)
+        app.setFont(font)
+        app.setStyleSheet(_stylesheet(p, self._scale))
 
     def set_theme(self, name: str) -> None:
         if name == self._palette.name or name not in THEMES:
@@ -253,7 +309,27 @@ class ThemeManager(QObject):
         self.changed.emit(self._palette)
 
     def toggle(self) -> None:
-        self.set_theme("light" if self.name == "dark" else "dark")
+        """Cycle dark → light → high contrast → dark."""
+        following = THEME_ORDER[(THEME_ORDER.index(self.name) + 1) % len(THEME_ORDER)]
+        self.set_theme(following)
+
+    def set_scale(self, scale: float) -> bool:
+        """Resize every piece of interface text. Returns True if anything changed."""
+        scale = clamp_scale(scale)
+        if abs(scale - self._scale) < 1e-6:
+            return False
+        self._scale = scale
+        self.apply()
+        self.changed.emit(self._palette)
+        return True
+
+    def step_scale(self, steps: int) -> bool:
+        return self.set_scale(self._scale + steps * SCALE_STEP)
+
+
+def clamp_scale(scale: float) -> float:
+    """Keep the text size inside the range the layouts were designed for."""
+    return round(min(max(float(scale), MIN_SCALE), MAX_SCALE), 2)
 
 
 _manager: ThemeManager | None = None

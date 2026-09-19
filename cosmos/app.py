@@ -33,6 +33,7 @@ def create_window(app: QApplication):
     store = ProgressStore(data_path())
     i18n.install(app, store.data.language or i18n.system_language())
     theme().set_theme(store.data.theme)
+    theme().set_scale(store.data.font_scale)
     theme().apply(app)
     ctx = AppContext(
         curriculum=load_curriculum(),

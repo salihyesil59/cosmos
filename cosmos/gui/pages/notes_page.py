@@ -76,6 +76,9 @@ class NotesPage(QWidget):
             widget = self.body.takeAt(0).widget()
             if widget is not None:
                 # Unparent at once: deleteLater alone would leave the old cards on screen.
+                # Hide first, or the parentless widget is briefly a window of its own and
+                # can steal the keyboard focus.
+                widget.hide()
                 widget.setParent(None)
                 widget.deleteLater()
         store = self.ctx.store

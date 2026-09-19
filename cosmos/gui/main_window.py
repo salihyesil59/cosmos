@@ -5,6 +5,7 @@ from __future__ import annotations
 from PySide6.QtCore import QSize, Qt
 from PySide6.QtGui import QAction, QActionGroup, QColor, QIcon, QKeySequence, QPainter, QPen, QPixmap
 from PySide6.QtWidgets import (
+    QApplication,
     QDockWidget,
     QMainWindow,
     QMenu,
@@ -26,12 +27,14 @@ from cosmos.gui.pages.home import HomePage
 from cosmos.gui.pages.lesson import LessonPage
 from cosmos.gui.pages.notes_page import NotesPage
 from cosmos.gui.pages.problems_page import ProblemsPage
+from cosmos.gui.pages.review_page import ReviewPage
 from cosmos.gui.pages.progress_page import ProgressPage
 from cosmos.gui.pages.reference import ReferencePage
 from cosmos.gui.pages.search_page import SearchBox, SearchPage
 from cosmos.gui.pages.simulators import SimulatorHostPage, SimulatorHubPage
 from cosmos.gui.simulators.registry import SIMULATORS
 from cosmos.gui.routes import page_context
+from cosmos.gui import theme as theme_module
 from cosmos.gui.theme import theme
 from cosmos.gui.widgets.guide_panel import GuidePanel
 from cosmos.gui.widgets.notes_panel import NotesPanel
@@ -70,6 +73,29 @@ def status_icon(status: LessonStatus) -> QIcon:
     return QIcon(pix)
 
 
+def _command_name(text: str) -> str:
+    """A menu label reduced to the plain command, for the keyboard-shortcut sheet."""
+    return text.strip("◀▶◐⌂📖∑🕰📝☆🔎📈💡✎🤖🧭🔁 ").replace("&", "")
+
+
+def _focus_area(widget: QWidget) -> None:
+    """Give the keyboard to a region, or to the first thing inside it that can take it."""
+    if widget.focusPolicy() != Qt.NoFocus:
+        widget.setFocus(Qt.TabFocusReason)
+        return
+    child = widget.nextInFocusChain()
+    seen = 0
+    while child is not None and seen < 400:
+        if widget.isAncestorOf(child) and child.focusPolicy() != Qt.NoFocus and child.isVisible():
+            child.setFocus(Qt.TabFocusReason)
+            return
+        child = child.nextInFocusChain()
+        seen += 1
+    # Nothing inside would take it, so let the region itself hold the focus.
+    widget.setFocusPolicy(Qt.StrongFocus)
+    widget.setFocus(Qt.TabFocusReason)
+
+
 class MainWindow(QMainWindow):
     def __init__(self, ctx: AppContext):
         super().__init__()
@@ -95,9 +121,10 @@ class MainWindow(QMainWindow):
         self.search_page = SearchPage(ctx)
         self.notes_page = NotesPage(ctx)
         self.problems_page = ProblemsPage(ctx)
+        self.review_page = ReviewPage(ctx)
         for page in (self.home, self.lesson_page, self.sim_hub, self.glossary_page, self.progress_page,
                      self.reference_page, self.history_page, self.search_page, self.notes_page,
-                     self.problems_page):
+                     self.problems_page, self.review_page):
             self.stack.addWidget(page)
         self.setCentralWidget(self.stack)
 
@@ -110,6 +137,7 @@ class MainWindow(QMainWindow):
 
         ctx.signals.navigate.connect(self.navigate)
         ctx.signals.progressChanged.connect(self._refresh_sidebar)
+        ctx.signals.progressChanged.connect(self._update_review_action)
         ctx.signals.notesChanged.connect(self._refresh_notes)
         ctx.signals.progressChanged.connect(self.check_achievements)
         theme().changed.connect(lambda _p: self._refresh_sidebar())
@@ -168,6 +196,8 @@ class MainWindow(QMainWindow):
         self.search_item = top("🔎  " + tr("Search"), "search",
                                tr("Search lessons, glossary, simulators and formulas"))
         self.notes_item = top("📝  " + tr("Notes & bookmarks"), "notes", tr("Everything you saved"))
+        self.review_item = top("🔁  " + tr("Review"), "review",
+                               tr("Quiz questions you got wrong, brought back on a schedule"))
         self.progress_item = top("📈  " + tr("Progress"), "progress", tr("Your progress and the lesson map"))
         self.curriculum_item.setExpanded(True)
         for i in range(self.curriculum_item.childCount()):
@@ -232,6 +262,7 @@ class MainWindow(QMainWindow):
 
         def action(text, tip, slot, shortcut=None, checkable=False):
             a = QAction(text, self)
+            a.setProperty("command", _command_name(text))
             a.setToolTip(tip)
             a.setStatusTip(tip)
             a.triggered.connect(slot)
@@ -261,8 +292,29 @@ class MainWindow(QMainWindow):
         find = action("🔎 " + tr("Find"), tr("Search the whole course (Ctrl+F)"), self.focus_search, "Ctrl+F")
         progress = action("📈 " + tr("Progress"), tr("Your progress and lesson map (Ctrl+P)"),
                           lambda: self.navigate("progress"), "Ctrl+P")
-        self.theme_action = action("◐ " + tr("Theme"), tr("Switch between dark and light theme (Ctrl+T)"),
+        self.review_action = action("🔁 " + tr("Review"),
+                                    tr("Quiz questions you got wrong, brought back on a schedule "
+                                       "(Ctrl+Shift+R)"),
+                                    lambda: self.navigate("review"), "Ctrl+Shift+R")
+        self.theme_action = action("◐ " + tr("Theme"),
+                                   tr("Cycle dark, light and high-contrast themes (Ctrl+T)"),
                                    self.toggle_theme, "Ctrl+T")
+        self.bigger_action = action(tr("Larger text"), tr("Make every label and control bigger (Ctrl++)"),
+                                    lambda: self.change_text_size(+1), "Ctrl++")
+        self.smaller_action = action(tr("Smaller text"), tr("Fit more on the screen (Ctrl+-)"),
+                                     lambda: self.change_text_size(-1), "Ctrl+-")
+        self.reset_text_action = action(tr("Reset text size"), tr("Back to the standard size (Ctrl+0)"),
+                                        lambda: self.set_text_size(1.0), "Ctrl+0")
+        self.focus_action = action(tr("Move focus to the next area"),
+                                   tr("Cycle the keyboard focus between the lesson list, the page and the "
+                                      "side panels (F6)"),
+                                   self.cycle_focus, "F6")
+        self.addAction(self.bigger_action)
+        self.addAction(self.smaller_action)
+        self.addAction(self.reset_text_action)
+        self.addAction(self.focus_action)
+        # Ctrl+= is what an unshifted keyboard actually produces for "larger".
+        self.bigger_action.setShortcuts([QKeySequence("Ctrl++"), QKeySequence("Ctrl+=")])
         self.guide_action = self.guide_dock.toggleViewAction()
         self.guide_action.setText("💡 " + tr("Guide"))
         self.guide_action.setToolTip(tr("Show or hide the Guide panel (F1)"))
@@ -279,7 +331,7 @@ class MainWindow(QMainWindow):
         for a in (self.back_action, self.forward_action, home, cont):
             tb.addAction(a)
         tb.addSeparator()
-        for a in (glossary, reference, progress):
+        for a in (glossary, reference, progress, self.review_action):
             tb.addAction(a)
         spacer = QWidget()
         spacer.setSizePolicy(QSizePolicy.Expanding, QSizePolicy.Preferred)
@@ -289,6 +341,7 @@ class MainWindow(QMainWindow):
         for a in (self.guide_action, self.notes_action, self.tutor_action, self.theme_action, tour):
             tb.addAction(a)
         self._update_nav_actions()
+        self._update_review_action()
 
         menu = self.menuBar()
         file_menu = menu.addMenu(tr("&File"))
@@ -297,7 +350,7 @@ class MainWindow(QMainWindow):
         file_menu.addSeparator()
         file_menu.addAction(action(tr("Quit"), tr("Close Cosmos"), self.close, "Ctrl+Q"))
         learn = menu.addMenu(tr("&Learn"))
-        for a in (home, cont, glossary, reference, history, progress):
+        for a in (home, cont, glossary, reference, history, progress, self.review_action):
             learn.addAction(a)
         learn.addSeparator()
         learn.addAction(action(tr("Simulators"), tr("All simulators"), lambda: self.navigate("sims")))
@@ -306,18 +359,52 @@ class MainWindow(QMainWindow):
         learn.addAction(self.bookmark_action)
         learn.addAction(notes)
         view = menu.addMenu(tr("&View"))
-        view.addAction(self.theme_action)
+        view.addMenu(self._theme_menu())
+        text_size = view.addMenu(tr("Text size"))
+        for a in (self.bigger_action, self.smaller_action, self.reset_text_action):
+            text_size.addAction(a)
         view.addAction(self.guide_action)
         view.addAction(self.notes_action)
         view.addAction(self.tutor_action)
         view.addAction(self.back_action)
         view.addAction(self.forward_action)
         view.addSeparator()
+        view.addAction(self.focus_action)
         view.addMenu(self._language_menu())
         help_menu = menu.addMenu(tr("&Help"))
         help_menu.addAction(tour)
         help_menu.addAction(action(tr("How to use Cosmos"), tr("Show help in the Guide panel"), self.show_help))
+        help_menu.addAction(action(tr("Keyboard shortcuts"), tr("Every command you can reach without the mouse"),
+                                   self.show_shortcuts))
         help_menu.addAction(action(tr("About Cosmos"), tr("Version and credits"), self.show_about))
+
+    def _theme_menu(self) -> QMenu:
+        """View → Theme: dark, light, and a high-contrast option (G17)."""
+        from cosmos.gui.theme import THEME_ORDER
+
+        names = {"dark": tr("Dark"), "light": tr("Light"), "contrast": tr("High contrast")}
+        tips = {
+            "dark": tr("Easy on the eyes in a dark room."),
+            "light": tr("Better in bright daylight, and for printing screenshots."),
+            "contrast": tr("Pure white on black with the strongest accents, for low vision or glare."),
+        }
+        menu = QMenu("◐ " + tr("Theme"), self)
+        menu.setToolTipsVisible(True)
+        self.theme_group = QActionGroup(self)
+        self.theme_group.setExclusive(True)
+        self.theme_actions = {}
+        for name in THEME_ORDER:
+            entry = QAction(names[name], self, checkable=True)
+            entry.setChecked(name == theme().name)
+            entry.setToolTip(tips[name])
+            entry.triggered.connect(lambda _=False, key=name: self.set_theme(key))
+            self.theme_group.addAction(entry)
+            menu.addAction(entry)
+            self.theme_actions[name] = entry
+        menu.addSeparator()
+        menu.addAction(self.theme_action)
+        self.theme_menu = menu
+        return menu
 
     def _language_menu(self) -> QMenu:
         """View → Language: every compiled translation found next to the app."""
@@ -385,7 +472,8 @@ class MainWindow(QMainWindow):
         self._update_bookmark_action()
         self._select_sidebar(route)
         self._update_nav_actions()
-        if route in ("home", "progress", "glossary", "sims", "reference", "notes", "history", "problems") \
+        if route in ("home", "progress", "glossary", "sims", "reference", "notes", "history", "problems",
+                     "review") \
                 or route.startswith(("lesson:", "sim:")):
             self.ctx.store.data.last_route = route
             self.ctx.store.save()
@@ -398,6 +486,9 @@ class MainWindow(QMainWindow):
         if kind == "lesson" and target in self.ctx.curriculum.lessons:
             self.lesson_page.load(target)
             return self.lesson_page
+        if kind == "review":
+            self.review_page.refresh()
+            return self.review_page
         if kind == "sims":
             return self.sim_hub
         if kind == "sim" and target in SIMULATORS:
@@ -448,6 +539,12 @@ class MainWindow(QMainWindow):
     def navigate_without_record(self, route: str) -> None:
         self._current_route = ""  # force reload
         self.navigate(route, record=False)
+
+    def _update_review_action(self) -> None:
+        """G16: the toolbar says how many questions are waiting."""
+        count = len(self.ctx.store.due_reviews())
+        self.review_action.setText("🔁 " + (tr("Review ({count})").format(count=count) if count
+                                            else tr("Review")))
 
     def _update_nav_actions(self) -> None:
         self.back_action.setEnabled(bool(self._history))
@@ -503,6 +600,9 @@ class MainWindow(QMainWindow):
             lesson = cur.lessons[lesson_id]
             item.setToolTip(0, lesson.summary + "\n\n"
                             + tr("Status: {status}").format(status=physics(status.value)))
+        due = len(store.due_reviews())
+        self.review_item.setText(0, "🔁  " + (tr("Review ({count})").format(count=due) if due
+                                              else tr("Review")))
 
     # ----------------------------------------------------------- commands
     def focus_search(self) -> None:
@@ -538,12 +638,74 @@ class MainWindow(QMainWindow):
 
     def toggle_theme(self) -> None:
         theme().toggle()
-        self.ctx.store.data.theme = theme().name
+        self._theme_applied()
+
+    def set_theme(self, name: str) -> None:
+        theme().set_theme(name)
+        self._theme_applied()
+
+    def _theme_applied(self) -> None:
+        name = theme().name
+        self.ctx.store.data.theme = name
         self.ctx.store.save()
+        for key, entry in getattr(self, "theme_actions", {}).items():
+            entry.setChecked(key == name)
+        label = self.theme_actions[name].text() if name in getattr(self, "theme_actions", {}) else name
+        self.statusBar().showMessage(tr("Theme: {name}").format(name=label), 3000)
         # Guide content contains themed images; re-render it.
         page = self.stack.currentWidget()
         if hasattr(page, "guide_markdown"):
             self.guide.set_context(page.guide_markdown())
+
+    # ----------------------------------------------------- accessibility
+    def change_text_size(self, steps: int) -> None:
+        self.set_text_size(theme().scale + steps * theme_module.SCALE_STEP)
+
+    def set_text_size(self, scale: float) -> None:
+        """G17: scale every label and control, and remember the choice."""
+        theme().set_scale(scale)
+        self.ctx.store.data.font_scale = theme().scale
+        self.ctx.store.save()
+        self.statusBar().showMessage(
+            tr("Text size: {percent}").format(percent=f"{theme().scale:.0%}"), 3000)
+
+    def focus_areas(self) -> list:
+        """The regions F6 cycles through, in reading order."""
+        areas = [self.sidebar, self.stack.currentWidget()]
+        areas += [dock.widget() for dock in (self.guide_dock, self.notes_dock, self.tutor_dock)
+                  if dock.isVisible()]
+        return [a for a in areas if a is not None]
+
+    def cycle_focus(self) -> None:
+        """Move the keyboard focus to the next major area of the window (F6)."""
+        areas = self.focus_areas()
+        if not areas:
+            return
+        current = self.focusWidget()      # this window's focus, not some other top level's
+        index = -1
+        for i, area in enumerate(areas):
+            if current is area or (current is not None and area.isAncestorOf(current)):
+                index = i
+        target = areas[(index + 1) % len(areas)]
+        _focus_area(target)
+
+    def shortcut_rows(self) -> list[tuple[str, str]]:
+        """Every command with a shortcut, for the Help sheet and for the tests."""
+        rows = []
+        for entry in self.findChildren(QAction):
+            keys = entry.shortcut().toString()
+            text = entry.property("command") or _command_name(entry.text())
+            if keys and text:
+                rows.append((text, keys))
+        return sorted(dict(rows).items())
+
+    def show_shortcuts(self) -> None:
+        lines = [tr("Every command in Cosmos can be reached from the keyboard."), ""]
+        lines += [f"- **{keys}** — {text}" for text, keys in self.shortcut_rows()]
+        lines += ["", tr("Tab and Shift+Tab move between controls; F6 jumps between the lesson list, the "
+                         "page and the side panels.")]
+        self.guide_dock.show()
+        self.guide.set_context("## " + tr("Keyboard shortcuts") + "\n\n" + "\n".join(lines))
 
     def show_help(self) -> None:
         self.guide_dock.show()

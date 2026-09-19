@@ -49,16 +49,20 @@ on first launch.
 - **51 worked problems** in eight sets, one per level: type a number and the app
   checks it, spots a wrong power of ten or sign, and offers hints and a worked
   solution
-- **19 badges** earned by learning: finishing levels, perfect quizzes, exploring
+- **21 badges** earned by learning: finishing levels, perfect quizzes, exploring
   simulators, solving their challenges and working through the problem sets
 - **184-term glossary**: terms in lessons open their definitions in the Guide panel
 - **Reference page**: a 66-entry formula sheet, physical constants, a unit
   converter and the parameters of every model
 - **Global search** (Ctrl+F) across lesson text, glossary, simulators, formulas and problems
+- **Spaced repetition**: every quiz question you get wrong comes back the next day,
+  then after 3, 7, 16 and 35 days until you have it for good
 - **Notes and bookmarks**: a private notebook for every page, exportable as Markdown
 - Tooltips and **?** buttons on every control
 - Progress tracking with a prerequisite map
-- Dark and light themes; the interface is translatable and ships with a full Turkish pack
+- **Accessible by design**: dark, light and high-contrast themes, text scaling from 80%
+  to 160%, visible keyboard focus, and every command reachable without a mouse
+- The interface is translatable and ships with a full Turkish pack
 - An optional **Tutor** panel that answers questions with your own API key
 - Export plots as PNG/SVG and data as CSV
 - Presets: Planck 2018, WMAP 9-year, evolving and phantom dark energy, Einstein–de Sitter and more

@@ -45,6 +45,8 @@ you are ready for.
 
 - **Challenges** inside many simulators give you a concrete task and check your
   answer.
+- **Review** (Ctrl+Shift+R) brings back every quiz question you got wrong — the
+  next day, then after 3, 7, 16 and 35 days, until it sticks.
 - **History** tells the story from Copernicus to the latest surveys, with cards
   for the scientists.
 - **Badges** on the Progress page mark what you have achieved.
@@ -66,9 +68,16 @@ you are ready for.
 ### Handy controls
 
 - **Back / Forward** in the toolbar move through pages you visited.
-- **Theme** switches between dark and light.
+- **Theme** (Ctrl+T) cycles dark, light and a high-contrast scheme.
+- **Text size** under *View* scales the whole interface (Ctrl++ / Ctrl+- / Ctrl+0).
 - **Tour** replays the guided introduction.
 - Every control with a **?** button has a detailed explanation.
+
+### Without a mouse
+
+Every command has a keyboard shortcut; *Help → Keyboard shortcuts* lists them all.
+**Tab** moves between controls, **F6** jumps between the lesson list, the page and
+the side panels, and whatever has the keyboard is drawn with a clear outline.
 """)
 
 
@@ -117,6 +126,11 @@ class HomePage(QWidget):
         row.addStretch(1)
         hl.addLayout(row)
         hl.addWidget(self.continue_hint)
+        self.review_btn = QPushButton()
+        self.review_btn.setToolTip(tr("Questions you got wrong, brought back just before you would "
+                                      "forget them (Ctrl+Shift+R)"))
+        self.review_btn.clicked.connect(lambda: ctx.navigate("review"))
+        row.insertWidget(1, self.review_btn)
         self.layout_.addWidget(hero)
 
         # Levels
@@ -192,6 +206,10 @@ class HomePage(QWidget):
             self.continue_btn.setText(f"▶  {verb}: {lesson.id} {lesson.title}")
             self.continue_hint.setText(lesson.summary)
             self._next = nxt
+        # G16: only offer a review when there is one to do.
+        due = len(store.due_reviews())
+        self.review_btn.setVisible(bool(due))
+        self.review_btn.setText("🔁  " + tr("Review {count} question(s)").format(count=due))
         for level, bar, status in self.level_widgets:
             d, t = store.level_progress(cur, level.number)
             bar.setRange(0, t)
