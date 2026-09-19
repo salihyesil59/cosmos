@@ -1,11 +1,12 @@
-"""Draw the application icon and write it as a multi-size Windows .ico.
+"""Draw the application icon and write it out for every platform.
 
 Run it after changing the design::
 
     python tools/make_icon.py
 
-The result, ``cosmos/gui/resources/cosmos.ico``, is used both as the window icon
-and as the icon of the packaged executable.
+It writes two files into ``cosmos/gui/resources``: a multi-size ``cosmos.ico`` for
+Windows and the packaged executable, and a 512-pixel ``cosmos.png`` that Linux
+desktop entries use and that ``tools/build_app.py`` turns into a macOS ``.icns``.
 """
 
 from __future__ import annotations
@@ -21,7 +22,9 @@ from PySide6.QtGui import QBrush, QColor, QImage, QPainter, QPen, QRadialGradien
 from PySide6.QtWidgets import QApplication
 
 ROOT = Path(__file__).resolve().parent.parent
-TARGET = ROOT / "cosmos" / "gui" / "resources" / "cosmos.ico"
+RESOURCES = ROOT / "cosmos" / "gui" / "resources"
+TARGET = RESOURCES / "cosmos.ico"
+PNG = RESOURCES / "cosmos.png"      # Linux .desktop icon, and the source for macOS .icns
 SIZES = [16, 24, 32, 48, 64, 128, 256]
 
 BACKGROUND = "#0b1020"
@@ -88,7 +91,9 @@ def main() -> int:
     TARGET.parent.mkdir(parents=True, exist_ok=True)
     with Image.open(io.BytesIO(bytes(qbytes.data()))) as pil:
         pil.save(TARGET, format="ICO", sizes=[(s, s) for s in SIZES])
-    print(f"wrote {TARGET} ({TARGET.stat().st_size / 1024:.0f} KB)")
+        pil.save(PNG, format="PNG")
+    for path in (TARGET, PNG):
+        print(f"wrote {path} ({path.stat().st_size / 1024:.0f} KB)")
     return 0
 
 
