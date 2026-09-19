@@ -139,16 +139,23 @@ python tools/update_translations.py --release       # compiles cosmos_de.qm
 The language then appears in **View → Language** and is used the next time
 Cosmos starts. Without a compiled `.qm` file the app is English, as before.
 
-## A standalone Windows executable
+## Standalone builds
 
-No Python installation is needed to run a packaged build.
+No Python installation is needed to run a packaged build. One command builds for
+whichever platform you are on:
 
 ```bash
 pip install -r requirements-dev.txt
-python tools/build_exe.py            # one file:  dist/Cosmos.exe   (~100 MB)
-python tools/build_exe.py --onedir   # a folder:  dist/Cosmos/Cosmos.exe (starts in under a second)
-python tools/build_exe.py --zip      # also writes dist/Cosmos-<version>-windows.zip
+python tools/build_app.py              # Windows: dist/Cosmos.exe   (~100 MB)
+                                       # macOS:   dist/Cosmos.app
+                                       # Linux:   dist/Cosmos/Cosmos
+python tools/build_app.py --onedir     # Windows: a folder instead of one file
+python tools/build_app.py --package    # also writes the file you would hand out
 ```
+
+`--package` produces a zip on Windows and macOS, and on Linux an **AppImage** if
+`appimagetool` is on the PATH, or a `.tar.gz` if it is not — both are
+self-contained and need nothing installed.
 
 The build bundles the whole course (lessons, quizzes, glossary, formulas,
 challenges, history and the observational data) and leaves the test-only
@@ -161,11 +168,19 @@ dist\Cosmos.exe --selftest report.txt    # exit code 0 means the build is comple
 dist\Cosmos.exe --version
 ```
 
-The single-file build unpacks itself on every start (about five seconds); the
-`--onedir` build starts immediately and is the better choice for daily use.
-Progress, notes and bookmarks are stored per user in
-`%APPDATA%\Cosmos\progress.json`, so they survive updating the executable.
-The application icon is drawn by `tools/make_icon.py`.
+The single-file Windows build unpacks itself on every start (about five seconds);
+every other form starts in well under a second. Progress, notes and bookmarks are
+stored per user — `%APPDATA%\Cosmos` on Windows, `~/Library/Application Support/Cosmos`
+on macOS, `~/.local/share/Cosmos` on Linux — so they survive updating the app. The
+application icons are drawn by `tools/make_icon.py`.
+
+### Adding your own simulator
+
+Drop one Python file into the `plugins` folder beside `progress.json` and it appears
+in the simulator list at the next start. The folder is created on first run with a
+README containing a complete example. A plugin is ordinary Python and runs with the
+same permissions as Cosmos, so only add files you wrote or trust; a broken one is
+reported under **Help → Simulator plugins** and skipped.
 
 ## Development
 
@@ -178,8 +193,9 @@ The tests check the physics against astropy, validate all course content (links,
 quizzes, formulas) and open every page and simulator headlessly.
 
 GitHub Actions runs the same suite on Windows and Linux for every push and pull
-request (`.github/workflows/ci.yml`). Pushes to `main` then build `Cosmos.exe`,
-run its self-test and keep it for 14 days as a downloadable artifact of the run.
+request (`.github/workflows/ci.yml`). Pushes to `main` then build a package for
+Windows, macOS and Linux, run each one's self-test, and keep all three for 14 days
+as downloadable artifacts of the run.
 
 ### Project layout
 

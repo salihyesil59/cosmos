@@ -204,7 +204,7 @@ since (the course now has 53 lessons and 23 simulators).
 
 ### Extras & quality
 - [x] ★ `E10` Continuous integration: run the tests and build the executable on every push
-- [ ] `E11` macOS and Linux packages (.app bundle, AppImage)
+- [x] `E11` macOS and Linux packages (.app bundle, AppImage)
 - [x] `E12` Faster start: lazy figures and a smaller one-file build
 - [x] `E13` Update check for the packaged app (opt-in, no telemetry)
 - [x] `E14` A plugin interface so a teacher can add their own simulator without touching the app

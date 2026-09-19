@@ -1,4 +1,4 @@
-"""The standalone build (E7): the self-test, the icon and the PyInstaller spec."""
+"""The standalone build (E7, E11): the self-test, the icons, the spec and the packaging."""
 
 import os
 import re
@@ -10,7 +10,9 @@ os.environ.setdefault("QT_QPA_PLATFORM", "offscreen")
 
 ROOT = Path(__file__).resolve().parent.parent
 SPEC = ROOT / "tools" / "cosmos.spec"
-ICON = ROOT / "cosmos" / "gui" / "resources" / "cosmos.ico"
+RESOURCES = ROOT / "cosmos" / "gui" / "resources"
+ICON = RESOURCES / "cosmos.ico"
+PNG = RESOURCES / "cosmos.png"
 
 
 def test_selftest_passes(tmp_path, monkeypatch):
@@ -50,6 +52,12 @@ def test_icon_is_a_multi_size_ico():
     assert not icon.isNull() and icon.availableSizes()
 
 
+def test_there_is_a_png_icon_for_macos_and_linux():
+    """E11: the .desktop entry and the macOS .icns both start from this file."""
+    assert PNG.exists(), "run python tools/make_icon.py"
+    assert PNG.read_bytes()[:8] == b"\x89PNG\r\n\x1a\n"
+
+
 def test_spec_bundles_all_content():
     assert SPEC.exists()
     spec = SPEC.read_text(encoding="utf-8")
@@ -60,6 +68,45 @@ def test_spec_bundles_all_content():
     assert '"astropy"' in spec and '"pytest"' in spec   # test-only dependencies stay out
 
 
-@pytest.mark.parametrize("name", ["build_exe.py", "make_icon.py", "cosmos.spec"])
+@pytest.mark.parametrize("name", ["build_app.py", "build_exe.py", "make_icon.py", "cosmos.spec"])
 def test_packaging_files_exist(name):
     assert (ROOT / "tools" / name).exists()
+
+
+# ------------------------------------------------------- E11: the other platforms
+def test_the_spec_builds_a_bundle_on_macos():
+    spec = SPEC.read_text(encoding="utf-8")
+    assert "BUNDLE(" in spec and "Cosmos.app" in spec
+    assert "bundle_identifier=" in spec
+    # One-file is a Windows convenience; macOS needs a directory and Linux an AppDir.
+    assert "ONEFILE = WINDOWS" in spec
+    assert "cosmos.icns" in spec
+
+
+def test_the_builder_knows_where_each_platform_puts_things():
+    import importlib.util
+
+    spec = importlib.util.spec_from_file_location("cosmos_build_app", ROOT / "tools" / "build_app.py")
+    build_app = importlib.util.module_from_spec(spec)
+    spec.loader.exec_module(build_app)
+
+    assert build_app.WINDOWS + build_app.MACOS + build_app.LINUX == 1, "exactly one platform"
+    launchable = build_app.launchable(onedir=False)
+    payload = build_app.payload(onedir=False)
+    assert launchable.name.startswith("Cosmos")
+    assert str(payload) in str(launchable) or payload == launchable
+    assert build_app.platform_tag().split("-")[0] in ("windows", "macos", "linux")
+    # The Linux desktop entry has to be valid enough for appimagetool.
+    entry = build_app.DESKTOP_ENTRY
+    for key in ("[Desktop Entry]", "Type=Application", "Name=Cosmos", "Exec=Cosmos", "Icon=cosmos"):
+        assert key in entry
+
+
+def test_the_ci_workflow_packages_all_three_platforms():
+    workflow = (ROOT / ".github" / "workflows" / "ci.yml").read_text(encoding="utf-8")
+    for runner in ("windows-latest", "macos-latest", "ubuntu-latest"):
+        assert runner in workflow
+    assert "tools/build_app.py --clean --package" in workflow
+    # A missing appimagetool must not fail the Linux job; the tarball is the fallback.
+    assert "continue-on-error: true" in workflow
+    assert "if-no-files-found: error" in workflow

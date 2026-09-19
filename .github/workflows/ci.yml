@@ -1,5 +1,6 @@
-# Continuous integration (E10): every push runs the whole test suite; pushes to main
-# also build the Windows executable and keep it as a downloadable artifact.
+# Continuous integration (E10, E11): every push runs the whole test suite; pushes to
+# main also build a standalone package for Windows, macOS and Linux and keep each as a
+# downloadable artifact. Every build verifies itself with --selftest before it is kept.
 
 name: CI
 
@@ -50,12 +51,25 @@ jobs:
       - name: Run the tests
         run: python -m pytest -q --durations=10
 
-  executable:
-    name: Windows executable
+  package:
+    name: Package (${{ matrix.name }})
     needs: tests
     if: github.event_name == 'push' || github.event_name == 'workflow_dispatch'
-    runs-on: windows-latest
+    runs-on: ${{ matrix.os }}
     timeout-minutes: 45
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - os: windows-latest
+            name: windows
+            artifact: dist/Cosmos-*-windows-*.zip
+          - os: macos-latest
+            name: macos
+            artifact: dist/Cosmos-*-macos-*.zip
+          - os: ubuntu-latest
+            name: linux
+            artifact: dist/Cosmos-*-linux-*
     env:
       PYTHONIOENCODING: utf-8
     steps:
@@ -67,17 +81,38 @@ jobs:
           cache: pip
           cache-dependency-path: requirements*.txt
 
+      - name: Qt and FUSE libraries (Linux)
+        if: runner.os == 'Linux'
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y --no-install-recommends \
+            libegl1 libgl1 libxkbcommon0 libfontconfig1 libdbus-1-3 fonts-dejavu-core \
+            libfuse2t64 desktop-file-utils
+
       - name: Install
         run: |
           python -m pip install --upgrade pip
           python -m pip install -r requirements-dev.txt
 
-      - name: Build and self-test Cosmos.exe
-        run: python tools/build_exe.py --clean
+      # The AppImage is optional: without the tool the build falls back to a tarball,
+      # which is just as self-contained, so a failure here must not fail the job.
+      - name: appimagetool (Linux)
+        if: runner.os == 'Linux'
+        continue-on-error: true
+        run: |
+          curl -fsSL -o /usr/local/bin/appimagetool \
+            https://github.com/AppImage/appimagetool/releases/download/continuous/appimagetool-x86_64.AppImage
+          sudo chmod +x /usr/local/bin/appimagetool
+
+      - name: Build, self-test and package
+        # The self-test needs a display on Linux and macOS; offscreen is enough.
+        env:
+          QT_QPA_PLATFORM: offscreen
+        run: python tools/build_app.py --clean --package
 
       - uses: actions/upload-artifact@v7
         with:
-          name: Cosmos-windows-${{ github.sha }}
-          path: dist/Cosmos.exe
+          name: Cosmos-${{ matrix.name }}-${{ github.sha }}
+          path: ${{ matrix.artifact }}
           retention-days: 14
           if-no-files-found: error
