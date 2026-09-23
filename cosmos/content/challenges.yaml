@@ -428,3 +428,39 @@ S23:
     max: 0.05
   - field: galaxies
     min: 600
+S24:
+- id: mind-the-galaxy
+  task: 'Turn the KQ85 mask off and find out how much the Galaxy adds: get the rms above 70 µK with the whole sky
+    in view.'
+  hint: Untick <b>Apply the KQ85 analysis mask</b> and read the rms in the summary.
+  success: The extremes jump because you are now measuring our own galaxy, not the early universe. Every published
+    result masks it first — which is a judgement somebody had to make, and publish.
+  check:
+  - field: masked
+    is_false: true
+  - field: rms
+    min: 68
+- id: spot-size
+  task: 'Measure the size of a typical hot or cold spot: with the mask on and no filtering, read the spot size off
+    the correlation function. It should land between 1° and 2.5°.'
+  hint: Open <b>Correlation function</b>. The marked point is where C(θ) has fallen to half its value at zero separation.
+  success: About a degree and a half — the sound horizon at recombination, projected across 13.8 billion years,
+    measured by you from the real sky.
+  check:
+  - field: masked
+    is_true: true
+  - field: smoothing
+    max: 0.0
+  - field: spot_size
+    min: 1.0
+    max: 2.5
+- id: blur-it-away
+  task: Smooth the map by 5° or more and push the rms below 35 µK.
+  hint: Drag <b>Smooth by</b> up and watch the rms in the summary fall.
+  success: Half the signal has gone, because most of it lived at about a degree. Smoothing is how you find out what
+    scale a signal lives on.
+  check:
+  - field: smoothing
+    min: 5.0
+  - field: rms
+    max: 35

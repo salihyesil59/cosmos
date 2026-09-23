@@ -650,6 +650,38 @@ SIMULATORS: dict[str, SimulatorInfo] = {
             class_name="SliceSimulator",
             icon="🕸",
         ),
+        SimulatorInfo(
+            id="S24",
+            title=tr_noop("CMB Sky Viewer"),
+            tagline=tr_noop("The real microwave sky, with the mask and the filters."),
+            description=tr_noop(
+                "This is not a model. It is the WMAP nine-year map of the whole sky: the oldest light "
+                "there is, released 380 000 years after the Big Bang, with the ripples that every "
+                "galaxy grew from. Apply the analysis mask the team published, blur the map or keep "
+                "only its fine detail, and measure what is left — the size of the spots, how alike "
+                "two points are, and whether the distribution is the Gaussian inflation predicts."
+            ),
+            how_to_use=[
+                tr_noop("Turn the <b>KQ85 mask</b> off and on. The bright band is our own galaxy, not "
+                        "the early universe."),
+                tr_noop("Raise <b>Smooth by</b> and watch the rms fall in the summary."),
+                tr_noop("Tick <b>keep only what is smaller</b> to subtract the blur and leave the "
+                        "degree-scale spots."),
+                tr_noop("Open <b>Correlation function</b> and read the spot size off the half-way point."),
+                tr_noop("Switch the <b>projection</b> between Mollweide and longitude–latitude."),
+            ],
+            things_to_try=[
+                tr_noop("With the mask off, how much larger are the extremes? Whose light is that?"),
+                tr_noop("Smooth by 5°. How much of the 67 µK is left, and what has been thrown away?"),
+                tr_noop("In <b>How much survives blurring</b>, find the scale where the curve bends."),
+                tr_noop("Compare the histogram with the Gaussian. Inflation predicts that shape."),
+                tr_noop("Find the coldest spot. It is a real feature, and it has its own literature."),
+            ],
+            lessons=["L5.1", "L4.4", "L5.7", "L1.5"],
+            module="cosmos.gui.simulators.sky_sim",
+            class_name="SkySimulator",
+            icon="🌌",
+        ),
     ]
 }
 

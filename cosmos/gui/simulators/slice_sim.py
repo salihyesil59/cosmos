@@ -13,7 +13,7 @@ from cosmos.gui.theme import theme
 from cosmos.gui.widgets.common import Banner, ParameterSlider, labelled_row, muted_label
 from cosmos.gui.widgets.plot import PlotWidget
 from cosmos.i18n import tr
-from cosmos.physics import mock
+from cosmos.physics import mock, sdss
 
 
 class SliceSimulator(SimulatorBase):
@@ -22,6 +22,8 @@ class SliceSimulator(SimulatorBase):
         self.catalogue: mock.Catalogue | None = None
         self.report: dict = {}
         self._xi_cache: tuple | None = None
+        self._real = None            # the SDSS slice, loaded on first use
+        self._real_xi = None
         self._loading = False
 
         start = QGroupBox(tr("0 · Start from"))
@@ -120,10 +122,13 @@ class SliceSimulator(SimulatorBase):
         self.compare_plot = PlotWidget(self._draw_compare, export_name="redshift_space_distortions")
         self.profile_plot = PlotWidget(self._draw_profile, export_name="survey_selection")
         self.xi_plot = PlotWidget(self._draw_xi, export_name="correlation_function")
+        self.real_plot = PlotWidget(self._draw_real, export_name="sdss_slice")
         tabs.addTab(self.cone_plot, tr("Cone diagram"))
         tabs.addTab(self.compare_plot, tr("Truth vs observed"))
         tabs.addTab(self.profile_plot, tr("Selection"))
         tabs.addTab(self.xi_plot, tr("Correlation function"))
+        if sdss.available():
+            tabs.addTab(self.real_plot, tr("The real sky (SDSS)"))
         self.display.addWidget(tabs, 1)
 
         self.inputs = (self.seed, self.bias, self.density, self.wedge, self.thickness, self.depth,
@@ -230,6 +235,20 @@ class SliceSimulator(SimulatorBase):
                    "infall squashes the filaments and cluster orbits stretch them towards us."))
         for plot in (self.cone_plot, self.compare_plot, self.profile_plot, self.xi_plot):
             plot.refresh()
+        if sdss.available():
+            self.real_plot.refresh()
+
+    # ------------------------------------------------------ the real thing
+    def real_catalogue(self):
+        """The SDSS slice, loaded once (E15)."""
+        if self._real is None:
+            self._real = sdss.catalogue()
+        return self._real
+
+    def real_correlation(self):
+        if self._real_xi is None:
+            self._real_xi = mock.correlation_function(self.real_catalogue(), observed=True)
+        return self._real_xi
 
     def _correlations(self):
         if self._xi_cache is None:
@@ -314,6 +333,42 @@ class SliceSimulator(SimulatorBase):
         ax.set_title(tr("Clustering measured from the mock, by counting pairs"), fontsize=9)
         ax.legend(fontsize=7.5)
         ax.tick_params(labelsize=7)
+
+    def _draw_real(self, fig) -> None:
+        """The sky's own answer, next to the one the mock gives."""
+        p = theme().palette
+        real = self.real_catalogue()
+        report = sdss.summary()
+        left, right = fig.subplots(1, 2, gridspec_kw={"width_ratios": [3, 2]})
+
+        x, y = real.xy(True)
+        left.scatter(y, x, s=0.8, c=p.series[1], alpha=0.75, linewidths=0)
+        left.set_aspect("equal")
+        left.plot([0], [0], "*", color=p.accent2, markersize=11)
+        left.set_xlabel("Mpc/h", fontsize=8)
+        left.set_ylabel("distance from the redshift (Mpc/h)", fontsize=8)
+        left.set_title(f"{report['galaxies']:,} real galaxies, SDSS DR18".replace(",", " "), fontsize=9)
+        left.tick_params(labelsize=7)
+
+        s_real, xi_real = self.real_correlation()
+        s_mock, _xi_true, xi_mock = self._correlations()
+        for values, x_values, colour, label in ((xi_real, s_real, p.series[1], "SDSS galaxies"),
+                                                (xi_mock, s_mock, p.series[0], "your mock")):
+            drawn = np.where(values > 0, values, np.nan)
+            right.plot(x_values, drawn, "o-", color=colour, markersize=3.5, label=label)
+        right.plot(s_real, (s_real / 5.0) ** -1.8, ":", color=p.danger, linewidth=1.2,
+                   label=r"$(r/5)^{-1.8}$")
+        right.set_xscale("log")
+        right.set_yscale("log")
+        right.set_ylim(1e-2, 20)
+        right.xaxis.set_major_formatter(ScalarFormatter())
+        right.xaxis.set_minor_formatter(NullFormatter())
+        right.set_xticks([2, 5, 10, 20, 50])
+        right.set_xlabel("separation (Mpc/h)", fontsize=8)
+        right.set_ylabel("ξ(s), redshift space", fontsize=8)
+        right.set_title("Does the mock cluster like the sky?", fontsize=9)
+        right.legend(fontsize=7)
+        right.tick_params(labelsize=7)
 
     def _csv(self):
         cat = self.catalogue
