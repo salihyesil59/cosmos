@@ -1,0 +1,63 @@
+levels:
+  - number: 0
+    title: Foundations
+    description: >
+      No background needed. How big is the universe, how do we measure distances,
+      what can light tell us, what is gravity, how did our picture of the cosmos
+      develop, and why is the night sky dark?
+    lessons: [L0.1, L0.2, L0.3, L0.4, L0.5, L0.6, L0.7]
+
+  - number: 1
+    title: Observational Cosmology
+    description: >
+      How astronomers measure the distances of galaxies, the discovery that the
+      universe is expanding, the principle that makes cosmology possible, the
+      cosmic web of galaxies and the discovery of the cosmic microwave background.
+    lessons: [L1.1, L1.2, L1.3, L1.4, L1.5]
+
+  - number: 2
+    title: The Expanding Universe
+    description: >
+      The scale factor, cosmological redshift, the Friedmann equations, critical
+      density, the geometry of space, cosmic horizons and the many ways to
+      measure distance.
+    lessons: [L2.1, L2.2, L2.3, L2.4, L2.5, L2.6, L2.7]
+
+  - number: 3
+    title: Contents of the Universe
+    description: >
+      Radiation, matter and dark energy; the evidence for dark matter and dark
+      energy; the standard ΛCDM model; and how to compute the age of the universe.
+    lessons: [L3.1, L3.2, L3.3, L3.4, L3.5]
+
+  - number: 4
+    title: Thermal History
+    description: >
+      The hot early universe: its timeline, how temperature evolves, the formation
+      of the first nuclei, the release of the cosmic microwave background, the
+      relic neutrinos and the origin of the matter–antimatter asymmetry.
+    lessons: [L4.1, L4.2, L4.3, L4.4, L4.5, L4.6, L4.7]
+
+  - number: 5
+    title: CMB & Structure Formation
+    description: >
+      The frozen sound waves in the cosmic microwave background, the baryon acoustic
+      ruler, how gravity grows tiny ripples into the cosmic web, and how lensing maps
+      the dark matter.
+    lessons: [L5.1, L5.2, L5.3, L5.4, L5.5, L5.6, L5.7]
+
+  - number: 6
+    title: Advanced Topics
+    description: >
+      The mathematics of general relativity behind cosmology, inflation, the epoch of
+      reionisation, gravitational waves, today's tensions, alternatives to ΛCDM and the
+      open problems at the frontier of the field.
+    lessons: [L6.1, L6.2, L6.3, L6.4, L6.5, L6.6, L6.7, L6.8, L6.9]
+
+  - number: 7
+    title: How Cosmologists Work
+    description: >
+      The craft behind the results: how to read the plots the field argues with, and
+      how a table of measurements becomes a number with an error bar on it, how the
+      surveys behind those numbers are designed, and how to trust the error bar.
+    lessons: [L7.1, L7.2, L7.3, L7.4, L7.5, L7.6]

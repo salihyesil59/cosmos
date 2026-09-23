@@ -1,0 +1,28 @@
+- question: "Which type of galaxy usually contains mostly old red stars and little gas?"
+  choices: ["Spiral", "Irregular", "Elliptical", "Barred spiral"]
+  answer: 2
+  explanation: "Elliptical galaxies have largely stopped forming stars. Blue, gas-rich galaxies are still forming new stars."
+- question: "What lies at the centre of the Milky Way?"
+  choices:
+    - "A neutron star"
+    - "A supermassive black hole of about four million solar masses"
+    - "An empty void"
+    - "The Sun"
+  answer: 1
+  explanation: "Sagittarius A* is a supermassive black hole. Its shadow was imaged by the Event Horizon Telescope in 2022."
+- question: "What are the largest objects in the universe held together by their own gravity?"
+  choices: ["Galaxies", "Galaxy clusters", "Voids", "Filaments"]
+  answer: 1
+  explanation: "Clusters of hundreds to thousands of galaxies, with masses up to about 10¹⁵ solar masses, are the largest gravitationally bound systems."
+- question: "What did redshift surveys such as the CfA survey of 1986 reveal?"
+  choices:
+    - "Galaxies are spread completely randomly"
+    - "Galaxies form a web of walls and filaments around large empty voids"
+    - "All galaxies are moving towards us"
+    - "The Milky Way is at the centre of the universe"
+  answer: 1
+  explanation: "The 3D maps showed bubbles and walls instead of a random scatter, the first clear picture of the cosmic web."
+- question: "Above roughly what scale does the distribution of galaxies look uniform?"
+  choices: ["About 1 kpc", "About 1 Mpc", "About 100–300 Mpc", "It never looks uniform"]
+  answer: 2
+  explanation: "In cubes larger than a few hundred megaparsecs the galaxy counts are nearly the same everywhere, supporting the cosmological principle."

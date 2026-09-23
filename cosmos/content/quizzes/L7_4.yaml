@@ -1,0 +1,48 @@
+- question: "What does a spectroscopic survey measure better than an imaging survey?"
+  choices:
+    - "The shapes of billions of galaxies"
+    - "Precise redshifts, and so an accurate three-dimensional map"
+    - "The number of stars in the Milky Way"
+    - "Nothing: imaging is always better"
+  answer: 1
+  explanation: "Spectral lines give redshifts to about 10⁻⁴, precise enough for BAO distances; imaging has photometric redshifts good only to a few percent."
+- question: "Why do weak-lensing surveys use imaging rather than spectroscopy?"
+  choices:
+    - "Lensing needs the shapes of enormous numbers of galaxies, which only imaging can measure"
+    - "Spectra cannot be taken of distant galaxies"
+    - "Lensing does not depend on distance"
+    - "Imaging has more precise redshifts"
+  answer: 0
+  explanation: "The lensing distortion is about 1% per galaxy, so it must be averaged over billions of shapes."
+- question: "A survey has n̄P = 0.1 at the BAO scale. What limits its precision?"
+  choices:
+    - "Sample variance: it needs more volume"
+    - "Shot noise: it needs more galaxies per unit volume"
+    - "Systematic errors"
+    - "Nothing: n̄P = 0.1 is ideal"
+  answer: 1
+  explanation: "Below n̄P ≈ 1 the discreteness of the galaxies dominates. The effective volume is only (0.1/1.1)² ≈ 1% of the real volume."
+- question: "A survey with n̄P = 20 doubles its target density in the same area. What happens to its BAO error?"
+  choices:
+    - "It halves"
+    - "It falls by √2"
+    - "It barely changes"
+    - "It doubles"
+  answer: 2
+  explanation: "At n̄P = 20 the survey is sample-variance limited: V_eff already equals 91% of V, and can only reach 95%."
+- question: "With a fixed number of galaxies, which design gives the smallest BAO error?"
+  choices:
+    - "The smallest possible area, observed as densely as possible"
+    - "The whole sky, however thinly"
+    - "The area at which n̄P is about 1"
+    - "Any area gives the same result"
+  answer: 2
+  explanation: "V_eff = V[n̄P/(1+n̄P)]² with n̄P ∝ 1/V is largest where n̄P = 1."
+- question: "Which pairing of facility and main strength is correct?"
+  choices:
+    - "DESI: shapes of billions of galaxies"
+    - "Rubin LSST: tens of millions of spectra"
+    - "Euclid: weak lensing from space, plus BAO at 0.9 < z < 1.8"
+    - "JWST: a survey of half the sky"
+  answer: 2
+  explanation: "DESI is spectroscopic, Rubin is an imaging survey, and JWST observes tiny, very deep fields."

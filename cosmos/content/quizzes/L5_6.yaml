@@ -1,0 +1,36 @@
+- question: "How much does the Sun deflect starlight passing its edge, as measured during the 1919 eclipse?"
+  choices: ["0.001 arcseconds", "1.75 arcseconds", "1.75 degrees", "45 degrees"]
+  answer: 1
+  explanation: "General relativity predicts α = 4GM/(c²b) = 1.75″ for the Sun, twice the Newtonian estimate."
+- question: "What does the size of an Einstein ring measure?"
+  choices:
+    - "Only the mass of the stars in the lens"
+    - "The total mass of the lens, dark matter included, together with the distances"
+    - "The temperature of the source"
+    - "The age of the source galaxy"
+  answer: 1
+  explanation: "θ_E depends only on the total mass and angular diameter distances, so lensing weighs dark matter."
+- question: "What happens when a background source is perfectly aligned behind a round lens?"
+  choices:
+    - "It disappears"
+    - "Its image becomes an Einstein ring"
+    - "It turns blue"
+    - "Exactly one undistorted image appears"
+  answer: 1
+  explanation: "By symmetry the light is deflected equally in all directions, producing a ring of radius θ_E."
+- question: "How is weak lensing detected?"
+  choices:
+    - "By finding a single strongly distorted galaxy"
+    - "Statistically, by averaging the shapes of many galaxies distorted by about 1%"
+    - "By measuring the redshift of the lens"
+    - "It cannot be detected"
+  answer: 1
+  explanation: "Individual galaxy shapes vary randomly, so the tiny coherent shear is measured over thousands of galaxies."
+- question: "How can strongly lensed quasars measure the Hubble constant?"
+  choices:
+    - "Their images are always exactly one Einstein radius apart"
+    - "Brightness changes appear with time delays between images, and the delays scale as 1/H0"
+    - "Lensing changes their redshift"
+    - "They cannot"
+  answer: 1
+  explanation: "Different light paths have different travel times; with a mass model, the measured delay gives H0."

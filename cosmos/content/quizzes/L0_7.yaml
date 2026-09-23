@@ -1,0 +1,44 @@
+- question: "What is (3×10⁸) × (2×10⁻⁵)?"
+  choices: ["6×10³", "6×10⁻⁴⁰", "5×10³", "6×10¹³"]
+  answer: 0
+  explanation: "Multiply the front numbers, add the exponents: 3×2 = 6 and 8 + (−5) = 3."
+- question: "Roughly how many seconds are there in a year?"
+  choices: ["3×10⁵", "3×10⁷", "3×10⁹", "9×10⁶"]
+  answer: 1
+  explanation: "365 × 24 × 3600 ≈ 3.15×10⁷ — and π×10⁷ is accurate to half a percent."
+- question: "Which combination of G, M and c has the units of a length?"
+  choices: ["GM/c", "GM/c²", "GM²/c³", "G M c²"]
+  answer: 1
+  explanation: "G is m³ kg⁻¹ s⁻², so GM is m³ s⁻², and dividing by c² leaves metres. The Schwarzschild radius is 2GM/c²."
+- question: "An order-of-magnitude estimate is considered successful when it is right to within"
+  choices: ["one percent", "a factor of a few", "a factor of a thousand", "the last decimal place"]
+  answer: 1
+  explanation: "The point is to tell a sensible answer from a nonsensical one, not to compete with a calculator."
+- question: "The Hubble time 1/H₀ is about 14 billion years. What is c/H₀ roughly?"
+  choices: ["14 Mpc", "430 Mpc", "4 300 Mpc", "43 000 Mpc"]
+  answer: 2
+  explanation: "c/H₀ = c × (1/H₀) = 14 billion light years ≈ 4 300 Mpc: the same fact written as a distance."
+- question: "Which estimate is order-of-magnitude thinking least able to handle?"
+  choices:
+    - "The number of stars visible to the naked eye"
+    - "The density of the universe"
+    - "The expansion factor during inflation, e⁶⁰"
+    - "The mass of the Milky Way"
+  answer: 2
+  explanation: "When a quantity depends exponentially on something, a small change in that something moves the answer by many powers of ten."
+- question: "Dimensional analysis tells you the shape of a formula. What can it never give you?"
+  choices:
+    - "The units of the answer"
+    - "The dimensionless number in front"
+    - "How the answer scales with mass"
+    - "Whether the formula is consistent"
+  answer: 1
+  explanation: "That factor needs the real theory — but it is almost always between 0.1 and 10, which is why estimating still works."
+- question: "The critical density is about 10⁻²⁶ kg/m³. How much matter is that?"
+  choices:
+    - "About a kilogram per cubic metre"
+    - "About five hydrogen atoms per cubic metre"
+    - "About a million hydrogen atoms per cubic metre"
+    - "One atom per cubic kilometre"
+  answer: 1
+  explanation: "Dividing by the hydrogen mass 1.7×10⁻²⁷ kg gives about five atoms per cubic metre — emptier than any laboratory vacuum."

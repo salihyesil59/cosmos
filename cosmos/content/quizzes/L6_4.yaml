@@ -1,0 +1,36 @@
+- question: "What ended the cosmic dark ages?"
+  choices:
+    - "The release of the CMB"
+    - "The light of the first stars and galaxies"
+    - "Big Bang nucleosynthesis"
+    - "The formation of the Sun"
+  answer: 1
+  explanation: "After recombination there were no light sources until the first stars formed at redshift 20–30."
+- question: "What does the Gunn–Peterson trough in quasar spectra show?"
+  choices:
+    - "Quasars are made of dark matter"
+    - "Even a small fraction of neutral hydrogen absorbs Lyman-α light, so reionisation was ending around z ≈ 6"
+    - "The CMB is polarised"
+    - "Galaxies rotate"
+  answer: 1
+  explanation: "Complete absorption blueward of Lyman-α appears in quasars beyond redshift about 6."
+- question: "Planck measures an optical depth τ ≈ 0.054. What does this tell us?"
+  choices:
+    - "The CMB is 5.4% brighter than expected"
+    - "Free electrons from reionisation scattered about 5% of CMB photons, implying a midpoint near z ≈ 7.7"
+    - "The universe is 5.4 billion years old"
+    - "Dark energy is 5.4% of the universe"
+  answer: 1
+  explanation: "τ integrates the density of free electrons along the line of sight; a quick reionisation at z ≈ 7.7 gives this value."
+- question: "At what frequency would we observe the 21-cm line emitted at redshift z = 9?"
+  choices: ["1420 MHz", "142 MHz", "14.2 MHz", "12 780 MHz"]
+  answer: 1
+  explanation: "ν = 1420.4 MHz / (1 + z) = 1420.4 / 10 ≈ 142 MHz."
+- question: "Why is detecting the cosmological 21-cm signal so difficult?"
+  choices:
+    - "Hydrogen is very rare"
+    - "Radio foregrounds from our Galaxy and other sources are 10 000 to 100 000 times brighter"
+    - "The signal is in X-rays"
+    - "It only exists inside the Sun"
+  answer: 1
+  explanation: "The tiny signal must be separated from bright, smooth foregrounds and human radio interference."

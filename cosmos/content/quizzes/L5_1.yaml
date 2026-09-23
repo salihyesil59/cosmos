@@ -1,0 +1,36 @@
+- question: "Roughly what angular size on the sky does multipole ℓ = 180 correspond to?"
+  choices: ["180 degrees", "10 degrees", "1 degree", "1 arcminute"]
+  answer: 2
+  explanation: "θ ≈ 180°/ℓ, so ℓ = 180 corresponds to about one degree."
+- question: "What produces the acoustic peaks in the CMB power spectrum?"
+  choices:
+    - "Sound waves in the photon–baryon plasma caught at maximum compression or rarefaction when the CMB was released"
+    - "Radio noise from our galaxy"
+    - "Galaxy clusters between us and the CMB"
+    - "The rotation of the Earth"
+  answer: 0
+  explanation: "Gravity and photon pressure made the plasma oscillate. Modes at extreme compression or rarefaction at recombination give the peaks."
+- question: "If space were closed (positively curved), where would the first acoustic peak appear?"
+  choices:
+    - "At a higher multipole, because spots look smaller"
+    - "At a lower multipole, because spots look larger"
+    - "At exactly the same place"
+    - "The peak would disappear"
+  answer: 1
+  explanation: "Positive curvature makes light rays converge, so the sound horizon covers a larger angle and the peak moves to lower ℓ."
+- question: "Increasing the density of ordinary matter (baryons) mainly..."
+  choices:
+    - "raises the compression (odd) peaks relative to the rarefaction (even) peaks"
+    - "moves all peaks to higher ℓ by a factor of two"
+    - "removes the Sachs–Wolfe plateau"
+    - "has no effect on the CMB"
+  answer: 0
+  explanation: "Baryons add inertia to the plasma and shift the oscillation towards compression, so odd peaks grow relative to even peaks."
+- question: "Why does the CMB power spectrum fall off at very small angular scales (ℓ > 1000)?"
+  choices:
+    - "Telescopes cannot see small scales"
+    - "Photon diffusion before recombination smoothed out the smallest ripples (Silk damping)"
+    - "Dark energy destroys small fluctuations"
+    - "The Sun's light drowns them out"
+  answer: 1
+  explanation: "Photons random-walked between scatterings, erasing fluctuations smaller than the diffusion length."

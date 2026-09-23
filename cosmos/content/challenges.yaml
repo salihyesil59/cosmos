@@ -1,0 +1,466 @@
+# Step-by-step challenges inside the simulators (G8).
+#
+# Keyed by simulator id. Every step has a task, a hint, a success message and a
+# list of conditions on the values the simulator reports in its state():
+# field plus any of min, max, equals, contains, is_true, is_false.
+
+S1:
+- id: cmb-age
+  task: How old was the universe when the cosmic microwave background was released? Set the redshift to z = 1090
+    with the Planck 2018 preset.
+  hint: Press the <b>z = 1090 (CMB)</b> shortcut button, or type 1090 into the redshift box.
+  success: Only about 380 000 years — a blink compared with today's 13.8 billion years, and yet the light has been
+    travelling ever since.
+  check:
+  - field: preset
+    equals: planck18
+  - field: z
+    min: 1000
+    max: 1200
+- id: distances-differ
+  task: At z = 3 the luminosity distance is sixteen times the angular-diameter distance. Go there and compare the
+    two rows of the table.
+  hint: Set the redshift to 3; the two distances differ by a factor (1 + z)².
+  success: D_L = (1 + z)² D_A. Distant galaxies look larger than you expect, and far fainter.
+  check:
+  - field: z
+    min: 2.9
+    max: 3.1
+- id: eds-is-younger
+  task: Switch to the Einstein–de Sitter model and find an age below 10 billion years.
+  hint: Choose Einstein–de Sitter in the preset box. Without dark energy the expansion always slowed down, so the
+    universe reaches its present size sooner.
+  success: Younger than the oldest stars — one of the reasons Einstein–de Sitter was abandoned.
+  check:
+  - field: preset
+    equals: eds
+  - field: age_gyr
+    max: 10
+S2:
+- id: find-a-crunch
+  task: Build a universe that ends in a Big Crunch.
+  hint: Gravity has to win. Push Ωm above about 1 and keep ΩΛ near zero.
+  success: With enough matter and no dark energy the expansion stops and reverses.
+  check:
+  - field: fate
+    contains: crunch
+- id: no-big-bang
+  task: Find the strange corner of the Ωm–ΩΛ map where the universe never had a Big Bang.
+  hint: Very large ΩΛ with very little matter — the top-left corner of the map.
+  success: With enough dark energy and little matter, running the clock backwards never reaches zero size. The universe
+    bounces instead.
+  check:
+  - field: fate
+    contains: no big bang
+- id: accelerating-today
+  task: Return to a universe that is accelerating today and older than 13 billion years.
+  hint: 'Planck-like values work: about Ωm = 0.3 and ΩΛ = 0.7.'
+  success: That is our universe. Matter loses, dark energy wins, and the expansion speeds up.
+  check:
+  - field: accelerating
+    is_true: true
+  - field: age_gyr
+    min: 13
+S6:
+- id: kepler-fails
+  task: Turn off both the dark matter halo and MOND, and watch the curve fall away from the measured points.
+  hint: Untick <b>Include a dark matter halo</b> and <b>Use MOND instead of dark matter</b>.
+  success: Visible matter alone predicts a Keplerian fall-off that the data do not show.
+  check:
+  - field: halo
+    is_false: true
+  - field: mond
+    is_false: true
+- id: halo-fit
+  task: 'Switch the halo on and fit the outer points: bring the scatter below 12 km/s.'
+  hint: Raise the halo mass until the model curve flattens on top of the data points.
+  success: A dark halo about ten times heavier than the visible galaxy flattens the curve.
+  check:
+  - field: halo
+    is_true: true
+  - field: rms
+    max: 12
+- id: mond-fit
+  task: Now fit the same galaxy with MOND instead of dark matter.
+  hint: Tick <b>Use MOND instead of dark matter</b>. There is no halo mass to tune; the acceleration scale a₀ does
+    the work.
+  success: MOND fits a single galaxy with no free halo — which is why rotation curves alone cannot decide between
+    the two ideas.
+  check:
+  - field: mond
+    is_true: true
+  - field: rms
+    max: 15
+S10:
+- id: first-second
+  task: Travel to one second after the Big Bang and read a temperature above a billion kelvin.
+  hint: Set the time slider to 0, which means 10⁰ = 1 second, or jump to Neutrino decoupling.
+  success: About 10¹⁰ K — hot enough to create and destroy electron–positron pairs.
+  check:
+  - field: time_s
+    min: 0.3
+    max: 5
+  - field: temperature_k
+    min: 1000000000.0
+- id: matter-takes-over
+  task: Find the era when matter carries more of the energy budget than radiation, before the universe is a million
+    years old.
+  hint: Matter–radiation equality happens near 50 000 years, about 12.2 on the slider.
+  success: From here on gravity can finally build structure out of the tiny ripples.
+  check:
+  - field: dominant
+    equals: matter
+  - field: time_s
+    max: 32000000000000.0
+- id: dark-energy-era
+  task: Move to today and check which component dominates the universe now.
+  hint: Press the <b>Today</b> button.
+  success: Dark energy is about 69% of the energy budget now, and its share keeps growing.
+  check:
+  - field: dominant
+    equals: dark energy
+  - field: time_s
+    min: 3.0e+17
+S11:
+- id: deuterium-baryons
+  task: Weigh the ordinary matter of the universe with deuterium, and land inside the Planck CMB band.
+  hint: Press <b>From deuterium</b> with standard physics; the vertical line should fall inside the green band.
+  success: Two independent measurements, three minutes and 380 000 years after the Big Bang, agree on the same baryon
+    density.
+  check:
+  - field: eta10
+    min: 5.8
+    max: 6.4
+  - field: delta_neff
+    min: -0.01
+    max: 0.01
+- id: lithium-dip
+  task: Find the baryon density at which the least lithium-7 is produced.
+  hint: Slide η₁₀ down towards 2–3 and watch the lithium curve reach its minimum.
+  success: 'The two production channels of lithium cross here. The measured baryon density is not at the dip: that
+    is the lithium problem.'
+  check:
+  - field: eta10
+    min: 1.6
+    max: 3.2
+- id: extra-neutrinos
+  task: Add at least one extra neutrino-like species and push the predicted helium above 0.26.
+  hint: 'Raise ΔN_eff to 1 or more: a faster expansion freezes out more neutrons.'
+  success: Helium counts relativistic species, which is how nucleosynthesis limits new light particles.
+  check:
+  - field: delta_neff
+    min: 0.9
+  - field: yp
+    min: 0.26
+S12:
+- id: interleaved-peaks
+  task: 'Find the first E-mode peak and check that it lands between the first two temperature peaks: look for it
+    between ℓ = 350 and ℓ = 500.'
+  hint: Open the <b>E modes and TE</b> tab with the Planck parameters. The dashed grey curve is the temperature
+    spectrum, scaled down.
+  success: Temperature comes from the plasma's compression, polarisation from its velocity — a quarter cycle apart,
+    like a pendulum's position and speed.
+  check:
+  - field: ee_first_peak
+    min: 350
+    max: 500
+- id: bicep-trap
+  task: With the default dust level, raise the tensor-to-scalar ratio r until the primordial B modes rise above
+    dust plus lensing at ℓ = 80.
+  hint: Open the <b>B modes</b> tab and drag <b>r</b>. Watch where the blue curve crosses the others.
+  success: It takes r ≈ 0.08 — nearly what BICEP2 announced in 2014, and why a signal that size looked so convincing
+    before the dust was measured properly.
+  check:
+  - field: tensor_above_foregrounds
+    is_true: true
+  - field: r
+    min: 0.05
+  - field: dust
+    min: 0.01
+- id: delensing
+  task: 'Detect a small primordial signal the hard way: set r to 0.01 or less, clean the patch of dust, and delens
+    to A_lens = 0.2 or better until the tensor B modes win at ℓ = 80.'
+  hint: Set <b>r</b> near 0.01, drag <b>polarised dust</b> down towards zero, then lower the <b>lensing amplitude</b>.
+  success: 'This is the programme for the next decade: many frequencies to kill the dust, a lensing map to subtract
+    the rest, and enough detectors to see what is left.'
+  check:
+  - field: r
+    max: 0.01
+    min: 0.002
+  - field: a_lens
+    max: 0.2
+  - field: tensor_above_foregrounds
+    is_true: true
+S17:
+- id: blazing-sky
+  task: 'Reproduce Olbers'' paradox: a patch of sky completely covered by stars.'
+  hint: 'Choose the scenario Olbers'' universe: infinite, static and eternal.'
+  success: Every line of sight ends on a star, so the whole sky is as bright as a stellar surface.
+  check:
+  - field: coverage
+    min: 0.98
+- id: age-saves-us
+  task: Keep the stars burning forever but give the universe a finite age, and get the sky below 20% covered.
+  hint: Tick <b>The universe has a finite age</b> and shorten the light-travel distance well below the mean free
+    path λ.
+  success: The finite age alone is enough. In our universe ct is fourteen orders of magnitude shorter than λ.
+  check:
+  - field: finite_age
+    is_true: true
+  - field: coverage
+    max: 0.2
+- id: redshift-only
+  task: 'Now switch the finite age off and darken an eternal sky with expansion alone: bring the brightness below
+    20%.'
+  hint: Untick the finite age, tick <b>The universe expands</b> and shorten the Hubble length.
+  success: Redshift dimming can darken an eternal sky too, but in our universe it is only a supporting actor.
+  check:
+  - field: finite_age
+    is_false: true
+  - field: expanding
+    is_true: true
+  - field: brightness
+    max: 0.2
+S18:
+- id: heavy-neutrinos
+  task: Give the neutrinos a total mass of at least 0.4 eV and keep Ωm between 0.29 and 0.33 by removing cold dark
+    matter.
+  hint: Raise <b>Σmν</b>, then lower <b>Ωc dark matter</b> until the total matter test passes again.
+  success: 'The expansion hardly notices — matter is matter — but the neutrino test fails: that much hot matter
+    would smooth away the small-scale structure galaxy surveys see.'
+  check:
+  - field: sum_mnu
+    min: 0.4
+  - field: omega_m
+    min: 0.29
+    max: 0.33
+  - field: neutrino_test
+    is_false: true
+S19:
+- id: healthy-chain
+  task: Run a chain whose acceptance rate lands between 20% and 45% — the sign that the proposal step is the right
+    size.
+  hint: Leave the step σ near 0.08. If the acceptance is too high, make σ larger; too low, smaller.
+  success: A well-tuned walker accepts about a quarter of its proposals and explores the whole posterior instead
+    of crawling or bouncing off the walls.
+  check:
+  - field: acceptance
+    min: 0.2
+    max: 0.45
+- id: too-timid
+  task: 'Now break it on purpose: make the steps so small that the walker accepts almost everything (above 85%).'
+  hint: Drag the proposal step σ down towards 0.005.
+  success: The cloud looks tight, but it is tight because the walker never went anywhere. High acceptance is not
+    a good sign — the effective sample size collapses.
+  check:
+  - field: acceptance
+    min: 0.85
+- id: flat-precision
+  task: Assume a flat universe and measure Ωm from the real supernovae to better than ±0.03.
+  hint: Tick <b>Assume a flat universe</b>, keep the Pantheon+ sample and use at least 4000 steps.
+  success: One assumption — flatness, which the CMB supplies — turns a broad two-parameter cloud into a measurement
+    of a few percent.
+  check:
+  - field: flat
+    is_true: true
+  - field: sample
+    equals: pantheon
+  - field: om_error
+    max: 0.03
+- id: break-the-degeneracy
+  task: Without assuming flatness, combine the supernovae with a second probe and measure ΩΛ to better than ±0.04.
+  hint: Choose <b>+ CMB geometry</b> as the second probe. Its band crosses the supernova ellipse.
+  success: Each probe alone allows a long strip; together only the crossing survives. That is how the standard cosmological
+    parameters are measured to a percent.
+  check:
+  - field: flat
+    is_false: true
+  - field: probe
+    equals: cmb
+  - field: ol_error
+    max: 0.04
+S20:
+- id: weakest-rung
+  task: Choose the Hubble Key Project programme and bring the total uncertainty on H0 below 3.5% while keeping at
+    most 12 calibrator galaxies and at most 50 Hubble-flow supernovae.
+  hint: Open <b>Error budget</b>. Improve the rung with the longest bar first — probably the parallaxes.
+  success: Errors add in quadrature, so the biggest term decides. Space astrometry turned the first rung from the
+    weakest into one of the best.
+  check:
+  - field: error_percent
+    max: 3.5
+  - field: n_hosts
+    max: 12
+  - field: n_flow
+    max: 50
+- id: systematic-survives
+  task: Add a parallax zero-point offset of at least +15 µas and use 500 or more Hubble-flow supernovae. Make the
+    systematic shift larger than 1.5 km/s/Mpc.
+  hint: Drag <b>Parallax zero-point offset</b> to +20 and <b>Supernovae in the Hubble flow</b> above 500.
+  success: The statistical error keeps shrinking, the bias does not. More of the same data can never reveal a systematic
+    error — only an independent method can.
+  check:
+  - field: parallax_offset
+    min: 15
+  - field: n_flow
+    min: 500
+  - field: systematic_shift
+    min: 1.5
+- id: monte-carlo-check
+  task: Press <b>Repeat 300×</b> and confirm that the spread of the repeated measurements matches the quoted error
+    bar to within 20%.
+  hint: Leave the systematics at zero; the Monte Carlo spread appears under <b>Your H0</b>.
+  success: Simulating the whole measurement many times is the brute-force check of any error propagation — the same
+    idea as sampling a posterior with a chain.
+  check:
+  - field: mc_runs
+    min: 100
+  - field: mc_mismatch
+    max: 0.2
+S21:
+- id: half-percent
+  task: Design a survey that measures the BAO distance to better than 0.5% in total, with at most five years of
+    observing and no more than 15 000 deg².
+  hint: 'The DESI programme with luminous red galaxies is close. Watch n̄P: if it is far above 1, spend the galaxies
+    on more volume instead.'
+  success: Half a percent on the expansion history — the precision that lets surveys test whether dark energy evolves.
+  check:
+  - field: total_percent
+    max: 0.5
+  - field: years
+    max: 5
+  - field: area
+    max: 15000
+- id: beat-shot-noise
+  task: Choose quasars as the tracer, then raise their density until the survey is no longer shot-noise limited
+    (n̄P above 1).
+  hint: Select <b>Quasars</b>, then drag the <b>target density</b> up. If the spectra run out, add years or fibres.
+  success: Quasars are rare, so every extra one counts until n̄P reaches about 1 — after that, only more volume
+    helps.
+  check:
+  - field: tracer
+    equals: qso
+  - field: n_p
+    min: 1.0
+- id: floor-wins
+  task: Add a systematic floor of at least 0.25% and design a survey whose statistical error is already below it.
+  hint: Set the <b>Systematic floor</b> to 0.3% and start from a large programme such as DESI or Euclid.
+  success: 'Past this point more years or more galaxies buy almost nothing: the systematics, not the statistics,
+    now decide the result.'
+  check:
+  - field: floor
+    min: 0.25
+  - field: stat_below_floor
+    is_true: true
+S22:
+- id: first-siren
+  task: 'Reproduce GW170817: a 1.46 + 1.27 M☉ merger at 40 Mpc seen by the 2017 network, with a signal-to-noise
+    ratio above 30 and a localisation better than 50 deg².'
+  hint: The <b>GW170817</b> preset sets it up. Read the signal-to-noise ratio and the sky area in the summary.
+  success: One event, no distance ladder, and an H₀ that landed between Planck and SH0ES — which is exactly why
+    sirens are worth building a decade of detectors for.
+  check:
+  - field: snr
+    min: 30
+  - field: sky_area
+    max: 50
+  - field: host_known
+    is_true: true
+- id: lost-in-the-dark
+  task: Make a loud black-hole merger — signal-to-noise above 20 — that nonetheless measures H₀ to worse than 50%,
+    by taking away the host galaxy.
+  hint: Set both masses near 30 M☉, move it out to several hundred Mpc, and uncheck <b>the host galaxy is known</b>.
+  success: Loudness is not the problem. Without a counterpart every galaxy in the volume is a candidate, and that
+    is what a dark siren costs.
+  check:
+  - field: snr
+    min: 20
+  - field: host_known
+    is_false: true
+  - field: h0_percent
+    min: 50
+- id: beat-the-tension
+  task: Combine enough bright sirens to measure H₀ to better than 2%, the precision the Hubble tension calls for.
+  hint: Keep the host known and raise <b>the number of events</b>. Better detectors make each event count for more,
+    so fewer are needed.
+  success: 'Two percent from gravitational waves alone: sharp enough to judge between the early and late measurements
+    without trusting either ladder.'
+  check:
+  - field: host_known
+    is_true: true
+  - field: h0_percent
+    max: 2.0
+S23:
+- id: clean-web
+  task: 'Map the cosmic web with no observing effects in the way: at least 2500 galaxies, no magnitude limit and
+    no redshift error.'
+  hint: Start from <b>Volume limited</b> and raise the density until the count passes 2500.
+  success: 'This is where the galaxies really are: filaments, knots and the voids between them, with nothing added
+    by the telescope.'
+  check:
+  - field: galaxies
+    min: 2500
+  - field: magnitude_limit
+    max: 0.0
+  - field: redshift_error
+    max: 0.0
+- id: fingers-of-god
+  task: 'Make the fingers of God unmistakable: a cluster velocity dispersion of at least 900 km/s that stretches
+    the densest regions by more than 8 Mpc/h.'
+  hint: Drag <b>Cluster velocity dispersion</b> up and watch the readout for the radial stretch.
+  success: A cluster is a blob in space and a spike in redshift. Every real cone diagram has them, and they all
+    point straight at us.
+  check:
+  - field: fingers
+    min: 900
+  - field: finger_length
+    min: 8.0
+- id: telescope-not-universe
+  task: Build a flux-limited catalogue in which fewer than 5% of the galaxies at the far edge are bright enough
+    to be seen, while keeping at least 600 galaxies in the slice.
+  hint: Set the <b>apparent magnitude limit</b> near 17 and raise the density to keep enough galaxies.
+  success: The map empties out with distance — and that is the telescope, not the universe. Correcting for it is
+    what a selection function is for.
+  check:
+  - field: magnitude_limit
+    min: 10.0
+  - field: density_drop
+    max: 0.05
+  - field: galaxies
+    min: 600
+S24:
+- id: mind-the-galaxy
+  task: 'Turn the KQ85 mask off and find out how much the Galaxy adds: get the rms above 70 µK with the whole sky
+    in view.'
+  hint: Untick <b>Apply the KQ85 analysis mask</b> and read the rms in the summary.
+  success: The extremes jump because you are now measuring our own galaxy, not the early universe. Every published
+    result masks it first — which is a judgement somebody had to make, and publish.
+  check:
+  - field: masked
+    is_false: true
+  - field: rms
+    min: 68
+- id: spot-size
+  task: 'Measure the size of a typical hot or cold spot: with the mask on and no filtering, read the spot size off
+    the correlation function. It should land between 1° and 2.5°.'
+  hint: Open <b>Correlation function</b>. The marked point is where C(θ) has fallen to half its value at zero separation.
+  success: About a degree and a half — the sound horizon at recombination, projected across 13.8 billion years,
+    measured by you from the real sky.
+  check:
+  - field: masked
+    is_true: true
+  - field: smoothing
+    max: 0.0
+  - field: spot_size
+    min: 1.0
+    max: 2.5
+- id: blur-it-away
+  task: Smooth the map by 5° or more and push the rms below 35 µK.
+  hint: Drag <b>Smooth by</b> up and watch the rms in the summary fall.
+  success: Half the signal has gone, because most of it lived at about a degree. Smoothing is how you find out what
+    scale a signal lives on.
+  check:
+  - field: smoothing
+    min: 5.0
+  - field: rms
+    max: 35

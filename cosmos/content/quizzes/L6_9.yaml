@@ -1,0 +1,68 @@
+- question: "The Schwarzschild radius scales as r_s ∝ M. What does that imply about the mean density inside a black hole's horizon?"
+  choices:
+    - "It is the same for all black holes"
+    - "It falls as 1/M², so supermassive black holes are not dense at all"
+    - "It grows as M²"
+    - "It is always above nuclear density"
+  answer: 1
+  explanation: "Mass over volume goes as M/M³ = M⁻². A 10⁹ M☉ hole has a mean density below that of water."
+- question: "Why is a gap expected in the black-hole mass distribution between about 50 and 120 M☉?"
+  choices:
+    - "Detectors are insensitive there"
+    - "Pair instability blows such stars apart, leaving no remnant"
+    - "Those stars become neutron stars instead"
+    - "They all merge immediately"
+  answer: 1
+  explanation: "In a helium core in that range, photons convert to electron–positron pairs, pressure support drops and the explosive core ignition destroys the star."
+- question: "What is the M–σ relation?"
+  choices:
+    - "The relation between a black hole's mass and its spin"
+    - "The tight correlation between a central black hole's mass and the velocity dispersion of its galaxy's stars"
+    - "The mass–luminosity relation of quasars"
+    - "How the Schwarzschild radius depends on mass"
+  answer: 1
+  explanation: "M ∝ σ⁴⁻⁵, linking an object a few AU across to a galaxy a hundred thousand light years across — evidence that feedback coupled their growth."
+- question: "Why are 10⁹ M☉ quasars at z > 7 a problem?"
+  choices:
+    - "They should not be visible that far away"
+    - "Growing them from stellar remnants at the Eddington limit takes about as long as the universe had existed"
+    - "General relativity forbids such masses"
+    - "They violate the M–σ relation"
+  answer: 1
+  explanation: "Eddington-limited growth from a 100 M☉ seed needs roughly 800 million years with no interruptions — the whole age of the universe at z = 7."
+- question: "The Event Horizon Telescope images the black hole's shadow. How does it compare with the event horizon?"
+  choices:
+    - "They are the same size"
+    - "The shadow is about 2.6 times wider in radius, because light rays are bent around the hole"
+    - "The shadow is smaller"
+    - "The shadow has no fixed size"
+  answer: 1
+  explanation: "The shadow's angular diameter is 2√27 GM/c²D ≈ 5.2 r_s/D, and it depends only on mass and distance — which is what makes it a test of the metric."
+- question: "A primordial black hole forming when the cosmic time was 1 s has a mass of roughly"
+  choices: ["1 gram", "1 M☉", "10⁵ M☉", "10⁹ M☉"]
+  answer: 2
+  explanation: "The horizon mass is about c³t/G ≈ 10⁵ M☉ × (t / 1 s), so the formation time reads off the mass like a clock."
+- question: "Why can primordial black holes not make up all of the dark matter?"
+  choices:
+    - "They evaporate too fast at every mass"
+    - "Microlensing, the gamma-ray background, CMB accretion and cluster dynamics close nearly every mass window"
+    - "They would be visible directly"
+    - "General relativity forbids them"
+  answer: 1
+  explanation: "Only a narrow asteroid-mass window around 10¹⁷–10²² g survives; the stellar-mass one is limited to well under a percent of the dark matter."
+- question: "A solar-mass black hole today is"
+  choices:
+    - "Evaporating rapidly"
+    - "Absorbing more CMB energy than it radiates, because its Hawking temperature is far below 2.7 K"
+    - "In thermal equilibrium with the CMB"
+    - "Radiating at about 3 K"
+  answer: 1
+  explanation: "T_H ≈ 6×10⁻⁸ K for a solar mass. It will only start to lose mass once the CMB has cooled below that, in about 10¹⁷ years."
+- question: "What makes a black-hole merger a much weaker standard siren than a neutron-star one?"
+  choices:
+    - "The wave is fainter"
+    - "There is usually no electromagnetic counterpart, so the host galaxy and hence the redshift are unknown"
+    - "The chirp mass cannot be measured"
+    - "Black holes are further away"
+  answer: 1
+  explanation: "Without a kilonova every galaxy in the localisation volume is a candidate host, and a single dark siren constrains H₀ only weakly."

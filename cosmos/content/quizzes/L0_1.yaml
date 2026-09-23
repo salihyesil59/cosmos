@@ -1,0 +1,28 @@
+- question: "How is the number 3 600 000 written in scientific notation?"
+  choices: ["3.6 × 10⁵", "3.6 × 10⁶", "36 × 10⁶", "3.6 × 10⁷"]
+  answer: 1
+  explanation: "Move the decimal point six places to the left: 3 600 000 = 3.6 × 10⁶."
+- question: "How much larger is 10¹⁵ m than 10¹² m?"
+  choices: ["3 times", "30 times", "1 000 times", "3 000 times"]
+  answer: 2
+  explanation: "Dividing powers of ten subtracts exponents: 10¹⁵ / 10¹² = 10³ = 1 000."
+- question: "Roughly how many powers of ten separate the size of a human from the size of the observable universe?"
+  choices: ["About 9", "About 15", "About 27", "About 100"]
+  answer: 2
+  explanation: "A human is about 10⁰ m and the observable universe about 10²⁷ m across: 27 powers of ten."
+- question: "Why do galaxies collide fairly often while stars inside them almost never do?"
+  choices:
+    - "Stars are protected by their magnetic fields"
+    - "Galaxies are close together compared with their sizes, but stars are tiny compared with the distances between them"
+    - "Galaxies move much faster than stars"
+    - "Stars repel each other through radiation pressure"
+  answer: 1
+  explanation: "Andromeda is only about 25 Milky Way diameters away, but the nearest star is tens of millions of solar diameters away. Stars are like grains of sand kilometres apart."
+- question: "We observe a galaxy whose light has travelled for 2 billion years. What do we see?"
+  choices:
+    - "The galaxy as it is today"
+    - "The galaxy as it was 2 billion years ago"
+    - "The galaxy as it will be in 2 billion years"
+    - "Nothing, because light cannot travel that long"
+  answer: 1
+  explanation: "Light takes time to travel, so we see the galaxy as it was when the light left it: looking far away means looking back in time."

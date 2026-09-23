@@ -1,0 +1,36 @@
+- question: "Who predicted in 1948 that a relic radiation of about 5 K should fill the universe?"
+  choices:
+    - "Penzias and Wilson"
+    - "Alpher and Herman, working with Gamow"
+    - "Hubble and Humason"
+    - "Bondi, Gold and Hoyle"
+  answer: 1
+  explanation: "Their work on Big Bang nucleosynthesis implied a leftover radiation, though the prediction was largely forgotten until 1965."
+- question: "Which property of Penzias and Wilson's noise showed it came from beyond our galaxy?"
+  choices:
+    - "It was stronger at night"
+    - "It was the same in every direction, at all times of day and in every season"
+    - "It came only from the direction of the Sun"
+    - "It disappeared after cleaning the antenna"
+  answer: 1
+  explanation: "A local or galactic source would vary with direction or time. A uniform signal pointed to a cosmic origin."
+- question: "Why was the CMB discovery a problem for the steady state theory?"
+  choices:
+    - "The steady state theory predicted a CMB of 3 000 K"
+    - "It had no natural way to produce a uniform blackbody radiation filling the universe"
+    - "It predicted that the universe is contracting"
+    - "It denied that galaxies exist"
+  answer: 1
+  explanation: "In the hot Big Bang the CMB is the natural afterglow of a dense early phase; a universe that is always the same has no such phase."
+- question: "What did COBE's FIRAS instrument show in 1990?"
+  choices:
+    - "The CMB has hot and cold spots of about 1°"
+    - "The CMB spectrum is a nearly perfect blackbody"
+    - "The universe is accelerating"
+    - "The CMB comes from the Milky Way"
+  answer: 1
+  explanation: "The measured spectrum matched a 2.7255 K blackbody extremely precisely, as the hot Big Bang predicts."
+- question: "How large are the temperature ripples first detected by COBE in 1992?"
+  choices: ["About 1 part in 10", "About 1 part in 1 000", "About 1 part in 100 000", "About 1 part in 10¹⁰"]
+  answer: 2
+  explanation: "The tiny ripples of about 1 in 100 000 are the seeds of galaxies and the cosmic web."
