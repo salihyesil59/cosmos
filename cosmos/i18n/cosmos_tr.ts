@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='utf-8'?>
-<TS version="2.1" language="tr_TR">
+<!DOCTYPE TS><TS version="2.1" language="tr_TR">
 <context>
     <name>cosmos</name>
     <message>
@@ -4703,7 +4703,7 @@ parametreleri kendiniz değiştirmenize izin verir.
         <location filename="../gui/simulators/ladder_sim.py" line="37" />
         <location filename="../gui/simulators/olbers_sim.py" line="24" />
         <location filename="../gui/simulators/siren_sim.py" line="31" />
-        <location filename="../gui/simulators/slice_sim.py" line="30" />
+        <location filename="../gui/simulators/slice_sim.py" line="32" />
         <location filename="../gui/simulators/survey_sim.py" line="29" />
         <source>Custom</source>
         <translation>Özel</translation>
@@ -4737,7 +4737,7 @@ parametreleri kendiniz değiştirmenize izin verir.
         <location filename="../gui/simulators/ladder_sim.py" line="51" />
         <location filename="../gui/simulators/mcmc_sim.py" line="74" />
         <location filename="../gui/simulators/nbody_sim.py" line="110" />
-        <location filename="../gui/simulators/slice_sim.py" line="42" />
+        <location filename="../gui/simulators/slice_sim.py" line="44" />
         <source>Random seed</source>
         <translation>Rastgelelik tohumu</translation>
     </message>
@@ -7082,6 +7082,71 @@ En büyük terimi yarıya indirmek, en küçüğünü tamamen yok etmekten çok 
         <translation>Yanlılığı 2,5'e çıkarın. Gökadalar daha güçlü kümeleniyor — ξ'nin biçimi mi değişiyor, yoksa yalnızca yüksekliği mi?</translation>
     </message>
     <message>
+        <location filename="../gui/simulators/registry.py" line="655" />
+        <source>CMB Sky Viewer</source>
+        <translation>KMF Gökyüzü Görüntüleyici</translation>
+    </message>
+    <message>
+        <location filename="../gui/simulators/registry.py" line="656" />
+        <source>The real microwave sky, with the mask and the filters.</source>
+        <translation>Gerçek mikrodalga gökyüzü; maskesi ve süzgeçleriyle.</translation>
+    </message>
+    <message>
+        <location filename="../gui/simulators/registry.py" line="658" />
+        <source>This is not a model. It is the WMAP nine-year map of the whole sky: the oldest light there is, released 380 000 years after the Big Bang, with the ripples that every galaxy grew from. Apply the analysis mask the team published, blur the map or keep only its fine detail, and measure what is left — the size of the spots, how alike two points are, and whether the distribution is the Gaussian inflation predicts.</source>
+        <translation>Bu bir model değil. WMAP'in dokuz yıllık tüm gökyüzü haritası: var olan en eski ışık, Büyük Patlama'dan 380 000 yıl sonra salınmış ve her gökadanın içinden büyüdüğü dalgalanmaları taşıyor. Ekibin yayımladığı çözümleme maskesini uygula, haritayı bulanıklaştır ya da yalnızca ince ayrıntısını bırak ve geriye kalanı ölç — lekelerin boyutunu, iki noktanın birbirine ne kadar benzediğini ve dağılımın şişmenin öngördüğü Gauss dağılımı olup olmadığını.</translation>
+    </message>
+    <message>
+        <location filename="../gui/simulators/registry.py" line="665" />
+        <source>Turn the &lt;b&gt;KQ85 mask&lt;/b&gt; off and on. The bright band is our own galaxy, not the early universe.</source>
+        <translation>&lt;b&gt;KQ85 maskesini&lt;/b&gt; kapatıp aç. Parlak şerit erken evren değil, kendi gökadamız.</translation>
+    </message>
+    <message>
+        <location filename="../gui/simulators/registry.py" line="667" />
+        <source>Raise &lt;b&gt;Smooth by&lt;/b&gt; and watch the rms fall in the summary.</source>
+        <translation>&lt;b&gt;Şu kadar yumuşat&lt;/b&gt; değerini yükselt ve özetteki rms'in düşüşünü izle.</translation>
+    </message>
+    <message>
+        <location filename="../gui/simulators/registry.py" line="668" />
+        <source>Tick &lt;b&gt;keep only what is smaller&lt;/b&gt; to subtract the blur and leave the degree-scale spots.</source>
+        <translation>Bulanıklığı çıkarıp derece ölçeğindeki lekeleri bırakmak için &lt;b&gt;yalnızca daha küçük olanı tut&lt;/b&gt; seçeneğini işaretle.</translation>
+    </message>
+    <message>
+        <location filename="../gui/simulators/registry.py" line="670" />
+        <source>Open &lt;b&gt;Correlation function&lt;/b&gt; and read the spot size off the half-way point.</source>
+        <translation>&lt;b&gt;Korelasyon fonksiyonu&lt;/b&gt; sekmesini aç ve leke boyutunu yarıya düştüğü noktadan oku.</translation>
+    </message>
+    <message>
+        <location filename="../gui/simulators/registry.py" line="671" />
+        <source>Switch the &lt;b&gt;projection&lt;/b&gt; between Mollweide and longitude–latitude.</source>
+        <translation>&lt;b&gt;İzdüşümü&lt;/b&gt; Mollweide ile boylam–enlem arasında değiştir.</translation>
+    </message>
+    <message>
+        <location filename="../gui/simulators/registry.py" line="674" />
+        <source>With the mask off, how much larger are the extremes? Whose light is that?</source>
+        <translation>Maske kapalıyken uç değerler ne kadar büyüyor? Bu ışık kimin?</translation>
+    </message>
+    <message>
+        <location filename="../gui/simulators/registry.py" line="675" />
+        <source>Smooth by 5°. How much of the 67 µK is left, and what has been thrown away?</source>
+        <translation>5° yumuşat. 67 µK'nin ne kadarı kaldı ve ne atıldı?</translation>
+    </message>
+    <message>
+        <location filename="../gui/simulators/registry.py" line="676" />
+        <source>In &lt;b&gt;How much survives blurring&lt;/b&gt;, find the scale where the curve bends.</source>
+        <translation>&lt;b&gt;Bulanıklaştırmadan ne kadarı kalıyor&lt;/b&gt; sekmesinde eğrinin kırıldığı ölçeği bul.</translation>
+    </message>
+    <message>
+        <location filename="../gui/simulators/registry.py" line="677" />
+        <source>Compare the histogram with the Gaussian. Inflation predicts that shape.</source>
+        <translation>Histogramı Gauss eğrisiyle karşılaştır. Şişme tam bu biçimi öngörür.</translation>
+    </message>
+    <message>
+        <location filename="../gui/simulators/registry.py" line="678" />
+        <source>Find the coldest spot. It is a real feature, and it has its own literature.</source>
+        <translation>En soğuk lekeyi bul. Gerçek bir yapı ve kendine ait bir literatürü var.</translation>
+    </message>
+    <message>
         <location filename="../gui/simulators/rotation_curve.py" line="33" />
         <location filename="../gui/simulators/rotation_curve.py" line="40" />
         <source>Galaxy</source>
@@ -7581,7 +7646,7 @@ En büyük terimi yarıya indirmek, en küçüğünü tamamen yok etmekten çok 
     </message>
     <message>
         <location filename="../gui/simulators/siren_sim.py" line="28" />
-        <location filename="../gui/simulators/slice_sim.py" line="27" />
+        <location filename="../gui/simulators/slice_sim.py" line="29" />
         <location filename="../gui/simulators/survey_sim.py" line="26" />
         <source>0 · Start from</source>
         <translation>0 · Şuradan başla</translation>
@@ -7800,247 +7865,423 @@ $$h \propto \frac{1}{D_L}\,(\mathcal{M}_c)^{5/3} f^{2/3}.$$
 Bu ifadedeki hiçbir şey herhangi bir şeye göre kalibre edilmemiştir. Cıvıltı $\mathcal{M}_c$'yi, genlik $D_L$'yi, konak gökada da $z$'yi verir — bu da tek bir olayda, altında yanlış gidebilecek hiçbir basamak olmadan, $H_0$ ölçümünün tamamıdır.</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/slice_sim.py" line="33" />
-        <source>Survey</source>
-        <translation>Tarama</translation>
+        <location filename="../gui/simulators/sky_sim.py" line="27" />
+        <source>1 · What you are looking at</source>
+        <translation>1 · Neye bakıyorsun</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/slice_sim.py" line="34" />
-        <source>Mock catalogues</source>
-        <translation>Sahte kataloglar</translation>
+        <location filename="../gui/simulators/sky_sim.py" line="30" />
+        <source>The WMAP 9-year ILC map: nine years in five frequency bands, combined so that everything without a thermal spectrum cancels and the microwave background is left. Temperatures are in microkelvin about the 2.725 K average.</source>
+        <translation>WMAP'in 9 yıllık ILC haritası: beş frekans bandında dokuz yıl; ısıl tayfı olmayan her şey birbirini götürecek ve geriye mikrodalga fon kalacak biçimde birleştirilmiş. Sıcaklıklar, 2,725 K ortalaması çevresinde mikrokelvin cinsindendir.</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/slice_sim.py" line="35" />
-        <source>Each choice observes the same simulated universe in a different way. Compare any of them with &lt;b&gt;the true universe&lt;/b&gt; to see what the observing did.</source>
-        <translation>Her seçenek aynı benzetilmiş evreni başka bir biçimde gözler. Gözlemin ne yaptığını görmek için herhangi birini &lt;b&gt;gerçek evrenle&lt;/b&gt; karşılaştırın.</translation>
+        <location filename="../gui/simulators/sky_sim.py" line="35" />
+        <source>2 · Cleaning it up</source>
+        <translation>2 · Temizleme</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/slice_sim.py" line="39" />
-        <source>1 · The simulated universe</source>
-        <translation>1 · Benzetilmiş evren</translation>
+        <location filename="../gui/simulators/sky_sim.py" line="37" />
+        <source>Apply the KQ85 analysis mask</source>
+        <translation>KQ85 çözümleme maskesini uygula</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/slice_sim.py" line="43" />
-        <source>One universe out of many</source>
-        <translation>Birçok evrenden biri</translation>
+        <location filename="../gui/simulators/sky_sim.py" line="39" />
+        <source>WMAP's own judgement about where the Galaxy is still too bright to trust. No published analysis uses the map without it.</source>
+        <translation>Gökadamızın hâlâ güvenilemeyecek kadar parlak olduğu yerler için WMAP ekibinin kendi kararı. Yayımlanmış hiçbir çözümleme haritayı bu maske olmadan kullanmaz.</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/slice_sim.py" line="44" />
-        <source>The initial conditions are a random draw. Change the seed and you get a different universe with exactly the same statistics — which is why a measurement made in one of them has an error bar at all.</source>
-        <translation>Başlangıç koşulları rastgele bir çekilişten gelir. Tohumu değiştirdiğinizde tam olarak aynı istatistiklere sahip farklı bir evren elde edersiniz — bir ölçümün hata çubuğu olmasının nedeni zaten budur.</translation>
+        <location filename="../gui/simulators/sky_sim.py" line="42" />
+        <source>Remove the monopole and dipole</source>
+        <translation>Tek kutbu ve çift kutbu çıkar</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/slice_sim.py" line="49" />
-        <source>Galaxy bias b</source>
-        <translation>Gökada yanlılığı b</translation>
+        <location filename="../gui/simulators/sky_sim.py" line="43" />
+        <source>The 2.725 K average and our own 370 km/s motion through the radiation. The ILC map already has them out, so what this removes is the small residual left by masking.</source>
+        <translation>2,725 K ortalaması ve ışınımın içindeki kendi 370 km/s hareketimiz. ILC haritasında ikisi de zaten çıkarılmıştır; burada çıkarılan, maskelemenin geride bıraktığı küçük artıktır.</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/slice_sim.py" line="50" />
-        <source>Galaxies are not matter</source>
-        <translation>Gökadalar madde değildir</translation>
+        <location filename="../gui/simulators/sky_sim.py" line="49" />
+        <source>3 · Filtering</source>
+        <translation>3 · Süzme</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/slice_sim.py" line="51" />
-        <source>Galaxies form in the densest places, so they clump harder than the matter does: 1 + δ_galaxies = (1 + δ_matter)^b, roughly. Red massive galaxies have b ≈ 2, blue star-forming ones b ≈ 1.</source>
-        <translation>Gökadalar en yoğun yerlerde oluşur, bu yüzden maddeden daha güçlü kümelenirler: kabaca 1 + δ_gökada = (1 + δ_madde)^b. Kırmızı kütleli gökadalarda b ≈ 2, mavi yıldız oluşturanlarda b ≈ 1'dir.</translation>
+        <location filename="../gui/simulators/sky_sim.py" line="52" />
+        <source>Smooth by (°)</source>
+        <translation>Şu kadar yumuşat (°)</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/slice_sim.py" line="56" />
-        <source>Galaxies per (Mpc/h)³</source>
-        <translation>(Mpc/h)³ başına gökada</translation>
+        <location filename="../gui/simulators/sky_sim.py" line="53" />
+        <source>Blurring on purpose</source>
+        <translation>Bile bile bulanıklaştırmak</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/slice_sim.py" line="61" />
-        <source>2 · The slice you observe</source>
-        <translation>2 · Gözlediğiniz dilim</translation>
+        <location filename="../gui/simulators/sky_sim.py" line="54" />
+        <source>Averaging over a patch of sky throws away everything smaller than it. Watch the rms fall: most of the structure lives near one degree, which is the size the sound waves had reached when the light was released.</source>
+        <translation>Gökyüzünün bir yamasında ortalama almak, ondan küçük olan her şeyi atar. rms'in düşüşünü izle: yapının çoğu bir derece dolayında yaşar; ses dalgaları ışık salındığında tam bu boyuta ulaşmıştı.</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/slice_sim.py" line="63" />
-        <source>Opening angle (°)</source>
-        <translation>Açılma açısı (°)</translation>
+        <location filename="../gui/simulators/sky_sim.py" line="58" />
+        <source>Keep only what is smaller than that</source>
+        <translation>Yalnızca bundan daha küçük olanı tut</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/slice_sim.py" line="65" />
-        <source>Slice thickness (°)</source>
-        <translation>Dilim kalınlığı (°)</translation>
+        <location filename="../gui/simulators/sky_sim.py" line="59" />
+        <source>Subtract the blurred map from the original, leaving the fine detail. This is how the large-scale foregrounds are suppressed.</source>
+        <translation>Bulanık haritayı özgün haritadan çıkarır ve ince ayrıntıyı bırakır. Büyük ölçekli önalan kaynakları böyle bastırılır.</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/slice_sim.py" line="66" />
-        <source>Why a slice?</source>
-        <translation>Neden bir dilim?</translation>
+        <location filename="../gui/simulators/sky_sim.py" line="65" />
+        <source>4 · Display</source>
+        <translation>4 · Görünüm</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/slice_sim.py" line="67" />
-        <source>A three-dimensional map cannot be drawn on paper. Taking a thin wedge of the sky and plotting distance against angle gives the cone diagram in which the cosmic web was first seen, in 1986.</source>
-        <translation>Üç boyutlu bir harita kâğıda çizilemez. Gökyüzünden ince bir kama alıp uzaklığı açıya karşı çizmek, kozmik ağın 1986'da ilk kez görüldüğü koni diyagramını verir.</translation>
+        <location filename="../gui/simulators/sky_sim.py" line="70" />
+        <source>Projection</source>
+        <translation>İzdüşüm</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/slice_sim.py" line="71" />
-        <source>Depth (Mpc/h)</source>
-        <translation>Derinlik (Mpc/h)</translation>
+        <location filename="../gui/simulators/sky_sim.py" line="71" />
+        <source>Drawing a sphere flat</source>
+        <translation>Küreyi düzlemde çizmek</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/slice_sim.py" line="76" />
-        <source>3 · What observing does to it</source>
-        <translation>3 · Gözlemin ona yaptıkları</translation>
+        <location filename="../gui/simulators/sky_sim.py" line="72" />
+        <source>Mollweide keeps areas honest, which is what matters when you are judging how much sky something covers. The rectangular view is easier to read coordinates off, and badly exaggerates the poles.</source>
+        <translation>Mollweide alanları dürüst tutar; bir şeyin gökyüzünün ne kadarını kapladığına karar verirken önemli olan da budur. Dikdörtgen görünümden koordinat okumak daha kolaydır ama kutupları fena hâlde abartır.</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/slice_sim.py" line="78" />
-        <source>Peculiar velocities (redshift-space distortions)</source>
-        <translation>Öz hızlar (kırmızıya kayma uzayı bozulmaları)</translation>
+        <location filename="../gui/simulators/sky_sim.py" line="75" />
+        <source>Colour range (± µK)</source>
+        <translation>Renk aralığı (± µK)</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/slice_sim.py" line="82" />
-        <source>Cluster velocity dispersion (km/s)</source>
-        <translation>Küme hız dağılımı (km/s)</translation>
+        <location filename="../gui/simulators/sky_sim.py" line="79" />
+        <source>What the map says</source>
+        <translation>Haritanın söyledikleri</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/slice_sim.py" line="83" />
-        <source>Fingers of God</source>
-        <translation>Tanrı'nın parmakları</translation>
+        <location filename="../gui/simulators/sky_sim.py" line="85" />
+        <source>Real data, unmodified apart from being resampled from HEALPix onto a grid. Smoothing here is a separable approximation to a spherical one.</source>
+        <translation>Gerçek veri; HEALPix'ten bir ızgaraya yeniden örneklenmiş olması dışında değiştirilmemiştir. Buradaki yumuşatma, küresel yumuşatmanın ayrıştırılabilir bir yaklaşıklığıdır.</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/slice_sim.py" line="84" />
-        <source>Galaxies inside a cluster orbit at hundreds of km/s. A redshift cannot tell that motion from distance, so the cluster is smeared into a spike pointing straight at us.</source>
-        <translation>Bir kümenin içindeki gökadalar saniyede yüzlerce kilometreyle dolanır. Kırmızıya kayma bu hareketi uzaklıktan ayırt edemez, bu yüzden küme doğrudan bize bakan bir sivri uca yayılır.</translation>
+        <location filename="../gui/simulators/sky_sim.py" line="98" />
+        <source>The sky</source>
+        <translation>Gökyüzü</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/slice_sim.py" line="88" />
-        <source>Apparent magnitude limit (0 = none)</source>
-        <translation>Görünür kadir sınırı (0 = yok)</translation>
-    </message>
-    <message>
-        <location filename="../gui/simulators/slice_sim.py" line="89" />
-        <source>A flux-limited catalogue</source>
-        <translation>Akı sınırlı bir katalog</translation>
-    </message>
-    <message>
-        <location filename="../gui/simulators/slice_sim.py" line="90" />
-        <source>A telescope sees down to a fixed brightness, so far away only the rare luminous galaxies make the list. The catalogue thins out with distance — and the galaxies left in it are not a fair sample.</source>
-        <translation>Bir teleskop sabit bir parlaklığa kadar görür, bu yüzden uzakta yalnızca seyrek rastlanan ışıklı gökadalar listeye girer. Katalog uzaklıkla seyrelir — ve içinde kalan gökadalar adil bir örneklem değildir.</translation>
-    </message>
-    <message>
-        <location filename="../gui/simulators/slice_sim.py" line="95" />
-        <source>Redshift error σ_z / (1+z)</source>
-        <translation>Kırmızıya kayma hatası σ_z / (1+z)</translation>
-    </message>
-    <message>
-        <location filename="../gui/simulators/slice_sim.py" line="96" />
-        <source>Spectra or colours?</source>
-        <translation>Tayf mı, renk mi?</translation>
-    </message>
-    <message>
-        <location filename="../gui/simulators/slice_sim.py" line="97" />
-        <source>A spectrum gives a redshift to one part in ten thousand. Estimating it from a few filters is far cheaper but uncertain by a few percent, which smears the map along the line of sight far more than any peculiar velocity.</source>
-        <translation>Bir tayf kırmızıya kaymayı on binde bir duyarlılıkla verir. Onu birkaç süzgeçten kestirmek çok daha ucuzdur ama yüzde birkaç belirsizdir; bu da haritayı görüş doğrultusunda herhangi bir öz hızdan çok daha fazla bulanıklaştırır.</translation>
-    </message>
-    <message>
-        <location filename="../gui/simulators/slice_sim.py" line="105" />
-        <source>The catalogue</source>
-        <translation>Katalog</translation>
-    </message>
-    <message>
-        <location filename="../gui/simulators/slice_sim.py" line="111" />
-        <source>Teaching mock: a lognormal density field, not an N-body simulation. Below the cell size of about 4 Mpc/h it has no structure at all.</source>
-        <translation>Öğretici sahte katalog: bir N-cisim benzetimi değil, log-normal bir yoğunluk alanı. Yaklaşık 4 Mpc/h'lik hücre boyutunun altında hiç yapı taşımaz.</translation>
-    </message>
-    <message>
-        <location filename="../gui/simulators/slice_sim.py" line="123" />
-        <source>Cone diagram</source>
-        <translation>Koni diyagramı</translation>
-    </message>
-    <message>
-        <location filename="../gui/simulators/slice_sim.py" line="124" />
-        <source>Truth vs observed</source>
-        <translation>Gerçek ile gözlenen</translation>
-    </message>
-    <message>
-        <location filename="../gui/simulators/slice_sim.py" line="125" />
-        <source>Selection</source>
-        <translation>Seçim</translation>
-    </message>
-    <message>
-        <location filename="../gui/simulators/slice_sim.py" line="126" />
+        <location filename="../gui/simulators/sky_sim.py" line="99" />
+        <location filename="../gui/simulators/slice_sim.py" line="129" />
         <source>Correlation function</source>
         <translation>Korelasyon fonksiyonu</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/slice_sim.py" line="191" />
+        <location filename="../gui/simulators/sky_sim.py" line="100" />
+        <source>How much survives blurring</source>
+        <translation>Bulanıklaştırmadan ne kadarı kalıyor</translation>
+    </message>
+    <message>
+        <location filename="../gui/simulators/sky_sim.py" line="101" />
+        <source>Are the ripples Gaussian?</source>
+        <translation>Dalgalanmalar Gauss dağılımlı mı?</translation>
+    </message>
+    <message>
+        <location filename="../gui/simulators/sky_sim.py" line="130" />
+        <source>Fluctuations: &lt;b&gt;{rms} µK&lt;/b&gt; rms, from {low} to {high} µK</source>
+        <translation>Dalgalanmalar: &lt;b&gt;{rms} µK&lt;/b&gt; rms, {low} ile {high} µK arasında</translation>
+    </message>
+    <message>
+        <location filename="../gui/simulators/sky_sim.py" line="132" />
+        <source>That is &lt;b&gt;{ratio}&lt;/b&gt; of the 2.725 K average — one part in {inverse}</source>
+        <translation>Bu, 2,725 K ortalamasının &lt;b&gt;{ratio}&lt;/b&gt; katı — {inverse} birimde bir</translation>
+    </message>
+    <message>
+        <location filename="../gui/simulators/sky_sim.py" line="135" />
+        <source>Sky used: &lt;b&gt;{percent}&lt;/b&gt;</source>
+        <translation>Kullanılan gökyüzü: &lt;b&gt;{percent}&lt;/b&gt;</translation>
+    </message>
+    <message>
+        <location filename="../gui/simulators/sky_sim.py" line="136" />
+        <source>Typical spot size: &lt;b&gt;{size}°&lt;/b&gt; across</source>
+        <translation>Tipik leke boyutu: &lt;b&gt;{size}°&lt;/b&gt; genişliğinde</translation>
+    </message>
+    <message>
+        <location filename="../gui/simulators/sky_sim.py" line="138" />
+        <source>Hottest at ℓ={hot_lon}°, b={hot_lat}°; coldest at ℓ={cold_lon}°, b={cold_lat}°</source>
+        <translation>En sıcak nokta ℓ={hot_lon}°, b={hot_lat}°; en soğuk nokta ℓ={cold_lon}°, b={cold_lat}°</translation>
+    </message>
+    <message>
+        <location filename="../gui/simulators/sky_sim.py" line="147" />
+        <source>&lt;b&gt;The Galaxy is in the picture.&lt;/b&gt; The bright band across the middle is our own galaxy, not the early universe. Every published measurement masks it first — the extremes you see now are foreground, not cosmology.</source>
+        <translation>&lt;b&gt;Gökadamız resmin içinde.&lt;/b&gt; Ortadan geçen parlak şerit erken evren değil, kendi gökadamız. Yayımlanmış her ölçüm önce onu maskeler — şu anda gördüğün uç değerler kozmoloji değil, önalan.</translation>
+    </message>
+    <message>
+        <location filename="../gui/simulators/sky_sim.py" line="153" />
+        <source>&lt;b&gt;Only the fine detail.&lt;/b&gt; Everything larger than {width}° has been subtracted, which is how the smooth foregrounds are suppressed and the degree-scale spots stand out.</source>
+        <translation>&lt;b&gt;Yalnızca ince ayrıntı.&lt;/b&gt; {width}° üzerindeki her şey çıkarıldı; düzgün önalan kaynakları böyle bastırılır ve derece ölçeğindeki lekeler öne çıkar.</translation>
+    </message>
+    <message>
+        <location filename="../gui/simulators/sky_sim.py" line="159" />
+        <source>&lt;b&gt;Blurred past the signal.&lt;/b&gt; At {width}° the acoustic spots have been averaged away and the rms has fallen to {rms} µK from about 67.</source>
+        <translation>&lt;b&gt;Sinyalin ötesine bulanıklaştı.&lt;/b&gt; {width}° ölçeğinde akustik lekeler ortalamanın içinde eridi ve rms yaklaşık 67'den {rms} µK'ye düştü.</translation>
+    </message>
+    <message>
+        <location filename="../gui/simulators/sky_sim.py" line="165" />
+        <source>&lt;b&gt;The oldest light there is.&lt;/b&gt; These ripples are a few parts in a hundred thousand of the average temperature, released 380 000 years after the Big Bang, and every structure in the universe grew from them.</source>
+        <translation>&lt;b&gt;Var olan en eski ışık.&lt;/b&gt; Bu dalgalanmalar, ortalama sıcaklığın yüz binde birkaçı kadardır; Büyük Patlama'dan 380 000 yıl sonra salındılar ve evrendeki her yapı onlardan büyüdü.</translation>
+    </message>
+    <message>
+        <location filename="../gui/simulators/sky_sim.py" line="292" />
+        <source>One part in a hundred thousand</source>
+        <translation>Yüz binde bir</translation>
+    </message>
+    <message>
+        <location filename="../gui/simulators/sky_sim.py" line="293" />
+        <source>The whole map spans about ±250 µK around 2.725 K. That is a contrast of $10^{-5}$ — and it is the largest contrast the universe had at that moment. Everything you have ever seen, every galaxy and every star, grew out of ripples this small by nothing but gravity pulling for 13.8 billion years.</source>
+        <translation>Haritanın tamamı 2,725 K çevresinde yaklaşık ±250 µK'lik bir aralığa yayılır. Bu, $10^{-5}$'lik bir karşıtlıktır — ve o anda evrenin sahip olduğu en büyük karşıtlıktır. Şimdiye dek gördüğün her şey, her gökada ve her yıldız, 13,8 milyar yıl boyunca yalnızca kütleçekiminin çekmesiyle bu kadar küçük dalgalanmalardan büyüdü.</translation>
+    </message>
+    <message>
+        <location filename="../gui/simulators/slice_sim.py" line="35" />
+        <source>Survey</source>
+        <translation>Tarama</translation>
+    </message>
+    <message>
+        <location filename="../gui/simulators/slice_sim.py" line="36" />
+        <source>Mock catalogues</source>
+        <translation>Sahte kataloglar</translation>
+    </message>
+    <message>
+        <location filename="../gui/simulators/slice_sim.py" line="37" />
+        <source>Each choice observes the same simulated universe in a different way. Compare any of them with &lt;b&gt;the true universe&lt;/b&gt; to see what the observing did.</source>
+        <translation>Her seçenek aynı benzetilmiş evreni başka bir biçimde gözler. Gözlemin ne yaptığını görmek için herhangi birini &lt;b&gt;gerçek evrenle&lt;/b&gt; karşılaştırın.</translation>
+    </message>
+    <message>
+        <location filename="../gui/simulators/slice_sim.py" line="41" />
+        <source>1 · The simulated universe</source>
+        <translation>1 · Benzetilmiş evren</translation>
+    </message>
+    <message>
+        <location filename="../gui/simulators/slice_sim.py" line="45" />
+        <source>One universe out of many</source>
+        <translation>Birçok evrenden biri</translation>
+    </message>
+    <message>
+        <location filename="../gui/simulators/slice_sim.py" line="46" />
+        <source>The initial conditions are a random draw. Change the seed and you get a different universe with exactly the same statistics — which is why a measurement made in one of them has an error bar at all.</source>
+        <translation>Başlangıç koşulları rastgele bir çekilişten gelir. Tohumu değiştirdiğinizde tam olarak aynı istatistiklere sahip farklı bir evren elde edersiniz — bir ölçümün hata çubuğu olmasının nedeni zaten budur.</translation>
+    </message>
+    <message>
+        <location filename="../gui/simulators/slice_sim.py" line="51" />
+        <source>Galaxy bias b</source>
+        <translation>Gökada yanlılığı b</translation>
+    </message>
+    <message>
+        <location filename="../gui/simulators/slice_sim.py" line="52" />
+        <source>Galaxies are not matter</source>
+        <translation>Gökadalar madde değildir</translation>
+    </message>
+    <message>
+        <location filename="../gui/simulators/slice_sim.py" line="53" />
+        <source>Galaxies form in the densest places, so they clump harder than the matter does: 1 + δ_galaxies = (1 + δ_matter)^b, roughly. Red massive galaxies have b ≈ 2, blue star-forming ones b ≈ 1.</source>
+        <translation>Gökadalar en yoğun yerlerde oluşur, bu yüzden maddeden daha güçlü kümelenirler: kabaca 1 + δ_gökada = (1 + δ_madde)^b. Kırmızı kütleli gökadalarda b ≈ 2, mavi yıldız oluşturanlarda b ≈ 1'dir.</translation>
+    </message>
+    <message>
+        <location filename="../gui/simulators/slice_sim.py" line="58" />
+        <source>Galaxies per (Mpc/h)³</source>
+        <translation>(Mpc/h)³ başına gökada</translation>
+    </message>
+    <message>
+        <location filename="../gui/simulators/slice_sim.py" line="63" />
+        <source>2 · The slice you observe</source>
+        <translation>2 · Gözlediğiniz dilim</translation>
+    </message>
+    <message>
+        <location filename="../gui/simulators/slice_sim.py" line="65" />
+        <source>Opening angle (°)</source>
+        <translation>Açılma açısı (°)</translation>
+    </message>
+    <message>
+        <location filename="../gui/simulators/slice_sim.py" line="67" />
+        <source>Slice thickness (°)</source>
+        <translation>Dilim kalınlığı (°)</translation>
+    </message>
+    <message>
+        <location filename="../gui/simulators/slice_sim.py" line="68" />
+        <source>Why a slice?</source>
+        <translation>Neden bir dilim?</translation>
+    </message>
+    <message>
+        <location filename="../gui/simulators/slice_sim.py" line="69" />
+        <source>A three-dimensional map cannot be drawn on paper. Taking a thin wedge of the sky and plotting distance against angle gives the cone diagram in which the cosmic web was first seen, in 1986.</source>
+        <translation>Üç boyutlu bir harita kâğıda çizilemez. Gökyüzünden ince bir kama alıp uzaklığı açıya karşı çizmek, kozmik ağın 1986'da ilk kez görüldüğü koni diyagramını verir.</translation>
+    </message>
+    <message>
+        <location filename="../gui/simulators/slice_sim.py" line="73" />
+        <source>Depth (Mpc/h)</source>
+        <translation>Derinlik (Mpc/h)</translation>
+    </message>
+    <message>
+        <location filename="../gui/simulators/slice_sim.py" line="78" />
+        <source>3 · What observing does to it</source>
+        <translation>3 · Gözlemin ona yaptıkları</translation>
+    </message>
+    <message>
+        <location filename="../gui/simulators/slice_sim.py" line="80" />
+        <source>Peculiar velocities (redshift-space distortions)</source>
+        <translation>Öz hızlar (kırmızıya kayma uzayı bozulmaları)</translation>
+    </message>
+    <message>
+        <location filename="../gui/simulators/slice_sim.py" line="84" />
+        <source>Cluster velocity dispersion (km/s)</source>
+        <translation>Küme hız dağılımı (km/s)</translation>
+    </message>
+    <message>
+        <location filename="../gui/simulators/slice_sim.py" line="85" />
+        <source>Fingers of God</source>
+        <translation>Tanrı'nın parmakları</translation>
+    </message>
+    <message>
+        <location filename="../gui/simulators/slice_sim.py" line="86" />
+        <source>Galaxies inside a cluster orbit at hundreds of km/s. A redshift cannot tell that motion from distance, so the cluster is smeared into a spike pointing straight at us.</source>
+        <translation>Bir kümenin içindeki gökadalar saniyede yüzlerce kilometreyle dolanır. Kırmızıya kayma bu hareketi uzaklıktan ayırt edemez, bu yüzden küme doğrudan bize bakan bir sivri uca yayılır.</translation>
+    </message>
+    <message>
+        <location filename="../gui/simulators/slice_sim.py" line="90" />
+        <source>Apparent magnitude limit (0 = none)</source>
+        <translation>Görünür kadir sınırı (0 = yok)</translation>
+    </message>
+    <message>
+        <location filename="../gui/simulators/slice_sim.py" line="91" />
+        <source>A flux-limited catalogue</source>
+        <translation>Akı sınırlı bir katalog</translation>
+    </message>
+    <message>
+        <location filename="../gui/simulators/slice_sim.py" line="92" />
+        <source>A telescope sees down to a fixed brightness, so far away only the rare luminous galaxies make the list. The catalogue thins out with distance — and the galaxies left in it are not a fair sample.</source>
+        <translation>Bir teleskop sabit bir parlaklığa kadar görür, bu yüzden uzakta yalnızca seyrek rastlanan ışıklı gökadalar listeye girer. Katalog uzaklıkla seyrelir — ve içinde kalan gökadalar adil bir örneklem değildir.</translation>
+    </message>
+    <message>
+        <location filename="../gui/simulators/slice_sim.py" line="97" />
+        <source>Redshift error σ_z / (1+z)</source>
+        <translation>Kırmızıya kayma hatası σ_z / (1+z)</translation>
+    </message>
+    <message>
+        <location filename="../gui/simulators/slice_sim.py" line="98" />
+        <source>Spectra or colours?</source>
+        <translation>Tayf mı, renk mi?</translation>
+    </message>
+    <message>
+        <location filename="../gui/simulators/slice_sim.py" line="99" />
+        <source>A spectrum gives a redshift to one part in ten thousand. Estimating it from a few filters is far cheaper but uncertain by a few percent, which smears the map along the line of sight far more than any peculiar velocity.</source>
+        <translation>Bir tayf kırmızıya kaymayı on binde bir duyarlılıkla verir. Onu birkaç süzgeçten kestirmek çok daha ucuzdur ama yüzde birkaç belirsizdir; bu da haritayı görüş doğrultusunda herhangi bir öz hızdan çok daha fazla bulanıklaştırır.</translation>
+    </message>
+    <message>
+        <location filename="../gui/simulators/slice_sim.py" line="107" />
+        <source>The catalogue</source>
+        <translation>Katalog</translation>
+    </message>
+    <message>
+        <location filename="../gui/simulators/slice_sim.py" line="113" />
+        <source>Teaching mock: a lognormal density field, not an N-body simulation. Below the cell size of about 4 Mpc/h it has no structure at all.</source>
+        <translation>Öğretici sahte katalog: bir N-cisim benzetimi değil, log-normal bir yoğunluk alanı. Yaklaşık 4 Mpc/h'lik hücre boyutunun altında hiç yapı taşımaz.</translation>
+    </message>
+    <message>
+        <location filename="../gui/simulators/slice_sim.py" line="126" />
+        <source>Cone diagram</source>
+        <translation>Koni diyagramı</translation>
+    </message>
+    <message>
+        <location filename="../gui/simulators/slice_sim.py" line="127" />
+        <source>Truth vs observed</source>
+        <translation>Gerçek ile gözlenen</translation>
+    </message>
+    <message>
+        <location filename="../gui/simulators/slice_sim.py" line="128" />
+        <source>Selection</source>
+        <translation>Seçim</translation>
+    </message>
+    <message>
+        <location filename="../gui/simulators/slice_sim.py" line="131" />
+        <source>The real sky (SDSS)</source>
+        <translation>Gerçek gökyüzü (SDSS)</translation>
+    </message>
+    <message>
+        <location filename="../gui/simulators/slice_sim.py" line="196" />
         <source>&lt;b&gt;{galaxies}&lt;/b&gt; galaxies, median redshift &lt;b&gt;{z}&lt;/b&gt;</source>
         <translation>&lt;b&gt;{galaxies}&lt;/b&gt; gökada, ortanca kırmızıya kayma &lt;b&gt;{z}&lt;/b&gt;</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/slice_sim.py" line="193" />
+        <location filename="../gui/simulators/slice_sim.py" line="198" />
         <source>Line-of-sight velocities: {rms} km/s rms, which move a galaxy by {shift} Mpc/h</source>
         <translation>Görüş doğrultusundaki hızlar: {rms} km/s karekök ortalama, bir gökadayı {shift} Mpc/h kaydırır</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/slice_sim.py" line="195" />
+        <location filename="../gui/simulators/slice_sim.py" line="200" />
         <source>Radial stretch in the densest regions: &lt;b&gt;{finger} Mpc/h&lt;/b&gt;</source>
         <translation>En yoğun bölgelerdeki ışınsal gerilme: &lt;b&gt;{finger} Mpc/h&lt;/b&gt;</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/slice_sim.py" line="197" />
+        <location filename="../gui/simulators/slice_sim.py" line="202" />
         <source>Completeness {complete}, growth rate f = {f}</source>
         <translation>Tamlık {complete}, büyüme hızı f = {f}</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/slice_sim.py" line="205" />
+        <location filename="../gui/simulators/slice_sim.py" line="210" />
         <source>&lt;b&gt;Only {galaxies} galaxies.&lt;/b&gt; The slice is too sparse to see the cosmic web. Raise the density, widen the slice, or relax the magnitude limit.</source>
         <translation>&lt;b&gt;Yalnızca {galaxies} gökada.&lt;/b&gt; Dilim kozmik ağı görmek için fazla seyrek. Yoğunluğu artırın, dilimi genişletin ya da kadir sınırını gevşetin.</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/slice_sim.py" line="211" />
+        <location filename="../gui/simulators/slice_sim.py" line="216" />
         <source>&lt;b&gt;The redshifts are blurred.&lt;/b&gt; An error of {sigma} in z moves a galaxy by about {blur} Mpc/h — far more than any peculiar velocity, and enough to wash the filaments out.</source>
         <translation>&lt;b&gt;Kırmızıya kaymalar bulanık.&lt;/b&gt; z'deki {sigma}'lık bir hata bir gökadayı yaklaşık {blur} Mpc/h kaydırır — herhangi bir öz hızdan çok daha fazla, ve lifleri silip atmaya yeter.</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/slice_sim.py" line="218" />
+        <location filename="../gui/simulators/slice_sim.py" line="223" />
         <source>&lt;b&gt;A flux-limited catalogue.&lt;/b&gt; At the far edge only {drop} of the galaxies are bright enough to be seen, so the thinning out there is the telescope, not the universe.</source>
         <translation>&lt;b&gt;Akı sınırlı bir katalog.&lt;/b&gt; Uzak kenarda gökadaların yalnızca {drop} kadarı görülecek kadar parlaktır, yani oradaki seyrelme evren değil teleskoptur.</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/slice_sim.py" line="224" />
+        <location filename="../gui/simulators/slice_sim.py" line="229" />
         <source>&lt;b&gt;The true universe.&lt;/b&gt; No velocities, no selection: this is where the galaxies really are. Every other setting shows what a telescope would have made of it.</source>
         <translation>&lt;b&gt;Gerçek evren.&lt;/b&gt; Hız yok, seçim yok: gökadalar gerçekten burada. Diğer her ayar, bir teleskobun bundan ne çıkaracağını gösterir.</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/slice_sim.py" line="229" />
+        <location filename="../gui/simulators/slice_sim.py" line="234" />
         <source>&lt;b&gt;Redshift space.&lt;/b&gt; Each galaxy is drawn at the distance its redshift implies, so infall squashes the filaments and cluster orbits stretch them towards us.</source>
         <translation>&lt;b&gt;Kırmızıya kayma uzayı.&lt;/b&gt; Her gökada kırmızıya kaymasının gösterdiği uzaklığa çizilir, bu yüzden içe düşüş lifleri yassıltır, küme yörüngeleri de onları bize doğru uzatır.</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/slice_sim.py" line="256" />
+        <location filename="../gui/simulators/slice_sim.py" line="275" />
         <source>us</source>
         <translation>biz</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/slice_sim.py" line="267" />
+        <location filename="../gui/simulators/slice_sim.py" line="286" />
         <source>Where the galaxies really are</source>
         <translation>Gökadaların gerçekte bulunduğu yer</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/slice_sim.py" line="270" />
+        <location filename="../gui/simulators/slice_sim.py" line="289" />
         <source>Where their redshifts put them</source>
         <translation>Kırmızıya kaymalarının onları koyduğu yer</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/slice_sim.py" line="282" />
+        <location filename="../gui/simulators/slice_sim.py" line="301" />
         <source>How the catalogue thins out with distance</source>
         <translation>Kataloğun uzaklıkla nasıl seyreldiği</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/slice_sim.py" line="314" />
+        <location filename="../gui/simulators/slice_sim.py" line="333" />
         <source>Clustering measured from the mock, by counting pairs</source>
         <translation>Çiftler sayılarak sahte kataloğdan ölçülen kümelenme</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/slice_sim.py" line="354" />
+        <location filename="../gui/simulators/slice_sim.py" line="409" />
         <source>Two spaces, one universe</source>
         <translation>İki uzay, tek evren</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/slice_sim.py" line="355" />
+        <location filename="../gui/simulators/slice_sim.py" line="410" />
         <source>A redshift is not a distance. What a survey plots is
 
 $$s = r + \frac{(1+z)\,v_\parallel}{H(z)},$$

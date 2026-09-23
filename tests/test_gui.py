@@ -1149,3 +1149,88 @@ def test_classroom_page_and_mode(window, tmp_path, monkeypatch):
     pump()
     assert window._pdf_options("Cosmos", "x").teacher_notes == {}
     store.forget_reviews()
+
+
+def test_cmb_sky_viewer(window):
+    """S24: the real WMAP map, its mask, the filters and the challenges."""
+    from cosmos.physics import skymap
+
+    if not skymap.available():
+        pytest.skip("run tools/fetch_sky_data.py")
+
+    window.navigate("sim:S24")
+    pump()
+    host = window.stack.currentWidget()
+    s24 = host.simulator
+    state = s24.state()
+    assert state["masked"] and 60 < state["rms"] < 75
+    assert 0.70 < state["sky_fraction"] < 0.80
+    assert 0.8 < state["spot_size"] < 3.0
+    assert "oldest light" in s24.banner.label.text()
+
+    bar = host.challenge_bar
+    assert bar is not None and len(host.challenges) == 3
+
+    # The spot-size challenge works straight away, on the default settings.
+    bar.go(1)
+    assert bar.check() is True
+
+    # Taking the mask off puts our own galaxy back in the picture.
+    s24.use_mask.setChecked(False)
+    s24.recompute()
+    unmasked = s24.state()
+    assert unmasked["sky_fraction"] == pytest.approx(1.0)
+    assert unmasked["rms"] > state["rms"]
+    assert abs(unmasked["min"]) > abs(state["min"])
+    assert "Galaxy is in the picture" in s24.banner.label.text()
+    bar.go(0)
+    assert bar.check() is True
+
+    # Blurring throws the structure away.
+    s24.use_mask.setChecked(True)
+    s24.smoothing.setValue(6.0)
+    s24.recompute()
+    assert s24.state()["rms"] < 35
+    bar.go(2)
+    assert bar.check() is True
+
+    # The high pass keeps the fine detail instead.
+    s24.high_pass.setChecked(True)
+    s24.recompute()
+    assert s24.state()["high_pass"]
+    assert s24.state()["rms"] > 35
+    assert "fine detail" in s24.banner.label.text()
+
+    # Both projections draw, and the CSV is a real export.
+    s24.smoothing.setValue(0.0)
+    s24.high_pass.setChecked(False)
+    for index in range(s24.projection.count()):
+        s24.projection.setCurrentIndex(index)
+        s24.recompute()
+        s24.sky_plot.refresh()
+    header, rows = s24._csv()
+    assert len(header) == 4 and len(rows) > 500
+    for plot in (s24.sky_plot, s24.correlation_plot, s24.scales_plot, s24.histogram_plot):
+        plot.refresh()
+
+
+def test_the_mock_can_be_compared_with_the_real_sky(window):
+    """E15: S23 gained a tab holding the SDSS slice next to the simulated one."""
+    from cosmos.physics import sdss
+
+    if not sdss.available():
+        pytest.skip("run tools/fetch_sky_data.py")
+
+    window.navigate("sim:S23")
+    pump()
+    s23 = window.stack.currentWidget().simulator
+    real = s23.real_catalogue()
+    assert len(real) > 20_000
+    assert real.settings.wedge_deg == pytest.approx(130.0)
+
+    separation, xi = s23.real_correlation()
+    assert xi[0] > xi[-1]
+    # The mock and the real sky are measured by exactly the same estimator.
+    mock_separation, _true, mock_xi = s23._correlations()
+    assert len(separation) == len(mock_separation)
+    s23.real_plot.refresh()

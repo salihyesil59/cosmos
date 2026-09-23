@@ -193,7 +193,7 @@ since (the course now has 53 lessons and 23 simulators).
 - [x] `S21` Survey Designer: choose area, depth and time, see the error bars you would get
 - [x] `S22` Standard Siren Explorer: measure H0 from a gravitational-wave merger
 - [x] `S23` Redshift Survey Slice: build a cone diagram and find the cosmic web in it
-- [ ] `S24` CMB Sky Viewer: a real Planck map, with masking and filtering (needs a download)
+- [x] `S24` CMB Sky Viewer: the real WMAP sky, with masking and filtering
 
 ### Guidance & learning
 - [x] ★ `G15` Worked problem sets: numeric exercises with checked answers, one per level
@@ -208,4 +208,4 @@ since (the course now has 53 lessons and 23 simulators).
 - [x] `E12` Faster start: lazy figures and a smaller one-file build
 - [x] `E13` Update check for the packaged app (opt-in, no telemetry)
 - [x] `E14` A plugin interface so a teacher can add their own simulator without touching the app
-- [ ] `E15` Real CMB and large-scale-structure data (Planck maps, SDSS catalogue) with a licence check
+- [x] `E15` Real CMB and large-scale-structure data (the WMAP 9-year ILC map, an SDSS DR18 slice) with a licence check
