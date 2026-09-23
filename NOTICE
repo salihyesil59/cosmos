@@ -1,0 +1,11 @@
+Cosmos
+Copyright (c) 2026 Salih Yeşil
+
+The Cosmos source code is released under the MIT licence; see LICENSE.
+
+This NOTICE covers what that licence does not. The bundled observational data
+in cosmos/data/external/ is not covered by the MIT licence. It is the work of
+the teams who took the measurements, redistributed here under their own terms,
+with the sources and the papers to cite listed in
+cosmos/data/external/README.md. If you redistribute the data, keep that file
+with it.

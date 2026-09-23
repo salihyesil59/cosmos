@@ -280,4 +280,5 @@ Cosmos is released under the [MIT licence](LICENSE): use it, change it, teach
 with it, hand it out. The bundled observational data is the exception — it
 belongs to the teams who measured it and carries their own terms, which are
 recorded in [cosmos/data/external/README.md](cosmos/data/external/README.md)
-along with the papers to cite.
+along with the papers to cite. That exception is stated in [NOTICE](NOTICE);
+keep both files if you redistribute the app.

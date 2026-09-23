@@ -19,10 +19,3 @@ AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
-
----
-
-The bundled observational data in cosmos/data/external/ is not covered by this
-licence. It is the work of the teams who took the measurements, redistributed
-here under their own terms, with the sources and the papers to cite listed in
-cosmos/data/external/README.md. If you redistribute it, keep that file with it.

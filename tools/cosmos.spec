@@ -28,6 +28,7 @@ datas = [
     (str(ROOT / "cosmos" / "data"), "cosmos/data"),
     (str(RESOURCES), "cosmos/gui/resources"),
     (str(ROOT / "LICENSE"), "."),           # the MIT licence travels with the program
+    (str(ROOT / "NOTICE"), "."),            # and the notice saying the data is not under it
 ]
 translations = ROOT / "cosmos" / "i18n"
 if any(translations.glob("*.qm")):          # interface translations, when some have been compiled
