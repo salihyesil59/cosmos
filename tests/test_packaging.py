@@ -110,3 +110,44 @@ def test_the_ci_workflow_packages_all_three_platforms():
     # A missing appimagetool must not fail the Linux job; the tarball is the fallback.
     assert "continue-on-error: true" in workflow
     assert "if-no-files-found: error" in workflow
+
+
+# ------------------------------------------------------------------- releasing
+def test_the_changelog_describes_this_version():
+    """A release's notes come from CHANGELOG.md, so the version must be in it."""
+    import sys
+
+    sys.path.insert(0, str(ROOT / "tools"))
+    import release_notes
+
+    from cosmos import __version__
+
+    text = (ROOT / "CHANGELOG.md").read_text(encoding="utf-8")
+    assert f"## {__version__}" in text
+
+    notes = release_notes.section(text, __version__)
+    assert len(notes) > 200 and not notes.startswith("#")
+    assert "##" not in notes.split("### ")[0], "the heading itself must not be repeated"
+    with pytest.raises(SystemExit):
+        release_notes.section(text, "99.0.0")
+
+
+def test_a_tag_builds_a_draft_release():
+    """Pushing v* must package all three platforms and attach them to a draft."""
+    import yaml
+
+    workflow = yaml.safe_load((ROOT / ".github" / "workflows" / "ci.yml").read_text(encoding="utf-8"))
+    triggers = workflow[True] if True in workflow else workflow["on"]
+    assert "v*" in triggers["push"]["tags"]
+
+    package = workflow["jobs"]["package"]
+    assert package["needs"] == "tests", "a broken build must never reach a release"
+    assert package["permissions"]["contents"] == "write"
+
+    step = package["steps"][-1]
+    assert "refs/tags/v" in step["if"]
+    assert "--draft" in step["run"], "a release is published by a person, not by CI"
+    assert "release upload" in step["run"]
+
+    platforms = {entry["name"] for entry in package["strategy"]["matrix"]["include"]}
+    assert platforms == {"windows", "macos", "linux"}
