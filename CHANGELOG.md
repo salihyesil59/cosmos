@@ -43,6 +43,8 @@ The first packaged release: the whole course, complete and self-contained.
 - An optional, opt-in **update check** that asks GitHub for the latest release
   number and sends nothing at all
 - Starts in under a second, and keeps your progress in a single JSON file you own
+- Released under the **MIT licence**; the bundled observational data keeps the
+  terms of the teams who measured it
 
 ### Downloads
 
