@@ -142,7 +142,10 @@ Cosmos starts. Without a compiled `.qm` file the app is English, as before.
 
 ## Standalone builds
 
-No Python installation is needed to run a packaged build. One command builds for
+No Python installation is needed to run a packaged build. Every release carries
+one for Windows, macOS and Linux on the
+[releases page](https://github.com/salihyesil59/cosmos/releases), and
+[CHANGELOG.md](CHANGELOG.md) says what is in each. One command builds for
 whichever platform you are on:
 
 ```bash
