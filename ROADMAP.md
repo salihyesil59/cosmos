@@ -224,7 +224,7 @@ safer and more portable. ★ marks the ones worth doing first; ticked items are 
 ### Curriculum
 
 - [x] ★ `L6.10` The far future: heat death, Big Rip or Big Crunch
-- [ ] `L3.6` Hunting dark matter: WIMPs, axions, sterile neutrinos and the experiments that look for them
+- [x] `L3.6` Hunting dark matter: WIMPs, axions, sterile neutrinos and the experiments that look for them
 - [x] `L4.8` The dark ages and cosmic dawn: the first stars, the first galaxies and what JWST found
 - [ ] `L5.8` Galaxy formation: gas cooling, feedback and how galaxies live in their haloes
 - [ ] `L7.7` Reading a cosmology paper: from the abstract to the contour plot
@@ -235,7 +235,7 @@ safer and more portable. ★ marks the ones worth doing first; ticked items are 
 - [x] ★ `S26` The Far Future: the expansion ahead, a timeline to 10¹⁰⁰ years and the Big Rip countdown
 - [x] `S27` Halo Mass Function Explorer: Press–Schechter, how many clusters of each mass, and σ8
 - [ ] `S28` 21-cm Global Signal Explorer: the absorption trough of cosmic dawn and what shapes it
-- [ ] `S29` Dark Matter Detection: recoil spectra, backgrounds and how an exclusion curve is drawn
+- [x] `S29` Dark Matter Detection: recoil spectra, backgrounds and how an exclusion curve is drawn
 
 ### Guidance & learning
 

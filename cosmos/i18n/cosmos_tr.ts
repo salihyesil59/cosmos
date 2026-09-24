@@ -4524,6 +4524,262 @@ parametreleri kendiniz değiştirmenize izin verir.
         <translation>&lt;b&gt;Üçgen açı toplamları&lt;/b&gt; (kenar {side} R)&lt;br&gt;Kapalı: &lt;b&gt;{closed}°&lt;/b&gt; · Düz: &lt;b&gt;{flat}°&lt;/b&gt; · Açık: &lt;b&gt;{open_}°&lt;/b&gt;&lt;br&gt;&lt;br&gt;&lt;b&gt;Çevre ÷ 2πr&lt;/b&gt; (yarıçap {radius} R)&lt;br&gt;Kapalı: &lt;b&gt;{closed_ratio}&lt;/b&gt; · Düz: &lt;b&gt;1.000&lt;/b&gt; · Açık: &lt;b&gt;{open_ratio}&lt;/b&gt;&lt;br&gt;&lt;br&gt;</translation>
     </message>
     <message>
+        <location filename="../gui/simulators/detection_sim.py" line="20" />
+        <source>A large xenon detector (like LZ, 2024)</source>
+        <translation>Büyük bir ksenon dedektörü (LZ gibi, 2024)</translation>
+    </message>
+    <message>
+        <location filename="../gui/simulators/detection_sim.py" line="21" />
+        <source>A large argon detector (like DarkSide-20k)</source>
+        <translation>Büyük bir argon dedektörü (DarkSide-20k gibi)</translation>
+    </message>
+    <message>
+        <location filename="../gui/simulators/detection_sim.py" line="22" />
+        <source>A cryogenic germanium detector (like SuperCDMS)</source>
+        <translation>Kriyojenik bir germanyum dedektörü (SuperCDMS gibi)</translation>
+    </message>
+    <message>
+        <location filename="../gui/simulators/detection_sim.py" line="23" />
+        <source>A small, very low threshold silicon detector</source>
+        <translation>Küçük, çok düşük eşikli bir silisyum dedektörü</translation>
+    </message>
+    <message>
+        <location filename="../gui/simulators/detection_sim.py" line="26" />
+        <source>Xenon (A = 131)</source>
+        <translation>Ksenon (A = 131)</translation>
+    </message>
+    <message>
+        <location filename="../gui/simulators/detection_sim.py" line="27" />
+        <source>Argon (A = 40)</source>
+        <translation>Argon (A = 40)</translation>
+    </message>
+    <message>
+        <location filename="../gui/simulators/detection_sim.py" line="28" />
+        <source>Germanium (A = 73)</source>
+        <translation>Germanyum (A = 73)</translation>
+    </message>
+    <message>
+        <location filename="../gui/simulators/detection_sim.py" line="29" />
+        <source>Silicon (A = 28)</source>
+        <translation>Silisyum (A = 28)</translation>
+    </message>
+    <message>
+        <location filename="../gui/simulators/detection_sim.py" line="51" />
+        <source>1 · The detector</source>
+        <translation>1 · Dedektör</translation>
+    </message>
+    <message>
+        <location filename="../gui/simulators/detection_sim.py" line="56" />
+        <location filename="../gui/simulators/future_sim.py" line="56" />
+        <source>Your own settings</source>
+        <translation>Kendi ayarlarınız</translation>
+    </message>
+    <message>
+        <location filename="../gui/simulators/detection_sim.py" line="57" />
+        <source>Experiment</source>
+        <translation>Deney</translation>
+    </message>
+    <message>
+        <location filename="../gui/simulators/detection_sim.py" line="58" />
+        <source>Big and quiet, or small and sensitive</source>
+        <translation>Büyük ve sessiz ya da küçük ve hassas</translation>
+    </message>
+    <message>
+        <location filename="../gui/simulators/detection_sim.py" line="59" />
+        <source>Heavy xenon and argon detectors hold tonnes of target and see heavy WIMPs best. Small cryogenic crystals feel far gentler recoils, so they reach light WIMPs that the big detectors cannot.</source>
+        <translation>Ağır ksenon ve argon dedektörleri tonlarca hedef madde barındırır ve ağır WIMP'leri en iyi görür. Küçük kriyojenik kristaller çok daha hafif geri tepmeleri hisseder; bu yüzden büyük dedektörlerin ulaşamadığı hafif WIMP'lere ulaşırlar.</translation>
+    </message>
+    <message>
+        <location filename="../gui/simulators/detection_sim.py" line="65" />
+        <source>Target nucleus</source>
+        <translation>Hedef çekirdek</translation>
+    </message>
+    <message>
+        <location filename="../gui/simulators/detection_sim.py" line="66" />
+        <source>Why heavy nuclei</source>
+        <translation>Neden ağır çekirdekler</translation>
+    </message>
+    <message>
+        <location filename="../gui/simulators/detection_sim.py" line="67" />
+        <source>A WIMP scatters off the whole nucleus at once, so the cross-section grows as A². But a heavy nucleus recoils less from a light WIMP, just as a truck barely moves when a tennis ball hits it.</source>
+        <translation>Bir WIMP tüm çekirdekten aynı anda saçılır, bu yüzden tesir kesiti A² ile büyür. Ama ağır bir çekirdek hafif bir WIMP'ten daha az geri teper; tıpkı bir tenis topu çarptığında bir kamyonun zar zor kıpırdaması gibi.</translation>
+    </message>
+    <message>
+        <location filename="../gui/simulators/detection_sim.py" line="71" />
+        <source>Exposure (tonne-years)</source>
+        <translation>Maruz kalma (ton-yıl)</translation>
+    </message>
+    <message>
+        <location filename="../gui/simulators/detection_sim.py" line="72" />
+        <source>Mass × time</source>
+        <translation>Kütle × zaman</translation>
+    </message>
+    <message>
+        <location filename="../gui/simulators/detection_sim.py" line="72" />
+        <source>Twice the target for twice as long gives four times the events — and, with no background, a limit four times lower.</source>
+        <translation>İki kat hedefi iki kat uzun süre çalıştırmak dört kat olay verir — ve arka plan yoksa dört kat daha düşük bir sınır.</translation>
+    </message>
+    <message>
+        <location filename="../gui/simulators/detection_sim.py" line="75" />
+        <source>Energy threshold (keV)</source>
+        <translation>Enerji eşiği (keV)</translation>
+    </message>
+    <message>
+        <location filename="../gui/simulators/detection_sim.py" line="76" />
+        <source>The gentlest recoil you can see</source>
+        <translation>Görebildiğiniz en hafif geri tepme</translation>
+    </message>
+    <message>
+        <location filename="../gui/simulators/detection_sim.py" line="77" />
+        <source>A light WIMP can only give small kicks. Below the threshold they are lost, which is why every detector goes blind below some WIMP mass.</source>
+        <translation>Hafif bir WIMP yalnızca küçük itmeler verebilir. Eşiğin altındakiler kaybolur; bu yüzden her dedektör belirli bir WIMP kütlesinin altında kör olur.</translation>
+    </message>
+    <message>
+        <location filename="../gui/simulators/detection_sim.py" line="80" />
+        <source>Expected background events</source>
+        <translation>Beklenen arka plan olayları</translation>
+    </message>
+    <message>
+        <location filename="../gui/simulators/detection_sim.py" line="81" />
+        <source>What else makes a recoil</source>
+        <translation>Başka ne geri tepme yapar</translation>
+    </message>
+    <message>
+        <location filename="../gui/simulators/detection_sim.py" line="82" />
+        <source>Radioactivity, neutrons and, eventually, neutrinos from the Sun and the atmosphere produce events that look like a WIMP. With background, a null result limits less.</source>
+        <translation>Radyoaktivite, nötronlar ve sonunda Güneş'ten ve atmosferden gelen nötrinolar WIMP'e benzeyen olaylar üretir. Arka plan varsa, boş bir sonuç daha az şey sınırlar.</translation>
+    </message>
+    <message>
+        <location filename="../gui/simulators/detection_sim.py" line="88" />
+        <source>2 · The WIMP</source>
+        <translation>2 · WIMP</translation>
+    </message>
+    <message>
+        <location filename="../gui/simulators/detection_sim.py" line="91" />
+        <source>WIMP mass (GeV)</source>
+        <translation>WIMP kütlesi (GeV)</translation>
+    </message>
+    <message>
+        <location filename="../gui/simulators/detection_sim.py" line="92" />
+        <source>How heavy</source>
+        <translation>Ne kadar ağır</translation>
+    </message>
+    <message>
+        <location filename="../gui/simulators/detection_sim.py" line="92" />
+        <source>A proton is about 1 GeV. The classic WIMP is tens to thousands of GeV.</source>
+        <translation>Bir proton yaklaşık 1 GeV'dir. Klasik WIMP onlarca ile binlerce GeV arasındadır.</translation>
+    </message>
+    <message>
+        <location filename="../gui/simulators/detection_sim.py" line="94" />
+        <source>Cross-section per nucleon: log₁₀ σ (cm²)</source>
+        <translation>Nükleon başına tesir kesiti: log₁₀ σ (cm²)</translation>
+    </message>
+    <message>
+        <location filename="../gui/simulators/detection_sim.py" line="95" />
+        <source>How strongly it scatters</source>
+        <translation>Ne kadar güçlü saçılır</translation>
+    </message>
+    <message>
+        <location filename="../gui/simulators/detection_sim.py" line="96" />
+        <source>The weak force gives about 10⁻³⁹ cm². Experiments now reach below 10⁻⁴⁷: a WIMP, if it exists, talks to ordinary matter far more weakly than the weak force. −46 on this slider means 10⁻⁴⁶ cm².</source>
+        <translation>Zayıf kuvvet yaklaşık 10⁻³⁹ cm² verir. Deneyler artık 10⁻⁴⁷'nin altına iniyor: bir WIMP varsa, sıradan maddeyle zayıf kuvvetten çok daha zayıf etkileşiyor demektir. Bu kaydırıcıda −46, 10⁻⁴⁶ cm² anlamına gelir.</translation>
+    </message>
+    <message>
+        <location filename="../gui/simulators/detection_sim.py" line="99" />
+        <source>Run the experiment again</source>
+        <translation>Deneyi yeniden çalıştır</translation>
+    </message>
+    <message>
+        <location filename="../gui/simulators/detection_sim.py" line="100" />
+        <source>Draw a new set of events: the same expectation, a different random outcome.</source>
+        <translation>Yeni bir olay kümesi çek: aynı beklenti, farklı bir rastgele sonuç.</translation>
+    </message>
+    <message>
+        <location filename="../gui/simulators/detection_sim.py" line="106" />
+        <source>What the experiment would see</source>
+        <translation>Deney ne görürdü</translation>
+    </message>
+    <message>
+        <location filename="../gui/simulators/detection_sim.py" line="112" />
+        <source>Standard Halo Model (0.3 GeV/cm³, 220 km/s), spin-independent scattering, Helm form factor, perfect efficiency above threshold. Real limits also fold in detector efficiency and energy resolution.</source>
+        <translation>Standart Hale Modeli (0,3 GeV/cm³, 220 km/s), spinden bağımsız saçılma, Helm form faktörü, eşiğin üstünde kusursuz verim. Gerçek sınırlar dedektör verimini ve enerji çözünürlüğünü de hesaba katar.</translation>
+    </message>
+    <message>
+        <location filename="../gui/simulators/detection_sim.py" line="125" />
+        <source>Recoil spectrum</source>
+        <translation>Geri tepme tayfı</translation>
+    </message>
+    <message>
+        <location filename="../gui/simulators/detection_sim.py" line="126" />
+        <source>Exclusion curve</source>
+        <translation>Dışlama eğrisi</translation>
+    </message>
+    <message>
+        <location filename="../gui/simulators/detection_sim.py" line="127" />
+        <source>A simulated run</source>
+        <translation>Benzetilmiş bir çalışma</translation>
+    </message>
+    <message>
+        <location filename="../gui/simulators/detection_sim.py" line="128" />
+        <source>Annual modulation</source>
+        <translation>Yıllık modülasyon</translation>
+    </message>
+    <message>
+        <location filename="../gui/simulators/detection_sim.py" line="204" />
+        <source>Expected WIMP events: &lt;b&gt;{signal}&lt;/b&gt;</source>
+        <translation>Beklenen WIMP olayları: &lt;b&gt;{signal}&lt;/b&gt;</translation>
+    </message>
+    <message>
+        <location filename="../gui/simulators/detection_sim.py" line="205" />
+        <source>Expected background events: {background}</source>
+        <translation>Beklenen arka plan olayları: {background}</translation>
+    </message>
+    <message>
+        <location filename="../gui/simulators/detection_sim.py" line="206" />
+        <source>A null result would exclude σ above &lt;b&gt;{limit} cm²&lt;/b&gt; at this mass</source>
+        <translation>Boş bir sonuç bu kütlede &lt;b&gt;{limit} cm²&lt;/b&gt; üzerindeki σ değerlerini dışlardı</translation>
+    </message>
+    <message>
+        <location filename="../gui/simulators/detection_sim.py" line="208" />
+        <source>&lt;b&gt;Blind at this mass:&lt;/b&gt; no recoil gets above the threshold</source>
+        <translation>&lt;b&gt;Bu kütlede kör:&lt;/b&gt; hiçbir geri tepme eşiği aşamıyor</translation>
+    </message>
+    <message>
+        <location filename="../gui/simulators/detection_sim.py" line="209" />
+        <source>Significance if this WIMP is real: &lt;b&gt;{sigma}σ&lt;/b&gt;</source>
+        <translation>Bu WIMP gerçekse anlamlılık: &lt;b&gt;{sigma}σ&lt;/b&gt;</translation>
+    </message>
+    <message>
+        <location filename="../gui/simulators/detection_sim.py" line="215" />
+        <source>&lt;b&gt;Too light to see.&lt;/b&gt; A {mass} GeV WIMP cannot push a {target} nucleus above {threshold} keV. Light dark matter needs light nuclei and very low thresholds.</source>
+        <translation>&lt;b&gt;Görülemeyecek kadar hafif.&lt;/b&gt; {mass} GeV'lik bir WIMP, bir {target} çekirdeğini {threshold} keV'in üzerine itemez. Hafif karanlık madde hafif çekirdekler ve çok düşük eşikler ister.</translation>
+    </message>
+    <message>
+        <location filename="../gui/simulators/detection_sim.py" line="222" />
+        <source>&lt;b&gt;A discovery.&lt;/b&gt; {signal} events over a background of {background}: {sigma}σ. This WIMP would have been found — which is also why a detector that saw nothing rules it out.</source>
+        <translation>&lt;b&gt;Bir keşif.&lt;/b&gt; {background} arka plan üzerinde {signal} olay: {sigma}σ. Bu WIMP bulunurdu — hiçbir şey görmeyen bir dedektörün onu dışlamasının nedeni de budur.</translation>
+    </message>
+    <message>
+        <location filename="../gui/simulators/detection_sim.py" line="229" />
+        <source>&lt;b&gt;Excluded, but not discovered.&lt;/b&gt; This WIMP would give {signal} events. If the detector sees only its background, that is too many to hide — the WIMP is ruled out at 90% confidence without ever being detected.</source>
+        <translation>&lt;b&gt;Dışlandı ama keşfedilmedi.&lt;/b&gt; Bu WIMP {signal} olay verirdi. Dedektör yalnızca arka planını görürse bu, gizlenemeyecek kadar çoktur — WIMP hiç algılanmadan %90 güvenle dışlanır.</translation>
+    </message>
+    <message>
+        <location filename="../gui/simulators/detection_sim.py" line="235" />
+        <source>&lt;b&gt;Hidden.&lt;/b&gt; {signal} expected events is too few to notice. This WIMP lies below the exclusion curve: to find it, the detector needs more exposure, less background or a lower threshold.</source>
+        <translation>&lt;b&gt;Gizli.&lt;/b&gt; Beklenen {signal} olay fark edilmek için çok az. Bu WIMP dışlama eğrisinin altında: onu bulmak için dedektörün daha çok maruz kalmaya, daha az arka plana ya da daha düşük bir eşiğe ihtiyacı var.</translation>
+    </message>
+    <message>
+        <location filename="../gui/simulators/detection_sim.py" line="353" />
+        <source>Excluded is not the same as not there</source>
+        <translation>Dışlanmış, yok demek değildir</translation>
+    </message>
+    <message>
+        <location filename="../gui/simulators/detection_sim.py" line="354" />
+        <source>An exclusion curve says: if a WIMP had this mass and this cross-section, the detector would have seen enough events to notice, and it did not. Below the curve nothing is ruled out. Each new experiment pushes the curve down — until the background from solar and atmospheric neutrinos, the neutrino fog, makes further progress very slow.</source>
+        <translation>Bir dışlama eğrisi şunu söyler: bir WIMP bu kütleye ve bu tesir kesitine sahip olsaydı, dedektör fark edecek kadar olay görürdü; görmedi. Eğrinin altında hiçbir şey dışlanmaz. Her yeni deney eğriyi aşağı iter — ta ki Güneş ve atmosfer nötrinolarından gelen arka plan, yani nötrino sisi, ilerlemeyi çok yavaşlatana kadar.</translation>
+    </message>
+    <message>
         <location filename="../gui/simulators/expansion.py" line="30" />
         <source>Universe contents</source>
         <translation>Evrenin içeriği</translation>
@@ -4653,11 +4909,6 @@ parametreleri kendiniz değiştirmenize izin verir.
         <location filename="../gui/simulators/olbers_sim.py" line="35" />
         <source>1 · Choose a universe</source>
         <translation>1 · Bir evren seçin</translation>
-    </message>
-    <message>
-        <location filename="../gui/simulators/future_sim.py" line="56" />
-        <source>Your own settings</source>
-        <translation>Kendi ayarlarınız</translation>
     </message>
     <message>
         <location filename="../gui/simulators/future_sim.py" line="57" />
@@ -7950,6 +8201,71 @@ En büyük terimi yarıya indirmek, en küçüğünü tamamen yok etmekten çok 
         <location filename="../gui/simulators/registry.py" line="774" />
         <source>Switch between Press–Schechter and Sheth–Tormen. Where do they disagree most?</source>
         <translation>Press–Schechter ile Sheth–Tormen arasında geçiş yapın. En çok nerede ayrışıyorlar?</translation>
+    </message>
+    <message>
+        <location filename="../gui/simulators/registry.py" line="783" />
+        <source>Dark Matter Detection</source>
+        <translation>Karanlık Madde Algılama</translation>
+    </message>
+    <message>
+        <location filename="../gui/simulators/registry.py" line="784" />
+        <source>Build an underground detector and draw your own exclusion curve.</source>
+        <translation>Bir yeraltı dedektörü kurun ve kendi dışlama eğrinizi çizin.</translation>
+    </message>
+    <message>
+        <location filename="../gui/simulators/registry.py" line="786" />
+        <source>If dark matter is made of WIMPs, a few of them should bounce off atomic nuclei in a detector deep underground. Choose the target, the size, the threshold and the background of your detector, pick a WIMP, and see the recoil spectrum it would leave, the events of a single run, the yearly modulation — and the exclusion curve a null result would draw.</source>
+        <translation>Karanlık madde WIMP'lerden oluşuyorsa, birkaçı yerin derinlerindeki bir dedektörde atom çekirdeklerinden sekmeli. Dedektörünüzün hedefini, boyutunu, eşiğini ve arka planını seçin, bir WIMP seçin ve bırakacağı geri tepme tayfını, tek bir çalışmanın olaylarını, yıllık modülasyonu — ve boş bir sonucun çizeceği dışlama eğrisini görün.</translation>
+    </message>
+    <message>
+        <location filename="../gui/simulators/registry.py" line="792" />
+        <source>Start from an &lt;b&gt;experiment&lt;/b&gt;, or change the target, exposure, threshold and background yourself.</source>
+        <translation>Bir &lt;b&gt;deneyden&lt;/b&gt; başlayın ya da hedefi, maruz kalmayı, eşiği ve arka planı kendiniz değiştirin.</translation>
+    </message>
+    <message>
+        <location filename="../gui/simulators/registry.py" line="794" />
+        <source>Set the &lt;b&gt;WIMP mass&lt;/b&gt; and &lt;b&gt;cross-section&lt;/b&gt;. The summary says how many events it would give and whether it would be discovered, excluded or hidden.</source>
+        <translation>&lt;b&gt;WIMP kütlesini&lt;/b&gt; ve &lt;b&gt;tesir kesitini&lt;/b&gt; ayarlayın. Özet, kaç olay vereceğini ve keşfedileceğini, dışlanacağını ya da gizli kalacağını söyler.</translation>
+    </message>
+    <message>
+        <location filename="../gui/simulators/registry.py" line="796" />
+        <source>&lt;b&gt;Exclusion curve&lt;/b&gt;: everything above your curve would have been seen. Your WIMP is the round dot.</source>
+        <translation>&lt;b&gt;Dışlama eğrisi&lt;/b&gt;: eğrinizin üzerindeki her şey görülürdü. Sizin WIMP'iniz yuvarlak noktadır.</translation>
+    </message>
+    <message>
+        <location filename="../gui/simulators/registry.py" line="798" />
+        <source>&lt;b&gt;A simulated run&lt;/b&gt; draws one random outcome; press &lt;b&gt;Run the experiment again&lt;/b&gt; for another.</source>
+        <translation>&lt;b&gt;Benzetilmiş bir çalışma&lt;/b&gt; rastgele bir sonuç çeker; bir başkası için &lt;b&gt;Deneyi yeniden çalıştır&lt;/b&gt; düğmesine basın.</translation>
+    </message>
+    <message>
+        <location filename="../gui/simulators/registry.py" line="800" />
+        <source>&lt;b&gt;Annual modulation&lt;/b&gt; shows the few-per-cent yearly swing as the Earth orbits the Sun.</source>
+        <translation>&lt;b&gt;Yıllık modülasyon&lt;/b&gt;, Dünya Güneş'in etrafında dönerken oluşan yüzde birkaçlık yıllık salınımı gösterir.</translation>
+    </message>
+    <message>
+        <location filename="../gui/simulators/registry.py" line="803" />
+        <source>With the xenon detector, at what WIMP mass is the limit strongest? Why does it weaken on both sides?</source>
+        <translation>Ksenon dedektörüyle sınır hangi WIMP kütlesinde en güçlü? Neden iki yanda da zayıflıyor?</translation>
+    </message>
+    <message>
+        <location filename="../gui/simulators/registry.py" line="805" />
+        <source>Set the WIMP mass to 5 GeV. Which detector can still see it?</source>
+        <translation>WIMP kütlesini 5 GeV'e ayarlayın. Hangi dedektör onu hâlâ görebilir?</translation>
+    </message>
+    <message>
+        <location filename="../gui/simulators/registry.py" line="806" />
+        <source>Double the exposure with no background. How much lower does the curve go? Now add 20 background events.</source>
+        <translation>Arka plan yokken maruz kalmayı ikiye katlayın. Eğri ne kadar aşağı iniyor? Şimdi 20 arka plan olayı ekleyin.</translation>
+    </message>
+    <message>
+        <location filename="../gui/simulators/registry.py" line="808" />
+        <source>Find a WIMP that is excluded but would not have been discovered.</source>
+        <translation>Dışlanan ama keşfedilmeyecek bir WIMP bulun.</translation>
+    </message>
+    <message>
+        <location filename="../gui/simulators/registry.py" line="809" />
+        <source>Run the same experiment several times. How much does the number of events jump?</source>
+        <translation>Aynı deneyi birkaç kez çalıştırın. Olay sayısı ne kadar sıçrıyor?</translation>
     </message>
     <message>
         <location filename="../gui/simulators/rotation_curve.py" line="33" />

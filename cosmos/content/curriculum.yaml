@@ -27,8 +27,9 @@ levels:
     title: Contents of the Universe
     description: >
       Radiation, matter and dark energy; the evidence for dark matter and dark
-      energy; the standard ΛCDM model; and how to compute the age of the universe.
-    lessons: [L3.1, L3.2, L3.3, L3.4, L3.5]
+      energy; the standard ΛCDM model; how to compute the age of the universe; and
+      how physicists are trying to find out what dark matter is.
+    lessons: [L3.1, L3.2, L3.3, L3.4, L3.5, L3.6]
 
   - number: 4
     title: Thermal History

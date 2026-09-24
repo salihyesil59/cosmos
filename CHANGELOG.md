@@ -31,8 +31,15 @@ The first round of Phase 4 (see [ROADMAP.md](ROADMAP.md)).
   Eisenstein–Hu spectrum, the clusters on the whole sky out to z = 1 and how
   steeply they depend on σ8, rare peaks, and haloes across cosmic time from z = 20
   — the first atomic-cooling haloes reach one per (Mpc/h)³ at z ≈ 13
-- Nine guided challenges for the three new simulators; the Turkish pack is complete
-  at 1898 strings
+- **L3.6 Hunting Dark Matter**: what any candidate must explain, the WIMP
+  miracle, direct detection and the neutrino fog, DAMA's modulation, indirect
+  searches and the LHC, and axion haloscopes
+- **S29 Dark Matter Detection**: WIMP recoil spectra on xenon, argon, germanium and
+  silicon (Standard Halo Model, Helm form factor), Poisson exclusion curves — the
+  xenon preset reaches 3 × 10⁻⁴⁸ cm² near 50 GeV, close to LZ's published 2024
+  limit — a simulated run and the annual modulation
+- Twelve guided challenges for the four new simulators; the Turkish pack is
+  complete at 1961 strings
 
 ## 0.1.0 — 2026-09-23
 

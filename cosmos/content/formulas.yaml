@@ -568,3 +568,27 @@
   symbols: '$f(\nu) = \sqrt{2/\pi}\,\nu\, e^{-\nu^2/2}$ for Press–Schechter, $\delta_c = 1.686$'
   description: The exponential cut-off makes the heaviest clusters exquisitely sensitive to σ8.
   lesson: L5.5
+
+- id: wimp-relic
+  group: Dark matter and dark energy
+  title: Relic abundance of a thermal WIMP
+  formula: '\Omega_\chi h^2 \approx 0.12\left(\frac{2.2\times10^{-26}\ \mathrm{cm^3\,s^{-1}}}{\langle\sigma v\rangle}\right)'
+  symbols: '$\langle\sigma v\rangle$ the thermally averaged annihilation rate'
+  description: The faster dark matter annihilates, the less of it survives freeze-out.
+  lesson: L3.6
+
+- id: recoil-energy
+  group: Dark matter and dark energy
+  title: Largest nuclear recoil energy
+  formula: 'E_R^{\max} = \frac{2\mu^2 v^2}{m_A},\qquad \mu = \frac{m_\chi m_A}{m_\chi + m_A}'
+  symbols: '$m_\chi$ the WIMP mass, $m_A$ the nucleus mass, $v$ the WIMP speed'
+  description: About 27 keV for a 100 GeV WIMP on xenon; light WIMPs need light nuclei.
+  lesson: L3.6
+
+- id: axion-frequency
+  group: Dark matter and dark energy
+  title: Frequency of an axion converted to a photon
+  formula: '\nu = \frac{m_a c^2}{h} \approx 242\ \mathrm{MHz}\left(\frac{m_a}{1\ \mu\mathrm{eV}}\right)'
+  symbols: '$m_a$ the axion mass'
+  description: The frequency a haloscope cavity must be tuned to.
+  lesson: L3.6
