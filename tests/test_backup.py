@@ -75,3 +75,20 @@ def test_every_refusal_can_be_translated():
     from cosmos.gui import labels
 
     assert set(progress.BACKUP_ERRORS) <= set(labels.BACKUP_ERRORS)
+
+
+def test_a_progress_file_from_0_1_0_still_opens(tmp_path):
+    """0.2.0 added flashcards, the activity log and the daily goal; older files must load as they are."""
+    from dataclasses import asdict
+
+    from cosmos.progress import UserData
+
+    old = asdict(UserData(quiz_best={"L0.1": 0.9}, completed={"L0.1": "2026-09-20"},
+                          notes={"lesson:L0.1": "mine"}))
+    for added_in_0_2 in ("flashcards", "terms_learned", "activity", "daily_goal"):
+        del old[added_in_0_2]
+    path = tmp_path / "progress.json"
+    path.write_text(json.dumps(old), encoding="utf-8")
+    store = ProgressStore(path)
+    assert store.is_completed("L0.1") and store.note("lesson:L0.1") == "mine"
+    assert store.data.flashcards == {} and store.data.activity == {} and store.data.daily_goal == 10
