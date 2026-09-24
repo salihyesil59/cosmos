@@ -1602,3 +1602,48 @@ pair-instability:
     about 50 and 120 M☉ are not expected.
   see_also: [primordial-black-hole, standard-siren]
   lessons: [L6.9]
+
+big-rip:
+  term: Big Rip
+  definition: >
+    A possible end of the universe if dark energy is phantom (w < −1). Its density grows as
+    space expands, the expansion rate becomes infinite in a finite time, and every bound
+    system — clusters, galaxies, planets and finally atoms — is torn apart.
+  see_also: [phantom-energy, big-crunch, heat-death]
+  lessons: [L6.10]
+
+heat-death:
+  term: Heat death
+  definition: >
+    The expected end state of an eternally expanding universe: the stars have gone out, the
+    black holes have evaporated and no temperature differences remain, so nothing more can
+    happen. It is cold, not hot.
+  see_also: [big-rip, hawking-radiation, event-horizon]
+  lessons: [L6.10]
+
+phantom-energy:
+  term: Phantom energy
+  definition: >
+    Dark energy with an equation of state w < −1. Unlike a cosmological constant, its density
+    increases as the universe expands, which ends in a Big Rip. Current data allow w slightly
+    below −1, but do not require it.
+  see_also: [equation-of-state, big-rip, dark-energy]
+  lessons: [L6.10, L3.3]
+
+saha-equation:
+  term: Saha equation
+  definition: >
+    The balance between ionisation and recombination in thermal equilibrium. Applied to
+    hydrogen in the early universe it predicts recombination at about 3 700 K; the real
+    universe falls out of equilibrium and recombines a little later.
+  see_also: [recombination, visibility-function]
+  lessons: [L4.4]
+
+visibility-function:
+  term: Visibility function
+  definition: >
+    The probability that a CMB photon last scattered at a given redshift. It peaks at
+    z ≈ 1090 and has a width of about 200 in redshift: the last-scattering surface is a
+    shell, not a sharp surface.
+  see_also: [last-scattering-surface, recombination, saha-equation]
+  lessons: [L4.4]

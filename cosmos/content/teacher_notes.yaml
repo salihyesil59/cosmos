@@ -620,3 +620,16 @@ L7.6:
   demonstrate: >
     S21 with a 0.3% systematic floor. Add years of observing and watch the total error
     stop moving.
+
+L6.10:
+  misconception: >
+    That the expansion is already stretching the Solar System, atoms and people, just very
+    slightly. Bound systems do not expand at all under a cosmological constant; only phantom
+    energy, whose density keeps growing, can ever pull them apart.
+  discussion: >
+    Astronomers a trillion years from now would see one galaxy and no CMB, and would
+    conclude — reasonably, on their evidence — that the universe is static. Is there
+    anything we might be missing today for the same reason?
+  demonstrate: >
+    S26 on "Phantom energy, w = −1.5", Big Rip countdown tab. Then drag w from −1.5 to
+    −1.05 and point at the end moving from 22 to more than 200 billion years away.

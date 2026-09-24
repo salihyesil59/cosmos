@@ -53,6 +53,27 @@ class UserData:
         return cls(**known)
 
 
+BACKUP_APP = "Cosmos"
+BACKUP_FORMAT = 1
+# Settings that belong to a computer rather than to a learner: a restored backup keeps
+# whatever this machine already uses.
+_DEVICE_FIELDS = ("theme", "language", "font_scale", "update_check", "update_last_checked")
+_RECORD_FIELDS = ("quiz_best", "completed", "lessons_opened", "simulators_opened", "notes",
+                  "bookmarks", "challenges_done", "problems_solved", "review", "achievements")
+
+
+class BackupError(ValueError):
+    """A file chosen for restoring is not a usable Cosmos backup."""
+
+
+# Why a restore was refused; cosmos.gui.labels marks these for translation.
+NOT_JSON = "The file is not valid JSON."
+NOT_A_BACKUP = "The file does not contain a Cosmos backup."
+TOO_NEW = "The backup was made by a newer version of Cosmos."
+DAMAGED = "The backup is damaged."
+BACKUP_ERRORS = (NOT_JSON, NOT_A_BACKUP, TOO_NEW, DAMAGED)
+
+
 class ProgressStore:
     """Reads and writes :class:`UserData` as JSON."""
 
@@ -81,6 +102,52 @@ class ProgressStore:
                              font_scale=kept.font_scale, classroom=kept.classroom,
                              update_check=kept.update_check)
         self.save()
+
+    # ------------------------------------------------------ backup (G21)
+    def export_backup(self, path: Path, now: datetime | None = None) -> None:
+        """Write the whole learning record, notes included, to one portable file."""
+        stamp = (now or datetime.now()).isoformat(timespec="seconds")
+        payload = {"app": BACKUP_APP, "format": BACKUP_FORMAT, "exported": stamp,
+                   "data": asdict(self.data)}
+        Path(path).write_text(json.dumps(payload, indent=2, ensure_ascii=False), encoding="utf-8")
+
+    def import_backup(self, path: Path) -> UserData:
+        """Replace the learning record with a backup; returns the restored data.
+
+        The display settings of this computer (theme, language, text size, update
+        check) stay as they are: a backup carries what was learned, not how the
+        screen looked. A plain ``progress.json`` is accepted too. Raises
+        :class:`BackupError` if the file is not a Cosmos backup.
+        """
+        try:
+            raw = json.loads(Path(path).read_text(encoding="utf-8"))
+        except OSError as error:
+            raise BackupError(str(error)) from error
+        except ValueError as error:
+            raise BackupError(NOT_JSON) from error
+        if not isinstance(raw, dict):
+            raise BackupError(NOT_A_BACKUP)
+        if "data" in raw:
+            if raw.get("app") != BACKUP_APP:
+                raise BackupError(NOT_A_BACKUP)
+            if not isinstance(raw.get("format"), int) or raw["format"] > BACKUP_FORMAT:
+                raise BackupError(TOO_NEW)
+            raw = raw["data"]
+        if not isinstance(raw, dict) or not set(raw) & set(_RECORD_FIELDS):
+            raise BackupError(NOT_A_BACKUP)
+        default = UserData()
+        for name, value in raw.items():
+            expected = type(getattr(default, name, None))
+            if name in UserData.__dataclass_fields__ and not isinstance(value, expected):
+                if not (expected is float and isinstance(value, int)):
+                    raise BackupError(DAMAGED)
+        restored = UserData.from_dict(raw)
+        for name in _DEVICE_FIELDS:
+            setattr(restored, name, getattr(self.data, name))
+        restored.tour_completed = True
+        self.data = restored
+        self.save()
+        return restored
 
     # ----------------------------------------------------------- recording
     def record_quiz(self, lesson_id: str, score: float) -> bool:

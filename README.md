@@ -12,10 +12,10 @@ on first launch.
 
 ## Features
 
-- **53 lessons in 8 levels**: Foundations, Observational Cosmology, The Expanding
+- **54 lessons in 8 levels**: Foundations, Observational Cosmology, The Expanding
   Universe, Contents of the Universe, Thermal History, CMB & Structure Formation,
   Advanced Topics, How Cosmologists Work
-- **24 simulators**
+- **26 simulators**
   - Cosmology Calculator: ages, distances, horizons and recession velocities at any redshift
   - Expansion History Explorer: a(t) and the Ωm–ΩΛ map
   - Powers of Ten Zoom: from a human to the observable universe
@@ -40,11 +40,13 @@ on first launch.
   - Standard Siren Explorer: measure H₀ from a merger, with no distance ladder at all
   - Redshift Survey Slice: build a mock catalogue, then compare it with a real SDSS slice
   - CMB Sky Viewer: the real WMAP sky, with the galactic mask, smoothing and filtering
+  - Recombination Explorer: Saha against the real history, and why the CMB was released at 3000 K
+  - The Far Future: heat death, Big Crunch or Big Rip, on a timeline that runs to 10¹⁰⁰ years
 - **Two ways to read every lesson**: *Intuitive* tells the story in words,
   *With the maths* shows every formula and derivation
-- **287 quiz questions** with explanations; score 70% or more to complete a
+- **293 quiz questions** with explanations; score 70% or more to complete a
   lesson
-- **41 guided challenges** inside the simulators, with hints and automatic checking
+- **47 guided challenges** inside the simulators, with hints and automatic checking
 - **A history of cosmology**: 33 milestones from Copernicus to DESI and 18
   scientist cards, each linked to the lesson that explains the physics
 - **51 worked problems** in eight sets, one per level: type a number and the app
@@ -52,8 +54,8 @@ on first launch.
   solution
 - **21 badges** earned by learning: finishing levels, perfect quizzes, exploring
   simulators, solving their challenges and working through the problem sets
-- **184-term glossary**: terms in lessons open their definitions in the Guide panel
-- **Reference page**: a 66-entry formula sheet, physical constants, a unit
+- **189-term glossary**: terms in lessons open their definitions in the Guide panel
+- **Reference page**: a 69-entry formula sheet, physical constants, a unit
   converter and the parameters of every model
 - **Global search** (Ctrl+F) across lesson text, glossary, simulators, formulas and problems
 - **Spaced repetition**: every quiz question you get wrong comes back the next day,
@@ -66,6 +68,8 @@ on first launch.
 - **Your own simulators**: drop a Python file in the plugins folder and it appears in
   the list, no changes to the app
 - **Notes and bookmarks**: a private notebook for every page, exportable as Markdown
+- **Back up and restore** everything you have learned — progress, notes, bookmarks and the
+  review deck — as one file, to keep or to carry to another computer
 - Tooltips and **?** buttons on every control
 - Progress tracking with a prerequisite map
 - **Accessible by design**: dark, light and high-contrast themes, text scaling from 80%
@@ -123,7 +127,7 @@ cached. Without `camb` the app behaves exactly as before.
 
 The course content is English. The interface — menus, buttons, page headings,
 badges and the panels around the content — is translatable, and **Turkish ships
-with the app**: choose it in **View → Language** and restart. Nearly 1200 strings
+with the app**: choose it in **View → Language** and restart. More than 1800 strings
 are translated: the Guide panel, the guided tour, the quiz, the challenges and
 every simulator — its controls, its tooltips and the results it reports back.
 The course itself — lesson text, quiz questions, the glossary and the formula

@@ -682,6 +682,70 @@ SIMULATORS: dict[str, SimulatorInfo] = {
             class_name="SkySimulator",
             icon="🌌",
         ),
+        SimulatorInfo(
+            id="S25",
+            title=tr_noop("Recombination Explorer"),
+            tagline=tr_noop("Why the universe became transparent at 3000 K, not 158 000 K."),
+            description=tr_noop(
+                "380 000 years after the Big Bang the free electrons were captured by protons, and light "
+                "could suddenly travel for ever: that light is the cosmic microwave background. Follow the "
+                "number of free electrons as the universe cools, compare the naive equilibrium answer with "
+                "the real one, and see where the CMB photons scattered for the last time."
+            ),
+            how_to_use=[
+                tr_noop("Read <b>Free electrons</b>: the solid curve is the real history, the dashed one the "
+                        "Saha equilibrium it lags behind."),
+                tr_noop("Open <b>The last-scattering surface</b> to see where the photons we receive today "
+                        "were last deflected, and how thick that shell is."),
+                tr_noop("Open <b>Why so cold?</b> to count the photons that can still ionise an atom."),
+                tr_noop("Change the <b>baryon density</b> or today's <b>CMB temperature</b> and watch "
+                        "the moment of transparency move."),
+            ],
+            things_to_try=[
+                tr_noop("At what temperature is half of the hydrogen neutral? Compare it with 13.6 eV."),
+                tr_noop("How much later than Saha does the real recombination happen, and why?"),
+                tr_noop("Switch to the logarithmic axis. How many electrons never find a proton?"),
+                tr_noop("Double today's CMB temperature. Does last scattering happen at a different "
+                        "temperature, or only at a different redshift?"),
+                tr_noop("Lower Ωb h² to 0.01. What happens to the electrons left over?"),
+            ],
+            lessons=["L4.4", "L1.5", "L5.1", "L4.2"],
+            module="cosmos.gui.simulators.recombination_sim",
+            class_name="RecombinationSimulator",
+            icon="⚛",
+        ),
+        SimulatorInfo(
+            id="S26",
+            title=tr_noop("The Far Future"),
+            tagline=tr_noop("Heat death, Big Rip or Big Crunch: how the universe ends."),
+            description=tr_noop(
+                "Run the universe forward. Choose what the dark energy does and follow the expansion for "
+                "hundreds of billions of years, then along a timeline that reaches 10¹⁰⁰ years: the last "
+                "stars, evaporating galaxies and black holes. If the dark energy is phantom, watch the Big "
+                "Rip take apart clusters, galaxies, the Solar System and finally atoms."
+            ),
+            how_to_use=[
+                tr_noop("Pick a <b>universe</b>, or move the sliders to make your own."),
+                tr_noop("<b>Expansion</b> shows the size of the universe from today onwards; a dashed line "
+                        "marks the end, if there is one."),
+                tr_noop("<b>The next 10¹⁰⁰ years</b> puts the milestones on a logarithmic axis. Faded ones "
+                        "never happen in this universe."),
+                tr_noop("<b>Big Rip countdown</b> shows when each bound system is torn apart."),
+                tr_noop("<b>Galaxies we can still reach</b> counts the galaxies a message sent at each "
+                        "moment could ever arrive at."),
+            ],
+            things_to_try=[
+                tr_noop("In our universe, what fraction of the galaxies we can see could we still reach today?"),
+                tr_noop("Choose w = −1.5. How long before the Big Rip does the Earth explode?"),
+                tr_noop("Bring w from −1.5 towards −1. How fast does the Big Rip recede?"),
+                tr_noop("Give dark energy a negative value. When does the Big Crunch come?"),
+                tr_noop("Switch dark energy off. Which milestones stop happening, and why?"),
+            ],
+            lessons=["L6.10", "L3.3", "L2.6", "L6.9"],
+            module="cosmos.gui.simulators.future_sim",
+            class_name="FutureSimulator",
+            icon="⌛",
+        ),
     ]
 }
 

@@ -4,6 +4,29 @@ All notable changes to Cosmos are recorded here. Versions follow
 [semantic versioning](https://semver.org): until 1.0 the interface and the save
 format may still change between releases.
 
+## Unreleased
+
+The first round of Phase 4 (see [ROADMAP.md](ROADMAP.md)).
+
+### Added
+
+- **L6.10 The Far Future**: heat death, Big Rip or Big Crunch — the exponential
+  expansion, the milestones to 10¹⁰⁰ years and the Big Rip countdown, with a quiz,
+  teacher notes, three glossary terms and two formulas
+- **S25 Recombination Explorer**: the Saha equation against Peebles' three-level
+  atom, the visibility function and the optical depth, and why the universe became
+  transparent at 3000 K rather than 158 000 K; the last-scattering peak lands at
+  z ≈ 1080, within 1% of RECFAST
+- **S26 The Far Future**: the expansion from today onwards for any Ωm, ΩΛ and w, a
+  timeline of the far future, the Big Rip countdown of Caldwell, Kamionkowski &
+  Weinberg (2003) and the galaxies a signal sent today could still reach
+- **Back up and restore progress** from the File menu: everything learned, the
+  notes, the bookmarks and the review deck in one file. A restore keeps this
+  computer's theme, language and text size, and a file that is not a backup
+  changes nothing
+- Six guided challenges for the two new simulators; the Turkish pack is complete
+  at 1851 strings
+
 ## 0.1.0 — 2026-09-23
 
 The first packaged release: the whole course, complete and self-contained.
