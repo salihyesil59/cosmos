@@ -24,8 +24,15 @@ The first round of Phase 4 (see [ROADMAP.md](ROADMAP.md)).
   notes, the bookmarks and the review deck in one file. A restore keeps this
   computer's theme, language and text size, and a file that is not a backup
   changes nothing
-- Six guided challenges for the two new simulators; the Turkish pack is complete
-  at 1851 strings
+- **L4.8 The Dark Ages and Cosmic Dawn**: how the gas cooled after recombination,
+  the first haloes, why gas must cool to make a star, Population III, and what
+  JWST found above z = 10
+- **S27 Halo Mass Function Explorer**: Press–Schechter and Sheth–Tormen from the
+  Eisenstein–Hu spectrum, the clusters on the whole sky out to z = 1 and how
+  steeply they depend on σ8, rare peaks, and haloes across cosmic time from z = 20
+  — the first atomic-cooling haloes reach one per (Mpc/h)³ at z ≈ 13
+- Nine guided challenges for the three new simulators; the Turkish pack is complete
+  at 1898 strings
 
 ## 0.1.0 — 2026-09-23
 

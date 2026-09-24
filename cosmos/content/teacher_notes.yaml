@@ -633,3 +633,16 @@ L6.10:
   demonstrate: >
     S26 on "Phantom energy, w = −1.5", Big Rip countdown tab. Then drag w from −1.5 to
     −1.05 and point at the end moving from 22 to more than 200 billion years away.
+
+L4.8:
+  misconception: >
+    That the first stars formed in the first big galaxies. It is the other way round: the
+    first stars formed one or a few at a time in minihaloes a millionth of the Milky Way's
+    mass, and galaxies came later, by merging.
+  discussion: >
+    JWST found more bright galaxies at z > 10 than models predicted. What would you need
+    to see before concluding that ΛCDM is wrong, rather than that early galaxies formed
+    stars differently?
+  demonstrate: >
+    S27 at z = 20: point at the number of haloes above 10⁸ M☉/h, then open "Across cosmic
+    time" and show clusters appearing only at z < 2. Structure grows from the bottom up.

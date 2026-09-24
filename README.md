@@ -12,10 +12,10 @@ on first launch.
 
 ## Features
 
-- **54 lessons in 8 levels**: Foundations, Observational Cosmology, The Expanding
+- **55 lessons in 8 levels**: Foundations, Observational Cosmology, The Expanding
   Universe, Contents of the Universe, Thermal History, CMB & Structure Formation,
   Advanced Topics, How Cosmologists Work
-- **26 simulators**
+- **27 simulators**
   - Cosmology Calculator: ages, distances, horizons and recession velocities at any redshift
   - Expansion History Explorer: a(t) and the Ωm–ΩΛ map
   - Powers of Ten Zoom: from a human to the observable universe
@@ -42,11 +42,12 @@ on first launch.
   - CMB Sky Viewer: the real WMAP sky, with the galactic mask, smoothing and filtering
   - Recombination Explorer: Saha against the real history, and why the CMB was released at 3000 K
   - The Far Future: heat death, Big Crunch or Big Rip, on a timeline that runs to 10¹⁰⁰ years
+  - Halo Mass Function Explorer: how many haloes of each mass, from the first stars to today's clusters
 - **Two ways to read every lesson**: *Intuitive* tells the story in words,
   *With the maths* shows every formula and derivation
-- **293 quiz questions** with explanations; score 70% or more to complete a
+- **299 quiz questions** with explanations; score 70% or more to complete a
   lesson
-- **47 guided challenges** inside the simulators, with hints and automatic checking
+- **50 guided challenges** inside the simulators, with hints and automatic checking
 - **A history of cosmology**: 33 milestones from Copernicus to DESI and 18
   scientist cards, each linked to the lesson that explains the physics
 - **51 worked problems** in eight sets, one per level: type a number and the app
@@ -54,8 +55,8 @@ on first launch.
   solution
 - **21 badges** earned by learning: finishing levels, perfect quizzes, exploring
   simulators, solving their challenges and working through the problem sets
-- **189-term glossary**: terms in lessons open their definitions in the Guide panel
-- **Reference page**: a 69-entry formula sheet, physical constants, a unit
+- **193-term glossary**: terms in lessons open their definitions in the Guide panel
+- **Reference page**: a 71-entry formula sheet, physical constants, a unit
   converter and the parameters of every model
 - **Global search** (Ctrl+F) across lesson text, glossary, simulators, formulas and problems
 - **Spaced repetition**: every quiz question you get wrong comes back the next day,

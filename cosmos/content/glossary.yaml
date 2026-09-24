@@ -965,7 +965,7 @@ halo-mass-function:
     Press–Schechter model predicts it from the linear power spectrum; massive clusters
     are exponentially rare.
   see_also: [dark-matter-halo, hierarchical-structure-formation, sigma8]
-  lessons: [L5.5]
+  lessons: [L5.5, L4.8]
 
 hierarchical-structure-formation:
   term: Hierarchical structure formation
@@ -1647,3 +1647,38 @@ visibility-function:
     shell, not a sharp surface.
   see_also: [last-scattering-surface, recombination, saha-equation]
   lessons: [L4.4]
+
+dark-ages:
+  term: Dark ages
+  definition: >
+    The period between the release of the CMB, 380 000 years after the Big Bang, and the
+    first stars, some 100–200 million years later. The universe held only neutral gas,
+    dark matter and the fading background light.
+  see_also: [cosmic-dawn, recombination, 21-cm-line]
+  lessons: [L4.8, L6.4]
+
+cosmic-dawn:
+  term: Cosmic dawn
+  definition: >
+    The era when the first stars and galaxies lit up, ending the dark ages, roughly
+    100–300 million years after the Big Bang (z ≈ 30–10). It is followed by reionisation.
+  see_also: [dark-ages, population-iii, reionization]
+  lessons: [L4.8, L6.4]
+
+population-iii:
+  term: Population III stars
+  definition: >
+    The first stars, made from the hydrogen and helium of the Big Bang with no heavier
+    elements. They are thought to have been massive and short-lived; none has been
+    observed directly.
+  see_also: [cosmic-dawn, virial-temperature]
+  lessons: [L4.8]
+
+virial-temperature:
+  term: Virial temperature
+  definition: >
+    The temperature gas reaches when it falls into a halo and its thermal energy balances
+    gravity. Gas has to radiate it away to form stars: haloes above about 10⁸ M☉, at
+    10⁴ K, can cool by atomic hydrogen.
+  see_also: [dark-matter-halo, population-iii]
+  lessons: [L4.8]

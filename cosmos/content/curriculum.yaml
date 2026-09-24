@@ -35,8 +35,9 @@ levels:
     description: >
       The hot early universe: its timeline, how temperature evolves, the formation
       of the first nuclei, the release of the cosmic microwave background, the
-      relic neutrinos and the origin of the matter–antimatter asymmetry.
-    lessons: [L4.1, L4.2, L4.3, L4.4, L4.5, L4.6, L4.7]
+      relic neutrinos, the origin of the matter–antimatter asymmetry, and the dark ages
+      that ended with the first stars.
+    lessons: [L4.1, L4.2, L4.3, L4.4, L4.5, L4.6, L4.7, L4.8]
 
   - number: 5
     title: CMB & Structure Formation

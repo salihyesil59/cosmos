@@ -1,0 +1,48 @@
+- question: "Why is the period after recombination called the dark ages?"
+  choices:
+    - "The CMB had not been released yet"
+    - "No stars had formed yet, and the CMB glow had faded into the infrared"
+    - "Dark energy dominated the universe"
+    - "The universe was opaque to light"
+  answer: 1
+  explanation: "After recombination the universe was transparent, but there was nothing to shine: only neutral gas, dark matter and the stretching background light."
+- question: "Until about z ≈ 150 the gas stayed at the CMB temperature. What kept them together?"
+  choices:
+    - "Gravity"
+    - "The few free electrons left over from recombination, scattering CMB photons"
+    - "Neutrinos"
+    - "Dark matter annihilation"
+  answer: 1
+  explanation: "A residual ionisation of a few 10⁻⁴ was enough for Compton scattering to couple the gas to the radiation until the expansion diluted it."
+- question: "Which objects formed first in a cold dark matter universe?"
+  choices:
+    - "Galaxy clusters"
+    - "Large spiral galaxies"
+    - "Small haloes, which later merged into larger ones"
+    - "All at the same time"
+  answer: 2
+  explanation: "Small regions have larger density fluctuations, so they cross the collapse threshold first: structure grows from the bottom up."
+- question: "Why must gas in a halo cool before it can form stars?"
+  choices:
+    - "Stars can only form from cold dark matter"
+    - "Gas falling in is heated to the virial temperature, and its pressure holds it up until it radiates that heat away"
+    - "Hot gas is ionised and cannot contain hydrogen"
+    - "Cooling is needed to make metals"
+  answer: 1
+  explanation: "Only by radiating energy can the gas sink to the centre and fragment. H₂ does this in minihaloes; atomic hydrogen above about 10⁴ K."
+- question: "Why has no Population III star been observed nearby?"
+  choices:
+    - "They are hidden by dust"
+    - "They were probably massive and short-lived, and all exploded within a few hundred million years"
+    - "They never existed"
+    - "They are too faint to see"
+  answer: 1
+  explanation: "Metal-free gas fragments poorly, so the first stars are thought to have been tens to hundreds of solar masses, living only millions of years."
+- question: "What did JWST find at redshifts above 10?"
+  choices:
+    - "No galaxies at all"
+    - "More bright galaxies than most models predicted, now thought to reflect efficient or bursty star formation"
+    - "Proof that ΛCDM is wrong"
+    - "Only quasars"
+  answer: 1
+  explanation: "The haloes are there in ΛCDM; the galaxies in them seem to turn gas into stars faster, or in brighter bursts, than today's galaxies."
