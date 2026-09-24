@@ -55,7 +55,7 @@ on first launch.
 - **65 worked problems** in eight sets, one per level: type a number and the app
   checks it, spots a wrong power of ten or sign, and offers hints and a worked
   solution
-- **21 badges** earned by learning: finishing levels, perfect quizzes, exploring
+- **22 badges** earned by learning: finishing levels, perfect quizzes, exploring
   simulators, solving their challenges and working through the problem sets
 - **203-term glossary**: terms in lessons open their definitions in the Guide panel
 - **Reference page**: a 76-entry formula sheet, physical constants, a unit
@@ -63,6 +63,8 @@ on first launch.
 - **Global search** (Ctrl+F) across lesson text, glossary, simulators, formulas and problems
 - **Spaced repetition**: every quiz question you get wrong comes back the next day,
   then after 3, 7, 16 and 35 days until you have it for good
+- **Glossary flashcards**: add a term from the glossary, or every term of a lesson at
+  once, and it comes back as a card on the same schedule until you know it
 - **Print anything**: one lesson, one level or the whole course as a PDF, with its
   figures, its quiz and an answer key
 - **Classroom mode**: a progress report a teacher can read, and teacher notes for

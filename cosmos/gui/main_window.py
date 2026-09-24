@@ -591,8 +591,8 @@ class MainWindow(QMainWindow):
         self.navigate(route, record=False)
 
     def _update_review_action(self) -> None:
-        """G16: the toolbar says how many questions are waiting."""
-        count = len(self.ctx.store.due_reviews())
+        """G16, G22: the toolbar says how many questions and flashcards are waiting."""
+        count = len(self.ctx.store.due_reviews()) + len(self.ctx.store.due_flashcards())
         self.review_action.setText("🔁 " + (tr("Review ({count})").format(count=count) if count
                                             else tr("Review")))
 

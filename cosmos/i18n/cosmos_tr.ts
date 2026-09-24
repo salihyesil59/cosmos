@@ -204,11 +204,21 @@
     </message>
     <message>
         <location filename="../achievements.py" line="148" />
+        <source>Words of the trade</source>
+        <translation>Mesleğin dili</translation>
+    </message>
+    <message>
+        <location filename="../achievements.py" line="149" />
+        <source>Learn ten glossary terms for good with the flashcards.</source>
+        <translation>Kartlarla on sözlük terimini temelli öğrenin.</translation>
+    </message>
+    <message>
+        <location filename="../achievements.py" line="151" />
         <source>Historian</source>
         <translation>Tarihçi</translation>
     </message>
     <message>
-        <location filename="../achievements.py" line="149" />
+        <location filename="../achievements.py" line="152" />
         <source>Read the history of cosmology from Copernicus to today.</source>
         <translation>Kozmolojinin Kopernik'ten bugüne tarihini okuyun.</translation>
     </message>
@@ -664,7 +674,7 @@
     <message>
         <location filename="../gui/main_window.py" line="195" />
         <location filename="../gui/main_window.py" line="287" />
-        <location filename="../gui/pages/glossary.py" line="32" />
+        <location filename="../gui/pages/glossary.py" line="43" />
         <source>Glossary</source>
         <translation>Sözlük</translation>
     </message>
@@ -723,7 +733,7 @@
         <location filename="../gui/main_window.py" line="301" />
         <location filename="../gui/main_window.py" line="597" />
         <location filename="../gui/main_window.py" line="655" />
-        <location filename="../gui/pages/review_page.py" line="58" />
+        <location filename="../gui/pages/review_page.py" line="66" />
         <source>Review</source>
         <translation>Tekrar</translation>
     </message>
@@ -1646,7 +1656,7 @@ yüklenmez ve uygulamanın öğrencinin kim olduğuna dair hiçbir bilgisi yoktu
     </message>
     <message>
         <location filename="../gui/pages/classroom_page.py" line="58" />
-        <location filename="../gui/pages/review_page.py" line="200" />
+        <location filename="../gui/pages/review_page.py" line="266" />
         <source>due today</source>
         <translation>bugün</translation>
     </message>
@@ -1743,8 +1753,8 @@ yüklenmez ve uygulamanın öğrencinin kim olduğuna dair hiçbir bilgisi yoktu
     </message>
     <message>
         <location filename="../gui/pages/classroom_page.py" line="138" />
-        <location filename="../gui/pages/lesson.py" line="93" />
-        <location filename="../gui/pages/lesson.py" line="291" />
+        <location filename="../gui/pages/lesson.py" line="95" />
+        <location filename="../gui/pages/lesson.py" line="308" />
         <location filename="../gui/rendering/pdf.py" line="80" />
         <source>Teacher notes</source>
         <translation>Öğretmen notları</translation>
@@ -1772,7 +1782,7 @@ yüklenmez ve uygulamanın öğrencinin kim olduğuna dair hiçbir bilgisi yoktu
         <translation>Cosmos</translation>
     </message>
     <message>
-        <location filename="../gui/pages/glossary.py" line="13" />
+        <location filename="../gui/pages/glossary.py" line="21" />
         <source>
 ## Glossary
 
@@ -1783,6 +1793,8 @@ All important terms of the course in one place.
   is explained.
 - Inside lessons, coloured terms open their definition directly in this Guide
   panel, so you never lose your place.
+- Press **Add to my flashcards** to learn a term for good: it comes back on the
+  **Review** page as a card, on the same schedule as the quiz questions you missed.
 </source>
         <translation>
 ## Sözlük
@@ -1794,12 +1806,39 @@ Kursun bütün önemli terimleri tek bir yerde.
   terime tıklayın.
 - Derslerin içinde renkli terimler tanımlarını doğrudan bu Rehber panelinde
   açar, böylece yerinizi hiç kaybetmezsiniz.
+- Bir terimi temelli öğrenmek için **Kartlarıma ekle** düğmesine basın: sınavda kaçırdığınız
+  sorularla aynı takvimle **Tekrar** sayfasında bir kart olarak geri gelir.
 </translation>
     </message>
     <message>
-        <location filename="../gui/pages/glossary.py" line="37" />
+        <location filename="../gui/pages/glossary.py" line="48" />
         <source>Search terms…  (e.g. redshift, parsec, dark matter)</source>
         <translation>Terimlerde ara…  (örn. redshift, parsec, dark matter)</translation>
+    </message>
+    <message>
+        <location filename="../gui/pages/glossary.py" line="70" />
+        <source>Flashcards come back on the Review page: tomorrow, then after 3, 7, 16 and 35 days, until you know the term for good.</source>
+        <translation>Kartlar Tekrar sayfasında geri gelir: yarın, sonra 3, 7, 16 ve 35 gün sonra; terimi temelli öğrenene kadar.</translation>
+    </message>
+    <message>
+        <location filename="../gui/pages/glossary.py" line="123" />
+        <source>✓ In my flashcards — remove</source>
+        <translation>✓ Kartlarımda — çıkar</translation>
+    </message>
+    <message>
+        <location filename="../gui/pages/glossary.py" line="123" />
+        <source>Add to my flashcards</source>
+        <translation>Kartlarıma ekle</translation>
+    </message>
+    <message>
+        <location filename="../gui/pages/glossary.py" line="134" />
+        <source>“{term}” removed from your flashcards</source>
+        <translation>“{term}” kartlarınızdan çıkarıldı</translation>
+    </message>
+    <message>
+        <location filename="../gui/pages/glossary.py" line="137" />
+        <source>“{term}” added to your flashcards: it is due today on the Review page</source>
+        <translation>“{term}” kartlarınıza eklendi: bugün Tekrar sayfasında sizi bekliyor</translation>
     </message>
     <message>
         <location filename="../gui/pages/history_page.py" line="25" />
@@ -2048,7 +2087,7 @@ paneller arasında atlar, ve klavyenin bulunduğu yer belirgin bir çerçeveyle
     </message>
     <message>
         <location filename="../gui/pages/home.py" line="147" />
-        <location filename="../gui/pages/lesson.py" line="123" />
+        <location filename="../gui/pages/lesson.py" line="130" />
         <source>LEVEL {number}</source>
         <translation>SEVİYE {number}</translation>
     </message>
@@ -2103,75 +2142,85 @@ paneller arasında atlar, ve klavyenin bulunduğu yer belirgin bir çerçeveyle
         <translation>{total} dersin {done} tanesi tamamlandı</translation>
     </message>
     <message>
-        <location filename="../gui/pages/lesson.py" line="46" />
+        <location filename="../gui/pages/lesson.py" line="48" />
         <source>View:</source>
         <translation>Görünüm:</translation>
     </message>
     <message>
-        <location filename="../gui/pages/lesson.py" line="90" />
+        <location filename="../gui/pages/lesson.py" line="92" />
         <location filename="../gui/search.py" line="12" />
         <source>Lesson</source>
         <translation>Ders</translation>
     </message>
     <message>
-        <location filename="../gui/pages/lesson.py" line="91" />
+        <location filename="../gui/pages/lesson.py" line="93" />
         <location filename="../gui/rendering/pdf.py" line="66" />
         <source>Quiz</source>
         <translation>Sınav</translation>
     </message>
     <message>
-        <location filename="../gui/pages/lesson.py" line="98" />
+        <location filename="../gui/pages/lesson.py" line="100" />
         <source>◀ Previous lesson</source>
         <translation>◀ Önceki ders</translation>
     </message>
     <message>
-        <location filename="../gui/pages/lesson.py" line="105" />
+        <location filename="../gui/pages/lesson.py" line="107" />
+        <source>Add the terms to my flashcards</source>
+        <translation>Terimleri kartlarıma ekle</translation>
+    </message>
+    <message>
+        <location filename="../gui/pages/lesson.py" line="108" />
+        <source>Put every glossary term this lesson uses into your flashcard deck. They come back on the Review page until you know them.</source>
+        <translation>Bu dersin kullandığı her sözlük terimini kart destenize koyun. Onları öğrenene kadar Tekrar sayfasında geri gelirler.</translation>
+    </message>
+    <message>
+        <location filename="../gui/pages/lesson.py" line="112" />
         <source>Take the quiz ▶</source>
         <translation>Sınava geç ▶</translation>
     </message>
     <message>
-        <location filename="../gui/pages/lesson.py" line="110" />
+        <location filename="../gui/pages/lesson.py" line="117" />
         <location filename="../gui/widgets/quiz.py" line="136" />
         <source>Next lesson ▶</source>
         <translation>Sonraki ders ▶</translation>
     </message>
     <message>
-        <location filename="../gui/pages/lesson.py" line="127" />
+        <location filename="../gui/pages/lesson.py" line="134" />
         <source>≈ {minutes} min read</source>
         <translation>≈ {minutes} dakikalık okuma</translation>
     </message>
     <message>
-        <location filename="../gui/pages/lesson.py" line="147" />
+        <location filename="../gui/pages/lesson.py" line="156" />
         <source>Open the {title}: {tagline}</source>
         <translation>{title} simülatörünü açın: {tagline}</translation>
     </message>
     <message>
-        <location filename="../gui/pages/lesson.py" line="219" />
+        <location filename="../gui/pages/lesson.py" line="228" />
         <source>Completed</source>
         <translation>Tamamlandı</translation>
     </message>
     <message>
-        <location filename="../gui/pages/lesson.py" line="220" />
+        <location filename="../gui/pages/lesson.py" line="229" />
         <source>Ready to learn</source>
         <translation>Öğrenmeye hazır</translation>
     </message>
     <message>
-        <location filename="../gui/pages/lesson.py" line="221" />
+        <location filename="../gui/pages/lesson.py" line="230" />
         <source>Prerequisites missing</source>
         <translation>Ön koşullar eksik</translation>
     </message>
     <message>
-        <location filename="../gui/pages/lesson.py" line="233" />
+        <location filename="../gui/pages/lesson.py" line="242" />
         <source>This lesson builds on {lessons}. You can read it now, but it will be easier after completing those first.</source>
         <translation>Bu ders {lessons} üzerine kuruludur. Şimdi de okuyabilirsiniz, ama önce onları tamamlarsanız daha kolay olur.</translation>
     </message>
     <message>
-        <location filename="../gui/pages/lesson.py" line="246" />
+        <location filename="../gui/pages/lesson.py" line="255" />
         <source>How to study this lesson</source>
         <translation>Bu ders nasıl çalışılır</translation>
     </message>
     <message>
-        <location filename="../gui/pages/lesson.py" line="248" />
+        <location filename="../gui/pages/lesson.py" line="257" />
         <source>1. Read the lesson from top to bottom. Formulas are explained in words right after they appear.
    Prefer the ideas without the algebra? Switch the **View** at the top right to *Intuitive*.
 2. Click the coloured glossary terms to see definitions here without losing your place.
@@ -2184,24 +2233,34 @@ paneller arasında atlar, ve klavyenin bulunduğu yer belirgin bir çerçeveyle
 4. **Test** sekmesiyle bitirin. Her cevabın bir açıklaması vardır.</translation>
     </message>
     <message>
-        <location filename="../gui/pages/lesson.py" line="257" />
+        <location filename="../gui/pages/lesson.py" line="266" />
         <source>Builds on</source>
         <translation>Şunlara dayanır</translation>
     </message>
     <message>
-        <location filename="../gui/pages/lesson.py" line="261" />
+        <location filename="../gui/pages/lesson.py" line="270" />
         <source>Related simulators</source>
         <translation>İlgili simülatörler</translation>
     </message>
     <message>
-        <location filename="../gui/pages/lesson.py" line="267" />
+        <location filename="../gui/pages/lesson.py" line="276" />
         <source>Practise</source>
         <translation>Alıştırma yapın</translation>
     </message>
     <message>
-        <location filename="../gui/pages/lesson.py" line="272" />
+        <location filename="../gui/pages/lesson.py" line="281" />
         <source>Leads to</source>
         <translation>Şunlara götürür</translation>
+    </message>
+    <message>
+        <location filename="../gui/pages/lesson.py" line="288" />
+        <source>{added} new term(s) added to your flashcards; they are due today on the Review page</source>
+        <translation>{added} yeni terim kartlarınıza eklendi; bugün Tekrar sayfasında sizi bekliyorlar</translation>
+    </message>
+    <message>
+        <location filename="../gui/pages/lesson.py" line="290" />
+        <source>Every term of this lesson is already in your flashcards</source>
+        <translation>Bu dersin bütün terimleri zaten kartlarınızda</translation>
     </message>
     <message>
         <location filename="../gui/pages/notes_page.py" line="25" />
@@ -2690,7 +2749,7 @@ yolu da bu sayfadır.
         <translation>Modeller</translation>
     </message>
     <message>
-        <location filename="../gui/pages/review_page.py" line="28" />
+        <location filename="../gui/pages/review_page.py" line="29" />
         <source>
 ## Review
 
@@ -2706,6 +2765,12 @@ survived a century of testing.
 
 Reviews take a couple of minutes. Doing them on the day they fall due is what makes
 the method work — the whole point is to be asked just as you are about to forget.
+
+### Glossary flashcards
+
+Terms work the same way. Add a term from the **Glossary** (or all the terms of a lesson
+from its page), and it appears here as a card: read the term, say what it means, turn
+the card over and be honest about whether you knew it.
 </source>
         <translation>
 ## Tekrar
@@ -2722,112 +2787,168 @@ tekniğidir.
 
 Tekrarlar birkaç dakika sürer. Yöntemi işleten şey, onları zamanı geldiği gün yapmaktır —
 bütün mesele, tam unutmak üzereyken sorulmaktır.
+
+### Sözlük kartları
+
+Terimler de aynı biçimde çalışır. **Sözlük**'ten bir terim (ya da bir dersin sayfasından o dersin
+bütün terimlerini) ekleyin; burada bir kart olarak belirir: terimi okuyun, ne anlama geldiğini
+söyleyin, kartı çevirin ve bilip bilmediğiniz konusunda dürüst olun.
 </translation>
     </message>
     <message>
-        <location filename="../gui/pages/review_page.py" line="62" />
+        <location filename="../gui/pages/review_page.py" line="70" />
         <source>Empty the deck…</source>
         <translation>Desteyi boşalt…</translation>
     </message>
     <message>
-        <location filename="../gui/pages/review_page.py" line="63" />
+        <location filename="../gui/pages/review_page.py" line="71" />
         <source>Remove every question from the review deck. Your quiz scores and completed lessons are not affected.</source>
         <translation>Tekrar destesindeki tüm soruları kaldırır. Sınav puanlarınız ve tamamladığınız dersler etkilenmez.</translation>
     </message>
     <message>
-        <location filename="../gui/pages/review_page.py" line="84" />
+        <location filename="../gui/pages/review_page.py" line="92" />
         <source>Start the review ▶</source>
         <translation>Tekrarı başlat ▶</translation>
     </message>
     <message>
-        <location filename="../gui/pages/review_page.py" line="92" />
+        <location filename="../gui/pages/review_page.py" line="100" />
+        <source>Glossary flashcards</source>
+        <translation>Sözlük kartları</translation>
+    </message>
+    <message>
+        <location filename="../gui/pages/review_page.py" line="105" />
+        <source>Start the flashcards ▶</source>
+        <translation>Kartlara başla ▶</translation>
+    </message>
+    <message>
+        <location filename="../gui/pages/review_page.py" line="109" />
+        <source>Choose terms in the Glossary</source>
+        <translation>Sözlük'ten terim seç</translation>
+    </message>
+    <message>
+        <location filename="../gui/pages/review_page.py" line="112" />
+        <source>Empty the flashcards…</source>
+        <translation>Kartları boşalt…</translation>
+    </message>
+    <message>
+        <location filename="../gui/pages/review_page.py" line="121" />
         <source>The next two weeks</source>
         <translation>Önümüzdeki iki hafta</translation>
     </message>
     <message>
-        <location filename="../gui/pages/review_page.py" line="100" />
+        <location filename="../gui/pages/review_page.py" line="129" />
         <source>What is in the deck</source>
         <translation>Destede neler var</translation>
     </message>
     <message>
-        <location filename="../gui/pages/review_page.py" line="132" />
+        <location filename="../gui/pages/review_page.py" line="168" />
         <source>Questions you got wrong, brought back just before you would forget them.</source>
         <translation>Yanlış yanıtladığınız sorular, tam unutmak üzereyken geri getirilir.</translation>
     </message>
     <message>
-        <location filename="../gui/pages/review_page.py" line="133" />
+        <location filename="../gui/pages/review_page.py" line="169" />
         <source>Nothing here yet — and that is a good sign.</source>
         <translation>Henüz burada bir şey yok — ki bu iyiye işaret.</translation>
     </message>
     <message>
-        <location filename="../gui/pages/review_page.py" line="137" />
+        <location filename="../gui/pages/review_page.py" line="173" />
         <source>{count} question(s) are due today</source>
         <translation>Bugün {count} sorunun zamanı geldi</translation>
     </message>
     <message>
-        <location filename="../gui/pages/review_page.py" line="139" />
+        <location filename="../gui/pages/review_page.py" line="175" />
         <source>From {lessons} lesson(s). It should take about {minutes} minute(s).</source>
         <translation>{lessons} dersten. Yaklaşık {minutes} dakika sürer.</translation>
     </message>
     <message>
-        <location filename="../gui/pages/review_page.py" line="144" />
+        <location filename="../gui/pages/review_page.py" line="180" />
         <source>Nothing due today</source>
         <translation>Bugün zamanı gelen yok</translation>
     </message>
     <message>
-        <location filename="../gui/pages/review_page.py" line="146" />
+        <location filename="../gui/pages/review_page.py" line="182" />
         <source>{total} question(s) are waiting; the next one comes back on {date}.</source>
         <translation>{total} soru bekliyor; bir sonraki {date} tarihinde geri geliyor.</translation>
     </message>
     <message>
-        <location filename="../gui/pages/review_page.py" line="149" />
+        <location filename="../gui/pages/review_page.py" line="185" />
         <source>The deck is empty</source>
         <translation>Deste boş</translation>
     </message>
     <message>
-        <location filename="../gui/pages/review_page.py" line="151" />
+        <location filename="../gui/pages/review_page.py" line="187" />
         <source>Any quiz question you answer wrongly is kept here and asked again tomorrow, then at growing intervals until you have it for good.</source>
         <translation>Yanlış yanıtladığınız her sınav sorusu burada tutulur ve yarın yeniden sorulur, sonra siz onu kalıcı olarak öğrenene dek giderek açılan aralıklarla.</translation>
     </message>
     <message>
-        <location filename="../gui/pages/review_page.py" line="180" />
+        <location filename="../gui/pages/review_page.py" line="210" />
+        <source>{count} term(s) due today, out of {total} in your deck.</source>
+        <translation>Destenizdeki {total} terimden {count} tanesinin zamanı bugün geldi.</translation>
+    </message>
+    <message>
+        <location filename="../gui/pages/review_page.py" line="213" />
+        <source>Nothing due today. {total} term(s) are in your deck.</source>
+        <translation>Bugün zamanı gelen yok. Destenizde {total} terim var.</translation>
+    </message>
+    <message>
+        <location filename="../gui/pages/review_page.py" line="215" />
+        <source>No terms yet. Add them from the Glossary, or from a lesson with "Add the terms to my flashcards".</source>
+        <translation>Henüz terim yok. Onları Sözlük'ten ya da bir dersten "Terimleri kartlarıma ekle" ile ekleyin.</translation>
+    </message>
+    <message>
+        <location filename="../gui/pages/review_page.py" line="218" />
+        <source>Learned for good so far: {count}.</source>
+        <translation>Şimdiye kadar temelli öğrenilen: {count}.</translation>
+    </message>
+    <message>
+        <location filename="../gui/pages/review_page.py" line="246" />
         <source>{count} question(s) due on {date}</source>
         <translation>{date} tarihinde {count} sorunun zamanı geliyor</translation>
     </message>
     <message>
-        <location filename="../gui/pages/review_page.py" line="184" />
+        <location filename="../gui/pages/review_page.py" line="250" />
         <location filename="../gui/simulators/nbody_sim.py" line="227" />
         <location filename="../gui/simulators/spacetime.py" line="139" />
         <source>today</source>
         <translation>bugün</translation>
     </message>
     <message>
-        <location filename="../gui/pages/review_page.py" line="194" />
+        <location filename="../gui/pages/review_page.py" line="260" />
         <source>No questions are waiting.</source>
         <translation>Bekleyen soru yok.</translation>
     </message>
     <message>
-        <location filename="../gui/pages/review_page.py" line="201" />
+        <location filename="../gui/pages/review_page.py" line="267" />
         <source>in {days} day(s)</source>
         <translation>{days} gün sonra</translation>
     </message>
     <message>
-        <location filename="../gui/pages/review_page.py" line="203" />
+        <location filename="../gui/pages/review_page.py" line="269" />
         <source>question {number}, box {box} of {boxes}, {when}</source>
         <translation>{number}. soru, {boxes} kutudan {box}. kutuda, {when}</translation>
     </message>
     <message>
-        <location filename="../gui/pages/review_page.py" line="209" />
+        <location filename="../gui/pages/review_page.py" line="275" />
         <source>… and {count} more.</source>
         <translation>… ve {count} tane daha.</translation>
     </message>
     <message>
-        <location filename="../gui/pages/review_page.py" line="228" />
+        <location filename="../gui/pages/review_page.py" line="296" />
+        <source>Empty the flashcards?</source>
+        <translation>Kartlar boşaltılsın mı?</translation>
+    </message>
+    <message>
+        <location filename="../gui/pages/review_page.py" line="297" />
+        <source>This removes every glossary term from your flashcard deck. Nothing else is affected.</source>
+        <translation>Bu, kart destenizdeki bütün sözlük terimlerini kaldırır. Başka hiçbir şey etkilenmez.</translation>
+    </message>
+    <message>
+        <location filename="../gui/pages/review_page.py" line="312" />
         <source>Empty the review deck?</source>
         <translation>Tekrar destesi boşaltılsın mı?</translation>
     </message>
     <message>
-        <location filename="../gui/pages/review_page.py" line="229" />
+        <location filename="../gui/pages/review_page.py" line="313" />
         <source>This removes every question waiting for review. Your quiz scores, completed lessons and badges are not affected.</source>
         <translation>Bu, tekrar bekleyen tüm soruları kaldırır. Sınav puanlarınız, tamamladığınız dersler ve rozetleriniz etkilenmez.</translation>
     </message>
@@ -10375,6 +10496,62 @@ Together they give the effective volume, $V_\mathrm{eff} = V\,[\bar nP/(1+\bar n
         <location filename="../gui/widgets/common.py" line="212" />
         <source>Load the parameters of a well-known cosmological model.</source>
         <translation>İyi bilinen bir kozmolojik modelin parametrelerini yükleyin.</translation>
+    </message>
+    <message>
+        <location filename="../gui/widgets/flashcards.py" line="54" />
+        <location filename="../gui/widgets/flashcards.py" line="144" />
+        <source>What does it mean? Say it to yourself, then turn the card over.</source>
+        <translation>Ne anlama geliyor? Kendi kendinize söyleyin, sonra kartı çevirin.</translation>
+    </message>
+    <message>
+        <location filename="../gui/widgets/flashcards.py" line="66" />
+        <source>Turn the card over (Space)</source>
+        <translation>Kartı çevir (Boşluk)</translation>
+    </message>
+    <message>
+        <location filename="../gui/widgets/flashcards.py" line="69" />
+        <source>✗ I did not know it (1)</source>
+        <translation>✗ Bilmiyordum (1)</translation>
+    </message>
+    <message>
+        <location filename="../gui/widgets/flashcards.py" line="70" />
+        <source>It comes back tomorrow.</source>
+        <translation>Yarın geri gelir.</translation>
+    </message>
+    <message>
+        <location filename="../gui/widgets/flashcards.py" line="72" />
+        <source>✓ I knew it (2)</source>
+        <translation>✓ Biliyordum (2)</translation>
+    </message>
+    <message>
+        <location filename="../gui/widgets/flashcards.py" line="73" />
+        <source>It comes back later: 3 days, a week, 16 days, 35 days, then never.</source>
+        <translation>Daha sonra geri gelir: 3 gün, bir hafta, 16 gün, 35 gün, sonra bir daha gelmez.</translation>
+    </message>
+    <message>
+        <location filename="../gui/widgets/flashcards.py" line="75" />
+        <source>Back to the review page</source>
+        <translation>Tekrar sayfasına dön</translation>
+    </message>
+    <message>
+        <location filename="../gui/widgets/flashcards.py" line="101" />
+        <source>See also: {terms}</source>
+        <translation>Ayrıca bakın: {terms}</translation>
+    </message>
+    <message>
+        <location filename="../gui/widgets/flashcards.py" line="137" />
+        <source>All done</source>
+        <translation>Hepsi bitti</translation>
+    </message>
+    <message>
+        <location filename="../gui/widgets/flashcards.py" line="138" />
+        <source>You knew {known} of {total}. The ones you missed come back tomorrow.</source>
+        <translation>{total} kartın {known} tanesini bildiniz. Bilemedikleriniz yarın geri gelir.</translation>
+    </message>
+    <message>
+        <location filename="../gui/widgets/flashcards.py" line="141" />
+        <source>Card {number} of {total}</source>
+        <translation>Kart {number} / {total}</translation>
     </message>
     <message>
         <location filename="../gui/widgets/guide_panel.py" line="29" />

@@ -3,7 +3,15 @@
 from __future__ import annotations
 
 from PySide6.QtCore import Qt
-from PySide6.QtWidgets import QHBoxLayout, QLineEdit, QListWidget, QListWidgetItem, QVBoxLayout, QWidget
+from PySide6.QtWidgets import (
+    QHBoxLayout,
+    QLineEdit,
+    QListWidget,
+    QListWidgetItem,
+    QPushButton,
+    QVBoxLayout,
+    QWidget,
+)
 
 from cosmos.gui.context import AppContext
 from cosmos.gui.widgets.common import muted_label, title_label
@@ -20,6 +28,8 @@ All important terms of the course in one place.
   is explained.
 - Inside lessons, coloured terms open their definition directly in this Guide
   panel, so you never lose your place.
+- Press **Add to my flashcards** to learn a term for good: it comes back on the
+  **Review** page as a card, on the same schedule as the quiz questions you missed.
 """)
 
 
@@ -27,6 +37,7 @@ class GlossaryPage(QWidget):
     def __init__(self, ctx: AppContext, parent: QWidget | None = None):
         super().__init__(parent)
         self.ctx = ctx
+        self.current_key: str | None = None
         root = QVBoxLayout(self)
         root.setContentsMargins(20, 14, 20, 12)
         root.addWidget(title_label(tr("Glossary")))
@@ -52,10 +63,21 @@ class GlossaryPage(QWidget):
         self.view.glossaryRequested.connect(self.select)
         self.view.lessonRequested.connect(lambda i: ctx.navigate(f"lesson:{i}"))
         self.view.simulatorRequested.connect(lambda s: ctx.navigate(f"sim:{s}"))
-        body.addWidget(self.view, 1)
+        right = QVBoxLayout()
+        right.addWidget(self.view, 1)
+        actions = QHBoxLayout()
+        self.flash_btn = QPushButton()
+        self.flash_btn.setToolTip(tr("Flashcards come back on the Review page: tomorrow, then after 3, 7, 16 "
+                                     "and 35 days, until you know the term for good."))
+        self.flash_btn.clicked.connect(self._toggle_flashcard)
+        actions.addWidget(self.flash_btn)
+        actions.addStretch(1)
+        right.addLayout(actions)
+        body.addLayout(right, 1)
         root.addLayout(body, 1)
         if self.list.count():
             self.list.setCurrentRow(0)
+        ctx.signals.progressChanged.connect(self._sync_flash_button)
 
     def guide_markdown(self) -> str:
         return tr(GUIDE)
@@ -92,3 +114,27 @@ class GlossaryPage(QWidget):
             md += ["**Explained in:**", ""]
             md += [f"- [{lid} {self.ctx.curriculum.lessons[lid].title}](lesson:{lid})" for lid in lessons]
         self.view.set_markdown_content("\n".join(md))
+        self.current_key = item.data(Qt.UserRole)
+        self._sync_flash_button()
+
+    def _sync_flash_button(self) -> None:
+        key = self.current_key
+        inside = key is not None and self.ctx.store.has_flashcard(key)
+        self.flash_btn.setText(tr("✓ In my flashcards — remove") if inside else "🃏 " + tr("Add to my flashcards"))
+        self.flash_btn.setEnabled(key is not None)
+
+    def _toggle_flashcard(self) -> None:
+        key = self.current_key
+        if key is None:
+            return
+        store = self.ctx.store
+        term = self.ctx.glossary[key].term
+        if store.has_flashcard(key):
+            store.remove_flashcard(key)
+            message = tr("“{term}” removed from your flashcards").format(term=term)
+        else:
+            store.add_flashcards([key])
+            message = tr("“{term}” added to your flashcards: it is due today on the Review page").format(term=term)
+        self._sync_flash_button()
+        self.ctx.signals.statusMessage.emit(message)
+        self.ctx.signals.progressChanged.emit()

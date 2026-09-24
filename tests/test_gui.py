@@ -973,6 +973,7 @@ def test_review_page_and_a_full_session(window):
     page.refresh()
     assert "Nothing due today" in page.due_label.text()
     store.forget_reviews()
+    del page.today                      # back to the real calendar for the tests that follow
     window.navigate("home")
 
 
@@ -1513,3 +1514,67 @@ def test_galaxy_formation_lesson(window):
     text = window.lesson_page.browser.toPlainText()
     assert "CSMTOKEN" not in text and "$$" not in text and "feedback" in text.lower()
     assert window.ctx.curriculum.levels[5].lesson_ids[-1] == "L5.8"
+
+
+def test_glossary_flashcards(window):
+    """G22: add terms from the glossary and a lesson, then work through them on the review page."""
+    from PySide6.QtCore import Qt
+    from PySide6.QtTest import QTest
+    from PySide6.QtWidgets import QMessageBox
+
+    store = window.ctx.store
+    store.forget_flashcards()
+
+    window.navigate("glossary")
+    pump()
+    page = window.glossary_page
+    page.select("parsec")
+    pump()
+    assert "Add to my flashcards" in page.flash_btn.text()
+    page.flash_btn.click()
+    assert store.has_flashcard("parsec") and "In my flashcards" in page.flash_btn.text()
+    assert "Review (" in window.review_action.text()
+    page.flash_btn.click()
+    assert not store.has_flashcard("parsec")
+
+    window.navigate("lesson:L0.2")
+    pump()
+    lesson_page = window.lesson_page
+    assert lesson_page.terms_btn.isVisible() and "parsec" in lesson_page.terms
+    lesson_page.terms_btn.click()
+    assert len(store.data.flashcards) == len(lesson_page.terms)
+    lesson_page.terms_btn.click()
+    assert "already" in window.statusBar().currentMessage()
+
+    window.navigate("review")
+    pump()
+    review_page = window.stack.currentWidget()
+    assert review_page.flash_btn.isVisible()
+    review_page.start_flashcards()
+    pump()
+    session = review_page.flashcards
+    assert review_page.stack.currentWidget() is session
+    total = len(session.cards)
+    # The keyboard alone: Space turns the card, 2 = knew it, 1 = did not.
+    QTest.keyClick(session, Qt.Key_Space)
+    assert session.revealed and session.definition.text()
+    QTest.keyClick(session, Qt.Key_2)
+    session.reveal()
+    session.judge(False)
+    while not session.done:
+        session.reveal()
+        session.judge(True)
+    assert session.known == total - 1
+    assert "All done" in session.term_label.text() and session.back_btn.isEnabled()
+    # Everything answered moved on: nothing is due today any more.
+    assert store.due_flashcards() == []
+    missed = [k for k, e in store.data.flashcards.items() if e["lapses"]]
+    assert len(missed) == 1
+    session.back_btn.click()
+    pump()
+    assert review_page.stack.currentIndex() == 0 and not review_page.flash_btn.isVisible()
+
+    import unittest.mock as mock
+    with mock.patch.object(QMessageBox, "question", return_value=QMessageBox.Yes):
+        review_page._forget_flashcards()
+    assert store.data.flashcards == {}
