@@ -2,6 +2,8 @@
 
 [![Latest release](https://img.shields.io/github/v/release/salihyesil59/cosmos?sort=semver&label=download&color=2e7d32)](https://github.com/salihyesil59/cosmos/releases/latest)
 [![Downloads](https://img.shields.io/github/downloads/salihyesil59/cosmos/total?label=downloads&color=0277bd)](https://github.com/salihyesil59/cosmos/releases)
+[![CI](https://github.com/salihyesil59/cosmos/actions/workflows/ci.yml/badge.svg?branch=main)](https://github.com/salihyesil59/cosmos/actions/workflows/ci.yml)
+[![Licence](https://img.shields.io/github/license/salihyesil59/cosmos?label=licence&color=6a1b9a)](LICENSE)
 
 An interactive desktop application that teaches cosmology, from the size of the
 universe and the nature of light to the Friedmann equations, dark energy, the first
