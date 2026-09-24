@@ -768,7 +768,7 @@ def test_survey_and_systematics_lessons(window):
         text = window.lesson_page.browser.toPlainText()
         assert "CSMTOKEN" not in text and "$$" not in text
     assert "S21" in window.ctx.curriculum.lessons["L7.4"].simulators
-    assert window.ctx.curriculum.levels[-1].lesson_ids[-1] == "L7.6"
+    assert window.ctx.curriculum.levels[-1].lesson_ids[-2:] == ["L7.6", "L7.7"]
 
 
 def test_redshift_survey_slice(window):
@@ -1638,3 +1638,12 @@ def test_remember_this_cards_and_sheet(window, tmp_path, monkeypatch):
     lessons, only_completed = window.remember_lessons()
     assert not only_completed and len(lessons) == len(window.ctx.curriculum.lessons)
     store.data.completed = completed
+
+
+def test_reading_a_paper_lesson(window):
+    window.navigate("lesson:L7.7")
+    pump()
+    text = window.lesson_page.browser.toPlainText()
+    assert "CSMTOKEN" not in text and "$$" not in text and "triangle plot" in text
+    assert "Remember this" in text and "From an abstract" in text
+    assert window.ctx.curriculum.levels[7].lesson_ids[-1] == "L7.7"

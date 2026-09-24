@@ -61,6 +61,10 @@ The first round of Phase 4 (see [ROADMAP.md](ROADMAP.md)).
   *Learn → "Remember this" sheet* and *File → Print the "Remember this" sheet*
   collect the cards of every completed lesson (or the whole course, before the
   first is completed)
+- **L7.7 Reading a Cosmology Paper**: the anatomy of a paper, reading in three
+  passes, what "±", "95% upper limit", "tension" and "evidence" claim, parameter
+  tables, triangle plots, and six questions to ask before believing a surprise —
+  with a quiz, teacher notes, three glossary terms and a worked problem on S₈
 - **A style check in CI**: ruff (pycodestyle, pyflakes, bugbear, pyupgrade; rules
   in `ruff.toml`) runs on every push, and packages are only built when it passes.
   Getting there removed unused imports, renamed ambiguous and unused loop

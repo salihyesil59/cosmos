@@ -227,7 +227,7 @@ safer and more portable. ★ marks the ones worth doing first; ticked items are 
 - [x] `L3.6` Hunting dark matter: WIMPs, axions, sterile neutrinos and the experiments that look for them
 - [x] `L4.8` The dark ages and cosmic dawn: the first stars, the first galaxies and what JWST found
 - [x] `L5.8` Galaxy formation: gas cooling, feedback and how galaxies live in their haloes
-- [ ] `L7.7` Reading a cosmology paper: from the abstract to the contour plot
+- [x] `L7.7` Reading a cosmology paper: from the abstract to the contour plot
 
 ### Simulators
 

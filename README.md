@@ -12,7 +12,7 @@ on first launch.
 
 ## Features
 
-- **57 lessons in 8 levels**: Foundations, Observational Cosmology, The Expanding
+- **58 lessons in 8 levels**: Foundations, Observational Cosmology, The Expanding
   Universe, Contents of the Universe, Thermal History, CMB & Structure Formation,
   Advanced Topics, How Cosmologists Work
 - **29 simulators**
@@ -47,17 +47,17 @@ on first launch.
   - Dark Matter Detection: build an underground detector and draw your own exclusion curve
 - **Two ways to read every lesson**: *Intuitive* tells the story in words,
   *With the maths* shows every formula and derivation
-- **311 quiz questions** with explanations; score 70% or more to complete a
+- **317 quiz questions** with explanations; score 70% or more to complete a
   lesson
 - **56 guided challenges** inside the simulators, with hints and automatic checking
 - **A history of cosmology**: 33 milestones from Copernicus to DESI and 18
   scientist cards, each linked to the lesson that explains the physics
-- **65 worked problems** in eight sets, one per level: type a number and the app
+- **66 worked problems** in eight sets, one per level: type a number and the app
   checks it, spots a wrong power of ten or sign, and offers hints and a worked
   solution
 - **23 badges** earned by learning: finishing levels, perfect quizzes, exploring
   simulators, solving their challenges and working through the problem sets
-- **203-term glossary**: terms in lessons open their definitions in the Guide panel
+- **206-term glossary**: terms in lessons open their definitions in the Guide panel
 - **Reference page**: a 76-entry formula sheet, physical constants, a unit
   converter and the parameters of every model
 - **Global search** (Ctrl+F) across lesson text, glossary, simulators, formulas and problems
