@@ -137,7 +137,8 @@ class LightWave(QWidget):
         painter.fillRect(self.rect(), QColor(p.surface))
         painter.setPen(QColor(p.muted))
         if self.a_emit is None:
-            painter.drawText(self.rect(), Qt.AlignCenter, "Press “Emit light” to send a light wave and watch it stretch.")
+            painter.drawText(self.rect(), Qt.AlignCenter, "Press “Emit light” to send a light wave and watch it "
+                                                          "stretch.")
             return
         stretch = self.a / self.a_emit
         z = stretch - 1

@@ -44,8 +44,8 @@ class CurvatureSimulator(SimulatorBase):
         ul = QVBoxLayout(universe)
         self.omega_k = ParameterSlider(
             tr("Ωk  curvature parameter"), -0.1, 0.1, -0.01, decimals=3, step=0.001,
-            info=(tr("Curvature parameter"), tr("Ωk < 0 closed (spherical), Ωk > 0 open (hyperbolic). Measurements give "
-                      "|Ωk| < 0.002.")),
+            info=(tr("Curvature parameter"), tr("Ωk < 0 closed (spherical), Ωk > 0 open (hyperbolic). Measurements "
+                                                "give |Ωk| < 0.002.")),
         )
         self.distance = ParameterSlider(
             tr("Distance to a ruler (curvature radii)"), 0.1, 3.0, 1.0, decimals=2, step=0.05,

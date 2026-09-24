@@ -115,7 +115,8 @@ def _stylesheet(p: Palette, scale: float = 1.0) -> str:
         background: {p.surface_alt}; color: {p.text}; border: 1px solid {p.border};
         padding: 6px; border-radius: 4px;
     }}
-    QToolBar {{ background: {p.surface}; border: none; border-bottom: 1px solid {p.border}; spacing: 4px; padding: 4px; }}
+    QToolBar {{ background: {p.surface}; border: none; border-bottom: 1px solid {p.border};
+                spacing: 4px; padding: 4px; }}
     QToolBar QToolButton {{ padding: 5px 10px; border-radius: 6px; }}
     QToolBar QToolButton:hover {{ background: {p.surface_alt}; }}
     QToolBar QToolButton:checked {{ background: {p.mix(p.accent, 0.25)}; }}
@@ -178,7 +179,8 @@ def _stylesheet(p: Palette, scale: float = 1.0) -> str:
     QPushButton[segment]:checked {{
         background: {p.accent}; color: {p.accent_text}; border-color: {p.accent}; font-weight: 600;
     }}
-    QPushButton[role="link"] {{ background: transparent; border: none; color: {p.link}; padding: 2px; text-align: left; }}
+    QPushButton[role="link"] {{ background: transparent; border: none; color: {p.link}; padding: 2px;
+                                text-align: left; }}
     QPushButton[role="link"]:hover {{ text-decoration: underline; }}
     QToolButton[role="info"] {{
         background: {p.surface_alt}; border: 1px solid {p.border}; border-radius: 9px;
@@ -211,7 +213,8 @@ def _stylesheet(p: Palette, scale: float = 1.0) -> str:
     }}
     QListWidget::item {{ padding: 5px; }}
     QListWidget::item:selected, QTableWidget::item:selected {{ background: {p.mix(p.accent, 0.3)}; color: {p.text}; }}
-    QHeaderView::section {{ background: {p.surface_alt}; border: none; border-bottom: 1px solid {p.border}; padding: 5px; }}
+    QHeaderView::section {{ background: {p.surface_alt}; border: none; border-bottom: 1px solid {p.border};
+                            padding: 5px; }}
     QTableWidget {{ gridline-color: {p.border}; }}
 
     QProgressBar {{ background: {p.surface_alt}; border: none; border-radius: 5px; height: 10px; text-align: center; }}

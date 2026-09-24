@@ -17,10 +17,12 @@ from cosmos.physics import olbers
 
 # name: (density, finite age, age, limited lifetimes, shining fraction, expanding, Hubble length)
 SCENARIOS = {
-    "olbers": (tr_noop("Olbers' universe: infinite, static and eternal"), (4e-4, False, 300.0, False, 1.0, False, 1000.0)),
+    "olbers": (tr_noop("Olbers' universe: infinite, static and eternal"),
+               (4e-4, False, 300.0, False, 1.0, False, 1000.0)),
     "age": (tr_noop("A universe with a finite age"), (4e-4, True, 200.0, False, 1.0, False, 1000.0)),
     "lifetimes": (tr_noop("Finite age and stars that burn out"), (4e-4, True, 200.0, True, 0.2, False, 1000.0)),
-    "expanding": (tr_noop("Infinitely old but expanding (steady state)"), (4e-4, False, 300.0, False, 1.0, True, 300.0)),
+    "expanding": (tr_noop("Infinitely old but expanding (steady state)"),
+                  (4e-4, False, 300.0, False, 1.0, True, 300.0)),
     "custom": (tr_noop("Custom"), None),
 }
 
@@ -51,7 +53,8 @@ class OlbersSimulator(SimulatorBase):
         ways = QGroupBox(tr("2 · Ways out of the paradox"))
         wl = QVBoxLayout(ways)
         self.finite_age = QCheckBox(tr("The universe has a finite age"))
-        self.finite_age.setToolTip(tr("Light from stars farther than the light-travel distance has not reached us yet."))
+        self.finite_age.setToolTip(tr("Light from stars farther than the light-travel distance has not reached us "
+                                      "yet."))
         wl.addWidget(self.finite_age)
         self.age = ParameterSlider(
             tr("Light-travel distance (age × c)"), 10.0, 1e4, 300.0, decimals=0, log=True,
@@ -64,17 +67,19 @@ class OlbersSimulator(SimulatorBase):
         wl.addWidget(self.lifetimes)
         self.fraction = ParameterSlider(
             tr("Fraction of stars shining at once"), 0.01, 1.0, 0.2, decimals=3, log=True,
-            info=(tr("Stellar lifetimes"), tr("A star shines for a limited time, so only part of the stars along a line "
-                          "of sight are shining when their light leaves. This lowers the effective density of stars.")),
+            info=(tr("Stellar lifetimes"),
+                  tr("A star shines for a limited time, so only part of the stars along a line of sight are shining "
+                     "when their light leaves. This lowers the effective density of stars.")),
         )
         wl.addWidget(self.fraction)
         self.expanding = QCheckBox(tr("The universe expands"))
         wl.addWidget(self.expanding)
         self.hubble = ParameterSlider(
             tr("Hubble length c/H"), 20.0, 1e4, 150.0, decimals=0, log=True,
-            info=(tr("Redshift dimming"), tr("Light from a distance d arrives with 1 + z = e^(d/L) in a universe expanding "
-                          "at a constant rate. Its surface brightness falls as (1 + z)⁻⁴: fewer photons per second, each "
-                          "with less energy, and two factors from the stretching of the image.")),
+            info=(tr("Redshift dimming"),
+                  tr("Light from a distance d arrives with 1 + z = e^(d/L) in a universe expanding at a constant rate. "
+                     "Its surface brightness falls as (1 + z)⁻⁴: fewer photons per second, each with less energy, and "
+                     "two factors from the stretching of the image.")),
         )
         wl.addWidget(self.hubble)
         new_sky = QPushButton(tr("New random sky"))

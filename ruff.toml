@@ -1,0 +1,19 @@
+# E16: the style check CI runs on every push. `ruff check .` locally does the same.
+line-length = 120
+target-version = "py310"
+extend-exclude = ["cosmos/i18n"]
+
+[lint]
+# pycodestyle, pyflakes, bugbear and pyupgrade: real mistakes and outdated idioms,
+# not taste.
+select = ["E", "W", "F", "B", "UP"]
+ignore = [
+    "B905",   # zip() without strict=: the arrays zipped here are always the same length by construction
+]
+
+[lint.flake8-bugbear]
+# Frozen dataclasses: safe to build once as a default argument.
+extend-immutable-calls = [
+    "cosmos.physics.global21.Astrophysics",
+    "cosmos.physics.cmb.CMBParameters",
+]

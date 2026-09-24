@@ -841,7 +841,7 @@ class MainWindow(QMainWindow):
 
     def _save_pdf(self, suggested: str, lessons, subtitle: str) -> None:
         """Ask where to put the file, render it, and say what happened."""
-        from PySide6.QtWidgets import QApplication, QFileDialog, QMessageBox
+        from PySide6.QtWidgets import QFileDialog, QMessageBox
 
         from cosmos.gui.rendering import pdf
 
@@ -907,7 +907,7 @@ class MainWindow(QMainWindow):
         self.guide.set_context(self.remember_sheet())
 
     def export_remember_pdf(self) -> None:
-        from PySide6.QtWidgets import QApplication, QFileDialog, QMessageBox
+        from PySide6.QtWidgets import QFileDialog, QMessageBox
 
         from cosmos.gui.rendering import pdf
 

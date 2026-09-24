@@ -120,7 +120,7 @@ def test_removing_the_dipole_barely_changes_a_cleaned_map():
 def test_the_hottest_and_coldest_spots_are_inside_the_mask():
     sky = skymap.load()
     hot, cold = skymap.hottest_and_coldest(sky, sky.temperature)
-    for latitude, longitude, value in (hot, cold):
+    for latitude, longitude, _value in (hot, cold):
         assert -90 <= latitude <= 90 and 0 <= longitude <= 360
         row = int((latitude + 90) / 180 * sky.shape[0])
         column = int(longitude / 360 * sky.shape[1]) % sky.shape[1]

@@ -1,6 +1,7 @@
-# Continuous integration (E10, E11): every push runs the whole test suite; pushes to
-# main also build a standalone package for Windows, macOS and Linux and keep each as a
-# downloadable artifact. Every build verifies itself with --selftest before it is kept.
+# Continuous integration (E10, E11, E16): every push runs a style check and the whole
+# test suite; pushes to main also build a standalone package for Windows, macOS and
+# Linux and keep each as a downloadable artifact. Every build verifies itself with
+# --selftest before it is kept.
 #
 # Pushing a tag like v0.1.0 does the same and then attaches the three packages to a
 # draft release, with the notes taken from CHANGELOG.md. The release stays a draft
@@ -20,6 +21,23 @@ concurrency:
   cancel-in-progress: true
 
 jobs:
+  lint:
+    name: Style (ruff)
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v7
+
+      - uses: actions/setup-python@v7
+        with:
+          python-version: "3.13"
+
+      # E16: the rules are in ruff.toml; `ruff check .` locally does exactly this.
+      - name: Check the code style
+        run: |
+          python -m pip install ruff
+          ruff check --output-format=github .
+
   tests:
     name: Tests (${{ matrix.os }})
     runs-on: ${{ matrix.os }}
@@ -58,7 +76,7 @@ jobs:
 
   package:
     name: Package (${{ matrix.name }})
-    needs: tests
+    needs: [lint, tests]
     if: github.event_name == 'push' || github.event_name == 'workflow_dispatch'
     runs-on: ${{ matrix.os }}
     timeout-minutes: 45

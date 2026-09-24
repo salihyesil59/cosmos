@@ -107,12 +107,12 @@ class Cosmology:
 
     # ------------------------------------------------------------------ build
     @classmethod
-    def flat(cls, H0: float = 67.66, Om0: float = 0.3097, **kwargs) -> "Cosmology":
+    def flat(cls, H0: float = 67.66, Om0: float = 0.3097, **kwargs) -> Cosmology:
         """Create a spatially flat model; ``Ode0`` absorbs the remainder."""
         probe = cls(H0=H0, Om0=Om0, Ode0=0.0, **kwargs)
         return replace(probe, Ode0=1.0 - Om0 - probe.Or0)
 
-    def with_params(self, **changes) -> "Cosmology":
+    def with_params(self, **changes) -> Cosmology:
         """Return a copy with some parameters changed."""
         return replace(self, **changes)
 
@@ -448,7 +448,7 @@ class Cosmology:
         return self.H0 * dc / (const.C / 1e3)
 
     # -------------------------------------------------------- time evolution
-    def expansion_history(self, t_future: float = 40.0, a_max: float = 30.0) -> "ExpansionHistory":
+    def expansion_history(self, t_future: float = 40.0, a_max: float = 30.0) -> ExpansionHistory:
         """Integrate the scale factor ``a(t)`` backwards and forwards from today.
 
         The acceleration equation is used, so turning points (recollapse,

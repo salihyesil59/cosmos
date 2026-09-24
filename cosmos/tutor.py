@@ -17,7 +17,7 @@ import urllib.error
 import urllib.request
 from dataclasses import asdict, dataclass, field
 from pathlib import Path
-from typing import Callable
+from collections.abc import Callable
 
 API_URL = "https://api.anthropic.com/v1/messages"
 API_VERSION = "2023-06-01"
@@ -63,7 +63,7 @@ class TutorConfig:
         return bool(self.api_key.strip())
 
     @classmethod
-    def load(cls, path: Path) -> "TutorConfig":
+    def load(cls, path: Path) -> TutorConfig:
         """Read the saved settings; a key in the environment always wins."""
         config = cls()
         try:

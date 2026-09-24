@@ -82,7 +82,8 @@ EXPLANATIONS = {
     ),
     "eh": (
         tr_noop("Event horizon today"),
-        tr_noop("Light emitted today from beyond this distance will never reach us. Only accelerating universes have one."),
+        tr_noop("Light emitted today from beyond this distance will never reach us. Only accelerating universes have "
+                "one."),
     ),
     "mu": (
         tr_noop("Distance modulus"),
@@ -165,7 +166,8 @@ class CalculatorSimulator(SimulatorBase):
         )
         self.ode = ParameterSlider(
             tr("ΩΛ dark energy"), -0.5, 2.0, 0.6889, decimals=4, step=0.01,
-            info=(tr("Dark energy density"), tr("Cosmological constant density as a fraction of the critical density.")),
+            info=(tr("Dark energy density"),
+                  tr("Cosmological constant density as a fraction of the critical density.")),
         )
         self.flat = QCheckBox(tr("Keep space flat (sets ΩΛ automatically)"))
         self.flat.setToolTip(tr("When checked, ΩΛ is adjusted automatically so that space stays flat."))
@@ -237,7 +239,8 @@ class CalculatorSimulator(SimulatorBase):
         )), 0, Qt.AlignRight)
         split.addWidget(explain_box)
         plots = QTabWidget()
-        self.distance_plot = PlotWidget(self._draw_distances, csv_provider=self._curve_csv, export_name="distances_vs_z")
+        self.distance_plot = PlotWidget(self._draw_distances, csv_provider=self._curve_csv,
+                                        export_name="distances_vs_z")
         self.age_plot = PlotWidget(self._draw_ages, csv_provider=self._curve_csv, export_name="age_vs_z")
         plots.addTab(self.distance_plot, tr("Distances vs redshift"))
         plots.addTab(self.age_plot, tr("Age & lookback time"))

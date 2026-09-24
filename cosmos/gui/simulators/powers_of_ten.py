@@ -39,11 +39,13 @@ OBJECTS = [
     CosmicObject("Sun", 1.3927e9, "body", "#ffd166", "Diameter 1.39 million km, 109 Earths across."),
     CosmicObject("Earth's orbit", 2 * const.AU, "orbit", "#6ea8fe", "1 AU from the Sun; sunlight takes 8.3 minutes."),
     CosmicObject("Neptune's orbit", 60.2 * const.AU, "orbit", "#4dd0e1", "30 AU from the Sun; light takes 4 hours."),
-    CosmicObject("Heliopause", 240 * const.AU, "orbit", "#9aa4bd", "Where the solar wind meets interstellar gas, ~120 AU."),
+    CosmicObject("Heliopause", 240 * const.AU, "orbit", "#9aa4bd", "Where the solar wind meets interstellar gas, ~120 "
+                                                                   "AU."),
     CosmicObject("Oort cloud", 2e5 * const.AU, "orbit", "#9aa4bd", "Icy bodies up to ~100 000 AU from the Sun."),
     CosmicObject("Nearest star (Proxima)", 2 * 4.24 * const.LIGHT_YEAR, "orbit", "#ef6b73",
                  "4.24 light-years away: the circle has this radius."),
-    CosmicObject("Orion Nebula", 24 * const.LIGHT_YEAR, "region", "#ef6b73", "A star-forming cloud 24 light-years across."),
+    CosmicObject("Orion Nebula", 24 * const.LIGHT_YEAR, "region", "#ef6b73", "A star-forming cloud 24 light-years "
+                                                                             "across."),
     CosmicObject("Milky Way", 1.0e5 * const.LIGHT_YEAR, "galaxy", "#e6e9f2",
                  "Our galaxy: ~100 000 light-years across, 100–400 billion stars."),
     CosmicObject("Andromeda distance", 2 * 2.5e6 * const.LIGHT_YEAR, "orbit", "#b58cff",

@@ -57,7 +57,9 @@ class LensCanvas(QWidget):
 
     def _to_sky(self, pos) -> tuple[float, float]:
         t = self._target()
-        return ((pos.x() - t.left()) / t.width() - 0.5) * self.field, (0.5 - (pos.y() - t.top()) / t.height()) * self.field
+        x = ((pos.x() - t.left()) / t.width() - 0.5) * self.field
+        y = (0.5 - (pos.y() - t.top()) / t.height()) * self.field
+        return x, y
 
     def mousePressEvent(self, event):  # noqa: N802
         self.sourceMoved.emit(*self._to_sky(event.position()))
@@ -131,7 +133,8 @@ class LensingSimulator(SimulatorBase):
                       "total mass: typical galaxies 150–300 km/s, clusters 800–1500 km/s. θ_E ∝ σ².")),
         )
         self.z_lens = ParameterSlider(tr("Lens redshift"), 0.05, 2.0, 0.4, decimals=2, step=0.05,
-                                      info=(tr("Lens redshift"), tr("Lenses halfway to the source are the most efficient.")))
+                                      info=(tr("Lens redshift"), tr("Lenses halfway to the source are the most "
+                                                                    "efficient.")))
         self.z_source = ParameterSlider(tr("Source redshift"), 0.1, 6.0, 2.0, decimals=2, step=0.05,
                                         info=(tr("Source redshift"), tr("The source must lie behind the lens.")))
         for w in (self.mass, self.sigma, self.z_lens, self.z_source):

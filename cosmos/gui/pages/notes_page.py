@@ -89,13 +89,15 @@ class NotesPage(QWidget):
 
         self.body.addWidget(title_label(tr("Bookmarks"), "subtitle"))
         if not bookmarks:
-            self.body.addWidget(muted_label(tr("No bookmarks yet. Open any lesson or simulator and press ☆ in the Notes panel (Ctrl+D).")))
+            self.body.addWidget(muted_label(tr("No bookmarks yet. Open any lesson or simulator and press ☆ in the "
+                                               "Notes panel (Ctrl+D).")))
         for route in bookmarks:
             self.body.addWidget(self._bookmark_card(route))
 
         self.body.addWidget(title_label(tr("Notes"), "subtitle"))
         if not notes:
-            self.body.addWidget(muted_label(tr("No notes yet. The Notes panel on the right of every page is your private notebook.")))
+            self.body.addWidget(muted_label(tr("No notes yet. The Notes panel on the right of every page is your "
+                                               "private notebook.")))
         for route, text in notes.items():
             self.body.addWidget(self._note_card(route, text))
         self.body.addStretch(1)
