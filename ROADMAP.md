@@ -241,8 +241,8 @@ safer and more portable. ★ marks the ones worth doing first; ticked items are 
 
 - [x] ★ `G21` Back up and restore progress: everything learned, notes and the review deck in one file
 - [x] `G22` Glossary flashcards, scheduled by the same spaced-repetition deck as the quizzes
-- [ ] `G23` A study streak and a gentle daily goal on the home page
-- [ ] `G24` "Remember this" cards at the end of every lesson, collected into a printable sheet
+- [x] `G23` A study streak and a gentle daily goal on the home page
+- [x] `G24` "Remember this" cards at the end of every lesson, collected into a printable sheet
 - [x] `G25` Worked problems for L6.10 and the two new simulators
 
 ### Extras & quality

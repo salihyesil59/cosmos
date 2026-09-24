@@ -4,6 +4,7 @@ from __future__ import annotations
 
 from PySide6.QtCore import Qt
 from PySide6.QtWidgets import (
+    QComboBox,
     QGridLayout,
     QHBoxLayout,
     QLabel,
@@ -17,7 +18,9 @@ from PySide6.QtWidgets import (
 from cosmos.gui.context import AppContext
 from cosmos.gui.simulators.registry import SIMULATORS
 from cosmos.gui.widgets.common import card, muted_label, title_label
+from cosmos.gui.widgets.common import labelled_row
 from cosmos.i18n import tr, tr_noop
+from cosmos import streaks
 
 GUIDE = tr_noop("""
 ## Welcome to Cosmos
@@ -50,6 +53,9 @@ you are ready for.
 - **History** tells the story from Copernicus to the latest surveys, with cards
   for the scientists.
 - **Badges** on the Progress page mark what you have achieved.
+- **Today** counts your study steps — quiz questions, reviews, flashcards, problems
+  and challenges — against a daily goal you choose, and keeps a streak of the days
+  you studied. One day off does not break the streak; two in a row do.
 
 ### Optional help
 
@@ -133,6 +139,36 @@ class HomePage(QWidget):
         row.insertWidget(1, self.review_btn)
         self.layout_.addWidget(hero)
 
+        # G23: today's steps, the goal and the streak
+        today = card()
+        today.setObjectName("studyCard")
+        tl = QHBoxLayout(today)
+        tl.setContentsMargins(20, 14, 20, 14)
+        left = QVBoxLayout()
+        self.streak_label = title_label("", "subtitle")
+        left.addWidget(self.streak_label)
+        self.goal_label = QLabel()
+        self.goal_label.setTextFormat(Qt.RichText)
+        left.addWidget(self.goal_label)
+        self.goal_bar = QProgressBar()
+        self.goal_bar.setTextVisible(False)
+        self.goal_bar.setFixedHeight(8)
+        left.addWidget(self.goal_bar)
+        self.week_label = muted_label("")
+        left.addWidget(self.week_label)
+        tl.addLayout(left, 1)
+        self.goal_combo = QComboBox()
+        for steps in streaks.GOALS:
+            self.goal_combo.addItem(tr("No daily goal") if steps == 0
+                                    else tr("{steps} steps a day").format(steps=steps), steps)
+        self.goal_combo.currentIndexChanged.connect(self._goal_changed)
+        tl.addWidget(labelled_row(tr("Daily goal"), self.goal_combo, (
+            tr("What counts as a step"),
+            tr("Every quiz question you answer, every review and flashcard, every attempt at a worked "
+               "problem and every simulator challenge you solve. Ten a day is about fifteen minutes."))),
+            0, Qt.AlignTop)
+        self.layout_.addWidget(today)
+
         # Levels
         self.layout_.addWidget(title_label(tr("Course levels"), "subtitle"))
         self.levels_grid = QGridLayout()
@@ -206,6 +242,7 @@ class HomePage(QWidget):
             self.continue_btn.setText(f"▶  {verb}: {lesson.id} {lesson.title}")
             self.continue_hint.setText(lesson.summary)
             self._next = nxt
+        self._refresh_today()
         # G16: only offer a review when there is one to do.
         due = len(store.due_reviews())
         self.review_btn.setVisible(bool(due))
@@ -215,6 +252,41 @@ class HomePage(QWidget):
             bar.setRange(0, t)
             bar.setValue(d)
             status.setText(tr("{done} of {total} lessons completed").format(done=d, total=t))
+
+    def _refresh_today(self) -> None:
+        info = self.ctx.store.study_summary()
+        streak, steps, goal = info["streak"], info["today"], info["goal"]
+        if streak:
+            self.streak_label.setText("🔥 " + tr("{days}-day streak").format(days=streak))
+        else:
+            self.streak_label.setText(tr("Start a streak today"))
+        if goal:
+            self.goal_bar.setVisible(True)
+            self.goal_bar.setRange(0, goal)
+            self.goal_bar.setValue(min(steps, goal))
+            text = tr("Today: <b>{steps}</b> of {goal} steps").format(steps=steps, goal=goal)
+            if info["goal_met"]:
+                text += " — " + tr("goal reached ✓")
+        else:
+            self.goal_bar.setVisible(False)
+            text = tr("Today: <b>{steps}</b> steps").format(steps=steps)
+        if info["at_risk"]:
+            text += "<br>" + tr("Study a little today to keep your streak going.")
+        self.goal_label.setText(text)
+        marks = " ".join(("●" if count else "○") for _day, count in info["week"])
+        self.week_label.setText(tr("Last seven days: {marks}   Longest streak: {longest} days")
+                                .format(marks=marks, longest=info["longest"]))
+        index = self.goal_combo.findData(goal)
+        if index < 0:
+            self.goal_combo.addItem(tr("{steps} steps a day").format(steps=goal), goal)
+            index = self.goal_combo.count() - 1
+        self.goal_combo.blockSignals(True)
+        self.goal_combo.setCurrentIndex(index)
+        self.goal_combo.blockSignals(False)
+
+    def _goal_changed(self, _index: int) -> None:
+        self.ctx.store.set_daily_goal(self.goal_combo.currentData())
+        self._refresh_today()
 
     def _continue(self) -> None:
         self.ctx.navigate(f"lesson:{self._next}")

@@ -53,6 +53,14 @@ The first round of Phase 4 (see [ROADMAP.md](ROADMAP.md)).
   lesson with one button; they come back on the Review page on the same 1-3-7-16-35
   day schedule as missed quiz questions. Space turns a card over, 1 and 2 say
   whether you knew it. A new badge, *Words of the trade*, for ten terms learned
+- **A study streak and a daily goal** on the home page. Quiz questions, reviews,
+  flashcards, problem attempts and solved challenges each count as a step; the goal
+  (none, 5, 10, 20 or 40 a day) is the learner's choice, and one day off does not
+  break the streak. A new badge, *A week in a row*
+- **Remember this**: each lesson's closing summary is now a highlighted card, and
+  *Learn → "Remember this" sheet* and *File → Print the "Remember this" sheet*
+  collect the cards of every completed lesson (or the whole course, before the
+  first is completed)
 - **The README's numbers are checked**: `tools/content_stats.py` counts the
   content, a test fails when the README falls behind, and `--write` fixes it
 - Fifteen guided challenges for the five new simulators; the Turkish pack is

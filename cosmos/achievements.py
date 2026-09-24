@@ -77,6 +77,13 @@ def _cards_learned(store) -> int:
     return max(store.data.review_learned, 0)
 
 
+def _longest_streak(store) -> int:
+    """G23: the longest run of study days so far."""
+    from cosmos import streaks
+
+    return streaks.longest_streak(store.data.activity)
+
+
 def _challenges_total() -> int:
     from cosmos.content.loader import load_challenges
 
@@ -148,6 +155,9 @@ ACHIEVEMENTS: list[Achievement] = [
     Achievement("lexicon", _("Words of the trade"), "🃏",
                 _("Learn ten glossary terms for good with the flashcards."),
                 lambda s, c: (s.data.terms_learned, 10)),
+    Achievement("streak-week", _("A week in a row"), "🔥",
+                _("Study seven days in a row (one day off in between is allowed)."),
+                lambda s, c: (_longest_streak(s), 7)),
     Achievement("historian", _("Historian"), "🏛",
                 _("Read the history of cosmology from Copernicus to today."),
                 lambda s, c: (int("history" in s.data.pages_seen), 1)),

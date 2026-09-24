@@ -106,3 +106,11 @@ def test_formula_sheet_is_valid():
     # Every level of the course should be represented somewhere on the sheet.
     covered = {CURRICULUM.lessons[f.lesson].level for f in formulas if f.lesson}
     assert covered >= {0, 1, 2, 3, 4, 5, 6}
+
+
+def test_every_lesson_ends_with_something_to_remember():
+    """G24: the closing Summary / What to remember section becomes the lesson's card."""
+    for lesson in CURRICULUM.lessons.values():
+        points = lesson.remember
+        assert len(points) >= 3, f"{lesson.id} needs a closing summary with at least three points"
+        assert all(len(point) > 10 for point in points), lesson.id

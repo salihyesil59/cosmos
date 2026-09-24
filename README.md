@@ -55,7 +55,7 @@ on first launch.
 - **65 worked problems** in eight sets, one per level: type a number and the app
   checks it, spots a wrong power of ten or sign, and offers hints and a worked
   solution
-- **22 badges** earned by learning: finishing levels, perfect quizzes, exploring
+- **23 badges** earned by learning: finishing levels, perfect quizzes, exploring
   simulators, solving their challenges and working through the problem sets
 - **203-term glossary**: terms in lessons open their definitions in the Guide panel
 - **Reference page**: a 76-entry formula sheet, physical constants, a unit
@@ -65,6 +65,10 @@ on first launch.
   then after 3, 7, 16 and 35 days until you have it for good
 - **Glossary flashcards**: add a term from the glossary, or every term of a lesson at
   once, and it comes back as a card on the same schedule until you know it
+- **A study streak and a daily goal** on the home page: every question, review,
+  flashcard, problem and challenge is a step; one day off does not break the streak
+- **Remember this**: every lesson ends with a card of its key points, and the cards of
+  the lessons you have completed collect into a sheet you can read or print
 - **Print anything**: one lesson, one level or the whole course as a PDF, with its
   figures, its quiz and an answer key
 - **Classroom mode**: a progress report a teacher can read, and teacher notes for

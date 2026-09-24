@@ -30,6 +30,33 @@ class Lesson:
     def file_stem(self) -> str:
         return self.id.replace(".", "_")
 
+    @property
+    def remember(self) -> list[str]:
+        """G24: the points of the lesson's closing section ("Summary" or "What to remember")."""
+        _head, section = split_remember(self.body)
+        points: list[str] = []
+        for line in section.splitlines():
+            if line.startswith("- "):
+                points.append(line[2:].strip())
+            elif line.startswith("  ") and points:
+                points[-1] += " " + line.strip()        # a bullet continued on the next line
+        return points
+
+
+def split_remember(body: str) -> tuple[str, str]:
+    """The lesson body before its closing summary section, and that section's text."""
+    import re
+
+    matches = list(re.finditer(r"^## (?:Summary|What to remember)\s*$", body, flags=re.MULTILINE))
+    if not matches:
+        return body, ""
+    start = matches[-1].start()
+    rest = body[matches[-1].end():]
+    following = re.search(r"^## ", rest, flags=re.MULTILINE)
+    if following:
+        return body, ""                                  # not the last section: leave it alone
+    return body[:start].rstrip(), rest.strip()
+
 
 @dataclass(frozen=True)
 class Level:
