@@ -672,3 +672,17 @@ L5.8:
   demonstrate: >
     S27 at z = 0: read how many haloes of 10¹⁰ M☉/h there are per cubic megaparsec, then
     show the stellar-to-halo figure in the lesson. Most of those haloes hold almost no stars.
+
+L7.7:
+  misconception: >
+    That "±" in an abstract is a guarantee. It is usually a 68% interval, so a third of the
+    time the truth lies outside it — which is exactly why two honest measurements can
+    disagree at 1σ without anything being wrong.
+  discussion: >
+    Give the room one abstract (Planck 2018 or DESI 2024 both work) and five minutes. What
+    exactly is claimed, with what error, from which data, under which model? Then ask what
+    they would check first before believing it.
+  demonstrate: >
+    S19 with two probes: show the long degenerate contour of one, then the small ellipse
+    where both overlap. Point at the diagonal panels and say "this is what an abstract
+    quotes".

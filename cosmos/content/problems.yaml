@@ -1068,3 +1068,19 @@
       $\Delta s = v_\parallel / H_0 = 600/100 = 6\ \mathrm{Mpc}/h$ — comparable to the size of a
       cluster, which is exactly why fingers of God are so obvious.
     simulator: S23
+  - id: p7-s8
+    lesson: L7.7
+    title: The combination a paper quotes
+    difficulty: 1
+    statement: 'Planck 2018 gives σ₈ = 0.811 and Ωm = 0.315. Weak-lensing papers quote the combination along their
+      degeneracy, $S_8 = \sigma_8\sqrt{\Omega_m/0.3}$. What is S₈ for Planck?'
+    answer: 0.8310
+    unit: ''
+    tolerance: 0.01
+    hints:
+    - Ωm / 0.3 = 1.05.
+    - √1.05 = 1.0247.
+    solution: |
+      $S_8 = 0.811 \times \sqrt{0.315/0.3} = 0.811 \times 1.0247 = 0.831$. Lensing surveys find about 0.77–0.78 —
+      the S8 tension, quoted in the one combination their tilted contours constrain well.
+    simulator: S19

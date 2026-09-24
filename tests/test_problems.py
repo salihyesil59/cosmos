@@ -89,6 +89,7 @@ EXPECTED = {
     "p6-solar-system-rip": 365.25 * math.sqrt(2 * 3.5) / (6 * math.pi * 0.5),
     "p6-evaporation": 2.1e67 * 10**3,
     "p6-efold-time": 1 / (67.66 * const.KM_S_MPC_TO_SI * math.sqrt(0.69)) / GYR,
+    "p7-s8": 0.811 * math.sqrt(0.315 / 0.3),
 }
 
 

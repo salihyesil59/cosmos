@@ -1771,3 +1771,30 @@ spin-temperature:
     above; it is set by collisions, Lyman-α photons and the CMB.
   see_also: [21-cm-line, cosmic-dawn]
   lessons: [L6.4, L4.8]
+
+arxiv:
+  term: arXiv
+  definition: >
+    The free online preprint server where physicists and astronomers post their papers,
+    usually before (and sometimes instead of) journal publication. Almost every cosmology
+    result appears there first.
+  see_also: [look-elsewhere-effect, blinding]
+  lessons: [L7.7]
+
+look-elsewhere-effect:
+  term: Look-elsewhere effect
+  definition: >
+    The more places, bins or data cuts one searches, the more likely a fluctuation that
+    looks significant appears by chance somewhere. A 3σ bump found after many tries is much
+    weaker evidence than one predicted in advance.
+  see_also: [blinding, likelihood]
+  lessons: [L7.7, L7.2]
+
+triangle-plot:
+  term: Triangle plot
+  definition: >
+    The standard figure of a parameter analysis: the one-dimensional posterior of each
+    parameter on the diagonal and 68% / 95% contours for every pair below it, all computed
+    from the same MCMC chain. Also called a corner plot.
+  see_also: [confidence-contour, parameter-degeneracy, mcmc, marginalisation]
+  lessons: [L7.7, L7.3]

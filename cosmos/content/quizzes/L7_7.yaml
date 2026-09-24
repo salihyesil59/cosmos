@@ -1,0 +1,44 @@
+- question: "Unless a paper says otherwise, what does 'H₀ = 67.4 ± 0.5' in an abstract mean?"
+  choices:
+    - "The true value is certainly between 66.9 and 67.9"
+    - "A 68% interval: one standard deviation, so the truth lies outside it about a third of the time"
+    - "A 95% interval"
+    - "The instrument's resolution"
+  answer: 1
+  explanation: "The default in cosmology is the 68% credible interval of the posterior — one σ for a Gaussian."
+- question: "A paper reports Σm_ν < 0.12 eV (95%). What does that say?"
+  choices:
+    - "The neutrino mass has been measured as 0.12 eV"
+    - "The data are consistent with a small or zero sum, and larger values are excluded at 95% confidence"
+    - "Neutrinos are massless"
+    - "Each neutrino weighs 0.12 eV"
+  answer: 1
+  explanation: "An upper limit means no detection; oscillation experiments already require at least about 0.06 eV."
+- question: "Two measurements are 73.0 ± 1.0 and 67.4 ± 0.5. Roughly how many σ apart are they?"
+  choices: ["2σ", "3σ", "5σ", "11σ"]
+  answer: 2
+  explanation: "5.6 / √(1.0² + 0.5²) = 5.6 / 1.12 ≈ 5σ. Errors add in quadrature, not linearly."
+- question: "In a triangle plot, what does a long, tilted contour between two parameters mean?"
+  choices:
+    - "The analysis failed"
+    - "A degeneracy: the data fix a combination of the two well, and each one separately badly"
+    - "The parameters are independent"
+    - "There are too few data points"
+  answer: 1
+  explanation: "That is why papers quote combinations such as S₈ = σ₈√(Ωm/0.3), which lie along the well-measured direction."
+- question: "Why do modern surveys blind their analysis?"
+  choices:
+    - "To hide results from competitors"
+    - "So that no choice in the analysis can be steered, even unconsciously, towards the expected answer"
+    - "Because the data are secret"
+    - "To make the paper shorter"
+  answer: 1
+  explanation: "Every cut and model choice is frozen before the answer is revealed; only then is the result unblinded."
+- question: "A new 3σ signal appears after the authors tried many ways of splitting the data. What should you worry about?"
+  choices:
+    - "Nothing: 3σ is a discovery"
+    - "The look-elsewhere effect: with enough tries, a 3σ fluctuation somewhere is expected"
+    - "That the error bars are too large"
+    - "That the paper is on arXiv"
+  answer: 1
+  explanation: "The more places you look, the more likely chance alone produces a bump; 5σ and independent confirmation are the real test."
