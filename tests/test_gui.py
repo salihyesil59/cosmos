@@ -1578,3 +1578,63 @@ def test_glossary_flashcards(window):
     with mock.patch.object(QMessageBox, "question", return_value=QMessageBox.Yes):
         review_page._forget_flashcards()
     assert store.data.flashcards == {}
+
+
+def test_study_streak_on_the_home_page(window):
+    """G23: steps today, the goal, the streak and the goal announcement."""
+    store = window.ctx.store
+    window.navigate("home")
+    pump()
+    home = window.home
+    store.data.activity = {}
+    store.set_daily_goal(7)                  # a goal no earlier test has announced today
+    home.refresh()
+    assert "Start a streak" in home.streak_label.text()
+    assert "0</b> of 7" in home.goal_label.text()
+    for index in range(7):
+        store.record_question("L0.3", index % 4, True)
+    window.ctx.signals.progressChanged.emit()
+    pump()
+    assert "1-day streak" in home.streak_label.text()
+    assert "goal reached" in home.goal_label.text()
+    assert "Daily goal reached" in window.statusBar().currentMessage()
+    # The goal can be switched off from the combo box.
+    home.goal_combo.setCurrentIndex(home.goal_combo.findData(0))
+    assert store.data.daily_goal == 0 and not home.goal_bar.isVisible()
+    home.goal_combo.setCurrentIndex(home.goal_combo.findData(10))
+    assert store.data.daily_goal == 10
+
+
+def test_remember_this_cards_and_sheet(window, tmp_path, monkeypatch):
+    """G24: every lesson ends in a Remember this card; the cards collect into a sheet and a PDF."""
+    from PySide6.QtWidgets import QFileDialog
+
+    for lesson_id in ("L0.1", "L6.9", "L7.5"):
+        window.navigate(f"lesson:{lesson_id}")
+        pump()
+        text = window.lesson_page.browser.toPlainText()
+        assert "Remember this" in text and "CSMTOKEN" not in text and "$$" not in text
+        assert "What to remember" not in text and "\nSummary\n" not in text
+
+    store = window.ctx.store
+    completed = dict(store.data.completed)
+    store.data.completed = {"L0.1": "2026-09-01", "L0.2": "2026-09-02"}
+    try:
+        lessons, only_completed = window.remember_lessons()
+        assert only_completed and [lesson.id for lesson in lessons] == ["L0.1", "L0.2"]
+        sheet = window.remember_sheet()
+        assert "2 completed lesson(s)" in sheet and "### L0.2" in sheet and "### L1.1" not in sheet
+        window.show_remember_sheet()
+        assert window.guide_dock.isVisible()
+
+        target = tmp_path / "remember.pdf"
+        monkeypatch.setattr(QFileDialog, "getSaveFileName", staticmethod(lambda *a, **k: (str(target), "")))
+        window.export_remember_pdf()
+        assert target.read_bytes().startswith(b"%PDF")
+        assert "Saved" in window.statusBar().currentMessage()
+    finally:
+        store.data.completed = completed
+    store.data.completed = {}
+    lessons, only_completed = window.remember_lessons()
+    assert not only_completed and len(lessons) == len(window.ctx.curriculum.lessons)
+    store.data.completed = completed

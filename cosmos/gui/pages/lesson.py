@@ -16,7 +16,7 @@ from PySide6.QtWidgets import (
 
 from cosmos import review
 from cosmos.content.loader import load_problems
-from cosmos.content.models import Lesson
+from cosmos.content.models import Lesson, split_remember
 from cosmos.gui.context import AppContext
 from cosmos.gui.simulators.registry import SIMULATORS
 from cosmos.gui.rendering.lesson_html import FULL_VIEW, INTUITIVE_VIEW
@@ -208,7 +208,11 @@ class LessonPage(QWidget):
         if lesson.objectives:
             items = "\n".join(f"- {o}" for o in lesson.objectives)
             parts.append(f":::key In this lesson you will learn\n{items}\n:::\n")
-        parts.append(lesson.body)
+        # G24: the closing summary becomes a "Remember this" card.
+        head, section = split_remember(lesson.body)
+        parts.append(head)
+        if section:
+            parts.append("\n:::key " + tr("Remember this") + "\n" + section + "\n:::\n")
         nxt = self.ctx.curriculum.next_lesson(lesson.id)
         tail = "\n\n---\n\n**Finished reading?** Open the **Quiz** tab to check your understanding"
         if nxt:

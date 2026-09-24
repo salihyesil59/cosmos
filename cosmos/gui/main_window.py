@@ -144,6 +144,10 @@ class MainWindow(QMainWindow):
         ctx.signals.statusMessage.connect(lambda text: self.statusBar().showMessage(text, 8000))
         ctx.signals.updateFound.connect(self._update_result)
         ctx.signals.progressChanged.connect(self.check_achievements)
+        # G23: say so once, the moment today's goal is reached.
+        info = ctx.store.study_summary()
+        self._goal_announced = (self._goal_day(), info["goal"]) if info["goal_met"] else None
+        ctx.signals.progressChanged.connect(self._check_daily_goal)
         theme().changed.connect(lambda _p: self._refresh_sidebar())
 
     # --------------------------------------------------------------- build
@@ -374,6 +378,9 @@ class MainWindow(QMainWindow):
         file_menu.addAction(action(tr("Print the whole course as PDF…"),
                                    tr("All lessons in one file. It is long; give it a moment."),
                                    self.export_course_pdf))
+        file_menu.addAction(action(tr("Print the “Remember this” sheet…"),
+                                   tr("The key points of every lesson you have completed, on a few pages"),
+                                   self.export_remember_pdf))
         file_menu.addSeparator()
         file_menu.addAction(action(tr("Quit"), tr("Close Cosmos"), self.close, "Ctrl+Q"))
         learn = menu.addMenu(tr("&Learn"))
@@ -381,6 +388,9 @@ class MainWindow(QMainWindow):
             learn.addAction(a)
         learn.addSeparator()
         learn.addAction(action(tr("Simulators"), tr("All simulators"), lambda: self.navigate("sims")))
+        learn.addAction(action("💡 " + tr("“Remember this” sheet"),
+                               tr("The key points of the lessons you have completed, in the Guide panel"),
+                               self.show_remember_sheet))
         learn.addAction(action("🎓 " + tr("Classroom"),
                                tr("A progress report to hand on, and teacher notes per lesson"),
                                lambda: self.navigate("classroom")))
@@ -682,6 +692,22 @@ class MainWindow(QMainWindow):
             self.ctx.signals.achievementsUnlocked.emit(new)
         return new
 
+    @staticmethod
+    def _goal_day() -> str:
+        from datetime import date
+
+        return date.today().isoformat()
+
+    def _check_daily_goal(self) -> None:
+        info = self.ctx.store.study_summary()
+        # Once per day and goal: raising the goal earns a second announcement.
+        key = (self._goal_day(), info["goal"])
+        if info["goal_met"] and self._goal_announced != key:
+            self._goal_announced = key
+            self.statusBar().showMessage(
+                "🎯 " + tr("Daily goal reached: {steps} steps today. Streak: {days} day(s).")
+                .format(steps=info["today"], days=info["streak"]), 10000)
+
     def _refresh_notes(self) -> None:
         self.notes_page.refresh()
         self._update_bookmark_action()
@@ -858,6 +884,48 @@ class MainWindow(QMainWindow):
         cur = self.ctx.curriculum
         self._save_pdf("cosmos_course.pdf", [cur.lessons[i] for i in cur.ordered_ids],
                        tr("The whole course"))
+
+    # ------------------------------------------------ remember this (G24)
+    def remember_lessons(self) -> tuple[list, bool]:
+        """The completed lessons in course order, or every lesson if none is completed yet."""
+        cur = self.ctx.curriculum
+        done = [cur.lessons[i] for i in cur.ordered_ids if self.ctx.store.is_completed(i)]
+        return (done, True) if done else ([cur.lessons[i] for i in cur.ordered_ids], False)
+
+    def remember_sheet(self) -> str:
+        from cosmos.gui.rendering import pdf
+
+        lessons, completed = self.remember_lessons()
+        titles = {level.number: level.title for level in self.ctx.curriculum.levels}
+        title = tr("Remember this") + " — " + (tr("{count} completed lesson(s)").format(count=len(lessons))
+                                              if completed else tr("the whole course"))
+        return pdf.remember_markdown(lessons, titles, title)
+
+    def show_remember_sheet(self) -> None:
+        """The sheet in the Guide panel, to read on screen."""
+        self.guide_dock.show()
+        self.guide.set_context(self.remember_sheet())
+
+    def export_remember_pdf(self) -> None:
+        from PySide6.QtWidgets import QApplication, QFileDialog, QMessageBox
+
+        from cosmos.gui.rendering import pdf
+
+        path, _filter = QFileDialog.getSaveFileName(self, tr("Save as PDF"), "cosmos_remember_this.pdf",
+                                                    "PDF (*.pdf)")
+        if not path:
+            return
+        options = self._pdf_options(APP_NAME, tr("Remember this"))
+        QApplication.setOverrideCursor(Qt.WaitCursor)
+        try:
+            pages = pdf.export(path, self.remember_sheet(), options)
+        except OSError as error:
+            QMessageBox.warning(self, tr("Could not save the PDF"), str(error))
+            return
+        finally:
+            QApplication.restoreOverrideCursor()
+        self.statusBar().showMessage(
+            tr("Saved {pages} page(s) to {path}").format(pages=pages, path=path), 8000)
 
     # ------------------------------------------------------- plugins (E14)
     def plugins_folder(self):

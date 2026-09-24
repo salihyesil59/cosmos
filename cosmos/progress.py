@@ -43,6 +43,8 @@ class UserData:
     reviews_cleared: int = 0                                        # review sessions answered in full
     flashcards: dict[str, dict] = field(default_factory=dict)       # G22: glossary key -> review card
     terms_learned: int = 0                                          # flashcards that left the deck for good
+    activity: dict[str, int] = field(default_factory=dict)          # G23: ISO date -> study steps that day
+    daily_goal: int = 10                                            # G23: steps per day; 0 = no goal
     font_scale: float = 1.0                                         # interface text size, 0.8 to 1.6
     classroom: bool = False                                         # G19: show teacher notes in lessons
     update_check: str = "ask"                                       # E13: "ask", "on" or "off"
@@ -102,7 +104,7 @@ class ProgressStore:
                              math_view=kept.math_view, notes=dict(kept.notes),
                              bookmarks=list(kept.bookmarks), language=kept.language,
                              font_scale=kept.font_scale, classroom=kept.classroom,
-                             update_check=kept.update_check)
+                             update_check=kept.update_check, daily_goal=kept.daily_goal)
         self.save()
 
     # ------------------------------------------------------ backup (G21)
@@ -151,6 +153,35 @@ class ProgressStore:
         self.save()
         return restored
 
+    # ------------------------------------------------ streak and goal (G23)
+    def _step(self, today=None, steps: int = 1) -> None:
+        """Count study steps for a day. The caller saves."""
+        from cosmos import streaks
+
+        self.data.activity = streaks.record(self.data.activity, today or date.today(), steps)
+
+    def study_summary(self, today=None) -> dict:
+        """What the home page shows: steps today, the goal, and the streak."""
+        from cosmos import streaks
+
+        day = today or date.today()
+        activity = self.data.activity
+        steps = streaks.today_steps(activity, day)
+        goal = self.data.daily_goal
+        return {
+            "today": steps,
+            "goal": goal,
+            "goal_met": goal > 0 and steps >= goal,
+            "streak": streaks.current_streak(activity, day),
+            "longest": streaks.longest_streak(activity),
+            "at_risk": streaks.at_risk(activity, day),
+            "week": streaks.week(activity, day),
+        }
+
+    def set_daily_goal(self, steps: int) -> None:
+        self.data.daily_goal = max(int(steps), 0)
+        self.save()
+
     # ----------------------------------------------------------- recording
     def record_quiz(self, lesson_id: str, score: float) -> bool:
         """Store a quiz result; returns True if this attempt completed the lesson."""
@@ -179,6 +210,7 @@ class ProgressStore:
         if key in self.data.challenges_done:
             return False
         self.data.challenges_done.append(key)
+        self._step()
         self.save()
         return True
 
@@ -191,6 +223,7 @@ class ProgressStore:
             return False
         attempts = self.data.problem_attempts.get(problem_id, 0) + 1
         self.data.problem_attempts[problem_id] = attempts
+        self._step()
         if correct:
             self.data.problems_solved[problem_id] = attempts
         self.save()
@@ -212,7 +245,9 @@ class ProgressStore:
         identifier = review.card_id(lesson_id, index)
         before = self.data.review.get(identifier)
         after = review.after_answer(before, correct, today or date.today())
+        self._step(today)
         if after == before:
+            self.save()
             return False
         if after is None:
             self.data.review.pop(identifier, None)
@@ -286,6 +321,7 @@ class ProgressStore:
         if before is None:
             return False
         after = review.after_answer(before, knew_it, today or date.today())
+        self._step(today)
         if after is None:
             del self.data.flashcards[key]
             self.data.terms_learned += 1

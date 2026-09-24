@@ -81,6 +81,20 @@ def lesson_markdown(lesson: Lesson, options: PdfOptions) -> str:
     return "\n".join(parts)
 
 
+def remember_markdown(lessons: list[Lesson], level_titles: dict[int, str], title: str) -> str:
+    """G24: the "Remember this" cards of some lessons, grouped by level, as one sheet."""
+    parts = [f"# {title}", ""]
+    level = None
+    for lesson in lessons:
+        if lesson.level != level:
+            level = lesson.level
+            parts += [f"## {tr('Level {number}').format(number=level)} · {level_titles.get(level, '')}", ""]
+        parts += [f"### {lesson.id} {lesson.title}", ""]
+        parts += [f"- {point}" for point in lesson.remember]
+        parts.append("")
+    return "\n".join(parts)
+
+
 def course_markdown(lessons: list[Lesson], options: PdfOptions) -> str:
     """Several lessons, each starting on its own page."""
     return "\n\n".join(lesson_markdown(lesson, options) for lesson in lessons)
