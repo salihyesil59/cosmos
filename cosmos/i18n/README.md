@@ -18,9 +18,14 @@ are looked up in the `cosmos` context.
 
 Only `.qm` files are loaded at run time; `.ts` files are the editable source.
 
-`cosmos_tr.ts` / `cosmos_tr.qm` are the Turkish pack that ships with the app. It
-covers the window chrome, the pages, the panels, the badges, the Guide panel, the
-guided tour, the quiz, the challenges and every simulator — its controls, its
+[TRANSLATING.md](../../TRANSLATING.md) in the project root is the guide for
+translators: the rules that matter, the terminology the existing packs use, and how
+to check a pack before sending it in.
+
+`cosmos_tr.ts` and `cosmos_es.ts` (with their compiled `.qm` files) are the Turkish
+and Spanish packs that ship with the app, and both are complete. They cover the
+window chrome, the pages, the panels, the badges, the Guide panel, the guided
+tour, the quiz, the challenges and every simulator — its controls, its
 tooltips and the results it writes out. Lesson text and the names of datasets,
 epochs and galaxies stay English. Strings that are defined far from where they are
 shown (the badge table or the simulator catalogue, for instance) are marked with

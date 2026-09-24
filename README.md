@@ -86,7 +86,7 @@ on first launch.
 - Progress tracking with a prerequisite map
 - **Accessible by design**: dark, light and high-contrast themes, text scaling from 80%
   to 160%, visible keyboard focus, and every command reachable without a mouse
-- The interface is translatable and ships with a full Turkish pack
+- The interface is translatable and ships with full **Turkish** and **Spanish** packs
 - An optional **Tutor** panel that answers questions with your own API key
 - An optional, opt-in **update check** — it asks GitHub for the latest release number
   and sends nothing at all, not even a count
@@ -190,12 +190,13 @@ cached. Without `camb` the app behaves exactly as before.
 ## Interface languages
 
 The course content is English. The interface — menus, buttons, page headings,
-badges and the panels around the content — is translatable, and **Turkish ships
-with the app**: choose it in **View → Language** and restart. More than 2000 strings
-are translated: the Guide panel, the guided tour, the quiz, the challenges and
-every simulator — its controls, its tooltips and the results it reports back.
-The course itself — lesson text, quiz questions, the glossary and the formula
-sheet — stays in English, as do the names of datasets, epochs and galaxies.
+badges and the panels around the content — is translatable, and **Turkish and
+Spanish ship with the app**: choose one in **View → Language** and restart.
+More than 2000 strings are translated in each: the Guide panel, the guided tour,
+the quiz, the challenges and every simulator — its controls, its tooltips and the
+results it reports back. The course itself — lesson text, quiz questions, the
+glossary and the formula sheet — stays in English, as do the names of datasets,
+epochs and galaxies.
 
 To add another language, use the standard Qt tools:
 
@@ -207,6 +208,8 @@ python tools/update_translations.py --release       # compiles cosmos_de.qm
 
 The language then appears in **View → Language** and is used the next time
 Cosmos starts. Without a compiled `.qm` file the app is English, as before.
+[TRANSLATING.md](TRANSLATING.md) is the guide for translators: what to translate,
+what to leave alone, and how to check the result before sending it in.
 
 ## Standalone builds
 
