@@ -9,6 +9,11 @@ first box. A card that survives the last box has been learned and leaves the dec
 This module is the scheduling logic only — no Qt, no storage. The deck lives in
 :class:`cosmos.progress.UserData` as ``review``, a mapping from card id to a small
 record, and :class:`cosmos.progress.ProgressStore` is what writes to it.
+
+Glossary flashcards (G22) use exactly the same boxes and the same records. They live
+in a deck of their own, ``flashcards``, keyed by glossary term, because they get into
+it differently: a quiz question joins when you get it wrong, a term when you choose to
+learn it — and then it is due at once, since you have not seen it as a card yet.
 """
 
 from __future__ import annotations
@@ -137,3 +142,48 @@ def summary(review: dict[str, dict], today: date) -> dict:
         "lapses": sum(c.lapses for c in cards),
         "next_due": min((c.due for c in cards if not c.is_due(today)), default=None),
     }
+
+
+# ------------------------------------------------------------ flashcards (G22)
+@dataclass(frozen=True)
+class TermCard:
+    """A glossary term waiting in the flashcard deck."""
+
+    term: str
+    box: int
+    due: date
+    lapses: int
+
+    def is_due(self, today: date) -> bool:
+        return self.due <= today
+
+
+def new_term(today: date) -> dict:
+    """The record of a term that has just been added: in the first box, due today."""
+    return {"box": 1, "due": today.isoformat(), "lapses": 0, "seen": ""}
+
+
+def term_deck(flashcards: dict[str, dict], today: date) -> list[TermCard]:
+    cards = [TermCard(term=key, box=int(entry.get("box", 1)), due=_to_date(entry.get("due", ""), today),
+                      lapses=int(entry.get("lapses", 0)))
+             for key, entry in flashcards.items()]
+    return sorted(cards, key=lambda c: (c.due, c.box, c.term))
+
+
+def terms_due(flashcards: dict[str, dict], today: date) -> list[TermCard]:
+    return [c for c in term_deck(flashcards, today) if c.is_due(today)]
+
+
+def lesson_terms(body: str, lesson_id: str, glossary: dict) -> list[str]:
+    """The glossary terms a lesson uses or explains, in the order they first appear."""
+    import re
+
+    keys = []
+    for key in re.findall(r"\[\[([\w-]+)", body):
+        if key in glossary and key not in keys:
+            keys.append(key)
+    for key, term in glossary.items():
+        if lesson_id in getattr(term, "lessons", ()) and key not in keys:
+            keys.append(key)
+    return keys
+

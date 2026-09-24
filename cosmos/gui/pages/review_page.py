@@ -22,6 +22,7 @@ from cosmos import review
 from cosmos.gui.context import AppContext
 from cosmos.gui.theme import theme
 from cosmos.gui.widgets.common import card, muted_label, title_label
+from cosmos.gui.widgets.flashcards import Flashcard, FlashcardSession
 from cosmos.gui.widgets.quiz import QuizItem, QuizWidget
 from cosmos.i18n import tr, tr_noop
 
@@ -40,6 +41,12 @@ survived a century of testing.
 
 Reviews take a couple of minutes. Doing them on the day they fall due is what makes
 the method work — the whole point is to be asked just as you are about to forget.
+
+### Glossary flashcards
+
+Terms work the same way. Add a term from the **Glossary** (or all the terms of a lesson
+from its page), and it appears here as a card: read the term, say what it means, turn
+the card over and be honest about whether you knew it.
 """)
 
 
@@ -48,6 +55,7 @@ class ReviewPage(QWidget):
         super().__init__(parent)
         self.ctx = ctx
         self._items: list[QuizItem] = []
+        self._cards: list[Flashcard] = []
 
         root = QVBoxLayout(self)
         root.setContentsMargins(20, 14, 20, 12)
@@ -87,6 +95,27 @@ class ReviewPage(QWidget):
         bl.addWidget(self.start_btn, 0, Qt.AlignLeft)
         ol.addWidget(self.banner_card)
 
+        self.flash_card = card()
+        fl = QVBoxLayout(self.flash_card)
+        fl.addWidget(title_label(tr("Glossary flashcards"), "subtitle"))
+        self.flash_detail = muted_label("")
+        self.flash_detail.setWordWrap(True)
+        fl.addWidget(self.flash_detail)
+        flash_buttons = QHBoxLayout()
+        self.flash_btn = QPushButton(tr("Start the flashcards ▶"))
+        self.flash_btn.setProperty("role", "primary")
+        self.flash_btn.clicked.connect(self.start_flashcards)
+        flash_buttons.addWidget(self.flash_btn)
+        self.glossary_btn = QPushButton(tr("Choose terms in the Glossary"))
+        self.glossary_btn.clicked.connect(lambda: self.ctx.navigate("glossary"))
+        flash_buttons.addWidget(self.glossary_btn)
+        self.forget_flash_btn = QPushButton(tr("Empty the flashcards…"))
+        self.forget_flash_btn.clicked.connect(self._forget_flashcards)
+        flash_buttons.addWidget(self.forget_flash_btn)
+        flash_buttons.addStretch(1)
+        fl.addLayout(flash_buttons)
+        ol.addWidget(self.flash_card)
+
         self.schedule_card = card()
         sl = QVBoxLayout(self.schedule_card)
         sl.addWidget(title_label(tr("The next two weeks"), "subtitle"))
@@ -115,6 +144,13 @@ class ReviewPage(QWidget):
         self.quiz.answered_question.connect(self._answered)
         self.quiz.finished.connect(self._session_finished)
         self.stack.addWidget(self.quiz)
+
+        # --- a flashcard session
+        self.flashcards = FlashcardSession()
+        self.flashcards.answered.connect(self._flashcard_answered)
+        self.flashcards.finished.connect(lambda *_: self.ctx.signals.progressChanged.emit())
+        self.flashcards.back.connect(self.refresh)
+        self.stack.addWidget(self.flashcards)
 
     # ------------------------------------------------------------- content
     def today(self) -> date:
@@ -151,6 +187,7 @@ class ReviewPage(QWidget):
                 tr("Any quiz question you answer wrongly is kept here and asked again tomorrow, then at "
                    "growing intervals until you have it for good."))
         self.start_btn.setVisible(bool(self._items))
+        self._fill_flashcards(today)
         self._fill_schedule(today)
         self._fill_deck(cards, today)
 
@@ -164,6 +201,35 @@ class ReviewPage(QWidget):
             items.append(QuizItem(entry.lesson_id, entry.index, lesson.quiz[entry.index],
                                   source=f"{entry.lesson_id} · {lesson.title}"))
         return items
+
+    def _fill_flashcards(self, today: date) -> None:
+        store = self.ctx.store
+        total = len(store.data.flashcards)
+        self._cards = self._to_flashcards(store.due_flashcards(today))
+        if self._cards:
+            text = tr("{count} term(s) due today, out of {total} in your deck.").format(
+                count=len(self._cards), total=total)
+        elif total:
+            text = tr("Nothing due today. {total} term(s) are in your deck.").format(total=total)
+        else:
+            text = tr("No terms yet. Add them from the Glossary, or from a lesson with "
+                      "\"Add the terms to my flashcards\".")
+        if store.data.terms_learned:
+            text += " " + tr("Learned for good so far: {count}.").format(count=store.data.terms_learned)
+        self.flash_detail.setText(text)
+        self.flash_btn.setVisible(bool(self._cards))
+        self.forget_flash_btn.setVisible(bool(total))
+
+    def _to_flashcards(self, cards: list[review.TermCard]) -> list[Flashcard]:
+        glossary = self.ctx.glossary
+        out = []
+        for entry in cards:
+            term = glossary.get(entry.term)
+            if term is None:
+                continue
+            related = ", ".join(glossary[k].term for k in term.see_also if k in glossary)
+            out.append(Flashcard(entry.term, term.term, term.definition, related))
+        return out
 
     def _fill_schedule(self, today: date) -> None:
         while self.schedule_grid.count():
@@ -215,6 +281,24 @@ class ReviewPage(QWidget):
         self.quiz.load_review(self._items)
         self.quiz.start()
         self.stack.setCurrentIndex(1)
+
+    def start_flashcards(self) -> None:
+        if not self._cards:
+            return
+        self.flashcards.load(self._cards)
+        self.stack.setCurrentIndex(2)
+
+    def _flashcard_answered(self, key: str, knew_it: bool) -> None:
+        self.ctx.store.record_flashcard(key, knew_it, self.today())
+
+    def _forget_flashcards(self) -> None:
+        answer = QMessageBox.question(
+            self, tr("Empty the flashcards?"),
+            tr("This removes every glossary term from your flashcard deck. Nothing else is affected."))
+        if answer == QMessageBox.Yes:
+            self.ctx.store.forget_flashcards()
+            self.ctx.signals.progressChanged.emit()
+            self.refresh()
 
     def _answered(self, lesson_id: str, index: int, correct: bool) -> None:
         self.ctx.store.record_question(lesson_id, index, correct, self.today())

@@ -14,6 +14,7 @@ from PySide6.QtWidgets import (
     QWidget,
 )
 
+from cosmos import review
 from cosmos.content.loader import load_problems
 from cosmos.content.models import Lesson
 from cosmos.gui.context import AppContext
@@ -31,6 +32,7 @@ class LessonPage(QWidget):
         super().__init__(parent)
         self.ctx = ctx
         self.lesson: Lesson | None = None
+        self.terms: list[str] = []
 
         root = QVBoxLayout(self)
         root.setContentsMargins(20, 14, 20, 12)
@@ -102,6 +104,11 @@ class LessonPage(QWidget):
         nav.addStretch(1)
         nav.addLayout(self.sim_buttons)
         nav.addStretch(1)
+        self.terms_btn = QPushButton("🃏 " + tr("Add the terms to my flashcards"))
+        self.terms_btn.setToolTip(tr("Put every glossary term this lesson uses into your flashcard deck. They "
+                                     "come back on the Review page until you know them."))
+        self.terms_btn.clicked.connect(self._add_terms)
+        nav.addWidget(self.terms_btn)
         self.quiz_btn = QPushButton(tr("Take the quiz ▶"))
         self.quiz_btn.setObjectName("quizButton")
         self.quiz_btn.setProperty("role", "primary")
@@ -135,6 +142,8 @@ class LessonPage(QWidget):
         self.quiz.load(lesson, store.data.quiz_best.get(lesson_id))
         self._load_teacher_notes(lesson_id)
         self.tabs.setCurrentIndex(0)
+        self.terms = review.lesson_terms(lesson.body, lesson.id, self.ctx.glossary)
+        self.terms_btn.setVisible(bool(self.terms))
 
         while self.sim_buttons.count():
             item = self.sim_buttons.takeAt(0)
@@ -274,6 +283,14 @@ class LessonPage(QWidget):
         return "\n".join(lines)
 
     # ------------------------------------------------------------ handlers
+    def _add_terms(self) -> None:
+        added = self.ctx.store.add_flashcards(self.terms)
+        message = (tr("{added} new term(s) added to your flashcards; they are due today on the Review page")
+                   .format(added=added) if added
+                   else tr("Every term of this lesson is already in your flashcards"))
+        self.ctx.signals.statusMessage.emit(message)
+        self.ctx.signals.progressChanged.emit()
+
     def _refresh_teacher_notes(self) -> None:
         if self.lesson is not None:
             self._load_teacher_notes(self.lesson.id)

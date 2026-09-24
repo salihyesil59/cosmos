@@ -41,6 +41,8 @@ class UserData:
     review: dict[str, dict] = field(default_factory=dict)           # "L1.2#3" -> spaced-repetition card
     review_learned: int = 0                                         # cards that left the deck for good
     reviews_cleared: int = 0                                        # review sessions answered in full
+    flashcards: dict[str, dict] = field(default_factory=dict)       # G22: glossary key -> review card
+    terms_learned: int = 0                                          # flashcards that left the deck for good
     font_scale: float = 1.0                                         # interface text size, 0.8 to 1.6
     classroom: bool = False                                         # G19: show teacher notes in lessons
     update_check: str = "ask"                                       # E13: "ask", "on" or "off"
@@ -59,7 +61,7 @@ BACKUP_FORMAT = 1
 # whatever this machine already uses.
 _DEVICE_FIELDS = ("theme", "language", "font_scale", "update_check", "update_last_checked")
 _RECORD_FIELDS = ("quiz_best", "completed", "lessons_opened", "simulators_opened", "notes",
-                  "bookmarks", "challenges_done", "problems_solved", "review", "achievements")
+                  "bookmarks", "challenges_done", "problems_solved", "review", "achievements", "flashcards")
 
 
 class BackupError(ValueError):
@@ -251,6 +253,58 @@ class ProgressStore:
         if doomed:
             self.save()
         return len(doomed)
+
+    # ------------------------------------------------ flashcards (G22)
+    def add_flashcards(self, keys, today=None) -> int:
+        """Put glossary terms in the flashcard deck; returns how many were new."""
+        from cosmos import review
+
+        stamp = today or date.today()
+        added = 0
+        for key in keys:
+            if key not in self.data.flashcards:
+                self.data.flashcards[key] = review.new_term(stamp)
+                added += 1
+        if added:
+            self.save()
+        return added
+
+    def remove_flashcard(self, key: str) -> bool:
+        if self.data.flashcards.pop(key, None) is None:
+            return False
+        self.save()
+        return True
+
+    def has_flashcard(self, key: str) -> bool:
+        return key in self.data.flashcards
+
+    def record_flashcard(self, key: str, knew_it: bool, today=None) -> bool:
+        """Move a flashcard after the learner has judged their answer. True if it was learned."""
+        from cosmos import review
+
+        before = self.data.flashcards.get(key)
+        if before is None:
+            return False
+        after = review.after_answer(before, knew_it, today or date.today())
+        if after is None:
+            del self.data.flashcards[key]
+            self.data.terms_learned += 1
+        else:
+            self.data.flashcards[key] = after
+        self.save()
+        return after is None
+
+    def due_flashcards(self, today=None) -> list:
+        from cosmos import review
+
+        return review.terms_due(self.data.flashcards, today or date.today())
+
+    def forget_flashcards(self) -> int:
+        count = len(self.data.flashcards)
+        if count:
+            self.data.flashcards.clear()
+            self.save()
+        return count
 
     # ------------------------------------------------------- achievements
     def refresh_achievements(self, curriculum: Curriculum) -> list[str]:

@@ -49,6 +49,10 @@ The first round of Phase 4 (see [ROADMAP.md](ROADMAP.md)).
 - **Fourteen new worked problems** for the Phase 4 lessons and simulators: WIMP
   recoils, axion frequencies, the dark-ages gas, the 21-cm line, virial
   temperatures, disc sizes, peak heights, the Big Rip and black-hole evaporation
+- **Glossary flashcards**: add a term from the glossary, or all the terms of a
+  lesson with one button; they come back on the Review page on the same 1-3-7-16-35
+  day schedule as missed quiz questions. Space turns a card over, 1 and 2 say
+  whether you knew it. A new badge, *Words of the trade*, for ten terms learned
 - **The README's numbers are checked**: `tools/content_stats.py` counts the
   content, a test fails when the README falls behind, and `--write` fixes it
 - Fifteen guided challenges for the five new simulators; the Turkish pack is
