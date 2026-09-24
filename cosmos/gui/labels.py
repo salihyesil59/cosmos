@@ -107,6 +107,13 @@ SIRENS = [
 ]
 
 # The status of a lesson, as LessonStatus spells it.
+BACKUP_ERRORS = [
+    tr_noop("The file is not valid JSON."),
+    tr_noop("The file does not contain a Cosmos backup."),
+    tr_noop("The backup was made by a newer version of Cosmos."),
+    tr_noop("The backup is damaged."),
+]
+
 LESSON_STATUS = [tr_noop("completed"), tr_noop("ready"), tr_noop("not ready")]
 
 # The units format_time() and the zoom simulator can choose.

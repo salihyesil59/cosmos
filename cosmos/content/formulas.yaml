@@ -528,3 +528,27 @@
   symbols: '$M$ the mass of the black hole'
   description: Colder than the CMB for anything astrophysical, so real black holes only grow.
   lesson: L6.9
+
+- id: saha-hydrogen
+  group: Thermal history
+  title: Saha equation for hydrogen
+  formula: '\frac{x_e^2}{1-x_e} = \frac{1}{n_{\mathrm{H}}}\left(\frac{m_e k_B T}{2\pi\hbar^2}\right)^{3/2} e^{-B/k_B T}'
+  symbols: '$x_e$ the ionised fraction, $n_{\mathrm{H}}$ the hydrogen density, $B = 13.6$ eV'
+  description: Equilibrium puts recombination at z ≈ 1370; the n = 2 bottleneck delays the real one to about 1270.
+  lesson: L4.4
+
+- id: big-rip-time
+  group: Dark matter and dark energy
+  title: Time until a Big Rip
+  formula: 't_{\mathrm{rip}} - t_0 \approx \frac{2}{3\,|1+w|\,H_0\sqrt{1-\Omega_m}}'
+  symbols: '$w < -1$ the equation of state of phantom energy'
+  description: About 22 billion years for w = −1.5, and further away the closer w is to −1.
+  lesson: L6.10
+
+- id: black-hole-evaporation
+  group: Dark matter and dark energy
+  title: Lifetime of an evaporating black hole
+  formula: 't_{\mathrm{evap}} = \frac{5120\,\pi\,G^2 M^3}{\hbar c^4} \approx 2\times10^{67}\ \mathrm{yr}\left(\frac{M}{M_\odot}\right)^3'
+  symbols: '$M$ the mass of the black hole'
+  description: The M³ stretches the far future to 10¹⁰⁰ years for the largest black holes.
+  lesson: L6.10

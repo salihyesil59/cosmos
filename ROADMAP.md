@@ -5,9 +5,10 @@ step: from the very basics (scales, light, gravity) to advanced research topics
 (inflation, CMB physics, structure formation). Every lesson is paired with
 interactive simulators, guidance and quizzes.
 
-The project grows in phases. **Phase 1** built the core application and **Phase 2**
-worked through the backlog; both are finished. **Phase 3** at the end of this file
-collects what could come next.
+The project grows in phases. **Phase 1** built the core application, **Phase 2**
+worked through the backlog and **Phase 3** added the craft of cosmology, real data
+and the packaged releases; all three are finished. **Phase 4** at the end of this
+file collects what comes next.
 
 Legend: `[x]` done · `[ ]` planned
 
@@ -209,3 +210,44 @@ since (the course now has 53 lessons and 23 simulators).
 - [x] `E13` Update check for the packaged app (opt-in, no telemetry)
 - [x] `E14` A plugin interface so a teacher can add their own simulator without touching the app
 - [x] `E15` Real CMB and large-scale-structure data (the WMAP 9-year ILC map, an SDSS DR18 slice) with a licence check
+
+---
+
+## Phase 4 — Next steps
+
+Phase 3 is complete: 53 lessons, 24 simulators, real CMB and galaxy data, packages
+for three platforms and a plugin interface. Phase 4 fills the remaining gaps in the
+story — how the universe became transparent, how it will end, what dark matter
+might be, how the first galaxies formed — and makes the learner's own record
+safer and more portable. ★ marks the ones worth doing first; ticked items are done.
+
+### Curriculum
+
+- [x] ★ `L6.10` The far future: heat death, Big Rip or Big Crunch
+- [ ] `L3.6` Hunting dark matter: WIMPs, axions, sterile neutrinos and the experiments that look for them
+- [ ] `L4.8` The dark ages and cosmic dawn: the first stars, the first galaxies and what JWST found
+- [ ] `L5.8` Galaxy formation: gas cooling, feedback and how galaxies live in their haloes
+- [ ] `L7.7` Reading a cosmology paper: from the abstract to the contour plot
+
+### Simulators
+
+- [x] ★ `S25` Recombination Explorer: Saha against Peebles, the visibility function, and why 3000 K
+- [x] ★ `S26` The Far Future: the expansion ahead, a timeline to 10¹⁰⁰ years and the Big Rip countdown
+- [ ] `S27` Halo Mass Function Explorer: Press–Schechter, how many clusters of each mass, and σ8
+- [ ] `S28` 21-cm Global Signal Explorer: the absorption trough of cosmic dawn and what shapes it
+- [ ] `S29` Dark Matter Detection: recoil spectra, backgrounds and how an exclusion curve is drawn
+
+### Guidance & learning
+
+- [x] ★ `G21` Back up and restore progress: everything learned, notes and the review deck in one file
+- [ ] `G22` Glossary flashcards, scheduled by the same spaced-repetition deck as the quizzes
+- [ ] `G23` A study streak and a gentle daily goal on the home page
+- [ ] `G24` "Remember this" cards at the end of every lesson, collected into a printable sheet
+- [ ] `G25` Worked problems for L6.10 and the two new simulators
+
+### Extras & quality
+
+- [ ] `E16` A style check (ruff) in continuous integration
+- [ ] `E17` A test that keeps the numbers in the README (lessons, simulators, questions) in step with the content
+- [ ] `E18` A second full interface language (German or Spanish), with a contributor guide for translators
+- [ ] `E19` Export the course as a static website that runs in a browser without installing anything

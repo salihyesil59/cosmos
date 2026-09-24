@@ -464,3 +464,82 @@ S24:
     min: 5.0
   - field: rms
     max: 35
+S25:
+- id: saha-is-early
+  task: 'Find out how far behind equilibrium the real universe falls: with our universe''s settings, read how much
+    earlier in redshift Saha puts the moment when half the hydrogen is neutral. It should be more than 60.'
+  hint: The second line of the summary gives the Saha redshift and the delay. Press <b>Back to our universe</b>
+    if you have changed anything.
+  success: About a hundred in redshift — some 50 000 years. An electron captured straight into the ground state
+    emits a photon that ionises the next atom, so every atom has to get down through the n = 2 level, and that
+    is slow.
+  check:
+  - field: omega_b_h2
+    min: 0.02
+    max: 0.025
+  - field: t_cmb
+    min: 2.7
+    max: 2.75
+  - field: delay
+    min: 60
+- id: same-temperature
+  task: Make today's universe twice as warm (at least 5.4 K) and check that the light is still released at about
+    3000 K, even though the redshift is very different.
+  hint: Drag <b>CMB temperature today</b> to 5.45 K and read the last-scattering line in the summary.
+  success: Recombination happens at a temperature, not a date. A warmer universe today simply had to expand
+    for longer to reach 3000 K, so its CMB comes from a lower redshift.
+  check:
+  - field: t_cmb
+    min: 5.4
+  - field: t_peak
+    min: 2700
+    max: 3300
+  - field: z_peak
+    max: 700
+- id: fewer-baryons
+  task: Lower the baryon density until more than five in ten thousand electrons never recombine.
+  hint: Turn on the <b>Logarithmic ionisation axis</b> and bring <b>Baryon density Ωb h²</b> down towards 0.01.
+  success: With fewer protons about, a free electron takes longer to find one, and the expansion wins the race
+    sooner. The frozen-out fraction depends on the baryon density — one of the ways the CMB weighs the baryons.
+  check:
+  - field: omega_b_h2
+    max: 0.015
+  - field: x_freeze
+    min: 0.0005
+S26:
+- id: out-of-reach
+  task: 'In our universe, find out how much of what we can see is already out of reach: a signal sent today must
+    be able to reach fewer than 6% of the galaxies we observe.'
+  hint: Choose <b>Our universe</b> and read the reachable fraction in the summary, or open <b>Galaxies we can
+    still reach</b>.
+  success: About 5%. The other 95% are beyond the cosmological event horizon — we still see their old light, but
+    nothing we send now will ever arrive.
+  check:
+  - field: preset
+    equals: ours
+  - field: reachable
+    max: 0.06
+- id: rip-countdown
+  task: Make the dark energy phantom enough that the Big Rip comes within 25 billion years, then find how long
+    before the end the Earth is torn apart.
+  hint: Choose <b>Phantom energy, w = −1.5</b>, or drag <b>Equation of state w</b> below −1.4. The Earth's fate is
+    in the summary and in the <b>Big Rip countdown</b> tab.
+  success: About half an hour before the end. By then clusters and galaxies are long gone, and the Solar System
+    came apart months earlier.
+  check:
+  - field: fate
+    contains: Big Rip
+  - field: end_gyr
+    max: 25
+  - field: earth_seconds
+    max: 3600
+- id: crunch
+  task: Give the universe a Big Crunch that comes within 100 billion years.
+  hint: Drag <b>Dark energy ΩΛ</b> below zero, or add a lot of matter.
+  success: A negative vacuum energy pulls instead of pushing, so it always ends in a recollapse. The same would
+    happen with enough matter and no dark energy at all.
+  check:
+  - field: fate
+    contains: Crunch
+  - field: end_gyr
+    max: 100

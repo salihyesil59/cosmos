@@ -353,6 +353,14 @@ class MainWindow(QMainWindow):
         file_menu = menu.addMenu(tr("&File"))
         file_menu.addAction(action(tr("Export notes…"), tr("Save all notes and bookmarks as a Markdown file"),
                                    self.notes_page.export))
+        file_menu.addAction(action(tr("Back up progress…"),
+                                   tr("Save everything you have learned, your notes and your review deck in one "
+                                      "file, to keep or to carry to another computer"),
+                                   self.backup_progress))
+        file_menu.addAction(action(tr("Restore progress…"),
+                                   tr("Replace your progress with a backup made earlier, here or on another "
+                                      "computer"),
+                                   self.restore_progress))
         file_menu.addSeparator()
         self.print_lesson_action = action(
             tr("Print this lesson as PDF…"),
@@ -761,6 +769,49 @@ class MainWindow(QMainWindow):
             notes = {key: note.markdown(labels) for key, note in load_teacher_notes().items()}
         return PdfOptions(title=title, subtitle=subtitle, math_view=self.ctx.store.data.math_view,
                           teacher_notes=notes)
+
+    # ------------------------------------------------------ backup (G21)
+    def backup_progress(self) -> None:
+        from datetime import date
+
+        from PySide6.QtWidgets import QFileDialog, QMessageBox
+
+        suggested = f"cosmos-backup-{date.today().isoformat()}.json"
+        path, _filter = QFileDialog.getSaveFileName(self, tr("Back up progress"), suggested,
+                                                    tr("Cosmos backup") + " (*.json)")
+        if not path:
+            return
+        try:
+            self.ctx.store.export_backup(path)
+        except OSError as error:
+            QMessageBox.warning(self, tr("Could not save the backup"), str(error))
+            return
+        self.statusBar().showMessage(tr("Progress backed up to {path}").format(path=path), 8000)
+
+    def restore_progress(self) -> None:
+        from PySide6.QtWidgets import QFileDialog, QMessageBox
+
+        from cosmos.progress import BackupError
+
+        path, _filter = QFileDialog.getOpenFileName(self, tr("Restore progress"), "",
+                                                    tr("Cosmos backup") + " (*.json)")
+        if not path:
+            return
+        answer = QMessageBox.question(
+            self, tr("Restore progress"),
+            tr("Replace your current progress, notes, bookmarks and review deck with the ones in this "
+               "backup? What you have now will be lost unless you back it up first."))
+        if answer != QMessageBox.Yes:
+            return
+        try:
+            self.ctx.store.import_backup(path)
+        except BackupError as error:
+            QMessageBox.warning(self, tr("Could not restore the backup"),
+                                physics(str(error)) + "\n\n" + tr("Nothing was changed."))
+            return
+        self.ctx.signals.progressChanged.emit()
+        self.ctx.signals.notesChanged.emit()
+        self.statusBar().showMessage(tr("Progress restored from {path}").format(path=path), 8000)
 
     def _save_pdf(self, suggested: str, lessons, subtitle: str) -> None:
         """Ask where to put the file, render it, and say what happened."""

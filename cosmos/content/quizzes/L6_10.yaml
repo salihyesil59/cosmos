@@ -1,0 +1,48 @@
+- question: "In a universe with a cosmological constant, what does the expansion look like far in the future?"
+  choices:
+    - "It slows down and stops"
+    - "It becomes exponential, with distances growing by a factor e about every 17 billion years"
+    - "It becomes infinite in a finite time"
+    - "It stays linear in time"
+  answer: 1
+  explanation: "Once matter has thinned out, H = H₀√ΩΛ is constant and a(t) ∝ exp(H₀√ΩΛ t)."
+- question: "Roughly what fraction of the galaxies we can see today could a light signal sent now ever reach?"
+  choices:
+    - "All of them"
+    - "About half"
+    - "About 5%"
+    - "None"
+  answer: 2
+  explanation: "The event horizon lies about 16.7 billion light years away, against 46 for the particle horizon; (16.7/46)³ ≈ 5%."
+- question: "Why does phantom energy (w < −1) lead to a Big Rip?"
+  choices:
+    - "Because it makes the universe closed"
+    - "Because its density grows as space expands, so the expansion rate diverges in a finite time"
+    - "Because it turns into matter"
+    - "Because it has negative mass"
+  answer: 1
+  explanation: "The density scales as a^(−3(1+w)); for w < −1 the exponent is positive, H grows without limit and a → ∞ at a finite time."
+- question: "In a Big Rip with w = −1.5, in what order are bound systems destroyed?"
+  choices:
+    - "Atoms first, then planets, then galaxies"
+    - "All at the same moment"
+    - "Galaxy clusters first, then galaxies, then the Solar System, the Earth and finally atoms"
+    - "Only galaxies are destroyed"
+  answer: 2
+  explanation: "A system with orbital period P lasts until about P√(2|1+3w|)/(6π|1+w|) before the rip, so the loosest (longest-period) systems go first."
+- question: "Why do black holes take so long to evaporate?"
+  choices:
+    - "Hawking radiation does not exist"
+    - "The lifetime grows as M³, and they cannot shrink at all while the CMB is warmer than they are"
+    - "They keep swallowing stars"
+    - "They are held together by dark energy"
+  answer: 1
+  explanation: "t_evap ≈ 2 × 10⁶⁷ yr (M/M☉)³, and a black hole colder than the CMB absorbs more than it radiates."
+- question: "What do today's measurements say about the far future?"
+  choices:
+    - "A Big Rip within 5 billion years is certain"
+    - "w is within a few per cent of −1, so a heat death and a distant Big Rip are both still allowed"
+    - "The universe will certainly recollapse"
+    - "Dark energy is known to be exactly a cosmological constant"
+  answer: 1
+  explanation: "w = −1.03 ± 0.03 is consistent with Λ and with slightly phantom or quintessence values; only a near-term rip is excluded."

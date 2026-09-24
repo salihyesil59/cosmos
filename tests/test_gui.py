@@ -924,7 +924,7 @@ def test_polarisation_and_black_hole_lessons(window):
         assert "CSMTOKEN" not in text and "$$" not in text
     assert "S22" in window.ctx.curriculum.lessons["L6.9"].simulators
     assert "S22" in window.ctx.curriculum.lessons["L6.5"].simulators
-    assert window.ctx.curriculum.levels[6].lesson_ids[-1] == "L6.9"
+    assert window.ctx.curriculum.levels[6].lesson_ids[-2:] == ["L6.9", "L6.10"]
     assert window.ctx.curriculum.levels[5].lesson_ids[-1] == "L5.7"
 
 
@@ -1234,3 +1234,130 @@ def test_the_mock_can_be_compared_with_the_real_sky(window):
     mock_separation, _true, mock_xi = s23._correlations()
     assert len(separation) == len(mock_separation)
     s23.real_plot.refresh()
+
+
+def test_backing_up_and_restoring_progress(window, tmp_path, monkeypatch):
+    """G21: the File menu writes a backup and reads it back, and a bad file changes nothing."""
+    from PySide6.QtWidgets import QFileDialog, QMessageBox
+
+    store = window.ctx.store
+    target = tmp_path / "backup.json"
+    monkeypatch.setattr(QFileDialog, "getSaveFileName", staticmethod(lambda *a, **k: (str(target), "")))
+    monkeypatch.setattr(QFileDialog, "getOpenFileName", staticmethod(lambda *a, **k: (str(target), "")))
+    monkeypatch.setattr(QMessageBox, "question", staticmethod(lambda *a, **k: QMessageBox.Yes))
+    warnings = []
+    monkeypatch.setattr(QMessageBox, "warning", staticmethod(lambda *a, **k: warnings.append(a[2])))
+
+    store.set_note("lesson:L0.3", "Redshift is a stretch, not a speed.")
+    window.backup_progress()
+    assert target.exists() and "backed up" in window.statusBar().currentMessage()
+
+    store.set_note("lesson:L0.3", "")
+    window.restore_progress()
+    pump()
+    assert store.note("lesson:L0.3") == "Redshift is a stretch, not a speed."
+    assert "restored" in window.statusBar().currentMessage()
+
+    target.write_text("{}", encoding="utf-8")
+    window.restore_progress()
+    assert warnings and "Nothing was changed" in warnings[-1]
+    assert store.note("lesson:L0.3") == "Redshift is a stretch, not a speed."
+
+
+def test_recombination_explorer(window):
+    """S25: Saha against Peebles, the last-scattering shell and the three challenges."""
+    window.navigate("sim:S25")
+    pump()
+    host = window.stack.currentWidget()
+    s25 = host.simulator
+    state = s25.state()
+    assert state["z_half_saha"] > state["z_half"] > state["z_peak"]
+    assert state["z_peak"] == pytest.approx(1090, rel=0.03)
+    assert 2800 < state["t_peak"] < 3200
+    assert "3000 K" in s25.banner.label.text()
+
+    bar = host.challenge_bar
+    assert bar is not None and len(host.challenges) == 3
+    bar.go(0)
+    assert bar.check() is True                       # Saha is early on the default settings
+
+    s25.t_cmb.setValue(5.45)
+    s25.recompute()
+    assert "Same temperature" in s25.banner.label.text()
+    bar.go(1)
+    assert bar.check() is True
+
+    s25._reset()
+    s25.omega_b.setValue(0.01)
+    s25.recompute()
+    assert "Not our universe" in s25.banner.label.text()
+    bar.go(2)
+    assert bar.check() is True
+
+    for checked in (False, True):
+        s25.show_saha.setChecked(checked)
+        s25.log_scale.setChecked(checked)
+        for plot in (s25.ionisation_plot, s25.visibility_plot, s25.photons_plot):
+            plot.refresh()
+    header, rows = s25._csv()
+    assert len(header) == 6 and len(rows) > 100
+    s25._reset()
+    s25.recompute()
+    assert s25.state()["omega_b_h2"] == pytest.approx(0.0224, abs=1e-4)
+
+
+def test_far_future(window):
+    """S26: every preset, the Big Rip countdown and the three challenges."""
+    window.navigate("sim:S26")
+    pump()
+    host = window.stack.currentWidget()
+    s26 = host.simulator
+    state = s26.state()
+    assert state["preset"] == "ours" and state["fate"] == "accelerates forever"
+    assert 0.03 < state["reachable"] < 0.06
+    assert state["milestones"] == 9
+    bar = host.challenge_bar
+    assert bar is not None and len(host.challenges) == 3
+    bar.go(0)
+    assert bar.check() is True
+
+    fates = {}
+    for index in range(s26.preset.count()):
+        key = s26.preset.itemData(index)
+        if key == "custom":
+            continue
+        s26.preset.setCurrentIndex(index)
+        s26.recompute()
+        fates[key] = s26.state()["fate"]
+        for plot in (s26.scale_plot, s26.timeline_plot, s26.rip_plot, s26.reach_plot):
+            plot.refresh()
+    assert fates["phantom"] == fates["mild"] == "ends in a Big Rip"
+    assert fates["crunch"] == "recollapses in a Big Crunch"
+    assert fates["matter"] == "expands forever"
+    assert fates["quintessence"] == "accelerates forever"
+
+    s26.preset.setCurrentIndex(s26.preset.findData("phantom"))
+    s26.recompute()
+    assert "Big Rip" in s26.banner.label.text()
+    assert 10 < s26.state()["earth_seconds"] / 60 < 60           # about half an hour
+    bar.go(1)
+    assert bar.check() is True
+
+    # Moving a slider makes it the learner's own universe.
+    s26.ol.setValue(-0.4)
+    s26.recompute()
+    assert s26.state()["preset"] == "custom"
+    assert "Big Crunch" in s26.banner.label.text()
+    bar.go(2)
+    assert bar.check() is True
+    header, rows = s26._csv()
+    assert header[0] == "time_from_now_Gyr" and rows
+
+
+def test_far_future_lesson(window):
+    window.navigate("lesson:L6.10")
+    pump()
+    assert window.lesson_page.lesson.id == "L6.10"
+    text = window.lesson_page.browser.toPlainText()
+    assert "CSMTOKEN" not in text and "$$" not in text and "Big Rip" in text
+    assert "S26" in window.lesson_page.lesson.simulators
