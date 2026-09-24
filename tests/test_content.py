@@ -114,3 +114,20 @@ def test_every_lesson_ends_with_something_to_remember():
         points = lesson.remember
         assert len(points) >= 3, f"{lesson.id} needs a closing summary with at least three points"
         assert all(len(point) > 10 for point in points), lesson.id
+
+
+@pytest.mark.parametrize("lesson_id", LESSON_IDS)
+def test_no_stray_callout_markers(lesson_id):
+    """A ':::' left over (for example after a one-line ':::try') would show up as text."""
+    import os
+
+    os.environ.setdefault("QT_QPA_PLATFORM", "offscreen")
+    from PySide6.QtGui import QGuiApplication
+
+    from cosmos.gui.rendering.lesson_html import RenderContext, render_markdown
+    from cosmos.gui.theme import LIGHT
+
+    QGuiApplication.instance() or QGuiApplication([])
+    body = CURRICULUM.lessons[lesson_id].body
+    html = render_markdown(body.replace("{{figure:", "{{nofigure:"), RenderContext(palette=LIGHT)).html
+    assert ":::" not in html, f"{lesson_id} has a stray ':::' marker"

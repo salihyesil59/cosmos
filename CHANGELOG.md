@@ -65,6 +65,12 @@ The first round of Phase 4 (see [ROADMAP.md](ROADMAP.md)).
   passes, what "±", "95% upper limit", "tension" and "evidence" claim, parameter
   tables, triangle plots, and six questions to ask before believing a surprise —
   with a quiz, teacher notes, three glossary terms and a worked problem on S₈
+- **The course as a website**: *File → Export the course as a website*, or
+  `python tools/build_site.py`, writes a reading edition — every lesson with its
+  formulas, figures, "Remember this" card and a working quiz, the glossary, the
+  formula sheet, the worked problems with answer checking, and a catalogue of the
+  simulators — as about 60 plain HTML pages that work offline from any folder.
+  Every push to main builds it as a CI artifact
 - **A style check in CI**: ruff (pycodestyle, pyflakes, bugbear, pyupgrade; rules
   in `ruff.toml`) runs on every push, and packages are only built when it passes.
   Getting there removed unused imports, renamed ambiguous and unused loop
@@ -76,6 +82,11 @@ The first round of Phase 4 (see [ROADMAP.md](ROADMAP.md)).
   complete at 2011 strings
 
 ### Fixed
+
+- Fifteen one-line `:::try` boxes written this round were followed by a stray
+  `:::`, and seven older ones had wrapped onto a second line; both showed up as
+  text in the lesson. A content test now renders every lesson and fails on any
+  leftover marker. The try-box link also no longer says "Open the The Far Future"
 
 - Two worked problems shared the id `p6-schwarzschild`, so solving one marked
   both, and the test that recomputes every answer silently checked only one. The

@@ -70,6 +70,11 @@ class RenderContext:
     math_view: str = FULL_VIEW    # FULL_VIEW shows every formula, INTUITIVE_VIEW hides them
 
 
+def _with_article(title: str) -> str:
+    """"the Cosmology Calculator", but "The Far Future" rather than "the The Far Future"."""
+    return title if title.lower().startswith("the ") else f"the {title}"
+
+
 class _Renderer:
     def __init__(self, ctx: RenderContext):
         self.ctx = ctx
@@ -126,7 +131,7 @@ class _Renderer:
         body = self._inline_markdown(text) if text else ""
         link = (
             f'<p style="margin:6px 0 0 0;"><a href="sim:{sim_id}" style="color:{p.link}; '
-            f'text-decoration:none;"><b>▶ Open the {html.escape(title)}</b></a></p>'
+            f'text-decoration:none;"><b>▶ Open {html.escape(_with_article(title))}</b></a></p>'
         )
         return self._callout("try", f"Try it: {title}", f"<p style='margin:0;'>{body}</p>{link}")
 

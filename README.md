@@ -69,6 +69,10 @@ on first launch.
   flashcard, problem and challenge is a step; one day off does not break the streak
 - **Remember this**: every lesson ends with a card of its key points, and the cards of
   the lessons you have completed collect into a sheet you can read or print
+- **A website of the course**: *File → Export the course as a website* (or
+  `python tools/build_site.py`) writes every lesson, with working quizzes, the glossary,
+  the formula sheet and the worked problems as plain web pages that open in any browser,
+  offline, with nothing to install
 - **Print anything**: one lesson, one level or the whole course as a PDF, with its
   figures, its quiz and an answer key
 - **Classroom mode**: a progress report a teacher can read, and teacher notes for

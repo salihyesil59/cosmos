@@ -378,6 +378,10 @@ class MainWindow(QMainWindow):
         file_menu.addAction(action(tr("Print the whole course as PDF…"),
                                    tr("All lessons in one file. It is long; give it a moment."),
                                    self.export_course_pdf))
+        file_menu.addAction(action(tr("Export the course as a website…"),
+                                   tr("Every lesson, the glossary, the formulas and the problems as web pages that "
+                                      "open in any browser, without installing anything"),
+                                   self.export_website))
         file_menu.addAction(action(tr("Print the “Remember this” sheet…"),
                                    tr("The key points of every lesson you have completed, on a few pages"),
                                    self.export_remember_pdf))
@@ -884,6 +888,38 @@ class MainWindow(QMainWindow):
         cur = self.ctx.curriculum
         self._save_pdf("cosmos_course.pdf", [cur.lessons[i] for i in cur.ordered_ids],
                        tr("The whole course"))
+
+    # ------------------------------------------------------ website (E19)
+    def export_website(self) -> None:
+        from pathlib import Path
+
+        from PySide6.QtWidgets import QApplication, QFileDialog, QMessageBox
+
+        from cosmos.gui.rendering.site import build_site
+
+        parent = QFileDialog.getExistingDirectory(self, tr("Choose a folder for the website"))
+        if not parent:
+            return
+        target = Path(parent) / "cosmos-website"
+        if target.exists() and any(target.iterdir()):
+            answer = QMessageBox.question(
+                self, tr("Replace the website?"),
+                tr("{path} already exists. Replace it with a fresh copy?").format(path=target))
+            if answer != QMessageBox.Yes:
+                return
+        QApplication.setOverrideCursor(Qt.WaitCursor)
+        self.statusBar().showMessage(tr("Building the website — this takes about a minute…"))
+        QApplication.processEvents()
+        try:
+            report = build_site(target)
+        except OSError as error:
+            QMessageBox.warning(self, tr("Could not write the website"), str(error))
+            return
+        finally:
+            QApplication.restoreOverrideCursor()
+        self.statusBar().showMessage(
+            tr("Website written: {pages} pages in {path}. Open index.html in a browser.")
+            .format(pages=len(report.pages), path=target), 15000)
 
     # ------------------------------------------------ remember this (G24)
     def remember_lessons(self) -> tuple[list, bool]:

@@ -1647,3 +1647,25 @@ def test_reading_a_paper_lesson(window):
     assert "CSMTOKEN" not in text and "$$" not in text and "triangle plot" in text
     assert "Remember this" in text and "From an abstract" in text
     assert window.ctx.curriculum.levels[7].lesson_ids[-1] == "L7.7"
+
+
+def test_exporting_the_website(window, tmp_path, monkeypatch):
+    """E19: File → Export the course as a website builds into a folder of its own."""
+    from PySide6.QtWidgets import QFileDialog
+
+    from cosmos.gui.rendering import site
+
+    built = []
+
+    class Report:
+        pages = ["index.html"] * 63
+
+    monkeypatch.setattr(site, "build_site", lambda out: built.append(out) or Report())
+    monkeypatch.setattr(QFileDialog, "getExistingDirectory", staticmethod(lambda *a, **k: str(tmp_path)))
+    window.export_website()
+    assert built == [tmp_path / "cosmos-website"]
+    assert "63 pages" in window.statusBar().currentMessage()
+
+    monkeypatch.setattr(QFileDialog, "getExistingDirectory", staticmethod(lambda *a, **k: ""))
+    window.export_website()
+    assert len(built) == 1                      # cancelled: nothing built
