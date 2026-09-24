@@ -1,5 +1,8 @@
 # Cosmos
 
+[![Latest release](https://img.shields.io/github/v/release/salihyesil59/cosmos?sort=semver&label=download&color=2e7d32)](https://github.com/salihyesil59/cosmos/releases/latest)
+[![Downloads](https://img.shields.io/github/downloads/salihyesil59/cosmos/total?label=downloads&color=0277bd)](https://github.com/salihyesil59/cosmos/releases)
+
 An interactive desktop application that teaches cosmology, from the size of the
 universe and the nature of light to the Friedmann equations, dark energy, the first
 minutes after the Big Bang, the growth of cosmic structure, inflation and the open
