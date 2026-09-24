@@ -243,11 +243,11 @@ safer and more portable. ★ marks the ones worth doing first; ticked items are 
 - [ ] `G22` Glossary flashcards, scheduled by the same spaced-repetition deck as the quizzes
 - [ ] `G23` A study streak and a gentle daily goal on the home page
 - [ ] `G24` "Remember this" cards at the end of every lesson, collected into a printable sheet
-- [ ] `G25` Worked problems for L6.10 and the two new simulators
+- [x] `G25` Worked problems for L6.10 and the two new simulators
 
 ### Extras & quality
 
 - [ ] `E16` A style check (ruff) in continuous integration
-- [ ] `E17` A test that keeps the numbers in the README (lessons, simulators, questions) in step with the content
+- [x] `E17` A test that keeps the numbers in the README (lessons, simulators, questions) in step with the content
 - [ ] `E18` A second full interface language (German or Spanish), with a contributor guide for translators
 - [ ] `E19` Export the course as a static website that runs in a browser without installing anything

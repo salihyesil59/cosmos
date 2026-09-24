@@ -52,7 +52,7 @@ on first launch.
 - **56 guided challenges** inside the simulators, with hints and automatic checking
 - **A history of cosmology**: 33 milestones from Copernicus to DESI and 18
   scientist cards, each linked to the lesson that explains the physics
-- **51 worked problems** in eight sets, one per level: type a number and the app
+- **65 worked problems** in eight sets, one per level: type a number and the app
   checks it, spots a wrong power of ten or sign, and offers hints and a worked
   solution
 - **21 badges** earned by learning: finishing levels, perfect quizzes, exploring
@@ -130,7 +130,7 @@ cached. Without `camb` the app behaves exactly as before.
 
 The course content is English. The interface — menus, buttons, page headings,
 badges and the panels around the content — is translatable, and **Turkish ships
-with the app**: choose it in **View → Language** and restart. More than 1800 strings
+with the app**: choose it in **View → Language** and restart. More than 2000 strings
 are translated: the Guide panel, the guided tour, the quiz, the challenges and
 every simulator — its controls, its tooltips and the results it reports back.
 The course itself — lesson text, quiz questions, the glossary and the formula
@@ -245,7 +245,9 @@ Add the lesson id to `cosmos/content/curriculum.yaml` and its quiz to
 `cosmos/content/formulas.yaml`, simulator challenges in `challenges.yaml`, worked
 problems in `problems.yaml` and
 the timeline in `history.yaml`. A `:::math` callout marks a derivation, which
-the intuitive lesson view hides. Run `pytest` to check the new content.
+the intuitive lesson view hides. Run `pytest` to check the new content, and
+`python tools/content_stats.py --write` to bring the numbers in this README up to
+date — a test fails when they fall behind.
 
 ## Data sources
 

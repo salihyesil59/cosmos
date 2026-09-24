@@ -46,8 +46,19 @@ The first round of Phase 4 (see [ROADMAP.md](ROADMAP.md)).
   reionisation — a dark-ages trough of −40 mK at 16 MHz and a cosmic-dawn trough
   near −185 mK at 67 MHz — compared with EDGES, with an optional excess radio
   background
+- **Fourteen new worked problems** for the Phase 4 lessons and simulators: WIMP
+  recoils, axion frequencies, the dark-ages gas, the 21-cm line, virial
+  temperatures, disc sizes, peak heights, the Big Rip and black-hole evaporation
+- **The README's numbers are checked**: `tools/content_stats.py` counts the
+  content, a test fails when the README falls behind, and `--write` fixes it
 - Fifteen guided challenges for the five new simulators; the Turkish pack is
   complete at 2011 strings
+
+### Fixed
+
+- Two worked problems shared the id `p6-schwarzschild`, so solving one marked
+  both, and the test that recomputes every answer silently checked only one. The
+  M87* problem is now `p6-m87-horizon`, and a test keeps ids unique
 
 ## 0.1.0 — 2026-09-23
 

@@ -71,9 +71,24 @@ EXPECTED = {
     "p0-hubble-time": 1 / (70 * const.KM_S_MPC_TO_SI) / GYR,
     "p5-optical-depth": math.exp(-2 * 0.056),
     "p5-inflation-scale": 1.0e16 * (0.01 / 0.01) ** 0.25,
-    "p6-schwarzschild": 2 * G * 6.5e9 * MSUN / C**2 / const.AU,
+    "p6-m87-horizon": 2 * G * 6.5e9 * MSUN / C**2 / const.AU,
     "p6-hawking": const.HBAR * C**3 / (8 * math.pi * G * 10 * MSUN * const.K_B),
     "p6-horizon-mass": 1.0 / 1e5,
+    # G25: problems for the Phase 4 lessons and simulators.
+    "p3-recoil": 2 * (100 * 122.3 / 222.3) ** 2 * (220e3 / C) ** 2 / 122.3 * 1e6,
+    "p3-axion-frequency": 4e-6 * const.EV / const.H_PLANCK / 1e6,
+    "p3-exposure": 4.2 * 3e-48 / 1e-48,
+    "p4-binding-temperature": 13.6 * const.EV / const.K_B,
+    "p4-gas-temperature": const.T_CMB * 151 * (21 / 151) ** 2,
+    "p4-21cm-frequency": 1420.405751 / 18,
+    "p4-virial-temperature": 2e4 * 10 ** (2 / 3) * (1 + 9) / 10,
+    "p5-disc-size": 0.035 * 230 / math.sqrt(2),
+    "p5-peak-height": 1.686 / (0.6 * 0.61),
+    "p5-baryons-in-stars": 0.035 / (0.0490 / 0.3097) * 100,
+    "p6-big-rip": 2 / (3 * 0.5 * 70 * const.KM_S_MPC_TO_SI * math.sqrt(0.7)) / GYR,
+    "p6-solar-system-rip": 365.25 * math.sqrt(2 * 3.5) / (6 * math.pi * 0.5),
+    "p6-evaporation": 2.1e67 * 10**3,
+    "p6-efold-time": 1 / (67.66 * const.KM_S_MPC_TO_SI * math.sqrt(0.69)) / GYR,
 }
 
 
@@ -82,6 +97,12 @@ def test_one_set_per_level():
     for problem_set in SETS:
         assert problem_set.title and problem_set.intro
         assert len(problem_set.problems) >= 5, f"level {problem_set.level} needs at least five problems"
+
+
+def test_problem_ids_are_unique():
+    """Progress is stored by id, so two problems sharing one would share a result."""
+    ids = [p.id for s in SETS for p in s.problems]
+    assert len(ids) == len(set(ids)), sorted({i for i in ids if ids.count(i) > 1})
 
 
 def test_every_answer_is_recomputed():

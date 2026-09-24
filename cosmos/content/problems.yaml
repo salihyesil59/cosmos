@@ -375,6 +375,55 @@
       2. $M = (2.2\times10^5)^2 \times 1.543\times10^{21} / 6.674\times10^{-11} = 1.12\times10^{42}\ \mathrm{kg}$.
       3. $M = 5.6\times10^{11}\ M_\odot$ — several times the mass in stars and gas.
     simulator: S6
+  - id: p3-recoil
+    lesson: L3.6
+    title: How hard does a WIMP kick?
+    difficulty: 2
+    statement: A 100 GeV WIMP moving at 220 km/s hits a xenon nucleus (m_A = 122.3 GeV) head-on. What is the
+      largest recoil energy it can give, in **keV**? Use $E_R^{\max} = 2\mu^2 v^2 / m_A$ with $v/c$ for the speed.
+    answer: 26.66
+    unit: keV
+    tolerance: 0.03
+    hints:
+    - The reduced mass is μ = m_χ m_A / (m_χ + m_A) = 100 × 122.3 / 222.3 = 55.0 GeV.
+    - v/c = 220 / 299 792 = 7.34 × 10⁻⁴; the answer comes out in GeV, so multiply by 10⁶ for keV.
+    solution: |
+      1. $\mu = 100 \times 122.3 / 222.3 = 55.0$ GeV.
+      2. $E_R^{\max} = 2 \times 55.0^2 \times (7.34\times10^{-4})^2 / 122.3 = 2.67\times10^{-5}$ GeV.
+      3. That is **26.7 keV** — which is why WIMP detectors are built to see recoils of a few to a few tens of keV.
+    simulator: S29
+  - id: p3-axion-frequency
+    lesson: L3.6
+    title: Tuning in to an axion
+    difficulty: 1
+    statement: An axion of mass 4 μeV converts into a photon in a magnetic field. At what frequency must a haloscope
+      cavity be tuned, in **MHz**? Use $\nu = m_a c^2 / h$ with $h = 4.136\times10^{-15}$ eV s.
+    answer: 967.2
+    unit: MHz
+    tolerance: 0.02
+    hints:
+    - The photon carries the axion's whole rest energy, 4 × 10⁻⁶ eV.
+    - Divide by Planck's constant in eV s, then by 10⁶ for MHz.
+    solution: |
+      $\nu = 4\times10^{-6} / 4.136\times10^{-15} = 9.67\times10^{8}$ Hz = **967 MHz**, in the range of
+      mobile-phone frequencies — which is one of the practical problems of axion searches.
+  - id: p3-exposure
+    lesson: L3.6
+    title: How much longer to run?
+    difficulty: 2
+    statement: A xenon detector with no background and 4.2 tonne-years of exposure excludes σ above 3 × 10⁻⁴⁸ cm².
+      With no background, the limit scales as 1/exposure. How many **tonne-years** are needed to reach
+      1 × 10⁻⁴⁸ cm²?
+    answer: 12.6
+    unit: tonne-years
+    tolerance: 0.02
+    hints:
+    - The limit has to fall by a factor of three.
+    - The exposure has to rise by the same factor.
+    solution: |
+      $4.2 \times 3 = 12.6$ tonne-years. With background the gain is slower — the limit then improves only as the
+      square root of the exposure, which is why detectors are built to be as quiet as possible.
+    simulator: S29
 - level: 4
   title: The hot early universe
   intro: Temperatures, relic particles and the first nuclei.
@@ -455,6 +504,71 @@
     solution: |
       $\Omega_\nu h^2 = 6.44\times10^{-4}$, so $\Omega_\nu = 1.42\times10^{-3}$ — about half a percent of all matter.
     simulator: S18
+  - id: p4-binding-temperature
+    lesson: L4.4
+    title: 13.6 eV as a temperature
+    difficulty: 1
+    statement: Hydrogen is bound by 13.6 eV. What temperature, in **kelvin**, has k_B T = 13.6 eV? Use
+      k_B = 8.617 × 10⁻⁵ eV/K.
+    answer: 1.578e5
+    unit: K
+    tolerance: 0.02
+    hints:
+    - T = E / k_B.
+    - 13.6 / 8.617 × 10⁻⁵.
+    solution: |
+      $T = 13.6 / 8.617\times10^{-5} = 1.58\times10^{5}$ K. Yet the universe only became neutral at about 3000 K,
+      fifty times cooler — because there are more than a billion photons for every atom.
+    simulator: S25
+  - id: p4-gas-temperature
+    lesson: L4.8
+    title: Colder than the CMB
+    difficulty: 2
+    statement: The gas stopped following the CMB at z = 150 and then cooled adiabatically, $T \propto (1+z)^2$. What
+      was its temperature at z = 20, in **kelvin**? Take $T_{\mathrm{CMB}} = 2.7255\,\mathrm{K}\,(1+z)$.
+    answer: 7.96
+    unit: K
+    tolerance: 0.03
+    hints:
+    - At z = 150 the gas was at the CMB temperature, 2.7255 × 151 = 411.6 K.
+    - Multiply by ((1 + 20) / (1 + 150))².
+    solution: |
+      1. At decoupling: $T = 2.7255 \times 151 = 411.6$ K.
+      2. At z = 20: $411.6 \times (21/151)^2 = 7.96$ K.
+      3. The CMB is then at $2.7255 \times 21 = 57$ K, seven times warmer: gas that cold absorbs the 21-cm line.
+    simulator: S28
+  - id: p4-21cm-frequency
+    lesson: L4.8
+    title: Where to listen
+    difficulty: 1
+    statement: The 21-cm line has a rest frequency of 1420.4 MHz. At what frequency, in **MHz**, do we receive it from
+      gas at z = 17, where EDGES reported its trough?
+    answer: 78.91
+    unit: MHz
+    tolerance: 0.02
+    hints:
+    - Frequencies are divided by 1 + z.
+    - 1420.4 / 18.
+    solution: |
+      $\nu = 1420.4 / 18 = 78.9$ MHz — in the FM radio band, which is why these experiments go to the most
+      radio-quiet places on Earth.
+    simulator: S28
+  - id: p4-virial-temperature
+    lesson: L4.8
+    title: Can this halo make stars?
+    difficulty: 2
+    statement: 'Using $T_{\mathrm{vir}} \approx 2\times10^{4}\ \mathrm{K}\,(M/10^{8}\,M_\odot)^{2/3}\,((1+z)/10)$,
+      what is the virial temperature of a 10⁹ M☉ halo forming at z = 9, in **kelvin**?'
+    answer: 9.283e4
+    unit: K
+    tolerance: 0.03
+    hints:
+    - M / 10⁸ M☉ = 10, and 10^(2/3) = 4.64.
+    - (1 + 9) / 10 = 1.
+    solution: |
+      $T_{\mathrm{vir}} = 2\times10^{4} \times 4.64 \times 1 = 9.3\times10^{4}$ K — comfortably above the 10⁴ K
+      at which atomic hydrogen starts to cool, so this halo can form a galaxy.
+    simulator: S27
 - level: 5
   title: Sound waves, growth and lensing
   intro: The acoustic scale, the growth of structure and gravitational lensing.
@@ -573,6 +687,52 @@
       $V^{1/4} = 1.0\times10^{16}$ GeV — a trillion times the energy of the LHC, and the reason a
       B-mode detection would matter far beyond cosmology.
     simulator: S12
+  - id: p5-disc-size
+    lesson: L5.8
+    title: The size of a disc
+    difficulty: 1
+    statement: A halo with virial radius 230 kpc has spin λ = 0.035. If the gas keeps its angular momentum, how big is
+      the disc it forms? Use $R_d = \lambda R_{\mathrm{vir}}/\sqrt{2}$ and give the answer in **kpc**.
+    answer: 5.692
+    unit: kpc
+    tolerance: 0.02
+    hints:
+    - √2 = 1.414.
+    - 0.035 × 230 / 1.414.
+    solution: |
+      $R_d = 0.035 \times 230 / 1.414 = 5.7$ kpc — about the scale of the Milky Way's disc. A tiny spin, amplified
+      by the gas falling fifty times closer to the centre.
+  - id: p5-peak-height
+    lesson: L5.5
+    title: How rare is a cluster?
+    difficulty: 2
+    statement: For a 10¹⁵ M☉/h cluster the linear fluctuation today is σ = 0.6, and at z = 1 the growth factor is
+      0.61. What is the peak height ν = δc / σ(z) at z = 1, with δc = 1.686?
+    answer: 4.607
+    unit: ''
+    tolerance: 0.02
+    hints:
+    - At z = 1 the fluctuation has only grown to 0.6 × 0.61.
+    - ν = 1.686 / 0.366.
+    solution: |
+      $\sigma(z{=}1) = 0.6 \times 0.61 = 0.366$, so $\nu = 1.686/0.366 = 4.6$. A 4.6σ peak: the abundance goes
+      as $e^{-\nu^2/2}$, which is why such clusters are rare at z = 1 and why their number measures σ8.
+    simulator: S27
+  - id: p5-baryons-in-stars
+    lesson: L5.8
+    title: How efficient is the Milky Way?
+    difficulty: 2
+    statement: The Milky Way's halo has turned 3.5% of its mass into stars. The cosmic baryon fraction is
+      Ωb/Ωm = 0.0490/0.3097. What **percentage** of the halo's baryons are in stars?
+    answer: 22.12
+    unit: '%'
+    tolerance: 0.02
+    hints:
+    - Ωb/Ωm = 0.158.
+    - 0.035 / 0.158.
+    solution: |
+      $0.035 / 0.158 = 0.221$, so about **22%**. Even the most efficient galaxies have left four fifths of their
+      baryons as gas — much of it blown out or kept hot by feedback.
 - level: 6
   title: Advanced topics
   intro: Black holes, inflation, standard sirens and the tensions of today.
@@ -651,7 +811,7 @@
     solution: |
       $\sigma = \sqrt{1.04^2 + 0.5^2} = 1.154$, so the difference is $5.64/1.154 = 4.9\sigma$.
     simulator: S20
-  - id: p6-schwarzschild
+  - id: p6-m87-horizon
     lesson: L6.9
     title: The horizon of a giant
     difficulty: 1
@@ -702,6 +862,71 @@
       $10^{5}\,(t/1\,\mathrm{s}) = 1 \Rightarrow t = 10^{-5}$ s — around the time quarks were
       condensing into protons and neutrons. The mass of a primordial black hole reads off when it formed.
     simulator: S22
+  - id: p6-big-rip
+    lesson: L6.10
+    title: When is the Big Rip?
+    difficulty: 2
+    statement: 'With phantom energy w = −1.5, H₀ = 70 km/s/Mpc and Ωm = 0.3, how long until the Big Rip, in
+      **billion years**? Use $t_{\mathrm{rip}} - t_0 \approx 2 / (3\,|1+w|\,H_0\sqrt{1-\Omega_m})$ and
+      1/H₀ = 13.97 Gyr.'
+    answer: 22.26
+    unit: billion years
+    tolerance: 0.02
+    hints:
+    - '|1 + w| = 0.5, so 2/(3 × 0.5) = 4/3.'
+    - √(1 − 0.3) = 0.837.
+    solution: |
+      $t = \frac{4}{3} \times 13.97 / 0.837 = 22.3$ Gyr. Bring w closer to −1 and the rip recedes: for w = −1.05 it
+      is more than 200 billion years away.
+    simulator: S26
+  - id: p6-solar-system-rip
+    lesson: L6.10
+    title: The last months of the Solar System
+    difficulty: 2
+    statement: 'A system with orbital period P is torn apart a time $P\sqrt{2|1+3w|}/(6\pi|1+w|)$ before the Big Rip.
+      For the Earth''s orbit (P = 365.25 days) and w = −1.5, how many **days** before the end is that?'
+    answer: 102.5
+    unit: days
+    tolerance: 0.02
+    hints:
+    - 1 + 3w = −3.5, so √(2 × 3.5) = 2.646.
+    - 6π × 0.5 = 9.42.
+    solution: |
+      $365.25 \times 2.646 / 9.42 = 102.5$ days — about three months. The Earth itself lasts until half an hour
+      before the end, and atoms until the last $10^{-17}$ s.
+    simulator: S26
+  - id: p6-evaporation
+    lesson: L6.10
+    title: A very long wait
+    difficulty: 1
+    statement: 'A black hole evaporates in $t \approx 2.1\times10^{67}\,\mathrm{yr}\,(M/M_\odot)^3$. How long does a
+      10 M☉ black hole take, in **years**?'
+    answer: 2.1e70
+    unit: years
+    tolerance: 0.02
+    hints:
+    - The lifetime grows as the cube of the mass.
+    - 10³ = 1000.
+    solution: |
+      $2.1\times10^{67} \times 10^3 = 2.1\times10^{70}$ years — and none of it can begin until the CMB has cooled
+      below the black hole's own Hawking temperature.
+    simulator: S26
+  - id: p6-efold-time
+    lesson: L6.10
+    title: Exponential expansion
+    difficulty: 2
+    statement: 'Far in the future a cosmological constant makes the expansion exponential, $a \propto e^{t/\tau}$ with
+      $\tau = 1/(H_0\sqrt{\Omega_\Lambda})$. With 1/H₀ = 14.45 Gyr and ΩΛ = 0.69, what is τ in **billion years**?'
+    answer: 17.40
+    unit: billion years
+    tolerance: 0.02
+    hints:
+    - √0.69 = 0.831.
+    - 14.45 / 0.831.
+    solution: |
+      $\tau = 14.45 / 0.831 = 17.4$ Gyr. Every 17 billion years every distance between unbound galaxies grows by a
+      factor e, for ever.
+    simulator: S26
 - level: 7
   title: Working like a cosmologist
   intro: Goodness of fit, significance, chains and error budgets.
