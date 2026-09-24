@@ -69,10 +69,9 @@ on first launch.
   flashcard, problem and challenge is a step; one day off does not break the streak
 - **Remember this**: every lesson ends with a card of its key points, and the cards of
   the lessons you have completed collect into a sheet you can read or print
-- **A website of the course**: *File → Export the course as a website* (or
-  `python tools/build_site.py`) writes every lesson, with working quizzes, the glossary,
-  the formula sheet and the worked problems as plain web pages that open in any browser,
-  offline, with nothing to install
+- **A website of the course**: every lesson, with working quizzes, the glossary, the
+  formula sheet and the worked problems as plain web pages that open in any browser,
+  offline, with nothing to install — see [The website edition](#the-website-edition)
 - **Print anything**: one lesson, one level or the whole course as a PDF, with its
   figures, its quiz and an answer key
 - **Classroom mode**: a progress report a teacher can read, and teacher notes for
@@ -100,7 +99,12 @@ See [ROADMAP.md](ROADMAP.md) for what is planned next.
 
 ## Getting started
 
-Requires Python 3.10 or newer.
+The quickest way in needs no Python at all: download the app for Windows, macOS or
+Linux from the [releases page](https://github.com/salihyesil59/cosmos/releases) (see
+[Standalone builds](#standalone-builds)), or read the course in a browser with the
+[website edition](#the-website-edition).
+
+To run it from the source instead, you need Python 3.10 or newer:
 
 ```bash
 python -m venv .venv
@@ -111,6 +115,53 @@ python main.py
 ```
 
 You can also start the app with `python -m cosmos`.
+
+## The website edition
+
+The whole course can also be read in a web browser, with nothing to install and no
+internet connection needed. It is a folder of plain HTML pages — about 60 pages and
+13 MB — with:
+
+- every lesson, with its formulas, figures, "Remember this" card and a working quiz
+- the glossary, the formula sheet and the worked problems, which check your answers
+- a catalogue of the simulators, with what each one does and how to use it
+
+The simulators themselves, progress tracking, the review deck and the flashcards need
+the desktop app; the website is the reading edition.
+
+### Opening it
+
+There are three ways to get the folder. In every case, open **`index.html`** in it —
+double-click it, or drag it onto a browser window. No web server is needed.
+
+1. **Download it.** Every release from 0.2.0 on has a `Cosmos-<version>-website.zip` on
+   the [releases page](https://github.com/salihyesil59/cosmos/releases). Unzip it and
+   open `index.html`.
+2. **Export it from the app.** *File → Export the course as a website…*, choose a
+   folder, and Cosmos writes a `cosmos-website` folder there. It takes about a minute.
+3. **Build it from the source:**
+
+   ```bash
+   pip install -r requirements.txt
+   python tools/build_site.py                  # writes dist/site/
+   python tools/build_site.py --out my-site    # or anywhere else
+   ```
+
+   Then open `dist/site/index.html`. Every push to `main` also builds it on GitHub
+   Actions, where it is kept for 14 days as the `Cosmos-website-<commit>` artifact of
+   the run.
+
+The builder only ever writes into an empty folder or replaces a website it built
+before; it refuses a folder that holds anything else.
+
+### Putting it online
+
+The folder is a static site, so any web host can serve it as it is: a school intranet,
+a USB stick passed around a classroom, or GitHub Pages. For GitHub Pages, put the
+contents of the folder (with `index.html` at the top) in a branch of a repository — for
+example a `gh-pages` branch — and choose that branch under *Settings → Pages → Build and
+deployment → Deploy from a branch*. The site then appears at
+`https://<user>.github.io/<repository>/`.
 
 ## Optional: the Tutor
 
