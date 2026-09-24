@@ -779,6 +779,39 @@ SIMULATORS: dict[str, SimulatorInfo] = {
             icon="⬤",
         ),
         SimulatorInfo(
+            id="S28",
+            title=tr_noop("21-cm Global Signal Explorer"),
+            tagline=tr_noop("Listen to hydrogen from the dark ages and the first stars."),
+            description=tr_noop(
+                "Neutral hydrogen absorbs and emits at 21 cm, and that line, stretched by the expansion, "
+                "arrives today at radio frequencies between about 10 and 200 MHz. Averaged over the whole "
+                "sky it records the history of the gas: cooling in the dark ages, the first starlight, the "
+                "first X-ray heating and reionisation. Change the astrophysics and compare with the "
+                "contested EDGES detection."
+            ),
+            how_to_use=[
+                tr_noop("<b>The global signal</b> shows the brightness temperature against frequency; the "
+                        "top axis gives the redshift."),
+                tr_noop("Move <b>Lyman-α coupling</b> to change when the first stars light up, and <b>X-ray "
+                        "heating</b> to change when and how much the gas is warmed."),
+                tr_noop("<b>Three temperatures</b> shows why: absorption wherever the spin temperature is "
+                        "below the background."),
+                tr_noop("<b>What couples the spins</b> shows collisions giving way to starlight."),
+                tr_noop("Add an <b>extra radio background</b> to try to reach the depth EDGES reported."),
+            ],
+            things_to_try=[
+                tr_noop("Where is the dark-ages trough, and why can it not be seen from the ground?"),
+                tr_noop("Switch the X-ray heating off. What happens to the emission?"),
+                tr_noop("Make the first stars form later. Which way does the trough move in frequency?"),
+                tr_noop("How big a radio background does it take to match EDGES?"),
+                tr_noop("Delay reionisation to z = 6. What changes at the high-frequency end?"),
+            ],
+            lessons=["L6.4", "L4.8"],
+            module="cosmos.gui.simulators.global21_sim",
+            class_name="Global21Simulator",
+            icon="📡",
+        ),
+        SimulatorInfo(
             id="S29",
             title=tr_noop("Dark Matter Detection"),
             tagline=tr_noop("Build an underground detector and draw your own exclusion curve."),

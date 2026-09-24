@@ -494,7 +494,7 @@ def _baryon_asymmetry(fig, p: Palette):
 # time a figure is asked for rather than here, which keeps them out of start-up.
 _EXTRA_MODULES = (
     "figures_structure", "figures_advanced", "figures_methods", "figures_inference",
-    "figures_neutrinos", "figures_surveys", "figures_mocks", "figures_blackholes",
+    "figures_neutrinos", "figures_surveys", "figures_mocks", "figures_blackholes", "figures_galaxies",
 )
 _loaded = False
 

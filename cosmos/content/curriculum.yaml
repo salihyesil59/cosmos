@@ -44,9 +44,9 @@ levels:
     title: CMB & Structure Formation
     description: >
       The frozen sound waves in the cosmic microwave background, the baryon acoustic
-      ruler, how gravity grows tiny ripples into the cosmic web, and how lensing maps
-      the dark matter.
-    lessons: [L5.1, L5.2, L5.3, L5.4, L5.5, L5.6, L5.7]
+      ruler, how gravity grows tiny ripples into the cosmic web, how lensing maps
+      the dark matter, and how galaxies form inside it.
+    lessons: [L5.1, L5.2, L5.3, L5.4, L5.5, L5.6, L5.7, L5.8]
 
   - number: 6
     title: Advanced Topics

@@ -38,8 +38,16 @@ The first round of Phase 4 (see [ROADMAP.md](ROADMAP.md)).
   silicon (Standard Halo Model, Helm form factor), Poisson exclusion curves — the
   xenon preset reaches 3 × 10⁻⁴⁸ cm² near 50 GeV, close to LZ's published 2024
   limit — a simulated run and the annual modulation
-- Twelve guided challenges for the four new simulators; the Turkish pack is
-  complete at 1961 strings
+- **L5.8 Galaxy Formation**: cooling against collapse, discs from tidal spin,
+  the stellar-to-halo mass relation (with a new lesson figure) and supernova and
+  black-hole feedback
+- **S28 21-cm Global Signal Explorer**: the gas temperature solved from
+  recombination onwards, collisional and Lyman-α coupling, X-ray heating and
+  reionisation — a dark-ages trough of −40 mK at 16 MHz and a cosmic-dawn trough
+  near −185 mK at 67 MHz — compared with EDGES, with an optional excess radio
+  background
+- Fifteen guided challenges for the five new simulators; the Turkish pack is
+  complete at 2011 strings
 
 ## 0.1.0 — 2026-09-23
 

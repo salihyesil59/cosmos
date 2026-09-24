@@ -619,3 +619,30 @@ S29:
     is_true: true
   - field: significance
     max: 3.0
+S28:
+- id: edges-depth
+  task: Make the cosmic-dawn trough as deep as EDGES reported — deeper than −400 mK.
+  hint: Standard physics cannot do it. Try the <b>Extra radio background</b> slider.
+  success: About one CMB's worth of extra radio light at 78 MHz is enough. Where such a background would come from
+    is itself a puzzle — which is why many suspect an instrumental cause for EDGES.
+  check:
+  - field: dawn_depth
+    max: -400
+- id: never-heated
+  task: Switch off the X-ray heating and check that the signal never turns into emission.
+  hint: Drag <b>Heating delivered</b> to zero and read the third line of the summary.
+  success: The gas keeps cooling as the universe expands, so the spins stay colder than the CMB. The absorption only
+    ends when reionisation removes the hydrogen — measuring the emission measures the first X-ray sources.
+  check:
+  - field: heating
+    max: 1
+  - field: emission
+    max: 0.5
+- id: late-dawn
+  task: Make the first stars form late enough that the cosmic-dawn trough moves above 80 MHz.
+  hint: Lower <b>Lyman-α coupling switches on at z</b> towards 12, and delay the heating too.
+  success: Later stars mean lower redshift and higher frequency. The position of the trough is a clock for when the
+    first stars lit up.
+  check:
+  - field: dawn_freq
+    min: 80

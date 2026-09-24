@@ -5067,6 +5067,191 @@ parametreleri kendiniz değiştirmenize izin verir.
         <translation>Karanlık enerjinin yoğunluğu $a^{-3(1+w)}$ olarak değişir. Tam w = −1'de sonsuza dek aynı kalır; biraz üstünde söner; biraz altında sınırsızca büyür ve genişleme hızı sonlu bir sürede sonsuz olur. Bugünkü veriler w'yi −1'in yaklaşık yüzde on yakınına yerleştiriyor; bu yüzden ısıl ölümü Büyük Yırtılma'dan henüz ayıramıyor — yalnızca bir Büyük Yırtılma gelecekse en az onlarca milyar yıl uzakta olduğunu söylüyor.</translation>
     </message>
     <message>
+        <location filename="../gui/simulators/global21_sim.py" line="28" />
+        <source>1 · The first stars and galaxies</source>
+        <translation>1 · İlk yıldızlar ve gökadalar</translation>
+    </message>
+    <message>
+        <location filename="../gui/simulators/global21_sim.py" line="31" />
+        <source>Lyman-α coupling switches on at z</source>
+        <translation>Lyman-α bağlaşımının başladığı z</translation>
+    </message>
+    <message>
+        <location filename="../gui/simulators/global21_sim.py" line="32" />
+        <source>The first starlight</source>
+        <translation>İlk yıldız ışığı</translation>
+    </message>
+    <message>
+        <location filename="../gui/simulators/global21_sim.py" line="33" />
+        <source>Ultraviolet photons from the first stars, redshifted into Lyman-α, tie the spin temperature of hydrogen to the cold gas. That opens the cosmic-dawn trough. Earlier stars move it to lower frequencies.</source>
+        <translation>İlk yıldızlardan gelen ve Lyman-α'ya kırmızıya kayan morötesi fotonlar hidrojenin spin sıcaklığını soğuk gaza bağlar. Kozmik şafak çukurunu bu açar. Daha erken yıldızlar onu daha düşük frekanslara kaydırır.</translation>
+    </message>
+    <message>
+        <location filename="../gui/simulators/global21_sim.py" line="37" />
+        <source>X-ray heating switches on at z</source>
+        <translation>X-ışını ısınmasının başladığı z</translation>
+    </message>
+    <message>
+        <location filename="../gui/simulators/global21_sim.py" line="38" />
+        <source>The first X-rays</source>
+        <translation>İlk X-ışınları</translation>
+    </message>
+    <message>
+        <location filename="../gui/simulators/global21_sim.py" line="39" />
+        <source>X-ray binaries and early black holes heat the gas. Once it is warmer than the background, the absorption turns into emission.</source>
+        <translation>X-ışını çiftleri ve erken kara delikler gazı ısıtır. Gaz arka plandan sıcak olunca soğurma salınıma döner.</translation>
+    </message>
+    <message>
+        <location filename="../gui/simulators/global21_sim.py" line="42" />
+        <source>Heating delivered (K)</source>
+        <translation>Verilen ısınma (K)</translation>
+    </message>
+    <message>
+        <location filename="../gui/simulators/global21_sim.py" line="43" />
+        <source>How much X-ray heating</source>
+        <translation>Ne kadar X-ışını ısınması</translation>
+    </message>
+    <message>
+        <location filename="../gui/simulators/global21_sim.py" line="44" />
+        <source>Zero means the gas is never heated: the trough keeps deepening until reionisation removes the hydrogen.</source>
+        <translation>Sıfır, gazın hiç ısınmadığı anlamına gelir: çukur, yeniden iyonlaşma hidrojeni ortadan kaldırana kadar derinleşmeye devam eder.</translation>
+    </message>
+    <message>
+        <location filename="../gui/simulators/global21_sim.py" line="47" />
+        <source>Reionisation midpoint z</source>
+        <translation>Yeniden iyonlaşmanın orta noktası z</translation>
+    </message>
+    <message>
+        <location filename="../gui/simulators/global21_sim.py" line="48" />
+        <source>The end of neutral hydrogen</source>
+        <translation>Nötr hidrojenin sonu</translation>
+    </message>
+    <message>
+        <location filename="../gui/simulators/global21_sim.py" line="49" />
+        <source>Planck's optical depth puts the midpoint at z ≈ 7.7. When the hydrogen is ionised, there is nothing left to absorb or emit at 21 cm, and the signal vanishes.</source>
+        <translation>Planck'ın optik derinliği orta noktayı z ≈ 7,7'ye koyar. Hidrojen iyonlaşınca 21 cm'de soğuracak ya da salacak bir şey kalmaz ve sinyal kaybolur.</translation>
+    </message>
+    <message>
+        <location filename="../gui/simulators/global21_sim.py" line="55" />
+        <source>2 · The EDGES puzzle</source>
+        <translation>2 · EDGES bulmacası</translation>
+    </message>
+    <message>
+        <location filename="../gui/simulators/global21_sim.py" line="58" />
+        <source>Extra radio background (× CMB at 78 MHz)</source>
+        <translation>Ek radyo arka planı (78 MHz'de × KMF)</translation>
+    </message>
+    <message>
+        <location filename="../gui/simulators/global21_sim.py" line="59" />
+        <source>A brighter background</source>
+        <translation>Daha parlak bir arka plan</translation>
+    </message>
+    <message>
+        <location filename="../gui/simulators/global21_sim.py" line="60" />
+        <source>One proposed explanation for the deep EDGES trough: if something besides the CMB shone at radio wavelengths, there would be more light for the cold gas to absorb.</source>
+        <translation>Derin EDGES çukuru için önerilen bir açıklama: KMF'nin yanında radyo dalga boylarında başka bir şey de parlasaydı, soğuk gazın soğuracağı daha çok ışık olurdu.</translation>
+    </message>
+    <message>
+        <location filename="../gui/simulators/global21_sim.py" line="62" />
+        <source>Show the EDGES 2018 measurement</source>
+        <translation>EDGES 2018 ölçümünü göster</translation>
+    </message>
+    <message>
+        <location filename="../gui/simulators/global21_sim.py" line="64" />
+        <source>Bowman et al. (2018): a trough 0.5 K deep at 78 MHz. SARAS-3 (2022) did not see it.</source>
+        <translation>Bowman ve ark. (2018): 78 MHz'de 0,5 K derinliğinde bir çukur. SARAS-3 (2022) bunu görmedi.</translation>
+    </message>
+    <message>
+        <location filename="../gui/simulators/global21_sim.py" line="66" />
+        <source>Back to the standard model</source>
+        <translation>Standart modele dön</translation>
+    </message>
+    <message>
+        <location filename="../gui/simulators/global21_sim.py" line="72" />
+        <source>What a radio telescope would see</source>
+        <translation>Bir radyo teleskobu ne görürdü</translation>
+    </message>
+    <message>
+        <location filename="../gui/simulators/global21_sim.py" line="78" />
+        <source>The gas temperature is solved from recombination onwards; the first stars, X-ray heating and reionisation follow simple tanh histories. The foregrounds of our own Galaxy are 10⁴–10⁵ times brighter than this signal.</source>
+        <translation>Gaz sıcaklığı yeniden birleşmeden itibaren çözülür; ilk yıldızlar, X-ışını ısınması ve yeniden iyonlaşma basit tanh geçmişlerini izler. Kendi Gökadamızın ön planları bu sinyalden 10⁴–10⁵ kat daha parlaktır.</translation>
+    </message>
+    <message>
+        <location filename="../gui/simulators/global21_sim.py" line="91" />
+        <source>The global signal</source>
+        <translation>Küresel sinyal</translation>
+    </message>
+    <message>
+        <location filename="../gui/simulators/global21_sim.py" line="92" />
+        <source>Three temperatures</source>
+        <translation>Üç sıcaklık</translation>
+    </message>
+    <message>
+        <location filename="../gui/simulators/global21_sim.py" line="93" />
+        <source>What couples the spins</source>
+        <translation>Spinleri ne bağlar</translation>
+    </message>
+    <message>
+        <location filename="../gui/simulators/global21_sim.py" line="129" />
+        <source>Dark-ages trough: &lt;b&gt;{depth} mK&lt;/b&gt; at {freq} MHz (z = {z})</source>
+        <translation>Karanlık çağ çukuru: {freq} MHz'de &lt;b&gt;{depth} mK&lt;/b&gt; (z = {z})</translation>
+    </message>
+    <message>
+        <location filename="../gui/simulators/global21_sim.py" line="131" />
+        <source>Cosmic-dawn trough: &lt;b&gt;{depth} mK&lt;/b&gt; at {freq} MHz (z = {z})</source>
+        <translation>Kozmik şafak çukuru: {freq} MHz'de &lt;b&gt;{depth} mK&lt;/b&gt; (z = {z})</translation>
+    </message>
+    <message>
+        <location filename="../gui/simulators/global21_sim.py" line="133" />
+        <source>Emission after heating: up to &lt;b&gt;{peak} mK&lt;/b&gt;</source>
+        <translation>Isınmadan sonraki salınım: &lt;b&gt;{peak} mK&lt;/b&gt; değerine kadar</translation>
+    </message>
+    <message>
+        <location filename="../gui/simulators/global21_sim.py" line="134" />
+        <source>No emission: the gas never gets warmer than the background</source>
+        <translation>Salınım yok: gaz hiçbir zaman arka plandan sıcak olmuyor</translation>
+    </message>
+    <message>
+        <location filename="../gui/simulators/global21_sim.py" line="135" />
+        <source>The gas is heated above the background at z = {z}</source>
+        <translation>Gaz z = {z} anında arka planın üzerine ısınıyor</translation>
+    </message>
+    <message>
+        <location filename="../gui/simulators/global21_sim.py" line="136" />
+        <source>The gas stays colder than the background until reionisation</source>
+        <translation>Gaz yeniden iyonlaşmaya kadar arka plandan soğuk kalıyor</translation>
+    </message>
+    <message>
+        <location filename="../gui/simulators/global21_sim.py" line="137" />
+        <source>Compared with EDGES (−500 mK at 78 MHz): {ratio} as deep</source>
+        <translation>EDGES ile karşılaştırıldığında (78 MHz'de −500 mK): onun {ratio} kadarı derin</translation>
+    </message>
+    <message>
+        <location filename="../gui/simulators/global21_sim.py" line="144" />
+        <source>&lt;b&gt;As deep as EDGES.&lt;/b&gt; A trough of {depth} mK needs more than standard physics: colder gas than adiabatic cooling allows, or a brighter radio background than the CMB. SARAS-3 looked for this signal and did not find it.</source>
+        <translation>&lt;b&gt;EDGES kadar derin.&lt;/b&gt; {depth} mK'lik bir çukur standart fizikten fazlasını gerektirir: adyabatik soğumanın izin verdiğinden daha soğuk gaz ya da KMF'den daha parlak bir radyo arka planı. SARAS-3 bu sinyali aradı ve bulamadı.</translation>
+    </message>
+    <message>
+        <location filename="../gui/simulators/global21_sim.py" line="150" />
+        <source>&lt;b&gt;Never heated.&lt;/b&gt; Without X-rays the gas keeps cooling, and the absorption only ends when reionisation removes the neutral hydrogen.</source>
+        <translation>&lt;b&gt;Hiç ısınmadı.&lt;/b&gt; X-ışınları olmadan gaz soğumaya devam eder ve soğurma ancak yeniden iyonlaşma nötr hidrojeni ortadan kaldırınca biter.</translation>
+    </message>
+    <message>
+        <location filename="../gui/simulators/global21_sim.py" line="155" />
+        <source>&lt;b&gt;Two troughs and a hump.&lt;/b&gt; The dark-ages trough at about 16 MHz is set by physics alone; the cosmic-dawn trough records the first stars, and the emission the first X-ray sources. Everything is a few tens to a few hundred millikelvin.</source>
+        <translation>&lt;b&gt;İki çukur ve bir tümsek.&lt;/b&gt; Yaklaşık 16 MHz'deki karanlık çağ çukurunu yalnızca fizik belirler; kozmik şafak çukuru ilk yıldızları, salınım ise ilk X-ışını kaynaklarını kaydeder. Hepsi birkaç on ile birkaç yüz milikelvin arasındadır.</translation>
+    </message>
+    <message>
+        <location filename="../gui/simulators/global21_sim.py" line="236" />
+        <source>Why this is so hard to measure</source>
+        <translation>Bunu ölçmek neden bu kadar zor</translation>
+    </message>
+    <message>
+        <location filename="../gui/simulators/global21_sim.py" line="237" />
+        <source>The signal is a tenth of a kelvin. The radio glow of our own Galaxy at the same frequencies is thousands of kelvin, so the foreground has to be removed to one part in 10⁵. It is smooth in frequency and the signal is not, which is the only handle — and any wiggle the instrument adds looks exactly like cosmology.</source>
+        <translation>Sinyal kelvinin onda biri kadardır. Kendi Gökadamızın aynı frekanslardaki radyo ışıması binlerce kelvindir; bu yüzden ön planın 10⁵'te bir hassasiyetle çıkarılması gerekir. Ön plan frekansta pürüzsüzdür, sinyal değildir; tek tutamak budur — ve aletin eklediği her kıpırtı tıpkı kozmoloji gibi görünür.</translation>
+    </message>
+    <message>
         <location filename="../gui/simulators/halo_sim.py" line="21" />
         <source>Sheth–Tormen (fits simulations)</source>
         <translation>Sheth–Tormen (simülasyonlara uyar)</translation>
@@ -8204,66 +8389,131 @@ En büyük terimi yarıya indirmek, en küçüğünü tamamen yok etmekten çok 
     </message>
     <message>
         <location filename="../gui/simulators/registry.py" line="783" />
+        <source>21-cm Global Signal Explorer</source>
+        <translation>21-cm Küresel Sinyal Gezgini</translation>
+    </message>
+    <message>
+        <location filename="../gui/simulators/registry.py" line="784" />
+        <source>Listen to hydrogen from the dark ages and the first stars.</source>
+        <translation>Karanlık çağlardan ve ilk yıldızlardan gelen hidrojeni dinleyin.</translation>
+    </message>
+    <message>
+        <location filename="../gui/simulators/registry.py" line="786" />
+        <source>Neutral hydrogen absorbs and emits at 21 cm, and that line, stretched by the expansion, arrives today at radio frequencies between about 10 and 200 MHz. Averaged over the whole sky it records the history of the gas: cooling in the dark ages, the first starlight, the first X-ray heating and reionisation. Change the astrophysics and compare with the contested EDGES detection.</source>
+        <translation>Nötr hidrojen 21 cm'de soğurur ve salar; genişlemeyle gerilen bu çizgi bugün yaklaşık 10 ile 200 MHz arasındaki radyo frekanslarında ulaşır. Tüm gökyüzü üzerinden ortalandığında gazın tarihini kaydeder: karanlık çağlardaki soğuma, ilk yıldız ışığı, ilk X-ışını ısınması ve yeniden iyonlaşma. Astrofiziği değiştirin ve tartışmalı EDGES algılamasıyla karşılaştırın.</translation>
+    </message>
+    <message>
+        <location filename="../gui/simulators/registry.py" line="793" />
+        <source>&lt;b&gt;The global signal&lt;/b&gt; shows the brightness temperature against frequency; the top axis gives the redshift.</source>
+        <translation>&lt;b&gt;Küresel sinyal&lt;/b&gt; parlaklık sıcaklığını frekansa karşı gösterir; üst eksen kırmızıya kaymayı verir.</translation>
+    </message>
+    <message>
+        <location filename="../gui/simulators/registry.py" line="795" />
+        <source>Move &lt;b&gt;Lyman-α coupling&lt;/b&gt; to change when the first stars light up, and &lt;b&gt;X-ray heating&lt;/b&gt; to change when and how much the gas is warmed.</source>
+        <translation>İlk yıldızların ne zaman yandığını değiştirmek için &lt;b&gt;Lyman-α bağlaşımını&lt;/b&gt;, gazın ne zaman ve ne kadar ısındığını değiştirmek için &lt;b&gt;X-ışını ısınmasını&lt;/b&gt; oynatın.</translation>
+    </message>
+    <message>
+        <location filename="../gui/simulators/registry.py" line="797" />
+        <source>&lt;b&gt;Three temperatures&lt;/b&gt; shows why: absorption wherever the spin temperature is below the background.</source>
+        <translation>&lt;b&gt;Üç sıcaklık&lt;/b&gt; nedenini gösterir: spin sıcaklığının arka planın altında olduğu her yerde soğurma olur.</translation>
+    </message>
+    <message>
+        <location filename="../gui/simulators/registry.py" line="799" />
+        <source>&lt;b&gt;What couples the spins&lt;/b&gt; shows collisions giving way to starlight.</source>
+        <translation>&lt;b&gt;Spinleri ne bağlar&lt;/b&gt;, çarpışmaların yerini yıldız ışığına bırakmasını gösterir.</translation>
+    </message>
+    <message>
+        <location filename="../gui/simulators/registry.py" line="800" />
+        <source>Add an &lt;b&gt;extra radio background&lt;/b&gt; to try to reach the depth EDGES reported.</source>
+        <translation>EDGES'in bildirdiği derinliğe ulaşmayı denemek için &lt;b&gt;ek radyo arka planı&lt;/b&gt; ekleyin.</translation>
+    </message>
+    <message>
+        <location filename="../gui/simulators/registry.py" line="803" />
+        <source>Where is the dark-ages trough, and why can it not be seen from the ground?</source>
+        <translation>Karanlık çağ çukuru nerede ve neden yerden görülemiyor?</translation>
+    </message>
+    <message>
+        <location filename="../gui/simulators/registry.py" line="804" />
+        <source>Switch the X-ray heating off. What happens to the emission?</source>
+        <translation>X-ışını ısınmasını kapatın. Salınıma ne oluyor?</translation>
+    </message>
+    <message>
+        <location filename="../gui/simulators/registry.py" line="805" />
+        <source>Make the first stars form later. Which way does the trough move in frequency?</source>
+        <translation>İlk yıldızların daha geç oluşmasını sağlayın. Çukur frekansta hangi yöne kayıyor?</translation>
+    </message>
+    <message>
+        <location filename="../gui/simulators/registry.py" line="806" />
+        <source>How big a radio background does it take to match EDGES?</source>
+        <translation>EDGES'i yakalamak için ne büyüklükte bir radyo arka planı gerekiyor?</translation>
+    </message>
+    <message>
+        <location filename="../gui/simulators/registry.py" line="807" />
+        <source>Delay reionisation to z = 6. What changes at the high-frequency end?</source>
+        <translation>Yeniden iyonlaşmayı z = 6'ya erteleyin. Yüksek frekans ucunda ne değişiyor?</translation>
+    </message>
+    <message>
+        <location filename="../gui/simulators/registry.py" line="816" />
         <source>Dark Matter Detection</source>
         <translation>Karanlık Madde Algılama</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/registry.py" line="784" />
+        <location filename="../gui/simulators/registry.py" line="817" />
         <source>Build an underground detector and draw your own exclusion curve.</source>
         <translation>Bir yeraltı dedektörü kurun ve kendi dışlama eğrinizi çizin.</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/registry.py" line="786" />
+        <location filename="../gui/simulators/registry.py" line="819" />
         <source>If dark matter is made of WIMPs, a few of them should bounce off atomic nuclei in a detector deep underground. Choose the target, the size, the threshold and the background of your detector, pick a WIMP, and see the recoil spectrum it would leave, the events of a single run, the yearly modulation — and the exclusion curve a null result would draw.</source>
         <translation>Karanlık madde WIMP'lerden oluşuyorsa, birkaçı yerin derinlerindeki bir dedektörde atom çekirdeklerinden sekmeli. Dedektörünüzün hedefini, boyutunu, eşiğini ve arka planını seçin, bir WIMP seçin ve bırakacağı geri tepme tayfını, tek bir çalışmanın olaylarını, yıllık modülasyonu — ve boş bir sonucun çizeceği dışlama eğrisini görün.</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/registry.py" line="792" />
+        <location filename="../gui/simulators/registry.py" line="825" />
         <source>Start from an &lt;b&gt;experiment&lt;/b&gt;, or change the target, exposure, threshold and background yourself.</source>
         <translation>Bir &lt;b&gt;deneyden&lt;/b&gt; başlayın ya da hedefi, maruz kalmayı, eşiği ve arka planı kendiniz değiştirin.</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/registry.py" line="794" />
+        <location filename="../gui/simulators/registry.py" line="827" />
         <source>Set the &lt;b&gt;WIMP mass&lt;/b&gt; and &lt;b&gt;cross-section&lt;/b&gt;. The summary says how many events it would give and whether it would be discovered, excluded or hidden.</source>
         <translation>&lt;b&gt;WIMP kütlesini&lt;/b&gt; ve &lt;b&gt;tesir kesitini&lt;/b&gt; ayarlayın. Özet, kaç olay vereceğini ve keşfedileceğini, dışlanacağını ya da gizli kalacağını söyler.</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/registry.py" line="796" />
+        <location filename="../gui/simulators/registry.py" line="829" />
         <source>&lt;b&gt;Exclusion curve&lt;/b&gt;: everything above your curve would have been seen. Your WIMP is the round dot.</source>
         <translation>&lt;b&gt;Dışlama eğrisi&lt;/b&gt;: eğrinizin üzerindeki her şey görülürdü. Sizin WIMP'iniz yuvarlak noktadır.</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/registry.py" line="798" />
+        <location filename="../gui/simulators/registry.py" line="831" />
         <source>&lt;b&gt;A simulated run&lt;/b&gt; draws one random outcome; press &lt;b&gt;Run the experiment again&lt;/b&gt; for another.</source>
         <translation>&lt;b&gt;Benzetilmiş bir çalışma&lt;/b&gt; rastgele bir sonuç çeker; bir başkası için &lt;b&gt;Deneyi yeniden çalıştır&lt;/b&gt; düğmesine basın.</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/registry.py" line="800" />
+        <location filename="../gui/simulators/registry.py" line="833" />
         <source>&lt;b&gt;Annual modulation&lt;/b&gt; shows the few-per-cent yearly swing as the Earth orbits the Sun.</source>
         <translation>&lt;b&gt;Yıllık modülasyon&lt;/b&gt;, Dünya Güneş'in etrafında dönerken oluşan yüzde birkaçlık yıllık salınımı gösterir.</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/registry.py" line="803" />
+        <location filename="../gui/simulators/registry.py" line="836" />
         <source>With the xenon detector, at what WIMP mass is the limit strongest? Why does it weaken on both sides?</source>
         <translation>Ksenon dedektörüyle sınır hangi WIMP kütlesinde en güçlü? Neden iki yanda da zayıflıyor?</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/registry.py" line="805" />
+        <location filename="../gui/simulators/registry.py" line="838" />
         <source>Set the WIMP mass to 5 GeV. Which detector can still see it?</source>
         <translation>WIMP kütlesini 5 GeV'e ayarlayın. Hangi dedektör onu hâlâ görebilir?</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/registry.py" line="806" />
+        <location filename="../gui/simulators/registry.py" line="839" />
         <source>Double the exposure with no background. How much lower does the curve go? Now add 20 background events.</source>
         <translation>Arka plan yokken maruz kalmayı ikiye katlayın. Eğri ne kadar aşağı iniyor? Şimdi 20 arka plan olayı ekleyin.</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/registry.py" line="808" />
+        <location filename="../gui/simulators/registry.py" line="841" />
         <source>Find a WIMP that is excluded but would not have been discovered.</source>
         <translation>Dışlanan ama keşfedilmeyecek bir WIMP bulun.</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/registry.py" line="809" />
+        <location filename="../gui/simulators/registry.py" line="842" />
         <source>Run the same experiment several times. How much does the number of events jump?</source>
         <translation>Aynı deneyi birkaç kez çalıştırın. Olay sayısı ne kadar sıçrıyor?</translation>
     </message>

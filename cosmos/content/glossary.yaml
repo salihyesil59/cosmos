@@ -1735,3 +1735,39 @@ annual-modulation:
     DAMA/LIBRA reports one; other experiments do not.
   see_also: [direct-detection]
   lessons: [L3.6]
+
+stellar-halo-mass-relation:
+  term: Stellar-to-halo mass relation
+  definition: >
+    How much stellar mass a galaxy has for a given dark matter halo mass. Found by matching
+    the abundances of galaxies and haloes, it peaks at a few per cent near 10¹² M☉ and falls
+    steeply for both smaller and larger haloes.
+  see_also: [dark-matter-halo, halo-mass-function, feedback]
+  lessons: [L5.8]
+
+feedback:
+  term: Feedback (galaxy formation)
+  definition: >
+    Energy returned to the gas by the products of star formation: supernovae and stellar
+    winds in small galaxies, jets and winds from accreting black holes in massive ones. It
+    keeps galaxy formation inefficient.
+  see_also: [stellar-halo-mass-relation, quenching]
+  lessons: [L5.8]
+
+quenching:
+  term: Quenching
+  definition: >
+    The shutting-down of star formation in a galaxy, which then turns red as its young
+    stars die. Massive galaxies are quenched by black-hole feedback, satellites in clusters
+    by having their gas stripped.
+  see_also: [feedback]
+  lessons: [L5.8]
+
+spin-temperature:
+  term: Spin temperature
+  definition: >
+    The excitation temperature of hydrogen's 21-cm hyperfine transition. The 21-cm line is
+    seen in absorption when it is below the radio background and in emission when it is
+    above; it is set by collisions, Lyman-α photons and the CMB.
+  see_also: [21-cm-line, cosmic-dawn]
+  lessons: [L6.4, L4.8]
