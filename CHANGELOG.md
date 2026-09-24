@@ -4,9 +4,16 @@ All notable changes to Cosmos are recorded here. Versions follow
 [semantic versioning](https://semver.org): until 1.0 the interface and the save
 format may still change between releases.
 
-## Unreleased
+## 0.2.0 — 2026-09-24
 
-The first round of Phase 4 (see [ROADMAP.md](ROADMAP.md)).
+Phase 4 (see [ROADMAP.md](ROADMAP.md)): the course grows to 58 lessons and 29
+simulators — recombination, the far future, the first stars, dark matter searches,
+galaxy formation and how to read a paper — and gains the tools that make studying
+a habit: flashcards, a daily goal and streak, "Remember this" cards, backups, and
+a website edition of the whole course.
+
+Progress from 0.1.0 carries over unchanged: open the new version and everything
+you had is still there. One worked problem changed its id (see *Fixed*).
 
 ### Added
 
@@ -91,6 +98,18 @@ The first round of Phase 4 (see [ROADMAP.md](ROADMAP.md)).
 - Two worked problems shared the id `p6-schwarzschild`, so solving one marked
   both, and the test that recomputes every answer silently checked only one. The
   M87* problem is now `p6-m87-horizon`, and a test keeps ids unique
+
+### Downloads
+
+| Platform | File |
+|---|---|
+| Windows | `Cosmos-0.2.0-windows-amd64.zip` — one executable, no installer |
+| macOS | `Cosmos-0.2.0-macos-arm64.zip` — an app bundle |
+| Linux | `Cosmos-0.2.0-linux-x86_64.AppImage` or the equivalent `.tar.gz` |
+| Any browser | `Cosmos-0.2.0-website.zip` — the reading edition: unzip and open `index.html` |
+
+Nothing needs to be installed: each package contains its own Python and Qt, and
+every build runs `--selftest` before it is published.
 
 ## 0.1.0 — 2026-09-23
 
