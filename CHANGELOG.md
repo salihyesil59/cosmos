@@ -4,7 +4,10 @@ All notable changes to Cosmos are recorded here. Versions follow
 [semantic versioning](https://semver.org): until 1.0 the interface and the save
 format may still change between releases.
 
-## Unreleased
+## 0.3.0 — 2026-09-24
+
+A second full interface language, and with it the last open item on the roadmap:
+every entry of all four phases is now ticked.
 
 ### Added
 
@@ -22,6 +25,20 @@ format may still change between releases.
 
 - The README's translation claim and `tools/content_stats.py` now count every
   bundled pack rather than the Turkish one alone.
+- The pack tests run over every bundled `.ts`: a language that ships must be
+  complete, compiled, single-context and must not have lost a `{placeholder}`.
+
+### Downloads
+
+| Platform | File |
+|---|---|
+| Windows | `Cosmos-0.3.0-windows-amd64.zip` — one executable, no installer |
+| macOS | `Cosmos-0.3.0-macos-arm64.zip` — an app bundle |
+| Linux | `Cosmos-0.3.0-linux-x86_64.AppImage` or the equivalent `.tar.gz` |
+| Any browser | `Cosmos-0.3.0-website.zip` — the reading edition: unzip and open `index.html` |
+
+Nothing needs to be installed: each package contains its own Python and Qt, and
+every build runs `--selftest` before it is published.
 
 ## 0.2.0 — 2026-09-24
 
