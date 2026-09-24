@@ -926,7 +926,7 @@ def test_polarisation_and_black_hole_lessons(window):
     assert "S22" in window.ctx.curriculum.lessons["L6.9"].simulators
     assert "S22" in window.ctx.curriculum.lessons["L6.5"].simulators
     assert window.ctx.curriculum.levels[6].lesson_ids[-2:] == ["L6.9", "L6.10"]
-    assert window.ctx.curriculum.levels[5].lesson_ids[-1] == "L5.7"
+    assert window.ctx.curriculum.levels[5].lesson_ids[-2:] == ["L5.7", "L5.8"]
 
 
 def test_review_page_and_a_full_session(window):
@@ -1466,3 +1466,50 @@ def test_dark_matter_lesson(window):
     text = window.lesson_page.browser.toPlainText()
     assert "CSMTOKEN" not in text and "$$" not in text and "axion" in text.lower()
     assert window.ctx.curriculum.levels[3].lesson_ids[-1] == "L3.6"
+
+
+def test_global_21cm_explorer(window):
+    """S28: the standard signal, the EDGES depth, no heating and a late dawn."""
+    window.navigate("sim:S28")
+    pump()
+    host = window.stack.currentWidget()
+    s28 = host.simulator
+    state = s28.state()
+    assert 12 < state["dark_freq"] < 22 and state["emission"] > 5
+    assert "Two troughs" in s28.banner.label.text()
+    bar = host.challenge_bar
+    assert bar is not None and len(host.challenges) == 3
+
+    s28.radio.setValue(1.0)
+    s28.recompute()
+    assert "As deep as EDGES" in s28.banner.label.text()
+    bar.go(0)
+    assert bar.check() is True
+
+    s28._reset()
+    s28.heating.setValue(0.0)
+    s28.recompute()
+    assert "Never heated" in s28.banner.label.text()
+    bar.go(1)
+    assert bar.check() is True
+
+    s28._reset()
+    s28.z_alpha.setValue(12.0)
+    s28.z_heat.setValue(9.0)
+    s28.recompute()
+    bar.go(2)
+    assert bar.check() is True
+    for checked in (False, True):
+        s28.show_edges.setChecked(checked)
+        for plot in (s28.signal_plot, s28.temperature_plot, s28.coupling_plot):
+            plot.refresh()
+    header, rows = s28._csv()
+    assert header[-1] == "delta_Tb_mK" and len(rows) > 100
+
+
+def test_galaxy_formation_lesson(window):
+    window.navigate("lesson:L5.8")
+    pump()
+    text = window.lesson_page.browser.toPlainText()
+    assert "CSMTOKEN" not in text and "$$" not in text and "feedback" in text.lower()
+    assert window.ctx.curriculum.levels[5].lesson_ids[-1] == "L5.8"

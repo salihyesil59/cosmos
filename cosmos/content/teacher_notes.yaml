@@ -660,3 +660,15 @@ L3.6:
     S29 with the xenon detector: put the WIMP just above the curve (excluded but not
     discovered), then raise it until the banner says discovery. Then set the mass to 5 GeV
     and show xenon going blind while the silicon detector still sees it.
+
+L5.8:
+  misconception: >
+    That a galaxy is the same thing as its halo. The halo is ten to a hundred times more
+    massive and much larger; the galaxy is the small fraction of gas that managed to cool
+    into its centre, and in the smallest haloes there may be no galaxy at all.
+  discussion: >
+    Simulations reproduce real galaxies well once feedback is tuned to match the stellar
+    mass function. What can such a simulation then be said to predict, and what can it not?
+  demonstrate: >
+    S27 at z = 0: read how many haloes of 10¹⁰ M☉/h there are per cubic megaparsec, then
+    show the stellar-to-halo figure in the lesson. Most of those haloes hold almost no stars.

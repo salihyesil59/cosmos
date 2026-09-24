@@ -58,7 +58,7 @@ def test_the_figure_modules_load_only_when_a_figure_is_drawn(app):
     assert len(names) > 40
     assert "cmb_polarisation" in names and "mock_chain" in names
     loaded = [m for m in sys.modules if m.startswith("cosmos.gui.rendering.figures_")]
-    assert len(loaded) == 8
+    assert len(loaded) == len(figures._EXTRA_MODULES) == 9
 
 
 def test_the_content_is_parsed_with_libyaml_when_it_is_there():

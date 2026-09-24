@@ -1,0 +1,48 @@
+- question: "Why must gas in a halo cool before it can form stars?"
+  choices:
+    - "Stars are made of cold dark matter"
+    - "Infalling gas is heated to the virial temperature, and its pressure holds it up until it radiates the heat away"
+    - "Hot gas cannot contain hydrogen"
+    - "Cooling creates heavy elements"
+  answer: 1
+  explanation: "Only by radiating energy can gas lose pressure support, sink to the centre and fragment into stars."
+- question: "Why are there no single galaxies much more massive than about 10¹² M☉ of halo?"
+  choices:
+    - "Such haloes do not exist"
+    - "Above that mass gas cools more slowly than the halo collapses, so it stays as a hot atmosphere"
+    - "Black holes eat the extra stars"
+    - "Dark energy prevents it"
+  answer: 1
+  explanation: "Rees, Ostriker and Silk (1977): t_cool < t_ff only up to about 10¹² M☉. Bigger haloes host groups and clusters instead."
+- question: "Where does the rotation of a disc galaxy come from?"
+  choices:
+    - "From the Big Bang directly"
+    - "Tidal torques from neighbouring structures give the halo a little spin, and cooling gas spins up as it contracts"
+    - "From the central black hole"
+    - "From magnetic fields"
+  answer: 1
+  explanation: "Haloes have spin λ ≈ 0.035; gas that keeps its angular momentum while losing energy settles into a disc with R_d ≈ λ R_vir/√2."
+- question: "At its peak, near the Milky Way's halo mass, what fraction of the available baryons has been turned into stars?"
+  choices:
+    - "Almost all of them"
+    - "About half"
+    - "About a fifth"
+    - "Less than one in a thousand"
+  answer: 2
+  explanation: "m*/M_halo peaks at about 3.5%, against a cosmic baryon fraction of 16%: roughly 20% of the baryons."
+- question: "What suppresses star formation in the smallest and the largest galaxies?"
+  choices:
+    - "Dark energy in both"
+    - "Supernova feedback in small galaxies, black-hole feedback in massive ones"
+    - "Black holes in small galaxies, supernovae in large ones"
+    - "Nothing; they simply have little gas"
+  answer: 1
+  explanation: "Low escape speeds let supernovae blow gas out of dwarfs; in massive haloes AGN jets keep the hot atmosphere from cooling."
+- question: "What does it mean that a galaxy has been 'quenched'?"
+  choices:
+    - "It has merged with another galaxy"
+    - "Its star formation has stopped, leaving a red population of old stars"
+    - "It has lost its dark matter"
+    - "Its black hole has evaporated"
+  answer: 1
+  explanation: "Quenched galaxies form the red sequence, mostly ellipticals; the scarcity of galaxies in between shows quenching is fast."

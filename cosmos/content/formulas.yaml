@@ -592,3 +592,19 @@
   symbols: '$m_a$ the axion mass'
   description: The frequency a haloscope cavity must be tuned to.
   lesson: L3.6
+
+- id: disc-scale-length
+  group: Structure and the CMB
+  title: Size of a galaxy disc
+  formula: 'R_d \approx \frac{\lambda}{\sqrt{2}}\,R_{\mathrm{vir}},\qquad \lambda \approx 0.035'
+  symbols: '$\lambda$ the halo spin parameter, $R_{\mathrm{vir}}$ the virial radius'
+  description: A few kiloparsecs for a Milky Way halo with R_vir ≈ 230 kpc.
+  lesson: L5.8
+
+- id: brightness-temperature-21cm
+  group: Thermal history
+  title: 21-cm brightness temperature
+  formula: '\delta T_b \approx 27\ \mathrm{mK}\ x_{\mathrm{HI}}\left(1-\frac{T_\gamma}{T_S}\right)\sqrt{\frac{1+z}{10}\,\frac{0.15}{\Omega_m h^2}}\,\frac{\Omega_b h^2}{0.023}'
+  symbols: '$x_{\mathrm{HI}}$ the neutral fraction, $T_S$ the spin temperature, $T_\gamma$ the radio background'
+  description: Absorption when the spins are colder than the background, emission when warmer.
+  lesson: L6.4
