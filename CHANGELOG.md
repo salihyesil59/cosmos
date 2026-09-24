@@ -6,7 +6,7 @@ format may still change between releases.
 
 ## 0.2.0 — 2026-09-24
 
-Phase 4 (see [ROADMAP.md](ROADMAP.md)): the course grows to 58 lessons and 29
+Phase 4 (see [ROADMAP.md](https://github.com/salihyesil59/cosmos/blob/main/ROADMAP.md)): the course grows to 58 lessons and 29
 simulators — recombination, the far future, the first stars, dark matter searches,
 galaxy formation and how to read a paper — and gains the tools that make studying
 a habit: flashcards, a daily goal and streak, "Remember this" cards, backups, and
@@ -86,7 +86,7 @@ you had is still there. One worked problem changed its id (see *Fixed*).
 - **The README's numbers are checked**: `tools/content_stats.py` counts the
   content, a test fails when the README falls behind, and `--write` fixes it
 - Fifteen guided challenges for the five new simulators; the Turkish pack is
-  complete at 2011 strings
+  complete at 2073 strings
 
 ### Fixed
 
