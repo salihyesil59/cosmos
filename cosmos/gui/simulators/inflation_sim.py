@@ -204,7 +204,7 @@ class InflationSimulator(SimulatorBase):
         ax.add_patch(Rectangle((inflation.N_S_MEASURED - 2 * inflation.N_S_ERROR, 0),
                                4 * inflation.N_S_ERROR, inflation.R_UPPER_LIMIT,
                                color=p.success, alpha=0.2, linewidth=0, label="allowed (approx. 95%)"))
-        for i, (key, other) in enumerate(inflation.POTENTIALS.items()):
+        for i, (_key, other) in enumerate(inflation.POTENTIALS.items()):
             pts = []
             for n in (50, 55, 60):
                 try:
@@ -214,7 +214,8 @@ class InflationSimulator(SimulatorBase):
                     pass
             if pts:
                 xs, ys = zip(*pts)
-                ax.plot(xs, ys, "-o", color=p.series[i % 6], markersize=3, linewidth=1.2, label=other.label.split("  ")[0])
+                ax.plot(xs, ys, "-o", color=p.series[i % 6], markersize=3, linewidth=1.2,
+                        label=other.label.split("  ")[0])
         ax.scatter([r.n_s], [max(r.r, 1e-4)], color=p.text, marker="*", s=120, zorder=5, label="your model")
         ax.set_yscale("log")
         ax.set_xlim(0.93, 0.99)

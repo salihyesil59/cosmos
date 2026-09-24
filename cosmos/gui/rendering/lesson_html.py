@@ -206,7 +206,8 @@ def stylesheet(palette: Palette, font_pt: float = 11.0) -> str:
     return f"""
     body {{ color: {p.text}; font-size: {font_pt}pt; }}
     h1 {{ font-size: {font_pt * 1.9:.1f}pt; font-weight: 600; margin-top: 4px; margin-bottom: 10px; }}
-    h2 {{ font-size: {font_pt * 1.4:.1f}pt; font-weight: 600; color: {p.accent}; margin-top: 22px; margin-bottom: 6px; }}
+    h2 {{ font-size: {font_pt * 1.4:.1f}pt; font-weight: 600; color: {p.accent};
+          margin-top: 22px; margin-bottom: 6px; }}
     h3 {{ font-size: {font_pt * 1.15:.1f}pt; font-weight: 600; margin-top: 16px; margin-bottom: 4px; }}
     p {{ margin-top: 6px; margin-bottom: 6px; line-height: 145%; }}
     li {{ margin-bottom: 4px; line-height: 140%; }}

@@ -41,7 +41,8 @@ class NotesPanel(QWidget):
 
         self.editor = QTextEdit()
         self.editor.setObjectName("noteEditor")
-        self.editor.setPlaceholderText(tr("Your notes about this page…\n\nWrite down what surprised you, a number you want to remember, "
+        self.editor.setPlaceholderText(tr("Your notes about this page…\n\nWrite down what surprised you, a number you "
+                                          "want to remember, "
             "or a question to come back to. Notes are saved automatically on this computer.")
         )
         self.editor.setAcceptRichText(False)

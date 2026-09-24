@@ -112,6 +112,21 @@ def test_the_ci_workflow_packages_all_three_platforms():
     assert "if-no-files-found: error" in workflow
 
 
+def test_the_style_check_runs_in_ci_and_passes():
+    """E16: CI runs ruff with the rules in ruff.toml, and the code already satisfies them."""
+    import shutil
+    import subprocess
+
+    workflow = (ROOT / ".github" / "workflows" / "ci.yml").read_text(encoding="utf-8")
+    assert "ruff check" in workflow and "needs: [lint, tests]" in workflow
+    assert (ROOT / "ruff.toml").exists()
+    ruff = shutil.which("ruff")
+    if ruff is None:
+        pytest.skip("ruff is not installed (pip install -r requirements-dev.txt)")
+    result = subprocess.run([ruff, "check", "--no-cache", "."], cwd=ROOT, capture_output=True, text=True)
+    assert result.returncode == 0, result.stdout[-3000:]
+
+
 # ------------------------------------------------------------------- releasing
 def test_the_changelog_describes_this_version():
     """A release's notes come from CHANGELOG.md, so the version must be in it."""
@@ -141,7 +156,8 @@ def test_a_tag_builds_a_draft_release():
     assert "v*" in triggers["push"]["tags"]
 
     package = workflow["jobs"]["package"]
-    assert package["needs"] == "tests", "a broken build must never reach a release"
+    needs = package["needs"] if isinstance(package["needs"], list) else [package["needs"]]
+    assert "tests" in needs and "lint" in needs, "a broken or unchecked build must never reach a release"
     assert package["permissions"]["contents"] == "write"
 
     step = package["steps"][-1]

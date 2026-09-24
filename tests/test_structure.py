@@ -169,8 +169,8 @@ def test_polarisation_peaks_interleave_with_the_temperature():
     """L5.7: temperature comes from compression, polarisation from velocity."""
     tt = cmb.spectrum()
     pol = cmb.polarisation()
-    ee_peaks = [l for l, _v in cmb.find_peaks(pol.ell, pol.ee, limit=4)]
-    tt_peaks = [l for l, _v in tt.peaks[:5]]
+    ee_peaks = [ell for ell, _v in cmb.find_peaks(pol.ell, pol.ee, limit=4)]
+    tt_peaks = [ell for ell, _v in tt.peaks[:5]]
     # Every E-mode peak sits between two temperature peaks.
     for ell in ee_peaks[:3]:
         below = [t for t in tt_peaks if t < ell]

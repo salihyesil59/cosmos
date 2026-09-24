@@ -8,7 +8,7 @@ read nothing but :class:`~cosmos.progress.ProgressStore` and the curriculum.
 from __future__ import annotations
 
 from dataclasses import dataclass
-from typing import Callable
+from collections.abc import Callable
 
 from cosmos.i18n import tr_noop as _
 
@@ -21,7 +21,7 @@ class Achievement:
     title: str
     icon: str
     description: str
-    progress: Callable[["object", "object"], tuple[int, int]]
+    progress: Callable[[object, object], tuple[int, int]]
 
     def state(self, store, curriculum) -> tuple[int, int]:
         done, goal = self.progress(store, curriculum)

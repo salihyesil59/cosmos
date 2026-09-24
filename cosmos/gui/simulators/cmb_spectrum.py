@@ -57,13 +57,14 @@ class CMBSpectrumSimulator(SimulatorBase):
         )
         self.omega_c = ParameterSlider(
             tr("Ωc h²  dark matter"), 0.03, 0.4, base.omega_c, decimals=4, step=0.005,
-            info=(tr("Cold dark matter density"), tr("More dark matter means matter dominates earlier, so gravitational "
-                      "potentials decay less and the radiation driving that boosts the peaks weakens.")),
+            info=(tr("Cold dark matter density"),
+                  tr("More dark matter means matter dominates earlier, so gravitational potentials decay less and the "
+                     "radiation driving that boosts the peaks weakens.")),
         )
         self.h = ParameterSlider(
             tr("h = H0 / 100"), 0.5, 0.9, base.h, decimals=4, step=0.005,
-            info=(tr("Hubble constant"), tr("Changes the distance to the last scattering surface and therefore the angle "
-                      "the sound horizon covers. The peaks shift sideways.")),
+            info=(tr("Hubble constant"), tr("Changes the distance to the last scattering surface and therefore the "
+                                            "angle the sound horizon covers. The peaks shift sideways.")),
         )
         self.omega_k = ParameterSlider(
             tr("Ωk  curvature"), -0.15, 0.15, 0.0, decimals=3, step=0.005,
@@ -88,7 +89,8 @@ class CMBSpectrumSimulator(SimulatorBase):
         )
         self.tau = ParameterSlider(
             tr("τ  reionisation optical depth"), 0.0, 0.2, base.tau, decimals=3, step=0.005,
-            info=(tr("Optical depth"), tr("When the first stars reionised the universe, free electrons scattered some CMB "
+            info=(tr("Optical depth"), tr("When the first stars reionised the universe, free electrons scattered some "
+                                          "CMB "
                       "photons again, smoothing small-scale fluctuations by a factor e^(−2τ).")),
         )
         for w in (self.n_s, self.a_s, self.tau):
@@ -387,14 +389,14 @@ class CMBSpectrumSimulator(SimulatorBase):
 
     def _csv_polarisation(self):
         pol = self.pol
-        rows = [[f"{l:.0f}", f"{ee:.4f}", f"{te:.4f}", f"{bl:.6f}", f"{bt:.6f}", f"{bd:.6f}"]
-                for l, ee, te, bl, bt, bd in zip(pol.ell, pol.ee, pol.te, pol.bb_lensing, pol.bb_tensor,
+        rows = [[f"{ell:.0f}", f"{ee:.4f}", f"{te:.4f}", f"{bl:.6f}", f"{bt:.6f}", f"{bd:.6f}"]
+                for ell, ee, te, bl, bt, bd in zip(pol.ell, pol.ee, pol.te, pol.bb_lensing, pol.bb_tensor,
                                                  pol.bb_dust)]
         return ["ell", "EE_uK2", "TE_uK2", "BB_lensing", "BB_tensor", "BB_dust"], rows
 
     def _csv(self):
-        rows = [[f"{l:.0f}", f"{d:.3f}", f"{r:.3f}"]
-                for l, d, r in zip(self.spec.ell, self.spec.d_ell, self.reference.d_ell)]
+        rows = [[f"{ell:.0f}", f"{d:.3f}", f"{r:.3f}"]
+                for ell, d, r in zip(self.spec.ell, self.spec.d_ell, self.reference.d_ell)]
         return ["ell", "D_ell_uK2", "planck_model_D_ell_uK2"], rows
 
     def state(self) -> dict:

@@ -61,6 +61,11 @@ The first round of Phase 4 (see [ROADMAP.md](ROADMAP.md)).
   *Learn → "Remember this" sheet* and *File → Print the "Remember this" sheet*
   collect the cards of every completed lesson (or the whole course, before the
   first is completed)
+- **A style check in CI**: ruff (pycodestyle, pyflakes, bugbear, pyupgrade; rules
+  in `ruff.toml`) runs on every push, and packages are only built when it passes.
+  Getting there removed unused imports, renamed ambiguous and unused loop
+  variables, and wrapped the 57 lines longer than 120 characters without changing
+  a single translatable string
 - **The README's numbers are checked**: `tools/content_stats.py` counts the
   content, a test fails when the README falls behind, and `--write` fixes it
 - Fifteen guided challenges for the five new simulators; the Turkish pack is

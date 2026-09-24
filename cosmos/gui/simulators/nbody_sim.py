@@ -73,8 +73,9 @@ class NBodySimulator(SimulatorBase):
         il = QVBoxLayout(ic)
         self.index = ParameterSlider(
             tr("Spectral index n"), -2.5, 0.5, -1.0, decimals=2, step=0.1,
-            info=(tr("Power spectrum slope"), tr("Initial fluctuations have power P(k) ∝ kⁿ. Smaller n puts more power on "
-                      "large scales (big coherent structures); larger n gives more small clumps.")),
+            info=(tr("Power spectrum slope"),
+                  tr("Initial fluctuations have power P(k) ∝ kⁿ. Smaller n puts more power on large scales (big "
+                     "coherent structures); larger n gives more small clumps.")),
         )
         self.strength = ParameterSlider(
             tr("Fluctuation strength"), 0.4, 2.0, 1.0, decimals=2, step=0.05,

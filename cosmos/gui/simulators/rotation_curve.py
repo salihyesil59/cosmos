@@ -59,8 +59,8 @@ class RotationCurveSimulator(SimulatorBase):
         )
         self.scale = ParameterSlider(
             tr("Disk scale length (kpc)"), 1.0, 8.0, 3.0, decimals=2, step=0.1,
-            info=(tr("Scale length"), tr("The distance over which the disk's surface brightness drops by a factor e ≈ 2.7. "
-                      "The Milky Way's is about 3 kpc.")),
+            info=(tr("Scale length"), tr("The distance over which the disk's surface brightness drops by a factor e ≈ "
+                                         "2.7. The Milky Way's is about 3 kpc.")),
         )
         for w in (self.bulge, self.disk, self.scale):
             vl.addWidget(w)

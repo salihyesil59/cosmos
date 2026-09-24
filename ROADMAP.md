@@ -247,7 +247,7 @@ safer and more portable. ★ marks the ones worth doing first; ticked items are 
 
 ### Extras & quality
 
-- [ ] `E16` A style check (ruff) in continuous integration
+- [x] `E16` A style check (ruff) in continuous integration
 - [x] `E17` A test that keeps the numbers in the README (lessons, simulators, questions) in step with the content
 - [ ] `E18` A second full interface language (German or Spanish), with a contributor guide for translators
 - [ ] `E19` Export the course as a static website that runs in a browser without installing anything

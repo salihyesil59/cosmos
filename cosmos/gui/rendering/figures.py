@@ -147,7 +147,8 @@ def _rotation_curves(fig, p: Palette):
     ax.errorbar(obs.radius_kpc, obs.velocity_km_s, yerr=obs.error_km_s, fmt="o", color=p.text,
                 markersize=4, label="Measured (illustrative)")
     ax.plot(r, visible, color=p.series[1], linewidth=2, label="Expected from visible matter")
-    ax.plot(r, rotation.total_velocity(visible, halo), color=p.series[0], linewidth=2, label="Visible + dark matter halo")
+    ax.plot(r, rotation.total_velocity(visible, halo), color=p.series[0], linewidth=2, label="Visible + dark matter "
+                                                                                             "halo")
     ax.set_xlabel("Distance from galactic centre (kpc)")
     ax.set_ylabel("Orbital speed (km/s)")
     ax.set_ylim(0, 300)

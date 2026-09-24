@@ -52,7 +52,7 @@ class UserData:
     achievements: dict[str, str] = field(default_factory=dict)      # achievement id -> ISO timestamp
 
     @classmethod
-    def from_dict(cls, data: dict) -> "UserData":
+    def from_dict(cls, data: dict) -> UserData:
         known = {k: v for k, v in data.items() if k in cls.__dataclass_fields__}
         return cls(**known)
 

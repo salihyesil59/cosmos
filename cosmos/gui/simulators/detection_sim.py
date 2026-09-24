@@ -266,7 +266,7 @@ class DetectionSimulator(SimulatorBase):
     def _draw_exclusion(self, fig) -> None:
         p = theme().palette
         ax = fig.add_subplot()
-        for i, (key, e) in enumerate(det.EXPERIMENTS.items()):
+        for i, (_key, e) in enumerate(det.EXPERIMENTS.items()):
             curve = self.curve(target=e.target, exposure=e.exposure, threshold=e.threshold, e_max=e.e_max,
                                background=e.background)
             ax.loglog(MASSES, curve, color=p.series[(i + 1) % len(p.series)], linewidth=1.0, alpha=0.6,

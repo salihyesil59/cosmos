@@ -261,7 +261,7 @@ class SupernovaSimulator(SimulatorBase):
             ("This sample, CMB + BAO calibration", inv, p.series[0]),
             ("Your current choice", mine, p.text),
         ]
-        for i, (label, value, color) in enumerate(rows):
+        for i, (_label, value, color) in enumerate(rows):
             ax.barh(i, value, color=color, height=0.5)
             ax.text(value + 0.3, i, f"{value:.1f}", va="center", color=p.text, fontsize=9)
         ax.axvline(PLANCK_H0, color=p.series[0], linestyle="--", linewidth=1)

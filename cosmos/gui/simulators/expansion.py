@@ -48,7 +48,8 @@ class ExpansionSimulator(SimulatorBase):
                       "but does not change the shape of the curves.")),
         )
         self.radiation = QCheckBox(tr("Include radiation"))
-        self.radiation.setToolTip(tr("Radiation only matters in the first ~100 000 years; the effect on this plot is tiny."))
+        self.radiation.setToolTip(tr("Radiation only matters in the first ~100 000 years; the effect on this plot is "
+                                     "tiny."))
         for w in (self.om, self.ode, self.h0, self.radiation):
             ml.addWidget(w)
         self.controls.addWidget(model)
@@ -221,7 +222,8 @@ class ExpansionSimulator(SimulatorBase):
         ax.text(0.05, 1.55, "closed ↗", color=p.muted, fontsize=8)
         ax.text(0.05, 0.25, "open ↙", color=p.muted, fontsize=8)
         planck = PRESETS["planck18"].cosmology
-        ax.scatter([planck.Om0], [planck.Ode0], marker="*", s=120, color=p.accent2, zorder=4, label="Our universe (Planck)")
+        ax.scatter([planck.Om0], [planck.Ode0], marker="*", s=120, color=p.accent2, zorder=4,
+                   label="Our universe (Planck)")
         ax.scatter([self.om.value()], [self.ode.value()], s=70, color=p.series[0], edgecolor=p.text, zorder=5,
                    label="Your choice")
         ax.set_xlim(*OM_RANGE)

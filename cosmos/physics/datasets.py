@@ -185,7 +185,7 @@ class SparcGalaxy:
     def label(self) -> str:
         return f"{self.name}  ({self.distance_mpc:.1f} Mpc, V_flat ≈ {self.v_flat:.0f} km/s)"
 
-    def sample(self) -> "RotationSample":
+    def sample(self) -> RotationSample:
         return RotationSample(self.radius_kpc, self.velocity_km_s, self.error_km_s)
 
 

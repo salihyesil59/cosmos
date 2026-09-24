@@ -204,6 +204,7 @@ reported under **Help → Simulator plugins** and skipped.
 ```bash
 pip install -r requirements-dev.txt
 pytest
+ruff check .          # the style check CI runs; the rules are in ruff.toml
 ```
 
 The tests check the physics against astropy, validate all course content (links,

@@ -165,7 +165,7 @@ def _normalisation() -> float:
 def calibration_error() -> float:
     """RMS logarithmic deviation from the Planck landmarks (for tests and calibration)."""
     spec = spectrum()
-    model = np.array([spec.d_ell[int(l) - 2] for l, _ in PLANCK_LANDMARKS])
+    model = np.array([spec.d_ell[int(ell) - 2] for ell, _ in PLANCK_LANDMARKS])
     target = np.array([v for _, v in PLANCK_LANDMARKS], dtype=float)
     return float(np.sqrt(np.mean(np.log(model / target) ** 2)))
 

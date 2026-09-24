@@ -92,7 +92,7 @@ def _ns_r_plane(fig, p: Palette):
     ax.add_patch(Rectangle((inflation.N_S_MEASURED - 2 * inflation.N_S_ERROR, 1e-4), 4 * inflation.N_S_ERROR,
                            inflation.R_UPPER_LIMIT - 1e-4, color=p.success, alpha=0.22, linewidth=0,
                            label="allowed by Planck + BICEP/Keck (approx.)"))
-    for i, (key, pot) in enumerate(inflation.POTENTIALS.items()):
+    for i, (_key, pot) in enumerate(inflation.POTENTIALS.items()):
         pts = [inflation.predictions(pot, n) for n in (50, 55, 60)]
         ax.plot([r.n_s for r in pts], [max(r.r, 1e-4) for r in pts], "-o", color=p.series[i % 6], markersize=4,
                 linewidth=1.5, label=pot.label.split("  ")[0])
@@ -185,7 +185,7 @@ def _h0_measurements(fig, p: Palette):
         ("SH0ES Cepheids (2022)", 73.04, 1.04, 1.04, "late"),
     ]
     colors = {"early": p.series[0], "late": p.series[1], "other": p.series[2]}
-    for i, (label, value, lo, hi, kind) in enumerate(rows):
+    for i, (_label, value, lo, hi, kind) in enumerate(rows):
         ax.errorbar([value], [i], xerr=[[lo], [hi]], fmt="o", color=colors[kind], capsize=3, markersize=6)
         ax.text(value, i + 0.28, f"{value:g}", ha="center", color=p.text, fontsize=7)
     ax.axvspan(66.9, 67.9, color=p.series[0], alpha=0.12, linewidth=0)
@@ -204,7 +204,7 @@ def _s8_measurements(fig, p: Palette):
         ("KiDS-1000 (2021)", 0.766, 0.014, 0.020, p.series[1]),
         ("DES Year 3 (2022)", 0.776, 0.017, 0.017, p.series[1]),
     ]
-    for i, (label, value, lo, hi, color) in enumerate(rows):
+    for i, (_label, value, lo, hi, color) in enumerate(rows):
         ax.errorbar([value], [i], xerr=[[lo], [hi]], fmt="o", color=color, capsize=3, markersize=6)
     ax.set_yticks(range(len(rows)), [r[0] for r in rows])
     ax.set_xlim(0.7, 0.88)
@@ -225,7 +225,8 @@ def _mond_vs_dark_matter(fig, p: Palette):
     ax.errorbar(data.radius_kpc, data.velocity_km_s, yerr=data.error_km_s, fmt="o", color=p.text, markersize=4,
                 label="Measured-style data (illustrative)")
     ax.plot(r, visible, color=p.series[3], linewidth=2, label="Newton, visible matter only")
-    ax.plot(r, rotation.total_velocity(visible, halo), color=p.series[0], linewidth=2, label="Newton + dark matter halo")
+    ax.plot(r, rotation.total_velocity(visible, halo), color=p.series[0], linewidth=2, label="Newton + dark matter "
+                                                                                             "halo")
     ax.plot(r, rotation.mond_velocity(r, visible), color=p.series[5], linewidth=2, linestyle="--",
             label="MOND, visible matter only")
     ax.set_ylim(0, 300)

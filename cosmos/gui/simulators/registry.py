@@ -47,7 +47,8 @@ SIMULATORS: dict[str, SimulatorInfo] = {
                 "different 'distances' astronomers use."
             ),
             how_to_use=[
-                tr_noop("Pick a model from <b>Preset</b> (Planck 2018 is today's best estimate) or type your own values."),
+                tr_noop("Pick a model from <b>Preset</b> (Planck 2018 is today's best estimate) or type your own "
+                        "values."),
                 tr_noop("Enter the <b>redshift z</b> of the object you are interested in."),
                 tr_noop("Read the results table. Click any row to see what that quantity means."),
                 tr_noop("Use the plots to see how each quantity changes with redshift."),
@@ -120,8 +121,10 @@ SIMULATORS: dict[str, SimulatorInfo] = {
                 "source or expand the universe and watch the lines slide toward the red (or blue)."
             ),
             how_to_use=[
-                tr_noop("Choose <b>Doppler motion</b> (a moving source) or <b>Cosmic expansion</b> (a distant galaxy)."),
-                tr_noop("Move the slider. The lower strip shows the observed spectrum; the upper one is the laboratory spectrum."),
+                tr_noop("Choose <b>Doppler motion</b> (a moving source) or <b>Cosmic expansion</b> (a distant "
+                        "galaxy)."),
+                tr_noop("Move the slider. The lower strip shows the observed spectrum; the upper one is the laboratory "
+                        "spectrum."),
                 tr_noop("Lines that leave the visible range continue into the infrared (grey area)."),
                 tr_noop("Try the <b>Mystery galaxy</b> challenge to measure a redshift yourself."),
             ],
@@ -223,8 +226,8 @@ SIMULATORS: dict[str, SimulatorInfo] = {
                 "fluctuations, and watch the acoustic peaks and the simulated sky respond."
             ),
             how_to_use=[
-                tr_noop("Move a slider in <b>Contents of the universe</b>; the blue curve is your universe, the dashed curve "
-                        "the Planck 2018 model."),
+                tr_noop("Move a slider in <b>Contents of the universe</b>; the blue curve is your universe, the dashed "
+                        "curve the Planck 2018 model."),
                 tr_noop("Read the <b>peak positions</b> and the acoustic angle in the results panel."),
                 tr_noop("Open the <b>What the sky looks like</b> tab to compare simulated sky patches."),
                 tr_noop("Press <b>Reset to Planck 2018</b> to start again."),
@@ -250,8 +253,10 @@ SIMULATORS: dict[str, SimulatorInfo] = {
             ),
             how_to_use=[
                 tr_noop("Press <b>Play</b>. Time is measured by the growth factor D; D = 1 corresponds to today."),
-                tr_noop("Watch the lower plot: at first the density contrast follows linear theory, then gravity takes over."),
-                tr_noop("Change the <b>spectral index</b> or choose <b>warm dark matter</b>, then press <b>Apply and restart</b>."),
+                tr_noop("Watch the lower plot: at first the density contrast follows linear theory, then gravity takes "
+                        "over."),
+                tr_noop("Change the <b>spectral index</b> or choose <b>warm dark matter</b>, then press <b>Apply and "
+                        "restart</b>."),
                 tr_noop("A different <b>random seed</b> gives a different universe with the same statistics."),
             ],
             things_to_try=[
@@ -275,8 +280,10 @@ SIMULATORS: dict[str, SimulatorInfo] = {
             ),
             how_to_use=[
                 tr_noop("Choose a <b>lens type</b> and set its mass or velocity dispersion."),
-                tr_noop("<b>Drag</b> inside the image to move the background galaxy; the orange cross marks its true position."),
-                tr_noop("Change the <b>lens and source redshifts</b> and watch the Einstein radius in the measurements."),
+                tr_noop("<b>Drag</b> inside the image to move the background galaxy; the orange cross marks its true "
+                        "position."),
+                tr_noop("Change the <b>lens and source redshifts</b> and watch the Einstein radius in the "
+                        "measurements."),
                 tr_noop("Switch to <b>a field of galaxies</b> to see how a cluster distorts many galaxies at once."),
             ],
             things_to_try=[
@@ -299,13 +306,15 @@ SIMULATORS: dict[str, SimulatorInfo] = {
                 "connect the curvature radius to our own universe."
             ),
             how_to_use=[
-                tr_noop("Change the <b>triangle side</b>: small triangles look flat everywhere, large ones reveal curvature."),
+                tr_noop("Change the <b>triangle side</b>: small triangles look flat everywhere, large ones reveal "
+                        "curvature."),
                 tr_noop("Read the angle sums and circumference ratios in <b>Measurements</b>."),
                 tr_noop("Open the <b>Apparent sizes</b> tab to see why curvature changes the size of CMB spots."),
                 tr_noop("Set <b>Ωk</b> to see how big the curvature radius of our universe could be."),
             ],
             things_to_try=[
-                tr_noop("Make a spherical triangle whose angles add up to 270°. What fraction of the sphere does it cover?"),
+                tr_noop("Make a spherical triangle whose angles add up to 270°. What fraction of the sphere does it "
+                        "cover?"),
                 tr_noop("At which radius does a circle on a sphere have the largest circumference?"),
                 tr_noop("With |Ωk| = 0.002, how many observable-universe radii fit into the curvature radius?"),
             ],
@@ -325,12 +334,14 @@ SIMULATORS: dict[str, SimulatorInfo] = {
             ),
             how_to_use=[
                 tr_noop("Choose a universe with the <b>preset</b> or the Ωm and ΩΛ sliders."),
-                tr_noop("Pick <b>coordinates</b>: proper distance, comoving distance, or comoving distance with conformal time."),
+                tr_noop("Pick <b>coordinates</b>: proper distance, comoving distance, or comoving distance with "
+                        "conformal time."),
                 tr_noop("Move the <b>scale factor of the observer</b> to watch from the past or the future."),
                 tr_noop("Toggle light cones, horizons and worldlines to focus on one idea at a time."),
             ],
             things_to_try=[
-                tr_noop("In proper coordinates, where is the past light cone widest? Where does it cross the Hubble sphere?"),
+                tr_noop("In proper coordinates, where is the past light cone widest? Where does it cross the Hubble "
+                        "sphere?"),
                 tr_noop("Switch to conformal time: why do light cones become straight lines?"),
                 tr_noop("Remove dark energy (ΩΛ = 0). What happens to the event horizon?"),
             ],
@@ -357,7 +368,8 @@ SIMULATORS: dict[str, SimulatorInfo] = {
             things_to_try=[
                 tr_noop("Why is the simplest φ² model ruled out even though its nₛ looks fine?"),
                 tr_noop("Change the decay constant of natural inflation: can you make it consistent?"),
-                tr_noop("How many e-folds of inflation does the comoving Hubble radius plot need to explain the horizon?"),
+                tr_noop("How many e-folds of inflation does the comoving Hubble radius plot need to explain the "
+                        "horizon?"),
             ],
             lessons=["L6.3"],
             module="cosmos.gui.simulators.inflation_sim",
@@ -375,14 +387,17 @@ SIMULATORS: dict[str, SimulatorInfo] = {
             ),
             how_to_use=[
                 tr_noop("Choose a sample: two simulated ones, or the real <b>Pantheon+</b> compilation."),
-                tr_noop("Compare the data with the empty, matter-only and best-fit models in the <b>Hubble diagram</b>."),
-                tr_noop("Open the <b>Ωm–ΩΛ plane</b> to see which universes the data allow; try <b>Assume a flat universe</b>."),
+                tr_noop("Compare the data with the empty, matter-only and best-fit models in the <b>Hubble "
+                        "diagram</b>."),
+                tr_noop("Open the <b>Ωm–ΩΛ plane</b> to see which universes the data allow; try <b>Assume a flat "
+                        "universe</b>."),
                 tr_noop("Switch the <b>calibration</b> and read the Hubble constant."),
             ],
             things_to_try=[
                 tr_noop("Fit the real Pantheon+ sample. Where does the best fit land, and how many sigma is the "
                         "evidence for acceleration?"),
-                tr_noop("With the 1998-like sample, how strong is the evidence for acceleration with and without flatness?"),
+                tr_noop("With the 1998-like sample, how strong is the evidence for acceleration with and without "
+                        "flatness?"),
                 tr_noop("Do distant supernovae look brighter or fainter than in an empty universe?"),
                 tr_noop("Which calibration gives a Hubble constant close to Planck, and which close to SH0ES?"),
             ],
@@ -426,7 +441,8 @@ SIMULATORS: dict[str, SimulatorInfo] = {
                 "what dominated the energy budget, together with the epoch you are in and how well we know it."
             ),
             how_to_use=[
-                tr_noop("Drag the <b>time slider</b>; it is logarithmic, so each step of 1 is a factor of ten in time."),
+                tr_noop("Drag the <b>time slider</b>; it is logarithmic, so each step of 1 is a factor of ten in "
+                        "time."),
                 tr_noop("Or pick an epoch from <b>Jump to an epoch</b>, or press <b>Play history</b>."),
                 tr_noop("Read <b>The universe at this moment</b> for temperature, energy, density and horizon size."),
                 tr_noop("The coloured bands show how confident we are: red speculative, yellow theory, blue tested in "
@@ -454,11 +470,14 @@ SIMULATORS: dict[str, SimulatorInfo] = {
                 "abundances and with the CMB."
             ),
             how_to_use=[
-                tr_noop("Move <b>η₁₀</b>, the number of baryons per ten billion photons. The vertical line marks your value."),
+                tr_noop("Move <b>η₁₀</b>, the number of baryons per ten billion photons. The vertical line marks your "
+                        "value."),
                 tr_noop("The coloured horizontal bands are the observed abundances; the green vertical band is the "
                         "baryon density measured from the CMB."),
-                tr_noop("Use <b>Change the physics</b> to add extra relativistic species or change the neutron lifetime."),
-                tr_noop("The right-hand panel shows neutrons decaying while the universe waits for deuterium to survive."),
+                tr_noop("Use <b>Change the physics</b> to add extra relativistic species or change the neutron "
+                        "lifetime."),
+                tr_noop("The right-hand panel shows neutrons decaying while the universe waits for deuterium to "
+                        "survive."),
             ],
             things_to_try=[
                 tr_noop("Press <b>From deuterium</b>. Does the result land inside the CMB band?"),

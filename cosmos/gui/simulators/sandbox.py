@@ -6,8 +6,7 @@ import math
 from dataclasses import dataclass
 
 import numpy as np
-from PySide6.QtCore import Qt
-from PySide6.QtWidgets import QCheckBox, QGroupBox, QLabel, QPushButton, QTabWidget, QVBoxLayout
+from PySide6.QtWidgets import QCheckBox, QGroupBox, QPushButton, QTabWidget, QVBoxLayout
 
 from cosmos.gui.simulators.base import SimulatorBase
 from cosmos.gui.theme import theme

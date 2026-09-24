@@ -53,8 +53,8 @@ class SpacetimeSimulator(SimulatorBase):
                 "so galaxies stay at fixed positions. In conformal time light always travels at 45°."))))
         self.observe = ParameterSlider(
             tr("Observer's scale factor a"), 0.1, 2.5, 1.0, decimals=2, step=0.05,
-            info=(tr("Observation time"), tr("Move the observer through cosmic history: a = 1 is today, a = 0.5 when the "
-                      "universe was half its present size, a = 2 in the future.")),
+            info=(tr("Observation time"), tr("Move the observer through cosmic history: a = 1 is today, a = 0.5 when "
+                                             "the universe was half its present size, a = 2 in the future.")),
         )
         vl.addWidget(self.observe)
         self.toggles = {}
@@ -204,7 +204,8 @@ class SpacetimeSimulator(SimulatorBase):
             xs = (a[past] * cone if mode == "proper" else cone) * g
             ax.fill_betweenx(y[past], -xs, xs, color=p.accent2, alpha=0.15, linewidth=0)
             for sign in (1, -1):
-                ax.plot(sign * xs, y[past], color=p.accent2, linewidth=2.2, label="Past light cone" if sign > 0 else None)
+                ax.plot(sign * xs, y[past], color=p.accent2, linewidth=2.2,
+                        label="Past light cone" if sign > 0 else None)
         if self.toggles["future"].isChecked():
             cone = chi[future] - d["chi_obs"]
             xs = (a[future] * cone if mode == "proper" else cone) * g

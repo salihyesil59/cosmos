@@ -6,7 +6,6 @@ import numpy as np
 from PySide6.QtCore import Qt
 from PySide6.QtWidgets import QCheckBox, QGroupBox, QHBoxLayout, QLabel, QPushButton, QVBoxLayout
 
-from cosmos.gui.labels import physics
 from cosmos.gui.simulators.base import SimulatorBase
 from cosmos.gui.theme import theme
 from cosmos.gui.widgets.common import Banner, ParameterSlider
@@ -64,8 +63,8 @@ class BBNExplorerSimulator(SimulatorBase):
             tr("Neutron lifetime (s)"), 860.0, 900.0, bbn.NEUTRON_LIFETIME_S, decimals=1, step=0.5,
             info=(tr("Neutron lifetime"),
                   tr("A free neutron decays in about 15 minutes. A longer lifetime leaves more neutrons when "
-                          "deuterium finally forms, so more helium. Bottle experiments measure 878.4 s, beam experiments "
-                          "about 888 s: an unsolved discrepancy.")),
+                          "deuterium finally forms, so more helium. Bottle experiments measure 878.4 s, beam "
+                          "experiments about 888 s: an unsolved discrepancy.")),
         )
         pl.addWidget(self.lifetime)
         reset = QPushButton(tr("Standard physics"))
@@ -194,7 +193,8 @@ class BBNExplorerSimulator(SimulatorBase):
         changed = self.delta_neff.value() != 0 or self.lifetime.value() != bbn.NEUTRON_LIFETIME_S
 
         panels = [(ax_y, [("Yp", curve.yp, standard.yp, p.series[0])]),
-                  (ax_d, [("D/H", curve.d_h, standard.d_h, p.series[1]), ("He3/H", curve.he3_h, standard.he3_h, p.series[4])]),
+                  (ax_d, [("D/H", curve.d_h, standard.d_h, p.series[1]),
+                          ("He3/H", curve.he3_h, standard.he3_h, p.series[4])]),
                   (ax_li, [("Li7/H", curve.li7_h, standard.li7_h, p.series[3])])]
         for ax, series in panels:
             for key, values, std, colour in series:
@@ -254,7 +254,8 @@ class BBNExplorerSimulator(SimulatorBase):
     def _csv(self):
         grid = np.logspace(np.log10(ETA_MIN), np.log10(ETA_MAX), 200)
         ab = self._abundances(grid)
-        rows = [[f"{e:.4f}", f"{float(bbn.omega_b_h2_from_eta10(e)):.5f}", f"{y:.5f}", f"{d:.4e}", f"{h:.4e}", f"{li:.4e}"]
+        rows = [[f"{e:.4f}", f"{float(bbn.omega_b_h2_from_eta10(e)):.5f}", f"{y:.5f}", f"{d:.4e}", f"{h:.4e}",
+                 f"{li:.4e}"]
                 for e, y, d, h, li in zip(grid, ab.yp, ab.d_h, ab.he3_h, ab.li7_h)]
         return ["eta10", "omega_b_h2", "Yp", "D_H", "He3_H", "Li7_H"], rows
 

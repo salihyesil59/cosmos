@@ -22,10 +22,8 @@ Requires astropy (``pip install -r requirements-dev.txt``); the app itself does 
 from __future__ import annotations
 
 import argparse
-import io
 import ssl
 import subprocess
-import sys
 import urllib.parse
 import urllib.request
 from pathlib import Path
