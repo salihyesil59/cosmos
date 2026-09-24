@@ -107,15 +107,29 @@ def test_language_setting_survives_a_restart(tmp_path):
     assert ProgressStore(tmp_path / "p.json").data.language == "de"
 
 
-def test_turkish_pack_is_complete(app, monkeypatch):
-    """The bundled Turkish interface: every marked string is translated and loads."""
+def bundled_packs() -> list[Path]:
+    """Every interface translation that ships with the app."""
+    return sorted((ROOT / "cosmos" / "i18n").glob("cosmos_*.ts"))
+
+
+def test_every_bundled_pack_is_complete():
+    """E18: a pack that ships is a pack that is finished, compiled and single-context."""
     import re
 
-    ts = (ROOT / "cosmos" / "i18n" / "cosmos_tr.ts").read_text(encoding="utf-8")
-    assert 'type="unfinished"' not in ts, "some Turkish strings are still untranslated"
-    assert ts.count("<message>") > 200
-    assert len(re.findall(r"<name>cosmos</name>", ts)) == 1, "the .ts should hold a single context"
+    packs = bundled_packs()
+    assert {path.stem.split("_")[1] for path in packs} >= {"tr", "es"}
+    for path in packs:
+        ts = path.read_text(encoding="utf-8")
+        assert 'type="unfinished"' not in ts, f"{path.name} has untranslated strings"
+        assert ts.count("<message>") > 200
+        assert len(re.findall(r"<name>cosmos</name>", ts)) == 1, f"{path.name}: one context only"
+        assert path.with_suffix(".qm").exists(), f"{path.name} was never compiled"
+    counts = {path.name: path.read_text(encoding="utf-8").count("<message>") for path in packs}
+    assert len(set(counts.values())) == 1, f"the packs cover different strings: {counts}"
 
+
+def test_turkish_pack_is_complete(app, monkeypatch):
+    """The bundled Turkish interface: every marked string is translated and loads."""
     assert (ROOT / "cosmos" / "i18n" / "cosmos_tr.qm").exists()
     assert i18n.find("tr") is not None and i18n.language_name("tr") == "Türkçe"
     try:
@@ -135,11 +149,13 @@ def test_placeholders_survive_translation():
     import re
     import xml.etree.ElementTree as ET
 
-    root = ET.parse(ROOT / "cosmos" / "i18n" / "cosmos_tr.ts").getroot()
-    for message in root.iter("message"):
-        source = message.find("source").text or ""
-        translation = message.find("translation").text or ""
-        assert set(re.findall(r"\{(\w+)\}", source)) == set(re.findall(r"\{(\w+)\}", translation)), source
+    for pack in bundled_packs():
+        root = ET.parse(pack).getroot()
+        for message in root.iter("message"):
+            source = message.find("source").text or ""
+            translation = message.find("translation").text or ""
+            assert set(re.findall(r"\{(\w+)\}", source)) == \
+                set(re.findall(r"\{(\w+)\}", translation)), f"{pack.name}: {source}"
 
 
 def test_the_guide_panels_and_the_tour_are_marked():
@@ -258,3 +274,40 @@ def test_the_simulators_report_back_in_turkish(app):
     finally:
         i18n.install(app, "en")
     assert i18n.tr("flat") == "flat"
+
+
+def test_spanish_pack_reaches_the_whole_app(app):
+    """E18: the second full interface language, from the chrome to the simulators."""
+    assert i18n.find("es") is not None and i18n.language_name("es") == "Español"
+    try:
+        assert i18n.install(app, "es") is True
+        assert i18n.tr("Home") == "Inicio"
+        assert i18n.tr("Glossary") == "Glosario"
+        assert i18n.tr("First steps") == "Primeros pasos"          # badge, marked with tr_noop
+        assert i18n.tr("flat") == "plano"                          # from the physics layer
+        assert i18n.tr("billion years") == "miles de millones de años"
+        assert i18n.tr("{done} of {total} lessons completed").format(done=2, total=58) == \
+            "2 de 58 lecciones completadas"
+
+        from cosmos.gui.simulators.registry import SIMULATORS
+        assert i18n.tr(SIMULATORS["S2"].title) == "Explorador de la historia de la expansión"
+        assert i18n.tr(SIMULATORS["S24"].title) == "Visor del cielo del FCM"
+        assert i18n.tr("How to use") == "Cómo usarlo"
+        assert i18n.tr("Things to try") == "Cosas que probar"
+        assert i18n.tr("Save image…") == "Guardar imagen…"         # the plot toolbar
+        assert i18n.tr("Welcome to Cosmos!").startswith("¡Bienvenid")   # the tour
+    finally:
+        i18n.install(app, "en")
+    assert i18n.tr("Home") == "Home"
+
+
+def test_the_translator_guide_says_how(app):
+    """A contributor guide that has drifted from the tools is worse than none."""
+    guide = (ROOT / "TRANSLATING.md").read_text(encoding="utf-8")
+    assert "tools/update_translations.py --language" in guide
+    assert "--release" in guide and "pyside6-linguist" in guide
+    assert "{placeholder}" in guide, "the rule that breaks the app if ignored"
+    assert "pytest tests/test_i18n.py" in guide
+    for code in ("tr", "es"):
+        assert i18n.language_name(code) in guide, f"{code} is bundled but not in the guide"
+    assert "TRANSLATING.md" in (ROOT / "README.md").read_text(encoding="utf-8")

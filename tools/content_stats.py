@@ -41,7 +41,7 @@ def counts() -> dict[str, int]:
     events, scientists = load_history()
     sets = load_problems()
     glossary = yaml.safe_load((ROOT / "cosmos" / "content" / "glossary.yaml").read_text(encoding="utf-8"))
-    ts = ET.parse(ROOT / "cosmos" / "i18n" / "cosmos_tr.ts").getroot()
+    packs = sorted((ROOT / "cosmos" / "i18n").glob("cosmos_*.ts"))
     return {
         "lessons": len(curriculum.lessons),
         "levels": len(curriculum.levels),
@@ -55,7 +55,9 @@ def counts() -> dict[str, int]:
         "history events": len(events),
         "scientists": len(scientists),
         "badges": len(ACHIEVEMENTS),
-        "turkish strings": sum(1 for _ in ts.iter("message")),
+        "interface languages": len(packs) + 1,            # the packs plus English
+        "translated strings": min(sum(1 for _ in ET.parse(p).getroot().iter("message"))
+                                 for p in packs),
     }
 
 
@@ -109,10 +111,10 @@ def problems(readme: str, found: dict[str, int]) -> list[str]:
         out.append("README no longer says how many strings are translated")
     else:
         claimed = int(match.group(1))
-        floor = found["turkish strings"] // 100 * 100
-        if not claimed <= found["turkish strings"] or claimed != floor:
-            out.append(f"README says more than {claimed} translated strings, the pack has "
-                       f"{found['turkish strings']} (write {floor})")
+        floor = found["translated strings"] // 100 * 100
+        if not claimed <= found["translated strings"] or claimed != floor:
+            out.append(f"README says more than {claimed} translated strings, the packs have "
+                       f"{found['translated strings']} (write {floor})")
     listed = simulator_bullets(readme)
     if listed != found["simulators"]:
         out.append(f"README lists {listed} simulators by name, the app has {found['simulators']}")
@@ -127,7 +129,7 @@ def rewrite(readme: str, found: dict[str, int]) -> str:
             start = match.start(1) - match.start(0)
             return whole[:start] + _format(number, found[key]) + whole[start + len(number):]
         readme = re.sub(pattern, fix, readme, count=1)
-    floor = found["turkish strings"] // 100 * 100
+    floor = found["translated strings"] // 100 * 100
     return re.sub(TRANSLATED, f"More than {floor} strings", readme, count=1)
 
 

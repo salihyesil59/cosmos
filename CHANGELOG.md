@@ -4,6 +4,25 @@ All notable changes to Cosmos are recorded here. Versions follow
 [semantic versioning](https://semver.org): until 1.0 the interface and the save
 format may still change between releases.
 
+## Unreleased
+
+### Added
+
+- **A Spanish interface** (Español), complete: all 2073 strings, the same coverage
+  as the Turkish pack — the chrome, the Guide panel, the guided tour, the quiz, the
+  badges, the challenges and every simulator with its controls, tooltips and
+  results. Choose it in **View → Language**.
+- **[TRANSLATING.md](TRANSLATING.md)**, a guide for translators: what is translated
+  and what stays English, the three commands that start and compile a language, the
+  six rules that matter (placeholders, HTML, `&` accelerators, shortcuts, numbers,
+  Markdown), the terminology the existing packs settled on, and how to check the
+  result before sending it in.
+
+### Changed
+
+- The README's translation claim and `tools/content_stats.py` now count every
+  bundled pack rather than the Turkish one alone.
+
 ## 0.2.0 — 2026-09-24
 
 Phase 4 (see [ROADMAP.md](https://github.com/salihyesil59/cosmos/blob/main/ROADMAP.md)): the course grows to 58 lessons and 29
