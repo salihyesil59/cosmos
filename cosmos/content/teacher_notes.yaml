@@ -646,3 +646,17 @@ L4.8:
   demonstrate: >
     S27 at z = 20: point at the number of haloes above 10⁸ M☉/h, then open "Across cosmic
     time" and show clusters appearing only at z < 2. Structure grows from the bottom up.
+
+L3.6:
+  misconception: >
+    That forty years of null results mean dark matter is probably not there. The searches
+    test particular ideas about what it is; the gravitational evidence for it is untouched
+    by them, and has only grown.
+  discussion: >
+    An exclusion curve rules out WIMPs that would have given a few events. What would it
+    take to convince you that a detector had found dark matter, rather than an unexpected
+    background — and how does DAMA's story bear on that?
+  demonstrate: >
+    S29 with the xenon detector: put the WIMP just above the curve (excluded but not
+    discovered), then raise it until the banner says discovery. Then set the mass to 5 GeV
+    and show xenon going blind while the silicon detector still sees it.

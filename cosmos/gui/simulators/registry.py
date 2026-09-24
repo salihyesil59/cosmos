@@ -778,6 +778,41 @@ SIMULATORS: dict[str, SimulatorInfo] = {
             class_name="HaloSimulator",
             icon="⬤",
         ),
+        SimulatorInfo(
+            id="S29",
+            title=tr_noop("Dark Matter Detection"),
+            tagline=tr_noop("Build an underground detector and draw your own exclusion curve."),
+            description=tr_noop(
+                "If dark matter is made of WIMPs, a few of them should bounce off atomic nuclei in a detector "
+                "deep underground. Choose the target, the size, the threshold and the background of your "
+                "detector, pick a WIMP, and see the recoil spectrum it would leave, the events of a single "
+                "run, the yearly modulation — and the exclusion curve a null result would draw."
+            ),
+            how_to_use=[
+                tr_noop("Start from an <b>experiment</b>, or change the target, exposure, threshold and "
+                        "background yourself."),
+                tr_noop("Set the <b>WIMP mass</b> and <b>cross-section</b>. The summary says how many events "
+                        "it would give and whether it would be discovered, excluded or hidden."),
+                tr_noop("<b>Exclusion curve</b>: everything above your curve would have been seen. Your WIMP "
+                        "is the round dot."),
+                tr_noop("<b>A simulated run</b> draws one random outcome; press <b>Run the experiment again</b> "
+                        "for another."),
+                tr_noop("<b>Annual modulation</b> shows the few-per-cent yearly swing as the Earth orbits the Sun."),
+            ],
+            things_to_try=[
+                tr_noop("With the xenon detector, at what WIMP mass is the limit strongest? Why does it weaken on "
+                        "both sides?"),
+                tr_noop("Set the WIMP mass to 5 GeV. Which detector can still see it?"),
+                tr_noop("Double the exposure with no background. How much lower does the curve go? Now add "
+                        "20 background events."),
+                tr_noop("Find a WIMP that is excluded but would not have been discovered."),
+                tr_noop("Run the same experiment several times. How much does the number of events jump?"),
+            ],
+            lessons=["L3.6", "L3.2", "L6.8"],
+            module="cosmos.gui.simulators.detection_sim",
+            class_name="DetectionSimulator",
+            icon="⛏",
+        ),
     ]
 }
 

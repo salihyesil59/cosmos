@@ -1,5 +1,6 @@
 """Headless smoke tests: every page and simulator can be opened and used."""
 
+import math
 import os
 
 import pytest
@@ -1411,3 +1412,57 @@ def test_dark_ages_lesson(window):
     text = window.lesson_page.browser.toPlainText()
     assert "CSMTOKEN" not in text and "$$" not in text and "Population III" in text
     assert window.ctx.curriculum.levels[4].lesson_ids[-1] == "L4.8"
+
+
+def test_dark_matter_detection(window):
+    """S29: presets, the verdicts, the simulated run and the three challenges."""
+    window.navigate("sim:S29")
+    pump()
+    host = window.stack.currentWidget()
+    s29 = host.simulator
+    state = s29.state()
+    assert state["preset"] == "lz" and not state["excluded"]
+    assert "Hidden" in s29.banner.label.text()
+    bar = host.challenge_bar
+    assert bar is not None and len(host.challenges) == 3
+    bar.go(0)
+    assert bar.check() is True                    # 50 GeV already sits near the minimum
+
+    # Just above the limit: excluded, not discovered.
+    s29.log_sigma.setValue(math.log10(s29.state()["limit"]) + 0.1)
+    s29.recompute()
+    assert s29.state()["excluded"] and s29.state()["significance"] < 3
+    assert "Excluded, but not discovered" in s29.banner.label.text()
+    bar.go(2)
+    assert bar.check() is True
+
+    s29.log_sigma.setValue(-45.0)
+    s29.recompute()
+    assert "discovery" in s29.banner.label.text()
+
+    s29.mass.setValue(5.0)
+    s29.log_sigma.setValue(-42.0)
+    s29.recompute()
+    assert "Too light" in s29.banner.label.text()
+    s29.preset.setCurrentIndex(s29.preset.findData("silicon"))
+    s29.recompute()
+    assert s29.state()["signal"] >= 10
+    bar.go(1)
+    assert bar.check() is True
+
+    s29.threshold.setValue(0.2)
+    s29.recompute()
+    assert s29.state()["preset"] == "custom"
+    s29._rerun()
+    for plot in (s29.spectrum_plot, s29.exclusion_plot, s29.run_plot, s29.modulation_plot):
+        plot.refresh()
+    header, rows = s29._csv()
+    assert header[0] == "wimp_mass_GeV" and len(rows) > 50
+
+
+def test_dark_matter_lesson(window):
+    window.navigate("lesson:L3.6")
+    pump()
+    text = window.lesson_page.browser.toPlainText()
+    assert "CSMTOKEN" not in text and "$$" not in text and "axion" in text.lower()
+    assert window.ctx.curriculum.levels[3].lesson_ids[-1] == "L3.6"

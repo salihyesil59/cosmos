@@ -580,3 +580,42 @@ S27:
   - field: m_star
     min: 1.0e+11
     max: 1.0e+12
+S29:
+- id: sweet-spot
+  task: With the large xenon detector, find a WIMP mass where a null result would exclude cross-sections below
+    5 × 10⁻⁴⁸ cm².
+  hint: Choose <b>A large xenon detector</b> and move <b>WIMP mass</b> between 20 and 200 GeV while watching the
+    third line of the summary, or open the <b>Exclusion curve</b>.
+  success: The curve is lowest where the WIMP's mass is close to the xenon nucleus's. Lighter WIMPs give recoils
+    below the threshold; heavier ones are fewer for the same mass density.
+  check:
+  - field: preset
+    equals: lz
+  - field: limit
+    max: 5.0e-48
+- id: light-wimp
+  task: A 5 GeV WIMP with σ = 10⁻⁴² cm² is invisible to xenon. Choose a detector that would see at least 10 events
+    from it.
+  hint: Set the <b>WIMP mass</b> to 5 GeV and the cross-section to −42, then try the germanium and silicon
+    detectors.
+  success: Light nuclei and low thresholds win at low mass. That is why the dark matter community runs both huge
+    xenon tanks and small cryogenic crystals.
+  check:
+  - field: mass
+    max: 6.0
+  - field: sigma
+    max: 1.1e-42
+  - field: signal
+    min: 10
+- id: excluded-not-seen
+  task: With the xenon detector, find a WIMP that a null result excludes but that would not give a 3σ discovery.
+  hint: Put the WIMP just above the exclusion curve — a cross-section only a little above the limit in the summary.
+  success: Excluded but never seen. A few expected events are enough to rule a WIMP out when none appear, but far
+    from enough to claim one when they do.
+  check:
+  - field: preset
+    equals: lz
+  - field: excluded
+    is_true: true
+  - field: significance
+    max: 3.0

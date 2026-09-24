@@ -1682,3 +1682,56 @@ virial-temperature:
     10⁴ K, can cool by atomic hydrogen.
   see_also: [dark-matter-halo, population-iii]
   lessons: [L4.8]
+
+wimp:
+  term: WIMP
+  definition: >
+    Weakly interacting massive particle: a hypothetical dark matter particle of roughly
+    10–1000 GeV. Freezing out of the hot early universe, it would naturally leave about the
+    observed amount of dark matter. None has been found.
+  see_also: [dark-matter, direct-detection, axion]
+  lessons: [L3.6, L6.8]
+
+axion:
+  term: Axion
+  definition: >
+    A very light hypothetical particle, proposed to explain why the strong nuclear force
+    respects the symmetry between matter and its mirror image. Axions of about a
+    micro-electronvolt would make excellent cold dark matter.
+  see_also: [dark-matter, wimp]
+  lessons: [L3.6, L6.8]
+
+direct-detection:
+  term: Direct detection
+  definition: >
+    Searching for dark matter particles from the Galaxy's halo bouncing off atomic nuclei in
+    a shielded detector deep underground. The nuclei recoil with a few keV.
+  see_also: [wimp, exclusion-curve, annual-modulation]
+  lessons: [L3.6]
+
+exclusion-curve:
+  term: Exclusion curve
+  definition: >
+    The line in the plane of dark matter mass and cross-section above which an experiment
+    that saw nothing rules a particle out, because it would have produced too many events.
+    Below the curve a particle could still hide.
+  see_also: [direct-detection, neutrino-fog]
+  lessons: [L3.6]
+
+neutrino-fog:
+  term: Neutrino fog
+  definition: >
+    The background of solar, atmospheric and supernova neutrinos scattering coherently off
+    nuclei. It looks like a dark matter signal and slows the progress of direct detection
+    below cross-sections of about 10⁻⁴⁸–10⁻⁴⁹ cm².
+  see_also: [exclusion-curve, direct-detection]
+  lessons: [L3.6]
+
+annual-modulation:
+  term: Annual modulation
+  definition: >
+    The expected yearly swing of a few per cent in the dark matter rate, peaking in early
+    June when the Earth's orbital motion adds most to the Sun's motion through the halo.
+    DAMA/LIBRA reports one; other experiments do not.
+  see_also: [direct-detection]
+  lessons: [L3.6]
