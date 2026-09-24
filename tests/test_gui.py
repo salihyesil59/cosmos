@@ -1361,3 +1361,53 @@ def test_far_future_lesson(window):
     text = window.lesson_page.browser.toPlainText()
     assert "CSMTOKEN" not in text and "$$" not in text and "Big Rip" in text
     assert "S26" in window.lesson_page.lesson.simulators
+
+
+def test_halo_mass_function_explorer(window):
+    """S27: the mass function, cluster counts against σ8, the first haloes and the challenges."""
+    window.navigate("sim:S27")
+    pump()
+    host = window.stack.currentWidget()
+    s27 = host.simulator
+    state = s27.state()
+    assert state["ratio"] == pytest.approx(1.0)
+    assert 1e12 < state["m_star"] < 1e13
+    assert "Bottom up" in s27.banner.label.text()
+    bar = host.challenge_bar
+    assert bar is not None and len(host.challenges) == 3
+
+    s27.sigma8.setValue(0.892)
+    s27.recompute()
+    assert s27.state()["ratio"] > 2
+    assert "big effect" in s27.banner.label.text()
+    bar.go(0)
+    assert bar.check() is True
+
+    s27._reset()
+    s27.redshift.setValue(20.0)
+    s27.recompute()
+    assert "Cosmic dawn" in s27.banner.label.text()
+    assert "below 10⁵" in s27.summary.text()
+    bar.go(1)
+    assert bar.check() is True
+
+    s27.redshift.setValue(1.0)
+    s27.recompute()
+    bar.go(2)
+    assert bar.check() is True
+
+    for index in range(s27.model.count()):
+        s27.model.setCurrentIndex(index)
+        s27.recompute()
+        for plot in (s27.mass_plot, s27.counts_plot, s27.peaks_plot, s27.time_plot):
+            plot.refresh()
+    header, rows = s27._csv()
+    assert len(header) == 4 and len(rows) == len(s27.current.masses)
+
+
+def test_dark_ages_lesson(window):
+    window.navigate("lesson:L4.8")
+    pump()
+    text = window.lesson_page.browser.toPlainText()
+    assert "CSMTOKEN" not in text and "$$" not in text and "Population III" in text
+    assert window.ctx.curriculum.levels[4].lesson_ids[-1] == "L4.8"

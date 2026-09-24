@@ -3670,6 +3670,7 @@ parametreleri kendiniz değiştirmenize izin verir.
     </message>
     <message>
         <location filename="../gui/simulators/calculator.py" line="181" />
+        <location filename="../gui/simulators/halo_sim.py" line="66" />
         <location filename="../gui/simulators/spectrum.py" line="136" />
         <source>Redshift z</source>
         <translation>Kırmızıya kayma z</translation>
@@ -4680,6 +4681,7 @@ parametreleri kendiniz değiştirmenize izin verir.
     </message>
     <message>
         <location filename="../gui/simulators/future_sim.py" line="67" />
+        <location filename="../gui/simulators/halo_sim.py" line="52" />
         <source>Matter Ωm</source>
         <translation>Madde Ωm</translation>
     </message>
@@ -4812,6 +4814,183 @@ parametreleri kendiniz değiştirmenize izin verir.
         <location filename="../gui/simulators/future_sim.py" line="315" />
         <source>The density of dark energy changes as $a^{-3(1+w)}$. At exactly w = −1 it stays the same for ever; a little above, it fades; a little below, it grows without limit and the expansion rate becomes infinite in a finite time. Today's data put w within about ten per cent of −1, so they cannot yet tell a heat death from a Big Rip — they only say that a Big Rip, if it comes, is at least tens of billions of years away.</source>
         <translation>Karanlık enerjinin yoğunluğu $a^{-3(1+w)}$ olarak değişir. Tam w = −1'de sonsuza dek aynı kalır; biraz üstünde söner; biraz altında sınırsızca büyür ve genişleme hızı sonlu bir sürede sonsuz olur. Bugünkü veriler w'yi −1'in yaklaşık yüzde on yakınına yerleştiriyor; bu yüzden ısıl ölümü Büyük Yırtılma'dan henüz ayıramıyor — yalnızca bir Büyük Yırtılma gelecekse en az onlarca milyar yıl uzakta olduğunu söylüyor.</translation>
+    </message>
+    <message>
+        <location filename="../gui/simulators/halo_sim.py" line="21" />
+        <source>Sheth–Tormen (fits simulations)</source>
+        <translation>Sheth–Tormen (simülasyonlara uyar)</translation>
+    </message>
+    <message>
+        <location filename="../gui/simulators/halo_sim.py" line="22" />
+        <source>Press–Schechter (the original)</source>
+        <translation>Press–Schechter (ilk sürüm)</translation>
+    </message>
+    <message>
+        <location filename="../gui/simulators/halo_sim.py" line="43" />
+        <location filename="../gui/simulators/recombination_sim.py" line="29" />
+        <source>1 · The universe</source>
+        <translation>1 · Evren</translation>
+    </message>
+    <message>
+        <location filename="../gui/simulators/halo_sim.py" line="46" />
+        <source>Clumpiness σ8</source>
+        <translation>Topaklanma σ8</translation>
+    </message>
+    <message>
+        <location filename="../gui/simulators/halo_sim.py" line="47" />
+        <source>How lumpy matter is</source>
+        <translation>Madde ne kadar topaklı</translation>
+    </message>
+    <message>
+        <location filename="../gui/simulators/halo_sim.py" line="48" />
+        <source>The rms fluctuation of matter in spheres of 8 Mpc/h today. Planck measures 0.811; weak lensing surveys tend to find a little less, which is the S8 tension. The biggest clusters are rare peaks, and their number depends on σ8 exponentially.</source>
+        <translation>Bugün 8 Mpc/h yarıçaplı kürelerdeki maddenin rms dalgalanması. Planck 0,811 ölçüyor; zayıf merceklenme taramaları biraz daha düşük bulma eğiliminde — S8 gerilimi budur. En büyük kümeler seyrek tepelerdir ve sayıları σ8'e üstel olarak bağlıdır.</translation>
+    </message>
+    <message>
+        <location filename="../gui/simulators/halo_sim.py" line="53" />
+        <source>How much there is to collapse</source>
+        <translation>Çökecek ne kadar şey var</translation>
+    </message>
+    <message>
+        <location filename="../gui/simulators/halo_sim.py" line="54" />
+        <source>More matter means more mass in every volume, and structure that grows faster. The universe is kept flat: dark energy makes up the rest.</source>
+        <translation>Daha çok madde, her hacimde daha çok kütle ve daha hızlı büyüyen yapı demektir. Evren düz tutulur: geri kalanı karanlık enerji tamamlar.</translation>
+    </message>
+    <message>
+        <location filename="../gui/simulators/halo_sim.py" line="56" />
+        <source>Back to Planck 2018</source>
+        <translation>Planck 2018'e dön</translation>
+    </message>
+    <message>
+        <location filename="../gui/simulators/halo_sim.py" line="57" />
+        <source>σ8 = 0.811 and Ωm = 0.311.</source>
+        <translation>σ8 = 0,811 ve Ωm = 0,311.</translation>
+    </message>
+    <message>
+        <location filename="../gui/simulators/halo_sim.py" line="63" />
+        <source>2 · When and what</source>
+        <translation>2 · Ne zaman ve ne</translation>
+    </message>
+    <message>
+        <location filename="../gui/simulators/halo_sim.py" line="67" />
+        <source>Going back in time</source>
+        <translation>Zamanda geriye gitmek</translation>
+    </message>
+    <message>
+        <location filename="../gui/simulators/halo_sim.py" line="68" />
+        <source>At high redshift the fluctuations were smaller, so only small haloes had collapsed yet. z = 20 is 180 million years after the Big Bang, when the first stars formed.</source>
+        <translation>Yüksek kırmızıya kaymada dalgalanmalar daha küçüktü, bu yüzden henüz yalnızca küçük haleler çökmüştü. z = 20, Büyük Patlama'dan 180 milyon yıl sonrasıdır; ilk yıldızların oluştuğu zaman.</translation>
+    </message>
+    <message>
+        <location filename="../gui/simulators/halo_sim.py" line="71" />
+        <source>Cluster mass threshold (M☉/h)</source>
+        <translation>Küme kütle eşiği (M☉/h)</translation>
+    </message>
+    <message>
+        <location filename="../gui/simulators/halo_sim.py" line="72" />
+        <source>What counts as a cluster</source>
+        <translation>Neye küme denir</translation>
+    </message>
+    <message>
+        <location filename="../gui/simulators/halo_sim.py" line="73" />
+        <source>Surveys count clusters above a mass limit. The heavier the limit, the rarer the clusters and the more sensitive their number is to σ8.</source>
+        <translation>Taramalar bir kütle sınırının üzerindeki kümeleri sayar. Sınır ne kadar ağırsa kümeler o kadar seyrek, sayıları da σ8'e o kadar duyarlı olur.</translation>
+    </message>
+    <message>
+        <location filename="../gui/simulators/halo_sim.py" line="80" />
+        <location filename="../gui/simulators/halo_sim.py" line="106" />
+        <source>Mass function</source>
+        <translation>Kütle fonksiyonu</translation>
+    </message>
+    <message>
+        <location filename="../gui/simulators/halo_sim.py" line="81" />
+        <source>Two recipes</source>
+        <translation>İki tarif</translation>
+    </message>
+    <message>
+        <location filename="../gui/simulators/halo_sim.py" line="82" />
+        <source>Press and Schechter (1974) assumed spherical collapse. Sheth and Tormen (1999) allowed ellipsoids and matched N-body simulations: more massive haloes, fewer small ones.</source>
+        <translation>Press ve Schechter (1974) küresel çöküş varsaydı. Sheth ve Tormen (1999) elipsoidlere izin verdi ve N-cisim simülasyonlarıyla uyuştu: daha çok kütleli hale, daha az küçük hale.</translation>
+    </message>
+    <message>
+        <location filename="../gui/simulators/halo_sim.py" line="86" />
+        <source>What the universe has built</source>
+        <translation>Evrenin inşa ettikleri</translation>
+    </message>
+    <message>
+        <location filename="../gui/simulators/halo_sim.py" line="92" />
+        <source>Linear theory with the Eisenstein–Hu power spectrum and a flat universe. Masses are in M☉/h and densities per comoving (Mpc/h)³, as in the research literature.</source>
+        <translation>Eisenstein–Hu güç tayfı ve düz bir evrenle doğrusal kuram. Araştırma literatüründe olduğu gibi kütleler M☉/h, yoğunluklar eşhareketli (Mpc/h)³ başınadır.</translation>
+    </message>
+    <message>
+        <location filename="../gui/simulators/halo_sim.py" line="107" />
+        <source>Clusters on the sky</source>
+        <translation>Gökyüzündeki kümeler</translation>
+    </message>
+    <message>
+        <location filename="../gui/simulators/halo_sim.py" line="108" />
+        <source>Rare peaks</source>
+        <translation>Seyrek tepeler</translation>
+    </message>
+    <message>
+        <location filename="../gui/simulators/halo_sim.py" line="109" />
+        <source>Across cosmic time</source>
+        <translation>Kozmik zaman boyunca</translation>
+    </message>
+    <message>
+        <location filename="../gui/simulators/halo_sim.py" line="155" />
+        <source>Typical halo forming now (M*): &lt;b&gt;{mass} M☉/h&lt;/b&gt;</source>
+        <translation>Şu an oluşan tipik hale (M*): &lt;b&gt;{mass} M☉/h&lt;/b&gt;</translation>
+    </message>
+    <message>
+        <location filename="../gui/simulators/halo_sim.py" line="156" />
+        <source>Typical halo forming now (M*): &lt;b&gt;below 10⁵ M☉/h&lt;/b&gt;</source>
+        <translation>Şu an oluşan tipik hale (M*): &lt;b&gt;10⁵ M☉/h altında&lt;/b&gt;</translation>
+    </message>
+    <message>
+        <location filename="../gui/simulators/halo_sim.py" line="159" />
+        <source>Clusters above 10¹⁴ M☉/h at this redshift: {count} per (Gpc/h)³</source>
+        <translation>Bu kırmızıya kaymada 10¹⁴ M☉/h üstü kümeler: (Gpc/h)³ başına {count}</translation>
+    </message>
+    <message>
+        <location filename="../gui/simulators/halo_sim.py" line="161" />
+        <source>Haloes that can make the first stars (above 10⁸ M☉/h): {count} per (Mpc/h)³</source>
+        <translation>İlk yıldızları yapabilecek haleler (10⁸ M☉/h üstü): (Mpc/h)³ başına {count}</translation>
+    </message>
+    <message>
+        <location filename="../gui/simulators/halo_sim.py" line="163" />
+        <source>Clusters above {mass} M☉/h on the whole sky out to z = 1: &lt;b&gt;{count}&lt;/b&gt;</source>
+        <translation>Tüm gökyüzünde z = 1'e kadar {mass} M☉/h üstü kümeler: &lt;b&gt;{count}&lt;/b&gt;</translation>
+    </message>
+    <message>
+        <location filename="../gui/simulators/halo_sim.py" line="165" />
+        <source>That is &lt;b&gt;{ratio}×&lt;/b&gt; what Planck's σ8 predicts</source>
+        <translation>Bu, Planck'ın σ8 değerinin öngördüğünün &lt;b&gt;{ratio}×&lt;/b&gt; katı</translation>
+    </message>
+    <message>
+        <location filename="../gui/simulators/halo_sim.py" line="171" />
+        <source>&lt;b&gt;A small change, a big effect.&lt;/b&gt; σ8 is {percent} away from Planck's value, and the number of massive clusters has changed by a factor {ratio}. The rarest objects are the most sensitive — that is why cluster counts measure σ8.</source>
+        <translation>&lt;b&gt;Küçük bir değişiklik, büyük bir etki.&lt;/b&gt; σ8, Planck değerinden {percent} uzakta ve kütleli küme sayısı {ratio} kat değişti. En seyrek nesneler en duyarlı olanlardır — küme sayımlarının σ8'i ölçmesinin nedeni budur.</translation>
+    </message>
+    <message>
+        <location filename="../gui/simulators/halo_sim.py" line="178" />
+        <source>&lt;b&gt;Cosmic dawn.&lt;/b&gt; At z = {z} there are no clusters and almost no galaxies — only small haloes, and the gas in the ones above 10⁸ M☉/h is just able to cool and form the first stars. Structure grows from the bottom up.</source>
+        <translation>&lt;b&gt;Kozmik şafak.&lt;/b&gt; z = {z} anında hiç küme ve neredeyse hiç gökada yok — yalnızca küçük haleler var ve 10⁸ M☉/h üstündekilerdeki gaz ancak soğuyup ilk yıldızları oluşturabiliyor. Yapı aşağıdan yukarıya büyür.</translation>
+    </message>
+    <message>
+        <location filename="../gui/simulators/halo_sim.py" line="184" />
+        <source>&lt;b&gt;Bottom up.&lt;/b&gt; Small haloes form first and merge into larger ones. Today the typical collapsing halo is a group of galaxies; the heaviest clusters are rare peaks that only just had time to form.</source>
+        <translation>&lt;b&gt;Aşağıdan yukarıya.&lt;/b&gt; Önce küçük haleler oluşur ve daha büyüklerinde birleşir. Bugün çöken tipik hale bir gökada grubudur; en ağır kümeler ise oluşmaya ancak zaman bulmuş seyrek tepelerdir.</translation>
+    </message>
+    <message>
+        <location filename="../gui/simulators/halo_sim.py" line="295" />
+        <source>Why rare things measure σ8</source>
+        <translation>Seyrek şeyler neden σ8'i ölçer</translation>
+    </message>
+    <message>
+        <location filename="../gui/simulators/halo_sim.py" line="296" />
+        <source>The number of haloes of mass M falls as $e^{-\nu^2/2}$ with $\nu = \delta_c / \sigma(M)$. For the heaviest clusters ν is 3 or 4, and there a 10% change in σ8 changes the count by a factor of two or more. Galaxy-cluster surveys such as eROSITA, SPT and Euclid use this to weigh the clumpiness of the universe.</source>
+        <translation>M kütleli halelerin sayısı $\nu = \delta_c / \sigma(M)$ olmak üzere $e^{-\nu^2/2}$ gibi düşer. En ağır kümeler için ν 3 ya da 4'tür ve orada σ8'deki %10'luk bir değişiklik sayıyı iki kat ya da daha fazla değiştirir. eROSITA, SPT ve Euclid gibi gökada kümesi taramaları evrenin topaklılığını tartmak için bunu kullanır.</translation>
     </message>
     <message>
         <location filename="../gui/simulators/hubble_fit.py" line="24" />
@@ -6121,11 +6300,6 @@ En büyük terimi yarıya indirmek, en küçüğünü tamamen yok etmekten çok 
         <location filename="../gui/simulators/powers_of_ten.py" line="251" />
         <source>&lt;i&gt;Mostly empty space at this scale. Keep zooming!&lt;/i&gt;</source>
         <translation>&lt;i&gt;Bu ölçekte çoğunlukla boş uzay. Yakınlaşmayı sürdürün!&lt;/i&gt;</translation>
-    </message>
-    <message>
-        <location filename="../gui/simulators/recombination_sim.py" line="29" />
-        <source>1 · The universe</source>
-        <translation>1 · Evren</translation>
     </message>
     <message>
         <location filename="../gui/simulators/recombination_sim.py" line="32" />
@@ -7711,6 +7885,71 @@ En büyük terimi yarıya indirmek, en küçüğünü tamamen yok etmekten çok 
         <location filename="../gui/simulators/registry.py" line="742" />
         <source>Switch dark energy off. Which milestones stop happening, and why?</source>
         <translation>Karanlık enerjiyi kapatın. Hangi kilometre taşları artık gerçekleşmiyor ve neden?</translation>
+    </message>
+    <message>
+        <location filename="../gui/simulators/registry.py" line="751" />
+        <source>Halo Mass Function Explorer</source>
+        <translation>Hale Kütle Fonksiyonu Gezgini</translation>
+    </message>
+    <message>
+        <location filename="../gui/simulators/registry.py" line="752" />
+        <source>How many haloes of each mass, when — and why clusters weigh σ8.</source>
+        <translation>Her kütleden ne kadar hale, ne zaman — ve kümeler σ8'i neden tartar.</translation>
+    </message>
+    <message>
+        <location filename="../gui/simulators/registry.py" line="754" />
+        <source>Every galaxy lives in a halo of dark matter, and the halo mass function says how many haloes of each mass there are. It follows from the ripples in the early universe alone: a region collapses once its overdensity passes a threshold. Go back in time to the first star-forming haloes, or count the giant clusters on today's sky and see how steeply they depend on σ8.</source>
+        <translation>Her gökada bir karanlık madde halesinin içinde yaşar ve hale kütle fonksiyonu her kütleden ne kadar hale olduğunu söyler. Yalnızca erken evrendeki dalgacıklardan çıkar: bir bölge, aşırı yoğunluğu bir eşiği geçince çöker. Zamanda ilk yıldız oluşturan halelere geri gidin ya da bugünkü gökyüzündeki dev kümeleri sayın ve σ8'e ne kadar dik biçimde bağlı olduklarını görün.</translation>
+    </message>
+    <message>
+        <location filename="../gui/simulators/registry.py" line="760" />
+        <source>Move &lt;b&gt;σ8&lt;/b&gt; and &lt;b&gt;Ωm&lt;/b&gt;; the dashed curves stay at Planck 2018 for comparison.</source>
+        <translation>&lt;b&gt;σ8&lt;/b&gt; ve &lt;b&gt;Ωm&lt;/b&gt; değerlerini oynatın; kesikli eğriler karşılaştırma için Planck 2018 değerlerinde kalır.</translation>
+    </message>
+    <message>
+        <location filename="../gui/simulators/registry.py" line="761" />
+        <source>&lt;b&gt;Mass function&lt;/b&gt; shows how many haloes there are of each mass at the chosen &lt;b&gt;redshift&lt;/b&gt;.</source>
+        <translation>&lt;b&gt;Kütle fonksiyonu&lt;/b&gt;, seçilen &lt;b&gt;kırmızıya kaymada&lt;/b&gt; her kütleden ne kadar hale olduğunu gösterir.</translation>
+    </message>
+    <message>
+        <location filename="../gui/simulators/registry.py" line="763" />
+        <source>&lt;b&gt;Clusters on the sky&lt;/b&gt; counts every halo above the &lt;b&gt;threshold&lt;/b&gt; out to z = 1, for several values of σ8.</source>
+        <translation>&lt;b&gt;Gökyüzündeki kümeler&lt;/b&gt;, birkaç σ8 değeri için z = 1'e kadar &lt;b&gt;eşiğin&lt;/b&gt; üzerindeki her haleyi sayar.</translation>
+    </message>
+    <message>
+        <location filename="../gui/simulators/registry.py" line="765" />
+        <source>&lt;b&gt;Rare peaks&lt;/b&gt; shows σ(M): a halo forms where it crosses δc = 1.686.</source>
+        <translation>&lt;b&gt;Seyrek tepeler&lt;/b&gt; σ(M) eğrisini gösterir: bir hale, eğrinin δc = 1,686 değerini geçtiği yerde oluşur.</translation>
+    </message>
+    <message>
+        <location filename="../gui/simulators/registry.py" line="766" />
+        <source>&lt;b&gt;Across cosmic time&lt;/b&gt; follows small haloes, galaxies and clusters from z = 20 to today.</source>
+        <translation>&lt;b&gt;Kozmik zaman boyunca&lt;/b&gt; küçük haleleri, gökadaları ve kümeleri z = 20'den bugüne izler.</translation>
+    </message>
+    <message>
+        <location filename="../gui/simulators/registry.py" line="770" />
+        <source>Raise σ8 by 10%. How much do the clusters above 10¹⁵ M☉/h change?</source>
+        <translation>σ8'i %10 artırın. 10¹⁵ M☉/h üstü kümeler ne kadar değişiyor?</translation>
+    </message>
+    <message>
+        <location filename="../gui/simulators/registry.py" line="771" />
+        <source>Lower the threshold to 10¹³ M☉/h and repeat. Is the effect smaller?</source>
+        <translation>Eşiği 10¹³ M☉/h'e indirip tekrarlayın. Etki daha mı küçük?</translation>
+    </message>
+    <message>
+        <location filename="../gui/simulators/registry.py" line="772" />
+        <source>Go to z = 20. How many haloes can make the first stars?</source>
+        <translation>z = 20'ye gidin. Kaç hale ilk yıldızları yapabilir?</translation>
+    </message>
+    <message>
+        <location filename="../gui/simulators/registry.py" line="773" />
+        <source>Find the redshift at which the typical collapsing halo was the size of the Milky Way.</source>
+        <translation>Çöken tipik halenin Samanyolu büyüklüğünde olduğu kırmızıya kaymayı bulun.</translation>
+    </message>
+    <message>
+        <location filename="../gui/simulators/registry.py" line="774" />
+        <source>Switch between Press–Schechter and Sheth–Tormen. Where do they disagree most?</source>
+        <translation>Press–Schechter ile Sheth–Tormen arasında geçiş yapın. En çok nerede ayrışıyorlar?</translation>
     </message>
     <message>
         <location filename="../gui/simulators/rotation_curve.py" line="33" />

@@ -552,3 +552,19 @@
   symbols: '$M$ the mass of the black hole'
   description: The M³ stretches the far future to 10¹⁰⁰ years for the largest black holes.
   lesson: L6.10
+
+- id: virial-temperature
+  group: Structure and the CMB
+  title: Virial temperature of a halo
+  formula: 'T_{\mathrm{vir}} \approx 2\times10^{4}\ \mathrm{K}\left(\frac{M}{10^{8}\,h^{-1}M_\odot}\right)^{2/3}\left(\frac{1+z}{10}\right)'
+  symbols: '$M$ the halo mass, $z$ the redshift at which it forms'
+  description: Haloes hotter than 10⁴ K can cool by atomic hydrogen and form the first galaxies.
+  lesson: L4.8
+
+- id: halo-mass-function
+  group: Structure and the CMB
+  title: Halo mass function
+  formula: '\frac{dn}{d\ln M} = \frac{\bar\rho_m}{M}\, f(\nu)\left|\frac{d\ln\sigma}{d\ln M}\right|,\quad \nu = \frac{\delta_c}{\sigma(M,z)}'
+  symbols: '$f(\nu) = \sqrt{2/\pi}\,\nu\, e^{-\nu^2/2}$ for Press–Schechter, $\delta_c = 1.686$'
+  description: The exponential cut-off makes the heaviest clusters exquisitely sensitive to σ8.
+  lesson: L5.5

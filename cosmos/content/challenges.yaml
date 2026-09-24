@@ -543,3 +543,40 @@ S26:
     contains: Crunch
   - field: end_gyr
     max: 100
+S27:
+- id: sigma8-lever
+  task: Raise σ8 by about ten per cent (to 0.89 or more) and make the number of clusters above 10¹⁵ M☉/h at
+    least double the Planck prediction.
+  hint: Keep the <b>Cluster mass threshold</b> at 10¹⁵ M☉/h and drag <b>Clumpiness σ8</b> up. The ratio is in the
+    summary.
+  success: A ten per cent change in σ8 more than doubles the count. The heaviest clusters are rare peaks, and the
+    abundance of rare peaks depends on σ8 exponentially — which is why counting clusters weighs it.
+  check:
+  - field: sigma8
+    min: 0.88
+    max: 0.95
+  - field: threshold
+    min: 8.0e+14
+  - field: ratio
+    min: 2.0
+- id: first-haloes
+  task: Go back to z = 20, when the first stars formed, and check that there are fewer than one halo above 10⁸
+    M☉/h per (Mpc/h)³.
+  hint: Drag <b>Redshift z</b> all the way to 20 and read the third line of the summary.
+  success: About one in twenty cubic megaparsecs. The first galaxies formed in rare peaks of the density field;
+    most of the universe was still waiting.
+  check:
+  - field: z
+    min: 19.5
+  - field: first_haloes
+    max: 1.0
+- id: milky-way-era
+  task: Find a redshift at which the typical halo collapsing at that moment (M*) was between 10¹¹ and 10¹²
+    M☉/h, about the mass of a big galaxy's halo.
+  hint: Move <b>Redshift z</b> slowly up from 0 and read M* at the top of the summary.
+  success: Around z ≈ 0.5–1. Today the typical halo is a group of galaxies; a few billion years ago it was a
+    galaxy like ours, and at z = 4 it was a hundred thousand times lighter.
+  check:
+  - field: m_star
+    min: 1.0e+11
+    max: 1.0e+12

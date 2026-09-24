@@ -746,6 +746,38 @@ SIMULATORS: dict[str, SimulatorInfo] = {
             class_name="FutureSimulator",
             icon="⌛",
         ),
+        SimulatorInfo(
+            id="S27",
+            title=tr_noop("Halo Mass Function Explorer"),
+            tagline=tr_noop("How many haloes of each mass, when — and why clusters weigh σ8."),
+            description=tr_noop(
+                "Every galaxy lives in a halo of dark matter, and the halo mass function says how many haloes "
+                "of each mass there are. It follows from the ripples in the early universe alone: a region "
+                "collapses once its overdensity passes a threshold. Go back in time to the first star-forming "
+                "haloes, or count the giant clusters on today's sky and see how steeply they depend on σ8."
+            ),
+            how_to_use=[
+                tr_noop("Move <b>σ8</b> and <b>Ωm</b>; the dashed curves stay at Planck 2018 for comparison."),
+                tr_noop("<b>Mass function</b> shows how many haloes there are of each mass at the chosen "
+                        "<b>redshift</b>."),
+                tr_noop("<b>Clusters on the sky</b> counts every halo above the <b>threshold</b> out to z = 1, "
+                        "for several values of σ8."),
+                tr_noop("<b>Rare peaks</b> shows σ(M): a halo forms where it crosses δc = 1.686."),
+                tr_noop("<b>Across cosmic time</b> follows small haloes, galaxies and clusters from z = 20 "
+                        "to today."),
+            ],
+            things_to_try=[
+                tr_noop("Raise σ8 by 10%. How much do the clusters above 10¹⁵ M☉/h change?"),
+                tr_noop("Lower the threshold to 10¹³ M☉/h and repeat. Is the effect smaller?"),
+                tr_noop("Go to z = 20. How many haloes can make the first stars?"),
+                tr_noop("Find the redshift at which the typical collapsing halo was the size of the Milky Way."),
+                tr_noop("Switch between Press–Schechter and Sheth–Tormen. Where do they disagree most?"),
+            ],
+            lessons=["L4.8", "L5.5", "L6.6", "L5.4"],
+            module="cosmos.gui.simulators.halo_sim",
+            class_name="HaloSimulator",
+            icon="⬤",
+        ),
     ]
 }
 
