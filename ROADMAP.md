@@ -290,7 +290,7 @@ first.
 - [x] ★ `V1` A **Data & methods** page: every bundled measurement with its source,
   citation, terms and what was done to it; every generated data set with the
   recipe that makes it; one record in the source that a test keeps honest
-- [ ] ★ `V2` Provenance that travels: an exported plot carries a caption saying
+- [x] ★ `V2` Provenance that travels: an exported plot carries a caption saying
   what it shows and whether it is real, and an exported CSV carries a header with
   the source, the model parameters and the app version
 - [ ] `V3` "How was this computed?" beside a simulator's result: the formula it

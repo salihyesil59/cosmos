@@ -109,6 +109,24 @@ class SkySimulator(SimulatorBase):
         self.recompute()
 
     # ----------------------------------------------------------- compute
+    def provenance(self, plot: str = "") -> list[str]:
+        """V2: everything here is the real sky, so say what was done to it."""
+        treatment = [
+            "KQ85 analysis mask applied" if self.use_mask.isChecked() else "whole sky, no mask",
+            "monopole and dipole removed" if self.remove_dipole.isChecked() else "monopole and dipole kept",
+        ]
+        if self.smoothing.value() > 0:
+            treatment.append(f"smoothed by {self.smoothing.value():.2f}°"
+                             + (", then only the finer detail kept" if self.high_pass.isChecked() else ""))
+        return [
+            "Real measurements: the WMAP nine-year ILC map (Bennett et al. 2013, ApJS 208, 20; "
+            "Hinshaw et al. 2013, ApJS 208, 19), from NASA LAMBDA.",
+            "Prepared for the app: resampled from HEALPix nside 512 onto a 1024 × 512 "
+            "longitude–latitude grid in galactic coordinates and converted to µK, which costs a "
+            "little of the finest detail (67 µK rms against the published 70 µK).",
+            "As shown here: " + ", ".join(treatment) + ".",
+        ]
+
     def recompute(self) -> None:
         sky = self.sky
         values = sky.temperature

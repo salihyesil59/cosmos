@@ -3,6 +3,7 @@
 from __future__ import annotations
 
 import csv
+import textwrap
 import warnings
 from collections.abc import Callable, Sequence
 
@@ -106,6 +107,34 @@ class PlotWidget(QWidget):
                 style_legend(ax.get_legend(), p)
         self.canvas.draw_idle()
 
+    # -------------------------------------------------------- provenance (V2)
+    def owning_simulator(self):
+        """The simulator this plot lives in, if any, found by walking up the widgets.
+
+        Asking the parent chain rather than being told keeps all sixty-odd plots in
+        the app working without each one having to pass itself in.
+        """
+        from cosmos.gui.simulators.base import SimulatorBase
+
+        widget = self.parentWidget()
+        while widget is not None:
+            if isinstance(widget, SimulatorBase):
+                return widget
+            widget = widget.parentWidget()
+        return None
+
+    def provenance(self) -> list[str]:
+        """What an exported copy of this plot has to say about where it came from."""
+        from cosmos import provenance
+
+        owner = self.owning_simulator()
+        return provenance.export_note(
+            self._name.replace("_", " "),
+            simulator_id=owner.info.id if owner else "",
+            simulator_title=tr(owner.info.title) if owner else "",
+            detail=owner.provenance(self._name) if owner else (),
+        )
+
     # ------------------------------------------------------------ export
     def export_image(self) -> None:
         path, _ = QFileDialog.getSaveFileName(
@@ -114,10 +143,22 @@ class PlotWidget(QWidget):
         )
         if not path:
             return
+        note = self.provenance()
+        # Placed below the figure and pulled back in by ``bbox_inches="tight"``, so the
+        # caption reaches the file without ever disturbing the plot on screen.
+        caption = self.figure.text(
+            0.0, -0.035, "\n".join(textwrap.fill(line, 110) for line in note),
+            fontsize=6.5, va="top", ha="left", color=theme().palette.muted, linespacing=1.4,
+        )
         try:
-            self.figure.savefig(path, dpi=200, facecolor=self.figure.get_facecolor())
+            self.figure.savefig(path, dpi=200, facecolor=self.figure.get_facecolor(),
+                                bbox_inches="tight", bbox_extra_artists=[caption],
+                                metadata=_image_metadata(path, note))
         except OSError as exc:
             QMessageBox.warning(self, tr("Could not save"), str(exc))
+        finally:
+            caption.remove()
+            self.canvas.draw_idle()
 
     def export_csv(self) -> None:
         if not self._csv:
@@ -128,13 +169,33 @@ class PlotWidget(QWidget):
             return
         headers, rows = self._csv()
         try:
-            write_csv(path, headers, rows)
+            write_csv(path, headers, rows, note=self.provenance())
         except OSError as exc:
             QMessageBox.warning(self, tr("Could not save"), str(exc))
 
 
-def write_csv(path: str, headers: Sequence[str], rows: Sequence[Sequence[object]]) -> None:
+def _image_metadata(path: str, note: Sequence[str]) -> dict[str, str]:
+    """The same note again, where a program can read it.
+
+    PNG and SVG spell their metadata differently, and matplotlib rejects a key the
+    format does not know, so each gets only what it understands.
+    """
+    text = " ".join(note)
+    if path.lower().endswith(".svg"):
+        return {"Description": text}
+    return {"Description": text, "Software": note[0]}
+
+
+def write_csv(path: str, headers: Sequence[str], rows: Sequence[Sequence[object]],
+              note: Sequence[str] = ()) -> None:
+    """Write a table, with the provenance note as comment lines above it.
+
+    Spreadsheets skip the leading ``#`` lines or show them in the first column; either
+    way the file no longer arrives somewhere else with no idea what it is.
+    """
     with open(path, "w", newline="", encoding="utf-8") as fh:
+        for line in note:
+            fh.write(f"# {line}\n")
         writer = csv.writer(fh)
         writer.writerow(headers)
         writer.writerows(rows)

@@ -361,8 +361,8 @@ class ReferencePage(QWidget):
             "## Data the app generates", "",
             "None of the following was measured by anyone. It is drawn, simulated or "
             "modelled inside the app to show how a measurement behaves, and it says so "
-            "where it is shown — in the title of the figure, or in the note beside the "
-            "control that produced it.", "",
+            "where it is shown — in the title of the figure, in the note beside the "
+            "control that produced it, and in anything you export.", "",
         ]
         for g in made:
             lines += [f"### {g.title}", "", g.holds, "", g.how, ""]
@@ -388,6 +388,14 @@ class ReferencePage(QWidget):
             "test that opens every page, every lesson and every simulator, and a test "
             "that this list still matches the files in `cosmos/data`. A packaged build "
             "runs its own `--selftest` before it is published.", "",
+            "## What leaves with a file", "",
+            "Save a plot and the picture carries a caption under it: the app and its "
+            "version, which simulator drew it, whether what you are looking at was "
+            "measured or generated, the sample or the model behind it, and the date. The "
+            "same text goes into the image's metadata, where a program can read it. "
+            "Export a table and it sits above the numbers as comment lines, which a "
+            "spreadsheet ignores and a reader does not. A figure that ends up in someone "
+            "else's slide deck should not need this page to be understood.", "",
             "## Where this list lives", "",
             "`cosmos/provenance.py` in the source, beside the code that loads the files, "
             "so the two cannot drift apart. The licence terms are in `NOTICE`, and "

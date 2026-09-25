@@ -18,6 +18,23 @@ format may still change between releases.
   app invents, each with the recipe and the module that runs it. Every entry links
   to the simulators and lesson figures that use it. Reachable from Help → Data &
   methods, or at the route `reference:data`.
+- **An exported plot or table now says what it is** (`V2`). A PNG in a folder and
+  a CSV in a spreadsheet have lost every label the app drew around them, and a
+  figure that reaches someone else's slide deck should not need the app to be
+  understood. Saving a plot now writes a caption underneath it — the app and its
+  version, the simulator it came from, whether the data was measured or generated,
+  the sample and model behind it, and the date — and puts the same text in the
+  image's metadata, for PNG and SVG alike. Exporting a table puts it above the
+  numbers as comment lines, which spreadsheets skip and readers do not. The plot on
+  screen is untouched: the caption is added for the save and removed again.
+- **Six simulators say which of their data is on screen** (`V2`). A standing
+  description cannot help with S5, S6, S16, S19 and S23, where the learner chooses
+  between a real sample and one the app invented; each of those now reports the
+  current choice, with the fit or the mock settings that produced the plot, and S24
+  lists what was done to the WMAP map — mask, dipole, smoothing — before it was
+  saved. Everywhere else the export falls back to the standing record, which says
+  plainly when a simulator can show either kind. The note is in English, like the
+  data set names and the citations it carries.
 - **One record behind it, kept honest by tests** (`V1`). `cosmos/provenance.py`
   holds the list beside the code that loads the files, and `tests/test_provenance.py`
   fails if a file appears in `cosmos/data` without an entry, if an entry names a
