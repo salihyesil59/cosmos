@@ -40,6 +40,12 @@ smallest window the app offers.
   unbold, so its own label did not fit inside it.
 - The **"Age & lookback time"** tab in the cosmology calculator lost its `&`, which
   Qt had taken for a keyboard shortcut.
+- Lesson text showed a ten-pixel sideways scrollbar on whichever lessons happened
+  to sit near the edge in a given font. Qt lays a page out before it knows whether
+  a vertical scrollbar is needed; when one appeared the viewport lost ten pixels
+  and a full-width callout table no longer fitted. The reading panes now keep that
+  width reserved at all times. Found by the new layout test, on CI, in fonts this
+  machine does not have.
 - The cosmic-web figure worked its Voronoi cloud out afresh on every redraw. The
   cloud never changes, so it is now computed once — which also stops scipy's
   Qhull opening a temporary file each time, something it occasionally fails to
