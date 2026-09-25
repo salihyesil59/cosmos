@@ -2,7 +2,7 @@
 
 from __future__ import annotations
 
-from PySide6.QtCore import QUrl, Signal
+from PySide6.QtCore import Qt, QUrl, Signal
 from PySide6.QtGui import QCursor, QDesktopServices, QImage, QTextDocument
 from PySide6.QtWidgets import QTextBrowser, QToolTip
 
@@ -37,6 +37,12 @@ class RichBrowser(QTextBrowser):
         self._markdown = ""
         self._images: dict[str, QImage] = {}
         self._side_margin = 0
+        # Keep the vertical scrollbar's width reserved at all times. Qt lays the page
+        # out before it knows whether one is needed; when it appears the viewport
+        # narrows by ten pixels, and a table asked to fill the width is then ten
+        # pixels too wide — which showed up as a sideways scrollbar on whichever
+        # lessons happened to be near the edge in a given font (D2).
+        self.setVerticalScrollBarPolicy(Qt.ScrollBarAlwaysOn)
         self.setOpenLinks(False)
         self.setOpenExternalLinks(False)
         self.anchorClicked.connect(self._on_anchor)
@@ -84,7 +90,8 @@ class RichBrowser(QTextBrowser):
         """Keep the text column at a readable width, centred in whatever room there is."""
         super().resizeEvent(event)
         if self._measure:
-            margin = max(0, (self.viewport().width() + self._side_margin * 2 - self._measure) // 2)
+            room = self.viewport().width() + self._side_margin * 2
+            margin = max(0, (room - self._measure) // 2)
             if margin != self._side_margin:
                 self._side_margin = margin
                 self.setViewportMargins(margin, 0, margin, 0)
