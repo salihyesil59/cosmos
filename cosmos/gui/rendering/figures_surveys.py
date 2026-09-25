@@ -113,4 +113,5 @@ def _malmquist_bias(fig, p: Palette):
     ax.set_xlabel("distance (Mpc)")
     ax.set_ylabel("absolute magnitude")
     ax.legend(fontsize=7.5, loc="lower left")
-    ax.set_title("Malmquist bias: far away, only the brightest make the cut", fontsize=9, color=p.text)
+    ax.set_title("Malmquist bias: far away, only the brightest make the cut (simulated catalogue)",
+                 fontsize=9, color=p.text)

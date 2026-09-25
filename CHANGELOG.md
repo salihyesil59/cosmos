@@ -18,6 +18,23 @@ format may still change between releases.
   app invents, each with the recipe and the module that runs it. Every entry links
   to the simulators and lesson figures that use it. Reachable from Help → Data &
   methods, or at the route `reference:data`.
+- **Eight lesson figures were inventing their data without saying so** (`V5`).
+  The course draws 67 figures; fourteen of them make their numbers up, and eight
+  of those said nothing about it. One had a legend reading "measurements" beside
+  points that had been drawn from a random number generator. All eight now say
+  plainly what they are, in the title, an axis label or the legend.
+- **A test that finds the next one** (`V5`). Detected, not declared: every figure
+  is rendered with numpy's generator under watch, and one that asked for random
+  numbers — while loading none of the real data files — must carry a plain word
+  such as *simulated*, *mock*, *toy* or *not real data* somewhere a reader will
+  see it. "Model" and "example" do not count, because a figure of real
+  measurements next to a theory curve says "model" too. The test also proves the
+  watch would fire, so a guard that quietly stops working cannot pass.
+- **Two figure titles ran off the edge of the picture** (`V5`). A label cut in
+  half is not a label, and matplotlib neither wraps nor shrinks a long title. The
+  same test now measures every title against the figure it is drawn on; it caught
+  one title lengthened by the labelling above and one that had been clipped in
+  `linear_vs_log` since it was written.
 - **An exported plot or table now says what it is** (`V2`). A PNG in a folder and
   a CSV in a spreadsheet have lost every label the app drew around them, and a
   figure that reaches someone else's slide deck should not need the app to be
