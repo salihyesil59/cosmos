@@ -4,7 +4,11 @@ All notable changes to Cosmos are recorded here. Versions follow
 [semantic versioning](https://semver.org): until 1.0 the interface and the save
 format may still change between releases.
 
-## Unreleased
+## 0.5.0 — 2026-09-25
+
+The interface work of 0.4.0, finished off: a window small enough for a 1024x768
+screen and honest about it, a lesson header that carries one thing at a time, and
+the last few pages that did not fit inside the smallest window.
 
 ### Changed
 
@@ -32,6 +36,18 @@ format may still change between releases.
   than that, so there alone it is scrolled sideways rather than clipped.
 - "best quiz score" beside a lesson's status was the one line of English left
   untranslated in the interface. Both packs now carry it.
+
+### Downloads
+
+| Platform | File |
+|---|---|
+| Windows | `Cosmos-0.5.0-windows-amd64.zip` — one executable, no installer |
+| macOS | `Cosmos-0.5.0-macos-arm64.zip` — an app bundle |
+| Linux | `Cosmos-0.5.0-linux-x86_64.AppImage` or the equivalent `.tar.gz` |
+| Any browser | `Cosmos-0.5.0-website.zip` — the reading edition: unzip and open `index.html` |
+
+Nothing needs to be installed: each package contains its own Python and Qt, and
+every build runs `--selftest` before it is published.
 
 ## 0.4.0 — 2026-09-25
 
