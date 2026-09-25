@@ -40,12 +40,14 @@ class LessonPage(QWidget):
         root.setContentsMargins(20, 14, 20, 12)
         root.setSpacing(8)
 
+        # D5: the top row used to hold the level badge, the lesson's status, the view
+        # switch and the reading time, and on a narrow window the status wrapped onto
+        # two lines in the middle of it. Status and reading time now share a quiet
+        # line of their own under the title, where there is room for them.
         head = QHBoxLayout()
         self.badge = QLabel()
         self.badge.setProperty("role", "badge")
         head.addWidget(self.badge)
-        self.status = muted_label("")
-        head.addWidget(self.status)
         head.addStretch(1)
         head.addWidget(muted_label(tr("View:")))
         self.view_buttons = QButtonGroup(self)
@@ -64,12 +66,21 @@ class LessonPage(QWidget):
             button.setProperty("mathView", mode)
             head.addWidget(button)
         self.view_buttons.idClicked.connect(self._view_changed)
-        head.addSpacing(12)
-        self.minutes = muted_label("")
-        head.addWidget(self.minutes)
         root.addLayout(head)
         self.title = title_label("")
         root.addWidget(self.title)
+
+        meta = QHBoxLayout()
+        meta.setSpacing(8)
+        self.status = muted_label("")
+        self.minutes = muted_label("")
+        self.meta_dot = muted_label("·")
+        for widget in (self.status, self.meta_dot, self.minutes):
+            widget.setWordWrap(False)       # short, and they read as one line
+            meta.addWidget(widget)
+        meta.addStretch(1)
+        root.addLayout(meta)
+
         self.summary = muted_label("")
         root.addWidget(self.summary)
 
@@ -253,7 +264,7 @@ class LessonPage(QWidget):
             LessonStatus.NOT_READY: "○ " + tr("Prerequisites missing"),
         }[status]
         if best is not None:
-            text += f" · best quiz score {best:.0%}"
+            text += " · " + tr("best quiz score {score}").format(score=f"{best:.0%}")
         self.status.setText(text)
         missing = store.missing_prerequisites(cur, self.lesson.id)
         if missing:

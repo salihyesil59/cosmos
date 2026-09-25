@@ -271,3 +271,5 @@ on screen before you ask for it.
   simulators' own symbols drawn through the same pipeline as the rest
 - [x] `D4` The simulators sorted into five families, in the navigation list, on the
   simulator page and on the home page
+- [x] `D5` A minimum window size the app can actually meet, small enough for a
+  1024x768 screen, and a lesson header that carries one thing at a time

@@ -90,6 +90,8 @@ def test_every_page_fits_the_smallest_window(window):
 def test_the_declared_minimum_size_is_honest(window):
     """The window must really work at the size it lets you shrink to."""
     shrink_to_minimum(window)
+    # It should also be a size a modest screen can give: 1024x768 less the taskbar.
+    assert window.minimumWidth() <= 1024 and window.minimumHeight() <= 700
     window.navigate("home")
     pump()
     needed = window.minimumSizeHint()

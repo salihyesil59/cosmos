@@ -109,7 +109,13 @@ class MainWindow(QMainWindow):
         self.ctx = ctx
         self.setWindowTitle(f"{APP_NAME} — " + tr("Learn Cosmology"))
         self.resize(1440, 900)
-        self.setMinimumSize(1100, 700)
+        # A classic 1024x768 screen, less room for the taskbar. The old 1100x700 was
+        # a guess: too wide for such a screen, and at the same time a promise the app
+        # could not keep, since some pages needed 850 pixels of height more than it
+        # allowed and were cut off. This size was measured against every page in
+        # three very different fonts, and tests/test_layout.py fails if a page ever
+        # outgrows it (D5).
+        self.setMinimumSize(1024, 680)
 
         self._history: list[str] = []
         self._future: list[str] = []

@@ -4,6 +4,28 @@ All notable changes to Cosmos are recorded here. Versions follow
 [semantic versioning](https://semver.org): until 1.0 the interface and the save
 format may still change between releases.
 
+## Unreleased
+
+### Changed
+
+- **The window can be made smaller: 1024x680 instead of 1100x700** (`D5`). That is
+  a classic 1024x768 screen less its taskbar, so the app now fits one. The old size
+  was a guess in both directions — too wide for such a screen, and at the same time
+  a promise it could not keep, since a simulator page needed 850 pixels of height
+  where only 700 were allowed. The new size was measured against every page of the
+  course and every simulator in three very different fonts, and the layout test
+  fails if a page ever outgrows it.
+- **The lesson header carries one thing at a time** (`D5`). It used to hold the
+  level badge, the lesson's status, the view switch and the reading time all on one
+  line, and on a narrow window the status wrapped onto two lines in the middle of
+  it. The status and the reading time now share a quiet line of their own under the
+  title.
+
+### Fixed
+
+- "best quiz score" beside a lesson's status was the one line of English left
+  untranslated in the interface. Both packs now carry it.
+
 ## 0.4.0 — 2026-09-25
 
 A release about the interface rather than the course: the same 58 lessons and 29
