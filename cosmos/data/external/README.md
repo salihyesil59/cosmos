@@ -1,5 +1,9 @@
 # Bundled observational data
 
+The app shows this record to the learner as well, under **Reference → Data &
+methods**; `cosmos/provenance.py` holds it in the form the app reads, and a test
+keeps the two lists and this folder in step.
+
 These files are **real measurements**, bundled so that the course works offline.
 The first three are redistributed unmodified; the last two are a subset and a
 resampling of much larger public releases, described below. They are the work of

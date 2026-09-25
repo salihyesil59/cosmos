@@ -273,3 +273,29 @@ on screen before you ask for it.
   simulator page and on the home page
 - [x] `D5` A minimum window size the app can actually meet, small enough for a
   1024x768 screen, and a lesson header that carries one thing at a time
+
+---
+
+## Phase 6 — Show your working
+
+The app plots real measurements and data it invents, side by side, and says which
+is which at each plot. That promise is only as good as the record behind it, and
+until now the record lived in a README the learner never sees. Phase 6 brings it
+into the app and carries it out with the data: what came from where, what the app
+made up and how, and how the numbers are checked. ★ marks the ones worth doing
+first.
+
+### Transparency
+
+- [x] ★ `V1` A **Data & methods** page: every bundled measurement with its source,
+  citation, terms and what was done to it; every generated data set with the
+  recipe that makes it; one record in the source that a test keeps honest
+- [ ] ★ `V2` Provenance that travels: an exported plot carries a caption saying
+  what it shows and whether it is real, and an exported CSV carries a header with
+  the source, the model parameters and the app version
+- [ ] `V3` "How was this computed?" beside a simulator's result: the formula it
+  used, the reference it follows, and the approximations it makes
+- [ ] `V4` The validation report inside the app: what each physics routine is
+  checked against, and the size of the worst disagreement
+- [ ] `V5` One honest number for every figure in the course: a test that no lesson
+  figure drawn from generated data can go unlabelled
