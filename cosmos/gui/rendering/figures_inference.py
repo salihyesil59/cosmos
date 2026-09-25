@@ -81,7 +81,7 @@ def _chain_diagnostics(fig, p: Palette):
     for row, (name, x) in enumerate(chains.items()):
         ax = fig.add_subplot(grid[row, 0])
         ax.plot(x, color=colours[name], linewidth=0.7)
-        ax.set_ylabel("parameter", fontsize=8)
+        ax.set_ylabel("parameter (simulated)", fontsize=8)
         ax.tick_params(labelsize=7)
         centred = x - x.mean()
         acf = np.array([np.dot(centred[:n - lag], centred[lag:]) for lag in lags]) / np.dot(centred, centred)
@@ -120,7 +120,7 @@ def _derived_parameter(fig, p: Palette):
     left.set_ylim(0.25, 1.0)
     left.set_xlabel("Ωm")
     left.set_ylabel("ΩΛ")
-    left.set_title("Samples, and lines of constant q0", fontsize=9, color=p.text)
+    left.set_title("Samples of a simulated posterior, and lines of constant q0", fontsize=9, color=p.text)
 
     right.hist(q0, bins=60, density=True, color=p.series[0], alpha=0.75,
                label=f"from the samples: ± {q0.std():.3f}")

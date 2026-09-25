@@ -65,7 +65,8 @@ def _cosmic_variance_seeds(fig, p: Palette):
         ax.set_title(f"seed {seed}", fontsize=8, color=p.muted, pad=2)
         ax.set_xticks([])
         ax.set_yticks([])
-    fig.suptitle("Four universes with identical statistics — cosmic variance is the difference between them",
+    # Shorter than it reads: at 640 px this line is clipped once it passes ~78 characters.
+    fig.suptitle("Four simulated universes, same statistics: the difference is cosmic variance",
                  fontsize=9, color=p.text)
 
 
@@ -87,7 +88,8 @@ def _redshift_space_map(fig, p: Palette):
         ax.set_xlabel("Mpc/h", fontsize=8)
         ax.tick_params(labelsize=7)
     left.set_ylabel("distance (Mpc/h)", fontsize=8)
-    fig.suptitle("Clusters are stretched into fingers pointing at the observer", fontsize=9, color=p.text)
+    fig.suptitle("Clusters are stretched into fingers pointing at the observer (a mock catalogue)",
+                 fontsize=9, color=p.text)
 
 
 @figure("survey_selection_curve")

@@ -19,7 +19,7 @@ def _linear_vs_log(fig, p: Palette):
         if log:
             ax.set_xscale("log")
             ax.set_yscale("log")
-            ax.set_title("Logarithmic axes: a power law is a straight line", fontsize=9, color=p.text)
+            ax.set_title("Log axes: a power law is a straight line", fontsize=9, color=p.text)
             ax.set_ylabel("y (log)")
         else:
             ax.set_title("Linear axes: everything hides in the corner", fontsize=9, color=p.text)
@@ -40,12 +40,15 @@ def _error_bars_and_fit(fig, p: Palette):
     model = slope * x + intercept
 
     top, bottom = fig.subplots(2, 1, sharex=True, gridspec_kw={"height_ratios": [2.2, 1]})
-    top.errorbar(x, y, yerr=sigma, fmt="o", color=p.text, markersize=4, capsize=3, label="measurements")
+    # "measurements" would be a lie in a legend: these points were drawn, not taken (V5).
+    top.errorbar(x, y, yerr=sigma, fmt="o", color=p.text, markersize=4, capsize=3,
+                 label="simulated measurements")
     top.plot(x, model, color=p.series[0], linewidth=2, label=f"fit: y = {slope:.2f}x + {intercept:.2f}")
     top.fill_between(x, model - sigma, model + sigma, color=p.series[0], alpha=0.15, linewidth=0)
     top.set_ylabel("measured quantity")
     top.legend(loc="upper left", fontsize=8)
-    top.set_title("Error bars say how much the points are allowed to miss the line", fontsize=9, color=p.text)
+    top.set_title("Error bars say how much the points are allowed to miss the line "
+                  "(simulated points)", fontsize=9, color=p.text)
 
     residual = (y - model) / sigma
     bottom.axhline(0, color=p.series[0], linewidth=1.5)
@@ -85,7 +88,7 @@ def _confidence_contours(fig, p: Palette):
     ax.set_xlabel("Ωm")
     ax.set_ylabel("ΩΛ")
     ax.legend(loc="lower left", fontsize=8)
-    ax.set_title("Two parameters, one measurement: the contours lean because they are correlated",
+    ax.set_title("Simulated fit: the contours lean because the two parameters are correlated",
                  fontsize=9, color=p.text)
 
 
@@ -143,5 +146,6 @@ def _mcmc_walk(fig, p: Palette):
     ax.set_xlabel("Ωm")
     ax.set_ylabel("ΩΛ")
     ax.legend(loc="upper right", fontsize=8)
-    ax.set_title("The walker forgets where it started and then samples the posterior",
+    ax.set_title("The walker forgets where it started and then samples the posterior "
+                 "(simulated likelihood)",
                  fontsize=9, color=p.text)
