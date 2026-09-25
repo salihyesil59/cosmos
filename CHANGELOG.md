@@ -4,7 +4,13 @@ All notable changes to Cosmos are recorded here. Versions follow
 [semantic versioning](https://semver.org): until 1.0 the interface and the save
 format may still change between releases.
 
-## Unreleased
+## 0.4.0 — 2026-09-25
+
+A release about the interface rather than the course: the same 58 lessons and 29
+simulators, in a window that gets out of their way. Everything that was on screen
+before you asked for it is now behind a key, a page holds a readable width, the
+navigation opens one section at a time, and a test keeps every page inside the
+smallest window the app offers.
 
 ### Added
 
@@ -90,6 +96,18 @@ format may still change between releases.
   page lists each simulator on one line, with its tagline in the tooltip.
 - Tabs are underlined words rather than stacked boxes, the toolbar has more air, and
   the status bar no longer holds a permanent tip — it speaks when something happens.
+
+### Downloads
+
+| Platform | File |
+|---|---|
+| Windows | `Cosmos-0.4.0-windows-amd64.zip` — one executable, no installer |
+| macOS | `Cosmos-0.4.0-macos-arm64.zip` — an app bundle |
+| Linux | `Cosmos-0.4.0-linux-x86_64.AppImage` or the equivalent `.tar.gz` |
+| Any browser | `Cosmos-0.4.0-website.zip` — the reading edition: unzip and open `index.html` |
+
+Nothing needs to be installed: each package contains its own Python and Qt, and
+every build runs `--selftest` before it is published.
 
 ## 0.3.0 — 2026-09-24
 

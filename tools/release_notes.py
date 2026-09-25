@@ -30,7 +30,9 @@ def section(text: str, version: str) -> str:
 def main(argv: list[str]) -> int:
     if len(argv) != 2:
         raise SystemExit(__doc__)
-    sys.stdout.write(section(CHANGELOG.read_text(encoding="utf-8"), argv[1]))
+    # UTF-8 whatever the console claims: the changelog holds the simulators' symbols
+    # (⇌, ⊗, ▦), and a Windows runner's cp1252 stdout would refuse them.
+    sys.stdout.buffer.write(section(CHANGELOG.read_text(encoding="utf-8"), argv[1]).encode("utf-8"))
     return 0
 
 
