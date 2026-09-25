@@ -35,6 +35,8 @@ through the lessons for a formula or a number.
 - **Constants & units** — the physical constants of the engine and a converter
   between the units astronomers use.
 - **Models** — the cosmological parameters of every preset in the app.
+- **Data & methods** — which plots are real measurements and which the app
+  generates itself, where every file came from, and how the physics is checked.
 
 The same page is the fastest way to remind yourself what a symbol means while
 you work in a simulator.
@@ -149,8 +151,9 @@ class ReferencePage(QWidget):
         root.setContentsMargins(20, 14, 20, 12)
         root.addWidget(title_label(tr("Reference")))
         root.addWidget(muted_label(
-            tr("{formulas} formulas, {constants} constants, unit conversions and the parameters of every "
-               "model in the app.").format(formulas=len(self.formulas), constants=len(CONSTANTS))))
+            tr("{formulas} formulas, {constants} constants, unit conversions, the parameters of every model "
+               "in the app, and where all of its data comes from.")
+            .format(formulas=len(self.formulas), constants=len(CONSTANTS))))
 
         self.tabs = QTabWidget()
         root.addWidget(self.tabs, 1)
@@ -185,6 +188,10 @@ class ReferencePage(QWidget):
         self.models_view = self._browser()
         self.tabs.addTab(self.models_view, "🌌  " + tr("Models"))
 
+        # --- data and methods (V1)
+        self.data_view = self._browser()
+        self.tabs.addTab(self.data_view, "◈  " + tr("Data && methods"))
+
         # Filled on the first visit (E12): rendering these needs matplotlib and the
         # physics engine, and nothing on the home page wants either.
         self._filled = False
@@ -196,6 +203,7 @@ class ReferencePage(QWidget):
         self._filled = True
         self.constants_view.set_markdown_content(self._constants_markdown())
         self.models_view.set_markdown_content(self._models_markdown())
+        self.data_view.set_markdown_content(self._data_markdown())
         self._render_formulas()
 
     def _browser(self) -> RichBrowser:
@@ -208,6 +216,16 @@ class ReferencePage(QWidget):
 
     def guide_markdown(self) -> str:
         return tr(GUIDE)
+
+    def open_target(self, target: str) -> None:
+        """Handle the part after ``reference:`` — a tab name, or a formula to show."""
+        if target == "data":
+            self.tabs.setCurrentWidget(self.data_view)
+            return
+        self.show_formula(target)
+
+    def show_data(self) -> None:
+        self.tabs.setCurrentWidget(self.data_view)
 
     def show_formula(self, formula_id: str) -> None:
         """Open the Formulas tab filtered down to one entry (used by search results)."""
@@ -299,4 +317,81 @@ class ReferencePage(QWidget):
             lines.append(f"- **{preset.label}** — {preset.description}")
         lines += ["", "Open the [Cosmology Calculator](sim:S1) or "
                   "[Build Your Own Universe](sim:S18) to experiment with these numbers."]
+        return "\n".join(lines)
+
+    def _data_markdown(self) -> str:
+        """V1: every source the app plots, real and invented, in one place."""
+        from cosmos import provenance
+        from cosmos.gui.simulators.registry import SIMULATORS
+
+        def links(ids: tuple[str, ...]) -> str:
+            named = [f"[{i} {tr(SIMULATORS[i].title)}](sim:{i})" for i in ids if i in SIMULATORS]
+            return ", ".join(named)
+
+        real, made = provenance.MEASUREMENTS, provenance.GENERATED
+        lines = [
+            "# Data and methods", "",
+            f"The app plots two different kinds of thing. **{len(real)} files of real "
+            f"measurements** are bundled with it, so that the course works without a "
+            f"network; everything else it works out or invents as you go. Each plot says "
+            f"which it is showing. This page says where each one came from.", "",
+            "## Real measurements", "",
+            "These are other people's work, redistributed so the course runs offline. If "
+            "you use them for anything beyond learning, cite the papers, not this app.", "",
+        ]
+        for m in real:
+            # A list rather than a table: a two-column table needs a header row, and an
+            # empty one draws a blank band across the page.
+            lines += [f"### {m.title}", "", f"`cosmos/data/{m.file}`", "", m.holds, "",
+                      f"- **Source** — [{m.archive}]({m.url})",
+                      f"- **Retrieved** — {m.retrieved}",
+                      f"- **Cite** — {m.cite}",
+                      f"- **Terms** — {m.terms}", ""]
+            if m.prepared:
+                lines += [f"**Prepared for the app.** {m.prepared}", ""]
+            if m.caveat:
+                lines += [f"**What it does not claim.** {m.caveat}", ""]
+            where = links(m.used_by)
+            if m.figures:
+                where = f"{where} · {m.figures}" if where else m.figures
+            if where:
+                lines += [f"Used by {where}", ""]
+
+        lines += [
+            "## Data the app generates", "",
+            "None of the following was measured by anyone. It is drawn, simulated or "
+            "modelled inside the app to show how a measurement behaves, and it says so "
+            "where it is shown — in the title of the figure, or in the note beside the "
+            "control that produced it.", "",
+        ]
+        for g in made:
+            lines += [f"### {g.title}", "", g.holds, "", g.how, ""]
+            where = links(g.shown_in)
+            if g.figures:
+                where = f"{where} · {g.figures}" if where else g.figures
+            if where:
+                lines += [f"Shown in {where}", ""]
+            lines += [f"Generated by `{g.module}`.", ""]
+
+        lines += [
+            "## How the physics is checked", "",
+            "The engine is not trusted because it looks right. Where an independent "
+            "implementation exists, the test suite compares against it: expansion rate, "
+            "age, lookback time, the several distance measures, the critical density and "
+            "evolving dark energy are all checked against "
+            "[astropy](https://www.astropy.org/) across a range of models, and the "
+            "analytic cases — the Einstein–de Sitter age of ⅔ the Hubble time, the Milne "
+            "age of exactly the Hubble time — are checked against the closed form. "
+            "Everything else is pinned to published numbers: the Planck 2018 age of 13.8 "
+            "billion years, the recombination redshift, the light-element abundances.", "",
+            "Those checks run on Linux and on Windows on every change, together with a "
+            "test that opens every page, every lesson and every simulator, and a test "
+            "that this list still matches the files in `cosmos/data`. A packaged build "
+            "runs its own `--selftest` before it is published.", "",
+            "## Where this list lives", "",
+            "`cosmos/provenance.py` in the source, beside the code that loads the files, "
+            "so the two cannot drift apart. The licence terms are in `NOTICE`, and "
+            "`cosmos/data/external/README.md` carries the same record with the data "
+            "itself, for anyone who takes the files without the app.", "",
+        ]
         return "\n".join(lines)

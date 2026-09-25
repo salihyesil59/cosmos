@@ -578,6 +578,11 @@ class MainWindow(QMainWindow):
         help_menu.addAction(action(tr("Simulator plugins…"),
                                    tr("Add your own simulator by dropping a Python file in a folder"),
                                    self.show_plugins))
+        # "&&" so that the menu does not read the ampersand as a keyboard mnemonic.
+        help_menu.addAction(action(tr("Data && methods"),
+                                   tr("Where every measurement comes from, what the app generates itself, "
+                                      "and how the physics is checked"),
+                                   lambda: self.navigate("reference:data")))
         help_menu.addSeparator()
         self.update_action = action(tr("Check for updates now"),
                                     tr("Ask GitHub whether a newer Cosmos has been released. Nothing about "
@@ -731,7 +736,7 @@ class MainWindow(QMainWindow):
         if kind == "reference":
             self.reference_page.refresh()
             if target:
-                self.reference_page.show_formula(target)
+                self.reference_page.open_target(target)
             return self.reference_page
         if kind == "search":
             self.search_page.set_query(target)

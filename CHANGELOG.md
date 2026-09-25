@@ -4,6 +4,26 @@ All notable changes to Cosmos are recorded here. Versions follow
 [semantic versioning](https://semver.org): until 1.0 the interface and the save
 format may still change between releases.
 
+## Unreleased
+
+### Added
+
+- **A "Data & methods" page, under Reference** (`V1`). The app has always said, at
+  each plot, whether it was showing a measurement or something it had generated.
+  What it could not do was answer the next question: where did this come from, and
+  what was done to it? The new page answers it for all of them — the six bundled
+  files of real measurements with their archive, retrieval date, papers to cite
+  and terms, what was changed to make them usable offline and what the app
+  deliberately does *not* claim with them, followed by the nine kinds of data the
+  app invents, each with the recipe and the module that runs it. Every entry links
+  to the simulators and lesson figures that use it. Reachable from Help → Data &
+  methods, or at the route `reference:data`.
+- **One record behind it, kept honest by tests** (`V1`). `cosmos/provenance.py`
+  holds the list beside the code that loads the files, and `tests/test_provenance.py`
+  fails if a file appears in `cosmos/data` without an entry, if an entry names a
+  file, simulator, lesson or module that does not exist, or if the README that
+  travels with the data stops agreeing with it.
+
 ## 0.5.0 — 2026-09-25
 
 The interface work of 0.4.0, finished off: a window small enough for a 1024x768
