@@ -17,7 +17,7 @@ from PySide6.QtWidgets import (
 
 from cosmos.gui import nav_icons
 from cosmos.gui.context import AppContext
-from cosmos.gui.simulators.registry import SIMULATORS
+from cosmos.gui.simulators.registry import GROUP_ORDER, SIMULATORS
 from cosmos.gui.widgets.common import FlowLayout, card, centred, muted_label, title_label
 from cosmos.gui.widgets.common import labelled_row
 from cosmos.i18n import tr, tr_noop
@@ -209,8 +209,19 @@ class HomePage(QWidget):
         self.layout_.addWidget(
             muted_label(tr("Hands-on tools to explore the ideas from the lessons. You can open them at any time."))
         )
+        for name in GROUP_ORDER:
+            members = [info for info in SIMULATORS.values() if info.group == name]
+            if members:
+                self.layout_.addWidget(muted_label(tr(name)))
+                self.layout_.addLayout(self._sim_row(ctx, members))
+        self.layout_.addStretch(1)
+
+        ctx.signals.progressChanged.connect(self.refresh)
+        self.refresh()
+
+    def _sim_row(self, ctx: AppContext, members: list) -> FlowLayout:
         sims = FlowLayout(spacing=8)
-        for info in SIMULATORS.values():
+        for info in members:
             # "&" would otherwise become a keyboard mnemonic and vanish from the label.
             btn = QPushButton(tr(info.title).replace("&", "&&"))
             btn.setIcon(nav_icons.text_icon(info.icon, size=16))
@@ -221,11 +232,7 @@ class HomePage(QWidget):
             btn.setToolTip(f"<b>{tr(info.tagline)}</b><br>{tr(info.description)}")
             btn.clicked.connect(lambda _=False, sid=info.id: ctx.navigate(f"sim:{sid}"))
             sims.addWidget(btn)
-        self.layout_.addLayout(sims)
-        self.layout_.addStretch(1)
-
-        ctx.signals.progressChanged.connect(self.refresh)
-        self.refresh()
+        return sims
 
     def guide_markdown(self) -> str:
         return tr(GUIDE)

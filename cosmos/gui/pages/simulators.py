@@ -15,7 +15,7 @@ from PySide6.QtWidgets import (
 
 from cosmos.content.loader import load_challenges
 from cosmos.gui.context import AppContext
-from cosmos.gui.simulators.registry import SIMULATORS, SimulatorInfo
+from cosmos.gui.simulators.registry import GROUP_ORDER, SIMULATORS, SimulatorInfo
 from cosmos.gui.widgets.challenge_bar import ChallengeBar
 from cosmos.gui.widgets.common import card, centred, muted_label, scrolling_page, title_label
 from cosmos.i18n import tr, tr_noop
@@ -49,11 +49,19 @@ class SimulatorHubPage(QWidget):
         layout.setContentsMargins(28, 22, 28, 22)
         layout.addWidget(title_label(tr("Simulators")))
         layout.addWidget(muted_label(tr("Choose a simulator. Each card lists the lessons it supports.")))
+        for name in GROUP_ORDER:
+            members = [info for info in SIMULATORS.values() if info.group == name]
+            if members:
+                layout.addSpacing(6)
+                layout.addWidget(title_label(tr(name), "subtitle"))
+                layout.addLayout(self._cards(ctx, members))
+
+    def _cards(self, ctx: AppContext, members: list[SimulatorInfo]) -> QGridLayout:
         grid = QGridLayout()
         grid.setSpacing(14)
         grid.setColumnStretch(0, 1)
         grid.setColumnStretch(1, 1)
-        for i, info in enumerate(SIMULATORS.values()):
+        for i, info in enumerate(members):
             c = card()
             cl = QVBoxLayout(c)
             cl.setContentsMargins(16, 14, 16, 14)
@@ -67,8 +75,7 @@ class SimulatorHubPage(QWidget):
             cl.addStretch(1)
             cl.addWidget(btn, 0, Qt.AlignLeft)
             grid.addWidget(c, i // 2, i % 2)
-        layout.addLayout(grid)
-        layout.addStretch(1)
+        return grid
 
     def guide_markdown(self) -> str:
         return tr(HUB_GUIDE)

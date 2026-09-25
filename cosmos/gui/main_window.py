@@ -37,7 +37,7 @@ from cosmos.gui.pages.progress_page import ProgressPage
 from cosmos.gui.pages.reference import ReferencePage
 from cosmos.gui.pages.search_page import SearchBox, SearchPage
 from cosmos.gui.pages.simulators import SimulatorHostPage, SimulatorHubPage
-from cosmos.gui.simulators.registry import SIMULATORS
+from cosmos.gui.simulators.registry import GROUP_ORDER, SIMULATORS
 from cosmos.gui.routes import page_context
 from cosmos.gui import theme as theme_module
 from cosmos.gui.theme import theme
@@ -210,14 +210,26 @@ class MainWindow(QMainWindow):
                 self.lesson_items[lesson_id] = item
         self.sims_item = top(tr("Simulators"), "sims", tr("Interactive tools"), "simulator")
         self.sim_items: dict[str, QTreeWidgetItem] = {}
-        for info in SIMULATORS.values():
-            item = QTreeWidgetItem([tr(info.title)])
-            item.setData(0, ROUTE_ROLE, f"sim:{info.id}")
-            item.setData(0, SYMBOL_ROLE, info.icon)
-            item.setIcon(0, nav_icons.text_icon(info.icon, size=16))
-            item.setToolTip(0, tr(info.tagline))
-            self.sims_item.addChild(item)
-            self.sim_items[info.id] = item
+        # D4: five families rather than twenty-nine names in a row. Only the family
+        # you are working in stays unfolded, like the levels of the course above.
+        self.sim_groups: dict[str, QTreeWidgetItem] = {}
+        for name in GROUP_ORDER:
+            members = [info for info in SIMULATORS.values() if info.group == name]
+            if not members:
+                continue
+            group = QTreeWidgetItem([tr(name)])
+            group.setData(0, ROUTE_ROLE, None)
+            group.setToolTip(0, tr("{count} simulators").format(count=len(members)))
+            self.sims_item.addChild(group)
+            self.sim_groups[name] = group
+            for info in members:
+                item = QTreeWidgetItem([tr(info.title)])
+                item.setData(0, ROUTE_ROLE, f"sim:{info.id}")
+                item.setData(0, SYMBOL_ROLE, info.icon)
+                item.setIcon(0, nav_icons.text_icon(info.icon, size=16))
+                item.setToolTip(0, tr(info.tagline))
+                group.addChild(item)
+                self.sim_items[info.id] = item
         self.problems_item = top(tr("Problem sets"), "problems",
                                  tr("Worked numeric problems with checked answers, one set per level"),
                                  "problems")

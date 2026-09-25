@@ -20,6 +20,7 @@ class SimulatorInfo:
     module: str
     class_name: str
     icon: str = "◆"
+    group: str = ""                 # which family it belongs to; "" for a plugin
     extra: dict = field(default_factory=dict)
 
     @property
@@ -33,6 +34,20 @@ class SimulatorInfo:
                else getattr(importlib.import_module(self.module), self.class_name))
         return cls(self, **kwargs)
 
+
+# D4: twenty-nine simulators in one list was a list nobody read to the end. They
+# are grouped by what they are for rather than by the level a learner first meets
+# them in — a simulator is a tool you reach for by subject, and grouping by level
+# left two families of one and one of eight.
+MEASURING = tr_noop("Measuring the universe")
+EXPANSION = tr_noop("The expanding universe")
+MATTER = tr_noop("Matter, dark matter and galaxies")
+EARLY = tr_noop("The early universe")
+METHOD = tr_noop("How cosmologists work")
+PLUGINS = tr_noop("Added by you")
+
+# The order they appear in, from what you can see to how it is all worked out.
+GROUP_ORDER = (MEASURING, EXPANSION, MATTER, EARLY, METHOD, PLUGINS)
 
 SIMULATORS: dict[str, SimulatorInfo] = {
     s.id: s
@@ -62,6 +77,7 @@ SIMULATORS: dict[str, SimulatorInfo] = {
             module="cosmos.gui.simulators.calculator",
             class_name="CalculatorSimulator",
             icon="∑",
+            group=EXPANSION,
         ),
         SimulatorInfo(
             id="S2",
@@ -87,6 +103,7 @@ SIMULATORS: dict[str, SimulatorInfo] = {
             module="cosmos.gui.simulators.expansion",
             class_name="ExpansionSimulator",
             icon="⤴",
+            group=EXPANSION,
         ),
         SimulatorInfo(
             id="S3",
@@ -111,6 +128,7 @@ SIMULATORS: dict[str, SimulatorInfo] = {
             module="cosmos.gui.simulators.powers_of_ten",
             class_name="PowersOfTenSimulator",
             icon="⊙",
+            group=MEASURING,
         ),
         SimulatorInfo(
             id="S4",
@@ -137,6 +155,7 @@ SIMULATORS: dict[str, SimulatorInfo] = {
             module="cosmos.gui.simulators.spectrum",
             class_name="SpectrumSimulator",
             icon="≋",
+            group=MEASURING,
         ),
         SimulatorInfo(
             id="S5",
@@ -161,6 +180,7 @@ SIMULATORS: dict[str, SimulatorInfo] = {
             module="cosmos.gui.simulators.hubble_fit",
             class_name="HubbleFitSimulator",
             icon="⟋",
+            group=MEASURING,
         ),
         SimulatorInfo(
             id="S6",
@@ -190,6 +210,7 @@ SIMULATORS: dict[str, SimulatorInfo] = {
             module="cosmos.gui.simulators.rotation_curve",
             class_name="RotationCurveSimulator",
             icon="◎",
+            group=MATTER,
         ),
         SimulatorInfo(
             id="S7",
@@ -215,6 +236,7 @@ SIMULATORS: dict[str, SimulatorInfo] = {
             module="cosmos.gui.simulators.balloon",
             class_name="BalloonSimulator",
             icon="◌",
+            group=EXPANSION,
         ),
         SimulatorInfo(
             id="S12",
@@ -241,6 +263,7 @@ SIMULATORS: dict[str, SimulatorInfo] = {
             module="cosmos.gui.simulators.cmb_spectrum",
             class_name="CMBSpectrumSimulator",
             icon="∿",
+            group=EARLY,
         ),
         SimulatorInfo(
             id="S13",
@@ -268,6 +291,7 @@ SIMULATORS: dict[str, SimulatorInfo] = {
             module="cosmos.gui.simulators.nbody_sim",
             class_name="NBodySimulator",
             icon="⁂",
+            group=MATTER,
         ),
         SimulatorInfo(
             id="S14",
@@ -295,6 +319,7 @@ SIMULATORS: dict[str, SimulatorInfo] = {
             module="cosmos.gui.simulators.lensing_sim",
             class_name="LensingSimulator",
             icon="⊚",
+            group=MATTER,
         ),
         SimulatorInfo(
             id="S8",
@@ -322,6 +347,7 @@ SIMULATORS: dict[str, SimulatorInfo] = {
             module="cosmos.gui.simulators.curvature",
             class_name="CurvatureSimulator",
             icon="△",
+            group=EXPANSION,
         ),
         SimulatorInfo(
             id="S9",
@@ -349,6 +375,7 @@ SIMULATORS: dict[str, SimulatorInfo] = {
             module="cosmos.gui.simulators.spacetime",
             class_name="SpacetimeSimulator",
             icon="⧖",
+            group=EXPANSION,
         ),
         SimulatorInfo(
             id="S15",
@@ -375,6 +402,7 @@ SIMULATORS: dict[str, SimulatorInfo] = {
             module="cosmos.gui.simulators.inflation_sim",
             class_name="InflationSimulator",
             icon="⥥",
+            group=EARLY,
         ),
         SimulatorInfo(
             id="S16",
@@ -405,6 +433,7 @@ SIMULATORS: dict[str, SimulatorInfo] = {
             module="cosmos.gui.simulators.supernova_sim",
             class_name="SupernovaSimulator",
             icon="✶",
+            group=MEASURING,
         ),
         SimulatorInfo(
             id="S18",
@@ -430,6 +459,7 @@ SIMULATORS: dict[str, SimulatorInfo] = {
             module="cosmos.gui.simulators.sandbox",
             class_name="SandboxSimulator",
             icon="✦",
+            group=EXPANSION,
         ),
         SimulatorInfo(
             id="S10",
@@ -458,6 +488,7 @@ SIMULATORS: dict[str, SimulatorInfo] = {
             module="cosmos.gui.simulators.cosmic_timeline",
             class_name="CosmicTimelineSimulator",
             icon="⧗",
+            group=EARLY,
         ),
         SimulatorInfo(
             id="S11",
@@ -489,6 +520,7 @@ SIMULATORS: dict[str, SimulatorInfo] = {
             module="cosmos.gui.simulators.bbn_explorer",
             class_name="BBNExplorerSimulator",
             icon="⊕",
+            group=EARLY,
         ),
         SimulatorInfo(
             id="S17",
@@ -515,6 +547,7 @@ SIMULATORS: dict[str, SimulatorInfo] = {
             module="cosmos.gui.simulators.olbers_sim",
             class_name="OlbersSimulator",
             icon="✧",
+            group=EXPANSION,
         ),
         SimulatorInfo(
             id="S19",
@@ -542,6 +575,7 @@ SIMULATORS: dict[str, SimulatorInfo] = {
             module="cosmos.gui.simulators.mcmc_sim",
             class_name="MCMCSimulator",
             icon="⇌",
+            group=METHOD,
         ),
         SimulatorInfo(
             id="S20",
@@ -572,6 +606,7 @@ SIMULATORS: dict[str, SimulatorInfo] = {
             module="cosmos.gui.simulators.ladder_sim",
             class_name="LadderSimulator",
             icon="≣",
+            group=MEASURING,
         ),
         SimulatorInfo(
             id="S21",
@@ -601,6 +636,7 @@ SIMULATORS: dict[str, SimulatorInfo] = {
             module="cosmos.gui.simulators.survey_sim",
             class_name="SurveySimulator",
             icon="▦",
+            group=METHOD,
         ),
         SimulatorInfo(
             id="S22",
@@ -635,6 +671,7 @@ SIMULATORS: dict[str, SimulatorInfo] = {
             module="cosmos.gui.simulators.siren_sim",
             class_name="SirenSimulator",
             icon="〰",
+            group=MEASURING,
         ),
         SimulatorInfo(
             id="S23",
@@ -668,6 +705,7 @@ SIMULATORS: dict[str, SimulatorInfo] = {
             module="cosmos.gui.simulators.slice_sim",
             class_name="SliceSimulator",
             icon="◔",
+            group=METHOD,
         ),
         SimulatorInfo(
             id="S24",
@@ -700,6 +738,7 @@ SIMULATORS: dict[str, SimulatorInfo] = {
             module="cosmos.gui.simulators.sky_sim",
             class_name="SkySimulator",
             icon="⊛",
+            group=EARLY,
         ),
         SimulatorInfo(
             id="S25",
@@ -732,6 +771,7 @@ SIMULATORS: dict[str, SimulatorInfo] = {
             module="cosmos.gui.simulators.recombination_sim",
             class_name="RecombinationSimulator",
             icon="◍",
+            group=EARLY,
         ),
         SimulatorInfo(
             id="S26",
@@ -764,6 +804,7 @@ SIMULATORS: dict[str, SimulatorInfo] = {
             module="cosmos.gui.simulators.future_sim",
             class_name="FutureSimulator",
             icon="⇢",
+            group=EXPANSION,
         ),
         SimulatorInfo(
             id="S27",
@@ -796,6 +837,7 @@ SIMULATORS: dict[str, SimulatorInfo] = {
             module="cosmos.gui.simulators.halo_sim",
             class_name="HaloSimulator",
             icon="⬤",
+            group=MATTER,
         ),
         SimulatorInfo(
             id="S28",
@@ -829,6 +871,7 @@ SIMULATORS: dict[str, SimulatorInfo] = {
             module="cosmos.gui.simulators.global21_sim",
             class_name="Global21Simulator",
             icon="⇣",
+            group=EARLY,
         ),
         SimulatorInfo(
             id="S29",
@@ -864,6 +907,7 @@ SIMULATORS: dict[str, SimulatorInfo] = {
             module="cosmos.gui.simulators.detection_sim",
             class_name="DetectionSimulator",
             icon="⊗",
+            group=MATTER,
         ),
     ]
 }

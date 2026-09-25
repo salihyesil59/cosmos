@@ -632,7 +632,7 @@
     </message>
     <message>
         <location filename="../gui/main_window.py" line="194" />
-        <location filename="../gui/main_window.py" line="408" />
+        <location filename="../gui/main_window.py" line="420" />
         <source>Home</source>
         <translation>Ana sayfa</translation>
     </message>
@@ -653,8 +653,8 @@
     </message>
     <message>
         <location filename="../gui/main_window.py" line="211" />
-        <location filename="../gui/main_window.py" line="530" />
-        <location filename="../gui/main_window.py" line="1335" />
+        <location filename="../gui/main_window.py" line="542" />
+        <location filename="../gui/main_window.py" line="1347" />
         <location filename="../gui/pages/home.py" line="208" />
         <location filename="../gui/pages/simulators.py" line="50" />
         <source>Simulators</source>
@@ -666,566 +666,571 @@
         <translation>Etkileşimli araçlar</translation>
     </message>
     <message>
-        <location filename="../gui/main_window.py" line="221" />
+        <location filename="../gui/main_window.py" line="222" />
+        <source>{count} simulators</source>
+        <translation>{count} simülatör</translation>
+    </message>
+    <message>
+        <location filename="../gui/main_window.py" line="233" />
         <location filename="../gui/pages/problems_page.py" line="86" />
         <source>Problem sets</source>
         <translation>Problem setleri</translation>
     </message>
     <message>
-        <location filename="../gui/main_window.py" line="222" />
+        <location filename="../gui/main_window.py" line="234" />
         <source>Worked numeric problems with checked answers, one set per level</source>
         <translation>Cevabı denetlenen sayısal problemler, her seviye için bir set</translation>
     </message>
     <message>
-        <location filename="../gui/main_window.py" line="224" />
-        <location filename="../gui/main_window.py" line="412" />
+        <location filename="../gui/main_window.py" line="236" />
+        <location filename="../gui/main_window.py" line="424" />
         <location filename="../gui/pages/glossary.py" line="43" />
         <source>Glossary</source>
         <translation>Sözlük</translation>
     </message>
     <message>
-        <location filename="../gui/main_window.py" line="224" />
+        <location filename="../gui/main_window.py" line="236" />
         <source>Definitions of all important terms</source>
         <translation>Önemli tüm terimlerin tanımları</translation>
     </message>
     <message>
-        <location filename="../gui/main_window.py" line="226" />
-        <location filename="../gui/main_window.py" line="414" />
+        <location filename="../gui/main_window.py" line="238" />
+        <location filename="../gui/main_window.py" line="426" />
         <location filename="../gui/pages/reference.py" line="150" />
         <source>Reference</source>
         <translation>Başvuru</translation>
     </message>
     <message>
-        <location filename="../gui/main_window.py" line="227" />
+        <location filename="../gui/main_window.py" line="239" />
         <source>Formula sheet, constants, units and models</source>
         <translation>Formül sayfası, sabitler, birimler ve modeller</translation>
     </message>
     <message>
-        <location filename="../gui/main_window.py" line="228" />
-        <location filename="../gui/main_window.py" line="416" />
+        <location filename="../gui/main_window.py" line="240" />
+        <location filename="../gui/main_window.py" line="428" />
         <source>History</source>
         <translation>Tarihçe</translation>
     </message>
     <message>
-        <location filename="../gui/main_window.py" line="229" />
+        <location filename="../gui/main_window.py" line="241" />
         <source>The discoveries and the people behind them</source>
         <translation>Keşifler ve arkalarındaki insanlar</translation>
     </message>
     <message>
-        <location filename="../gui/main_window.py" line="230" />
+        <location filename="../gui/main_window.py" line="242" />
         <location filename="../gui/pages/search_page.py" line="39" />
         <source>Search</source>
         <translation>Ara</translation>
     </message>
     <message>
-        <location filename="../gui/main_window.py" line="231" />
+        <location filename="../gui/main_window.py" line="243" />
         <source>Search lessons, glossary, simulators and formulas</source>
         <translation>Derslerde, sözlükte, simülatörlerde ve formüllerde ara</translation>
     </message>
     <message>
-        <location filename="../gui/main_window.py" line="232" />
+        <location filename="../gui/main_window.py" line="244" />
         <location filename="../gui/pages/notes_page.py" line="50" />
         <source>Notes &amp; bookmarks</source>
         <translation>Notlar ve yer imleri</translation>
     </message>
     <message>
-        <location filename="../gui/main_window.py" line="232" />
+        <location filename="../gui/main_window.py" line="244" />
         <source>Everything you saved</source>
         <translation>Kaydettiğiniz her şey</translation>
     </message>
     <message>
-        <location filename="../gui/main_window.py" line="233" />
-        <location filename="../gui/main_window.py" line="427" />
-        <location filename="../gui/main_window.py" line="748" />
-        <location filename="../gui/main_window.py" line="807" />
+        <location filename="../gui/main_window.py" line="245" />
+        <location filename="../gui/main_window.py" line="439" />
+        <location filename="../gui/main_window.py" line="760" />
+        <location filename="../gui/main_window.py" line="819" />
         <location filename="../gui/pages/review_page.py" line="66" />
         <source>Review</source>
         <translation>Tekrar</translation>
     </message>
     <message>
-        <location filename="../gui/main_window.py" line="234" />
+        <location filename="../gui/main_window.py" line="246" />
         <source>Quiz questions you got wrong, brought back on a schedule</source>
         <translation>Yanlış yanıtladığınız sınav soruları, bir takvime göre geri getirilir</translation>
     </message>
     <message>
-        <location filename="../gui/main_window.py" line="235" />
-        <location filename="../gui/main_window.py" line="425" />
+        <location filename="../gui/main_window.py" line="247" />
+        <location filename="../gui/main_window.py" line="437" />
         <source>Progress</source>
         <translation>İlerleme</translation>
     </message>
     <message>
-        <location filename="../gui/main_window.py" line="235" />
+        <location filename="../gui/main_window.py" line="247" />
         <source>Your progress and the lesson map</source>
         <translation>İlerlemeniz ve ders haritası</translation>
     </message>
     <message>
-        <location filename="../gui/main_window.py" line="237" />
-        <location filename="../gui/main_window.py" line="534" />
+        <location filename="../gui/main_window.py" line="249" />
+        <location filename="../gui/main_window.py" line="546" />
         <location filename="../gui/pages/classroom_page.py" line="98" />
         <source>Classroom</source>
         <translation>Sınıf</translation>
     </message>
     <message>
-        <location filename="../gui/main_window.py" line="238" />
-        <location filename="../gui/main_window.py" line="535" />
+        <location filename="../gui/main_window.py" line="250" />
+        <location filename="../gui/main_window.py" line="547" />
         <source>A progress report to hand on, and teacher notes per lesson</source>
         <translation>Başkasına verilebilecek bir ilerleme raporu ve ders başına öğretmen notları</translation>
     </message>
     <message>
-        <location filename="../gui/main_window.py" line="245" />
-        <location filename="../gui/main_window.py" line="402" />
-        <location filename="../gui/main_window.py" line="1299" />
+        <location filename="../gui/main_window.py" line="257" />
+        <location filename="../gui/main_window.py" line="414" />
+        <location filename="../gui/main_window.py" line="1311" />
         <source>Navigation</source>
         <translation>Gezinme</translation>
     </message>
     <message>
-        <location filename="../gui/main_window.py" line="297" />
-        <location filename="../gui/main_window.py" line="451" />
+        <location filename="../gui/main_window.py" line="309" />
+        <location filename="../gui/main_window.py" line="463" />
         <source>Guide</source>
         <translation>Rehber</translation>
     </message>
     <message>
-        <location filename="../gui/main_window.py" line="302" />
-        <location filename="../gui/main_window.py" line="418" />
+        <location filename="../gui/main_window.py" line="314" />
+        <location filename="../gui/main_window.py" line="430" />
         <location filename="../gui/pages/notes_page.py" line="97" />
         <source>Notes</source>
         <translation>Notlar</translation>
     </message>
     <message>
-        <location filename="../gui/main_window.py" line="310" />
-        <location filename="../gui/main_window.py" line="463" />
+        <location filename="../gui/main_window.py" line="322" />
+        <location filename="../gui/main_window.py" line="475" />
         <source>Tutor</source>
         <translation>Öğretmen</translation>
     </message>
     <message>
-        <location filename="../gui/main_window.py" line="402" />
+        <location filename="../gui/main_window.py" line="414" />
         <source>Show or hide the list of lessons (Ctrl+B)</source>
         <translation>Ders listesini göster veya gizle (Ctrl+B)</translation>
     </message>
     <message>
-        <location filename="../gui/main_window.py" line="404" />
+        <location filename="../gui/main_window.py" line="416" />
         <location filename="../gui/widgets/tour.py" line="53" />
         <source>Back</source>
         <translation>Geri</translation>
     </message>
     <message>
-        <location filename="../gui/main_window.py" line="404" />
+        <location filename="../gui/main_window.py" line="416" />
         <source>Go back to the previous page (Alt+Left)</source>
         <translation>Önceki sayfaya dön (Alt+Sol)</translation>
     </message>
     <message>
-        <location filename="../gui/main_window.py" line="406" />
+        <location filename="../gui/main_window.py" line="418" />
         <source>Forward</source>
         <translation>İleri</translation>
     </message>
     <message>
-        <location filename="../gui/main_window.py" line="406" />
+        <location filename="../gui/main_window.py" line="418" />
         <source>Go forward (Alt+Right)</source>
         <translation>İleri git (Alt+Sağ)</translation>
     </message>
     <message>
-        <location filename="../gui/main_window.py" line="408" />
+        <location filename="../gui/main_window.py" line="420" />
         <source>Home page (Ctrl+H)</source>
         <translation>Ana sayfa (Ctrl+H)</translation>
     </message>
     <message>
-        <location filename="../gui/main_window.py" line="410" />
+        <location filename="../gui/main_window.py" line="422" />
         <source>Continue</source>
         <translation>Devam et</translation>
     </message>
     <message>
-        <location filename="../gui/main_window.py" line="410" />
+        <location filename="../gui/main_window.py" line="422" />
         <source>Open the next recommended lesson (Ctrl+L)</source>
         <translation>Önerilen bir sonraki dersi aç (Ctrl+L)</translation>
     </message>
     <message>
-        <location filename="../gui/main_window.py" line="412" />
+        <location filename="../gui/main_window.py" line="424" />
         <source>Open the glossary (Ctrl+G)</source>
         <translation>Sözlüğü aç (Ctrl+G)</translation>
     </message>
     <message>
-        <location filename="../gui/main_window.py" line="414" />
+        <location filename="../gui/main_window.py" line="426" />
         <source>Formula sheet, constants and units (Ctrl+R)</source>
         <translation>Formül sayfası, sabitler ve birimler (Ctrl+R)</translation>
     </message>
     <message>
-        <location filename="../gui/main_window.py" line="416" />
+        <location filename="../gui/main_window.py" line="428" />
         <source>The history of cosmology and its scientists</source>
         <translation>Kozmolojinin tarihi ve bilim insanları</translation>
     </message>
     <message>
-        <location filename="../gui/main_window.py" line="418" />
+        <location filename="../gui/main_window.py" line="430" />
         <source>All your notes and bookmarks (Ctrl+Shift+N)</source>
         <translation>Tüm notlarınız ve yer imleriniz (Ctrl+Shift+N)</translation>
     </message>
     <message>
-        <location filename="../gui/main_window.py" line="420" />
-        <location filename="../gui/main_window.py" line="845" />
+        <location filename="../gui/main_window.py" line="432" />
+        <location filename="../gui/main_window.py" line="857" />
         <source>Bookmark</source>
         <translation>Yer imi</translation>
     </message>
     <message>
-        <location filename="../gui/main_window.py" line="420" />
+        <location filename="../gui/main_window.py" line="432" />
         <source>Bookmark the current page (Ctrl+D)</source>
         <translation>Bu sayfayı yer imlerine ekle (Ctrl+D)</translation>
     </message>
     <message>
-        <location filename="../gui/main_window.py" line="423" />
+        <location filename="../gui/main_window.py" line="435" />
         <source>Find</source>
         <translation>Bul</translation>
     </message>
     <message>
-        <location filename="../gui/main_window.py" line="423" />
+        <location filename="../gui/main_window.py" line="435" />
         <source>Search the whole course (Ctrl+F)</source>
         <translation>Tüm kursta ara (Ctrl+F)</translation>
     </message>
     <message>
-        <location filename="../gui/main_window.py" line="425" />
+        <location filename="../gui/main_window.py" line="437" />
         <source>Your progress and lesson map (Ctrl+P)</source>
         <translation>İlerlemeniz ve ders haritanız (Ctrl+P)</translation>
     </message>
     <message>
-        <location filename="../gui/main_window.py" line="428" />
+        <location filename="../gui/main_window.py" line="440" />
         <source>Quiz questions you got wrong, brought back on a schedule (Ctrl+Shift+R)</source>
         <translation>Yanlış yanıtladığınız sınav soruları, bir takvime göre geri getirilir (Ctrl+Shift+R)</translation>
     </message>
     <message>
-        <location filename="../gui/main_window.py" line="431" />
-        <location filename="../gui/main_window.py" line="588" />
+        <location filename="../gui/main_window.py" line="443" />
+        <location filename="../gui/main_window.py" line="600" />
         <source>Theme</source>
         <translation>Tema</translation>
     </message>
     <message>
-        <location filename="../gui/main_window.py" line="432" />
+        <location filename="../gui/main_window.py" line="444" />
         <source>Cycle dark, light and high-contrast themes (Ctrl+T)</source>
         <translation>Koyu, açık ve yüksek kontrast temaları arasında geçiş yapın (Ctrl+T)</translation>
     </message>
     <message>
-        <location filename="../gui/main_window.py" line="434" />
+        <location filename="../gui/main_window.py" line="446" />
         <source>Larger text</source>
         <translation>Daha büyük yazı</translation>
     </message>
     <message>
-        <location filename="../gui/main_window.py" line="434" />
+        <location filename="../gui/main_window.py" line="446" />
         <source>Make every label and control bigger (Ctrl++)</source>
         <translation>Tüm etiket ve denetimleri büyütün (Ctrl++)</translation>
     </message>
     <message>
-        <location filename="../gui/main_window.py" line="436" />
+        <location filename="../gui/main_window.py" line="448" />
         <source>Smaller text</source>
         <translation>Daha küçük yazı</translation>
     </message>
     <message>
-        <location filename="../gui/main_window.py" line="436" />
+        <location filename="../gui/main_window.py" line="448" />
         <source>Fit more on the screen (Ctrl+-)</source>
         <translation>Ekrana daha çok şey sığdırın (Ctrl+-)</translation>
     </message>
     <message>
-        <location filename="../gui/main_window.py" line="438" />
+        <location filename="../gui/main_window.py" line="450" />
         <source>Reset text size</source>
         <translation>Yazı boyutunu sıfırla</translation>
     </message>
     <message>
-        <location filename="../gui/main_window.py" line="438" />
+        <location filename="../gui/main_window.py" line="450" />
         <source>Back to the standard size (Ctrl+0)</source>
         <translation>Standart boyuta dönün (Ctrl+0)</translation>
     </message>
     <message>
-        <location filename="../gui/main_window.py" line="440" />
+        <location filename="../gui/main_window.py" line="452" />
         <source>Move focus to the next area</source>
         <translation>Odağı bir sonraki alana taşı</translation>
     </message>
     <message>
-        <location filename="../gui/main_window.py" line="441" />
+        <location filename="../gui/main_window.py" line="453" />
         <source>Cycle the keyboard focus between the lesson list, the page and the side panels (F6)</source>
         <translation>Klavye odağını ders listesi, sayfa ve yan paneller arasında dolaştırın (F6)</translation>
     </message>
     <message>
-        <location filename="../gui/main_window.py" line="454" />
+        <location filename="../gui/main_window.py" line="466" />
         <source>Show or hide the Guide panel (F1)</source>
         <translation>Rehber panelini göster veya gizle (F1)</translation>
     </message>
     <message>
-        <location filename="../gui/main_window.py" line="457" />
+        <location filename="../gui/main_window.py" line="469" />
         <source>Notes panel</source>
         <translation>Not paneli</translation>
     </message>
     <message>
-        <location filename="../gui/main_window.py" line="460" />
+        <location filename="../gui/main_window.py" line="472" />
         <source>Show or hide the Notes panel (F2)</source>
         <translation>Not panelini göster veya gizle (F2)</translation>
     </message>
     <message>
-        <location filename="../gui/main_window.py" line="466" />
+        <location filename="../gui/main_window.py" line="478" />
         <source>Ask the Tutor about this page (F3) — needs your own API key</source>
         <translation>Bu sayfa hakkında Öğretmen'e sorun (F3) — kendi API anahtarınızı gerektirir</translation>
     </message>
     <message>
-        <location filename="../gui/main_window.py" line="468" />
+        <location filename="../gui/main_window.py" line="480" />
         <source>Tour</source>
         <translation>Tanıtım</translation>
     </message>
     <message>
-        <location filename="../gui/main_window.py" line="468" />
+        <location filename="../gui/main_window.py" line="480" />
         <source>Replay the guided tour of the app</source>
         <translation>Uygulamanın rehberli tanıtımını yeniden oynat</translation>
     </message>
     <message>
-        <location filename="../gui/main_window.py" line="493" />
+        <location filename="../gui/main_window.py" line="505" />
         <source>&amp;File</source>
         <translation>&amp;Dosya</translation>
     </message>
     <message>
-        <location filename="../gui/main_window.py" line="494" />
+        <location filename="../gui/main_window.py" line="506" />
         <source>Export notes…</source>
         <translation>Notları dışa aktar…</translation>
     </message>
     <message>
-        <location filename="../gui/main_window.py" line="494" />
+        <location filename="../gui/main_window.py" line="506" />
         <source>Save all notes and bookmarks as a Markdown file</source>
         <translation>Tüm notları ve yer imlerini bir Markdown dosyası olarak kaydet</translation>
     </message>
     <message>
-        <location filename="../gui/main_window.py" line="496" />
+        <location filename="../gui/main_window.py" line="508" />
         <source>Back up progress…</source>
         <translation>İlerlemeyi yedekle…</translation>
     </message>
     <message>
-        <location filename="../gui/main_window.py" line="497" />
+        <location filename="../gui/main_window.py" line="509" />
         <source>Save everything you have learned, your notes and your review deck in one file, to keep or to carry to another computer</source>
         <translation>Öğrendiğiniz her şeyi, notlarınızı ve tekrar destenizi saklamak ya da başka bir bilgisayara taşımak için tek bir dosyaya kaydedin</translation>
     </message>
     <message>
-        <location filename="../gui/main_window.py" line="500" />
+        <location filename="../gui/main_window.py" line="512" />
         <source>Restore progress…</source>
         <translation>İlerlemeyi geri yükle…</translation>
     </message>
     <message>
-        <location filename="../gui/main_window.py" line="501" />
+        <location filename="../gui/main_window.py" line="513" />
         <source>Replace your progress with a backup made earlier, here or on another computer</source>
         <translation>İlerlemenizi, burada ya da başka bir bilgisayarda daha önce alınmış bir yedekle değiştirin</translation>
     </message>
     <message>
-        <location filename="../gui/main_window.py" line="506" />
+        <location filename="../gui/main_window.py" line="518" />
         <source>Print this lesson as PDF…</source>
         <translation>Bu dersi PDF olarak yazdır…</translation>
     </message>
     <message>
-        <location filename="../gui/main_window.py" line="507" />
+        <location filename="../gui/main_window.py" line="519" />
         <source>Save the lesson you are reading, with its figures and quiz, as a PDF (Ctrl+P is Progress; this is Ctrl+Shift+P)</source>
         <translation>Okuduğunuz dersi, figürleri ve sınavıyla birlikte PDF olarak kaydedin (Ctrl+P İlerleme'dir; bu Ctrl+Shift+P)</translation>
     </message>
     <message>
-        <location filename="../gui/main_window.py" line="511" />
+        <location filename="../gui/main_window.py" line="523" />
         <source>Print this level as PDF…</source>
         <translation>Bu seviyeyi PDF olarak yazdır…</translation>
     </message>
     <message>
-        <location filename="../gui/main_window.py" line="512" />
+        <location filename="../gui/main_window.py" line="524" />
         <source>Every lesson of one level, each starting on a new page</source>
         <translation>Bir seviyenin her dersi, her biri yeni bir sayfada başlar</translation>
     </message>
     <message>
-        <location filename="../gui/main_window.py" line="514" />
+        <location filename="../gui/main_window.py" line="526" />
         <source>Print the whole course as PDF…</source>
         <translation>Tüm kursu PDF olarak yazdır…</translation>
     </message>
     <message>
-        <location filename="../gui/main_window.py" line="515" />
+        <location filename="../gui/main_window.py" line="527" />
         <source>All lessons in one file. It is long; give it a moment.</source>
         <translation>Tüm dersler tek dosyada. Uzundur; biraz zaman tanıyın.</translation>
     </message>
     <message>
-        <location filename="../gui/main_window.py" line="517" />
+        <location filename="../gui/main_window.py" line="529" />
         <source>Export the course as a website…</source>
         <translation>Kursu web sitesi olarak dışa aktar…</translation>
     </message>
     <message>
-        <location filename="../gui/main_window.py" line="518" />
+        <location filename="../gui/main_window.py" line="530" />
         <source>Every lesson, the glossary, the formulas and the problems as web pages that open in any browser, without installing anything</source>
         <translation>Her ders, sözlük, formüller ve problemler; hiçbir şey kurmadan her tarayıcıda açılan web sayfaları olarak</translation>
     </message>
     <message>
-        <location filename="../gui/main_window.py" line="521" />
+        <location filename="../gui/main_window.py" line="533" />
         <source>Print the “Remember this” sheet…</source>
         <translation>“Bunu hatırla” sayfasını yazdır…</translation>
     </message>
     <message>
-        <location filename="../gui/main_window.py" line="522" />
+        <location filename="../gui/main_window.py" line="534" />
         <source>The key points of every lesson you have completed, on a few pages</source>
         <translation>Tamamladığınız her dersin ana noktaları, birkaç sayfada</translation>
     </message>
     <message>
-        <location filename="../gui/main_window.py" line="525" />
+        <location filename="../gui/main_window.py" line="537" />
         <source>Quit</source>
         <translation>Çık</translation>
     </message>
     <message>
-        <location filename="../gui/main_window.py" line="525" />
+        <location filename="../gui/main_window.py" line="537" />
         <source>Close Cosmos</source>
         <translation>Cosmos'u kapat</translation>
     </message>
     <message>
-        <location filename="../gui/main_window.py" line="526" />
+        <location filename="../gui/main_window.py" line="538" />
         <source>&amp;Learn</source>
         <translation>&amp;Öğren</translation>
     </message>
     <message>
-        <location filename="../gui/main_window.py" line="530" />
+        <location filename="../gui/main_window.py" line="542" />
         <source>All simulators</source>
         <translation>Tüm simülatörler</translation>
     </message>
     <message>
-        <location filename="../gui/main_window.py" line="531" />
+        <location filename="../gui/main_window.py" line="543" />
         <source>“Remember this” sheet</source>
         <translation>“Bunu hatırla” sayfası</translation>
     </message>
     <message>
-        <location filename="../gui/main_window.py" line="532" />
+        <location filename="../gui/main_window.py" line="544" />
         <source>The key points of the lessons you have completed, in the Guide panel</source>
         <translation>Tamamladığınız derslerin ana noktaları, Rehber panelinde</translation>
     </message>
     <message>
-        <location filename="../gui/main_window.py" line="541" />
+        <location filename="../gui/main_window.py" line="553" />
         <source>&amp;View</source>
         <translation>&amp;Görünüm</translation>
     </message>
     <message>
-        <location filename="../gui/main_window.py" line="544" />
+        <location filename="../gui/main_window.py" line="556" />
         <source>Text size</source>
         <translation>Yazı boyutu</translation>
     </message>
     <message>
-        <location filename="../gui/main_window.py" line="555" />
+        <location filename="../gui/main_window.py" line="567" />
         <source>&amp;Help</source>
         <translation>&amp;Yardım</translation>
     </message>
     <message>
-        <location filename="../gui/main_window.py" line="557" />
+        <location filename="../gui/main_window.py" line="569" />
         <source>How to use Cosmos</source>
         <translation>Cosmos nasıl kullanılır</translation>
     </message>
     <message>
-        <location filename="../gui/main_window.py" line="557" />
+        <location filename="../gui/main_window.py" line="569" />
         <source>Show help in the Guide panel</source>
         <translation>Yardımı Rehber panelinde göster</translation>
     </message>
     <message>
-        <location filename="../gui/main_window.py" line="558" />
-        <location filename="../gui/main_window.py" line="951" />
+        <location filename="../gui/main_window.py" line="570" />
+        <location filename="../gui/main_window.py" line="963" />
         <source>Keyboard shortcuts</source>
         <translation>Klavye kısayolları</translation>
     </message>
     <message>
-        <location filename="../gui/main_window.py" line="558" />
+        <location filename="../gui/main_window.py" line="570" />
         <source>Every command you can reach without the mouse</source>
         <translation>Fareye dokunmadan ulaşabileceğiniz tüm komutlar</translation>
     </message>
     <message>
-        <location filename="../gui/main_window.py" line="560" />
+        <location filename="../gui/main_window.py" line="572" />
         <source>Simulator plugins…</source>
         <translation>Simülatör eklentileri…</translation>
     </message>
     <message>
-        <location filename="../gui/main_window.py" line="561" />
+        <location filename="../gui/main_window.py" line="573" />
         <source>Add your own simulator by dropping a Python file in a folder</source>
         <translation>Bir klasöre Python dosyası bırakarak kendi simülatörünüzü ekleyin</translation>
     </message>
     <message>
-        <location filename="../gui/main_window.py" line="564" />
+        <location filename="../gui/main_window.py" line="576" />
         <source>Check for updates now</source>
         <translation>Şimdi güncelleme denetle</translation>
     </message>
     <message>
-        <location filename="../gui/main_window.py" line="565" />
+        <location filename="../gui/main_window.py" line="577" />
         <source>Ask GitHub whether a newer Cosmos has been released. Nothing about you or this computer is sent.</source>
         <translation>GitHub'a daha yeni bir Cosmos yayımlanıp yayımlanmadığını sorar. Sizinle ya da bu bilgisayarla ilgili hiçbir şey gönderilmez.</translation>
     </message>
     <message>
-        <location filename="../gui/main_window.py" line="570" />
+        <location filename="../gui/main_window.py" line="582" />
         <source>Check for updates on start-up</source>
         <translation>Açılışta güncelleme denetle</translation>
     </message>
     <message>
-        <location filename="../gui/main_window.py" line="571" />
+        <location filename="../gui/main_window.py" line="583" />
         <source>Look once a day, in the background. Off by default; nothing is ever uploaded.</source>
         <translation>Günde bir kez, arka planda bakar. Varsayılan olarak kapalıdır; hiçbir şey yüklenmez.</translation>
     </message>
     <message>
-        <location filename="../gui/main_window.py" line="576" />
+        <location filename="../gui/main_window.py" line="588" />
         <source>About Cosmos</source>
         <translation>Cosmos hakkında</translation>
     </message>
     <message>
-        <location filename="../gui/main_window.py" line="576" />
+        <location filename="../gui/main_window.py" line="588" />
         <source>Version and credits</source>
         <translation>Sürüm ve emeği geçenler</translation>
     </message>
     <message>
-        <location filename="../gui/main_window.py" line="582" />
+        <location filename="../gui/main_window.py" line="594" />
         <source>Dark</source>
         <translation>Koyu</translation>
     </message>
     <message>
-        <location filename="../gui/main_window.py" line="582" />
+        <location filename="../gui/main_window.py" line="594" />
         <source>Light</source>
         <translation>Açık</translation>
     </message>
     <message>
-        <location filename="../gui/main_window.py" line="582" />
+        <location filename="../gui/main_window.py" line="594" />
         <source>High contrast</source>
         <translation>Yüksek kontrast</translation>
     </message>
     <message>
-        <location filename="../gui/main_window.py" line="584" />
+        <location filename="../gui/main_window.py" line="596" />
         <source>Easy on the eyes in a dark room.</source>
         <translation>Karanlık bir odada göz yormaz.</translation>
     </message>
     <message>
-        <location filename="../gui/main_window.py" line="585" />
+        <location filename="../gui/main_window.py" line="597" />
         <source>Better in bright daylight, and for printing screenshots.</source>
         <translation>Parlak gün ışığında ve ekran görüntüsü basmak için daha iyidir.</translation>
     </message>
     <message>
-        <location filename="../gui/main_window.py" line="586" />
+        <location filename="../gui/main_window.py" line="598" />
         <source>Pure white on black with the strongest accents, for low vision or glare.</source>
         <translation>Siyah üzerine saf beyaz ve en güçlü vurgular; az görme ya da parlama için.</translation>
     </message>
     <message>
-        <location filename="../gui/main_window.py" line="608" />
-        <location filename="../gui/main_window.py" line="632" />
+        <location filename="../gui/main_window.py" line="620" />
+        <location filename="../gui/main_window.py" line="644" />
         <source>Language</source>
         <translation>Dil</translation>
     </message>
     <message>
-        <location filename="../gui/main_window.py" line="616" />
+        <location filename="../gui/main_window.py" line="628" />
         <source>Applies the next time Cosmos starts.</source>
         <translation>Cosmos'un bir sonraki açılışında geçerli olur.</translation>
     </message>
     <message>
-        <location filename="../gui/main_window.py" line="621" />
+        <location filename="../gui/main_window.py" line="633" />
         <source>Add a language…</source>
         <translation>Dil ekle…</translation>
     </message>
     <message>
-        <location filename="../gui/main_window.py" line="622" />
+        <location filename="../gui/main_window.py" line="634" />
         <source>See README: tools/update_translations.py creates the file to translate.</source>
         <translation>README'ye bakın: çevrilecek dosyayı tools/update_translations.py oluşturur.</translation>
     </message>
     <message>
-        <location filename="../gui/main_window.py" line="633" />
+        <location filename="../gui/main_window.py" line="645" />
         <source>The interface language changes the next time you start Cosmos.
 
 The course content — lessons, quizzes and the glossary — is written in English.</source>
         <translation>Arayüz dili, Cosmos'u bir sonraki açışınızda değişir. Kurs içeriği — dersler, sınavlar ve sözlük — İngilizce yazılmıştır.</translation>
     </message>
     <message>
-        <location filename="../gui/main_window.py" line="638" />
+        <location filename="../gui/main_window.py" line="650" />
         <source>Add a language</source>
         <translation>Dil ekle</translation>
     </message>
     <message>
-        <location filename="../gui/main_window.py" line="639" />
+        <location filename="../gui/main_window.py" line="651" />
         <source>Interface translations live in cosmos/i18n as Qt .ts files.
 
 1. python tools/update_translations.py --language &lt;code&gt;
@@ -1236,409 +1241,409 @@ The new language then appears in this menu.</source>
         <translation>Arayüz çevirileri cosmos/i18n klasöründe Qt .ts dosyaları olarak durur. 1. python tools/update_translations.py --language &lt;kod&gt; 2. Dosyayı Qt Linguist ile çevirin (pyside6-linguist) 3. python tools/update_translations.py --release Yeni dil bundan sonra bu menüde görünür.</translation>
     </message>
     <message>
-        <location filename="../gui/main_window.py" line="747" />
-        <location filename="../gui/main_window.py" line="806" />
+        <location filename="../gui/main_window.py" line="759" />
+        <location filename="../gui/main_window.py" line="818" />
         <source>Review ({count})</source>
         <translation>Tekrar ({count})</translation>
     </message>
     <message>
-        <location filename="../gui/main_window.py" line="804" />
+        <location filename="../gui/main_window.py" line="816" />
         <location filename="../gui/widgets/prereq_map.py" line="28" />
         <source>Status: {status}</source>
         <translation>Durum: {status}</translation>
     </message>
     <message>
-        <location filename="../gui/main_window.py" line="845" />
+        <location filename="../gui/main_window.py" line="857" />
         <source>Bookmarked</source>
         <translation>Yer imlerinde</translation>
     </message>
     <message>
-        <location filename="../gui/main_window.py" line="856" />
+        <location filename="../gui/main_window.py" line="868" />
         <source>Badge earned: {names}</source>
         <translation>Rozet kazanıldı: {names}</translation>
     </message>
     <message>
-        <location filename="../gui/main_window.py" line="874" />
+        <location filename="../gui/main_window.py" line="886" />
         <source>Daily goal reached: {steps} steps today. Streak: {days} day(s).</source>
         <translation>Günlük hedefe ulaşıldı: bugün {steps} adım. Seri: {days} gün.</translation>
     </message>
     <message>
-        <location filename="../gui/main_window.py" line="896" />
+        <location filename="../gui/main_window.py" line="908" />
         <source>Theme: {name}</source>
         <translation>Tema: {name}</translation>
     </message>
     <message>
-        <location filename="../gui/main_window.py" line="912" />
+        <location filename="../gui/main_window.py" line="924" />
         <source>Text size: {percent}</source>
         <translation>Yazı boyutu: {percent}</translation>
     </message>
     <message>
-        <location filename="../gui/main_window.py" line="946" />
+        <location filename="../gui/main_window.py" line="958" />
         <source>Every command in Cosmos can be reached from the keyboard.</source>
         <translation>Cosmos'taki her komuta klavyeden ulaşılabilir.</translation>
     </message>
     <message>
-        <location filename="../gui/main_window.py" line="948" />
+        <location filename="../gui/main_window.py" line="960" />
         <source>Tab and Shift+Tab move between controls; F6 jumps between the lesson list, the page and the side panels.</source>
         <translation>Tab ve Shift+Tab denetimler arasında gezinir; F6 ders listesi, sayfa ve yan paneller arasında atlar.</translation>
     </message>
     <message>
-        <location filename="../gui/main_window.py" line="973" />
+        <location filename="../gui/main_window.py" line="985" />
         <source>Back up progress</source>
         <translation>İlerlemeyi yedekle</translation>
     </message>
     <message>
-        <location filename="../gui/main_window.py" line="974" />
-        <location filename="../gui/main_window.py" line="990" />
+        <location filename="../gui/main_window.py" line="986" />
+        <location filename="../gui/main_window.py" line="1002" />
         <source>Cosmos backup</source>
         <translation>Cosmos yedeği</translation>
     </message>
     <message>
-        <location filename="../gui/main_window.py" line="980" />
+        <location filename="../gui/main_window.py" line="992" />
         <source>Could not save the backup</source>
         <translation>Yedek kaydedilemedi</translation>
     </message>
     <message>
-        <location filename="../gui/main_window.py" line="982" />
+        <location filename="../gui/main_window.py" line="994" />
         <source>Progress backed up to {path}</source>
         <translation>İlerleme {path} konumuna yedeklendi</translation>
     </message>
     <message>
-        <location filename="../gui/main_window.py" line="989" />
-        <location filename="../gui/main_window.py" line="994" />
+        <location filename="../gui/main_window.py" line="1001" />
+        <location filename="../gui/main_window.py" line="1006" />
         <source>Restore progress</source>
         <translation>İlerlemeyi geri yükle</translation>
     </message>
     <message>
-        <location filename="../gui/main_window.py" line="995" />
+        <location filename="../gui/main_window.py" line="1007" />
         <source>Replace your current progress, notes, bookmarks and review deck with the ones in this backup? What you have now will be lost unless you back it up first.</source>
         <translation>Şimdiki ilerlemeniz, notlarınız, yer imleriniz ve tekrar desteniz bu yedektekilerle değiştirilsin mi? Önce yedeklemezseniz şu an elinizde olanlar kaybolur.</translation>
     </message>
     <message>
-        <location filename="../gui/main_window.py" line="1002" />
+        <location filename="../gui/main_window.py" line="1014" />
         <source>Could not restore the backup</source>
         <translation>Yedek geri yüklenemedi</translation>
     </message>
     <message>
-        <location filename="../gui/main_window.py" line="1003" />
+        <location filename="../gui/main_window.py" line="1015" />
         <source>Nothing was changed.</source>
         <translation>Hiçbir şey değiştirilmedi.</translation>
     </message>
     <message>
-        <location filename="../gui/main_window.py" line="1007" />
+        <location filename="../gui/main_window.py" line="1019" />
         <source>Progress restored from {path}</source>
         <translation>İlerleme {path} dosyasından geri yüklendi</translation>
     </message>
     <message>
-        <location filename="../gui/main_window.py" line="1017" />
-        <location filename="../gui/main_window.py" line="1113" />
+        <location filename="../gui/main_window.py" line="1029" />
+        <location filename="../gui/main_window.py" line="1125" />
         <source>Save as PDF</source>
         <translation>PDF olarak kaydet</translation>
     </message>
     <message>
-        <location filename="../gui/main_window.py" line="1026" />
-        <location filename="../gui/main_window.py" line="1122" />
+        <location filename="../gui/main_window.py" line="1038" />
+        <location filename="../gui/main_window.py" line="1134" />
         <source>Could not save the PDF</source>
         <translation>PDF kaydedilemedi</translation>
     </message>
     <message>
-        <location filename="../gui/main_window.py" line="1032" />
-        <location filename="../gui/main_window.py" line="1127" />
+        <location filename="../gui/main_window.py" line="1044" />
+        <location filename="../gui/main_window.py" line="1139" />
         <location filename="../gui/pages/classroom_page.py" line="187" />
         <source>Saved {pages} page(s) to {path}</source>
         <translation>{pages} sayfa {path} konumuna kaydedildi</translation>
     </message>
     <message>
-        <location filename="../gui/main_window.py" line="1037" />
+        <location filename="../gui/main_window.py" line="1049" />
         <source>Open a lesson first, then print it.</source>
         <translation>Önce bir ders açın, sonra yazdırın.</translation>
     </message>
     <message>
-        <location filename="../gui/main_window.py" line="1048" />
+        <location filename="../gui/main_window.py" line="1060" />
         <location filename="../gui/pages/problems_page.py" line="183" />
         <source>Level {number} · {title}</source>
         <translation>Seviye {number} · {title}</translation>
     </message>
     <message>
-        <location filename="../gui/main_window.py" line="1053" />
+        <location filename="../gui/main_window.py" line="1065" />
         <source>The whole course</source>
         <translation>Tüm kurs</translation>
     </message>
     <message>
-        <location filename="../gui/main_window.py" line="1063" />
+        <location filename="../gui/main_window.py" line="1075" />
         <source>Choose a folder for the website</source>
         <translation>Web sitesi için bir klasör seçin</translation>
     </message>
     <message>
-        <location filename="../gui/main_window.py" line="1069" />
+        <location filename="../gui/main_window.py" line="1081" />
         <source>Replace the website?</source>
         <translation>Web sitesi değiştirilsin mi?</translation>
     </message>
     <message>
-        <location filename="../gui/main_window.py" line="1070" />
+        <location filename="../gui/main_window.py" line="1082" />
         <source>{path} already exists. Replace it with a fresh copy?</source>
         <translation>{path} zaten var. Yeni bir kopyayla değiştirilsin mi?</translation>
     </message>
     <message>
-        <location filename="../gui/main_window.py" line="1074" />
+        <location filename="../gui/main_window.py" line="1086" />
         <source>Building the website — this takes about a minute…</source>
         <translation>Web sitesi oluşturuluyor — bu yaklaşık bir dakika sürer…</translation>
     </message>
     <message>
-        <location filename="../gui/main_window.py" line="1079" />
+        <location filename="../gui/main_window.py" line="1091" />
         <source>Could not write the website</source>
         <translation>Web sitesi yazılamadı</translation>
     </message>
     <message>
-        <location filename="../gui/main_window.py" line="1084" />
+        <location filename="../gui/main_window.py" line="1096" />
         <source>Website written: {pages} pages in {path}. Open index.html in a browser.</source>
         <translation>Web sitesi yazıldı: {path} içinde {pages} sayfa. index.html dosyasını bir tarayıcıda açın.</translation>
     </message>
     <message>
-        <location filename="../gui/main_window.py" line="1099" />
-        <location filename="../gui/main_window.py" line="1117" />
+        <location filename="../gui/main_window.py" line="1111" />
+        <location filename="../gui/main_window.py" line="1129" />
         <location filename="../gui/pages/lesson.py" line="234" />
         <source>Remember this</source>
         <translation>Bunu hatırla</translation>
     </message>
     <message>
-        <location filename="../gui/main_window.py" line="1099" />
+        <location filename="../gui/main_window.py" line="1111" />
         <source>{count} completed lesson(s)</source>
         <translation>{count} tamamlanmış ders</translation>
     </message>
     <message>
-        <location filename="../gui/main_window.py" line="1100" />
+        <location filename="../gui/main_window.py" line="1112" />
         <source>the whole course</source>
         <translation>kursun tamamı</translation>
     </message>
     <message>
-        <location filename="../gui/main_window.py" line="1143" />
+        <location filename="../gui/main_window.py" line="1155" />
         <source>{count} plugin(s) could not be loaded ({names}). See Help → Simulator plugins.</source>
         <translation>{count} eklenti yüklenemedi ({names}). Yardım → Simülatör eklentileri'ne bakın.</translation>
     </message>
     <message>
-        <location filename="../gui/main_window.py" line="1147" />
+        <location filename="../gui/main_window.py" line="1159" />
         <source>Loaded {count} simulator plugin(s).</source>
         <translation>{count} simülatör eklentisi yüklendi.</translation>
     </message>
     <message>
-        <location filename="../gui/main_window.py" line="1159" />
+        <location filename="../gui/main_window.py" line="1171" />
         <source>Simulator plugins</source>
         <translation>Simülatör eklentileri</translation>
     </message>
     <message>
-        <location filename="../gui/main_window.py" line="1161" />
+        <location filename="../gui/main_window.py" line="1173" />
         <source>You can add your own simulator without changing Cosmos. Put one Python file in this folder and restart:</source>
         <translation>Cosmos'u değiştirmeden kendi simülatörünüzü ekleyebilirsiniz. Bu klasöre tek bir Python dosyası koyup uygulamayı yeniden başlatın:</translation>
     </message>
     <message>
-        <location filename="../gui/main_window.py" line="1166" />
+        <location filename="../gui/main_window.py" line="1178" />
         <source>The folder contains a README with a complete example. A plugin is ordinary Python and runs with the same permissions as Cosmos itself, so only add files you wrote or trust.</source>
         <translation>Klasörde tam bir örnek içeren bir README dosyası vardır. Bir eklenti sıradan Python'dur ve Cosmos'un kendisiyle aynı izinlerle çalışır; bu yüzden yalnızca kendi yazdığınız ya da güvendiğiniz dosyaları ekleyin.</translation>
     </message>
     <message>
-        <location filename="../gui/main_window.py" line="1171" />
+        <location filename="../gui/main_window.py" line="1183" />
         <source>Loaded</source>
         <translation>Yüklenenler</translation>
     </message>
     <message>
-        <location filename="../gui/main_window.py" line="1175" />
+        <location filename="../gui/main_window.py" line="1187" />
         <source>Not loaded</source>
         <translation>Yüklenemeyenler</translation>
     </message>
     <message>
-        <location filename="../gui/main_window.py" line="1179" />
+        <location filename="../gui/main_window.py" line="1191" />
         <source>No plugins are installed.</source>
         <translation>Kurulu eklenti yok.</translation>
     </message>
     <message>
-        <location filename="../gui/main_window.py" line="1189" />
+        <location filename="../gui/main_window.py" line="1201" />
         <source>Cosmos will look for updates once a day.</source>
         <translation>Cosmos günde bir kez güncelleme arayacak.</translation>
     </message>
     <message>
-        <location filename="../gui/main_window.py" line="1190" />
+        <location filename="../gui/main_window.py" line="1202" />
         <source>Cosmos will not look for updates.</source>
         <translation>Cosmos güncelleme aramayacak.</translation>
     </message>
     <message>
-        <location filename="../gui/main_window.py" line="1201" />
+        <location filename="../gui/main_window.py" line="1213" />
         <source>Check for updates?</source>
         <translation>Güncellemeler denetlensin mi?</translation>
     </message>
     <message>
-        <location filename="../gui/main_window.py" line="1202" />
+        <location filename="../gui/main_window.py" line="1214" />
         <source>Shall Cosmos look for a newer version once a day?</source>
         <translation>Cosmos günde bir kez daha yeni bir sürüm arasın mı?</translation>
     </message>
     <message>
-        <location filename="../gui/main_window.py" line="1204" />
+        <location filename="../gui/main_window.py" line="1216" />
         <source>It asks GitHub for the latest release number and nothing else. No information about you, this computer or your progress is sent, and there is no identifier of any kind. You can change this at any time under Help.</source>
         <translation>GitHub'a yalnızca en son sürüm numarasını sorar, başka hiçbir şey değil. Sizinle, bu bilgisayarla ya da ilerlemenizle ilgili hiçbir bilgi gönderilmez ve hiçbir türde tanımlayıcı yoktur. Bunu Yardım menüsünden istediğiniz zaman değiştirebilirsiniz.</translation>
     </message>
     <message>
-        <location filename="../gui/main_window.py" line="1207" />
+        <location filename="../gui/main_window.py" line="1219" />
         <source>Yes, check daily</source>
         <translation>Evet, her gün denetle</translation>
     </message>
     <message>
-        <location filename="../gui/main_window.py" line="1208" />
+        <location filename="../gui/main_window.py" line="1220" />
         <source>No, thanks</source>
         <translation>Hayır, teşekkürler</translation>
     </message>
     <message>
-        <location filename="../gui/main_window.py" line="1230" />
+        <location filename="../gui/main_window.py" line="1242" />
         <source>Looking for a newer version…</source>
         <translation>Daha yeni bir sürüm aranıyor…</translation>
     </message>
     <message>
-        <location filename="../gui/main_window.py" line="1254" />
+        <location filename="../gui/main_window.py" line="1266" />
         <source>No newer version found — or the check could not reach GitHub.</source>
         <translation>Daha yeni bir sürüm bulunamadı — ya da denetim GitHub'a ulaşamadı.</translation>
     </message>
     <message>
-        <location filename="../gui/main_window.py" line="1257" />
+        <location filename="../gui/main_window.py" line="1269" />
         <source>Cosmos {version} is available.</source>
         <translation>Cosmos {version} yayımlandı.</translation>
     </message>
     <message>
-        <location filename="../gui/main_window.py" line="1261" />
+        <location filename="../gui/main_window.py" line="1273" />
         <source>A newer Cosmos is available</source>
         <translation>Daha yeni bir Cosmos var</translation>
     </message>
     <message>
-        <location filename="../gui/main_window.py" line="1262" />
+        <location filename="../gui/main_window.py" line="1274" />
         <source>Version {version} has been released.</source>
         <translation>{version} sürümü yayımlandı.</translation>
     </message>
     <message>
-        <location filename="../gui/main_window.py" line="1265" />
+        <location filename="../gui/main_window.py" line="1277" />
         <source>Open the release page</source>
         <translation>Sürüm sayfasını aç</translation>
     </message>
     <message>
-        <location filename="../gui/main_window.py" line="1266" />
+        <location filename="../gui/main_window.py" line="1278" />
         <source>Later</source>
         <translation>Sonra</translation>
     </message>
     <message>
-        <location filename="../gui/main_window.py" line="1293" />
+        <location filename="../gui/main_window.py" line="1305" />
         <source>Welcome to Cosmos!</source>
         <translation>Cosmos'a hoş geldiniz!</translation>
     </message>
     <message>
-        <location filename="../gui/main_window.py" line="1294" />
+        <location filename="../gui/main_window.py" line="1306" />
         <source>This short tour shows you around. It takes less than a minute. You can leave with &lt;b&gt;Skip tour&lt;/b&gt; or the Esc key and replay it later from the &lt;b&gt;Tour&lt;/b&gt; button.</source>
         <translation>Bu kısa tur size programı tanıtır ve bir dakikadan az sürer. &lt;b&gt;Turu geç&lt;/b&gt; ya da Esc tuşu ile çıkabilir, daha sonra &lt;b&gt;Tur&lt;/b&gt; düğmesinden yeniden izleyebilirsiniz.</translation>
     </message>
     <message>
-        <location filename="../gui/main_window.py" line="1300" />
+        <location filename="../gui/main_window.py" line="1312" />
         <source>This list is the whole course. Lessons are grouped into levels, and only the section you are in stays open, so the list never gets long. The icon next to each lesson shows its status: &lt;b&gt;filled with ✓&lt;/b&gt; = completed, &lt;b&gt;ring&lt;/b&gt; = ready, &lt;b&gt;small grey circle&lt;/b&gt; = prerequisites missing. &lt;b&gt;Ctrl+B&lt;/b&gt; folds the list away entirely.</source>
         <translation>Bu liste dersin tamamıdır. Dersler seviyelere ayrılmıştır ve yalnızca içinde bulunduğunuz bölüm açık kalır, böylece liste hiç uzamaz. Her dersin yanındaki simge durumunu gösterir: &lt;b&gt;içi dolu ✓&lt;/b&gt; = tamamlandı, &lt;b&gt;halka&lt;/b&gt; = hazır, &lt;b&gt;küçük gri daire&lt;/b&gt; = ön koşullar eksik. &lt;b&gt;Ctrl+B&lt;/b&gt; listeyi tümüyle katlar.</translation>
     </message>
     <message>
-        <location filename="../gui/main_window.py" line="1307" />
+        <location filename="../gui/main_window.py" line="1319" />
         <source>Start here</source>
         <translation>Buradan başlayın</translation>
     </message>
     <message>
-        <location filename="../gui/main_window.py" line="1308" />
+        <location filename="../gui/main_window.py" line="1320" />
         <source>This button always takes you to the next lesson you are ready for. If you are new to cosmology, simply follow it.</source>
         <translation>Bu düğme sizi her zaman hazır olduğunuz bir sonraki derse götürür. Kozmolojiye yeniyseniz yalnızca onu izleyin.</translation>
     </message>
     <message>
-        <location filename="../gui/main_window.py" line="1313" />
+        <location filename="../gui/main_window.py" line="1325" />
         <source>The Guide panel</source>
         <translation>Rehber paneli</translation>
     </message>
     <message>
-        <location filename="../gui/main_window.py" line="1314" />
+        <location filename="../gui/main_window.py" line="1326" />
         <source>The Guide explains the page you are on: how to use it, what to try and where to go next. When you click a coloured term in a lesson, its definition appears here too. It stays out of the way until you ask for it with &lt;b&gt;F1&lt;/b&gt; or the toolbar button.</source>
         <translation>Rehber, bulunduğunuz sayfayı anlatır: nasıl kullanılır, ne denenir, sonra nereye gidilir. Bir derste renkli bir terime tıkladığınızda tanımı da burada görünür. &lt;b&gt;F1&lt;/b&gt; ile ya da araç çubuğundaki düğmeyle isteyene kadar yoldan çekilir.</translation>
     </message>
     <message>
-        <location filename="../gui/main_window.py" line="1321" />
+        <location filename="../gui/main_window.py" line="1333" />
         <source>Lessons and quizzes</source>
         <translation>Dersler ve testler</translation>
     </message>
     <message>
-        <location filename="../gui/main_window.py" line="1322" />
+        <location filename="../gui/main_window.py" line="1334" />
         <source>Each lesson has a &lt;b&gt;Lesson&lt;/b&gt; tab with explanations, formulas and figures, and a &lt;b&gt;Quiz&lt;/b&gt; tab. Score at least 70% to complete the lesson.</source>
         <translation>Her dersin açıklamalar, formüller ve şekiller içeren bir &lt;b&gt;Ders&lt;/b&gt; sekmesi ile bir &lt;b&gt;Test&lt;/b&gt; sekmesi vardır. Dersi tamamlamak için en az %70 alın.</translation>
     </message>
     <message>
-        <location filename="../gui/main_window.py" line="1328" />
+        <location filename="../gui/main_window.py" line="1340" />
         <source>Two ways to read a lesson</source>
         <translation>Bir dersi okumanın iki yolu</translation>
     </message>
     <message>
-        <location filename="../gui/main_window.py" line="1329" />
+        <location filename="../gui/main_window.py" line="1341" />
         <source>Every lesson has a &lt;b&gt;View&lt;/b&gt; switch at the top right. &lt;b&gt;Intuitive&lt;/b&gt; tells the story in words, hiding the formulas and derivations; &lt;b&gt;With the maths&lt;/b&gt; shows the complete lesson. Switch whenever you like — your choice is remembered.</source>
         <translation>Her dersin sağ üstünde bir &lt;b&gt;Görünüm&lt;/b&gt; anahtarı vardır. &lt;b&gt;Sezgisel&lt;/b&gt; konuyu formülleri ve türetmeleri gizleyerek sözle anlatır; &lt;b&gt;Matematikle&lt;/b&gt; dersin tamamını gösterir. İstediğiniz zaman değiştirin — seçiminiz hatırlanır.</translation>
     </message>
     <message>
-        <location filename="../gui/main_window.py" line="1336" />
+        <location filename="../gui/main_window.py" line="1348" />
         <source>Simulators let you experiment. Lessons link to them with &lt;b&gt;Try it&lt;/b&gt; boxes, and you can open them any time from the sidebar.</source>
         <translation>Simülatörler deney yapmanızı sağlar. Dersler onlara &lt;b&gt;Deneyin&lt;/b&gt; kutularıyla bağlanır, ayrıca kenar çubuğundan istediğiniz zaman açabilirsiniz.</translation>
     </message>
     <message>
-        <location filename="../gui/main_window.py" line="1342" />
-        <location filename="../gui/pages/simulators.py" line="124" />
+        <location filename="../gui/main_window.py" line="1354" />
+        <location filename="../gui/pages/simulators.py" line="131" />
         <source>Challenges</source>
         <translation>Görevler</translation>
     </message>
     <message>
-        <location filename="../gui/main_window.py" line="1343" />
+        <location filename="../gui/main_window.py" line="1355" />
         <source>Many simulators open with a &lt;b&gt;challenge&lt;/b&gt;: a concrete task such as finding a universe that ends in a Big Crunch. Set the controls and press &lt;b&gt;Check my answer&lt;/b&gt;; hints are there if you need them, and solved challenges earn badges.</source>
         <translation>Birçok simülatör bir &lt;b&gt;görev&lt;/b&gt; ile açılır: örneğin Büyük Çöküş ile biten bir evren bulmak gibi somut bir iş. Denetimleri ayarlayın ve &lt;b&gt;Cevabımı kontrol et&lt;/b&gt; düğmesine basın; gerekirse ipuçları hazır, çözülen görevler rozet kazandırır.</translation>
     </message>
     <message>
-        <location filename="../gui/main_window.py" line="1350" />
+        <location filename="../gui/main_window.py" line="1362" />
         <source>Search and the formula sheet</source>
         <translation>Arama ve formül sayfası</translation>
     </message>
     <message>
-        <location filename="../gui/main_window.py" line="1351" />
+        <location filename="../gui/main_window.py" line="1363" />
         <source>The &lt;b&gt;search box&lt;/b&gt; (Ctrl+F) looks through lessons, the glossary, the simulators and the formula sheet at once. &lt;b&gt;Reference&lt;/b&gt; (Ctrl+R) collects every formula, constant and unit conversion in one place.</source>
         <translation>&lt;b&gt;Arama kutusu&lt;/b&gt; (Ctrl+F) dersleri, sözlüğü, simülatörleri ve formül sayfasını aynı anda tarar. &lt;b&gt;Başvuru&lt;/b&gt; (Ctrl+R) her formülü, sabiti ve birim dönüşümünü tek yerde toplar.</translation>
     </message>
     <message>
-        <location filename="../gui/main_window.py" line="1357" />
+        <location filename="../gui/main_window.py" line="1369" />
         <source>Your own notes</source>
         <translation>Kendi notlarınız</translation>
     </message>
     <message>
-        <location filename="../gui/main_window.py" line="1358" />
+        <location filename="../gui/main_window.py" line="1370" />
         <source>The &lt;b&gt;Notes&lt;/b&gt; panel, next to the Guide, is a private notebook: one note per page, saved automatically. Press &lt;b&gt;☆ Bookmark&lt;/b&gt; (Ctrl+D) to keep a link to a page, and open &lt;b&gt;Notes &amp;amp; bookmarks&lt;/b&gt; to see or export everything you saved.</source>
         <translation>Rehberin yanındaki &lt;b&gt;Notlar&lt;/b&gt; paneli özel bir defterdir: sayfa başına bir not, kendiliğinden kaydedilir. Bir sayfaya bağlantı tutmak için &lt;b&gt;☆ Yer imi&lt;/b&gt; (Ctrl+D) düğmesine basın, kaydettiğiniz her şeyi görmek veya dışa aktarmak için &lt;b&gt;Notlar &amp;amp; yer imleri&lt;/b&gt; sayfasını açın.</translation>
     </message>
     <message>
-        <location filename="../gui/main_window.py" line="1365" />
+        <location filename="../gui/main_window.py" line="1377" />
         <source>Toolbar</source>
         <translation>Araç çubuğu</translation>
     </message>
     <message>
-        <location filename="../gui/main_window.py" line="1366" />
+        <location filename="../gui/main_window.py" line="1378" />
         <source>Go &lt;b&gt;Back&lt;/b&gt; and &lt;b&gt;Forward&lt;/b&gt; between pages, jump &lt;b&gt;Home&lt;/b&gt; or &lt;b&gt;Continue&lt;/b&gt; where you left off. On the right are the search box and the three side panels. Everything else lives in the menus and in the list on the left.</source>
         <translation>Sayfalar arasında &lt;b&gt;Geri&lt;/b&gt; ve &lt;b&gt;İleri&lt;/b&gt; gidin, &lt;b&gt;Ana sayfa&lt;/b&gt;'ya atlayın ya da kaldığınız yerden &lt;b&gt;Devam&lt;/b&gt; edin. Sağda arama kutusu ve üç yan panel var. Geri kalan her şey menülerde ve soldaki listede.</translation>
     </message>
     <message>
-        <location filename="../gui/main_window.py" line="1372" />
+        <location filename="../gui/main_window.py" line="1384" />
         <source>History and badges</source>
         <translation>Tarihçe ve rozetler</translation>
     </message>
     <message>
-        <location filename="../gui/main_window.py" line="1373" />
+        <location filename="../gui/main_window.py" line="1385" />
         <source>&lt;b&gt;History&lt;/b&gt; follows cosmology from Copernicus to the latest surveys, with cards for the scientists. &lt;b&gt;Progress&lt;/b&gt; shows your lesson map and the &lt;b&gt;badges&lt;/b&gt; you have earned.</source>
         <translation>&lt;b&gt;Tarihçe&lt;/b&gt; kozmolojiyi Kopernik'ten en son taramalara kadar izler ve bilim insanları için kartlar içerir. &lt;b&gt;İlerleme&lt;/b&gt; ders haritanızı ve kazandığınız &lt;b&gt;rozetleri&lt;/b&gt; gösterir.</translation>
     </message>
     <message>
-        <location filename="../gui/main_window.py" line="1378" />
+        <location filename="../gui/main_window.py" line="1390" />
         <source>You're ready</source>
         <translation>Hazırsınız</translation>
     </message>
     <message>
-        <location filename="../gui/main_window.py" line="1379" />
+        <location filename="../gui/main_window.py" line="1391" />
         <source>Every control has a tooltip, and &lt;b&gt;?&lt;/b&gt; buttons give detailed explanations. Enjoy exploring the universe!</source>
         <translation>Her denetimin bir ipucu balonu vardır ve &lt;b&gt;?&lt;/b&gt; düğmeleri ayrıntılı açıklama verir. Evreni keşfetmenin tadını çıkarın!</translation>
     </message>
@@ -2189,7 +2194,7 @@ paneller arasında atlar, ve klavyenin bulunduğu yer belirgin bir çerçeveyle
     </message>
     <message>
         <location filename="../gui/pages/home.py" line="164" />
-        <location filename="../gui/pages/home.py" line="287" />
+        <location filename="../gui/pages/home.py" line="294" />
         <source>{steps} steps a day</source>
         <translation>Günde {steps} adım</translation>
     </message>
@@ -2235,72 +2240,72 @@ paneller arasında atlar, ve klavyenin bulunduğu yer belirgin bir çerçeveyle
         <translation>Derslerdeki fikirleri kendiniz denemeniz için araçlar. İstediğiniz zaman açabilirsiniz.</translation>
     </message>
     <message>
-        <location filename="../gui/pages/home.py" line="239" />
+        <location filename="../gui/pages/home.py" line="246" />
         <source>Course progress: &lt;b&gt;{done}&lt;/b&gt; of {total} lessons completed</source>
         <translation>Kurs ilerlemesi: {total} dersin &lt;b&gt;{done}&lt;/b&gt; tanesi tamamlandı</translation>
     </message>
     <message>
-        <location filename="../gui/pages/home.py" line="242" />
+        <location filename="../gui/pages/home.py" line="249" />
         <source>Review the course</source>
         <translation>Kursu gözden geçir</translation>
     </message>
     <message>
-        <location filename="../gui/pages/home.py" line="243" />
+        <location filename="../gui/pages/home.py" line="250" />
         <source>You have completed every lesson. Congratulations!</source>
         <translation>Bütün dersleri tamamladınız. Tebrikler!</translation>
     </message>
     <message>
-        <location filename="../gui/pages/home.py" line="247" />
+        <location filename="../gui/pages/home.py" line="254" />
         <source>Start learning</source>
         <translation>Öğrenmeye başla</translation>
     </message>
     <message>
-        <location filename="../gui/pages/home.py" line="247" />
+        <location filename="../gui/pages/home.py" line="254" />
         <source>Continue learning</source>
         <translation>Öğrenmeye devam et</translation>
     </message>
     <message>
-        <location filename="../gui/pages/home.py" line="255" />
+        <location filename="../gui/pages/home.py" line="262" />
         <source>Review {count} question(s)</source>
         <translation>{count} soruyu tekrar et</translation>
     </message>
     <message>
-        <location filename="../gui/pages/home.py" line="260" />
+        <location filename="../gui/pages/home.py" line="267" />
         <source>{done} of {total} lessons completed</source>
         <translation>{total} dersin {done} tanesi tamamlandı</translation>
     </message>
     <message>
-        <location filename="../gui/pages/home.py" line="266" />
+        <location filename="../gui/pages/home.py" line="273" />
         <source>{days}-day streak</source>
         <translation>{days} günlük seri</translation>
     </message>
     <message>
-        <location filename="../gui/pages/home.py" line="268" />
+        <location filename="../gui/pages/home.py" line="275" />
         <source>Start a streak today</source>
         <translation>Bugün bir seri başlatın</translation>
     </message>
     <message>
-        <location filename="../gui/pages/home.py" line="273" />
+        <location filename="../gui/pages/home.py" line="280" />
         <source>Today: &lt;b&gt;{steps}&lt;/b&gt; of {goal} steps</source>
         <translation>Bugün: {goal} adımdan &lt;b&gt;{steps}&lt;/b&gt;</translation>
     </message>
     <message>
-        <location filename="../gui/pages/home.py" line="275" />
+        <location filename="../gui/pages/home.py" line="282" />
         <source>goal reached ✓</source>
         <translation>hedefe ulaşıldı ✓</translation>
     </message>
     <message>
-        <location filename="../gui/pages/home.py" line="278" />
+        <location filename="../gui/pages/home.py" line="285" />
         <source>Today: &lt;b&gt;{steps}&lt;/b&gt; steps</source>
         <translation>Bugün: &lt;b&gt;{steps}&lt;/b&gt; adım</translation>
     </message>
     <message>
-        <location filename="../gui/pages/home.py" line="280" />
+        <location filename="../gui/pages/home.py" line="287" />
         <source>Study a little today to keep your streak going.</source>
         <translation>Serinizi sürdürmek için bugün biraz çalışın.</translation>
     </message>
     <message>
-        <location filename="../gui/pages/home.py" line="283" />
+        <location filename="../gui/pages/home.py" line="290" />
         <source>Last seven days: {marks}   Longest streak: {longest} days</source>
         <translation>Son yedi gün: {marks}   En uzun seri: {longest} gün</translation>
     </message>
@@ -3224,37 +3229,37 @@ parametreleri kendiniz değiştirmenize izin verir.
         <translation>Bir simülatör seçin. Her kart, desteklediği dersleri listeler.</translation>
     </message>
     <message>
-        <location filename="../gui/pages/simulators.py" line="63" />
+        <location filename="../gui/pages/simulators.py" line="71" />
         <source>Supports lessons: {lessons}</source>
         <translation>Desteklediği dersler: {lessons}</translation>
     </message>
     <message>
-        <location filename="../gui/pages/simulators.py" line="64" />
+        <location filename="../gui/pages/simulators.py" line="72" />
         <source>Open simulator</source>
         <translation>Simülatörü aç</translation>
     </message>
     <message>
-        <location filename="../gui/pages/simulators.py" line="91" />
+        <location filename="../gui/pages/simulators.py" line="98" />
         <source>SIMULATOR</source>
         <translation>SİMÜLATÖR</translation>
     </message>
     <message>
-        <location filename="../gui/pages/simulators.py" line="113" />
+        <location filename="../gui/pages/simulators.py" line="120" />
         <source>How to use</source>
         <translation>Nasıl kullanılır</translation>
     </message>
     <message>
-        <location filename="../gui/pages/simulators.py" line="115" />
+        <location filename="../gui/pages/simulators.py" line="122" />
         <source>Things to try</source>
         <translation>Denenecek şeyler</translation>
     </message>
     <message>
-        <location filename="../gui/pages/simulators.py" line="119" />
+        <location filename="../gui/pages/simulators.py" line="126" />
         <source>Related lessons</source>
         <translation>İlgili dersler</translation>
     </message>
     <message>
-        <location filename="../gui/pages/simulators.py" line="125" />
+        <location filename="../gui/pages/simulators.py" line="132" />
         <source>This simulator has {total} guided challenges ({solved} solved). Read the task at the top, set the controls, then press **Check my answer**.</source>
         <translation>Bu simülatörde {total} yönlendirmeli görev var ({solved} tanesi çözüldü). Üstteki görevi okuyun, denetimleri ayarlayın, sonra **Cevabımı kontrol et** düğmesine basın.</translation>
     </message>
@@ -7172,1631 +7177,1661 @@ En büyük terimi yarıya indirmek, en küçüğünü tamamen yok etmekten çok 
     </message>
     <message>
         <location filename="../gui/simulators/registry.py" line="42" />
+        <source>Measuring the universe</source>
+        <translation>Evreni ölçmek</translation>
+    </message>
+    <message>
+        <location filename="../gui/simulators/registry.py" line="43" />
+        <source>The expanding universe</source>
+        <translation>Genişleyen evren</translation>
+    </message>
+    <message>
+        <location filename="../gui/simulators/registry.py" line="44" />
+        <source>Matter, dark matter and galaxies</source>
+        <translation>Madde, karanlık madde ve galaksiler</translation>
+    </message>
+    <message>
+        <location filename="../gui/simulators/registry.py" line="45" />
+        <source>The early universe</source>
+        <translation>Erken evren</translation>
+    </message>
+    <message>
+        <location filename="../gui/simulators/registry.py" line="46" />
+        <source>How cosmologists work</source>
+        <translation>Kozmologlar nasıl çalışır</translation>
+    </message>
+    <message>
+        <location filename="../gui/simulators/registry.py" line="47" />
+        <source>Added by you</source>
+        <translation>Sizin eklediğiniz</translation>
+    </message>
+    <message>
+        <location filename="../gui/simulators/registry.py" line="57" />
         <source>Cosmology Calculator</source>
         <translation>Kozmoloji Hesaplayıcısı</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/registry.py" line="43" />
+        <location filename="../gui/simulators/registry.py" line="58" />
         <source>Ages, distances and more for any redshift.</source>
         <translation>Herhangi bir kırmızıya kayma için yaşlar, uzaklıklar ve fazlası.</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/registry.py" line="45" />
+        <location filename="../gui/simulators/registry.py" line="60" />
         <source>Choose a cosmological model and a redshift z. The calculator tells you how old the universe was when the light left the object, how long the light travelled, and the different 'distances' astronomers use.</source>
         <translation>Bir kozmolojik model ve bir z kırmızıya kayması seçin. Hesaplayıcı, ışık nesneden ayrıldığında evrenin kaç yaşında olduğunu, ışığın ne kadar yol aldığını ve gökbilimcilerin kullandığı farklı 'uzaklıkları' söyler.</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/registry.py" line="50" />
+        <location filename="../gui/simulators/registry.py" line="65" />
         <source>Pick a model from &lt;b&gt;Preset&lt;/b&gt; (Planck 2018 is today's best estimate) or type your own values.</source>
         <translation>&lt;b&gt;Hazır ayar&lt;/b&gt; listesinden bir model seçin (Planck 2018 bugünkü en iyi kestirimdir) ya da kendi değerlerinizi yazın.</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/registry.py" line="52" />
+        <location filename="../gui/simulators/registry.py" line="67" />
         <source>Enter the &lt;b&gt;redshift z&lt;/b&gt; of the object you are interested in.</source>
         <translation>İlgilendiğiniz nesnenin &lt;b&gt;kırmızıya kayması z&lt;/b&gt; değerini girin.</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/registry.py" line="53" />
+        <location filename="../gui/simulators/registry.py" line="68" />
         <source>Read the results table. Click any row to see what that quantity means.</source>
         <translation>Sonuç tablosunu okuyun. Bir niceliğin ne anlama geldiğini görmek için satırına tıklayın.</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/registry.py" line="54" />
+        <location filename="../gui/simulators/registry.py" line="69" />
         <source>Use the plots to see how each quantity changes with redshift.</source>
         <translation>Her niceliğin kırmızıya kaymayla nasıl değiştiğini görmek için grafikleri kullanın.</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/registry.py" line="57" />
+        <location filename="../gui/simulators/registry.py" line="72" />
         <source>Set z = 1100: this is the cosmic microwave background. How old was the universe?</source>
         <translation>z = 1100 yapın: bu kozmik mikrodalga fondur. Evren o sırada kaç yaşındaydı?</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/registry.py" line="58" />
+        <location filename="../gui/simulators/registry.py" line="73" />
         <source>Compare the comoving and light-travel distances at z = 3. Why is one larger?</source>
         <translation>z = 3'te eş hareketli uzaklık ile ışığın gittiği uzaklığı karşılaştırın. Neden biri daha büyük?</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/registry.py" line="59" />
+        <location filename="../gui/simulators/registry.py" line="74" />
         <source>Switch to Einstein–de Sitter. Is the universe older or younger than in Planck 2018?</source>
         <translation>Einstein–de Sitter modeline geçin. Evren Planck 2018'e göre daha mı yaşlı, daha mı genç?</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/registry.py" line="68" />
+        <location filename="../gui/simulators/registry.py" line="84" />
         <source>Expansion History Explorer</source>
         <translation>Genişleme Tarihi Gezgini</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/registry.py" line="69" />
+        <location filename="../gui/simulators/registry.py" line="85" />
         <source>How matter and dark energy shape the past and future.</source>
         <translation>Madde ve karanlık enerji geçmişi ve geleceği nasıl biçimlendirir.</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/registry.py" line="71" />
+        <location filename="../gui/simulators/registry.py" line="87" />
         <source>Adjust how much matter and dark energy the universe contains and watch the scale factor a(t) change. The Ωm–ΩΛ map shows which combinations lead to eternal expansion, a Big Crunch or no Big Bang at all.</source>
         <translation>Evrenin ne kadar madde ve karanlık enerji içerdiğini ayarlayın ve ölçek çarpanı a(t)'nin nasıl değiştiğini izleyin. Ωm–ΩΛ haritası hangi bileşimlerin sonsuz genişlemeye, Büyük Çöküş'e ya da hiç Büyük Patlama olmamasına götürdüğünü gösterir.</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/registry.py" line="76" />
+        <location filename="../gui/simulators/registry.py" line="92" />
         <source>Move the &lt;b&gt;Ωm&lt;/b&gt; and &lt;b&gt;ΩΛ&lt;/b&gt; sliders, or click anywhere on the Ωm–ΩΛ map.</source>
         <translation>&lt;b&gt;Ωm&lt;/b&gt; ve &lt;b&gt;ΩΛ&lt;/b&gt; kaydırıcılarını oynatın ya da Ωm–ΩΛ haritasının herhangi bir yerine tıklayın.</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/registry.py" line="77" />
+        <location filename="../gui/simulators/registry.py" line="93" />
         <source>The upper plot shows the size of the universe over time; today is at t = 0 where a = 1.</source>
         <translation>Üstteki grafik evrenin zamanla boyutunu gösterir; bugün, a = 1 olan t = 0 anındadır.</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/registry.py" line="78" />
+        <location filename="../gui/simulators/registry.py" line="94" />
         <source>Press &lt;b&gt;Pin curve&lt;/b&gt; to keep the current curve for comparison.</source>
         <translation>Şimdiki eğriyi karşılaştırmak üzere tutmak için &lt;b&gt;Eğriyi sabitle&lt;/b&gt; düğmesine basın.</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/registry.py" line="79" />
+        <location filename="../gui/simulators/registry.py" line="95" />
         <source>Read the summary for the universe's age, geometry and fate.</source>
         <translation>Evrenin yaşı, geometrisi ve kaderi için özeti okuyun.</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/registry.py" line="82" />
+        <location filename="../gui/simulators/registry.py" line="98" />
         <source>Find the Big Crunch region: increase Ωm above 1 with ΩΛ = 0.</source>
         <translation>Büyük Çöküş bölgesini bulun: ΩΛ = 0 iken Ωm'yi 1'in üzerine çıkarın.</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/registry.py" line="83" />
+        <location filename="../gui/simulators/registry.py" line="99" />
         <source>Pin Planck 2018, then set ΩΛ = 0 with Ωm = 0.3. Which universe is older?</source>
         <translation>Planck 2018'i sabitleyin, sonra Ωm = 0,3 ile ΩΛ = 0 yapın. Hangi evren daha yaşlı?</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/registry.py" line="84" />
+        <location filename="../gui/simulators/registry.py" line="100" />
         <source>Cross the dashed 'accelerating' line and watch the curve's shape today.</source>
         <translation>Kesikli 'hızlanan' çizgisini geçin ve eğrinin bugünkü biçimini izleyin.</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/registry.py" line="93" />
+        <location filename="../gui/simulators/registry.py" line="110" />
         <source>Powers of Ten Zoom</source>
         <translation>Onun Kuvvetleri Yakınlaştırması</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/registry.py" line="94" />
+        <location filename="../gui/simulators/registry.py" line="111" />
         <source>From a human to the observable universe.</source>
         <translation>Bir insandan gözlenebilir evrene.</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/registry.py" line="96" />
+        <location filename="../gui/simulators/registry.py" line="113" />
         <source>Zoom out from human size to the whole observable universe, one power of ten at a time. Every object is drawn to scale for the current field of view.</source>
         <translation>İnsan boyutundan tüm gözlenebilir evrene, her seferinde onun bir kuvveti kadar uzaklaşın. Her nesne şimdiki görüş alanına göre ölçekli çizilir.</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/registry.py" line="100" />
+        <location filename="../gui/simulators/registry.py" line="117" />
         <source>Drag the &lt;b&gt;zoom slider&lt;/b&gt; or scroll the mouse wheel over the view.</source>
         <translation>&lt;b&gt;Yakınlaştırma kaydırıcısını&lt;/b&gt; sürükleyin ya da görüntünün üzerinde fare tekerleğini kaydırın.</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/registry.py" line="101" />
+        <location filename="../gui/simulators/registry.py" line="118" />
         <source>Press &lt;b&gt;Play&lt;/b&gt; to fly out automatically; press again to stop.</source>
         <translation>Kendiliğinden dışarı uçmak için &lt;b&gt;Oynat&lt;/b&gt; düğmesine basın; durdurmak için yeniden basın.</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/registry.py" line="102" />
+        <location filename="../gui/simulators/registry.py" line="119" />
         <source>Use &lt;b&gt;Jump to&lt;/b&gt; to go straight to an object.</source>
         <translation>Doğrudan bir nesneye gitmek için &lt;b&gt;Şuraya atla&lt;/b&gt; listesini kullanın.</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/registry.py" line="103" />
+        <location filename="../gui/simulators/registry.py" line="120" />
         <source>The panel on the right describes what is visible and how long light takes to cross the view.</source>
         <translation>Sağdaki panel neyin görünür olduğunu ve ışığın görüntüyü geçmesinin ne kadar sürdüğünü anlatır.</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/registry.py" line="106" />
+        <location filename="../gui/simulators/registry.py" line="123" />
         <source>How many powers of ten separate the Earth from the Sun's size?</source>
         <translation>Dünya ile Güneş'in boyutunu onun kaç kuvveti ayırır?</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/registry.py" line="107" />
+        <location filename="../gui/simulators/registry.py" line="124" />
         <source>Find the scale where light needs one year to cross the view.</source>
         <translation>Işığın görüntüyü geçmek için bir yıla ihtiyaç duyduğu ölçeği bulun.</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/registry.py" line="108" />
+        <location filename="../gui/simulators/registry.py" line="125" />
         <source>Notice how empty space is between stars compared with between galaxies.</source>
         <translation>Yıldızlar arasındaki uzayın, gökadalar arasındakine göre ne kadar boş olduğuna dikkat edin.</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/registry.py" line="117" />
+        <location filename="../gui/simulators/registry.py" line="135" />
         <source>Spectrum &amp; Redshift Simulator</source>
         <translation>Tayf ve Kırmızıya Kayma Simülatörü</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/registry.py" line="118" />
+        <location filename="../gui/simulators/registry.py" line="136" />
         <source>See spectral lines shift with motion and expansion.</source>
         <translation>Tayf çizgilerinin hareket ve genişlemeyle kayışını görün.</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/registry.py" line="120" />
+        <location filename="../gui/simulators/registry.py" line="138" />
         <source>Atoms absorb light at precise wavelengths, leaving dark lines in a spectrum. Move the source or expand the universe and watch the lines slide toward the red (or blue).</source>
         <translation>Atomlar ışığı belirli dalga boylarında soğurur ve tayfta koyu çizgiler bırakır. Kaynağı hareket ettirin ya da evreni genişletin, çizgilerin kırmızıya (ya da maviye) kayışını izleyin.</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/registry.py" line="124" />
+        <location filename="../gui/simulators/registry.py" line="142" />
         <source>Choose &lt;b&gt;Doppler motion&lt;/b&gt; (a moving source) or &lt;b&gt;Cosmic expansion&lt;/b&gt; (a distant galaxy).</source>
         <translation>&lt;b&gt;Doppler hareketi&lt;/b&gt;ni (hareket eden bir kaynak) ya da &lt;b&gt;Kozmik genişleme&lt;/b&gt;yi (uzak bir gökada) seçin.</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/registry.py" line="126" />
+        <location filename="../gui/simulators/registry.py" line="144" />
         <source>Move the slider. The lower strip shows the observed spectrum; the upper one is the laboratory spectrum.</source>
         <translation>Kaydırıcıyı oynatın. Alttaki şerit gözlenen tayfı, üstteki laboratuvar tayfını gösterir.</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/registry.py" line="128" />
+        <location filename="../gui/simulators/registry.py" line="146" />
         <source>Lines that leave the visible range continue into the infrared (grey area).</source>
         <translation>Görünür aralığın dışına çıkan çizgiler kızılötesinde (gri alan) sürer.</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/registry.py" line="129" />
+        <location filename="../gui/simulators/registry.py" line="147" />
         <source>Try the &lt;b&gt;Mystery galaxy&lt;/b&gt; challenge to measure a redshift yourself.</source>
         <translation>Bir kırmızıya kaymayı kendiniz ölçmek için &lt;b&gt;Gizemli gökada&lt;/b&gt; görevini deneyin.</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/registry.py" line="132" />
+        <location filename="../gui/simulators/registry.py" line="150" />
         <source>At what redshift does the red Hα line leave the visible range?</source>
         <translation>Kırmızı Hα çizgisi hangi kırmızıya kaymada görünür aralığı terk eder?</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/registry.py" line="133" />
+        <location filename="../gui/simulators/registry.py" line="151" />
         <source>Make the source approach you: which way do the lines move?</source>
         <translation>Kaynağı size yaklaştırın: çizgiler hangi yöne kayar?</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/registry.py" line="134" />
+        <location filename="../gui/simulators/registry.py" line="152" />
         <source>At z = 2, how big was the universe compared with today?</source>
         <translation>z = 2'de evren bugünküne göre ne kadar büyüktü?</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/registry.py" line="143" />
+        <location filename="../gui/simulators/registry.py" line="162" />
         <source>Hubble Diagram Fitter</source>
         <translation>Hubble Diyagramı Uydurucusu</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/registry.py" line="144" />
+        <location filename="../gui/simulators/registry.py" line="163" />
         <source>Measure the expansion rate from real data.</source>
         <translation>Genişleme hızını gerçek veriden ölçün.</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/registry.py" line="146" />
+        <location filename="../gui/simulators/registry.py" line="165" />
         <source>Plot galaxy velocities against distances and fit a straight line through the origin. Its slope is the Hubble constant H0, and 1/H0 estimates the age of the universe.</source>
         <translation>Gökada hızlarını uzaklıklara karşı çizin ve başlangıç noktasından geçen bir doğru uydurun. Doğrunun eğimi Hubble sabiti H0'dır, 1/H0 ise evrenin yaşını kestirir.</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/registry.py" line="150" />
+        <location filename="../gui/simulators/registry.py" line="169" />
         <source>Select a &lt;b&gt;data set&lt;/b&gt;: Hubble's original 1929 data or a simulated modern sample.</source>
         <translation>Bir &lt;b&gt;veri kümesi&lt;/b&gt; seçin: Hubble'ın 1929 tarihli özgün verisi ya da benzetilmiş modern bir örneklem.</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/registry.py" line="151" />
+        <location filename="../gui/simulators/registry.py" line="170" />
         <source>Move the &lt;b&gt;H0 slider&lt;/b&gt; until the line follows the points; watch the residuals shrink.</source>
         <translation>Doğru noktaları izleyene kadar &lt;b&gt;H0 kaydırıcısını&lt;/b&gt; oynatın; artıkların küçülüşünü izleyin.</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/registry.py" line="152" />
+        <location filename="../gui/simulators/registry.py" line="171" />
         <source>Press &lt;b&gt;Find best fit&lt;/b&gt; to let least squares find the optimal slope.</source>
         <translation>En küçük karelerin en iyi eğimi bulması için &lt;b&gt;En iyi uyumu bul&lt;/b&gt; düğmesine basın.</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/registry.py" line="153" />
+        <location filename="../gui/simulators/registry.py" line="172" />
         <source>Compare the Hubble time 1/H0 with the true age of the universe (13.8 Gyr).</source>
         <translation>Hubble süresi 1/H0 ile evrenin gerçek yaşını (13,8 milyar yıl) karşılaştırın.</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/registry.py" line="156" />
+        <location filename="../gui/simulators/registry.py" line="175" />
         <source>Fit Hubble's data. Why is his H0 about seven times too large?</source>
         <translation>Hubble'ın verisini uydurun. Onun H0 değeri neden yaklaşık yedi kat büyük?</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/registry.py" line="157" />
+        <location filename="../gui/simulators/registry.py" line="176" />
         <source>Notice the galaxies with negative velocities in 1929: which ones are they?</source>
         <translation>1929'da negatif hızlı gökadalara dikkat edin: bunlar hangileri?</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/registry.py" line="158" />
+        <location filename="../gui/simulators/registry.py" line="177" />
         <source>Fit the modern sample and compute 1/H0 in billions of years.</source>
         <translation>Modern örneklemi uydurun ve 1/H0'ı milyar yıl cinsinden hesaplayın.</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/registry.py" line="167" />
+        <location filename="../gui/simulators/registry.py" line="187" />
         <source>Galaxy Rotation Curve</source>
         <translation>Gökada Dönme Eğrisi</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/registry.py" line="168" />
+        <location filename="../gui/simulators/registry.py" line="188" />
         <source>Uncover dark matter from how galaxies spin.</source>
         <translation>Gökadaların dönüşünden karanlık maddeyi ortaya çıkarın.</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/registry.py" line="170" />
+        <location filename="../gui/simulators/registry.py" line="190" />
         <source>Stars orbit the centre of a galaxy. If only visible matter pulled on them, distant stars would move slowly. Build a galaxy from a bulge, a disk and a dark matter halo and compare with a measured-style rotation curve.</source>
         <translation>Yıldızlar bir gökadanın merkezi çevresinde dolanır. Onları yalnızca görünür madde çekseydi, uzaktaki yıldızlar yavaş hareket ederdi. Bir şişkinlik, bir disk ve bir karanlık madde halesinden gökada kurun ve ölçüm biçiminde bir dönme eğrisiyle karşılaştırın.</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/registry.py" line="175" />
+        <location filename="../gui/simulators/registry.py" line="195" />
         <source>Adjust the &lt;b&gt;bulge&lt;/b&gt; and &lt;b&gt;disk&lt;/b&gt; masses: these are the stars and gas you can see.</source>
         <translation>&lt;b&gt;Şişkinlik&lt;/b&gt; ve &lt;b&gt;disk&lt;/b&gt; kütlelerini ayarlayın: bunlar görebildiğiniz yıldızlar ve gazdır.</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/registry.py" line="176" />
+        <location filename="../gui/simulators/registry.py" line="196" />
         <source>Turn the &lt;b&gt;dark matter halo&lt;/b&gt; on and change its mass.</source>
         <translation>&lt;b&gt;Karanlık madde halesini&lt;/b&gt; açın ve kütlesini değiştirin.</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/registry.py" line="177" />
+        <location filename="../gui/simulators/registry.py" line="197" />
         <source>Compare the total curve with the data points.</source>
         <translation>Toplam eğriyi veri noktalarıyla karşılaştırın.</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/registry.py" line="178" />
+        <location filename="../gui/simulators/registry.py" line="198" />
         <source>Press &lt;b&gt;Fit halo to data&lt;/b&gt; to find the halo mass that matches best.</source>
         <translation>En iyi uyan hale kütlesini bulmak için &lt;b&gt;Haleyi veriye uydur&lt;/b&gt; düğmesine basın.</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/registry.py" line="181" />
+        <location filename="../gui/simulators/registry.py" line="201" />
         <source>Pick a real galaxy from the &lt;b&gt;Galaxy&lt;/b&gt; list: 138 measured curves from the SPARC survey.</source>
         <translation>&lt;b&gt;Gökada&lt;/b&gt; listesinden gerçek bir gökada seçin: SPARC taramasından 138 ölçülmüş eğri.</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/registry.py" line="182" />
+        <location filename="../gui/simulators/registry.py" line="202" />
         <source>Compare a dwarf (DDO154) with a giant spiral (UGC02885): which needs proportionally more dark matter?</source>
         <translation>Bir cüceyi (DDO154) dev bir sarmalla (UGC02885) karşılaştırın: hangisi oransal olarak daha çok karanlık maddeye ihtiyaç duyar?</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/registry.py" line="184" />
+        <location filename="../gui/simulators/registry.py" line="204" />
         <source>Switch off the halo: how does the curve behave in the outskirts?</source>
         <translation>Haleyi kapatın: eğri dış bölgelerde nasıl davranıyor?</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/registry.py" line="185" />
+        <location filename="../gui/simulators/registry.py" line="205" />
         <source>How much dark matter lies inside 30 kpc compared with visible matter?</source>
         <translation>30 kpc içinde görünür maddeye göre ne kadar karanlık madde var?</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/registry.py" line="186" />
+        <location filename="../gui/simulators/registry.py" line="206" />
         <source>Can you fit the data with a heavier disk and no halo? Why not?</source>
         <translation>Veriyi daha ağır bir disk ve hale olmadan uydurabilir misiniz? Neden olmasın?</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/registry.py" line="187" />
+        <location filename="../gui/simulators/registry.py" line="207" />
         <source>Tick &lt;b&gt;Use MOND&lt;/b&gt;: can modified gravity explain the curve without dark matter?</source>
         <translation>&lt;b&gt;MOND kullan&lt;/b&gt; kutusunu işaretleyin: değiştirilmiş kütleçekim eğriyi karanlık madde olmadan açıklayabilir mi?</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/registry.py" line="196" />
+        <location filename="../gui/simulators/registry.py" line="217" />
         <source>Balloon &amp; Raisin-Bread Expansion</source>
         <translation>Balon ve Üzümlü Ekmek Genişlemesi</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/registry.py" line="197" />
+        <location filename="../gui/simulators/registry.py" line="218" />
         <source>Why every galaxy sees all others moving away.</source>
         <translation>Neden her gökada diğerlerini uzaklaşırken görür.</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/registry.py" line="199" />
+        <location filename="../gui/simulators/registry.py" line="220" />
         <source>Galaxies sit on a grid that stretches as the universe expands. Pick any galaxy as your home: all others recede from it, faster the farther they are. Light travelling between galaxies is stretched too.</source>
         <translation>Gökadalar, evren genişledikçe esneyen bir ızgaranın üzerindedir. Herhangi bir gökadayı eviniz seçin: diğerlerinin tümü ondan uzaklaşır, üstelik uzaklaştıkça daha hızlı. Gökadalar arasında yol alan ışık da gerilir.</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/registry.py" line="204" />
+        <location filename="../gui/simulators/registry.py" line="225" />
         <source>Press &lt;b&gt;Play&lt;/b&gt; to expand the universe; &lt;b&gt;Reset&lt;/b&gt; returns to the start.</source>
         <translation>Evreni genişletmek için &lt;b&gt;Oynat&lt;/b&gt;, başa dönmek için &lt;b&gt;Sıfırla&lt;/b&gt; düğmesine basın.</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/registry.py" line="205" />
+        <location filename="../gui/simulators/registry.py" line="226" />
         <source>&lt;b&gt;Click a galaxy&lt;/b&gt; to stand on it. Arrows show how others move as seen from there.</source>
         <translation>Üzerinde durmak için &lt;b&gt;bir gökadaya tıklayın&lt;/b&gt;. Oklar, oradan bakıldığında diğerlerinin nasıl hareket ettiğini gösterir.</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/registry.py" line="206" />
+        <location filename="../gui/simulators/registry.py" line="227" />
         <source>Press &lt;b&gt;Emit light&lt;/b&gt; to send a wave and watch its wavelength stretch.</source>
         <translation>Bir dalga göndermek ve dalga boyunun gerilişini izlemek için &lt;b&gt;Işık yay&lt;/b&gt; düğmesine basın.</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/registry.py" line="207" />
+        <location filename="../gui/simulators/registry.py" line="228" />
         <source>Toggle the comoving grid to see that galaxies keep their grid positions.</source>
         <translation>Gökadaların ızgara konumlarını koruduğunu görmek için eş hareketli ızgarayı açıp kapatın.</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/registry.py" line="210" />
+        <location filename="../gui/simulators/registry.py" line="231" />
         <source>Choose a galaxy at the edge. Is the pattern of arrows any different?</source>
         <translation>Kenardaki bir gökadayı seçin. Okların deseni farklı mı?</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/registry.py" line="211" />
+        <location filename="../gui/simulators/registry.py" line="232" />
         <source>Compare an arrow twice as long with the distance: is the ratio the same?</source>
         <translation>İki kat uzun bir oku uzaklıkla karşılaştırın: oran aynı mı?</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/registry.py" line="212" />
+        <location filename="../gui/simulators/registry.py" line="233" />
         <source>Emit light, wait until the scale factor doubles, and read the redshift.</source>
         <translation>Işık yayın, ölçek çarpanı ikiye katlanana kadar bekleyin ve kırmızıya kaymayı okuyun.</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/registry.py" line="221" />
+        <location filename="../gui/simulators/registry.py" line="243" />
         <source>CMB Power Spectrum Explorer</source>
         <translation>KMF Güç Tayfı Gezgini</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/registry.py" line="222" />
+        <location filename="../gui/simulators/registry.py" line="244" />
         <source>How the universe's ingredients shape the CMB peaks.</source>
         <translation>Evrenin bileşenleri KMF tepelerini nasıl biçimlendirir.</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/registry.py" line="224" />
+        <location filename="../gui/simulators/registry.py" line="246" />
         <source>The pattern of hot and cold spots in the cosmic microwave background encodes the geometry and contents of the universe. Change ordinary matter, dark matter, curvature and the initial fluctuations, and watch the acoustic peaks and the simulated sky respond.</source>
         <translation>Kozmik mikrodalga fondaki sıcak ve soğuk lekelerin deseni, evrenin geometrisini ve içeriğini kodlar. Sıradan maddeyi, karanlık maddeyi, eğriliği ve ilk dalgalanmaları değiştirin; akustik tepelerin ve benzetilmiş gökyüzünün nasıl tepki verdiğini izleyin.</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/registry.py" line="229" />
+        <location filename="../gui/simulators/registry.py" line="251" />
         <source>Move a slider in &lt;b&gt;Contents of the universe&lt;/b&gt;; the blue curve is your universe, the dashed curve the Planck 2018 model.</source>
         <translation>&lt;b&gt;Evrenin içeriği&lt;/b&gt; bölümünde bir kaydırıcıyı oynatın; mavi eğri sizin evreniniz, kesikli eğri Planck 2018 modelidir.</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/registry.py" line="231" />
+        <location filename="../gui/simulators/registry.py" line="253" />
         <source>Read the &lt;b&gt;peak positions&lt;/b&gt; and the acoustic angle in the results panel.</source>
         <translation>Sonuç panelinde &lt;b&gt;tepe konumlarını&lt;/b&gt; ve akustik açıyı okuyun.</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/registry.py" line="232" />
+        <location filename="../gui/simulators/registry.py" line="254" />
         <source>Open the &lt;b&gt;What the sky looks like&lt;/b&gt; tab to compare simulated sky patches.</source>
         <translation>Benzetilmiş gökyüzü parçalarını karşılaştırmak için &lt;b&gt;Gökyüzü nasıl görünüyor&lt;/b&gt; sekmesini açın.</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/registry.py" line="233" />
+        <location filename="../gui/simulators/registry.py" line="255" />
         <source>Press &lt;b&gt;Reset to Planck 2018&lt;/b&gt; to start again.</source>
         <translation>Yeniden başlamak için &lt;b&gt;Planck 2018'e sıfırla&lt;/b&gt; düğmesine basın.</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/registry.py" line="236" />
+        <location filename="../gui/simulators/registry.py" line="258" />
         <source>Make space closed (Ωk = −0.1): do the spots on the sky look larger or smaller?</source>
         <translation>Uzayı kapalı yapın (Ωk = −0,1): gökyüzündeki lekeler daha mı büyük, daha mı küçük görünüyor?</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/registry.py" line="237" />
+        <location filename="../gui/simulators/registry.py" line="259" />
         <source>Double Ωb h². Which peaks grow and which shrink?</source>
         <translation>Ωb h²'yi ikiye katlayın. Hangi tepeler büyür, hangileri küçülür?</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/registry.py" line="238" />
+        <location filename="../gui/simulators/registry.py" line="260" />
         <source>Set τ = 0.15. Which part of the spectrum is suppressed?</source>
         <translation>τ = 0,15 yapın. Tayfın hangi bölümü bastırılır?</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/registry.py" line="247" />
+        <location filename="../gui/simulators/registry.py" line="270" />
         <source>2D N-body Structure Formation</source>
         <translation>2B N-cisim Yapı Oluşumu</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/registry.py" line="248" />
+        <location filename="../gui/simulators/registry.py" line="271" />
         <source>Watch gravity build the cosmic web from tiny ripples.</source>
         <translation>Kütleçekimin küçük dalgacıklardan kozmik ağı örüşünü izleyin.</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/registry.py" line="250" />
+        <location filename="../gui/simulators/registry.py" line="273" />
         <source>Tens of thousands of dark matter particles start almost uniformly spread, with tiny ripples. Gravity amplifies the ripples into sheets, filaments and halos that merge into ever larger structures. Compare the growth with linear theory and try warm dark matter.</source>
         <translation>On binlerce karanlık madde parçacığı, minik dalgacıklarla, neredeyse düzgün dağılmış olarak başlar. Kütleçekim bu dalgacıkları gitgide daha büyük yapılarda birleşen levhalara, ipliklere ve halelere büyütür. Büyümeyi doğrusal kuramla karşılaştırın ve ılık karanlık maddeyi deneyin.</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/registry.py" line="255" />
+        <location filename="../gui/simulators/registry.py" line="278" />
         <source>Press &lt;b&gt;Play&lt;/b&gt;. Time is measured by the growth factor D; D = 1 corresponds to today.</source>
         <translation>&lt;b&gt;Oynat&lt;/b&gt; düğmesine basın. Zaman, büyüme çarpanı D ile ölçülür; D = 1 bugüne karşılık gelir.</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/registry.py" line="256" />
+        <location filename="../gui/simulators/registry.py" line="279" />
         <source>Watch the lower plot: at first the density contrast follows linear theory, then gravity takes over.</source>
         <translation>Alttaki grafiği izleyin: yoğunluk karşıtlığı önce doğrusal kuramı izler, sonra kütleçekim devralır.</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/registry.py" line="258" />
+        <location filename="../gui/simulators/registry.py" line="281" />
         <source>Change the &lt;b&gt;spectral index&lt;/b&gt; or choose &lt;b&gt;warm dark matter&lt;/b&gt;, then press &lt;b&gt;Apply and restart&lt;/b&gt;.</source>
         <translation>&lt;b&gt;Spektral indisi&lt;/b&gt; değiştirin ya da &lt;b&gt;ılık karanlık madde&lt;/b&gt;yi seçin, sonra &lt;b&gt;Uygula ve yeniden başlat&lt;/b&gt; düğmesine basın.</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/registry.py" line="260" />
+        <location filename="../gui/simulators/registry.py" line="283" />
         <source>A different &lt;b&gt;random seed&lt;/b&gt; gives a different universe with the same statistics.</source>
         <translation>Farklı bir &lt;b&gt;rastgelelik tohumu&lt;/b&gt;, aynı istatistiğe sahip farklı bir evren verir.</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/registry.py" line="263" />
+        <location filename="../gui/simulators/registry.py" line="286" />
         <source>When does the simulation first deviate from the linear-theory line?</source>
         <translation>Benzetim doğrusal kuram çizgisinden ilk kez ne zaman ayrılıyor?</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/registry.py" line="264" />
+        <location filename="../gui/simulators/registry.py" line="287" />
         <source>Compare n = −2 with n = 0: which one forms large filaments, which one many small clumps?</source>
         <translation>n = −2 ile n = 0'ı karşılaştırın: hangisi büyük iplikler, hangisi çok sayıda küçük yumak oluşturur?</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/registry.py" line="265" />
+        <location filename="../gui/simulators/registry.py" line="288" />
         <source>Run the same seed with warm dark matter. What happens to the smallest halos?</source>
         <translation>Aynı tohumu ılık karanlık maddeyle çalıştırın. En küçük halelere ne oluyor?</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/registry.py" line="274" />
+        <location filename="../gui/simulators/registry.py" line="298" />
         <source>Gravitational Lensing Simulator</source>
         <translation>Kütleçekimsel Merceklenme Simülatörü</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/registry.py" line="275" />
+        <location filename="../gui/simulators/registry.py" line="299" />
         <source>Bend light with galaxies, clusters and black holes.</source>
         <translation>Işığı gökadalar, kümeler ve kara deliklerle bükün.</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/registry.py" line="277" />
+        <location filename="../gui/simulators/registry.py" line="301" />
         <source>Mass bends the paths of light rays. Put a point mass, a galaxy or a galaxy cluster in front of distant galaxies and see multiple images, arcs and Einstein rings. The Einstein radius uses real cosmological distances, so the ring's size weighs the lens.</source>
         <translation>Kütle, ışık ışınlarının yolunu büker. Uzak gökadaların önüne bir nokta kütle, bir gökada ya da bir gökada kümesi koyun; çoklu görüntüleri, yayları ve Einstein halkalarını görün. Einstein yarıçapı gerçek kozmolojik uzaklıkları kullanır, bu yüzden halkanın boyutu merceği tartar.</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/registry.py" line="282" />
+        <location filename="../gui/simulators/registry.py" line="306" />
         <source>Choose a &lt;b&gt;lens type&lt;/b&gt; and set its mass or velocity dispersion.</source>
         <translation>Bir &lt;b&gt;mercek türü&lt;/b&gt; seçin ve kütlesini ya da hız dağılımını ayarlayın.</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/registry.py" line="283" />
+        <location filename="../gui/simulators/registry.py" line="307" />
         <source>&lt;b&gt;Drag&lt;/b&gt; inside the image to move the background galaxy; the orange cross marks its true position.</source>
         <translation>Arka plandaki gökadayı taşımak için görüntünün içinde &lt;b&gt;sürükleyin&lt;/b&gt;; turuncu çarpı gerçek konumunu işaretler.</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/registry.py" line="285" />
+        <location filename="../gui/simulators/registry.py" line="309" />
         <source>Change the &lt;b&gt;lens and source redshifts&lt;/b&gt; and watch the Einstein radius in the measurements.</source>
         <translation>&lt;b&gt;Mercek ve kaynak kırmızıya kaymalarını&lt;/b&gt; değiştirin ve ölçümlerde Einstein yarıçapını izleyin.</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/registry.py" line="287" />
+        <location filename="../gui/simulators/registry.py" line="311" />
         <source>Switch to &lt;b&gt;a field of galaxies&lt;/b&gt; to see how a cluster distorts many galaxies at once.</source>
         <translation>Bir kümenin aynı anda birçok gökadayı nasıl bozduğunu görmek için &lt;b&gt;bir gökada alanı&lt;/b&gt;na geçin.</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/registry.py" line="290" />
+        <location filename="../gui/simulators/registry.py" line="314" />
         <source>Place the source exactly behind the lens: what shape appears?</source>
         <translation>Kaynağı tam merceğin arkasına koyun: hangi şekil ortaya çıkıyor?</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/registry.py" line="291" />
+        <location filename="../gui/simulators/registry.py" line="315" />
         <source>Tick &lt;b&gt;Switch the lens off&lt;/b&gt; to see the sky as it would look without gravity.</source>
         <translation>Gökyüzünün kütleçekim olmasaydı nasıl görüneceğini görmek için &lt;b&gt;Merceği kapat&lt;/b&gt; kutusunu işaretleyin.</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/registry.py" line="292" />
+        <location filename="../gui/simulators/registry.py" line="316" />
         <source>Keep the lens mass fixed and move the lens redshift: where is lensing strongest?</source>
         <translation>Mercek kütlesini sabit tutup mercek kırmızıya kaymasını oynatın: merceklenme nerede en güçlü?</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/registry.py" line="301" />
+        <location filename="../gui/simulators/registry.py" line="326" />
         <source>Curvature Visualizer</source>
         <translation>Eğrilik Görselleştiricisi</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/registry.py" line="302" />
+        <location filename="../gui/simulators/registry.py" line="327" />
         <source>Triangles, circles and rulers in curved space.</source>
         <translation>Eğri uzayda üçgenler, çemberler ve cetveller.</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/registry.py" line="304" />
+        <location filename="../gui/simulators/registry.py" line="329" />
         <source>Space itself can be curved. Draw the same triangle and circle in closed (spherical), flat and open (hyperbolic) space and see how angles, circumferences and apparent sizes change. Then connect the curvature radius to our own universe.</source>
         <translation>Uzayın kendisi eğri olabilir. Aynı üçgeni ve çemberi kapalı (küresel), düz ve açık (hiperbolik) uzayda çizin; açıların, çevrelerin ve görünen boyutların nasıl değiştiğini görün. Sonra eğrilik yarıçapını kendi evrenimize bağlayın.</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/registry.py" line="309" />
+        <location filename="../gui/simulators/registry.py" line="334" />
         <source>Change the &lt;b&gt;triangle side&lt;/b&gt;: small triangles look flat everywhere, large ones reveal curvature.</source>
         <translation>&lt;b&gt;Üçgen kenarını&lt;/b&gt; değiştirin: küçük üçgenler her yerde düz görünür, büyük olanlar eğriliği ortaya çıkarır.</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/registry.py" line="311" />
+        <location filename="../gui/simulators/registry.py" line="336" />
         <source>Read the angle sums and circumference ratios in &lt;b&gt;Measurements&lt;/b&gt;.</source>
         <translation>&lt;b&gt;Ölçümler&lt;/b&gt; bölümünde açı toplamlarını ve çevre oranlarını okuyun.</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/registry.py" line="312" />
+        <location filename="../gui/simulators/registry.py" line="337" />
         <source>Open the &lt;b&gt;Apparent sizes&lt;/b&gt; tab to see why curvature changes the size of CMB spots.</source>
         <translation>Eğriliğin KMF lekelerinin boyutunu neden değiştirdiğini görmek için &lt;b&gt;Görünen boyutlar&lt;/b&gt; sekmesini açın.</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/registry.py" line="313" />
+        <location filename="../gui/simulators/registry.py" line="338" />
         <source>Set &lt;b&gt;Ωk&lt;/b&gt; to see how big the curvature radius of our universe could be.</source>
         <translation>Evrenimizin eğrilik yarıçapının ne kadar büyük olabileceğini görmek için &lt;b&gt;Ωk&lt;/b&gt; değerini ayarlayın.</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/registry.py" line="316" />
+        <location filename="../gui/simulators/registry.py" line="341" />
         <source>Make a spherical triangle whose angles add up to 270°. What fraction of the sphere does it cover?</source>
         <translation>Açıları toplamı 270° olan küresel bir üçgen yapın. Kürenin ne kadarını kaplıyor?</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/registry.py" line="318" />
+        <location filename="../gui/simulators/registry.py" line="343" />
         <source>At which radius does a circle on a sphere have the largest circumference?</source>
         <translation>Bir küre üzerindeki çember hangi yarıçapta en büyük çevreye sahiptir?</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/registry.py" line="319" />
+        <location filename="../gui/simulators/registry.py" line="344" />
         <source>With |Ωk| = 0.002, how many observable-universe radii fit into the curvature radius?</source>
         <translation>|Ωk| = 0,002 iken eğrilik yarıçapına kaç gözlenebilir evren yarıçapı sığar?</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/registry.py" line="328" />
+        <location filename="../gui/simulators/registry.py" line="354" />
         <source>Spacetime &amp; Horizon Diagram</source>
         <translation>Uzayzaman ve Ufuk Diyagramı</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/registry.py" line="329" />
+        <location filename="../gui/simulators/registry.py" line="355" />
         <source>Light cones, horizons and galaxy worldlines through cosmic time.</source>
         <translation>Kozmik zaman boyunca ışık konileri, ufuklar ve gökada dünya çizgileri.</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/registry.py" line="331" />
+        <location filename="../gui/simulators/registry.py" line="357" />
         <source>A spacetime diagram shows distance across and time upwards. Follow the paths of light and galaxies, see the teardrop-shaped past light cone, and watch the particle horizon, event horizon and Hubble sphere evolve. Switch to conformal coordinates where light moves at 45°.</source>
         <translation>Bir uzayzaman diyagramı yatayda uzaklığı, dikeyde zamanı gösterir. Işığın ve gökadaların yollarını izleyin, gözyaşı biçimli geçmiş ışık konisini görün, parçacık ufkunun, olay ufkunun ve Hubble küresinin evrimini izleyin. Işığın 45°'de ilerlediği konformal koordinatlara geçin.</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/registry.py" line="336" />
+        <location filename="../gui/simulators/registry.py" line="362" />
         <source>Choose a universe with the &lt;b&gt;preset&lt;/b&gt; or the Ωm and ΩΛ sliders.</source>
         <translation>&lt;b&gt;Hazır ayar&lt;/b&gt; ile ya da Ωm ve ΩΛ kaydırıcılarıyla bir evren seçin.</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/registry.py" line="337" />
+        <location filename="../gui/simulators/registry.py" line="363" />
         <source>Pick &lt;b&gt;coordinates&lt;/b&gt;: proper distance, comoving distance, or comoving distance with conformal time.</source>
         <translation>&lt;b&gt;Koordinatları&lt;/b&gt; seçin: öz uzaklık, eş hareketli uzaklık ya da konformal zamanla eş hareketli uzaklık.</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/registry.py" line="339" />
+        <location filename="../gui/simulators/registry.py" line="365" />
         <source>Move the &lt;b&gt;scale factor of the observer&lt;/b&gt; to watch from the past or the future.</source>
         <translation>Geçmişten ya da gelecekten izlemek için &lt;b&gt;gözlemcinin ölçek çarpanını&lt;/b&gt; oynatın.</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/registry.py" line="340" />
+        <location filename="../gui/simulators/registry.py" line="366" />
         <source>Toggle light cones, horizons and worldlines to focus on one idea at a time.</source>
         <translation>Her seferinde tek bir fikre odaklanmak için ışık konilerini, ufukları ve dünya çizgilerini açıp kapatın.</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/registry.py" line="343" />
+        <location filename="../gui/simulators/registry.py" line="369" />
         <source>In proper coordinates, where is the past light cone widest? Where does it cross the Hubble sphere?</source>
         <translation>Öz koordinatlarda geçmiş ışık konisi nerede en geniştir? Hubble küresini nerede keser?</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/registry.py" line="345" />
+        <location filename="../gui/simulators/registry.py" line="371" />
         <source>Switch to conformal time: why do light cones become straight lines?</source>
         <translation>Konformal zamana geçin: ışık konileri neden düz çizgilere dönüşüyor?</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/registry.py" line="346" />
+        <location filename="../gui/simulators/registry.py" line="372" />
         <source>Remove dark energy (ΩΛ = 0). What happens to the event horizon?</source>
         <translation>Karanlık enerjiyi kaldırın (ΩΛ = 0). Olay ufkuna ne oluyor?</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/registry.py" line="355" />
+        <location filename="../gui/simulators/registry.py" line="382" />
         <source>Inflation Slow-Roll Simulator</source>
         <translation>Şişme Yavaş Yuvarlanma Simülatörü</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/registry.py" line="356" />
+        <location filename="../gui/simulators/registry.py" line="383" />
         <source>Roll a field down a potential and test its predictions.</source>
         <translation>Bir alanı potansiyelde aşağı yuvarlayın ve öngörülerini sınayın.</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/registry.py" line="358" />
+        <location filename="../gui/simulators/registry.py" line="385" />
         <source>During inflation a scalar field rolled slowly down its potential, driving exponential expansion and creating the seeds of all structure. Choose a potential, watch the field roll, and compare its predicted spectral index and gravitational waves with Planck and BICEP/Keck.</source>
         <translation>Şişme sırasında skaler bir alan potansiyelinde yavaşça aşağı yuvarlandı; üstel genişlemeyi sürdürdü ve tüm yapının tohumlarını yarattı. Bir potansiyel seçin, alanın yuvarlanışını izleyin ve öngördüğü spektral indisi ile kütleçekim dalgalarını Planck ve BICEP/Keck ile karşılaştırın.</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/registry.py" line="363" />
+        <location filename="../gui/simulators/registry.py" line="390" />
         <source>Choose a &lt;b&gt;model&lt;/b&gt;; some have an extra parameter.</source>
         <translation>Bir &lt;b&gt;model&lt;/b&gt; seçin; bazılarının fazladan bir parametresi vardır.</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/registry.py" line="364" />
+        <location filename="../gui/simulators/registry.py" line="391" />
         <source>Set &lt;b&gt;N*&lt;/b&gt;, how many e-folds before the end the observed scales left the horizon.</source>
         <translation>Gözlenen ölçeklerin ufku terk edişinin sondan kaç e-katlanma önce olduğunu, yani &lt;b&gt;N*&lt;/b&gt; değerini ayarlayın.</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/registry.py" line="365" />
+        <location filename="../gui/simulators/registry.py" line="392" />
         <source>Press &lt;b&gt;Play&lt;/b&gt; to watch the field roll and inflation end when ε reaches 1.</source>
         <translation>Alanın yuvarlanışını izlemek ve ε 1'e ulaştığında şişmenin bitişini görmek için &lt;b&gt;Oynat&lt;/b&gt; düğmesine basın.</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/registry.py" line="366" />
+        <location filename="../gui/simulators/registry.py" line="393" />
         <source>Check whether the star for your model lies inside the green allowed region of the nₛ–r plot.</source>
         <translation>Modelinizin yıldızının nₛ–r grafiğindeki yeşil izinli bölgenin içinde olup olmadığına bakın.</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/registry.py" line="369" />
+        <location filename="../gui/simulators/registry.py" line="396" />
         <source>Why is the simplest φ² model ruled out even though its nₛ looks fine?</source>
         <translation>nₛ değeri iyi görünse de en yalın φ² modeli neden elendi?</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/registry.py" line="370" />
+        <location filename="../gui/simulators/registry.py" line="397" />
         <source>Change the decay constant of natural inflation: can you make it consistent?</source>
         <translation>Doğal şişmenin bozunma sabitini değiştirin: onu verilerle uyumlu yapabilir misiniz?</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/registry.py" line="371" />
+        <location filename="../gui/simulators/registry.py" line="398" />
         <source>How many e-folds of inflation does the comoving Hubble radius plot need to explain the horizon?</source>
         <translation>Eş hareketli Hubble yarıçapı grafiğinin ufku açıklaması için kaç e-katlanmalık şişme gerekir?</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/registry.py" line="381" />
+        <location filename="../gui/simulators/registry.py" line="409" />
         <source>Supernova Ia Discovery</source>
         <translation>Ia Süpernova Keşfi</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/registry.py" line="382" />
+        <location filename="../gui/simulators/registry.py" line="410" />
         <source>Repeat the 1998 discovery and meet the Hubble tension.</source>
         <translation>1998 keşfini yineleyin ve Hubble gerilimiyle tanışın.</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/registry.py" line="384" />
+        <location filename="../gui/simulators/registry.py" line="412" />
         <source>Fit the brightness of Type Ia supernovae against redshift to find out whether the expansion is slowing down or speeding up. Then calibrate the supernova brightness in two different ways and see how the Hubble constant changes.</source>
         <translation>Genişlemenin yavaşlayıp yavaşlamadığını ya da hızlanıp hızlanmadığını bulmak için Ia türü süpernovaların parlaklığını kırmızıya kaymaya karşı uydurun. Sonra süpernova parlaklığını iki farklı biçimde kalibre edin ve Hubble sabitinin nasıl değiştiğini görün.</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/registry.py" line="389" />
+        <location filename="../gui/simulators/registry.py" line="417" />
         <source>Choose a sample: two simulated ones, or the real &lt;b&gt;Pantheon+&lt;/b&gt; compilation.</source>
         <translation>Bir örneklem seçin: iki benzetilmiş örneklem ya da gerçek &lt;b&gt;Pantheon+&lt;/b&gt; derlemesi.</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/registry.py" line="390" />
+        <location filename="../gui/simulators/registry.py" line="418" />
         <source>Compare the data with the empty, matter-only and best-fit models in the &lt;b&gt;Hubble diagram&lt;/b&gt;.</source>
         <translation>&lt;b&gt;Hubble diyagramı&lt;/b&gt;nda veriyi boş, yalnızca maddeli ve en iyi uyan modellerle karşılaştırın.</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/registry.py" line="392" />
+        <location filename="../gui/simulators/registry.py" line="420" />
         <source>Open the &lt;b&gt;Ωm–ΩΛ plane&lt;/b&gt; to see which universes the data allow; try &lt;b&gt;Assume a flat universe&lt;/b&gt;.</source>
         <translation>Verinin hangi evrenlere izin verdiğini görmek için &lt;b&gt;Ωm–ΩΛ düzlemi&lt;/b&gt;ni açın; &lt;b&gt;Düz bir evren varsay&lt;/b&gt; seçeneğini deneyin.</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/registry.py" line="394" />
+        <location filename="../gui/simulators/registry.py" line="422" />
         <source>Switch the &lt;b&gt;calibration&lt;/b&gt; and read the Hubble constant.</source>
         <translation>&lt;b&gt;Kalibrasyonu&lt;/b&gt; değiştirin ve Hubble sabitini okuyun.</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/registry.py" line="397" />
+        <location filename="../gui/simulators/registry.py" line="425" />
         <source>Fit the real Pantheon+ sample. Where does the best fit land, and how many sigma is the evidence for acceleration?</source>
         <translation>Gerçek Pantheon+ örneklemini uydurun. En iyi uyum nereye düşüyor ve hızlanmanın kanıtı kaç sigma?</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/registry.py" line="399" />
+        <location filename="../gui/simulators/registry.py" line="427" />
         <source>With the 1998-like sample, how strong is the evidence for acceleration with and without flatness?</source>
         <translation>1998 benzeri örneklemde, düzlük varsayımıyla ve onsuz, hızlanmanın kanıtı ne kadar güçlü?</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/registry.py" line="401" />
+        <location filename="../gui/simulators/registry.py" line="429" />
         <source>Do distant supernovae look brighter or fainter than in an empty universe?</source>
         <translation>Uzak süpernovalar boş bir evrendekine göre daha parlak mı, daha sönük mü görünüyor?</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/registry.py" line="402" />
+        <location filename="../gui/simulators/registry.py" line="430" />
         <source>Which calibration gives a Hubble constant close to Planck, and which close to SH0ES?</source>
         <translation>Hangi kalibrasyon Planck'a yakın, hangisi SH0ES'e yakın bir Hubble sabiti verir?</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/registry.py" line="411" />
+        <location filename="../gui/simulators/registry.py" line="440" />
         <source>Build Your Own Universe</source>
         <translation>Kendi Evrenini Kur</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/registry.py" line="412" />
+        <location filename="../gui/simulators/registry.py" line="441" />
         <source>Design a universe and grade it against observations.</source>
         <translation>Bir evren tasarlayın ve gözlemlere karşı notlandırın.</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/registry.py" line="414" />
+        <location filename="../gui/simulators/registry.py" line="443" />
         <source>Choose every ingredient: the expansion rate, ordinary and dark matter, curvature, radiation, neutrinos and evolving dark energy. See its history, contents, fate and CMB spectrum, and get a report card that compares it with real measurements.</source>
         <translation>Her bileşeni seçin: genişleme hızı, sıradan ve karanlık madde, eğrilik, ışınım, nötrinolar ve evrilen karanlık enerji. Evrenin tarihini, içeriğini, kaderini ve KMF tayfını görün, gerçek ölçümlerle karşılaştıran bir karne alın.</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/registry.py" line="419" />
+        <location filename="../gui/simulators/registry.py" line="448" />
         <source>Start from a &lt;b&gt;preset&lt;/b&gt; or move any slider.</source>
         <translation>Bir &lt;b&gt;hazır ayar&lt;/b&gt;dan başlayın ya da herhangi bir kaydırıcıyı oynatın.</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/registry.py" line="420" />
+        <location filename="../gui/simulators/registry.py" line="449" />
         <source>Read the &lt;b&gt;score&lt;/b&gt; at the top and open the &lt;b&gt;Report card&lt;/b&gt; to see which tests pass.</source>
         <translation>Üstteki &lt;b&gt;puanı&lt;/b&gt; okuyun ve hangi sınavların geçildiğini görmek için &lt;b&gt;Karne&lt;/b&gt; sekmesini açın.</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/registry.py" line="421" />
+        <location filename="../gui/simulators/registry.py" line="450" />
         <source>Use &lt;b&gt;History and contents&lt;/b&gt; to see when radiation, matter and dark energy dominated.</source>
         <translation>Işınımın, maddenin ve karanlık enerjinin ne zaman baskın olduğunu görmek için &lt;b&gt;Tarih ve içerik&lt;/b&gt; bölümünü kullanın.</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/registry.py" line="422" />
+        <location filename="../gui/simulators/registry.py" line="451" />
         <source>Try evolving or phantom dark energy with &lt;b&gt;w0&lt;/b&gt; and &lt;b&gt;wa&lt;/b&gt;.</source>
         <translation>&lt;b&gt;w0&lt;/b&gt; ve &lt;b&gt;wa&lt;/b&gt; ile evrilen ya da hayalet karanlık enerjiyi deneyin.</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/registry.py" line="425" />
+        <location filename="../gui/simulators/registry.py" line="454" />
         <source>Build a universe without dark matter that still passes the age test. Which tests fail?</source>
         <translation>Karanlık maddesi olmayan ama yaş sınavını yine de geçen bir evren kurun. Hangi sınavlar kalıyor?</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/registry.py" line="426" />
+        <location filename="../gui/simulators/registry.py" line="455" />
         <source>Set w0 = −1.3: when does the Big Rip happen?</source>
         <translation>w0 = −1,3 yapın: Büyük Yırtılma ne zaman gerçekleşiyor?</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/registry.py" line="427" />
+        <location filename="../gui/simulators/registry.py" line="456" />
         <source>Can you find a universe very different from ΛCDM that passes every test?</source>
         <translation>ΛCDM'den çok farklı olduğu hâlde her sınavı geçen bir evren bulabilir misiniz?</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/registry.py" line="436" />
+        <location filename="../gui/simulators/registry.py" line="466" />
         <source>Interactive Cosmic Timeline</source>
         <translation>Etkileşimli Kozmik Zaman Çizelgesi</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/registry.py" line="437" />
+        <location filename="../gui/simulators/registry.py" line="467" />
         <source>From the Planck era to the far future on one slider.</source>
         <translation>Planck çağından uzak geleceğe tek bir kaydırıcıda.</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/registry.py" line="439" />
+        <location filename="../gui/simulators/registry.py" line="469" />
         <source>Slide through 60 orders of magnitude of cosmic time. At every moment the timeline shows the temperature, the typical particle energy, the density, the size of the observable universe and what dominated the energy budget, together with the epoch you are in and how well we know it.</source>
         <translation>Kozmik zamanın 60 büyüklük mertebesi arasında kayın. Zaman çizelgesi her an için sıcaklığı, tipik parçacık enerjisini, yoğunluğu, gözlenebilir evrenin boyutunu ve enerji bütçesine neyin egemen olduğunu, ayrıca içinde bulunduğunuz çağı ve onu ne kadar iyi bildiğimizi gösterir.</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/registry.py" line="444" />
+        <location filename="../gui/simulators/registry.py" line="474" />
         <source>Drag the &lt;b&gt;time slider&lt;/b&gt;; it is logarithmic, so each step of 1 is a factor of ten in time.</source>
         <translation>&lt;b&gt;Zaman kaydırıcısını&lt;/b&gt; sürükleyin; logaritmiktir, bu yüzden her 1 birimlik adım zamanda on kat demektir.</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/registry.py" line="446" />
+        <location filename="../gui/simulators/registry.py" line="476" />
         <source>Or pick an epoch from &lt;b&gt;Jump to an epoch&lt;/b&gt;, or press &lt;b&gt;Play history&lt;/b&gt;.</source>
         <translation>Ya da &lt;b&gt;Bir çağa atla&lt;/b&gt; listesinden bir çağ seçin veya &lt;b&gt;Tarihi oynat&lt;/b&gt; düğmesine basın.</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/registry.py" line="447" />
+        <location filename="../gui/simulators/registry.py" line="477" />
         <source>Read &lt;b&gt;The universe at this moment&lt;/b&gt; for temperature, energy, density and horizon size.</source>
         <translation>Sıcaklık, enerji, yoğunluk ve ufuk boyutu için &lt;b&gt;Bu andaki evren&lt;/b&gt; bölümünü okuyun.</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/registry.py" line="448" />
+        <location filename="../gui/simulators/registry.py" line="478" />
         <source>The coloured bands show how confident we are: red speculative, yellow theory, blue tested in laboratories, green directly observed.</source>
         <translation>Renkli kuşaklar ne kadar emin olduğumuzu gösterir: kırmızı kurgusal, sarı kuramsal, mavi laboratuvarlarda sınanmış, yeşil doğrudan gözlenmiş.</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/registry.py" line="452" />
+        <location filename="../gui/simulators/registry.py" line="482" />
         <source>Find the moment when the universe was as hot as the core of the Sun. Which epoch is it?</source>
         <translation>Evrenin Güneş'in çekirdeği kadar sıcak olduğu anı bulun. Bu hangi çağ?</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/registry.py" line="453" />
+        <location filename="../gui/simulators/registry.py" line="483" />
         <source>When did matter overtake radiation, and dark energy overtake matter?</source>
         <translation>Madde ışınımı, karanlık enerji de maddeyi ne zaman geçti?</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/registry.py" line="454" />
+        <location filename="../gui/simulators/registry.py" line="484" />
         <source>How large was the observable universe at the end of nucleosynthesis?</source>
         <translation>Çekirdek sentezinin sonunda gözlenebilir evren ne kadar büyüktü?</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/registry.py" line="455" />
+        <location filename="../gui/simulators/registry.py" line="485" />
         <source>Go 100 billion years into the future. What happens to the temperature?</source>
         <translation>Geleceğe 100 milyar yıl gidin. Sıcaklığa ne oluyor?</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/registry.py" line="464" />
+        <location filename="../gui/simulators/registry.py" line="495" />
         <source>BBN Abundance Explorer</source>
         <translation>BBN Bolluk Gezgini</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/registry.py" line="465" />
+        <location filename="../gui/simulators/registry.py" line="496" />
         <source>How the first three minutes made hydrogen, helium and lithium.</source>
         <translation>İlk üç dakika hidrojeni, helyumu ve lityumu nasıl yaptı.</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/registry.py" line="467" />
+        <location filename="../gui/simulators/registry.py" line="498" />
         <source>Big Bang nucleosynthesis predicts how much helium, deuterium, helium-3 and lithium formed in the first minutes, depending on the density of ordinary matter. Change the baryon density, add extra neutrino species or change the neutron lifetime, and compare the predictions with the observed abundances and with the CMB.</source>
         <translation>Büyük Patlama çekirdek sentezi, ilk dakikalarda ne kadar helyum, döteryum, helyum-3 ve lityum oluştuğunu sıradan maddenin yoğunluğuna bağlı olarak öngörür. Baryon yoğunluğunu değiştirin, fazladan nötrino türleri ekleyin ya da nötron ömrünü değiştirin; öngörüleri gözlenen bolluklarla ve KMF ile karşılaştırın.</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/registry.py" line="473" />
+        <location filename="../gui/simulators/registry.py" line="504" />
         <source>Move &lt;b&gt;η₁₀&lt;/b&gt;, the number of baryons per ten billion photons. The vertical line marks your value.</source>
         <translation>On milyar foton başına düşen baryon sayısı olan &lt;b&gt;η₁₀&lt;/b&gt; değerini oynatın. Dikey çizgi sizin değerinizi işaretler.</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/registry.py" line="475" />
+        <location filename="../gui/simulators/registry.py" line="506" />
         <source>The coloured horizontal bands are the observed abundances; the green vertical band is the baryon density measured from the CMB.</source>
         <translation>Renkli yatay kuşaklar gözlenen bolluklardır; yeşil dikey kuşak ise KMF'den ölçülen baryon yoğunluğudur.</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/registry.py" line="477" />
+        <location filename="../gui/simulators/registry.py" line="508" />
         <source>Use &lt;b&gt;Change the physics&lt;/b&gt; to add extra relativistic species or change the neutron lifetime.</source>
         <translation>Fazladan görelilikli türler eklemek ya da nötron ömrünü değiştirmek için &lt;b&gt;Fiziği değiştir&lt;/b&gt; bölümünü kullanın.</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/registry.py" line="479" />
+        <location filename="../gui/simulators/registry.py" line="510" />
         <source>The right-hand panel shows neutrons decaying while the universe waits for deuterium to survive.</source>
         <translation>Sağdaki panel, evren döteryumun yaşamasını beklerken bozunan nötronları gösterir.</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/registry.py" line="483" />
+        <location filename="../gui/simulators/registry.py" line="514" />
         <source>Press &lt;b&gt;From deuterium&lt;/b&gt;. Does the result land inside the CMB band?</source>
         <translation>&lt;b&gt;Döteryumdan&lt;/b&gt; düğmesine basın. Sonuç KMF kuşağının içine düşüyor mu?</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/registry.py" line="484" />
+        <location filename="../gui/simulators/registry.py" line="515" />
         <source>Find the lithium minimum. Can any baryon density fit lithium and deuterium together?</source>
         <translation>Lityum en küçüğünü bulun. Herhangi bir baryon yoğunluğu lityum ile döteryumu birlikte uydurabiliyor mu?</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/registry.py" line="485" />
+        <location filename="../gui/simulators/registry.py" line="516" />
         <source>Set ΔN_eff = 1. How much does helium change, and could the observations allow it?</source>
         <translation>ΔN_eff = 1 yapın. Helyum ne kadar değişiyor ve gözlemler buna izin verebilir mi?</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/registry.py" line="486" />
+        <location filename="../gui/simulators/registry.py" line="517" />
         <source>Lengthen the neutron lifetime to 888 s, the beam-experiment value. What happens to helium?</source>
         <translation>Nötron ömrünü demet deneylerinin değeri olan 888 s'ye uzatın. Helyuma ne oluyor?</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/registry.py" line="495" />
+        <location filename="../gui/simulators/registry.py" line="527" />
         <source>Olbers' Paradox Simulator</source>
         <translation>Olbers Paradoksu Simülatörü</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/registry.py" line="496" />
+        <location filename="../gui/simulators/registry.py" line="528" />
         <source>Why is the night sky dark?</source>
         <translation>Gece gökyüzü neden karanlık?</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/registry.py" line="498" />
+        <location filename="../gui/simulators/registry.py" line="530" />
         <source>Look at a patch of sky in a universe full of stars. If the universe were infinite, static and eternal, every line of sight would end on a star and the sky would blaze. Switch on a finite age, stellar lifetimes or expansion and watch the sky go dark.</source>
         <translation>Yıldızlarla dolu bir evrende gökyüzünün bir parçasına bakın. Evren sonsuz, durağan ve ezelî olsaydı her bakış doğrultusu bir yıldızda biter ve gökyüzü göz alırdı. Sonlu bir yaşı, yıldız ömürlerini ya da genişlemeyi açın ve gökyüzünün kararışını izleyin.</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/registry.py" line="503" />
+        <location filename="../gui/simulators/registry.py" line="535" />
         <source>Start with &lt;b&gt;Olbers' universe&lt;/b&gt;: the patch is completely covered by stars.</source>
         <translation>&lt;b&gt;Olbers'ın evreni&lt;/b&gt; ile başlayın: gökyüzü parçası bütünüyle yıldızlarla kaplıdır.</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/registry.py" line="504" />
+        <location filename="../gui/simulators/registry.py" line="536" />
         <source>Tick &lt;b&gt;The universe has a finite age&lt;/b&gt; and shorten the light-travel distance.</source>
         <translation>&lt;b&gt;Evrenin yaşı sonludur&lt;/b&gt; kutusunu işaretleyin ve ışığın gittiği uzaklığı kısaltın.</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/registry.py" line="505" />
+        <location filename="../gui/simulators/registry.py" line="537" />
         <source>Try &lt;b&gt;Stars shine for a limited time&lt;/b&gt; and &lt;b&gt;The universe expands&lt;/b&gt; as well.</source>
         <translation>&lt;b&gt;Yıldızlar sınırlı bir süre parlar&lt;/b&gt; ve &lt;b&gt;Evren genişler&lt;/b&gt; seçeneklerini de deneyin.</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/registry.py" line="506" />
+        <location filename="../gui/simulators/registry.py" line="538" />
         <source>Compare the plots: the brightness curve and the shell argument show why each change works.</source>
         <translation>Grafikleri karşılaştırın: parlaklık eğrisi ve kabuk akıl yürütmesi her değişikliğin neden işe yaradığını gösterir.</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/registry.py" line="509" />
+        <location filename="../gui/simulators/registry.py" line="541" />
         <source>Keep an infinite age but lower the star density. Does the sky ever get dark?</source>
         <translation>Yaşı sonsuz bırakıp yıldız yoğunluğunu düşürün. Gökyüzü hiç kararıyor mu?</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/registry.py" line="510" />
+        <location filename="../gui/simulators/registry.py" line="542" />
         <source>Which is more effective in our universe, the finite age or redshift dimming? (Read &lt;b&gt;Our universe&lt;/b&gt;.)</source>
         <translation>Bizim evrenimizde hangisi daha etkili: sonlu yaş mı, kırmızıya kaymayla sönükleşme mi? (&lt;b&gt;Bizim evrenimiz&lt;/b&gt; bölümünü okuyun.)</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/registry.py" line="512" />
+        <location filename="../gui/simulators/registry.py" line="544" />
         <source>Find the light-travel distance at which half of the sky is covered.</source>
         <translation>Gökyüzünün yarısının kaplandığı, ışığın gittiği uzaklığı bulun.</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/registry.py" line="521" />
+        <location filename="../gui/simulators/registry.py" line="554" />
         <source>Likelihood &amp; MCMC Explorer</source>
         <translation>Olabilirlik ve MCMC Gezgini</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/registry.py" line="522" />
+        <location filename="../gui/simulators/registry.py" line="555" />
         <source>Watch a measurement being made, one step at a time.</source>
         <translation>Bir ölçümün adım adım yapılışını izleyin.</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/registry.py" line="524" />
+        <location filename="../gui/simulators/registry.py" line="557" />
         <source>Every number in cosmology comes from three pieces: a model, a likelihood that says how well it fits the data, and a way to explore the parameters. Here a random walker explores Ωm and ΩΛ against real supernovae, and the cloud it leaves behind is the measurement.</source>
         <translation>Kozmolojideki her sayı üç parçadan gelir: bir model, modelin veriye ne kadar uyduğunu söyleyen bir olabilirlik ve parametreleri tarayacak bir yöntem. Burada rastgele bir yürüyücü gerçek süpernovalara karşı Ωm ile ΩΛ'yı tarar; geride bıraktığı bulut ölçümün kendisidir.</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/registry.py" line="529" />
+        <location filename="../gui/simulators/registry.py" line="562" />
         <source>Press &lt;b&gt;Run the chain&lt;/b&gt;, then &lt;b&gt;Watch it walk&lt;/b&gt; to see the walker leave its starting corner and settle into the good region.</source>
         <translation>&lt;b&gt;Zinciri çalıştır&lt;/b&gt; düğmesine, sonra da yürüyücünün başlangıç köşesinden ayrılıp iyi bölgeye yerleşişini görmek için &lt;b&gt;Yürüyüşü izle&lt;/b&gt; düğmesine basın.</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/registry.py" line="531" />
+        <location filename="../gui/simulators/registry.py" line="564" />
         <source>Read the mean and the ± in &lt;b&gt;What the chain says&lt;/b&gt;: that is the measurement.</source>
         <translation>&lt;b&gt;Zincirin söyledikleri&lt;/b&gt; bölümündeki ortalamayı ve ± değerini okuyun: ölçüm budur.</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/registry.py" line="532" />
+        <location filename="../gui/simulators/registry.py" line="565" />
         <source>Change the &lt;b&gt;proposal step σ&lt;/b&gt; and watch the acceptance rate and the shape of the cloud.</source>
         <translation>&lt;b&gt;Öneri adımı σ&lt;/b&gt; değerini değiştirin ve kabul oranıyla bulutun biçimini izleyin.</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/registry.py" line="533" />
+        <location filename="../gui/simulators/registry.py" line="566" />
         <source>Press &lt;b&gt;Run 4 chains&lt;/b&gt; to check R̂: four walkers from four corners must agree.</source>
         <translation>R̂ değerini denetlemek için &lt;b&gt;4 zincir çalıştır&lt;/b&gt; düğmesine basın: dört köşeden gelen dört yürüyücü birbiriyle uyuşmalıdır.</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/registry.py" line="536" />
+        <location filename="../gui/simulators/registry.py" line="569" />
         <source>Set σ = 0.005. The acceptance rate goes above 90% — why is the answer still wrong?</source>
         <translation>σ = 0,005 yapın. Kabul oranı %90'ın üzerine çıkar — cevap neden yine de yanlış?</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/registry.py" line="537" />
+        <location filename="../gui/simulators/registry.py" line="570" />
         <source>Set σ = 0.4. Almost nothing is accepted; what happens to the effective sample size?</source>
         <translation>σ = 0,4 yapın. Neredeyse hiçbir öneri kabul edilmez; etkin örneklem büyüklüğüne ne oluyor?</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/registry.py" line="538" />
+        <location filename="../gui/simulators/registry.py" line="571" />
         <source>Tick &lt;b&gt;Assume a flat universe&lt;/b&gt;: one parameter instead of two, and a much tighter Ωm.</source>
         <translation>&lt;b&gt;Düz bir evren varsay&lt;/b&gt; kutusunu işaretleyin: iki yerine tek parametre ve çok daha dar bir Ωm.</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/registry.py" line="539" />
+        <location filename="../gui/simulators/registry.py" line="572" />
         <source>Compare the 1998-like sample with Pantheon+: the same method, twenty-five years of data.</source>
         <translation>1998 benzeri örneklemi Pantheon+ ile karşılaştırın: aynı yöntem, yirmi beş yıllık veri.</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/registry.py" line="548" />
+        <location filename="../gui/simulators/registry.py" line="582" />
         <source>Distance Ladder Builder</source>
         <translation>Uzaklık Merdiveni Kurucu</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/registry.py" line="549" />
+        <location filename="../gui/simulators/registry.py" line="583" />
         <source>Climb from parallax to H0 and follow every error bar.</source>
         <translation>Paralakstan H0'a tırmanın ve her hata çubuğunu izleyin.</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/registry.py" line="551" />
+        <location filename="../gui/simulators/registry.py" line="585" />
         <source>The local Hubble constant rests on three rungs: parallaxes calibrate Cepheids, Cepheids calibrate type Ia supernovae, and distant supernovae measure the expansion. Design the observing programme, watch the uncertainty of each rung flow into H0, and see why a systematic error survives any amount of data. The measurements are simulated.</source>
         <translation>Yerel Hubble sabiti üç basamağa dayanır: paralakslar Sefeidleri, Sefeidler Ia süpernovalarını kalibre eder, uzak süpernovalar da genişlemeyi ölçer. Gözlem programını tasarlayın, her basamağın belirsizliğinin H0'a nasıl aktığını izleyin ve sistematik bir hatanın neden her miktarda veriye direndiğini görün. Ölçümler benzetimdir.</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/registry.py" line="557" />
+        <location filename="../gui/simulators/registry.py" line="591" />
         <source>Choose an &lt;b&gt;observing programme&lt;/b&gt;, or set the numbers of stars and supernovae yourself.</source>
         <translation>Bir &lt;b&gt;gözlem programı&lt;/b&gt; seçin ya da yıldız ve süpernova sayılarını kendiniz belirleyin.</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/registry.py" line="558" />
+        <location filename="../gui/simulators/registry.py" line="592" />
         <source>Read &lt;b&gt;The three rungs&lt;/b&gt;: each panel is one step of the ladder with its own fit.</source>
         <translation>&lt;b&gt;Üç basamak&lt;/b&gt; sekmesini okuyun: her panel, kendi uyumuyla merdivenin bir adımıdır.</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/registry.py" line="559" />
+        <location filename="../gui/simulators/registry.py" line="593" />
         <source>Open &lt;b&gt;Error budget&lt;/b&gt; to see how much each rung contributes to the uncertainty of H0.</source>
         <translation>Her basamağın H0 belirsizliğine ne kadar katkı yaptığını görmek için &lt;b&gt;Hata bütçesi&lt;/b&gt; sekmesini açın.</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/registry.py" line="560" />
+        <location filename="../gui/simulators/registry.py" line="594" />
         <source>Press &lt;b&gt;Repeat 300×&lt;/b&gt; to check the error bar by rerunning the whole measurement.</source>
         <translation>Ölçümün tamamını yeniden çalıştırarak hata çubuğunu denetlemek için &lt;b&gt;300× tekrarla&lt;/b&gt; düğmesine basın.</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/registry.py" line="561" />
+        <location filename="../gui/simulators/registry.py" line="595" />
         <source>Add a &lt;b&gt;systematic&lt;/b&gt; — a parallax zero-point offset or crowding — and compare the shift with the error bar.</source>
         <translation>Bir &lt;b&gt;sistematik&lt;/b&gt; ekleyin — paralaks sıfır noktası kayması ya da kalabalık — ve kaymayı hata çubuğuyla karşılaştırın.</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/registry.py" line="565" />
+        <location filename="../gui/simulators/registry.py" line="599" />
         <source>Start from the Key Project preset. Which rung limits it, and what does fixing only that rung achieve?</source>
         <translation>Anahtar Proje hazır ayarından başlayın. Onu hangi basamak sınırlıyor ve yalnızca o basamağı düzeltmek ne kazandırıyor?</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/registry.py" line="567" />
+        <location filename="../gui/simulators/registry.py" line="601" />
         <source>Add 2000 Hubble-flow supernovae. Why does the total error barely move?</source>
         <translation>Hubble akışına 2000 süpernova ekleyin. Toplam hata neden neredeyse hiç değişmiyor?</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/registry.py" line="568" />
+        <location filename="../gui/simulators/registry.py" line="602" />
         <source>Set a parallax offset of +20 µas: how many σ does the toy H0 move, and would you notice?</source>
         <translation>+20 µas paralaks kayması koyun: oyuncak H0 kaç σ kayıyor, bunu fark eder miydiniz?</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/registry.py" line="569" />
+        <location filename="../gui/simulators/registry.py" line="603" />
         <source>Set the true H0 to 67.4. How precise must the ladder be to rule out 73 at 5σ?</source>
         <translation>Gerçek H0'ı 67,4 yapın. 73'ü 5σ ile elemek için merdivenin ne kadar duyarlı olması gerekir?</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/registry.py" line="578" />
+        <location filename="../gui/simulators/registry.py" line="613" />
         <source>Survey Designer</source>
         <translation>Tarama Tasarlayıcı</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/registry.py" line="579" />
+        <location filename="../gui/simulators/registry.py" line="614" />
         <source>Choose area, depth and time, and see the error bars you would get.</source>
         <translation>Alanı, derinliği ve süreyi seçin; alacağınız hata çubuklarını görün.</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/registry.py" line="581" />
+        <location filename="../gui/simulators/registry.py" line="616" />
         <source>A redshift survey measures the expansion history through the baryon acoustic oscillation scale. Pick a tracer, a redshift range, a sky area and an amount of telescope time, and the forecast shows how precisely each redshift slice would be measured — and whether the survey is limited by its volume, by too few galaxies, or by systematic errors.</source>
         <translation>Bir kırmızıya kayma taraması genişleme tarihini baryon akustik salınım ölçeğiyle ölçer. Bir izleyici, bir kırmızıya kayma aralığı, bir gökyüzü alanı ve bir teleskop zamanı seçin; öngörü her kırmızıya kayma diliminin ne kadar duyarlı ölçüleceğini ve taramanın hacmiyle mi, çok az gökadayla mı yoksa sistematik hatalarla mı sınırlandığını gösterir.</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/registry.py" line="587" />
+        <location filename="../gui/simulators/registry.py" line="622" />
         <source>Start from a &lt;b&gt;programme&lt;/b&gt; such as BOSS, DESI or Euclid, or build your own.</source>
         <translation>BOSS, DESI ya da Euclid gibi bir &lt;b&gt;programdan&lt;/b&gt; başlayın ya da kendinizinkini kurun.</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/registry.py" line="588" />
+        <location filename="../gui/simulators/registry.py" line="623" />
         <source>Change the &lt;b&gt;tracer&lt;/b&gt;, the redshift range and the &lt;b&gt;target density&lt;/b&gt;, and watch n̄P.</source>
         <translation>&lt;b&gt;İzleyiciyi&lt;/b&gt;, kırmızıya kayma aralığını ve &lt;b&gt;hedef yoğunluğunu&lt;/b&gt; değiştirin; n̄P'yi izleyin.</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/registry.py" line="589" />
+        <location filename="../gui/simulators/registry.py" line="624" />
         <source>Set the &lt;b&gt;sky area&lt;/b&gt; and the &lt;b&gt;telescope time&lt;/b&gt;; if the spectra run out, the density is diluted.</source>
         <translation>&lt;b&gt;Gökyüzü alanını&lt;/b&gt; ve &lt;b&gt;teleskop zamanını&lt;/b&gt; ayarlayın; spektrumlar yetmezse yoğunluk seyrelir.</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/registry.py" line="591" />
+        <location filename="../gui/simulators/registry.py" line="626" />
         <source>Open &lt;b&gt;Wide or deep?&lt;/b&gt; to see the best area for the galaxies you can afford.</source>
         <translation>Karşılayabildiğiniz gökadalar için en iyi alanı görmek için &lt;b&gt;Geniş mi derin mi?&lt;/b&gt; sekmesini açın.</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/registry.py" line="592" />
+        <location filename="../gui/simulators/registry.py" line="627" />
         <source>Add a &lt;b&gt;systematic floor&lt;/b&gt; to see when more data stops helping.</source>
         <translation>Daha çok verinin ne zaman işe yaramadığını görmek için bir &lt;b&gt;sistematik taban&lt;/b&gt; ekleyin.</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/registry.py" line="595" />
+        <location filename="../gui/simulators/registry.py" line="630" />
         <source>Compare the BOSS and DESI programmes: what gives DESI its factor of two?</source>
         <translation>BOSS ve DESI programlarını karşılaştırın: DESI'ye iki katlık üstünlüğünü ne veriyor?</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/registry.py" line="596" />
+        <location filename="../gui/simulators/registry.py" line="631" />
         <source>Choose quasars. Why does doubling their density help more than doubling the area?</source>
         <translation>Kuasarları seçin. Yoğunluklarını ikiye katlamak neden alanı ikiye katlamaktan daha çok işe yarıyor?</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/registry.py" line="597" />
+        <location filename="../gui/simulators/registry.py" line="632" />
         <source>Keep the number of galaxies fixed and find the area where the error is smallest.</source>
         <translation>Gökada sayısını sabit tutun ve hatanın en küçük olduğu alanı bulun.</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/registry.py" line="598" />
+        <location filename="../gui/simulators/registry.py" line="633" />
         <source>With a 0.3% systematic floor, how many years are worth observing?</source>
         <translation>%0,3'lük bir sistematik tabanla kaç yıl gözlem yapmaya değer?</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/registry.py" line="607" />
+        <location filename="../gui/simulators/registry.py" line="643" />
         <source>Standard Siren Explorer</source>
         <translation>Standart Siren Gezgini</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/registry.py" line="608" />
+        <location filename="../gui/simulators/registry.py" line="644" />
         <source>Measure H₀ from a gravitational-wave merger.</source>
         <translation>Bir kütleçekim dalgası birleşmesinden H₀'ı ölçün.</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/registry.py" line="610" />
+        <location filename="../gui/simulators/registry.py" line="646" />
         <source>A merging pair of neutron stars or black holes gives its own distance away: relativity fixes the amplitude of the wave, so the strain that arrives here is a distance with no calibration behind it. Add the redshift of the host galaxy and you have H₀ without a single rung of the distance ladder — if you can find the host, and if you can tell how the binary was tilted.</source>
         <translation>Birleşen bir nötron yıldızı ya da karadelik çifti kendi uzaklığını ele verir: görelilik dalganın genliğini belirler, bu yüzden buraya ulaşan gerinim arkasında hiçbir kalibrasyon olmayan bir uzaklıktır. Buna konak gökadanın kırmızıya kaymasını ekleyin ve uzaklık merdiveninin tek bir basamağı olmadan H₀'ı elde edin — konağı bulabilirseniz ve çiftin ne kadar eğik olduğunu söyleyebilirseniz.</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/registry.py" line="617" />
+        <location filename="../gui/simulators/registry.py" line="653" />
         <source>Start from &lt;b&gt;GW170817&lt;/b&gt;, the one merger so far whose host galaxy was identified.</source>
         <translation>Şu ana dek konak gökadası belirlenmiş tek birleşme olan &lt;b&gt;GW170817&lt;/b&gt;'den başlayın.</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/registry.py" line="618" />
+        <location filename="../gui/simulators/registry.py" line="654" />
         <source>Watch the &lt;b&gt;chirp&lt;/b&gt;: its rising frequency gives the masses, its amplitude the distance.</source>
         <translation>&lt;b&gt;Cıvıltıyı&lt;/b&gt; izleyin: yükselen frekansı kütleleri, genliği uzaklığı verir.</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/registry.py" line="620" />
+        <location filename="../gui/simulators/registry.py" line="656" />
         <source>Open &lt;b&gt;Distance vs inclination&lt;/b&gt; to see why the distance error is so lopsided.</source>
         <translation>Uzaklık hatasının neden bu kadar çarpık olduğunu görmek için &lt;b&gt;Uzaklık ve eğiklik&lt;/b&gt; sekmesini açın.</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/registry.py" line="621" />
+        <location filename="../gui/simulators/registry.py" line="657" />
         <source>Change the &lt;b&gt;detector network&lt;/b&gt;: sensitivity sets the reach, the number of sites sets the sky area.</source>
         <translation>&lt;b&gt;Dedektör ağını&lt;/b&gt; değiştirin: duyarlılık erişimi, istasyon sayısı gökyüzü alanını belirler.</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/registry.py" line="623" />
+        <location filename="../gui/simulators/registry.py" line="659" />
         <source>Turn off &lt;b&gt;the host galaxy is known&lt;/b&gt; to make it a dark siren and watch the candidates multiply.</source>
         <translation>Karanlık bir sirene dönüştürmek için &lt;b&gt;konak gökada biliniyor&lt;/b&gt; seçeneğini kapatın ve adayların nasıl çoğaldığını izleyin.</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/registry.py" line="625" />
+        <location filename="../gui/simulators/registry.py" line="661" />
         <source>Raise the &lt;b&gt;number of events&lt;/b&gt; until the error crosses the 2% line.</source>
         <translation>Hata %2 çizgisini geçene dek &lt;b&gt;olay sayısını&lt;/b&gt; yükseltin.</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/registry.py" line="628" />
+        <location filename="../gui/simulators/registry.py" line="664" />
         <source>Reproduce GW170817: 40 Mpc, SNR 32, H₀ to about 15%. Which error dominates?</source>
         <translation>GW170817'yi yeniden üretin: 40 Mpc, SNR 32, H₀ yaklaşık %15. Hangi hata baskın?</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/registry.py" line="629" />
+        <location filename="../gui/simulators/registry.py" line="665" />
         <source>Move the same merger to 400 Mpc. What happens first — the SNR or the host?</source>
         <translation>Aynı birleşmeyi 400 Mpc'ye taşıyın. Önce hangisi tükenir — SNR mi, konak mı?</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/registry.py" line="630" />
+        <location filename="../gui/simulators/registry.py" line="666" />
         <source>Compare a face-on and an edge-on binary at the same distance. Which is measured better?</source>
         <translation>Aynı uzaklıkta yüzü dönük ve kenarı dönük bir çifti karşılaştırın. Hangisi daha iyi ölçülür?</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/registry.py" line="631" />
+        <location filename="../gui/simulators/registry.py" line="667" />
         <source>How many bright sirens does it take to beat the Hubble tension at 2%?</source>
         <translation>Hubble gerilimini %2'de aşmak kaç parlak siren gerektirir?</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/registry.py" line="632" />
+        <location filename="../gui/simulators/registry.py" line="668" />
         <source>Switch to the Einstein Telescope. How far can a neutron-star merger be heard?</source>
         <translation>Einstein Teleskobu'na geçin. Bir nötron yıldızı birleşmesi ne kadar uzaktan duyulabilir?</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/registry.py" line="641" />
+        <location filename="../gui/simulators/registry.py" line="678" />
         <source>Redshift Survey Slice</source>
         <translation>Kırmızıya Kayma Taraması Dilimi</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/registry.py" line="642" />
+        <location filename="../gui/simulators/registry.py" line="679" />
         <source>Build a cone diagram and find the cosmic web in it.</source>
         <translation>Bir koni diyagramı kurun ve içindeki kozmik ağı bulun.</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/registry.py" line="644" />
+        <location filename="../gui/simulators/registry.py" line="681" />
         <source>A mock catalogue: a simulated universe, observed the way a telescope would observe it. Galaxies are sampled from a density field grown from random initial conditions, then placed at the distance their redshift implies. Switch the observing effects on one at a time and watch what each of them does to the map — and to the clustering measured from it.</source>
         <translation>Sahte bir katalog: benzetilmiş bir evren, bir teleskobun gözleyeceği gibi gözlenmiş. Gökadalar rastgele başlangıç koşullarından büyütülen bir yoğunluk alanından örneklenir, sonra kırmızıya kaymalarının gösterdiği uzaklığa konur. Gözlem etkilerini teker teker açın ve her birinin haritaya — ve haritadan ölçülen kümelenmeye — ne yaptığını izleyin.</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/registry.py" line="650" />
+        <location filename="../gui/simulators/registry.py" line="687" />
         <source>Start from a &lt;b&gt;survey&lt;/b&gt;: CfA2 and SDSS are the real slices, &lt;b&gt;the true universe&lt;/b&gt; has no observing effects at all.</source>
         <translation>Bir &lt;b&gt;taramadan&lt;/b&gt; başlayın: CfA2 ve SDSS gerçek dilimlerdir, &lt;b&gt;gerçek evrende&lt;/b&gt; ise hiçbir gözlem etkisi yoktur.</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/registry.py" line="652" />
+        <location filename="../gui/simulators/registry.py" line="689" />
         <source>Read the &lt;b&gt;cone diagram&lt;/b&gt;: we are at the point, distance grows outwards, and the filaments and voids are the cosmic web.</source>
         <translation>&lt;b&gt;Koni diyagramını&lt;/b&gt; okuyun: uçtaki nokta biziz, uzaklık dışa doğru artar, ve liflerle boşluklar kozmik ağdır.</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/registry.py" line="654" />
+        <location filename="../gui/simulators/registry.py" line="691" />
         <source>Open &lt;b&gt;Truth vs observed&lt;/b&gt; to see the same galaxies with and without their motions.</source>
         <translation>Aynı gökadaları hareketleriyle ve hareketleri olmadan görmek için &lt;b&gt;Gerçek ile gözlenen&lt;/b&gt; sekmesini açın.</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/registry.py" line="655" />
+        <location filename="../gui/simulators/registry.py" line="692" />
         <source>Raise the &lt;b&gt;cluster velocity dispersion&lt;/b&gt; until the fingers of God are unmistakable.</source>
         <translation>Tanrı'nın parmakları açıkça görünene dek &lt;b&gt;küme hız dağılımını&lt;/b&gt; yükseltin.</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/registry.py" line="656" />
+        <location filename="../gui/simulators/registry.py" line="693" />
         <source>Set an &lt;b&gt;apparent magnitude limit&lt;/b&gt; and watch the &lt;b&gt;Selection&lt;/b&gt; tab: the far edge empties out because of the telescope, not the universe.</source>
         <translation>Bir &lt;b&gt;görünür kadir sınırı&lt;/b&gt; koyun ve &lt;b&gt;Seçim&lt;/b&gt; sekmesini izleyin: uzak kenar evren yüzünden değil, teleskop yüzünden boşalır.</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/registry.py" line="658" />
+        <location filename="../gui/simulators/registry.py" line="695" />
         <source>Change the &lt;b&gt;random seed&lt;/b&gt;: a different universe, the same statistics.</source>
         <translation>&lt;b&gt;Rastgele tohumu&lt;/b&gt; değiştirin: farklı bir evren, aynı istatistikler.</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/registry.py" line="661" />
+        <location filename="../gui/simulators/registry.py" line="698" />
         <source>Compare the true universe with the observed one. Which structures move, and which way?</source>
         <translation>Gerçek evreni gözlenenle karşılaştırın. Hangi yapılar, hangi yöne kayıyor?</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/registry.py" line="662" />
+        <location filename="../gui/simulators/registry.py" line="699" />
         <source>Turn the peculiar velocities off but keep the cluster dispersion. What is left?</source>
         <translation>Öz hızları kapatın ama küme dağılımını koruyun. Geriye ne kalıyor?</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/registry.py" line="663" />
+        <location filename="../gui/simulators/registry.py" line="700" />
         <source>Raise the redshift error to 0.02. How much of the cosmic web survives?</source>
         <translation>Kırmızıya kayma hatasını 0,02'ye çıkarın. Kozmik ağın ne kadarı ayakta kalıyor?</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/registry.py" line="664" />
+        <location filename="../gui/simulators/registry.py" line="701" />
         <source>In the correlation function, find the scale below which the mock has no structure.</source>
         <translation>Korelasyon fonksiyonunda, sahte evrenin altında hiç yapı taşımadığı ölçeği bulun.</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/registry.py" line="665" />
+        <location filename="../gui/simulators/registry.py" line="702" />
         <source>Raise the bias to 2.5. The galaxies clump harder — does ξ change shape or only height?</source>
         <translation>Yanlılığı 2,5'e çıkarın. Gökadalar daha güçlü kümeleniyor — ξ'nin biçimi mi değişiyor, yoksa yalnızca yüksekliği mi?</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/registry.py" line="674" />
+        <location filename="../gui/simulators/registry.py" line="712" />
         <source>CMB Sky Viewer</source>
         <translation>KMF Gökyüzü Görüntüleyici</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/registry.py" line="675" />
+        <location filename="../gui/simulators/registry.py" line="713" />
         <source>The real microwave sky, with the mask and the filters.</source>
         <translation>Gerçek mikrodalga gökyüzü; maskesi ve süzgeçleriyle.</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/registry.py" line="677" />
+        <location filename="../gui/simulators/registry.py" line="715" />
         <source>This is not a model. It is the WMAP nine-year map of the whole sky: the oldest light there is, released 380 000 years after the Big Bang, with the ripples that every galaxy grew from. Apply the analysis mask the team published, blur the map or keep only its fine detail, and measure what is left — the size of the spots, how alike two points are, and whether the distribution is the Gaussian inflation predicts.</source>
         <translation>Bu bir model değil. WMAP'in dokuz yıllık tüm gökyüzü haritası: var olan en eski ışık, Büyük Patlama'dan 380 000 yıl sonra salınmış ve her gökadanın içinden büyüdüğü dalgalanmaları taşıyor. Ekibin yayımladığı çözümleme maskesini uygula, haritayı bulanıklaştır ya da yalnızca ince ayrıntısını bırak ve geriye kalanı ölç — lekelerin boyutunu, iki noktanın birbirine ne kadar benzediğini ve dağılımın şişmenin öngördüğü Gauss dağılımı olup olmadığını.</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/registry.py" line="684" />
+        <location filename="../gui/simulators/registry.py" line="722" />
         <source>Turn the &lt;b&gt;KQ85 mask&lt;/b&gt; off and on. The bright band is our own galaxy, not the early universe.</source>
         <translation>&lt;b&gt;KQ85 maskesini&lt;/b&gt; kapatıp aç. Parlak şerit erken evren değil, kendi gökadamız.</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/registry.py" line="686" />
+        <location filename="../gui/simulators/registry.py" line="724" />
         <source>Raise &lt;b&gt;Smooth by&lt;/b&gt; and watch the rms fall in the summary.</source>
         <translation>&lt;b&gt;Şu kadar yumuşat&lt;/b&gt; değerini yükselt ve özetteki rms'in düşüşünü izle.</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/registry.py" line="687" />
+        <location filename="../gui/simulators/registry.py" line="725" />
         <source>Tick &lt;b&gt;keep only what is smaller&lt;/b&gt; to subtract the blur and leave the degree-scale spots.</source>
         <translation>Bulanıklığı çıkarıp derece ölçeğindeki lekeleri bırakmak için &lt;b&gt;yalnızca daha küçük olanı tut&lt;/b&gt; seçeneğini işaretle.</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/registry.py" line="689" />
+        <location filename="../gui/simulators/registry.py" line="727" />
         <source>Open &lt;b&gt;Correlation function&lt;/b&gt; and read the spot size off the half-way point.</source>
         <translation>&lt;b&gt;Korelasyon fonksiyonu&lt;/b&gt; sekmesini aç ve leke boyutunu yarıya düştüğü noktadan oku.</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/registry.py" line="690" />
+        <location filename="../gui/simulators/registry.py" line="728" />
         <source>Switch the &lt;b&gt;projection&lt;/b&gt; between Mollweide and longitude–latitude.</source>
         <translation>&lt;b&gt;İzdüşümü&lt;/b&gt; Mollweide ile boylam–enlem arasında değiştir.</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/registry.py" line="693" />
+        <location filename="../gui/simulators/registry.py" line="731" />
         <source>With the mask off, how much larger are the extremes? Whose light is that?</source>
         <translation>Maske kapalıyken uç değerler ne kadar büyüyor? Bu ışık kimin?</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/registry.py" line="694" />
+        <location filename="../gui/simulators/registry.py" line="732" />
         <source>Smooth by 5°. How much of the 67 µK is left, and what has been thrown away?</source>
         <translation>5° yumuşat. 67 µK'nin ne kadarı kaldı ve ne atıldı?</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/registry.py" line="695" />
+        <location filename="../gui/simulators/registry.py" line="733" />
         <source>In &lt;b&gt;How much survives blurring&lt;/b&gt;, find the scale where the curve bends.</source>
         <translation>&lt;b&gt;Bulanıklaştırmadan ne kadarı kalıyor&lt;/b&gt; sekmesinde eğrinin kırıldığı ölçeği bul.</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/registry.py" line="696" />
+        <location filename="../gui/simulators/registry.py" line="734" />
         <source>Compare the histogram with the Gaussian. Inflation predicts that shape.</source>
         <translation>Histogramı Gauss eğrisiyle karşılaştır. Şişme tam bu biçimi öngörür.</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/registry.py" line="697" />
+        <location filename="../gui/simulators/registry.py" line="735" />
         <source>Find the coldest spot. It is a real feature, and it has its own literature.</source>
         <translation>En soğuk lekeyi bul. Gerçek bir yapı ve kendine ait bir literatürü var.</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/registry.py" line="706" />
+        <location filename="../gui/simulators/registry.py" line="745" />
         <source>Recombination Explorer</source>
         <translation>Yeniden Birleşme Gezgini</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/registry.py" line="707" />
+        <location filename="../gui/simulators/registry.py" line="746" />
         <source>Why the universe became transparent at 3000 K, not 158 000 K.</source>
         <translation>Evren neden 158 000 K'de değil de 3000 K'de saydamlaştı.</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/registry.py" line="709" />
+        <location filename="../gui/simulators/registry.py" line="748" />
         <source>380 000 years after the Big Bang the free electrons were captured by protons, and light could suddenly travel for ever: that light is the cosmic microwave background. Follow the number of free electrons as the universe cools, compare the naive equilibrium answer with the real one, and see where the CMB photons scattered for the last time.</source>
         <translation>Büyük Patlama'dan 380 000 yıl sonra serbest elektronlar protonlar tarafından yakalandı ve ışık birden sonsuza dek yol alabilir oldu: o ışık kozmik mikrodalga fonudur. Evren soğudukça serbest elektronların sayısını izleyin, saf denge cevabını gerçeğiyle karşılaştırın ve KMF fotonlarının son kez nerede saçıldığını görün.</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/registry.py" line="715" />
+        <location filename="../gui/simulators/registry.py" line="754" />
         <source>Read &lt;b&gt;Free electrons&lt;/b&gt;: the solid curve is the real history, the dashed one the Saha equilibrium it lags behind.</source>
         <translation>&lt;b&gt;Serbest elektronlar&lt;/b&gt; sekmesini okuyun: düz eğri gerçek tarih, kesikli eğri ise onun geride kaldığı Saha dengesidir.</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/registry.py" line="717" />
+        <location filename="../gui/simulators/registry.py" line="756" />
         <source>Open &lt;b&gt;The last-scattering surface&lt;/b&gt; to see where the photons we receive today were last deflected, and how thick that shell is.</source>
         <translation>Bugün aldığımız fotonların en son nerede saptığını ve o kabuğun ne kadar kalın olduğunu görmek için &lt;b&gt;Son saçılma yüzeyi&lt;/b&gt; sekmesini açın.</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/registry.py" line="719" />
+        <location filename="../gui/simulators/registry.py" line="758" />
         <source>Open &lt;b&gt;Why so cold?&lt;/b&gt; to count the photons that can still ionise an atom.</source>
         <translation>Bir atomu hâlâ iyonlaştırabilen fotonları saymak için &lt;b&gt;Neden bu kadar soğuk?&lt;/b&gt; sekmesini açın.</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/registry.py" line="720" />
+        <location filename="../gui/simulators/registry.py" line="759" />
         <source>Change the &lt;b&gt;baryon density&lt;/b&gt; or today's &lt;b&gt;CMB temperature&lt;/b&gt; and watch the moment of transparency move.</source>
         <translation>&lt;b&gt;Baryon yoğunluğunu&lt;/b&gt; ya da bugünkü &lt;b&gt;KMF sıcaklığını&lt;/b&gt; değiştirin ve saydamlaşma anının kaymasını izleyin.</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/registry.py" line="724" />
+        <location filename="../gui/simulators/registry.py" line="763" />
         <source>At what temperature is half of the hydrogen neutral? Compare it with 13.6 eV.</source>
         <translation>Hidrojenin yarısı hangi sıcaklıkta nötr? Bunu 13,6 eV ile karşılaştırın.</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/registry.py" line="725" />
+        <location filename="../gui/simulators/registry.py" line="764" />
         <source>How much later than Saha does the real recombination happen, and why?</source>
         <translation>Gerçek yeniden birleşme Saha'dan ne kadar sonra oluyor ve neden?</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/registry.py" line="726" />
+        <location filename="../gui/simulators/registry.py" line="765" />
         <source>Switch to the logarithmic axis. How many electrons never find a proton?</source>
         <translation>Logaritmik eksene geçin. Kaç elektron hiç proton bulamıyor?</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/registry.py" line="727" />
+        <location filename="../gui/simulators/registry.py" line="766" />
         <source>Double today's CMB temperature. Does last scattering happen at a different temperature, or only at a different redshift?</source>
         <translation>Bugünkü KMF sıcaklığını ikiye katlayın. Son saçılma farklı bir sıcaklıkta mı oluyor, yoksa yalnızca farklı bir kırmızıya kaymada mı?</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/registry.py" line="729" />
+        <location filename="../gui/simulators/registry.py" line="768" />
         <source>Lower Ωb h² to 0.01. What happens to the electrons left over?</source>
         <translation>Ωb h²'yi 0,01'e düşürün. Geride kalan elektronlara ne oluyor?</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/registry.py" line="738" />
+        <location filename="../gui/simulators/registry.py" line="778" />
         <source>The Far Future</source>
         <translation>Uzak Gelecek</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/registry.py" line="739" />
+        <location filename="../gui/simulators/registry.py" line="779" />
         <source>Heat death, Big Rip or Big Crunch: how the universe ends.</source>
         <translation>Isıl ölüm, Büyük Yırtılma ya da Büyük Çöküş: evren nasıl sona erer.</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/registry.py" line="741" />
+        <location filename="../gui/simulators/registry.py" line="781" />
         <source>Run the universe forward. Choose what the dark energy does and follow the expansion for hundreds of billions of years, then along a timeline that reaches 10¹⁰⁰ years: the last stars, evaporating galaxies and black holes. If the dark energy is phantom, watch the Big Rip take apart clusters, galaxies, the Solar System and finally atoms.</source>
         <translation>Evreni ileri doğru çalıştırın. Karanlık enerjinin ne yaptığını seçin ve genişlemeyi yüz milyarlarca yıl boyunca, ardından 10¹⁰⁰ yıla uzanan bir zaman çizelgesi boyunca izleyin: son yıldızlar, buharlaşan gökadalar ve kara delikler. Karanlık enerji hayaletse, Büyük Yırtılma'nın kümeleri, gökadaları, Güneş Sistemi'ni ve sonunda atomları parçalamasını izleyin.</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/registry.py" line="747" />
+        <location filename="../gui/simulators/registry.py" line="787" />
         <source>Pick a &lt;b&gt;universe&lt;/b&gt;, or move the sliders to make your own.</source>
         <translation>Bir &lt;b&gt;evren&lt;/b&gt; seçin ya da kendinizinkini yapmak için kaydırıcıları oynatın.</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/registry.py" line="748" />
+        <location filename="../gui/simulators/registry.py" line="788" />
         <source>&lt;b&gt;Expansion&lt;/b&gt; shows the size of the universe from today onwards; a dashed line marks the end, if there is one.</source>
         <translation>&lt;b&gt;Genişleme&lt;/b&gt; bugünden itibaren evrenin boyutunu gösterir; varsa sonu kesikli bir çizgi işaretler.</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/registry.py" line="750" />
+        <location filename="../gui/simulators/registry.py" line="790" />
         <source>&lt;b&gt;The next 10¹⁰⁰ years&lt;/b&gt; puts the milestones on a logarithmic axis. Faded ones never happen in this universe.</source>
         <translation>&lt;b&gt;Önümüzdeki 10¹⁰⁰ yıl&lt;/b&gt; kilometre taşlarını logaritmik bir eksene yerleştirir. Soluk olanlar bu evrende hiç gerçekleşmez.</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/registry.py" line="752" />
+        <location filename="../gui/simulators/registry.py" line="792" />
         <source>&lt;b&gt;Big Rip countdown&lt;/b&gt; shows when each bound system is torn apart.</source>
         <translation>&lt;b&gt;Büyük Yırtılma geri sayımı&lt;/b&gt; her bağlı sistemin ne zaman parçalandığını gösterir.</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/registry.py" line="753" />
+        <location filename="../gui/simulators/registry.py" line="793" />
         <source>&lt;b&gt;Galaxies we can still reach&lt;/b&gt; counts the galaxies a message sent at each moment could ever arrive at.</source>
         <translation>&lt;b&gt;Hâlâ ulaşabileceğimiz gökadalar&lt;/b&gt;, her an gönderilen bir mesajın bir gün varabileceği gökadaları sayar.</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/registry.py" line="757" />
+        <location filename="../gui/simulators/registry.py" line="797" />
         <source>In our universe, what fraction of the galaxies we can see could we still reach today?</source>
         <translation>Bizim evrenimizde, görebildiğimiz gökadaların ne kadarına bugün hâlâ ulaşabiliriz?</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/registry.py" line="758" />
+        <location filename="../gui/simulators/registry.py" line="798" />
         <source>Choose w = −1.5. How long before the Big Rip does the Earth explode?</source>
         <translation>w = −1,5 seçin. Dünya, Büyük Yırtılma'dan ne kadar önce patlıyor?</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/registry.py" line="759" />
+        <location filename="../gui/simulators/registry.py" line="799" />
         <source>Bring w from −1.5 towards −1. How fast does the Big Rip recede?</source>
         <translation>w'yi −1,5'ten −1'e doğru getirin. Büyük Yırtılma ne kadar hızlı uzaklaşıyor?</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/registry.py" line="760" />
+        <location filename="../gui/simulators/registry.py" line="800" />
         <source>Give dark energy a negative value. When does the Big Crunch come?</source>
         <translation>Karanlık enerjiye negatif bir değer verin. Büyük Çöküş ne zaman geliyor?</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/registry.py" line="761" />
+        <location filename="../gui/simulators/registry.py" line="801" />
         <source>Switch dark energy off. Which milestones stop happening, and why?</source>
         <translation>Karanlık enerjiyi kapatın. Hangi kilometre taşları artık gerçekleşmiyor ve neden?</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/registry.py" line="770" />
+        <location filename="../gui/simulators/registry.py" line="811" />
         <source>Halo Mass Function Explorer</source>
         <translation>Hale Kütle Fonksiyonu Gezgini</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/registry.py" line="771" />
+        <location filename="../gui/simulators/registry.py" line="812" />
         <source>How many haloes of each mass, when — and why clusters weigh σ8.</source>
         <translation>Her kütleden ne kadar hale, ne zaman — ve kümeler σ8'i neden tartar.</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/registry.py" line="773" />
+        <location filename="../gui/simulators/registry.py" line="814" />
         <source>Every galaxy lives in a halo of dark matter, and the halo mass function says how many haloes of each mass there are. It follows from the ripples in the early universe alone: a region collapses once its overdensity passes a threshold. Go back in time to the first star-forming haloes, or count the giant clusters on today's sky and see how steeply they depend on σ8.</source>
         <translation>Her gökada bir karanlık madde halesinin içinde yaşar ve hale kütle fonksiyonu her kütleden ne kadar hale olduğunu söyler. Yalnızca erken evrendeki dalgacıklardan çıkar: bir bölge, aşırı yoğunluğu bir eşiği geçince çöker. Zamanda ilk yıldız oluşturan halelere geri gidin ya da bugünkü gökyüzündeki dev kümeleri sayın ve σ8'e ne kadar dik biçimde bağlı olduklarını görün.</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/registry.py" line="779" />
+        <location filename="../gui/simulators/registry.py" line="820" />
         <source>Move &lt;b&gt;σ8&lt;/b&gt; and &lt;b&gt;Ωm&lt;/b&gt;; the dashed curves stay at Planck 2018 for comparison.</source>
         <translation>&lt;b&gt;σ8&lt;/b&gt; ve &lt;b&gt;Ωm&lt;/b&gt; değerlerini oynatın; kesikli eğriler karşılaştırma için Planck 2018 değerlerinde kalır.</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/registry.py" line="780" />
+        <location filename="../gui/simulators/registry.py" line="821" />
         <source>&lt;b&gt;Mass function&lt;/b&gt; shows how many haloes there are of each mass at the chosen &lt;b&gt;redshift&lt;/b&gt;.</source>
         <translation>&lt;b&gt;Kütle fonksiyonu&lt;/b&gt;, seçilen &lt;b&gt;kırmızıya kaymada&lt;/b&gt; her kütleden ne kadar hale olduğunu gösterir.</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/registry.py" line="782" />
+        <location filename="../gui/simulators/registry.py" line="823" />
         <source>&lt;b&gt;Clusters on the sky&lt;/b&gt; counts every halo above the &lt;b&gt;threshold&lt;/b&gt; out to z = 1, for several values of σ8.</source>
         <translation>&lt;b&gt;Gökyüzündeki kümeler&lt;/b&gt;, birkaç σ8 değeri için z = 1'e kadar &lt;b&gt;eşiğin&lt;/b&gt; üzerindeki her haleyi sayar.</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/registry.py" line="784" />
+        <location filename="../gui/simulators/registry.py" line="825" />
         <source>&lt;b&gt;Rare peaks&lt;/b&gt; shows σ(M): a halo forms where it crosses δc = 1.686.</source>
         <translation>&lt;b&gt;Seyrek tepeler&lt;/b&gt; σ(M) eğrisini gösterir: bir hale, eğrinin δc = 1,686 değerini geçtiği yerde oluşur.</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/registry.py" line="785" />
+        <location filename="../gui/simulators/registry.py" line="826" />
         <source>&lt;b&gt;Across cosmic time&lt;/b&gt; follows small haloes, galaxies and clusters from z = 20 to today.</source>
         <translation>&lt;b&gt;Kozmik zaman boyunca&lt;/b&gt; küçük haleleri, gökadaları ve kümeleri z = 20'den bugüne izler.</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/registry.py" line="789" />
+        <location filename="../gui/simulators/registry.py" line="830" />
         <source>Raise σ8 by 10%. How much do the clusters above 10¹⁵ M☉/h change?</source>
         <translation>σ8'i %10 artırın. 10¹⁵ M☉/h üstü kümeler ne kadar değişiyor?</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/registry.py" line="790" />
+        <location filename="../gui/simulators/registry.py" line="831" />
         <source>Lower the threshold to 10¹³ M☉/h and repeat. Is the effect smaller?</source>
         <translation>Eşiği 10¹³ M☉/h'e indirip tekrarlayın. Etki daha mı küçük?</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/registry.py" line="791" />
+        <location filename="../gui/simulators/registry.py" line="832" />
         <source>Go to z = 20. How many haloes can make the first stars?</source>
         <translation>z = 20'ye gidin. Kaç hale ilk yıldızları yapabilir?</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/registry.py" line="792" />
+        <location filename="../gui/simulators/registry.py" line="833" />
         <source>Find the redshift at which the typical collapsing halo was the size of the Milky Way.</source>
         <translation>Çöken tipik halenin Samanyolu büyüklüğünde olduğu kırmızıya kaymayı bulun.</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/registry.py" line="793" />
+        <location filename="../gui/simulators/registry.py" line="834" />
         <source>Switch between Press–Schechter and Sheth–Tormen. Where do they disagree most?</source>
         <translation>Press–Schechter ile Sheth–Tormen arasında geçiş yapın. En çok nerede ayrışıyorlar?</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/registry.py" line="802" />
+        <location filename="../gui/simulators/registry.py" line="844" />
         <source>21-cm Global Signal Explorer</source>
         <translation>21-cm Küresel Sinyal Gezgini</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/registry.py" line="803" />
+        <location filename="../gui/simulators/registry.py" line="845" />
         <source>Listen to hydrogen from the dark ages and the first stars.</source>
         <translation>Karanlık çağlardan ve ilk yıldızlardan gelen hidrojeni dinleyin.</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/registry.py" line="805" />
+        <location filename="../gui/simulators/registry.py" line="847" />
         <source>Neutral hydrogen absorbs and emits at 21 cm, and that line, stretched by the expansion, arrives today at radio frequencies between about 10 and 200 MHz. Averaged over the whole sky it records the history of the gas: cooling in the dark ages, the first starlight, the first X-ray heating and reionisation. Change the astrophysics and compare with the contested EDGES detection.</source>
         <translation>Nötr hidrojen 21 cm'de soğurur ve salar; genişlemeyle gerilen bu çizgi bugün yaklaşık 10 ile 200 MHz arasındaki radyo frekanslarında ulaşır. Tüm gökyüzü üzerinden ortalandığında gazın tarihini kaydeder: karanlık çağlardaki soğuma, ilk yıldız ışığı, ilk X-ışını ısınması ve yeniden iyonlaşma. Astrofiziği değiştirin ve tartışmalı EDGES algılamasıyla karşılaştırın.</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/registry.py" line="812" />
+        <location filename="../gui/simulators/registry.py" line="854" />
         <source>&lt;b&gt;The global signal&lt;/b&gt; shows the brightness temperature against frequency; the top axis gives the redshift.</source>
         <translation>&lt;b&gt;Küresel sinyal&lt;/b&gt; parlaklık sıcaklığını frekansa karşı gösterir; üst eksen kırmızıya kaymayı verir.</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/registry.py" line="814" />
+        <location filename="../gui/simulators/registry.py" line="856" />
         <source>Move &lt;b&gt;Lyman-α coupling&lt;/b&gt; to change when the first stars light up, and &lt;b&gt;X-ray heating&lt;/b&gt; to change when and how much the gas is warmed.</source>
         <translation>İlk yıldızların ne zaman yandığını değiştirmek için &lt;b&gt;Lyman-α bağlaşımını&lt;/b&gt;, gazın ne zaman ve ne kadar ısındığını değiştirmek için &lt;b&gt;X-ışını ısınmasını&lt;/b&gt; oynatın.</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/registry.py" line="816" />
+        <location filename="../gui/simulators/registry.py" line="858" />
         <source>&lt;b&gt;Three temperatures&lt;/b&gt; shows why: absorption wherever the spin temperature is below the background.</source>
         <translation>&lt;b&gt;Üç sıcaklık&lt;/b&gt; nedenini gösterir: spin sıcaklığının arka planın altında olduğu her yerde soğurma olur.</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/registry.py" line="818" />
+        <location filename="../gui/simulators/registry.py" line="860" />
         <source>&lt;b&gt;What couples the spins&lt;/b&gt; shows collisions giving way to starlight.</source>
         <translation>&lt;b&gt;Spinleri ne bağlar&lt;/b&gt;, çarpışmaların yerini yıldız ışığına bırakmasını gösterir.</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/registry.py" line="819" />
+        <location filename="../gui/simulators/registry.py" line="861" />
         <source>Add an &lt;b&gt;extra radio background&lt;/b&gt; to try to reach the depth EDGES reported.</source>
         <translation>EDGES'in bildirdiği derinliğe ulaşmayı denemek için &lt;b&gt;ek radyo arka planı&lt;/b&gt; ekleyin.</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/registry.py" line="822" />
+        <location filename="../gui/simulators/registry.py" line="864" />
         <source>Where is the dark-ages trough, and why can it not be seen from the ground?</source>
         <translation>Karanlık çağ çukuru nerede ve neden yerden görülemiyor?</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/registry.py" line="823" />
+        <location filename="../gui/simulators/registry.py" line="865" />
         <source>Switch the X-ray heating off. What happens to the emission?</source>
         <translation>X-ışını ısınmasını kapatın. Salınıma ne oluyor?</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/registry.py" line="824" />
+        <location filename="../gui/simulators/registry.py" line="866" />
         <source>Make the first stars form later. Which way does the trough move in frequency?</source>
         <translation>İlk yıldızların daha geç oluşmasını sağlayın. Çukur frekansta hangi yöne kayıyor?</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/registry.py" line="825" />
+        <location filename="../gui/simulators/registry.py" line="867" />
         <source>How big a radio background does it take to match EDGES?</source>
         <translation>EDGES'i yakalamak için ne büyüklükte bir radyo arka planı gerekiyor?</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/registry.py" line="826" />
+        <location filename="../gui/simulators/registry.py" line="868" />
         <source>Delay reionisation to z = 6. What changes at the high-frequency end?</source>
         <translation>Yeniden iyonlaşmayı z = 6'ya erteleyin. Yüksek frekans ucunda ne değişiyor?</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/registry.py" line="835" />
+        <location filename="../gui/simulators/registry.py" line="878" />
         <source>Dark Matter Detection</source>
         <translation>Karanlık Madde Algılama</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/registry.py" line="836" />
+        <location filename="../gui/simulators/registry.py" line="879" />
         <source>Build an underground detector and draw your own exclusion curve.</source>
         <translation>Bir yeraltı dedektörü kurun ve kendi dışlama eğrinizi çizin.</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/registry.py" line="838" />
+        <location filename="../gui/simulators/registry.py" line="881" />
         <source>If dark matter is made of WIMPs, a few of them should bounce off atomic nuclei in a detector deep underground. Choose the target, the size, the threshold and the background of your detector, pick a WIMP, and see the recoil spectrum it would leave, the events of a single run, the yearly modulation — and the exclusion curve a null result would draw.</source>
         <translation>Karanlık madde WIMP'lerden oluşuyorsa, birkaçı yerin derinlerindeki bir dedektörde atom çekirdeklerinden sekmeli. Dedektörünüzün hedefini, boyutunu, eşiğini ve arka planını seçin, bir WIMP seçin ve bırakacağı geri tepme tayfını, tek bir çalışmanın olaylarını, yıllık modülasyonu — ve boş bir sonucun çizeceği dışlama eğrisini görün.</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/registry.py" line="844" />
+        <location filename="../gui/simulators/registry.py" line="887" />
         <source>Start from an &lt;b&gt;experiment&lt;/b&gt;, or change the target, exposure, threshold and background yourself.</source>
         <translation>Bir &lt;b&gt;deneyden&lt;/b&gt; başlayın ya da hedefi, maruz kalmayı, eşiği ve arka planı kendiniz değiştirin.</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/registry.py" line="846" />
+        <location filename="../gui/simulators/registry.py" line="889" />
         <source>Set the &lt;b&gt;WIMP mass&lt;/b&gt; and &lt;b&gt;cross-section&lt;/b&gt;. The summary says how many events it would give and whether it would be discovered, excluded or hidden.</source>
         <translation>&lt;b&gt;WIMP kütlesini&lt;/b&gt; ve &lt;b&gt;tesir kesitini&lt;/b&gt; ayarlayın. Özet, kaç olay vereceğini ve keşfedileceğini, dışlanacağını ya da gizli kalacağını söyler.</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/registry.py" line="848" />
+        <location filename="../gui/simulators/registry.py" line="891" />
         <source>&lt;b&gt;Exclusion curve&lt;/b&gt;: everything above your curve would have been seen. Your WIMP is the round dot.</source>
         <translation>&lt;b&gt;Dışlama eğrisi&lt;/b&gt;: eğrinizin üzerindeki her şey görülürdü. Sizin WIMP'iniz yuvarlak noktadır.</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/registry.py" line="850" />
+        <location filename="../gui/simulators/registry.py" line="893" />
         <source>&lt;b&gt;A simulated run&lt;/b&gt; draws one random outcome; press &lt;b&gt;Run the experiment again&lt;/b&gt; for another.</source>
         <translation>&lt;b&gt;Benzetilmiş bir çalışma&lt;/b&gt; rastgele bir sonuç çeker; bir başkası için &lt;b&gt;Deneyi yeniden çalıştır&lt;/b&gt; düğmesine basın.</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/registry.py" line="852" />
+        <location filename="../gui/simulators/registry.py" line="895" />
         <source>&lt;b&gt;Annual modulation&lt;/b&gt; shows the few-per-cent yearly swing as the Earth orbits the Sun.</source>
         <translation>&lt;b&gt;Yıllık modülasyon&lt;/b&gt;, Dünya Güneş'in etrafında dönerken oluşan yüzde birkaçlık yıllık salınımı gösterir.</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/registry.py" line="855" />
+        <location filename="../gui/simulators/registry.py" line="898" />
         <source>With the xenon detector, at what WIMP mass is the limit strongest? Why does it weaken on both sides?</source>
         <translation>Ksenon dedektörüyle sınır hangi WIMP kütlesinde en güçlü? Neden iki yanda da zayıflıyor?</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/registry.py" line="857" />
+        <location filename="../gui/simulators/registry.py" line="900" />
         <source>Set the WIMP mass to 5 GeV. Which detector can still see it?</source>
         <translation>WIMP kütlesini 5 GeV'e ayarlayın. Hangi dedektör onu hâlâ görebilir?</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/registry.py" line="858" />
+        <location filename="../gui/simulators/registry.py" line="901" />
         <source>Double the exposure with no background. How much lower does the curve go? Now add 20 background events.</source>
         <translation>Arka plan yokken maruz kalmayı ikiye katlayın. Eğri ne kadar aşağı iniyor? Şimdi 20 arka plan olayı ekleyin.</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/registry.py" line="860" />
+        <location filename="../gui/simulators/registry.py" line="903" />
         <source>Find a WIMP that is excluded but would not have been discovered.</source>
         <translation>Dışlanan ama keşfedilmeyecek bir WIMP bulun.</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/registry.py" line="861" />
+        <location filename="../gui/simulators/registry.py" line="904" />
         <source>Run the same experiment several times. How much does the number of events jump?</source>
         <translation>Aynı deneyi birkaç kez çalıştırın. Olay sayısı ne kadar sıçrıyor?</translation>
     </message>
