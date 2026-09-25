@@ -312,6 +312,38 @@ def icon(name: str, color: str | None = None, size: int = 18) -> QIcon:
     return built
 
 
+def text_icon(character: str, color: str | None = None, size: int = 18) -> QIcon:
+    """A simulator's own symbol, drawn on the same grid and in the same colour.
+
+    The simulators are told apart by a mathematical or geometric sign rather than a
+    hand-drawn glyph. Painting the sign into an icon, instead of pasting it into a
+    label, puts it on the same baseline and gives it the theme's colour.
+    """
+    if not character:
+        return QIcon()
+    color = color or theme().palette.text
+    key = (f"text:{character}", color, size)
+    cached = _cache.get(key)
+    if cached is not None:
+        return cached
+    side = size * OVERSAMPLE
+    pixmap = QPixmap(side, side)
+    pixmap.fill(Qt.transparent)
+    painter = QPainter(pixmap)
+    painter.setRenderHint(QPainter.Antialiasing)
+    painter.setRenderHint(QPainter.TextAntialiasing)
+    painter.scale(side / GRID, side / GRID)
+    font = painter.font()
+    font.setPixelSize(17)
+    painter.setFont(font)
+    painter.setPen(QColor(color))
+    painter.drawText(QRectF(0, 0, GRID, GRID), Qt.AlignCenter, character)
+    painter.end()
+    built = QIcon(pixmap)
+    _cache[key] = built
+    return built
+
+
 def clear_cache() -> None:
     """Forget the drawn icons, so the next theme draws its own."""
     _cache.clear()

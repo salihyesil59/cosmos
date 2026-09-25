@@ -267,3 +267,5 @@ on screen before you ask for it.
   a readable text measure, and one set of icons drawn in code instead of emoji
 - [x] ★ `D2` A window that stays where you put it, and a test that keeps every page
   inside the smallest window the app offers
+- [x] `D3` One icon language everywhere: no emoji left in the interface, and the
+  simulators' own symbols drawn through the same pipeline as the rest

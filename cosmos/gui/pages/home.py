@@ -15,6 +15,7 @@ from PySide6.QtWidgets import (
     QWidget,
 )
 
+from cosmos.gui import nav_icons
 from cosmos.gui.context import AppContext
 from cosmos.gui.simulators.registry import SIMULATORS
 from cosmos.gui.widgets.common import FlowLayout, card, centred, muted_label, title_label
@@ -211,7 +212,9 @@ class HomePage(QWidget):
         sims = FlowLayout(spacing=8)
         for info in SIMULATORS.values():
             # "&" would otherwise become a keyboard mnemonic and vanish from the label.
-            btn = QPushButton(f"{info.icon}  {tr(info.title)}".replace("&", "&&"))
+            btn = QPushButton(tr(info.title).replace("&", "&&"))
+            btn.setIcon(nav_icons.text_icon(info.icon, size=16))
+            btn.setProperty("symbol", info.icon)        # so a theme change can redraw it
             btn.setStyleSheet("QPushButton { text-align: left; padding: 9px 12px; }")
             # One line each, with the tagline in the tooltip: 29 two-line buttons made
             # a wall of text on the page a learner sees first (D1).

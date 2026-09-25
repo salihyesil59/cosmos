@@ -20,7 +20,9 @@ KIND_COUNTS = {
     "formula": (tr_noop("{n} formula"), tr_noop("{n} formulas")),
     "problem": (tr_noop("{n} problem"), tr_noop("{n} problems")),
 }
-KIND_ICONS = {"lesson": "📖", "glossary": "🔤", "simulator": "🧪", "formula": "∑", "problem": "✏"}
+# The drawn glyph for each kind of hit; see ``cosmos.gui.nav_icons``.
+KIND_GLYPHS = {"lesson": "course", "glossary": "glossary", "simulator": "simulator",
+               "formula": "reference", "problem": "problems"}
 SNIPPET_CHARS = 150
 
 
@@ -34,8 +36,9 @@ class SearchHit:
     score: float
 
     @property
-    def icon(self) -> str:
-        return KIND_ICONS[self.kind]
+    def glyph(self) -> str:
+        """The name of the icon this kind of hit is shown with."""
+        return KIND_GLYPHS[self.kind]
 
     @property
     def label(self) -> str:
@@ -106,7 +109,7 @@ def search(ctx: AppContext, query: str, limit: int = 60) -> list[SearchHit]:
         score = _score(needle, [(title, 100), (info.id, 80), (tr(info.tagline), 45),
                                 (description, 30), (extra, 12)])
         if score:
-            hits.append(SearchHit("simulator", f"sim:{info.id}", f"{info.icon}  {title}",
+            hits.append(SearchHit("simulator", f"sim:{info.id}", title,
                                   f"Simulator {info.id}", _snippet(description, needle), score))
 
     for formula in load_formulas():

@@ -81,6 +81,7 @@ class NotesPanel(QWidget):
             self.status.setText("")
             return
         self.page_label.setText(route_title(self.ctx, self.route))
+        self.page_label.setToolTip(route_title(self.ctx, self.route))
         self.editor.blockSignals(True)
         self.editor.setPlainText(self.ctx.store.note(self.route))
         self.editor.blockSignals(False)

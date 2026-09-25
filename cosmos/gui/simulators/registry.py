@@ -488,7 +488,7 @@ SIMULATORS: dict[str, SimulatorInfo] = {
             lessons=["L4.3", "L4.2", "L4.5"],
             module="cosmos.gui.simulators.bbn_explorer",
             class_name="BBNExplorerSimulator",
-            icon="⚛",
+            icon="⊕",
         ),
         SimulatorInfo(
             id="S17",
@@ -541,7 +541,7 @@ SIMULATORS: dict[str, SimulatorInfo] = {
             lessons=["L7.2", "L7.3", "L7.1", "L3.3", "L6.6"],
             module="cosmos.gui.simulators.mcmc_sim",
             class_name="MCMCSimulator",
-            icon="⛓",
+            icon="⇌",
         ),
         SimulatorInfo(
             id="S20",
@@ -571,7 +571,7 @@ SIMULATORS: dict[str, SimulatorInfo] = {
             lessons=["L7.3", "L7.6", "L1.1", "L6.6"],
             module="cosmos.gui.simulators.ladder_sim",
             class_name="LadderSimulator",
-            icon="🪜",
+            icon="≣",
         ),
         SimulatorInfo(
             id="S21",
@@ -600,7 +600,7 @@ SIMULATORS: dict[str, SimulatorInfo] = {
             lessons=["L7.4", "L7.6", "L5.2"],
             module="cosmos.gui.simulators.survey_sim",
             class_name="SurveySimulator",
-            icon="🗺",
+            icon="▦",
         ),
         SimulatorInfo(
             id="S22",
@@ -667,7 +667,7 @@ SIMULATORS: dict[str, SimulatorInfo] = {
             lessons=["L7.5", "L1.4", "L5.4", "L7.4"],
             module="cosmos.gui.simulators.slice_sim",
             class_name="SliceSimulator",
-            icon="🕸",
+            icon="◔",
         ),
         SimulatorInfo(
             id="S24",
@@ -699,7 +699,7 @@ SIMULATORS: dict[str, SimulatorInfo] = {
             lessons=["L5.1", "L4.4", "L5.7", "L1.5"],
             module="cosmos.gui.simulators.sky_sim",
             class_name="SkySimulator",
-            icon="🌌",
+            icon="⊛",
         ),
         SimulatorInfo(
             id="S25",
@@ -731,7 +731,7 @@ SIMULATORS: dict[str, SimulatorInfo] = {
             lessons=["L4.4", "L1.5", "L5.1", "L4.2"],
             module="cosmos.gui.simulators.recombination_sim",
             class_name="RecombinationSimulator",
-            icon="⚛",
+            icon="◍",
         ),
         SimulatorInfo(
             id="S26",
@@ -763,7 +763,7 @@ SIMULATORS: dict[str, SimulatorInfo] = {
             lessons=["L6.10", "L3.3", "L2.6", "L6.9"],
             module="cosmos.gui.simulators.future_sim",
             class_name="FutureSimulator",
-            icon="⌛",
+            icon="⇢",
         ),
         SimulatorInfo(
             id="S27",
@@ -828,7 +828,7 @@ SIMULATORS: dict[str, SimulatorInfo] = {
             lessons=["L6.4", "L4.8"],
             module="cosmos.gui.simulators.global21_sim",
             class_name="Global21Simulator",
-            icon="📡",
+            icon="⇣",
         ),
         SimulatorInfo(
             id="S29",
@@ -863,7 +863,7 @@ SIMULATORS: dict[str, SimulatorInfo] = {
             lessons=["L3.6", "L3.2", "L6.8"],
             module="cosmos.gui.simulators.detection_sim",
             class_name="DetectionSimulator",
-            icon="⛏",
+            icon="⊗",
         ),
     ]
 }

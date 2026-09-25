@@ -17,6 +17,7 @@ from PySide6.QtWidgets import (
 
 from cosmos.content.loader import load_problems
 from cosmos.content.models import Problem
+from cosmos.gui import nav_icons
 from cosmos.gui.context import AppContext
 from cosmos.gui.simulators.registry import SIMULATORS
 from cosmos.gui.widgets.common import Banner, FlowLayout, muted_label, title_label
@@ -216,7 +217,9 @@ class ProblemsPage(QWidget):
         self.sim_btn.setVisible(has_simulator)
         if has_simulator:
             info = SIMULATORS[problem.simulator]
-            self.sim_btn.setText(f"{info.icon}  {tr(info.title)}".replace("&", "&&"))
+            self.sim_btn.setText(tr(info.title).replace("&", "&&"))
+            self.sim_btn.setIcon(nav_icons.text_icon(info.icon, size=16))
+            self.sim_btn.setProperty("symbol", info.icon)
         self.unit.setText(problem.unit)
         self.answer.clear()
         self.feedback.hide()
