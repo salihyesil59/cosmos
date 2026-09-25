@@ -23,6 +23,10 @@ format may still change between releases.
 
 ### Fixed
 
+- **Markdown tables are laid out to the width they have**, rather than to the width
+  their contents would like. The report card of *Build Your Own Universe* ran 242
+  pixels past the edge of its pane on a narrow window in a wide font; now its cells
+  wrap. (99% of the width, not 100%: the one-pixel border is drawn outside it.)
 - "best quiz score" beside a lesson's status was the one line of English left
   untranslated in the interface. Both packs now carry it.
 
