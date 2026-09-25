@@ -27,6 +27,9 @@ format may still change between releases.
   their contents would like. The report card of *Build Your Own Universe* ran 242
   pixels past the edge of its pane on a narrow window in a wide font; now its cells
   wrap. (99% of the width, not 100%: the one-pixel border is drawn outside it.)
+  That report card compares four things at once, and four columns have a width
+  below which they cannot be squeezed; in the smallest window its pane is narrower
+  than that, so there alone it is scrolled sideways rather than clipped.
 - "best quiz score" beside a lesson's status was the one line of English left
   untranslated in the interface. Both packs now carry it.
 
