@@ -4,6 +4,7 @@ from __future__ import annotations
 
 import re
 
+from PySide6.QtCore import Qt
 from PySide6.QtWidgets import (
     QButtonGroup,
     QHBoxLayout,
@@ -17,6 +18,7 @@ from PySide6.QtWidgets import (
 from cosmos import review
 from cosmos.content.loader import load_problems
 from cosmos.content.models import Lesson, split_remember
+from cosmos.gui import nav_icons
 from cosmos.gui.context import AppContext
 from cosmos.gui.simulators.registry import SIMULATORS
 from cosmos.gui.rendering.lesson_html import FULL_VIEW, INTUITIVE_VIEW
@@ -89,32 +91,38 @@ class LessonPage(QWidget):
         self.quiz.answered_question.connect(self._question_answered)
         self.quiz.nextLessonRequested.connect(self._go_next)
         self.quiz.reviewRequested.connect(lambda: self.tabs.setCurrentIndex(0))
-        self.tabs.addTab(self.browser, "📖  " + tr("Lesson"))
-        self.tabs.addTab(self.quiz, "✎  " + tr("Quiz"))
+        self.tabs.addTab(self.browser, nav_icons.icon("glossary", size=16), tr("Lesson"))
+        self.tabs.addTab(self.quiz, nav_icons.icon("problems", size=16), tr("Quiz"))
         self.teacher = RichBrowser(font_pt=11.0)
-        self.teacher_tab = self.tabs.addTab(self.teacher, "🎓  " + tr("Teacher notes"))
+        self.teacher_tab = self.tabs.addTab(self.teacher, nav_icons.icon("classroom", size=16),
+                                            tr("Teacher notes"))
         self.tabs.setTabVisible(self.teacher_tab, False)
         root.addWidget(self.tabs, 1)
 
         nav = QHBoxLayout()
-        self.prev_btn = QPushButton(tr("◀ Previous lesson"))
+        self.prev_btn = QPushButton(tr("Previous lesson"))
+        self.prev_btn.setIcon(nav_icons.icon("back", size=14))
         self.prev_btn.clicked.connect(self._go_prev)
         nav.addWidget(self.prev_btn)
         self.sim_buttons = QHBoxLayout()
         nav.addStretch(1)
         nav.addLayout(self.sim_buttons)
         nav.addStretch(1)
-        self.terms_btn = QPushButton("🃏 " + tr("Add the terms to my flashcards"))
+        self.terms_btn = QPushButton(tr("Add the terms to my flashcards"))
         self.terms_btn.setToolTip(tr("Put every glossary term this lesson uses into your flashcard deck. They "
                                      "come back on the Review page until you know them."))
         self.terms_btn.clicked.connect(self._add_terms)
         nav.addWidget(self.terms_btn)
-        self.quiz_btn = QPushButton(tr("Take the quiz ▶"))
+        self.quiz_btn = QPushButton(tr("Take the quiz"))
+        self.quiz_btn.setLayoutDirection(Qt.RightToLeft)
+        self.quiz_btn.setIcon(nav_icons.icon("forward", size=14))
         self.quiz_btn.setObjectName("quizButton")
         self.quiz_btn.setProperty("role", "primary")
         self.quiz_btn.clicked.connect(self._open_quiz)
         nav.addWidget(self.quiz_btn)
-        self.next_btn = QPushButton(tr("Next lesson ▶"))
+        self.next_btn = QPushButton(tr("Next lesson"))
+        self.next_btn.setLayoutDirection(Qt.RightToLeft)
+        self.next_btn.setIcon(nav_icons.icon("forward", size=14))
         self.next_btn.clicked.connect(self._go_next)
         nav.addWidget(self.next_btn)
         root.addLayout(nav)

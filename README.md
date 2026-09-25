@@ -87,6 +87,9 @@ on first launch.
 - **Notes and bookmarks**: a private notebook for every page, exportable as Markdown
 - **Back up and restore** everything you have learned — progress, notes, bookmarks and the
   review deck — as one file, to keep or to carry to another computer
+- **A window that stays out of the way**: the Guide, Notes and Tutor panels open on
+  F1, F2 and F3 and close again, the lesson list keeps one section open at a time and
+  folds away with Ctrl+B, and lesson text is held to a width that is comfortable to read
 - Tooltips and **?** buttons on every control
 - Progress tracking with a prerequisite map
 - **Accessible by design**: dark, light and high-contrast themes, text scaling from 80%

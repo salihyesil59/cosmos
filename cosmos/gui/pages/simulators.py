@@ -17,7 +17,7 @@ from cosmos.content.loader import load_challenges
 from cosmos.gui.context import AppContext
 from cosmos.gui.simulators.registry import SIMULATORS, SimulatorInfo
 from cosmos.gui.widgets.challenge_bar import ChallengeBar
-from cosmos.gui.widgets.common import card, muted_label, title_label
+from cosmos.gui.widgets.common import card, centred, muted_label, title_label
 from cosmos.i18n import tr, tr_noop
 
 HUB_GUIDE = tr_noop("""
@@ -44,13 +44,15 @@ class SimulatorHubPage(QWidget):
         scroll.setWidgetResizable(True)
         outer.addWidget(scroll)
         host = QWidget()
-        scroll.setWidget(host)
+        scroll.setWidget(centred(host))
         layout = QVBoxLayout(host)
         layout.setContentsMargins(28, 22, 28, 22)
         layout.addWidget(title_label(tr("Simulators")))
         layout.addWidget(muted_label(tr("Choose a simulator. Each card lists the lessons it supports.")))
         grid = QGridLayout()
         grid.setSpacing(14)
+        grid.setColumnStretch(0, 1)
+        grid.setColumnStretch(1, 1)
         for i, info in enumerate(SIMULATORS.values()):
             c = card()
             cl = QVBoxLayout(c)

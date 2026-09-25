@@ -7,11 +7,13 @@ from PySide6.QtGui import QAction, QActionGroup, QColor, QIcon, QKeySequence, QP
 from PySide6.QtWidgets import (
     QApplication,
     QDockWidget,
+    QHeaderView,
     QMainWindow,
     QMenu,
     QMessageBox,
     QSizePolicy,
     QStackedWidget,
+    QToolButton,
     QTreeWidget,
     QTreeWidgetItem,
     QWidget,
@@ -21,6 +23,7 @@ from cosmos import APP_NAME, __version__, i18n
 from cosmos.i18n import tr
 from cosmos.gui.labels import physics
 from cosmos.gui.context import AppContext
+from cosmos.gui import nav_icons
 from cosmos.gui.pages.glossary import GlossaryPage
 from cosmos.gui.pages.history_page import HistoryPage
 from cosmos.gui.pages.home import HomePage
@@ -44,6 +47,7 @@ from cosmos.gui.widgets.tour import TourOverlay, TourStep
 from cosmos.progress import LessonStatus
 
 ROUTE_ROLE = Qt.UserRole
+GLYPH_ROLE = Qt.UserRole + 1
 
 
 def status_icon(status: LessonStatus) -> QIcon:
@@ -135,9 +139,14 @@ class MainWindow(QMainWindow):
         self._build_notes()
         self._build_tutor()
         self._build_actions()
-        self.statusBar().showMessage(tr("Tip: hover over any control for a short explanation."))
+        self._restore_panels()
+        # The status bar stays quiet until something happens: it still shows what a
+        # control does while the pointer is over it.
+        self.statusBar().clearMessage()
 
         ctx.signals.navigate.connect(self.navigate)
+        # A highlighted term is only useful if the panel that explains it comes with it.
+        ctx.signals.glossaryRequested.connect(lambda _term: self.show_panel(self.guide_dock))
         ctx.signals.progressChanged.connect(self._refresh_sidebar)
         ctx.signals.progressChanged.connect(self._update_review_action)
         ctx.signals.notesChanged.connect(self._refresh_notes)
@@ -148,22 +157,31 @@ class MainWindow(QMainWindow):
         info = ctx.store.study_summary()
         self._goal_announced = (self._goal_day(), info["goal"]) if info["goal_met"] else None
         ctx.signals.progressChanged.connect(self._check_daily_goal)
-        theme().changed.connect(lambda _p: self._refresh_sidebar())
+        theme().changed.connect(lambda _p: self._retheme())
 
     # --------------------------------------------------------------- build
     def _build_sidebar(self) -> None:
+        """The navigation list. Only the section you are in is unfolded (D1)."""
         tree = QTreeWidget()
         tree.setObjectName("sidebar")
         tree.setHeaderHidden(True)
-        tree.setIndentation(14)
-        tree.setIconSize(QSize(14, 14))
-        tree.setMinimumWidth(300)
+        tree.setIndentation(13)
+        tree.setIconSize(QSize(16, 16))
+        tree.setMinimumWidth(200)
         tree.setAnimated(True)
+        tree.setUniformRowHeights(True)
+        # Long lesson titles are shortened with an ellipsis rather than pushing a
+        # horizontal scrollbar under the list.
+        tree.setTextElideMode(Qt.ElideRight)
+        tree.setHorizontalScrollBarPolicy(Qt.ScrollBarAlwaysOff)
+        tree.header().setSectionResizeMode(QHeaderView.Stretch)
         self.sidebar = tree
 
-        def top(text: str, route: str | None, tip: str) -> QTreeWidgetItem:
+        def top(text: str, route: str | None, tip: str, glyph: str) -> QTreeWidgetItem:
             item = QTreeWidgetItem([text])
             item.setData(0, ROUTE_ROLE, route)
+            item.setData(0, GLYPH_ROLE, glyph)
+            item.setIcon(0, nav_icons.icon(glyph, size=16))
             item.setToolTip(0, tip)
             font = item.font(0)
             font.setBold(True)
@@ -171,14 +189,16 @@ class MainWindow(QMainWindow):
             tree.addTopLevelItem(item)
             return item
 
-        top("⌂  " + tr("Home"), "home", tr("Welcome page and where to continue"))
-        self.curriculum_item = top("📚  " + tr("Course"), None, tr("All lessons, grouped by level"))
+        top(tr("Home"), "home", tr("Welcome page and where to continue"), "home")
+        self.curriculum_item = top(tr("Course"), None, tr("All lessons, grouped by level"), "course")
         self.lesson_items: dict[str, QTreeWidgetItem] = {}
+        self.level_items: list[QTreeWidgetItem] = []
         for level in self.ctx.curriculum.levels:
             lv = QTreeWidgetItem([f"Level {level.number} · {level.title}"])
             lv.setToolTip(0, level.description)
             lv.setData(0, ROUTE_ROLE, None)
             self.curriculum_item.addChild(lv)
+            self.level_items.append(lv)
             for lesson_id in level.lesson_ids:
                 lesson = self.ctx.curriculum.lessons[lesson_id]
                 item = QTreeWidgetItem([f"{lesson.id}  {lesson.title}"])
@@ -186,35 +206,37 @@ class MainWindow(QMainWindow):
                 item.setToolTip(0, lesson.summary)
                 lv.addChild(item)
                 self.lesson_items[lesson_id] = item
-        self.sims_item = top("🧪  " + tr("Simulators"), "sims", tr("Interactive tools"))
+        self.sims_item = top(tr("Simulators"), "sims", tr("Interactive tools"), "simulator")
         self.sim_items: dict[str, QTreeWidgetItem] = {}
         for info in SIMULATORS.values():
-            item = QTreeWidgetItem([f"{info.icon}  {tr(info.title)}"])
+            item = QTreeWidgetItem([tr(info.title)])
             item.setData(0, ROUTE_ROLE, f"sim:{info.id}")
             item.setToolTip(0, tr(info.tagline))
             self.sims_item.addChild(item)
             self.sim_items[info.id] = item
-        self.problems_item = top("✏  " + tr("Problem sets"), "problems",
-                                 tr("Worked numeric problems with checked answers, one set per level"))
-        self.glossary_item = top("📖  " + tr("Glossary"), "glossary", tr("Definitions of all important terms"))
-        self.reference_item = top("∑  " + tr("Reference"), "reference",
-                                  tr("Formula sheet, constants, units and models"))
-        self.history_item = top("🕰  " + tr("History"), "history",
-                                tr("The discoveries and the people behind them"))
-        self.search_item = top("🔎  " + tr("Search"), "search",
-                               tr("Search lessons, glossary, simulators and formulas"))
-        self.notes_item = top("📝  " + tr("Notes & bookmarks"), "notes", tr("Everything you saved"))
-        self.review_item = top("🔁  " + tr("Review"), "review",
-                               tr("Quiz questions you got wrong, brought back on a schedule"))
-        self.progress_item = top("📈  " + tr("Progress"), "progress", tr("Your progress and the lesson map"))
-        self.classroom_item = top("🎓  " + tr("Classroom"), "classroom",
-                                  tr("A progress report to hand on, and teacher notes per lesson"))
-        self.curriculum_item.setExpanded(True)
-        for i in range(self.curriculum_item.childCount()):
-            self.curriculum_item.child(i).setExpanded(True)
-        self.sims_item.setExpanded(True)
+        self.problems_item = top(tr("Problem sets"), "problems",
+                                 tr("Worked numeric problems with checked answers, one set per level"),
+                                 "problems")
+        self.glossary_item = top(tr("Glossary"), "glossary", tr("Definitions of all important terms"),
+                                 "glossary")
+        self.reference_item = top(tr("Reference"), "reference",
+                                  tr("Formula sheet, constants, units and models"), "reference")
+        self.history_item = top(tr("History"), "history",
+                                tr("The discoveries and the people behind them"), "history")
+        self.search_item = top(tr("Search"), "search",
+                               tr("Search lessons, glossary, simulators and formulas"), "search")
+        self.notes_item = top(tr("Notes & bookmarks"), "notes", tr("Everything you saved"), "notes")
+        self.review_item = top(tr("Review"), "review",
+                               tr("Quiz questions you got wrong, brought back on a schedule"), "review")
+        self.progress_item = top(tr("Progress"), "progress", tr("Your progress and the lesson map"),
+                                 "progress")
+        self.classroom_item = top(tr("Classroom"), "classroom",
+                                  tr("A progress report to hand on, and teacher notes per lesson"),
+                                  "classroom")
         tree.itemClicked.connect(self._on_tree_click)
         tree.itemActivated.connect(self._on_tree_click)
+        # One section at a time: opening one folds the others away.
+        tree.itemExpanded.connect(self._fold_siblings)
 
         dock = QDockWidget(tr("Navigation"), self)
         dock.setObjectName("navigationDock")
@@ -222,57 +244,129 @@ class MainWindow(QMainWindow):
         dock.setFeatures(QDockWidget.NoDockWidgetFeatures)
         dock.setTitleBarWidget(QWidget())
         self.addDockWidget(Qt.LeftDockWidgetArea, dock)
+        self.resizeDocks([dock], [252], Qt.Horizontal)
+        self.nav_dock = dock
+        self.curriculum_item.setExpanded(True)
+        nxt = self.ctx.store.next_recommended(self.ctx.curriculum)
+        if nxt in self.lesson_items:
+            self.lesson_items[nxt].parent().setExpanded(True)
         self._refresh_sidebar()
+
+    def _fold_siblings(self, item: QTreeWidgetItem) -> None:
+        """Keep one branch open at each level, so the list never runs off the screen."""
+        parent = item.parent()
+        family = ([parent.child(i) for i in range(parent.childCount())] if parent
+                  else [self.sidebar.topLevelItem(i) for i in range(self.sidebar.topLevelItemCount())])
+        for other in family:
+            if other is not item and other.isExpanded():
+                other.setExpanded(False)
+
+    def _reveal(self, item: QTreeWidgetItem) -> None:
+        """Open the branch this item sits in, and fold the branches it does not."""
+        chain = set()
+        walker = item
+        while walker is not None:
+            chain.add(id(walker))
+            walker = walker.parent()
+
+        def sweep(family: list[QTreeWidgetItem]) -> None:
+            for other in family:
+                if other.childCount() == 0:
+                    continue
+                wanted = id(other) in chain
+                if other.isExpanded() != wanted:
+                    other.setExpanded(wanted)
+                if wanted:
+                    sweep([other.child(i) for i in range(other.childCount())])
+
+        sweep([self.sidebar.topLevelItem(i) for i in range(self.sidebar.topLevelItemCount())])
+
+    def toggle_navigation(self) -> None:
+        """Fold the navigation list away, for reading with nothing beside the page (Ctrl+B)."""
+        hidden = self.nav_dock.isVisible()
+        self.nav_dock.setVisible(not hidden)
+        self.ctx.store.data.nav_hidden = hidden
+        self.ctx.store.save()
 
     def _build_guide(self) -> None:
         self.guide = GuidePanel(self.ctx)
-        dock = QDockWidget(tr("Guide"), self)
-        dock.setObjectName("guideDock")
-        dock.setWidget(self.guide)
-        dock.setFeatures(QDockWidget.DockWidgetClosable | QDockWidget.DockWidgetMovable)
-        dock.setMinimumWidth(300)
-        self.addDockWidget(Qt.RightDockWidgetArea, dock)
-        self.resizeDocks([dock], [340], Qt.Horizontal)
-        self.guide_dock = dock
+        self.guide_dock = self._side_panel("guideDock", tr("Guide"), self.guide)
 
     def _build_notes(self) -> None:
         self.notes = NotesPanel(self.ctx)
         self.notes.bookmarksChanged.connect(self._refresh_notes)
-        dock = QDockWidget(tr("Notes"), self)
-        dock.setObjectName("notesDock")
-        dock.setWidget(self.notes)
-        dock.setFeatures(QDockWidget.DockWidgetClosable | QDockWidget.DockWidgetMovable)
-        dock.setMinimumWidth(300)
-        self.addDockWidget(Qt.RightDockWidgetArea, dock)
+        self.notes_dock = self._side_panel("notesDock", tr("Notes"), self.notes)
         # The Guide and the Notes share the right-hand side as tabs; the Guide starts on top.
-        self.tabifyDockWidget(self.guide_dock, dock)
-        self.guide_dock.raise_()
-        self.notes_dock = dock
+        self.tabifyDockWidget(self.guide_dock, self.notes_dock)
 
     def _build_tutor(self) -> None:
         from cosmos.app import data_path
 
         self.tutor = TutorPanel(self.ctx, data_path().with_name("tutor.json"))
-        dock = QDockWidget(tr("Tutor"), self)
-        dock.setObjectName("tutorDock")
-        dock.setWidget(self.tutor)
+        self.tutor_dock = self._side_panel("tutorDock", tr("Tutor"), self.tutor)
+        self.tabifyDockWidget(self.notes_dock, self.tutor_dock)
+
+    def _side_panel(self, name: str, title: str, widget: QWidget) -> QDockWidget:
+        """A panel on the right: closed until it is asked for, and never wider than a third (D1).
+
+        The Guide used to open with the window and take nearly half of it, which left
+        lesson text and simulator plots squeezed into what was left.
+        """
+        dock = QDockWidget(title, self)
+        dock.setObjectName(name)
+        dock.setWidget(widget)
         dock.setFeatures(QDockWidget.DockWidgetClosable | QDockWidget.DockWidgetMovable)
-        dock.setMinimumWidth(300)
+        dock.setMinimumWidth(260)
+        dock.setMaximumWidth(420)
         self.addDockWidget(Qt.RightDockWidgetArea, dock)
-        self.tabifyDockWidget(self.notes_dock, dock)
-        self.guide_dock.raise_()
-        self.tutor_dock = dock
+        self.resizeDocks([dock], [340], Qt.Horizontal)
+        dock.hide()
+        dock.visibilityChanged.connect(lambda _visible: self._remember_panels())
+        return dock
+
+    def _restore_panels(self) -> None:
+        """Re-open the panels that were open when Cosmos was last closed."""
+        wanted = set(self.ctx.store.data.panels_open)
+        for key, dock in (("guide", self.guide_dock), ("notes", self.notes_dock),
+                          ("tutor", self.tutor_dock)):
+            dock.setVisible(key in wanted)
+        self._panels_ready = True
+        if wanted:
+            for key, dock in (("tutor", self.tutor_dock), ("notes", self.notes_dock),
+                              ("guide", self.guide_dock)):
+                if key in wanted:
+                    dock.raise_()
+        if self.ctx.store.data.nav_hidden:
+            self.nav_dock.hide()
+
+    def _remember_panels(self) -> None:
+        if not getattr(self, "_panels_ready", False):
+            return          # still building: the saved state has not been restored yet
+        open_now = [key for key, dock in (("guide", self.guide_dock), ("notes", self.notes_dock),
+                                          ("tutor", self.tutor_dock)) if dock.isVisible()]
+        if open_now != self.ctx.store.data.panels_open:
+            self.ctx.store.data.panels_open = open_now
+            self.ctx.store.save()
+
+    def show_panel(self, dock: QDockWidget) -> None:
+        """Open a side panel and bring it to the front of its tab group."""
+        dock.show()
+        dock.raise_()
 
     def _build_actions(self) -> None:
         tb = self.addToolBar("Main")
         tb.setObjectName("mainToolbar")
         tb.setMovable(False)
-        tb.setToolButtonStyle(Qt.ToolButtonTextOnly)
+        tb.setToolButtonStyle(Qt.ToolButtonTextBesideIcon)
+        tb.setIconSize(QSize(18, 18))
         self.toolbar = tb
 
-        def action(text, tip, slot, shortcut=None, checkable=False):
+        def action(text, tip, slot, shortcut=None, checkable=False, glyph=None):
             a = QAction(text, self)
             a.setProperty("command", _command_name(text))
+            if glyph:
+                a.setProperty("glyph", glyph)
+                a.setIcon(nav_icons.icon(glyph))
             a.setToolTip(tip)
             a.setStatusTip(tip)
             a.triggered.connect(slot)
@@ -281,34 +375,38 @@ class MainWindow(QMainWindow):
             a.setCheckable(checkable)
             return a
 
-        self.back_action = action("◀ " + tr("Back"), tr("Go back to the previous page (Alt+Left)"),
-                                  self.go_back, "Alt+Left")
-        self.forward_action = action(tr("Forward") + " ▶", tr("Go forward (Alt+Right)"),
-                                     self.go_forward, "Alt+Right")
-        home = action("⌂ " + tr("Home"), tr("Home page (Ctrl+H)"), lambda: self.navigate("home"), "Ctrl+H")
-        cont = action("▶ " + tr("Continue"), tr("Open the next recommended lesson (Ctrl+L)"),
-                      self.continue_learning, "Ctrl+L")
-        glossary = action("📖 " + tr("Glossary"), tr("Open the glossary (Ctrl+G)"),
-                          lambda: self.navigate("glossary"), "Ctrl+G")
-        reference = action("∑ " + tr("Reference"), tr("Formula sheet, constants and units (Ctrl+R)"),
-                           lambda: self.navigate("reference"), "Ctrl+R")
-        history = action("🕰 " + tr("History"), tr("The history of cosmology and its scientists"),
-                         lambda: self.navigate("history"))
-        notes = action("📝 " + tr("Notes"), tr("All your notes and bookmarks (Ctrl+Shift+N)"),
-                       lambda: self.navigate("notes"), "Ctrl+Shift+N")
-        self.bookmark_action = action("☆ " + tr("Bookmark"), tr("Bookmark the current page (Ctrl+D)"),
-                                      self.toggle_bookmark, "Ctrl+D")
+        self.nav_action = action(tr("Navigation"), tr("Show or hide the list of lessons (Ctrl+B)"),
+                                 self.toggle_navigation, "Ctrl+B", glyph="panel")
+        self.back_action = action(tr("Back"), tr("Go back to the previous page (Alt+Left)"),
+                                  self.go_back, "Alt+Left", glyph="back")
+        self.forward_action = action(tr("Forward"), tr("Go forward (Alt+Right)"),
+                                     self.go_forward, "Alt+Right", glyph="forward")
+        home = action(tr("Home"), tr("Home page (Ctrl+H)"), lambda: self.navigate("home"), "Ctrl+H",
+                      glyph="home")
+        cont = action(tr("Continue"), tr("Open the next recommended lesson (Ctrl+L)"),
+                      self.continue_learning, "Ctrl+L", glyph="continue")
+        glossary = action(tr("Glossary"), tr("Open the glossary (Ctrl+G)"),
+                          lambda: self.navigate("glossary"), "Ctrl+G", glyph="glossary")
+        reference = action(tr("Reference"), tr("Formula sheet, constants and units (Ctrl+R)"),
+                           lambda: self.navigate("reference"), "Ctrl+R", glyph="reference")
+        history = action(tr("History"), tr("The history of cosmology and its scientists"),
+                         lambda: self.navigate("history"), glyph="history")
+        notes = action(tr("Notes"), tr("All your notes and bookmarks (Ctrl+Shift+N)"),
+                       lambda: self.navigate("notes"), "Ctrl+Shift+N", glyph="notes")
+        self.bookmark_action = action(tr("Bookmark"), tr("Bookmark the current page (Ctrl+D)"),
+                                      self.toggle_bookmark, "Ctrl+D", glyph="bookmark")
         self.search_box = SearchBox(self.ctx)
-        find = action("🔎 " + tr("Find"), tr("Search the whole course (Ctrl+F)"), self.focus_search, "Ctrl+F")
-        progress = action("📈 " + tr("Progress"), tr("Your progress and lesson map (Ctrl+P)"),
-                          lambda: self.navigate("progress"), "Ctrl+P")
-        self.review_action = action("🔁 " + tr("Review"),
+        find = action(tr("Find"), tr("Search the whole course (Ctrl+F)"), self.focus_search, "Ctrl+F",
+                      glyph="search")
+        progress = action(tr("Progress"), tr("Your progress and lesson map (Ctrl+P)"),
+                          lambda: self.navigate("progress"), "Ctrl+P", glyph="progress")
+        self.review_action = action(tr("Review"),
                                     tr("Quiz questions you got wrong, brought back on a schedule "
                                        "(Ctrl+Shift+R)"),
-                                    lambda: self.navigate("review"), "Ctrl+Shift+R")
-        self.theme_action = action("◐ " + tr("Theme"),
+                                    lambda: self.navigate("review"), "Ctrl+Shift+R", glyph="review")
+        self.theme_action = action(tr("Theme"),
                                    tr("Cycle dark, light and high-contrast themes (Ctrl+T)"),
-                                   self.toggle_theme, "Ctrl+T")
+                                   self.toggle_theme, "Ctrl+T", glyph="theme")
         self.bigger_action = action(tr("Larger text"), tr("Make every label and control bigger (Ctrl++)"),
                                     lambda: self.change_text_size(+1), "Ctrl++")
         self.smaller_action = action(tr("Smaller text"), tr("Fit more on the screen (Ctrl+-)"),
@@ -318,7 +416,7 @@ class MainWindow(QMainWindow):
         self.focus_action = action(tr("Move focus to the next area"),
                                    tr("Cycle the keyboard focus between the lesson list, the page and the "
                                       "side panels (F6)"),
-                                   self.cycle_focus, "F6")
+                                   self.cycle_focus, "F6", glyph="focus")
         self.addAction(self.bigger_action)
         self.addAction(self.smaller_action)
         self.addAction(self.reset_text_action)
@@ -326,30 +424,44 @@ class MainWindow(QMainWindow):
         # Ctrl+= is what an unshifted keyboard actually produces for "larger".
         self.bigger_action.setShortcuts([QKeySequence("Ctrl++"), QKeySequence("Ctrl+=")])
         self.guide_action = self.guide_dock.toggleViewAction()
-        self.guide_action.setText("💡 " + tr("Guide"))
+        self.guide_action.setText(tr("Guide"))
+        self.guide_action.setProperty("glyph", "guide")
+        self.guide_action.setIcon(nav_icons.icon("guide"))
         self.guide_action.setToolTip(tr("Show or hide the Guide panel (F1)"))
         self.guide_action.setShortcut(QKeySequence("F1"))
         self.notes_action = self.notes_dock.toggleViewAction()
-        self.notes_action.setText("✎ " + tr("Notes panel"))
+        self.notes_action.setText(tr("Notes panel"))
+        self.notes_action.setProperty("glyph", "notes")
+        self.notes_action.setIcon(nav_icons.icon("notes"))
         self.notes_action.setToolTip(tr("Show or hide the Notes panel (F2)"))
         self.notes_action.setShortcut(QKeySequence("F2"))
         self.tutor_action = self.tutor_dock.toggleViewAction()
-        self.tutor_action.setText("🤖 " + tr("Tutor"))
+        self.tutor_action.setText(tr("Tutor"))
+        self.tutor_action.setProperty("glyph", "tutor")
+        self.tutor_action.setIcon(nav_icons.icon("tutor"))
         self.tutor_action.setToolTip(tr("Ask the Tutor about this page (F3) — needs your own API key"))
         self.tutor_action.setShortcut(QKeySequence("F3"))
-        tour = action("🧭 " + tr("Tour"), tr("Replay the guided tour of the app"), self.start_tour)
-        for a in (self.back_action, self.forward_action, home, cont):
-            tb.addAction(a)
+        tour = action(tr("Tour"), tr("Replay the guided tour of the app"), self.start_tour, glyph="tour")
+
+        # D1 — the toolbar carries what you reach for while reading, and nothing else.
+        # Everything it used to duplicate (Glossary, Reference, Progress, Review, Theme,
+        # Tour) is one click away in the navigation list or the menus.
+        tb.addAction(self.nav_action)
         tb.addSeparator()
-        for a in (glossary, reference, progress, self.review_action):
+        for a in (self.back_action, self.forward_action, home, cont):
             tb.addAction(a)
         spacer = QWidget()
         spacer.setSizePolicy(QSizePolicy.Expanding, QSizePolicy.Preferred)
         tb.addWidget(spacer)
         tb.addWidget(self.search_box)
-        tb.addAction(self.bookmark_action)
-        for a in (self.guide_action, self.notes_action, self.tutor_action, self.theme_action, tour):
+        self._icon_only = (self.nav_action, self.bookmark_action, self.guide_action,
+                           self.notes_action, self.tutor_action)
+        for a in (self.bookmark_action, self.guide_action, self.notes_action, self.tutor_action):
             tb.addAction(a)
+        for a in self._icon_only:
+            button = tb.widgetForAction(a)
+            if isinstance(button, QToolButton):
+                button.setToolButtonStyle(Qt.ToolButtonIconOnly)
         self._update_nav_actions()
         self._update_review_action()
 
@@ -392,10 +504,10 @@ class MainWindow(QMainWindow):
             learn.addAction(a)
         learn.addSeparator()
         learn.addAction(action(tr("Simulators"), tr("All simulators"), lambda: self.navigate("sims")))
-        learn.addAction(action("💡 " + tr("“Remember this” sheet"),
+        learn.addAction(action(tr("“Remember this” sheet"),
                                tr("The key points of the lessons you have completed, in the Guide panel"),
                                self.show_remember_sheet))
-        learn.addAction(action("🎓 " + tr("Classroom"),
+        learn.addAction(action(tr("Classroom"),
                                tr("A progress report to hand on, and teacher notes per lesson"),
                                lambda: self.navigate("classroom")))
         learn.addAction(find)
@@ -404,6 +516,7 @@ class MainWindow(QMainWindow):
         learn.addAction(notes)
         view = menu.addMenu(tr("&View"))
         view.addMenu(self._theme_menu())
+        view.addAction(self.nav_action)
         text_size = view.addMenu(tr("Text size"))
         for a in (self.bigger_action, self.smaller_action, self.reset_text_action):
             text_size.addAction(a)
@@ -448,7 +561,7 @@ class MainWindow(QMainWindow):
             "light": tr("Better in bright daylight, and for printing screenshots."),
             "contrast": tr("Pure white on black with the strongest accents, for low vision or glare."),
         }
-        menu = QMenu("◐ " + tr("Theme"), self)
+        menu = QMenu(tr("Theme"), self)
         menu.setToolTipsVisible(True)
         self.theme_group = QActionGroup(self)
         self.theme_group.setExclusive(True)
@@ -607,8 +720,8 @@ class MainWindow(QMainWindow):
     def _update_review_action(self) -> None:
         """G16, G22: the toolbar says how many questions and flashcards are waiting."""
         count = len(self.ctx.store.due_reviews()) + len(self.ctx.store.due_flashcards())
-        self.review_action.setText("🔁 " + (tr("Review ({count})").format(count=count) if count
-                                            else tr("Review")))
+        self.review_action.setText(tr("Review ({count})").format(count=count) if count
+                                   else tr("Review"))
 
     def _update_nav_actions(self) -> None:
         self.back_action.setEnabled(bool(self._history))
@@ -651,6 +764,7 @@ class MainWindow(QMainWindow):
         elif kind == "progress":
             item = self.progress_item
         if item:
+            self._reveal(item)
             self.sidebar.blockSignals(True)
             self.sidebar.setCurrentItem(item)
             self.sidebar.scrollToItem(item)
@@ -665,8 +779,23 @@ class MainWindow(QMainWindow):
             item.setToolTip(0, lesson.summary + "\n\n"
                             + tr("Status: {status}").format(status=physics(status.value)))
         due = len(store.due_reviews())
-        self.review_item.setText(0, "🔁  " + (tr("Review ({count})").format(count=due) if due
-                                              else tr("Review")))
+        self.review_item.setText(0, tr("Review ({count})").format(count=due) if due
+                                    else tr("Review"))
+
+    def _retheme(self) -> None:
+        """Redraw everything that was painted in the old theme's colours."""
+        nav_icons.clear_cache()
+        for index in range(self.sidebar.topLevelItemCount()):
+            item = self.sidebar.topLevelItem(index)
+            glyph = item.data(0, GLYPH_ROLE)
+            if glyph:
+                item.setIcon(0, nav_icons.icon(glyph, size=16))
+        for entry in self.findChildren(QAction):
+            glyph = entry.property("glyph")
+            if glyph:
+                entry.setIcon(nav_icons.icon(glyph))
+        self._refresh_sidebar()
+        self._update_bookmark_action()
 
     # ----------------------------------------------------------- commands
     def focus_search(self) -> None:
@@ -674,14 +803,14 @@ class MainWindow(QMainWindow):
         self.search_box.selectAll()
 
     def toggle_bookmark(self) -> None:
-        self.notes_dock.show()
-        self.notes_dock.raise_()
+        self.show_panel(self.notes_dock)
         self.notes.toggle_bookmark()
         self._update_bookmark_action()
 
     def _update_bookmark_action(self) -> None:
         marked = self.ctx.store.is_bookmarked(self._current_route)
-        self.bookmark_action.setText("★ " + tr("Bookmarked") if marked else "☆ " + tr("Bookmark"))
+        self.bookmark_action.setText(tr("Bookmarked") if marked else tr("Bookmark"))
+        self.bookmark_action.setIcon(nav_icons.icon("bookmarked" if marked else "bookmark"))
         self.bookmark_action.setEnabled(bool(self.notes.route))
 
     def check_achievements(self) -> list[str]:
@@ -751,7 +880,8 @@ class MainWindow(QMainWindow):
 
     def focus_areas(self) -> list:
         """The regions F6 cycles through, in reading order."""
-        areas = [self.sidebar, self.stack.currentWidget()]
+        areas = [self.sidebar] if self.nav_dock.isVisible() else []
+        areas.append(self.stack.currentWidget())
         areas += [dock.widget() for dock in (self.guide_dock, self.notes_dock, self.tutor_dock)
                   if dock.isVisible()]
         return [a for a in areas if a is not None]
@@ -784,7 +914,7 @@ class MainWindow(QMainWindow):
         lines += [f"- **{keys}** — {text}" for text, keys in self.shortcut_rows()]
         lines += ["", tr("Tab and Shift+Tab move between controls; F6 jumps between the lesson list, the "
                          "page and the side panels.")]
-        self.guide_dock.show()
+        self.show_panel(self.guide_dock)
         self.guide.set_context("## " + tr("Keyboard shortcuts") + "\n\n" + "\n".join(lines))
 
     # ------------------------------------------------------------- printing
@@ -939,7 +1069,7 @@ class MainWindow(QMainWindow):
 
     def show_remember_sheet(self) -> None:
         """The sheet in the Guide panel, to read on screen."""
-        self.guide_dock.show()
+        self.show_panel(self.guide_dock)
         self.guide.set_context(self.remember_sheet())
 
     def export_remember_pdf(self) -> None:
@@ -1014,7 +1144,7 @@ class MainWindow(QMainWindow):
             lines.append("")
         if loaded is None or (not loaded.plugins and not loaded.errors):
             lines += [tr("No plugins are installed."), ""]
-        self.guide_dock.show()
+        self.show_panel(self.guide_dock)
         self.guide.set_context("\n".join(lines))
         QDesktopServices.openUrl(QUrl.fromLocalFile(str(target)))
 
@@ -1109,7 +1239,7 @@ class MainWindow(QMainWindow):
             QDesktopServices.openUrl(QUrl(url))
 
     def show_help(self) -> None:
-        self.guide_dock.show()
+        self.show_panel(self.guide_dock)
         self.guide.set_context(self.home.guide_markdown())
 
     def show_about(self) -> None:
@@ -1134,9 +1264,10 @@ class MainWindow(QMainWindow):
             ),
             TourStep(
                 tr("Navigation"),
-                tr("The sidebar lists the whole course. Lessons are grouped into levels. The icon next to each "
-                   "lesson shows its status: <b>filled with ✓</b> = completed, <b>ring</b> = ready, "
-                   "<b>small grey circle</b> = prerequisites missing."),
+                tr("This list is the whole course. Lessons are grouped into levels, and only the section you "
+                   "are in stays open, so the list never gets long. The icon next to each lesson shows its "
+                   "status: <b>filled with ✓</b> = completed, <b>ring</b> = ready, <b>small grey circle</b> = "
+                   "prerequisites missing. <b>Ctrl+B</b> folds the list away entirely."),
                 target=lambda: self.sidebar,
             ),
             TourStep(
@@ -1148,8 +1279,10 @@ class MainWindow(QMainWindow):
             TourStep(
                 tr("The Guide panel"),
                 tr("The Guide explains the page you are on: how to use it, what to try and where to go next. "
-                   "When you click a coloured term in a lesson, its definition appears here too."),
+                   "When you click a coloured term in a lesson, its definition appears here too. "
+                   "It stays out of the way until you ask for it with <b>F1</b> or the toolbar button."),
                 target=lambda: self.guide_dock,
+                before=lambda: self.show_panel(self.guide_dock),
             ),
             TourStep(
                 tr("Lessons and quizzes"),
@@ -1193,12 +1326,13 @@ class MainWindow(QMainWindow):
                    "automatically. Press <b>☆ Bookmark</b> (Ctrl+D) to keep a link to a page, and open "
                    "<b>Notes &amp; bookmarks</b> to see or export everything you saved."),
                 target=lambda: self.notes_dock,
-                before=lambda: (self.notes_dock.show(), self.notes_dock.raise_()),
+                before=lambda: self.show_panel(self.notes_dock),
             ),
             TourStep(
                 tr("Toolbar"),
-                tr("Go <b>Back</b> and <b>Forward</b> between pages, open the <b>Glossary</b> and your "
-                   "<b>Progress</b> map, toggle the Guide panel, switch the <b>Theme</b>, or replay this tour."),
+                tr("Go <b>Back</b> and <b>Forward</b> between pages, jump <b>Home</b> or <b>Continue</b> "
+                   "where you left off. On the right are the search box and the three side panels. "
+                   "Everything else lives in the menus and in the list on the left."),
                 target=lambda: self.toolbar,
             ),
             TourStep(

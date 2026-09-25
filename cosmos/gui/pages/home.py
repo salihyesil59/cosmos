@@ -17,7 +17,7 @@ from PySide6.QtWidgets import (
 
 from cosmos.gui.context import AppContext
 from cosmos.gui.simulators.registry import SIMULATORS
-from cosmos.gui.widgets.common import card, muted_label, title_label
+from cosmos.gui.widgets.common import card, centred, muted_label, title_label
 from cosmos.gui.widgets.common import labelled_row
 from cosmos.i18n import tr, tr_noop
 from cosmos import streaks
@@ -97,7 +97,7 @@ class HomePage(QWidget):
         scroll.setWidgetResizable(True)
         outer.addWidget(scroll)
         host = QWidget()
-        scroll.setWidget(host)
+        scroll.setWidget(centred(host))
         self.layout_ = QVBoxLayout(host)
         self.layout_.setContentsMargins(28, 22, 28, 22)
         self.layout_.setSpacing(16)
@@ -173,6 +173,8 @@ class HomePage(QWidget):
         self.layout_.addWidget(title_label(tr("Course levels"), "subtitle"))
         self.levels_grid = QGridLayout()
         self.levels_grid.setSpacing(12)
+        self.levels_grid.setColumnStretch(0, 1)
+        self.levels_grid.setColumnStretch(1, 1)
         self.layout_.addLayout(self.levels_grid)
         self.level_widgets = []
         for i, level in enumerate(ctx.curriculum.levels):
@@ -207,14 +209,19 @@ class HomePage(QWidget):
             muted_label(tr("Hands-on tools to explore the ideas from the lessons. You can open them at any time."))
         )
         sims = QGridLayout()
-        sims.setSpacing(10)
+        sims.setSpacing(8)
+        columns = 3
         for i, info in enumerate(SIMULATORS.values()):
             # "&" would otherwise become a keyboard mnemonic and vanish from the label.
-            btn = QPushButton(f"{info.icon}  {tr(info.title)}\n{tr(info.tagline)}".replace("&", "&&"))
-            btn.setStyleSheet("QPushButton { text-align: left; padding: 10px 14px; }")
-            btn.setToolTip(tr(info.description))
+            btn = QPushButton(f"{info.icon}  {tr(info.title)}".replace("&", "&&"))
+            btn.setStyleSheet("QPushButton { text-align: left; padding: 9px 12px; }")
+            # One line each, with the tagline in the tooltip: 29 two-line buttons made
+            # a wall of text on the page a learner sees first (D1).
+            btn.setToolTip(f"<b>{tr(info.tagline)}</b><br>{tr(info.description)}")
             btn.clicked.connect(lambda _=False, sid=info.id: ctx.navigate(f"sim:{sid}"))
-            sims.addWidget(btn, i // 2, i % 2)
+            sims.addWidget(btn, i // columns, i % columns)
+        for column in range(columns):
+            sims.setColumnStretch(column, 1)
         self.layout_.addLayout(sims)
         self.layout_.addStretch(1)
 
