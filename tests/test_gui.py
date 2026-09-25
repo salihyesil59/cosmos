@@ -1743,6 +1743,29 @@ def test_the_navigation_opens_one_section_at_a_time(window):
     assert window.sidebar.horizontalScrollBarPolicy() == Qt.ScrollBarAlwaysOff
 
 
+def test_the_simulators_come_in_families(window):
+    """D4: twenty-nine names in a row was a list nobody read to the end."""
+    from cosmos.gui.simulators.registry import GROUP_ORDER, SIMULATORS
+
+    assert all(info.group for info in SIMULATORS.values())
+    shown = [name for name in GROUP_ORDER if window.sims_item.child(0) is not None
+             and name in window.sim_groups]
+    assert len(shown) == 5                       # the plugin family appears only with a plugin
+    assert window.sims_item.childCount() == len(shown)
+    assert sum(item.childCount() for item in window.sim_groups.values()) == len(SIMULATORS)
+
+    # Opening one family folds the others, as the levels of the course do.
+    window.navigate("sim:S13")
+    pump()
+    open_now = [name for name, item in window.sim_groups.items() if item.isExpanded()]
+    assert len(open_now) == 1
+    assert window.sim_items["S13"].parent() is window.sim_groups[open_now[0]]
+    window.navigate("sim:S3")
+    pump()
+    assert window.sim_items["S3"].parent().isExpanded()
+    assert sum(1 for item in window.sim_groups.values() if item.isExpanded()) == 1
+
+
 def test_the_navigation_folds_away(window):
     """D1: Ctrl+B gives the page the whole window, and the choice is remembered."""
     window.toggle_navigation()

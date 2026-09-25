@@ -43,6 +43,16 @@ format may still change between releases.
 
 ### Changed
 
+- **The simulators come in five families** (`D4`): *Measuring the universe* (6),
+  *The expanding universe* (8), *Matter, dark matter and galaxies* (5), *The early
+  universe* (7) and *How cosmologists work* (3). Twenty-nine names in a row was the
+  one long list left in the navigation; now only the family you are working in is
+  unfolded, exactly as the levels of the course behave above it. The same families
+  head the simulator page and the home page. A simulator dropped into the plugins
+  folder joins a family of its own at the end.
+  They group by what a simulator is *for* rather than by the level a learner first
+  meets it in: grouping by level would have left two families of one and one of
+  eight.
 - **No emoji left in the interface** (`D3`). Nineteen of the twenty-nine simulators
   already used a mathematical or geometric sign; the other ten used emoji, drawn in
   colour, at their own size, from a font that differs on every operating system.

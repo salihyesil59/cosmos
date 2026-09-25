@@ -177,7 +177,7 @@ def discover(data_file: Path, taken: set[str] | None = None) -> Loaded:
 
 def to_info(plugin: SimulatorPlugin):
     """Turn a plugin into the SimulatorInfo the rest of the app already understands."""
-    from cosmos.gui.simulators.registry import SimulatorInfo
+    from cosmos.gui.simulators.registry import PLUGINS, SimulatorInfo
 
     return SimulatorInfo(
         id=plugin.id,
@@ -190,5 +190,6 @@ def to_info(plugin: SimulatorPlugin):
         module="",                      # nothing to import: the class is already here
         class_name=plugin.simulator.__name__,
         icon=plugin.icon,
+        group=PLUGINS,                  # a family of its own, at the end of the list
         extra={"plugin": plugin},
     )

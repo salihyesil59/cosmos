@@ -632,7 +632,7 @@
     </message>
     <message>
         <location filename="../gui/main_window.py" line="194" />
-        <location filename="../gui/main_window.py" line="408" />
+        <location filename="../gui/main_window.py" line="420" />
         <source>Home</source>
         <translation>Inicio</translation>
     </message>
@@ -653,8 +653,8 @@
     </message>
     <message>
         <location filename="../gui/main_window.py" line="211" />
-        <location filename="../gui/main_window.py" line="530" />
-        <location filename="../gui/main_window.py" line="1335" />
+        <location filename="../gui/main_window.py" line="542" />
+        <location filename="../gui/main_window.py" line="1347" />
         <location filename="../gui/pages/home.py" line="208" />
         <location filename="../gui/pages/simulators.py" line="50" />
         <source>Simulators</source>
@@ -666,554 +666,559 @@
         <translation>Herramientas interactivas</translation>
     </message>
     <message>
-        <location filename="../gui/main_window.py" line="221" />
+        <location filename="../gui/main_window.py" line="222" />
+        <source>{count} simulators</source>
+        <translation>{count} simuladores</translation>
+    </message>
+    <message>
+        <location filename="../gui/main_window.py" line="233" />
         <location filename="../gui/pages/problems_page.py" line="86" />
         <source>Problem sets</source>
         <translation>Series de problemas</translation>
     </message>
     <message>
-        <location filename="../gui/main_window.py" line="222" />
+        <location filename="../gui/main_window.py" line="234" />
         <source>Worked numeric problems with checked answers, one set per level</source>
         <translation>Problemas numéricos resueltos con respuestas comprobadas, una serie por nivel</translation>
     </message>
     <message>
-        <location filename="../gui/main_window.py" line="224" />
-        <location filename="../gui/main_window.py" line="412" />
+        <location filename="../gui/main_window.py" line="236" />
+        <location filename="../gui/main_window.py" line="424" />
         <location filename="../gui/pages/glossary.py" line="43" />
         <source>Glossary</source>
         <translation>Glosario</translation>
     </message>
     <message>
-        <location filename="../gui/main_window.py" line="224" />
+        <location filename="../gui/main_window.py" line="236" />
         <source>Definitions of all important terms</source>
         <translation>Definiciones de todos los términos importantes</translation>
     </message>
     <message>
-        <location filename="../gui/main_window.py" line="226" />
-        <location filename="../gui/main_window.py" line="414" />
+        <location filename="../gui/main_window.py" line="238" />
+        <location filename="../gui/main_window.py" line="426" />
         <location filename="../gui/pages/reference.py" line="150" />
         <source>Reference</source>
         <translation>Referencia</translation>
     </message>
     <message>
-        <location filename="../gui/main_window.py" line="227" />
+        <location filename="../gui/main_window.py" line="239" />
         <source>Formula sheet, constants, units and models</source>
         <translation>Formulario, constantes, unidades y modelos</translation>
     </message>
     <message>
-        <location filename="../gui/main_window.py" line="228" />
-        <location filename="../gui/main_window.py" line="416" />
+        <location filename="../gui/main_window.py" line="240" />
+        <location filename="../gui/main_window.py" line="428" />
         <source>History</source>
         <translation>Historia</translation>
     </message>
     <message>
-        <location filename="../gui/main_window.py" line="229" />
+        <location filename="../gui/main_window.py" line="241" />
         <source>The discoveries and the people behind them</source>
         <translation>Los descubrimientos y las personas que hay detrás</translation>
     </message>
     <message>
-        <location filename="../gui/main_window.py" line="230" />
+        <location filename="../gui/main_window.py" line="242" />
         <location filename="../gui/pages/search_page.py" line="39" />
         <source>Search</source>
         <translation>Buscar</translation>
     </message>
     <message>
-        <location filename="../gui/main_window.py" line="231" />
+        <location filename="../gui/main_window.py" line="243" />
         <source>Search lessons, glossary, simulators and formulas</source>
         <translation>Busca en las lecciones, el glosario, los simuladores y las fórmulas</translation>
     </message>
     <message>
-        <location filename="../gui/main_window.py" line="232" />
+        <location filename="../gui/main_window.py" line="244" />
         <location filename="../gui/pages/notes_page.py" line="50" />
         <source>Notes &amp; bookmarks</source>
         <translation>Notas y marcadores</translation>
     </message>
     <message>
-        <location filename="../gui/main_window.py" line="232" />
+        <location filename="../gui/main_window.py" line="244" />
         <source>Everything you saved</source>
         <translation>Todo lo que has guardado</translation>
     </message>
     <message>
-        <location filename="../gui/main_window.py" line="233" />
-        <location filename="../gui/main_window.py" line="427" />
-        <location filename="../gui/main_window.py" line="748" />
-        <location filename="../gui/main_window.py" line="807" />
+        <location filename="../gui/main_window.py" line="245" />
+        <location filename="../gui/main_window.py" line="439" />
+        <location filename="../gui/main_window.py" line="760" />
+        <location filename="../gui/main_window.py" line="819" />
         <location filename="../gui/pages/review_page.py" line="66" />
         <source>Review</source>
         <translation>Repaso</translation>
     </message>
     <message>
-        <location filename="../gui/main_window.py" line="234" />
+        <location filename="../gui/main_window.py" line="246" />
         <source>Quiz questions you got wrong, brought back on a schedule</source>
         <translation>Las preguntas que fallaste, traídas de vuelta según un calendario</translation>
     </message>
     <message>
-        <location filename="../gui/main_window.py" line="235" />
-        <location filename="../gui/main_window.py" line="425" />
+        <location filename="../gui/main_window.py" line="247" />
+        <location filename="../gui/main_window.py" line="437" />
         <source>Progress</source>
         <translation>Progreso</translation>
     </message>
     <message>
-        <location filename="../gui/main_window.py" line="235" />
+        <location filename="../gui/main_window.py" line="247" />
         <source>Your progress and the lesson map</source>
         <translation>Tu progreso y el mapa de lecciones</translation>
     </message>
     <message>
-        <location filename="../gui/main_window.py" line="237" />
-        <location filename="../gui/main_window.py" line="534" />
+        <location filename="../gui/main_window.py" line="249" />
+        <location filename="../gui/main_window.py" line="546" />
         <location filename="../gui/pages/classroom_page.py" line="98" />
         <source>Classroom</source>
         <translation>Aula</translation>
     </message>
     <message>
-        <location filename="../gui/main_window.py" line="238" />
-        <location filename="../gui/main_window.py" line="535" />
+        <location filename="../gui/main_window.py" line="250" />
+        <location filename="../gui/main_window.py" line="547" />
         <source>A progress report to hand on, and teacher notes per lesson</source>
         <translation>Un informe de progreso para entregar y notas para el profesorado en cada lección</translation>
     </message>
     <message>
-        <location filename="../gui/main_window.py" line="245" />
-        <location filename="../gui/main_window.py" line="402" />
-        <location filename="../gui/main_window.py" line="1299" />
+        <location filename="../gui/main_window.py" line="257" />
+        <location filename="../gui/main_window.py" line="414" />
+        <location filename="../gui/main_window.py" line="1311" />
         <source>Navigation</source>
         <translation>Navegación</translation>
     </message>
     <message>
-        <location filename="../gui/main_window.py" line="297" />
-        <location filename="../gui/main_window.py" line="451" />
+        <location filename="../gui/main_window.py" line="309" />
+        <location filename="../gui/main_window.py" line="463" />
         <source>Guide</source>
         <translation>Guía</translation>
     </message>
     <message>
-        <location filename="../gui/main_window.py" line="302" />
-        <location filename="../gui/main_window.py" line="418" />
+        <location filename="../gui/main_window.py" line="314" />
+        <location filename="../gui/main_window.py" line="430" />
         <location filename="../gui/pages/notes_page.py" line="97" />
         <source>Notes</source>
         <translation>Notas</translation>
     </message>
     <message>
-        <location filename="../gui/main_window.py" line="310" />
-        <location filename="../gui/main_window.py" line="463" />
+        <location filename="../gui/main_window.py" line="322" />
+        <location filename="../gui/main_window.py" line="475" />
         <source>Tutor</source>
         <translation>Tutor</translation>
     </message>
     <message>
-        <location filename="../gui/main_window.py" line="402" />
+        <location filename="../gui/main_window.py" line="414" />
         <source>Show or hide the list of lessons (Ctrl+B)</source>
         <translation>Mostrar u ocultar la lista de lecciones (Ctrl+B)</translation>
     </message>
     <message>
-        <location filename="../gui/main_window.py" line="404" />
+        <location filename="../gui/main_window.py" line="416" />
         <location filename="../gui/widgets/tour.py" line="53" />
         <source>Back</source>
         <translation>Atrás</translation>
     </message>
     <message>
-        <location filename="../gui/main_window.py" line="404" />
+        <location filename="../gui/main_window.py" line="416" />
         <source>Go back to the previous page (Alt+Left)</source>
         <translation>Vuelve a la página anterior (Alt+Izquierda)</translation>
     </message>
     <message>
-        <location filename="../gui/main_window.py" line="406" />
+        <location filename="../gui/main_window.py" line="418" />
         <source>Forward</source>
         <translation>Adelante</translation>
     </message>
     <message>
-        <location filename="../gui/main_window.py" line="406" />
+        <location filename="../gui/main_window.py" line="418" />
         <source>Go forward (Alt+Right)</source>
         <translation>Avanza (Alt+Derecha)</translation>
     </message>
     <message>
-        <location filename="../gui/main_window.py" line="408" />
+        <location filename="../gui/main_window.py" line="420" />
         <source>Home page (Ctrl+H)</source>
         <translation>Página de inicio (Ctrl+H)</translation>
     </message>
     <message>
-        <location filename="../gui/main_window.py" line="410" />
+        <location filename="../gui/main_window.py" line="422" />
         <source>Continue</source>
         <translation>Continuar</translation>
     </message>
     <message>
-        <location filename="../gui/main_window.py" line="410" />
+        <location filename="../gui/main_window.py" line="422" />
         <source>Open the next recommended lesson (Ctrl+L)</source>
         <translation>Abre la siguiente lección recomendada (Ctrl+L)</translation>
     </message>
     <message>
-        <location filename="../gui/main_window.py" line="412" />
+        <location filename="../gui/main_window.py" line="424" />
         <source>Open the glossary (Ctrl+G)</source>
         <translation>Abre el glosario (Ctrl+G)</translation>
     </message>
     <message>
-        <location filename="../gui/main_window.py" line="414" />
+        <location filename="../gui/main_window.py" line="426" />
         <source>Formula sheet, constants and units (Ctrl+R)</source>
         <translation>Formulario, constantes y unidades (Ctrl+R)</translation>
     </message>
     <message>
-        <location filename="../gui/main_window.py" line="416" />
+        <location filename="../gui/main_window.py" line="428" />
         <source>The history of cosmology and its scientists</source>
         <translation>La historia de la cosmología y sus científicos</translation>
     </message>
     <message>
-        <location filename="../gui/main_window.py" line="418" />
+        <location filename="../gui/main_window.py" line="430" />
         <source>All your notes and bookmarks (Ctrl+Shift+N)</source>
         <translation>Todas tus notas y marcadores (Ctrl+Mayús+N)</translation>
     </message>
     <message>
-        <location filename="../gui/main_window.py" line="420" />
-        <location filename="../gui/main_window.py" line="845" />
+        <location filename="../gui/main_window.py" line="432" />
+        <location filename="../gui/main_window.py" line="857" />
         <source>Bookmark</source>
         <translation>Marcador</translation>
     </message>
     <message>
-        <location filename="../gui/main_window.py" line="420" />
+        <location filename="../gui/main_window.py" line="432" />
         <source>Bookmark the current page (Ctrl+D)</source>
         <translation>Guarda un marcador de la página actual (Ctrl+D)</translation>
     </message>
     <message>
-        <location filename="../gui/main_window.py" line="423" />
+        <location filename="../gui/main_window.py" line="435" />
         <source>Find</source>
         <translation>Buscar</translation>
     </message>
     <message>
-        <location filename="../gui/main_window.py" line="423" />
+        <location filename="../gui/main_window.py" line="435" />
         <source>Search the whole course (Ctrl+F)</source>
         <translation>Busca en todo el curso (Ctrl+F)</translation>
     </message>
     <message>
-        <location filename="../gui/main_window.py" line="425" />
+        <location filename="../gui/main_window.py" line="437" />
         <source>Your progress and lesson map (Ctrl+P)</source>
         <translation>Tu progreso y el mapa de lecciones (Ctrl+P)</translation>
     </message>
     <message>
-        <location filename="../gui/main_window.py" line="428" />
+        <location filename="../gui/main_window.py" line="440" />
         <source>Quiz questions you got wrong, brought back on a schedule (Ctrl+Shift+R)</source>
         <translation>Las preguntas que fallaste, traídas de vuelta según un calendario (Ctrl+Mayús+R)</translation>
     </message>
     <message>
-        <location filename="../gui/main_window.py" line="431" />
-        <location filename="../gui/main_window.py" line="588" />
+        <location filename="../gui/main_window.py" line="443" />
+        <location filename="../gui/main_window.py" line="600" />
         <source>Theme</source>
         <translation>Tema</translation>
     </message>
     <message>
-        <location filename="../gui/main_window.py" line="432" />
+        <location filename="../gui/main_window.py" line="444" />
         <source>Cycle dark, light and high-contrast themes (Ctrl+T)</source>
         <translation>Alterna los temas oscuro, claro y de alto contraste (Ctrl+T)</translation>
     </message>
     <message>
-        <location filename="../gui/main_window.py" line="434" />
+        <location filename="../gui/main_window.py" line="446" />
         <source>Larger text</source>
         <translation>Texto más grande</translation>
     </message>
     <message>
-        <location filename="../gui/main_window.py" line="434" />
+        <location filename="../gui/main_window.py" line="446" />
         <source>Make every label and control bigger (Ctrl++)</source>
         <translation>Agranda todas las etiquetas y controles (Ctrl++)</translation>
     </message>
     <message>
-        <location filename="../gui/main_window.py" line="436" />
+        <location filename="../gui/main_window.py" line="448" />
         <source>Smaller text</source>
         <translation>Texto más pequeño</translation>
     </message>
     <message>
-        <location filename="../gui/main_window.py" line="436" />
+        <location filename="../gui/main_window.py" line="448" />
         <source>Fit more on the screen (Ctrl+-)</source>
         <translation>Cabe más en la pantalla (Ctrl+-)</translation>
     </message>
     <message>
-        <location filename="../gui/main_window.py" line="438" />
+        <location filename="../gui/main_window.py" line="450" />
         <source>Reset text size</source>
         <translation>Restablecer el tamaño del texto</translation>
     </message>
     <message>
-        <location filename="../gui/main_window.py" line="438" />
+        <location filename="../gui/main_window.py" line="450" />
         <source>Back to the standard size (Ctrl+0)</source>
         <translation>Vuelve al tamaño estándar (Ctrl+0)</translation>
     </message>
     <message>
-        <location filename="../gui/main_window.py" line="440" />
+        <location filename="../gui/main_window.py" line="452" />
         <source>Move focus to the next area</source>
         <translation>Llevar el foco a la siguiente zona</translation>
     </message>
     <message>
-        <location filename="../gui/main_window.py" line="441" />
+        <location filename="../gui/main_window.py" line="453" />
         <source>Cycle the keyboard focus between the lesson list, the page and the side panels (F6)</source>
         <translation>Mueve el foco del teclado entre la lista de lecciones, la página y los paneles laterales (F6)</translation>
     </message>
     <message>
-        <location filename="../gui/main_window.py" line="454" />
+        <location filename="../gui/main_window.py" line="466" />
         <source>Show or hide the Guide panel (F1)</source>
         <translation>Muestra u oculta el panel Guía (F1)</translation>
     </message>
     <message>
-        <location filename="../gui/main_window.py" line="457" />
+        <location filename="../gui/main_window.py" line="469" />
         <source>Notes panel</source>
         <translation>Panel de notas</translation>
     </message>
     <message>
-        <location filename="../gui/main_window.py" line="460" />
+        <location filename="../gui/main_window.py" line="472" />
         <source>Show or hide the Notes panel (F2)</source>
         <translation>Muestra u oculta el panel Notas (F2)</translation>
     </message>
     <message>
-        <location filename="../gui/main_window.py" line="466" />
+        <location filename="../gui/main_window.py" line="478" />
         <source>Ask the Tutor about this page (F3) — needs your own API key</source>
         <translation>Pregunta al Tutor sobre esta página (F3): necesita tu propia clave de API</translation>
     </message>
     <message>
-        <location filename="../gui/main_window.py" line="468" />
+        <location filename="../gui/main_window.py" line="480" />
         <source>Tour</source>
         <translation>Recorrido</translation>
     </message>
     <message>
-        <location filename="../gui/main_window.py" line="468" />
+        <location filename="../gui/main_window.py" line="480" />
         <source>Replay the guided tour of the app</source>
         <translation>Vuelve a reproducir el recorrido guiado por la aplicación</translation>
     </message>
     <message>
-        <location filename="../gui/main_window.py" line="493" />
+        <location filename="../gui/main_window.py" line="505" />
         <source>&amp;File</source>
         <translation>&amp;Archivo</translation>
     </message>
     <message>
-        <location filename="../gui/main_window.py" line="494" />
+        <location filename="../gui/main_window.py" line="506" />
         <source>Export notes…</source>
         <translation>Exportar notas…</translation>
     </message>
     <message>
-        <location filename="../gui/main_window.py" line="494" />
+        <location filename="../gui/main_window.py" line="506" />
         <source>Save all notes and bookmarks as a Markdown file</source>
         <translation>Guarda todas las notas y marcadores en un archivo Markdown</translation>
     </message>
     <message>
-        <location filename="../gui/main_window.py" line="496" />
+        <location filename="../gui/main_window.py" line="508" />
         <source>Back up progress…</source>
         <translation>Copia de seguridad del progreso…</translation>
     </message>
     <message>
-        <location filename="../gui/main_window.py" line="497" />
+        <location filename="../gui/main_window.py" line="509" />
         <source>Save everything you have learned, your notes and your review deck in one file, to keep or to carry to another computer</source>
         <translation>Guarda en un solo archivo todo lo que has aprendido, tus notas y tu mazo de repaso, para conservarlo o llevarlo a otro ordenador</translation>
     </message>
     <message>
-        <location filename="../gui/main_window.py" line="500" />
+        <location filename="../gui/main_window.py" line="512" />
         <source>Restore progress…</source>
         <translation>Restaurar el progreso…</translation>
     </message>
     <message>
-        <location filename="../gui/main_window.py" line="501" />
+        <location filename="../gui/main_window.py" line="513" />
         <source>Replace your progress with a backup made earlier, here or on another computer</source>
         <translation>Sustituye tu progreso por una copia de seguridad hecha antes, aquí o en otro ordenador</translation>
     </message>
     <message>
-        <location filename="../gui/main_window.py" line="506" />
+        <location filename="../gui/main_window.py" line="518" />
         <source>Print this lesson as PDF…</source>
         <translation>Imprimir esta lección en PDF…</translation>
     </message>
     <message>
-        <location filename="../gui/main_window.py" line="507" />
+        <location filename="../gui/main_window.py" line="519" />
         <source>Save the lesson you are reading, with its figures and quiz, as a PDF (Ctrl+P is Progress; this is Ctrl+Shift+P)</source>
         <translation>Guarda como PDF la lección que estás leyendo, con sus figuras y su cuestionario (Ctrl+P es Progreso; esto es Ctrl+Mayús+P)</translation>
     </message>
     <message>
-        <location filename="../gui/main_window.py" line="511" />
+        <location filename="../gui/main_window.py" line="523" />
         <source>Print this level as PDF…</source>
         <translation>Imprimir este nivel en PDF…</translation>
     </message>
     <message>
-        <location filename="../gui/main_window.py" line="512" />
+        <location filename="../gui/main_window.py" line="524" />
         <source>Every lesson of one level, each starting on a new page</source>
         <translation>Todas las lecciones de un nivel, cada una empezando en una página nueva</translation>
     </message>
     <message>
-        <location filename="../gui/main_window.py" line="514" />
+        <location filename="../gui/main_window.py" line="526" />
         <source>Print the whole course as PDF…</source>
         <translation>Imprimir todo el curso en PDF…</translation>
     </message>
     <message>
-        <location filename="../gui/main_window.py" line="515" />
+        <location filename="../gui/main_window.py" line="527" />
         <source>All lessons in one file. It is long; give it a moment.</source>
         <translation>Todas las lecciones en un solo archivo. Es largo; dale un momento.</translation>
     </message>
     <message>
-        <location filename="../gui/main_window.py" line="517" />
+        <location filename="../gui/main_window.py" line="529" />
         <source>Export the course as a website…</source>
         <translation>Exportar el curso como sitio web…</translation>
     </message>
     <message>
-        <location filename="../gui/main_window.py" line="518" />
+        <location filename="../gui/main_window.py" line="530" />
         <source>Every lesson, the glossary, the formulas and the problems as web pages that open in any browser, without installing anything</source>
         <translation>Todas las lecciones, el glosario, las fórmulas y los problemas como páginas web que se abren en cualquier navegador, sin instalar nada</translation>
     </message>
     <message>
-        <location filename="../gui/main_window.py" line="521" />
+        <location filename="../gui/main_window.py" line="533" />
         <source>Print the “Remember this” sheet…</source>
         <translation>Imprimir la hoja «Recuerda esto»…</translation>
     </message>
     <message>
-        <location filename="../gui/main_window.py" line="522" />
+        <location filename="../gui/main_window.py" line="534" />
         <source>The key points of every lesson you have completed, on a few pages</source>
         <translation>Las ideas clave de cada lección que has completado, en unas pocas páginas</translation>
     </message>
     <message>
-        <location filename="../gui/main_window.py" line="525" />
+        <location filename="../gui/main_window.py" line="537" />
         <source>Quit</source>
         <translation>Salir</translation>
     </message>
     <message>
-        <location filename="../gui/main_window.py" line="525" />
+        <location filename="../gui/main_window.py" line="537" />
         <source>Close Cosmos</source>
         <translation>Cierra Cosmos</translation>
     </message>
     <message>
-        <location filename="../gui/main_window.py" line="526" />
+        <location filename="../gui/main_window.py" line="538" />
         <source>&amp;Learn</source>
         <translation>&amp;Aprender</translation>
     </message>
     <message>
-        <location filename="../gui/main_window.py" line="530" />
+        <location filename="../gui/main_window.py" line="542" />
         <source>All simulators</source>
         <translation>Todos los simuladores</translation>
     </message>
     <message>
-        <location filename="../gui/main_window.py" line="531" />
+        <location filename="../gui/main_window.py" line="543" />
         <source>“Remember this” sheet</source>
         <translation>Hoja «Recuerda esto»</translation>
     </message>
     <message>
-        <location filename="../gui/main_window.py" line="532" />
+        <location filename="../gui/main_window.py" line="544" />
         <source>The key points of the lessons you have completed, in the Guide panel</source>
         <translation>Las ideas clave de las lecciones que has completado, en el panel Guía</translation>
     </message>
     <message>
-        <location filename="../gui/main_window.py" line="541" />
+        <location filename="../gui/main_window.py" line="553" />
         <source>&amp;View</source>
         <translation>&amp;Ver</translation>
     </message>
     <message>
-        <location filename="../gui/main_window.py" line="544" />
+        <location filename="../gui/main_window.py" line="556" />
         <source>Text size</source>
         <translation>Tamaño del texto</translation>
     </message>
     <message>
-        <location filename="../gui/main_window.py" line="555" />
+        <location filename="../gui/main_window.py" line="567" />
         <source>&amp;Help</source>
         <translation>A&amp;yuda</translation>
     </message>
     <message>
-        <location filename="../gui/main_window.py" line="557" />
+        <location filename="../gui/main_window.py" line="569" />
         <source>How to use Cosmos</source>
         <translation>Cómo usar Cosmos</translation>
     </message>
     <message>
-        <location filename="../gui/main_window.py" line="557" />
+        <location filename="../gui/main_window.py" line="569" />
         <source>Show help in the Guide panel</source>
         <translation>Muestra la ayuda en el panel Guía</translation>
     </message>
     <message>
-        <location filename="../gui/main_window.py" line="558" />
-        <location filename="../gui/main_window.py" line="951" />
+        <location filename="../gui/main_window.py" line="570" />
+        <location filename="../gui/main_window.py" line="963" />
         <source>Keyboard shortcuts</source>
         <translation>Atajos de teclado</translation>
     </message>
     <message>
-        <location filename="../gui/main_window.py" line="558" />
+        <location filename="../gui/main_window.py" line="570" />
         <source>Every command you can reach without the mouse</source>
         <translation>Todas las órdenes que puedes alcanzar sin el ratón</translation>
     </message>
     <message>
-        <location filename="../gui/main_window.py" line="560" />
+        <location filename="../gui/main_window.py" line="572" />
         <source>Simulator plugins…</source>
         <translation>Complementos de simuladores…</translation>
     </message>
     <message>
-        <location filename="../gui/main_window.py" line="561" />
+        <location filename="../gui/main_window.py" line="573" />
         <source>Add your own simulator by dropping a Python file in a folder</source>
         <translation>Añade tu propio simulador dejando un archivo de Python en una carpeta</translation>
     </message>
     <message>
-        <location filename="../gui/main_window.py" line="564" />
+        <location filename="../gui/main_window.py" line="576" />
         <source>Check for updates now</source>
         <translation>Buscar actualizaciones ahora</translation>
     </message>
     <message>
-        <location filename="../gui/main_window.py" line="565" />
+        <location filename="../gui/main_window.py" line="577" />
         <source>Ask GitHub whether a newer Cosmos has been released. Nothing about you or this computer is sent.</source>
         <translation>Pregunta a GitHub si se ha publicado una versión más reciente de Cosmos. No se envía nada sobre ti ni sobre este ordenador.</translation>
     </message>
     <message>
-        <location filename="../gui/main_window.py" line="570" />
+        <location filename="../gui/main_window.py" line="582" />
         <source>Check for updates on start-up</source>
         <translation>Buscar actualizaciones al iniciar</translation>
     </message>
     <message>
-        <location filename="../gui/main_window.py" line="571" />
+        <location filename="../gui/main_window.py" line="583" />
         <source>Look once a day, in the background. Off by default; nothing is ever uploaded.</source>
         <translation>Mira una vez al día, en segundo plano. Desactivado por defecto; nunca se sube nada.</translation>
     </message>
     <message>
-        <location filename="../gui/main_window.py" line="576" />
+        <location filename="../gui/main_window.py" line="588" />
         <source>About Cosmos</source>
         <translation>Acerca de Cosmos</translation>
     </message>
     <message>
-        <location filename="../gui/main_window.py" line="576" />
+        <location filename="../gui/main_window.py" line="588" />
         <source>Version and credits</source>
         <translation>Versión y créditos</translation>
     </message>
     <message>
-        <location filename="../gui/main_window.py" line="582" />
+        <location filename="../gui/main_window.py" line="594" />
         <source>Dark</source>
         <translation>Oscuro</translation>
     </message>
     <message>
-        <location filename="../gui/main_window.py" line="582" />
+        <location filename="../gui/main_window.py" line="594" />
         <source>Light</source>
         <translation>Claro</translation>
     </message>
     <message>
-        <location filename="../gui/main_window.py" line="582" />
+        <location filename="../gui/main_window.py" line="594" />
         <source>High contrast</source>
         <translation>Alto contraste</translation>
     </message>
     <message>
-        <location filename="../gui/main_window.py" line="584" />
+        <location filename="../gui/main_window.py" line="596" />
         <source>Easy on the eyes in a dark room.</source>
         <translation>Cómodo para la vista en una habitación oscura.</translation>
     </message>
     <message>
-        <location filename="../gui/main_window.py" line="585" />
+        <location filename="../gui/main_window.py" line="597" />
         <source>Better in bright daylight, and for printing screenshots.</source>
         <translation>Mejor con luz de día intensa, y para imprimir capturas de pantalla.</translation>
     </message>
     <message>
-        <location filename="../gui/main_window.py" line="586" />
+        <location filename="../gui/main_window.py" line="598" />
         <source>Pure white on black with the strongest accents, for low vision or glare.</source>
         <translation>Blanco puro sobre negro con los acentos más fuertes, para baja visión o reflejos.</translation>
     </message>
     <message>
-        <location filename="../gui/main_window.py" line="608" />
-        <location filename="../gui/main_window.py" line="632" />
+        <location filename="../gui/main_window.py" line="620" />
+        <location filename="../gui/main_window.py" line="644" />
         <source>Language</source>
         <translation>Idioma</translation>
     </message>
     <message>
-        <location filename="../gui/main_window.py" line="616" />
+        <location filename="../gui/main_window.py" line="628" />
         <source>Applies the next time Cosmos starts.</source>
         <translation>Se aplica la próxima vez que se inicie Cosmos.</translation>
     </message>
     <message>
-        <location filename="../gui/main_window.py" line="621" />
+        <location filename="../gui/main_window.py" line="633" />
         <source>Add a language…</source>
         <translation>Añadir un idioma…</translation>
     </message>
     <message>
-        <location filename="../gui/main_window.py" line="622" />
+        <location filename="../gui/main_window.py" line="634" />
         <source>See README: tools/update_translations.py creates the file to translate.</source>
         <translation>Consulta el README: tools/update_translations.py crea el archivo que hay que traducir.</translation>
     </message>
     <message>
-        <location filename="../gui/main_window.py" line="633" />
+        <location filename="../gui/main_window.py" line="645" />
         <source>The interface language changes the next time you start Cosmos.
 
 The course content — lessons, quizzes and the glossary — is written in English.</source>
@@ -1222,12 +1227,12 @@ The course content — lessons, quizzes and the glossary — is written in Engli
 El contenido del curso — las lecciones, los cuestionarios y el glosario — está escrito en inglés.</translation>
     </message>
     <message>
-        <location filename="../gui/main_window.py" line="638" />
+        <location filename="../gui/main_window.py" line="650" />
         <source>Add a language</source>
         <translation>Añadir un idioma</translation>
     </message>
     <message>
-        <location filename="../gui/main_window.py" line="639" />
+        <location filename="../gui/main_window.py" line="651" />
         <source>Interface translations live in cosmos/i18n as Qt .ts files.
 
 1. python tools/update_translations.py --language &lt;code&gt;
@@ -1244,409 +1249,409 @@ The new language then appears in this menu.</source>
 El idioma nuevo aparece entonces en este menú.</translation>
     </message>
     <message>
-        <location filename="../gui/main_window.py" line="747" />
-        <location filename="../gui/main_window.py" line="806" />
+        <location filename="../gui/main_window.py" line="759" />
+        <location filename="../gui/main_window.py" line="818" />
         <source>Review ({count})</source>
         <translation>Repaso ({count})</translation>
     </message>
     <message>
-        <location filename="../gui/main_window.py" line="804" />
+        <location filename="../gui/main_window.py" line="816" />
         <location filename="../gui/widgets/prereq_map.py" line="28" />
         <source>Status: {status}</source>
         <translation>Estado: {status}</translation>
     </message>
     <message>
-        <location filename="../gui/main_window.py" line="845" />
+        <location filename="../gui/main_window.py" line="857" />
         <source>Bookmarked</source>
         <translation>Guardada en marcadores</translation>
     </message>
     <message>
-        <location filename="../gui/main_window.py" line="856" />
+        <location filename="../gui/main_window.py" line="868" />
         <source>Badge earned: {names}</source>
         <translation>Insignia conseguida: {names}</translation>
     </message>
     <message>
-        <location filename="../gui/main_window.py" line="874" />
+        <location filename="../gui/main_window.py" line="886" />
         <source>Daily goal reached: {steps} steps today. Streak: {days} day(s).</source>
         <translation>Meta diaria alcanzada: {steps} pasos hoy. Racha: {days} día(s).</translation>
     </message>
     <message>
-        <location filename="../gui/main_window.py" line="896" />
+        <location filename="../gui/main_window.py" line="908" />
         <source>Theme: {name}</source>
         <translation>Tema: {name}</translation>
     </message>
     <message>
-        <location filename="../gui/main_window.py" line="912" />
+        <location filename="../gui/main_window.py" line="924" />
         <source>Text size: {percent}</source>
         <translation>Tamaño del texto: {percent}</translation>
     </message>
     <message>
-        <location filename="../gui/main_window.py" line="946" />
+        <location filename="../gui/main_window.py" line="958" />
         <source>Every command in Cosmos can be reached from the keyboard.</source>
         <translation>Todas las órdenes de Cosmos se pueden alcanzar desde el teclado.</translation>
     </message>
     <message>
-        <location filename="../gui/main_window.py" line="948" />
+        <location filename="../gui/main_window.py" line="960" />
         <source>Tab and Shift+Tab move between controls; F6 jumps between the lesson list, the page and the side panels.</source>
         <translation>Tab y Mayús+Tab mueven entre controles; F6 salta entre la lista de lecciones, la página y los paneles laterales.</translation>
     </message>
     <message>
-        <location filename="../gui/main_window.py" line="973" />
+        <location filename="../gui/main_window.py" line="985" />
         <source>Back up progress</source>
         <translation>Copia de seguridad del progreso</translation>
     </message>
     <message>
-        <location filename="../gui/main_window.py" line="974" />
-        <location filename="../gui/main_window.py" line="990" />
+        <location filename="../gui/main_window.py" line="986" />
+        <location filename="../gui/main_window.py" line="1002" />
         <source>Cosmos backup</source>
         <translation>Copia de seguridad de Cosmos</translation>
     </message>
     <message>
-        <location filename="../gui/main_window.py" line="980" />
+        <location filename="../gui/main_window.py" line="992" />
         <source>Could not save the backup</source>
         <translation>No se pudo guardar la copia de seguridad</translation>
     </message>
     <message>
-        <location filename="../gui/main_window.py" line="982" />
+        <location filename="../gui/main_window.py" line="994" />
         <source>Progress backed up to {path}</source>
         <translation>Progreso guardado en {path}</translation>
     </message>
     <message>
-        <location filename="../gui/main_window.py" line="989" />
-        <location filename="../gui/main_window.py" line="994" />
+        <location filename="../gui/main_window.py" line="1001" />
+        <location filename="../gui/main_window.py" line="1006" />
         <source>Restore progress</source>
         <translation>Restaurar el progreso</translation>
     </message>
     <message>
-        <location filename="../gui/main_window.py" line="995" />
+        <location filename="../gui/main_window.py" line="1007" />
         <source>Replace your current progress, notes, bookmarks and review deck with the ones in this backup? What you have now will be lost unless you back it up first.</source>
         <translation>¿Sustituir tu progreso, notas, marcadores y mazo de repaso actuales por los de esta copia de seguridad? Lo que tienes ahora se perderá si no haces antes una copia.</translation>
     </message>
     <message>
-        <location filename="../gui/main_window.py" line="1002" />
+        <location filename="../gui/main_window.py" line="1014" />
         <source>Could not restore the backup</source>
         <translation>No se pudo restaurar la copia de seguridad</translation>
     </message>
     <message>
-        <location filename="../gui/main_window.py" line="1003" />
+        <location filename="../gui/main_window.py" line="1015" />
         <source>Nothing was changed.</source>
         <translation>No se cambió nada.</translation>
     </message>
     <message>
-        <location filename="../gui/main_window.py" line="1007" />
+        <location filename="../gui/main_window.py" line="1019" />
         <source>Progress restored from {path}</source>
         <translation>Progreso restaurado desde {path}</translation>
     </message>
     <message>
-        <location filename="../gui/main_window.py" line="1017" />
-        <location filename="../gui/main_window.py" line="1113" />
+        <location filename="../gui/main_window.py" line="1029" />
+        <location filename="../gui/main_window.py" line="1125" />
         <source>Save as PDF</source>
         <translation>Guardar como PDF</translation>
     </message>
     <message>
-        <location filename="../gui/main_window.py" line="1026" />
-        <location filename="../gui/main_window.py" line="1122" />
+        <location filename="../gui/main_window.py" line="1038" />
+        <location filename="../gui/main_window.py" line="1134" />
         <source>Could not save the PDF</source>
         <translation>No se pudo guardar el PDF</translation>
     </message>
     <message>
-        <location filename="../gui/main_window.py" line="1032" />
-        <location filename="../gui/main_window.py" line="1127" />
+        <location filename="../gui/main_window.py" line="1044" />
+        <location filename="../gui/main_window.py" line="1139" />
         <location filename="../gui/pages/classroom_page.py" line="187" />
         <source>Saved {pages} page(s) to {path}</source>
         <translation>Se guardaron {pages} página(s) en {path}</translation>
     </message>
     <message>
-        <location filename="../gui/main_window.py" line="1037" />
+        <location filename="../gui/main_window.py" line="1049" />
         <source>Open a lesson first, then print it.</source>
         <translation>Abre primero una lección y luego imprímela.</translation>
     </message>
     <message>
-        <location filename="../gui/main_window.py" line="1048" />
+        <location filename="../gui/main_window.py" line="1060" />
         <location filename="../gui/pages/problems_page.py" line="183" />
         <source>Level {number} · {title}</source>
         <translation>Nivel {number} · {title}</translation>
     </message>
     <message>
-        <location filename="../gui/main_window.py" line="1053" />
+        <location filename="../gui/main_window.py" line="1065" />
         <source>The whole course</source>
         <translation>Todo el curso</translation>
     </message>
     <message>
-        <location filename="../gui/main_window.py" line="1063" />
+        <location filename="../gui/main_window.py" line="1075" />
         <source>Choose a folder for the website</source>
         <translation>Elige una carpeta para el sitio web</translation>
     </message>
     <message>
-        <location filename="../gui/main_window.py" line="1069" />
+        <location filename="../gui/main_window.py" line="1081" />
         <source>Replace the website?</source>
         <translation>¿Sustituir el sitio web?</translation>
     </message>
     <message>
-        <location filename="../gui/main_window.py" line="1070" />
+        <location filename="../gui/main_window.py" line="1082" />
         <source>{path} already exists. Replace it with a fresh copy?</source>
         <translation>{path} ya existe. ¿Sustituirlo por una copia nueva?</translation>
     </message>
     <message>
-        <location filename="../gui/main_window.py" line="1074" />
+        <location filename="../gui/main_window.py" line="1086" />
         <source>Building the website — this takes about a minute…</source>
         <translation>Construyendo el sitio web: esto tarda alrededor de un minuto…</translation>
     </message>
     <message>
-        <location filename="../gui/main_window.py" line="1079" />
+        <location filename="../gui/main_window.py" line="1091" />
         <source>Could not write the website</source>
         <translation>No se pudo escribir el sitio web</translation>
     </message>
     <message>
-        <location filename="../gui/main_window.py" line="1084" />
+        <location filename="../gui/main_window.py" line="1096" />
         <source>Website written: {pages} pages in {path}. Open index.html in a browser.</source>
         <translation>Sitio web escrito: {pages} páginas en {path}. Abre index.html en un navegador.</translation>
     </message>
     <message>
-        <location filename="../gui/main_window.py" line="1099" />
-        <location filename="../gui/main_window.py" line="1117" />
+        <location filename="../gui/main_window.py" line="1111" />
+        <location filename="../gui/main_window.py" line="1129" />
         <location filename="../gui/pages/lesson.py" line="234" />
         <source>Remember this</source>
         <translation>Recuerda esto</translation>
     </message>
     <message>
-        <location filename="../gui/main_window.py" line="1099" />
+        <location filename="../gui/main_window.py" line="1111" />
         <source>{count} completed lesson(s)</source>
         <translation>{count} lección(es) completada(s)</translation>
     </message>
     <message>
-        <location filename="../gui/main_window.py" line="1100" />
+        <location filename="../gui/main_window.py" line="1112" />
         <source>the whole course</source>
         <translation>todo el curso</translation>
     </message>
     <message>
-        <location filename="../gui/main_window.py" line="1143" />
+        <location filename="../gui/main_window.py" line="1155" />
         <source>{count} plugin(s) could not be loaded ({names}). See Help → Simulator plugins.</source>
         <translation>No se pudieron cargar {count} complemento(s) ({names}). Consulta Ayuda → Complementos de simuladores.</translation>
     </message>
     <message>
-        <location filename="../gui/main_window.py" line="1147" />
+        <location filename="../gui/main_window.py" line="1159" />
         <source>Loaded {count} simulator plugin(s).</source>
         <translation>Se cargaron {count} complemento(s) de simulador.</translation>
     </message>
     <message>
-        <location filename="../gui/main_window.py" line="1159" />
+        <location filename="../gui/main_window.py" line="1171" />
         <source>Simulator plugins</source>
         <translation>Complementos de simuladores</translation>
     </message>
     <message>
-        <location filename="../gui/main_window.py" line="1161" />
+        <location filename="../gui/main_window.py" line="1173" />
         <source>You can add your own simulator without changing Cosmos. Put one Python file in this folder and restart:</source>
         <translation>Puedes añadir tu propio simulador sin cambiar Cosmos. Pon un archivo de Python en esta carpeta y reinicia:</translation>
     </message>
     <message>
-        <location filename="../gui/main_window.py" line="1166" />
+        <location filename="../gui/main_window.py" line="1178" />
         <source>The folder contains a README with a complete example. A plugin is ordinary Python and runs with the same permissions as Cosmos itself, so only add files you wrote or trust.</source>
         <translation>La carpeta contiene un README con un ejemplo completo. Un complemento es Python corriente y se ejecuta con los mismos permisos que Cosmos, así que añade solo archivos que hayas escrito tú o en los que confíes.</translation>
     </message>
     <message>
-        <location filename="../gui/main_window.py" line="1171" />
+        <location filename="../gui/main_window.py" line="1183" />
         <source>Loaded</source>
         <translation>Cargado</translation>
     </message>
     <message>
-        <location filename="../gui/main_window.py" line="1175" />
+        <location filename="../gui/main_window.py" line="1187" />
         <source>Not loaded</source>
         <translation>No cargado</translation>
     </message>
     <message>
-        <location filename="../gui/main_window.py" line="1179" />
+        <location filename="../gui/main_window.py" line="1191" />
         <source>No plugins are installed.</source>
         <translation>No hay complementos instalados.</translation>
     </message>
     <message>
-        <location filename="../gui/main_window.py" line="1189" />
+        <location filename="../gui/main_window.py" line="1201" />
         <source>Cosmos will look for updates once a day.</source>
         <translation>Cosmos buscará actualizaciones una vez al día.</translation>
     </message>
     <message>
-        <location filename="../gui/main_window.py" line="1190" />
+        <location filename="../gui/main_window.py" line="1202" />
         <source>Cosmos will not look for updates.</source>
         <translation>Cosmos no buscará actualizaciones.</translation>
     </message>
     <message>
-        <location filename="../gui/main_window.py" line="1201" />
+        <location filename="../gui/main_window.py" line="1213" />
         <source>Check for updates?</source>
         <translation>¿Buscar actualizaciones?</translation>
     </message>
     <message>
-        <location filename="../gui/main_window.py" line="1202" />
+        <location filename="../gui/main_window.py" line="1214" />
         <source>Shall Cosmos look for a newer version once a day?</source>
         <translation>¿Quieres que Cosmos busque una versión más reciente una vez al día?</translation>
     </message>
     <message>
-        <location filename="../gui/main_window.py" line="1204" />
+        <location filename="../gui/main_window.py" line="1216" />
         <source>It asks GitHub for the latest release number and nothing else. No information about you, this computer or your progress is sent, and there is no identifier of any kind. You can change this at any time under Help.</source>
         <translation>Le pide a GitHub el número de la última versión y nada más. No se envía ninguna información sobre ti, sobre este ordenador ni sobre tu progreso, y no hay identificador de ningún tipo. Puedes cambiarlo cuando quieras en Ayuda.</translation>
     </message>
     <message>
-        <location filename="../gui/main_window.py" line="1207" />
+        <location filename="../gui/main_window.py" line="1219" />
         <source>Yes, check daily</source>
         <translation>Sí, buscar a diario</translation>
     </message>
     <message>
-        <location filename="../gui/main_window.py" line="1208" />
+        <location filename="../gui/main_window.py" line="1220" />
         <source>No, thanks</source>
         <translation>No, gracias</translation>
     </message>
     <message>
-        <location filename="../gui/main_window.py" line="1230" />
+        <location filename="../gui/main_window.py" line="1242" />
         <source>Looking for a newer version…</source>
         <translation>Buscando una versión más reciente…</translation>
     </message>
     <message>
-        <location filename="../gui/main_window.py" line="1254" />
+        <location filename="../gui/main_window.py" line="1266" />
         <source>No newer version found — or the check could not reach GitHub.</source>
         <translation>No se encontró ninguna versión más reciente, o la comprobación no pudo llegar a GitHub.</translation>
     </message>
     <message>
-        <location filename="../gui/main_window.py" line="1257" />
+        <location filename="../gui/main_window.py" line="1269" />
         <source>Cosmos {version} is available.</source>
         <translation>Cosmos {version} está disponible.</translation>
     </message>
     <message>
-        <location filename="../gui/main_window.py" line="1261" />
+        <location filename="../gui/main_window.py" line="1273" />
         <source>A newer Cosmos is available</source>
         <translation>Hay una versión más reciente de Cosmos</translation>
     </message>
     <message>
-        <location filename="../gui/main_window.py" line="1262" />
+        <location filename="../gui/main_window.py" line="1274" />
         <source>Version {version} has been released.</source>
         <translation>Se ha publicado la versión {version}.</translation>
     </message>
     <message>
-        <location filename="../gui/main_window.py" line="1265" />
+        <location filename="../gui/main_window.py" line="1277" />
         <source>Open the release page</source>
         <translation>Abrir la página de la versión</translation>
     </message>
     <message>
-        <location filename="../gui/main_window.py" line="1266" />
+        <location filename="../gui/main_window.py" line="1278" />
         <source>Later</source>
         <translation>Más tarde</translation>
     </message>
     <message>
-        <location filename="../gui/main_window.py" line="1293" />
+        <location filename="../gui/main_window.py" line="1305" />
         <source>Welcome to Cosmos!</source>
         <translation>¡Bienvenida o bienvenido a Cosmos!</translation>
     </message>
     <message>
-        <location filename="../gui/main_window.py" line="1294" />
+        <location filename="../gui/main_window.py" line="1306" />
         <source>This short tour shows you around. It takes less than a minute. You can leave with &lt;b&gt;Skip tour&lt;/b&gt; or the Esc key and replay it later from the &lt;b&gt;Tour&lt;/b&gt; button.</source>
         <translation>Este recorrido breve te enseña la aplicación. Dura menos de un minuto. Puedes salir con &lt;b&gt;Saltar el recorrido&lt;/b&gt; o la tecla Esc, y repetirlo luego desde el botón &lt;b&gt;Recorrido&lt;/b&gt;.</translation>
     </message>
     <message>
-        <location filename="../gui/main_window.py" line="1300" />
+        <location filename="../gui/main_window.py" line="1312" />
         <source>This list is the whole course. Lessons are grouped into levels, and only the section you are in stays open, so the list never gets long. The icon next to each lesson shows its status: &lt;b&gt;filled with ✓&lt;/b&gt; = completed, &lt;b&gt;ring&lt;/b&gt; = ready, &lt;b&gt;small grey circle&lt;/b&gt; = prerequisites missing. &lt;b&gt;Ctrl+B&lt;/b&gt; folds the list away entirely.</source>
         <translation>Esta lista es el curso entero. Las lecciones se agrupan en niveles y solo permanece abierta la sección en la que estás, así que la lista nunca se alarga. El icono junto a cada lección indica su estado: &lt;b&gt;relleno con ✓&lt;/b&gt; = completada, &lt;b&gt;anillo&lt;/b&gt; = lista para empezar, &lt;b&gt;círculo gris pequeño&lt;/b&gt; = faltan requisitos previos. &lt;b&gt;Ctrl+B&lt;/b&gt; pliega la lista por completo.</translation>
     </message>
     <message>
-        <location filename="../gui/main_window.py" line="1307" />
+        <location filename="../gui/main_window.py" line="1319" />
         <source>Start here</source>
         <translation>Empieza aquí</translation>
     </message>
     <message>
-        <location filename="../gui/main_window.py" line="1308" />
+        <location filename="../gui/main_window.py" line="1320" />
         <source>This button always takes you to the next lesson you are ready for. If you are new to cosmology, simply follow it.</source>
         <translation>Este botón te lleva siempre a la siguiente lección para la que estás preparado. Si la cosmología es nueva para ti, basta con seguirlo.</translation>
     </message>
     <message>
-        <location filename="../gui/main_window.py" line="1313" />
+        <location filename="../gui/main_window.py" line="1325" />
         <source>The Guide panel</source>
         <translation>El panel Guía</translation>
     </message>
     <message>
-        <location filename="../gui/main_window.py" line="1314" />
+        <location filename="../gui/main_window.py" line="1326" />
         <source>The Guide explains the page you are on: how to use it, what to try and where to go next. When you click a coloured term in a lesson, its definition appears here too. It stays out of the way until you ask for it with &lt;b&gt;F1&lt;/b&gt; or the toolbar button.</source>
         <translation>La Guía explica la página en la que estás: cómo usarla, qué probar y adónde ir después. Cuando pulsas un término coloreado en una lección, su definición también aparece aquí. Se mantiene apartada hasta que la pides con &lt;b&gt;F1&lt;/b&gt; o con el botón de la barra de herramientas.</translation>
     </message>
     <message>
-        <location filename="../gui/main_window.py" line="1321" />
+        <location filename="../gui/main_window.py" line="1333" />
         <source>Lessons and quizzes</source>
         <translation>Lecciones y cuestionarios</translation>
     </message>
     <message>
-        <location filename="../gui/main_window.py" line="1322" />
+        <location filename="../gui/main_window.py" line="1334" />
         <source>Each lesson has a &lt;b&gt;Lesson&lt;/b&gt; tab with explanations, formulas and figures, and a &lt;b&gt;Quiz&lt;/b&gt; tab. Score at least 70% to complete the lesson.</source>
         <translation>Cada lección tiene una pestaña &lt;b&gt;Lección&lt;/b&gt; con explicaciones, fórmulas y figuras, y una pestaña &lt;b&gt;Cuestionario&lt;/b&gt;. Acierta al menos el 70 % para completar la lección.</translation>
     </message>
     <message>
-        <location filename="../gui/main_window.py" line="1328" />
+        <location filename="../gui/main_window.py" line="1340" />
         <source>Two ways to read a lesson</source>
         <translation>Dos maneras de leer una lección</translation>
     </message>
     <message>
-        <location filename="../gui/main_window.py" line="1329" />
+        <location filename="../gui/main_window.py" line="1341" />
         <source>Every lesson has a &lt;b&gt;View&lt;/b&gt; switch at the top right. &lt;b&gt;Intuitive&lt;/b&gt; tells the story in words, hiding the formulas and derivations; &lt;b&gt;With the maths&lt;/b&gt; shows the complete lesson. Switch whenever you like — your choice is remembered.</source>
         <translation>Cada lección tiene un selector &lt;b&gt;Vista&lt;/b&gt; arriba a la derecha. &lt;b&gt;Intuitiva&lt;/b&gt; cuenta la historia con palabras y oculta las fórmulas y las deducciones; &lt;b&gt;Con las matemáticas&lt;/b&gt; muestra la lección completa. Cambia cuando quieras: se recuerda tu elección.</translation>
     </message>
     <message>
-        <location filename="../gui/main_window.py" line="1336" />
+        <location filename="../gui/main_window.py" line="1348" />
         <source>Simulators let you experiment. Lessons link to them with &lt;b&gt;Try it&lt;/b&gt; boxes, and you can open them any time from the sidebar.</source>
         <translation>Los simuladores te dejan experimentar. Las lecciones enlazan con ellos mediante cajas &lt;b&gt;Pruébalo&lt;/b&gt;, y puedes abrirlos cuando quieras desde la barra lateral.</translation>
     </message>
     <message>
-        <location filename="../gui/main_window.py" line="1342" />
-        <location filename="../gui/pages/simulators.py" line="124" />
+        <location filename="../gui/main_window.py" line="1354" />
+        <location filename="../gui/pages/simulators.py" line="131" />
         <source>Challenges</source>
         <translation>Retos</translation>
     </message>
     <message>
-        <location filename="../gui/main_window.py" line="1343" />
+        <location filename="../gui/main_window.py" line="1355" />
         <source>Many simulators open with a &lt;b&gt;challenge&lt;/b&gt;: a concrete task such as finding a universe that ends in a Big Crunch. Set the controls and press &lt;b&gt;Check my answer&lt;/b&gt;; hints are there if you need them, and solved challenges earn badges.</source>
         <translation>Muchos simuladores empiezan con un &lt;b&gt;reto&lt;/b&gt;: una tarea concreta, como encontrar un universo que termine en un Big Crunch. Ajusta los controles y pulsa &lt;b&gt;Comprobar mi respuesta&lt;/b&gt;; tienes pistas si las necesitas, y los retos resueltos dan insignias.</translation>
     </message>
     <message>
-        <location filename="../gui/main_window.py" line="1350" />
+        <location filename="../gui/main_window.py" line="1362" />
         <source>Search and the formula sheet</source>
         <translation>La búsqueda y el formulario</translation>
     </message>
     <message>
-        <location filename="../gui/main_window.py" line="1351" />
+        <location filename="../gui/main_window.py" line="1363" />
         <source>The &lt;b&gt;search box&lt;/b&gt; (Ctrl+F) looks through lessons, the glossary, the simulators and the formula sheet at once. &lt;b&gt;Reference&lt;/b&gt; (Ctrl+R) collects every formula, constant and unit conversion in one place.</source>
         <translation>El &lt;b&gt;cuadro de búsqueda&lt;/b&gt; (Ctrl+F) mira a la vez en las lecciones, el glosario, los simuladores y el formulario. &lt;b&gt;Referencia&lt;/b&gt; (Ctrl+R) reúne todas las fórmulas, constantes y conversiones de unidades en un solo sitio.</translation>
     </message>
     <message>
-        <location filename="../gui/main_window.py" line="1357" />
+        <location filename="../gui/main_window.py" line="1369" />
         <source>Your own notes</source>
         <translation>Tus propias notas</translation>
     </message>
     <message>
-        <location filename="../gui/main_window.py" line="1358" />
+        <location filename="../gui/main_window.py" line="1370" />
         <source>The &lt;b&gt;Notes&lt;/b&gt; panel, next to the Guide, is a private notebook: one note per page, saved automatically. Press &lt;b&gt;☆ Bookmark&lt;/b&gt; (Ctrl+D) to keep a link to a page, and open &lt;b&gt;Notes &amp;amp; bookmarks&lt;/b&gt; to see or export everything you saved.</source>
         <translation>El panel &lt;b&gt;Notas&lt;/b&gt;, junto a la Guía, es un cuaderno privado: una nota por página, guardada automáticamente. Pulsa &lt;b&gt;☆ Marcador&lt;/b&gt; (Ctrl+D) para conservar un enlace a una página, y abre &lt;b&gt;Notas y marcadores&lt;/b&gt; para ver o exportar todo lo que has guardado.</translation>
     </message>
     <message>
-        <location filename="../gui/main_window.py" line="1365" />
+        <location filename="../gui/main_window.py" line="1377" />
         <source>Toolbar</source>
         <translation>Barra de herramientas</translation>
     </message>
     <message>
-        <location filename="../gui/main_window.py" line="1366" />
+        <location filename="../gui/main_window.py" line="1378" />
         <source>Go &lt;b&gt;Back&lt;/b&gt; and &lt;b&gt;Forward&lt;/b&gt; between pages, jump &lt;b&gt;Home&lt;/b&gt; or &lt;b&gt;Continue&lt;/b&gt; where you left off. On the right are the search box and the three side panels. Everything else lives in the menus and in the list on the left.</source>
         <translation>Ve &lt;b&gt;Atrás&lt;/b&gt; y &lt;b&gt;Adelante&lt;/b&gt; entre páginas, salta a &lt;b&gt;Inicio&lt;/b&gt; o &lt;b&gt;Continúa&lt;/b&gt; donde lo dejaste. A la derecha están el cuadro de búsqueda y los tres paneles laterales. Todo lo demás vive en los menús y en la lista de la izquierda.</translation>
     </message>
     <message>
-        <location filename="../gui/main_window.py" line="1372" />
+        <location filename="../gui/main_window.py" line="1384" />
         <source>History and badges</source>
         <translation>Historia e insignias</translation>
     </message>
     <message>
-        <location filename="../gui/main_window.py" line="1373" />
+        <location filename="../gui/main_window.py" line="1385" />
         <source>&lt;b&gt;History&lt;/b&gt; follows cosmology from Copernicus to the latest surveys, with cards for the scientists. &lt;b&gt;Progress&lt;/b&gt; shows your lesson map and the &lt;b&gt;badges&lt;/b&gt; you have earned.</source>
         <translation>&lt;b&gt;Historia&lt;/b&gt; sigue la cosmología desde Copérnico hasta los sondeos más recientes, con fichas de los científicos. &lt;b&gt;Progreso&lt;/b&gt; muestra tu mapa de lecciones y las &lt;b&gt;insignias&lt;/b&gt; que has conseguido.</translation>
     </message>
     <message>
-        <location filename="../gui/main_window.py" line="1378" />
+        <location filename="../gui/main_window.py" line="1390" />
         <source>You're ready</source>
         <translation>Ya estás</translation>
     </message>
     <message>
-        <location filename="../gui/main_window.py" line="1379" />
+        <location filename="../gui/main_window.py" line="1391" />
         <source>Every control has a tooltip, and &lt;b&gt;?&lt;/b&gt; buttons give detailed explanations. Enjoy exploring the universe!</source>
         <translation>Cada control tiene una descripción emergente, y los botones &lt;b&gt;?&lt;/b&gt; dan explicaciones detalladas. ¡Disfruta explorando el universo!</translation>
     </message>
@@ -2197,7 +2202,7 @@ los paneles laterales, y lo que tiene el teclado se dibuja con un contorno claro
     </message>
     <message>
         <location filename="../gui/pages/home.py" line="164" />
-        <location filename="../gui/pages/home.py" line="287" />
+        <location filename="../gui/pages/home.py" line="294" />
         <source>{steps} steps a day</source>
         <translation>{steps} pasos al día</translation>
     </message>
@@ -2243,72 +2248,72 @@ los paneles laterales, y lo que tiene el teclado se dibuja con un contorno claro
         <translation>Herramientas prácticas para explorar las ideas de las lecciones. Puedes abrirlas cuando quieras.</translation>
     </message>
     <message>
-        <location filename="../gui/pages/home.py" line="239" />
+        <location filename="../gui/pages/home.py" line="246" />
         <source>Course progress: &lt;b&gt;{done}&lt;/b&gt; of {total} lessons completed</source>
         <translation>Progreso del curso: &lt;b&gt;{done}&lt;/b&gt; de {total} lecciones completadas</translation>
     </message>
     <message>
-        <location filename="../gui/pages/home.py" line="242" />
+        <location filename="../gui/pages/home.py" line="249" />
         <source>Review the course</source>
         <translation>Repasar el curso</translation>
     </message>
     <message>
-        <location filename="../gui/pages/home.py" line="243" />
+        <location filename="../gui/pages/home.py" line="250" />
         <source>You have completed every lesson. Congratulations!</source>
         <translation>Has completado todas las lecciones. ¡Enhorabuena!</translation>
     </message>
     <message>
-        <location filename="../gui/pages/home.py" line="247" />
+        <location filename="../gui/pages/home.py" line="254" />
         <source>Start learning</source>
         <translation>Empezar a aprender</translation>
     </message>
     <message>
-        <location filename="../gui/pages/home.py" line="247" />
+        <location filename="../gui/pages/home.py" line="254" />
         <source>Continue learning</source>
         <translation>Seguir aprendiendo</translation>
     </message>
     <message>
-        <location filename="../gui/pages/home.py" line="255" />
+        <location filename="../gui/pages/home.py" line="262" />
         <source>Review {count} question(s)</source>
         <translation>Repasar {count} pregunta(s)</translation>
     </message>
     <message>
-        <location filename="../gui/pages/home.py" line="260" />
+        <location filename="../gui/pages/home.py" line="267" />
         <source>{done} of {total} lessons completed</source>
         <translation>{done} de {total} lecciones completadas</translation>
     </message>
     <message>
-        <location filename="../gui/pages/home.py" line="266" />
+        <location filename="../gui/pages/home.py" line="273" />
         <source>{days}-day streak</source>
         <translation>Racha de {days} días</translation>
     </message>
     <message>
-        <location filename="../gui/pages/home.py" line="268" />
+        <location filename="../gui/pages/home.py" line="275" />
         <source>Start a streak today</source>
         <translation>Empieza hoy una racha</translation>
     </message>
     <message>
-        <location filename="../gui/pages/home.py" line="273" />
+        <location filename="../gui/pages/home.py" line="280" />
         <source>Today: &lt;b&gt;{steps}&lt;/b&gt; of {goal} steps</source>
         <translation>Hoy: &lt;b&gt;{steps}&lt;/b&gt; de {goal} pasos</translation>
     </message>
     <message>
-        <location filename="../gui/pages/home.py" line="275" />
+        <location filename="../gui/pages/home.py" line="282" />
         <source>goal reached ✓</source>
         <translation>meta alcanzada ✓</translation>
     </message>
     <message>
-        <location filename="../gui/pages/home.py" line="278" />
+        <location filename="../gui/pages/home.py" line="285" />
         <source>Today: &lt;b&gt;{steps}&lt;/b&gt; steps</source>
         <translation>Hoy: &lt;b&gt;{steps}&lt;/b&gt; pasos</translation>
     </message>
     <message>
-        <location filename="../gui/pages/home.py" line="280" />
+        <location filename="../gui/pages/home.py" line="287" />
         <source>Study a little today to keep your streak going.</source>
         <translation>Estudia un poco hoy para mantener viva tu racha.</translation>
     </message>
     <message>
-        <location filename="../gui/pages/home.py" line="283" />
+        <location filename="../gui/pages/home.py" line="290" />
         <source>Last seven days: {marks}   Longest streak: {longest} days</source>
         <translation>Últimos siete días: {marks}   Racha más larga: {longest} días</translation>
     </message>
@@ -3230,37 +3235,37 @@ curso y te deja cambiar tú mismo los parámetros.
         <translation>Elige un simulador. Cada ficha lista las lecciones a las que acompaña.</translation>
     </message>
     <message>
-        <location filename="../gui/pages/simulators.py" line="63" />
+        <location filename="../gui/pages/simulators.py" line="71" />
         <source>Supports lessons: {lessons}</source>
         <translation>Acompaña a las lecciones: {lessons}</translation>
     </message>
     <message>
-        <location filename="../gui/pages/simulators.py" line="64" />
+        <location filename="../gui/pages/simulators.py" line="72" />
         <source>Open simulator</source>
         <translation>Abrir el simulador</translation>
     </message>
     <message>
-        <location filename="../gui/pages/simulators.py" line="91" />
+        <location filename="../gui/pages/simulators.py" line="98" />
         <source>SIMULATOR</source>
         <translation>SIMULADOR</translation>
     </message>
     <message>
-        <location filename="../gui/pages/simulators.py" line="113" />
+        <location filename="../gui/pages/simulators.py" line="120" />
         <source>How to use</source>
         <translation>Cómo usarlo</translation>
     </message>
     <message>
-        <location filename="../gui/pages/simulators.py" line="115" />
+        <location filename="../gui/pages/simulators.py" line="122" />
         <source>Things to try</source>
         <translation>Cosas que probar</translation>
     </message>
     <message>
-        <location filename="../gui/pages/simulators.py" line="119" />
+        <location filename="../gui/pages/simulators.py" line="126" />
         <source>Related lessons</source>
         <translation>Lecciones relacionadas</translation>
     </message>
     <message>
-        <location filename="../gui/pages/simulators.py" line="125" />
+        <location filename="../gui/pages/simulators.py" line="132" />
         <source>This simulator has {total} guided challenges ({solved} solved). Read the task at the top, set the controls, then press **Check my answer**.</source>
         <translation>Este simulador tiene {total} retos guiados ({solved} resueltos). Lee la tarea de arriba, ajusta los controles y pulsa **Comprobar mi respuesta**.</translation>
     </message>
@@ -7178,1631 +7183,1661 @@ Reducir a la mitad el término mayor ayuda mucho más que eliminar el menor. Un 
     </message>
     <message>
         <location filename="../gui/simulators/registry.py" line="42" />
+        <source>Measuring the universe</source>
+        <translation>Medir el universo</translation>
+    </message>
+    <message>
+        <location filename="../gui/simulators/registry.py" line="43" />
+        <source>The expanding universe</source>
+        <translation>El universo en expansión</translation>
+    </message>
+    <message>
+        <location filename="../gui/simulators/registry.py" line="44" />
+        <source>Matter, dark matter and galaxies</source>
+        <translation>Materia, materia oscura y galaxias</translation>
+    </message>
+    <message>
+        <location filename="../gui/simulators/registry.py" line="45" />
+        <source>The early universe</source>
+        <translation>El universo primitivo</translation>
+    </message>
+    <message>
+        <location filename="../gui/simulators/registry.py" line="46" />
+        <source>How cosmologists work</source>
+        <translation>Cómo trabajan los cosmólogos</translation>
+    </message>
+    <message>
+        <location filename="../gui/simulators/registry.py" line="47" />
+        <source>Added by you</source>
+        <translation>Añadidos por ti</translation>
+    </message>
+    <message>
+        <location filename="../gui/simulators/registry.py" line="57" />
         <source>Cosmology Calculator</source>
         <translation>Calculadora cosmológica</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/registry.py" line="43" />
+        <location filename="../gui/simulators/registry.py" line="58" />
         <source>Ages, distances and more for any redshift.</source>
         <translation>Edades, distancias y más para cualquier corrimiento al rojo.</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/registry.py" line="45" />
+        <location filename="../gui/simulators/registry.py" line="60" />
         <source>Choose a cosmological model and a redshift z. The calculator tells you how old the universe was when the light left the object, how long the light travelled, and the different 'distances' astronomers use.</source>
         <translation>Elige un modelo cosmológico y un corrimiento al rojo z. La calculadora te dice qué edad tenía el universo cuando salió la luz del objeto, cuánto tiempo viajó esa luz y las distintas «distancias» que usan los astrónomos.</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/registry.py" line="50" />
+        <location filename="../gui/simulators/registry.py" line="65" />
         <source>Pick a model from &lt;b&gt;Preset&lt;/b&gt; (Planck 2018 is today's best estimate) or type your own values.</source>
         <translation>Elige un modelo en &lt;b&gt;Ajuste predefinido&lt;/b&gt; (Planck 2018 es la mejor estimación de hoy) o escribe tus propios valores.</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/registry.py" line="52" />
+        <location filename="../gui/simulators/registry.py" line="67" />
         <source>Enter the &lt;b&gt;redshift z&lt;/b&gt; of the object you are interested in.</source>
         <translation>Introduce el &lt;b&gt;corrimiento al rojo z&lt;/b&gt; del objeto que te interesa.</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/registry.py" line="53" />
+        <location filename="../gui/simulators/registry.py" line="68" />
         <source>Read the results table. Click any row to see what that quantity means.</source>
         <translation>Lee la tabla de resultados. Pulsa cualquier fila para ver qué significa esa magnitud.</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/registry.py" line="54" />
+        <location filename="../gui/simulators/registry.py" line="69" />
         <source>Use the plots to see how each quantity changes with redshift.</source>
         <translation>Usa las gráficas para ver cómo cambia cada magnitud con el corrimiento al rojo.</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/registry.py" line="57" />
+        <location filename="../gui/simulators/registry.py" line="72" />
         <source>Set z = 1100: this is the cosmic microwave background. How old was the universe?</source>
         <translation>Pon z = 1100: este es el fondo cósmico de microondas. ¿Qué edad tenía el universo?</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/registry.py" line="58" />
+        <location filename="../gui/simulators/registry.py" line="73" />
         <source>Compare the comoving and light-travel distances at z = 3. Why is one larger?</source>
         <translation>Compara la distancia comóvil con la recorrida por la luz en z = 3. ¿Por qué una es mayor?</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/registry.py" line="59" />
+        <location filename="../gui/simulators/registry.py" line="74" />
         <source>Switch to Einstein–de Sitter. Is the universe older or younger than in Planck 2018?</source>
         <translation>Cambia a Einstein-de Sitter. ¿El universo es más viejo o más joven que en Planck 2018?</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/registry.py" line="68" />
+        <location filename="../gui/simulators/registry.py" line="84" />
         <source>Expansion History Explorer</source>
         <translation>Explorador de la historia de la expansión</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/registry.py" line="69" />
+        <location filename="../gui/simulators/registry.py" line="85" />
         <source>How matter and dark energy shape the past and future.</source>
         <translation>Cómo la materia y la energía oscura moldean el pasado y el futuro.</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/registry.py" line="71" />
+        <location filename="../gui/simulators/registry.py" line="87" />
         <source>Adjust how much matter and dark energy the universe contains and watch the scale factor a(t) change. The Ωm–ΩΛ map shows which combinations lead to eternal expansion, a Big Crunch or no Big Bang at all.</source>
         <translation>Ajusta cuánta materia y cuánta energía oscura contiene el universo y mira cómo cambia el factor de escala a(t). El mapa Ωm-ΩΛ muestra qué combinaciones llevan a una expansión eterna, a un Big Crunch o a ningún Big Bang.</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/registry.py" line="76" />
+        <location filename="../gui/simulators/registry.py" line="92" />
         <source>Move the &lt;b&gt;Ωm&lt;/b&gt; and &lt;b&gt;ΩΛ&lt;/b&gt; sliders, or click anywhere on the Ωm–ΩΛ map.</source>
         <translation>Mueve los deslizadores &lt;b&gt;Ωm&lt;/b&gt; y &lt;b&gt;ΩΛ&lt;/b&gt;, o pulsa en cualquier punto del mapa Ωm-ΩΛ.</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/registry.py" line="77" />
+        <location filename="../gui/simulators/registry.py" line="93" />
         <source>The upper plot shows the size of the universe over time; today is at t = 0 where a = 1.</source>
         <translation>La gráfica de arriba muestra el tamaño del universo con el tiempo; hoy está en t = 0, donde a = 1.</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/registry.py" line="78" />
+        <location filename="../gui/simulators/registry.py" line="94" />
         <source>Press &lt;b&gt;Pin curve&lt;/b&gt; to keep the current curve for comparison.</source>
         <translation>Pulsa &lt;b&gt;Fijar la curva&lt;/b&gt; para conservar la curva actual y compararla.</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/registry.py" line="79" />
+        <location filename="../gui/simulators/registry.py" line="95" />
         <source>Read the summary for the universe's age, geometry and fate.</source>
         <translation>Lee en el resumen la edad, la geometría y el destino del universo.</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/registry.py" line="82" />
+        <location filename="../gui/simulators/registry.py" line="98" />
         <source>Find the Big Crunch region: increase Ωm above 1 with ΩΛ = 0.</source>
         <translation>Encuentra la región del Big Crunch: sube Ωm por encima de 1 con ΩΛ = 0.</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/registry.py" line="83" />
+        <location filename="../gui/simulators/registry.py" line="99" />
         <source>Pin Planck 2018, then set ΩΛ = 0 with Ωm = 0.3. Which universe is older?</source>
         <translation>Fija Planck 2018 y luego pon ΩΛ = 0 con Ωm = 0,3. ¿Qué universo es más viejo?</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/registry.py" line="84" />
+        <location filename="../gui/simulators/registry.py" line="100" />
         <source>Cross the dashed 'accelerating' line and watch the curve's shape today.</source>
         <translation>Cruza la línea discontinua de «aceleración» y observa la forma de la curva hoy.</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/registry.py" line="93" />
+        <location filename="../gui/simulators/registry.py" line="110" />
         <source>Powers of Ten Zoom</source>
         <translation>Zoom de potencias de diez</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/registry.py" line="94" />
+        <location filename="../gui/simulators/registry.py" line="111" />
         <source>From a human to the observable universe.</source>
         <translation>De una persona al universo observable.</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/registry.py" line="96" />
+        <location filename="../gui/simulators/registry.py" line="113" />
         <source>Zoom out from human size to the whole observable universe, one power of ten at a time. Every object is drawn to scale for the current field of view.</source>
         <translation>Aléjate desde el tamaño humano hasta el universo observable entero, una potencia de diez cada vez. Todos los objetos están dibujados a escala para el campo de visión actual.</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/registry.py" line="100" />
+        <location filename="../gui/simulators/registry.py" line="117" />
         <source>Drag the &lt;b&gt;zoom slider&lt;/b&gt; or scroll the mouse wheel over the view.</source>
         <translation>Arrastra el &lt;b&gt;deslizador del zoom&lt;/b&gt; o gira la rueda del ratón sobre la vista.</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/registry.py" line="101" />
+        <location filename="../gui/simulators/registry.py" line="118" />
         <source>Press &lt;b&gt;Play&lt;/b&gt; to fly out automatically; press again to stop.</source>
         <translation>Pulsa &lt;b&gt;Reproducir&lt;/b&gt; para volar hacia fuera automáticamente; pulsa otra vez para parar.</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/registry.py" line="102" />
+        <location filename="../gui/simulators/registry.py" line="119" />
         <source>Use &lt;b&gt;Jump to&lt;/b&gt; to go straight to an object.</source>
         <translation>Usa &lt;b&gt;Saltar a&lt;/b&gt; para ir directamente a un objeto.</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/registry.py" line="103" />
+        <location filename="../gui/simulators/registry.py" line="120" />
         <source>The panel on the right describes what is visible and how long light takes to cross the view.</source>
         <translation>El panel de la derecha describe qué se ve y cuánto tarda la luz en cruzar la vista.</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/registry.py" line="106" />
+        <location filename="../gui/simulators/registry.py" line="123" />
         <source>How many powers of ten separate the Earth from the Sun's size?</source>
         <translation>¿Cuántas potencias de diez separan la Tierra del tamaño del Sol?</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/registry.py" line="107" />
+        <location filename="../gui/simulators/registry.py" line="124" />
         <source>Find the scale where light needs one year to cross the view.</source>
         <translation>Encuentra la escala en la que la luz necesita un año para cruzar la vista.</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/registry.py" line="108" />
+        <location filename="../gui/simulators/registry.py" line="125" />
         <source>Notice how empty space is between stars compared with between galaxies.</source>
         <translation>Fíjate en lo vacío que está el espacio entre estrellas comparado con el que hay entre galaxias.</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/registry.py" line="117" />
+        <location filename="../gui/simulators/registry.py" line="135" />
         <source>Spectrum &amp; Redshift Simulator</source>
         <translation>Simulador de espectros y corrimiento al rojo</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/registry.py" line="118" />
+        <location filename="../gui/simulators/registry.py" line="136" />
         <source>See spectral lines shift with motion and expansion.</source>
         <translation>Mira desplazarse las líneas espectrales con el movimiento y la expansión.</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/registry.py" line="120" />
+        <location filename="../gui/simulators/registry.py" line="138" />
         <source>Atoms absorb light at precise wavelengths, leaving dark lines in a spectrum. Move the source or expand the universe and watch the lines slide toward the red (or blue).</source>
         <translation>Los átomos absorben luz en longitudes de onda precisas, y dejan líneas oscuras en un espectro. Mueve la fuente o expande el universo y observa cómo las líneas se deslizan hacia el rojo (o hacia el azul).</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/registry.py" line="124" />
+        <location filename="../gui/simulators/registry.py" line="142" />
         <source>Choose &lt;b&gt;Doppler motion&lt;/b&gt; (a moving source) or &lt;b&gt;Cosmic expansion&lt;/b&gt; (a distant galaxy).</source>
         <translation>Elige &lt;b&gt;Movimiento Doppler&lt;/b&gt; (una fuente en movimiento) o &lt;b&gt;Expansión cósmica&lt;/b&gt; (una galaxia lejana).</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/registry.py" line="126" />
+        <location filename="../gui/simulators/registry.py" line="144" />
         <source>Move the slider. The lower strip shows the observed spectrum; the upper one is the laboratory spectrum.</source>
         <translation>Mueve el deslizador. La franja inferior muestra el espectro observado; la superior es el espectro de laboratorio.</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/registry.py" line="128" />
+        <location filename="../gui/simulators/registry.py" line="146" />
         <source>Lines that leave the visible range continue into the infrared (grey area).</source>
         <translation>Las líneas que salen del rango visible siguen hacia el infrarrojo (zona gris).</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/registry.py" line="129" />
+        <location filename="../gui/simulators/registry.py" line="147" />
         <source>Try the &lt;b&gt;Mystery galaxy&lt;/b&gt; challenge to measure a redshift yourself.</source>
         <translation>Prueba el reto &lt;b&gt;Galaxia misteriosa&lt;/b&gt; para medir tú un corrimiento al rojo.</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/registry.py" line="132" />
+        <location filename="../gui/simulators/registry.py" line="150" />
         <source>At what redshift does the red Hα line leave the visible range?</source>
         <translation>¿A qué corrimiento al rojo sale del rango visible la línea roja Hα?</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/registry.py" line="133" />
+        <location filename="../gui/simulators/registry.py" line="151" />
         <source>Make the source approach you: which way do the lines move?</source>
         <translation>Haz que la fuente se acerque a ti: ¿hacia dónde se mueven las líneas?</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/registry.py" line="134" />
+        <location filename="../gui/simulators/registry.py" line="152" />
         <source>At z = 2, how big was the universe compared with today?</source>
         <translation>En z = 2, ¿cómo de grande era el universo comparado con hoy?</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/registry.py" line="143" />
+        <location filename="../gui/simulators/registry.py" line="162" />
         <source>Hubble Diagram Fitter</source>
         <translation>Ajustador del diagrama de Hubble</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/registry.py" line="144" />
+        <location filename="../gui/simulators/registry.py" line="163" />
         <source>Measure the expansion rate from real data.</source>
         <translation>Mide el ritmo de expansión con datos reales.</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/registry.py" line="146" />
+        <location filename="../gui/simulators/registry.py" line="165" />
         <source>Plot galaxy velocities against distances and fit a straight line through the origin. Its slope is the Hubble constant H0, and 1/H0 estimates the age of the universe.</source>
         <translation>Dibuja las velocidades de las galaxias frente a sus distancias y ajusta una recta que pase por el origen. Su pendiente es la constante de Hubble H0, y 1/H0 estima la edad del universo.</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/registry.py" line="150" />
+        <location filename="../gui/simulators/registry.py" line="169" />
         <source>Select a &lt;b&gt;data set&lt;/b&gt;: Hubble's original 1929 data or a simulated modern sample.</source>
         <translation>Elige un &lt;b&gt;conjunto de datos&lt;/b&gt;: los datos originales de Hubble de 1929 o una muestra moderna simulada.</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/registry.py" line="151" />
+        <location filename="../gui/simulators/registry.py" line="170" />
         <source>Move the &lt;b&gt;H0 slider&lt;/b&gt; until the line follows the points; watch the residuals shrink.</source>
         <translation>Mueve el &lt;b&gt;deslizador de H0&lt;/b&gt; hasta que la recta siga a los puntos; mira encogerse los residuos.</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/registry.py" line="152" />
+        <location filename="../gui/simulators/registry.py" line="171" />
         <source>Press &lt;b&gt;Find best fit&lt;/b&gt; to let least squares find the optimal slope.</source>
         <translation>Pulsa &lt;b&gt;Buscar el mejor ajuste&lt;/b&gt; para que los mínimos cuadrados encuentren la pendiente óptima.</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/registry.py" line="153" />
+        <location filename="../gui/simulators/registry.py" line="172" />
         <source>Compare the Hubble time 1/H0 with the true age of the universe (13.8 Gyr).</source>
         <translation>Compara el tiempo de Hubble 1/H0 con la edad verdadera del universo (13 800 millones de años).</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/registry.py" line="156" />
+        <location filename="../gui/simulators/registry.py" line="175" />
         <source>Fit Hubble's data. Why is his H0 about seven times too large?</source>
         <translation>Ajusta los datos de Hubble. ¿Por qué su H0 es unas siete veces demasiado grande?</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/registry.py" line="157" />
+        <location filename="../gui/simulators/registry.py" line="176" />
         <source>Notice the galaxies with negative velocities in 1929: which ones are they?</source>
         <translation>Fíjate en las galaxias con velocidades negativas en 1929: ¿cuáles son?</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/registry.py" line="158" />
+        <location filename="../gui/simulators/registry.py" line="177" />
         <source>Fit the modern sample and compute 1/H0 in billions of years.</source>
         <translation>Ajusta la muestra moderna y calcula 1/H0 en miles de millones de años.</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/registry.py" line="167" />
+        <location filename="../gui/simulators/registry.py" line="187" />
         <source>Galaxy Rotation Curve</source>
         <translation>Curva de rotación galáctica</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/registry.py" line="168" />
+        <location filename="../gui/simulators/registry.py" line="188" />
         <source>Uncover dark matter from how galaxies spin.</source>
         <translation>Descubre la materia oscura a partir de cómo giran las galaxias.</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/registry.py" line="170" />
+        <location filename="../gui/simulators/registry.py" line="190" />
         <source>Stars orbit the centre of a galaxy. If only visible matter pulled on them, distant stars would move slowly. Build a galaxy from a bulge, a disk and a dark matter halo and compare with a measured-style rotation curve.</source>
         <translation>Las estrellas orbitan el centro de una galaxia. Si solo tirara de ellas la materia visible, las estrellas lejanas se moverían despacio. Construye una galaxia con un bulbo, un disco y un halo de materia oscura y compárala con una curva de rotación al estilo de las medidas.</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/registry.py" line="175" />
+        <location filename="../gui/simulators/registry.py" line="195" />
         <source>Adjust the &lt;b&gt;bulge&lt;/b&gt; and &lt;b&gt;disk&lt;/b&gt; masses: these are the stars and gas you can see.</source>
         <translation>Ajusta las masas del &lt;b&gt;bulbo&lt;/b&gt; y del &lt;b&gt;disco&lt;/b&gt;: son las estrellas y el gas que puedes ver.</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/registry.py" line="176" />
+        <location filename="../gui/simulators/registry.py" line="196" />
         <source>Turn the &lt;b&gt;dark matter halo&lt;/b&gt; on and change its mass.</source>
         <translation>Enciende el &lt;b&gt;halo de materia oscura&lt;/b&gt; y cambia su masa.</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/registry.py" line="177" />
+        <location filename="../gui/simulators/registry.py" line="197" />
         <source>Compare the total curve with the data points.</source>
         <translation>Compara la curva total con los puntos de datos.</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/registry.py" line="178" />
+        <location filename="../gui/simulators/registry.py" line="198" />
         <source>Press &lt;b&gt;Fit halo to data&lt;/b&gt; to find the halo mass that matches best.</source>
         <translation>Pulsa &lt;b&gt;Ajustar el halo a los datos&lt;/b&gt; para encontrar la masa de halo que mejor encaja.</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/registry.py" line="181" />
+        <location filename="../gui/simulators/registry.py" line="201" />
         <source>Pick a real galaxy from the &lt;b&gt;Galaxy&lt;/b&gt; list: 138 measured curves from the SPARC survey.</source>
         <translation>Elige una galaxia real en la lista &lt;b&gt;Galaxia&lt;/b&gt;: 138 curvas medidas del sondeo SPARC.</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/registry.py" line="182" />
+        <location filename="../gui/simulators/registry.py" line="202" />
         <source>Compare a dwarf (DDO154) with a giant spiral (UGC02885): which needs proportionally more dark matter?</source>
         <translation>Compara una enana (DDO154) con una espiral gigante (UGC02885): ¿cuál necesita proporcionalmente más materia oscura?</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/registry.py" line="184" />
+        <location filename="../gui/simulators/registry.py" line="204" />
         <source>Switch off the halo: how does the curve behave in the outskirts?</source>
         <translation>Apaga el halo: ¿cómo se comporta la curva en las afueras?</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/registry.py" line="185" />
+        <location filename="../gui/simulators/registry.py" line="205" />
         <source>How much dark matter lies inside 30 kpc compared with visible matter?</source>
         <translation>¿Cuánta materia oscura hay dentro de 30 kpc comparada con la materia visible?</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/registry.py" line="186" />
+        <location filename="../gui/simulators/registry.py" line="206" />
         <source>Can you fit the data with a heavier disk and no halo? Why not?</source>
         <translation>¿Puedes ajustar los datos con un disco más pesado y sin halo? ¿Por qué no?</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/registry.py" line="187" />
+        <location filename="../gui/simulators/registry.py" line="207" />
         <source>Tick &lt;b&gt;Use MOND&lt;/b&gt;: can modified gravity explain the curve without dark matter?</source>
         <translation>Marca &lt;b&gt;Usar MOND&lt;/b&gt;: ¿puede la gravedad modificada explicar la curva sin materia oscura?</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/registry.py" line="196" />
+        <location filename="../gui/simulators/registry.py" line="217" />
         <source>Balloon &amp; Raisin-Bread Expansion</source>
         <translation>Expansión del globo y el pan de pasas</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/registry.py" line="197" />
+        <location filename="../gui/simulators/registry.py" line="218" />
         <source>Why every galaxy sees all others moving away.</source>
         <translation>Por qué cada galaxia ve alejarse a todas las demás.</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/registry.py" line="199" />
+        <location filename="../gui/simulators/registry.py" line="220" />
         <source>Galaxies sit on a grid that stretches as the universe expands. Pick any galaxy as your home: all others recede from it, faster the farther they are. Light travelling between galaxies is stretched too.</source>
         <translation>Las galaxias están en una rejilla que se estira al expandirse el universo. Elige cualquier galaxia como tu casa: todas las demás se alejan de ella, y tanto más deprisa cuanto más lejos están. La luz que viaja entre galaxias también se estira.</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/registry.py" line="204" />
+        <location filename="../gui/simulators/registry.py" line="225" />
         <source>Press &lt;b&gt;Play&lt;/b&gt; to expand the universe; &lt;b&gt;Reset&lt;/b&gt; returns to the start.</source>
         <translation>Pulsa &lt;b&gt;Reproducir&lt;/b&gt; para expandir el universo; &lt;b&gt;Reiniciar&lt;/b&gt; vuelve al principio.</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/registry.py" line="205" />
+        <location filename="../gui/simulators/registry.py" line="226" />
         <source>&lt;b&gt;Click a galaxy&lt;/b&gt; to stand on it. Arrows show how others move as seen from there.</source>
         <translation>&lt;b&gt;Pulsa una galaxia&lt;/b&gt; para situarte en ella. Las flechas muestran cómo se mueven las demás vistas desde allí.</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/registry.py" line="206" />
+        <location filename="../gui/simulators/registry.py" line="227" />
         <source>Press &lt;b&gt;Emit light&lt;/b&gt; to send a wave and watch its wavelength stretch.</source>
         <translation>Pulsa &lt;b&gt;Emitir luz&lt;/b&gt; para enviar una onda y ver cómo se estira su longitud de onda.</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/registry.py" line="207" />
+        <location filename="../gui/simulators/registry.py" line="228" />
         <source>Toggle the comoving grid to see that galaxies keep their grid positions.</source>
         <translation>Activa la rejilla comóvil para ver que las galaxias conservan sus posiciones en la rejilla.</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/registry.py" line="210" />
+        <location filename="../gui/simulators/registry.py" line="231" />
         <source>Choose a galaxy at the edge. Is the pattern of arrows any different?</source>
         <translation>Elige una galaxia del borde. ¿Es distinto el patrón de flechas?</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/registry.py" line="211" />
+        <location filename="../gui/simulators/registry.py" line="232" />
         <source>Compare an arrow twice as long with the distance: is the ratio the same?</source>
         <translation>Compara una flecha el doble de larga con la distancia: ¿es la misma razón?</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/registry.py" line="212" />
+        <location filename="../gui/simulators/registry.py" line="233" />
         <source>Emit light, wait until the scale factor doubles, and read the redshift.</source>
         <translation>Emite luz, espera a que el factor de escala se duplique y lee el corrimiento al rojo.</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/registry.py" line="221" />
+        <location filename="../gui/simulators/registry.py" line="243" />
         <source>CMB Power Spectrum Explorer</source>
         <translation>Explorador del espectro de potencias del FCM</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/registry.py" line="222" />
+        <location filename="../gui/simulators/registry.py" line="244" />
         <source>How the universe's ingredients shape the CMB peaks.</source>
         <translation>Cómo los ingredientes del universo moldean los picos del FCM.</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/registry.py" line="224" />
+        <location filename="../gui/simulators/registry.py" line="246" />
         <source>The pattern of hot and cold spots in the cosmic microwave background encodes the geometry and contents of the universe. Change ordinary matter, dark matter, curvature and the initial fluctuations, and watch the acoustic peaks and the simulated sky respond.</source>
         <translation>El patrón de manchas frías y calientes del fondo cósmico de microondas codifica la geometría y el contenido del universo. Cambia la materia ordinaria, la materia oscura, la curvatura y las fluctuaciones iniciales, y mira responder a los picos acústicos y al cielo simulado.</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/registry.py" line="229" />
+        <location filename="../gui/simulators/registry.py" line="251" />
         <source>Move a slider in &lt;b&gt;Contents of the universe&lt;/b&gt;; the blue curve is your universe, the dashed curve the Planck 2018 model.</source>
         <translation>Mueve un deslizador en &lt;b&gt;Contenido del universo&lt;/b&gt;; la curva azul es tu universo y la discontinua, el modelo Planck 2018.</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/registry.py" line="231" />
+        <location filename="../gui/simulators/registry.py" line="253" />
         <source>Read the &lt;b&gt;peak positions&lt;/b&gt; and the acoustic angle in the results panel.</source>
         <translation>Lee las &lt;b&gt;posiciones de los picos&lt;/b&gt; y el ángulo acústico en el panel de resultados.</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/registry.py" line="232" />
+        <location filename="../gui/simulators/registry.py" line="254" />
         <source>Open the &lt;b&gt;What the sky looks like&lt;/b&gt; tab to compare simulated sky patches.</source>
         <translation>Abre la pestaña &lt;b&gt;Qué aspecto tiene el cielo&lt;/b&gt; para comparar trozos de cielo simulados.</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/registry.py" line="233" />
+        <location filename="../gui/simulators/registry.py" line="255" />
         <source>Press &lt;b&gt;Reset to Planck 2018&lt;/b&gt; to start again.</source>
         <translation>Pulsa &lt;b&gt;Volver a Planck 2018&lt;/b&gt; para empezar de nuevo.</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/registry.py" line="236" />
+        <location filename="../gui/simulators/registry.py" line="258" />
         <source>Make space closed (Ωk = −0.1): do the spots on the sky look larger or smaller?</source>
         <translation>Haz el espacio cerrado (Ωk = −0,1): ¿las manchas del cielo se ven mayores o menores?</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/registry.py" line="237" />
+        <location filename="../gui/simulators/registry.py" line="259" />
         <source>Double Ωb h². Which peaks grow and which shrink?</source>
         <translation>Duplica Ωb h². ¿Qué picos crecen y cuáles encogen?</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/registry.py" line="238" />
+        <location filename="../gui/simulators/registry.py" line="260" />
         <source>Set τ = 0.15. Which part of the spectrum is suppressed?</source>
         <translation>Pon τ = 0,15. ¿Qué parte del espectro queda suprimida?</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/registry.py" line="247" />
+        <location filename="../gui/simulators/registry.py" line="270" />
         <source>2D N-body Structure Formation</source>
         <translation>Formación de estructuras con N cuerpos en 2D</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/registry.py" line="248" />
+        <location filename="../gui/simulators/registry.py" line="271" />
         <source>Watch gravity build the cosmic web from tiny ripples.</source>
         <translation>Mira cómo la gravedad construye la red cósmica a partir de ondulaciones diminutas.</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/registry.py" line="250" />
+        <location filename="../gui/simulators/registry.py" line="273" />
         <source>Tens of thousands of dark matter particles start almost uniformly spread, with tiny ripples. Gravity amplifies the ripples into sheets, filaments and halos that merge into ever larger structures. Compare the growth with linear theory and try warm dark matter.</source>
         <translation>Decenas de miles de partículas de materia oscura empiezan repartidas casi uniformemente, con ondulaciones diminutas. La gravedad amplifica las ondulaciones hasta formar láminas, filamentos y halos que se fusionan en estructuras cada vez mayores. Compara el crecimiento con la teoría lineal y prueba la materia oscura templada.</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/registry.py" line="255" />
+        <location filename="../gui/simulators/registry.py" line="278" />
         <source>Press &lt;b&gt;Play&lt;/b&gt;. Time is measured by the growth factor D; D = 1 corresponds to today.</source>
         <translation>Pulsa &lt;b&gt;Reproducir&lt;/b&gt;. El tiempo se mide con el factor de crecimiento D; D = 1 corresponde a hoy.</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/registry.py" line="256" />
+        <location filename="../gui/simulators/registry.py" line="279" />
         <source>Watch the lower plot: at first the density contrast follows linear theory, then gravity takes over.</source>
         <translation>Observa la gráfica de abajo: al principio el contraste de densidad sigue la teoría lineal, y luego la gravedad toma el mando.</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/registry.py" line="258" />
+        <location filename="../gui/simulators/registry.py" line="281" />
         <source>Change the &lt;b&gt;spectral index&lt;/b&gt; or choose &lt;b&gt;warm dark matter&lt;/b&gt;, then press &lt;b&gt;Apply and restart&lt;/b&gt;.</source>
         <translation>Cambia el &lt;b&gt;índice espectral&lt;/b&gt; o elige &lt;b&gt;materia oscura templada&lt;/b&gt;, y pulsa &lt;b&gt;Aplicar y reiniciar&lt;/b&gt;.</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/registry.py" line="260" />
+        <location filename="../gui/simulators/registry.py" line="283" />
         <source>A different &lt;b&gt;random seed&lt;/b&gt; gives a different universe with the same statistics.</source>
         <translation>Una &lt;b&gt;semilla aleatoria&lt;/b&gt; distinta da un universo distinto con la misma estadística.</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/registry.py" line="263" />
+        <location filename="../gui/simulators/registry.py" line="286" />
         <source>When does the simulation first deviate from the linear-theory line?</source>
         <translation>¿Cuándo se aparta por primera vez la simulación de la recta de la teoría lineal?</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/registry.py" line="264" />
+        <location filename="../gui/simulators/registry.py" line="287" />
         <source>Compare n = −2 with n = 0: which one forms large filaments, which one many small clumps?</source>
         <translation>Compara n = −2 con n = 0: ¿cuál forma filamentos grandes y cuál muchos grumos pequeños?</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/registry.py" line="265" />
+        <location filename="../gui/simulators/registry.py" line="288" />
         <source>Run the same seed with warm dark matter. What happens to the smallest halos?</source>
         <translation>Ejecuta la misma semilla con materia oscura templada. ¿Qué les pasa a los halos más pequeños?</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/registry.py" line="274" />
+        <location filename="../gui/simulators/registry.py" line="298" />
         <source>Gravitational Lensing Simulator</source>
         <translation>Simulador de lentes gravitatorias</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/registry.py" line="275" />
+        <location filename="../gui/simulators/registry.py" line="299" />
         <source>Bend light with galaxies, clusters and black holes.</source>
         <translation>Curva la luz con galaxias, cúmulos y agujeros negros.</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/registry.py" line="277" />
+        <location filename="../gui/simulators/registry.py" line="301" />
         <source>Mass bends the paths of light rays. Put a point mass, a galaxy or a galaxy cluster in front of distant galaxies and see multiple images, arcs and Einstein rings. The Einstein radius uses real cosmological distances, so the ring's size weighs the lens.</source>
         <translation>La masa curva las trayectorias de los rayos de luz. Pon una masa puntual, una galaxia o un cúmulo de galaxias delante de galaxias lejanas y observa imágenes múltiples, arcos y anillos de Einstein. El radio de Einstein usa distancias cosmológicas reales, así que el tamaño del anillo pesa la lente.</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/registry.py" line="282" />
+        <location filename="../gui/simulators/registry.py" line="306" />
         <source>Choose a &lt;b&gt;lens type&lt;/b&gt; and set its mass or velocity dispersion.</source>
         <translation>Elige un &lt;b&gt;tipo de lente&lt;/b&gt; y fija su masa o su dispersión de velocidades.</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/registry.py" line="283" />
+        <location filename="../gui/simulators/registry.py" line="307" />
         <source>&lt;b&gt;Drag&lt;/b&gt; inside the image to move the background galaxy; the orange cross marks its true position.</source>
         <translation>&lt;b&gt;Arrastra&lt;/b&gt; dentro de la imagen para mover la galaxia del fondo; la cruz naranja marca su posición verdadera.</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/registry.py" line="285" />
+        <location filename="../gui/simulators/registry.py" line="309" />
         <source>Change the &lt;b&gt;lens and source redshifts&lt;/b&gt; and watch the Einstein radius in the measurements.</source>
         <translation>Cambia los &lt;b&gt;corrimientos al rojo de la lente y de la fuente&lt;/b&gt; y mira el radio de Einstein en las medidas.</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/registry.py" line="287" />
+        <location filename="../gui/simulators/registry.py" line="311" />
         <source>Switch to &lt;b&gt;a field of galaxies&lt;/b&gt; to see how a cluster distorts many galaxies at once.</source>
         <translation>Cambia a &lt;b&gt;un campo de galaxias&lt;/b&gt; para ver cómo un cúmulo distorsiona muchas galaxias a la vez.</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/registry.py" line="290" />
+        <location filename="../gui/simulators/registry.py" line="314" />
         <source>Place the source exactly behind the lens: what shape appears?</source>
         <translation>Coloca la fuente exactamente detrás de la lente: ¿qué forma aparece?</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/registry.py" line="291" />
+        <location filename="../gui/simulators/registry.py" line="315" />
         <source>Tick &lt;b&gt;Switch the lens off&lt;/b&gt; to see the sky as it would look without gravity.</source>
         <translation>Marca &lt;b&gt;Apagar la lente&lt;/b&gt; para ver el cielo tal como se vería sin gravedad.</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/registry.py" line="292" />
+        <location filename="../gui/simulators/registry.py" line="316" />
         <source>Keep the lens mass fixed and move the lens redshift: where is lensing strongest?</source>
         <translation>Mantén fija la masa de la lente y mueve su corrimiento al rojo: ¿dónde es más fuerte el efecto de lente?</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/registry.py" line="301" />
+        <location filename="../gui/simulators/registry.py" line="326" />
         <source>Curvature Visualizer</source>
         <translation>Visualizador de la curvatura</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/registry.py" line="302" />
+        <location filename="../gui/simulators/registry.py" line="327" />
         <source>Triangles, circles and rulers in curved space.</source>
         <translation>Triángulos, círculos y reglas en un espacio curvo.</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/registry.py" line="304" />
+        <location filename="../gui/simulators/registry.py" line="329" />
         <source>Space itself can be curved. Draw the same triangle and circle in closed (spherical), flat and open (hyperbolic) space and see how angles, circumferences and apparent sizes change. Then connect the curvature radius to our own universe.</source>
         <translation>El espacio mismo puede estar curvado. Dibuja el mismo triángulo y el mismo círculo en un espacio cerrado (esférico), plano y abierto (hiperbólico) y mira cómo cambian los ángulos, las circunferencias y los tamaños aparentes. Después conecta el radio de curvatura con nuestro propio universo.</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/registry.py" line="309" />
+        <location filename="../gui/simulators/registry.py" line="334" />
         <source>Change the &lt;b&gt;triangle side&lt;/b&gt;: small triangles look flat everywhere, large ones reveal curvature.</source>
         <translation>Cambia el &lt;b&gt;lado del triángulo&lt;/b&gt;: los triángulos pequeños parecen planos en todas partes, y los grandes revelan la curvatura.</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/registry.py" line="311" />
+        <location filename="../gui/simulators/registry.py" line="336" />
         <source>Read the angle sums and circumference ratios in &lt;b&gt;Measurements&lt;/b&gt;.</source>
         <translation>Lee las sumas de ángulos y las razones de circunferencias en &lt;b&gt;Medidas&lt;/b&gt;.</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/registry.py" line="312" />
+        <location filename="../gui/simulators/registry.py" line="337" />
         <source>Open the &lt;b&gt;Apparent sizes&lt;/b&gt; tab to see why curvature changes the size of CMB spots.</source>
         <translation>Abre la pestaña &lt;b&gt;Tamaños aparentes&lt;/b&gt; para ver por qué la curvatura cambia el tamaño de las manchas del FCM.</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/registry.py" line="313" />
+        <location filename="../gui/simulators/registry.py" line="338" />
         <source>Set &lt;b&gt;Ωk&lt;/b&gt; to see how big the curvature radius of our universe could be.</source>
         <translation>Ajusta &lt;b&gt;Ωk&lt;/b&gt; para ver cómo de grande podría ser el radio de curvatura de nuestro universo.</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/registry.py" line="316" />
+        <location filename="../gui/simulators/registry.py" line="341" />
         <source>Make a spherical triangle whose angles add up to 270°. What fraction of the sphere does it cover?</source>
         <translation>Haz un triángulo esférico cuyos ángulos sumen 270°. ¿Qué fracción de la esfera cubre?</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/registry.py" line="318" />
+        <location filename="../gui/simulators/registry.py" line="343" />
         <source>At which radius does a circle on a sphere have the largest circumference?</source>
         <translation>¿A qué radio tiene la mayor circunferencia un círculo sobre una esfera?</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/registry.py" line="319" />
+        <location filename="../gui/simulators/registry.py" line="344" />
         <source>With |Ωk| = 0.002, how many observable-universe radii fit into the curvature radius?</source>
         <translation>Con |Ωk| = 0,002, ¿cuántos radios del universo observable caben en el radio de curvatura?</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/registry.py" line="328" />
+        <location filename="../gui/simulators/registry.py" line="354" />
         <source>Spacetime &amp; Horizon Diagram</source>
         <translation>Diagrama de espacio-tiempo y horizontes</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/registry.py" line="329" />
+        <location filename="../gui/simulators/registry.py" line="355" />
         <source>Light cones, horizons and galaxy worldlines through cosmic time.</source>
         <translation>Conos de luz, horizontes y líneas de universo de las galaxias a lo largo del tiempo cósmico.</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/registry.py" line="331" />
+        <location filename="../gui/simulators/registry.py" line="357" />
         <source>A spacetime diagram shows distance across and time upwards. Follow the paths of light and galaxies, see the teardrop-shaped past light cone, and watch the particle horizon, event horizon and Hubble sphere evolve. Switch to conformal coordinates where light moves at 45°.</source>
         <translation>Un diagrama de espacio-tiempo muestra la distancia en horizontal y el tiempo hacia arriba. Sigue las trayectorias de la luz y de las galaxias, mira el cono de luz del pasado en forma de lágrima y observa cómo evolucionan el horizonte de partículas, el horizonte de sucesos y la esfera de Hubble. Cambia a coordenadas conformes, donde la luz se mueve a 45°.</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/registry.py" line="336" />
+        <location filename="../gui/simulators/registry.py" line="362" />
         <source>Choose a universe with the &lt;b&gt;preset&lt;/b&gt; or the Ωm and ΩΛ sliders.</source>
         <translation>Elige un universo con el &lt;b&gt;ajuste predefinido&lt;/b&gt; o con los deslizadores Ωm y ΩΛ.</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/registry.py" line="337" />
+        <location filename="../gui/simulators/registry.py" line="363" />
         <source>Pick &lt;b&gt;coordinates&lt;/b&gt;: proper distance, comoving distance, or comoving distance with conformal time.</source>
         <translation>Elige las &lt;b&gt;coordenadas&lt;/b&gt;: distancia propia, distancia comóvil o distancia comóvil con tiempo conforme.</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/registry.py" line="339" />
+        <location filename="../gui/simulators/registry.py" line="365" />
         <source>Move the &lt;b&gt;scale factor of the observer&lt;/b&gt; to watch from the past or the future.</source>
         <translation>Mueve el &lt;b&gt;factor de escala del observador&lt;/b&gt; para mirar desde el pasado o desde el futuro.</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/registry.py" line="340" />
+        <location filename="../gui/simulators/registry.py" line="366" />
         <source>Toggle light cones, horizons and worldlines to focus on one idea at a time.</source>
         <translation>Activa y desactiva los conos de luz, los horizontes y las líneas de universo para centrarte en una idea cada vez.</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/registry.py" line="343" />
+        <location filename="../gui/simulators/registry.py" line="369" />
         <source>In proper coordinates, where is the past light cone widest? Where does it cross the Hubble sphere?</source>
         <translation>En coordenadas propias, ¿dónde es más ancho el cono de luz del pasado? ¿Dónde cruza la esfera de Hubble?</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/registry.py" line="345" />
+        <location filename="../gui/simulators/registry.py" line="371" />
         <source>Switch to conformal time: why do light cones become straight lines?</source>
         <translation>Cambia al tiempo conforme: ¿por qué los conos de luz se vuelven rectas?</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/registry.py" line="346" />
+        <location filename="../gui/simulators/registry.py" line="372" />
         <source>Remove dark energy (ΩΛ = 0). What happens to the event horizon?</source>
         <translation>Quita la energía oscura (ΩΛ = 0). ¿Qué le pasa al horizonte de sucesos?</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/registry.py" line="355" />
+        <location filename="../gui/simulators/registry.py" line="382" />
         <source>Inflation Slow-Roll Simulator</source>
         <translation>Simulador de inflación en rodadura lenta</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/registry.py" line="356" />
+        <location filename="../gui/simulators/registry.py" line="383" />
         <source>Roll a field down a potential and test its predictions.</source>
         <translation>Haz rodar un campo por un potencial y pon a prueba sus predicciones.</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/registry.py" line="358" />
+        <location filename="../gui/simulators/registry.py" line="385" />
         <source>During inflation a scalar field rolled slowly down its potential, driving exponential expansion and creating the seeds of all structure. Choose a potential, watch the field roll, and compare its predicted spectral index and gravitational waves with Planck and BICEP/Keck.</source>
         <translation>Durante la inflación un campo escalar rodó despacio por su potencial, impulsando una expansión exponencial y creando las semillas de toda la estructura. Elige un potencial, mira rodar el campo y compara el índice espectral y las ondas gravitacionales que predice con Planck y BICEP/Keck.</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/registry.py" line="363" />
+        <location filename="../gui/simulators/registry.py" line="390" />
         <source>Choose a &lt;b&gt;model&lt;/b&gt;; some have an extra parameter.</source>
         <translation>Elige un &lt;b&gt;modelo&lt;/b&gt;; algunos tienen un parámetro adicional.</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/registry.py" line="364" />
+        <location filename="../gui/simulators/registry.py" line="391" />
         <source>Set &lt;b&gt;N*&lt;/b&gt;, how many e-folds before the end the observed scales left the horizon.</source>
         <translation>Fija &lt;b&gt;N*&lt;/b&gt;, cuántos e-folds antes del final salieron del horizonte las escalas observadas.</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/registry.py" line="365" />
+        <location filename="../gui/simulators/registry.py" line="392" />
         <source>Press &lt;b&gt;Play&lt;/b&gt; to watch the field roll and inflation end when ε reaches 1.</source>
         <translation>Pulsa &lt;b&gt;Reproducir&lt;/b&gt; para ver rodar el campo y terminar la inflación cuando ε llega a 1.</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/registry.py" line="366" />
+        <location filename="../gui/simulators/registry.py" line="393" />
         <source>Check whether the star for your model lies inside the green allowed region of the nₛ–r plot.</source>
         <translation>Comprueba si la estrella de tu modelo cae dentro de la región verde permitida de la gráfica nₛ-r.</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/registry.py" line="369" />
+        <location filename="../gui/simulators/registry.py" line="396" />
         <source>Why is the simplest φ² model ruled out even though its nₛ looks fine?</source>
         <translation>¿Por qué está descartado el modelo φ² más simple aunque su nₛ parezca correcto?</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/registry.py" line="370" />
+        <location filename="../gui/simulators/registry.py" line="397" />
         <source>Change the decay constant of natural inflation: can you make it consistent?</source>
         <translation>Cambia la constante de desintegración de la inflación natural: ¿puedes hacerla compatible?</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/registry.py" line="371" />
+        <location filename="../gui/simulators/registry.py" line="398" />
         <source>How many e-folds of inflation does the comoving Hubble radius plot need to explain the horizon?</source>
         <translation>¿Cuántos e-folds de inflación necesita la gráfica del radio de Hubble comóvil para explicar el horizonte?</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/registry.py" line="381" />
+        <location filename="../gui/simulators/registry.py" line="409" />
         <source>Supernova Ia Discovery</source>
         <translation>El descubrimiento de las supernovas Ia</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/registry.py" line="382" />
+        <location filename="../gui/simulators/registry.py" line="410" />
         <source>Repeat the 1998 discovery and meet the Hubble tension.</source>
         <translation>Repite el descubrimiento de 1998 y encuéntrate con la tensión de Hubble.</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/registry.py" line="384" />
+        <location filename="../gui/simulators/registry.py" line="412" />
         <source>Fit the brightness of Type Ia supernovae against redshift to find out whether the expansion is slowing down or speeding up. Then calibrate the supernova brightness in two different ways and see how the Hubble constant changes.</source>
         <translation>Ajusta el brillo de las supernovas de tipo Ia frente al corrimiento al rojo para averiguar si la expansión se frena o se acelera. Después calibra el brillo de las supernovas de dos maneras distintas y mira cómo cambia la constante de Hubble.</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/registry.py" line="389" />
+        <location filename="../gui/simulators/registry.py" line="417" />
         <source>Choose a sample: two simulated ones, or the real &lt;b&gt;Pantheon+&lt;/b&gt; compilation.</source>
         <translation>Elige una muestra: dos simuladas, o la recopilación real &lt;b&gt;Pantheon+&lt;/b&gt;.</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/registry.py" line="390" />
+        <location filename="../gui/simulators/registry.py" line="418" />
         <source>Compare the data with the empty, matter-only and best-fit models in the &lt;b&gt;Hubble diagram&lt;/b&gt;.</source>
         <translation>Compara los datos con los modelos vacío, de solo materia y de mejor ajuste en el &lt;b&gt;diagrama de Hubble&lt;/b&gt;.</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/registry.py" line="392" />
+        <location filename="../gui/simulators/registry.py" line="420" />
         <source>Open the &lt;b&gt;Ωm–ΩΛ plane&lt;/b&gt; to see which universes the data allow; try &lt;b&gt;Assume a flat universe&lt;/b&gt;.</source>
         <translation>Abre el &lt;b&gt;plano Ωm-ΩΛ&lt;/b&gt; para ver qué universos permiten los datos; prueba &lt;b&gt;Suponer un universo plano&lt;/b&gt;.</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/registry.py" line="394" />
+        <location filename="../gui/simulators/registry.py" line="422" />
         <source>Switch the &lt;b&gt;calibration&lt;/b&gt; and read the Hubble constant.</source>
         <translation>Cambia la &lt;b&gt;calibración&lt;/b&gt; y lee la constante de Hubble.</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/registry.py" line="397" />
+        <location filename="../gui/simulators/registry.py" line="425" />
         <source>Fit the real Pantheon+ sample. Where does the best fit land, and how many sigma is the evidence for acceleration?</source>
         <translation>Ajusta la muestra real Pantheon+. ¿Dónde cae el mejor ajuste y de cuántas sigmas es la evidencia de aceleración?</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/registry.py" line="399" />
+        <location filename="../gui/simulators/registry.py" line="427" />
         <source>With the 1998-like sample, how strong is the evidence for acceleration with and without flatness?</source>
         <translation>Con la muestra al estilo de 1998, ¿cómo de fuerte es la evidencia de aceleración con y sin planitud?</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/registry.py" line="401" />
+        <location filename="../gui/simulators/registry.py" line="429" />
         <source>Do distant supernovae look brighter or fainter than in an empty universe?</source>
         <translation>¿Las supernovas lejanas se ven más brillantes o más débiles que en un universo vacío?</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/registry.py" line="402" />
+        <location filename="../gui/simulators/registry.py" line="430" />
         <source>Which calibration gives a Hubble constant close to Planck, and which close to SH0ES?</source>
         <translation>¿Qué calibración da una constante de Hubble cercana a Planck, y cuál cercana a SH0ES?</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/registry.py" line="411" />
+        <location filename="../gui/simulators/registry.py" line="440" />
         <source>Build Your Own Universe</source>
         <translation>Construye tu propio universo</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/registry.py" line="412" />
+        <location filename="../gui/simulators/registry.py" line="441" />
         <source>Design a universe and grade it against observations.</source>
         <translation>Diseña un universo y ponle nota frente a las observaciones.</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/registry.py" line="414" />
+        <location filename="../gui/simulators/registry.py" line="443" />
         <source>Choose every ingredient: the expansion rate, ordinary and dark matter, curvature, radiation, neutrinos and evolving dark energy. See its history, contents, fate and CMB spectrum, and get a report card that compares it with real measurements.</source>
         <translation>Elige todos los ingredientes: el ritmo de expansión, la materia ordinaria y la oscura, la curvatura, la radiación, los neutrinos y una energía oscura que evoluciona. Mira su historia, su contenido, su destino y su espectro del FCM, y recibe un boletín de notas que lo compara con las medidas reales.</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/registry.py" line="419" />
+        <location filename="../gui/simulators/registry.py" line="448" />
         <source>Start from a &lt;b&gt;preset&lt;/b&gt; or move any slider.</source>
         <translation>Empieza por un &lt;b&gt;ajuste predefinido&lt;/b&gt; o mueve cualquier deslizador.</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/registry.py" line="420" />
+        <location filename="../gui/simulators/registry.py" line="449" />
         <source>Read the &lt;b&gt;score&lt;/b&gt; at the top and open the &lt;b&gt;Report card&lt;/b&gt; to see which tests pass.</source>
         <translation>Lee la &lt;b&gt;puntuación&lt;/b&gt; de arriba y abre el &lt;b&gt;Boletín de notas&lt;/b&gt; para ver qué pruebas pasa.</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/registry.py" line="421" />
+        <location filename="../gui/simulators/registry.py" line="450" />
         <source>Use &lt;b&gt;History and contents&lt;/b&gt; to see when radiation, matter and dark energy dominated.</source>
         <translation>Usa &lt;b&gt;Historia y contenido&lt;/b&gt; para ver cuándo dominaron la radiación, la materia y la energía oscura.</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/registry.py" line="422" />
+        <location filename="../gui/simulators/registry.py" line="451" />
         <source>Try evolving or phantom dark energy with &lt;b&gt;w0&lt;/b&gt; and &lt;b&gt;wa&lt;/b&gt;.</source>
         <translation>Prueba una energía oscura que evoluciona o fantasma con &lt;b&gt;w0&lt;/b&gt; y &lt;b&gt;wa&lt;/b&gt;.</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/registry.py" line="425" />
+        <location filename="../gui/simulators/registry.py" line="454" />
         <source>Build a universe without dark matter that still passes the age test. Which tests fail?</source>
         <translation>Construye un universo sin materia oscura que aun así pase la prueba de la edad. ¿Qué pruebas falla?</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/registry.py" line="426" />
+        <location filename="../gui/simulators/registry.py" line="455" />
         <source>Set w0 = −1.3: when does the Big Rip happen?</source>
         <translation>Pon w0 = −1,3: ¿cuándo ocurre el Big Rip?</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/registry.py" line="427" />
+        <location filename="../gui/simulators/registry.py" line="456" />
         <source>Can you find a universe very different from ΛCDM that passes every test?</source>
         <translation>¿Puedes encontrar un universo muy distinto de ΛCDM que pase todas las pruebas?</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/registry.py" line="436" />
+        <location filename="../gui/simulators/registry.py" line="466" />
         <source>Interactive Cosmic Timeline</source>
         <translation>Cronología cósmica interactiva</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/registry.py" line="437" />
+        <location filename="../gui/simulators/registry.py" line="467" />
         <source>From the Planck era to the far future on one slider.</source>
         <translation>De la era de Planck al futuro lejano en un solo deslizador.</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/registry.py" line="439" />
+        <location filename="../gui/simulators/registry.py" line="469" />
         <source>Slide through 60 orders of magnitude of cosmic time. At every moment the timeline shows the temperature, the typical particle energy, the density, the size of the observable universe and what dominated the energy budget, together with the epoch you are in and how well we know it.</source>
         <translation>Recorre 60 órdenes de magnitud de tiempo cósmico. En cada momento la cronología muestra la temperatura, la energía típica de las partículas, la densidad, el tamaño del universo observable y qué dominaba el reparto de la energía, junto con la época en la que estás y cómo de bien la conocemos.</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/registry.py" line="444" />
+        <location filename="../gui/simulators/registry.py" line="474" />
         <source>Drag the &lt;b&gt;time slider&lt;/b&gt;; it is logarithmic, so each step of 1 is a factor of ten in time.</source>
         <translation>Arrastra el &lt;b&gt;deslizador del tiempo&lt;/b&gt;; es logarítmico, así que cada paso de 1 es un factor de diez en el tiempo.</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/registry.py" line="446" />
+        <location filename="../gui/simulators/registry.py" line="476" />
         <source>Or pick an epoch from &lt;b&gt;Jump to an epoch&lt;/b&gt;, or press &lt;b&gt;Play history&lt;/b&gt;.</source>
         <translation>O elige una época en &lt;b&gt;Saltar a una época&lt;/b&gt;, o pulsa &lt;b&gt;Reproducir la historia&lt;/b&gt;.</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/registry.py" line="447" />
+        <location filename="../gui/simulators/registry.py" line="477" />
         <source>Read &lt;b&gt;The universe at this moment&lt;/b&gt; for temperature, energy, density and horizon size.</source>
         <translation>Lee &lt;b&gt;El universo en este momento&lt;/b&gt; para la temperatura, la energía, la densidad y el tamaño del horizonte.</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/registry.py" line="448" />
+        <location filename="../gui/simulators/registry.py" line="478" />
         <source>The coloured bands show how confident we are: red speculative, yellow theory, blue tested in laboratories, green directly observed.</source>
         <translation>Las bandas de color muestran cómo de seguros estamos: rojo especulativo, amarillo teoría, azul probado en laboratorios, verde observado directamente.</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/registry.py" line="452" />
+        <location filename="../gui/simulators/registry.py" line="482" />
         <source>Find the moment when the universe was as hot as the core of the Sun. Which epoch is it?</source>
         <translation>Encuentra el momento en que el universo estaba tan caliente como el núcleo del Sol. ¿Qué época es?</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/registry.py" line="453" />
+        <location filename="../gui/simulators/registry.py" line="483" />
         <source>When did matter overtake radiation, and dark energy overtake matter?</source>
         <translation>¿Cuándo adelantó la materia a la radiación, y la energía oscura a la materia?</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/registry.py" line="454" />
+        <location filename="../gui/simulators/registry.py" line="484" />
         <source>How large was the observable universe at the end of nucleosynthesis?</source>
         <translation>¿Cómo de grande era el universo observable al final de la nucleosíntesis?</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/registry.py" line="455" />
+        <location filename="../gui/simulators/registry.py" line="485" />
         <source>Go 100 billion years into the future. What happens to the temperature?</source>
         <translation>Viaja 100 000 millones de años al futuro. ¿Qué le pasa a la temperatura?</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/registry.py" line="464" />
+        <location filename="../gui/simulators/registry.py" line="495" />
         <source>BBN Abundance Explorer</source>
         <translation>Explorador de abundancias de la nucleosíntesis</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/registry.py" line="465" />
+        <location filename="../gui/simulators/registry.py" line="496" />
         <source>How the first three minutes made hydrogen, helium and lithium.</source>
         <translation>Cómo los tres primeros minutos hicieron hidrógeno, helio y litio.</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/registry.py" line="467" />
+        <location filename="../gui/simulators/registry.py" line="498" />
         <source>Big Bang nucleosynthesis predicts how much helium, deuterium, helium-3 and lithium formed in the first minutes, depending on the density of ordinary matter. Change the baryon density, add extra neutrino species or change the neutron lifetime, and compare the predictions with the observed abundances and with the CMB.</source>
         <translation>La nucleosíntesis primordial predice cuánto helio, deuterio, helio-3 y litio se formaron en los primeros minutos, según la densidad de materia ordinaria. Cambia la densidad de bariones, añade especies de neutrinos adicionales o cambia la vida media del neutrón, y compara las predicciones con las abundancias observadas y con el FCM.</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/registry.py" line="473" />
+        <location filename="../gui/simulators/registry.py" line="504" />
         <source>Move &lt;b&gt;η₁₀&lt;/b&gt;, the number of baryons per ten billion photons. The vertical line marks your value.</source>
         <translation>Mueve &lt;b&gt;η₁₀&lt;/b&gt;, el número de bariones por cada diez mil millones de fotones. La línea vertical marca tu valor.</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/registry.py" line="475" />
+        <location filename="../gui/simulators/registry.py" line="506" />
         <source>The coloured horizontal bands are the observed abundances; the green vertical band is the baryon density measured from the CMB.</source>
         <translation>Las bandas horizontales de color son las abundancias observadas; la banda vertical verde es la densidad de bariones medida a partir del FCM.</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/registry.py" line="477" />
+        <location filename="../gui/simulators/registry.py" line="508" />
         <source>Use &lt;b&gt;Change the physics&lt;/b&gt; to add extra relativistic species or change the neutron lifetime.</source>
         <translation>Usa &lt;b&gt;Cambia la física&lt;/b&gt; para añadir especies relativistas adicionales o cambiar la vida media del neutrón.</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/registry.py" line="479" />
+        <location filename="../gui/simulators/registry.py" line="510" />
         <source>The right-hand panel shows neutrons decaying while the universe waits for deuterium to survive.</source>
         <translation>El panel de la derecha muestra los neutrones desintegrándose mientras el universo espera a que el deuterio sobreviva.</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/registry.py" line="483" />
+        <location filename="../gui/simulators/registry.py" line="514" />
         <source>Press &lt;b&gt;From deuterium&lt;/b&gt;. Does the result land inside the CMB band?</source>
         <translation>Pulsa &lt;b&gt;A partir del deuterio&lt;/b&gt;. ¿Cae el resultado dentro de la banda del FCM?</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/registry.py" line="484" />
+        <location filename="../gui/simulators/registry.py" line="515" />
         <source>Find the lithium minimum. Can any baryon density fit lithium and deuterium together?</source>
         <translation>Encuentra el mínimo del litio. ¿Hay alguna densidad de bariones que encaje a la vez con el litio y con el deuterio?</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/registry.py" line="485" />
+        <location filename="../gui/simulators/registry.py" line="516" />
         <source>Set ΔN_eff = 1. How much does helium change, and could the observations allow it?</source>
         <translation>Pon ΔN_eff = 1. ¿Cuánto cambia el helio, y podrían permitirlo las observaciones?</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/registry.py" line="486" />
+        <location filename="../gui/simulators/registry.py" line="517" />
         <source>Lengthen the neutron lifetime to 888 s, the beam-experiment value. What happens to helium?</source>
         <translation>Alarga la vida media del neutrón hasta 888 s, el valor de los experimentos de haz. ¿Qué le pasa al helio?</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/registry.py" line="495" />
+        <location filename="../gui/simulators/registry.py" line="527" />
         <source>Olbers' Paradox Simulator</source>
         <translation>Simulador de la paradoja de Olbers</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/registry.py" line="496" />
+        <location filename="../gui/simulators/registry.py" line="528" />
         <source>Why is the night sky dark?</source>
         <translation>¿Por qué el cielo nocturno es oscuro?</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/registry.py" line="498" />
+        <location filename="../gui/simulators/registry.py" line="530" />
         <source>Look at a patch of sky in a universe full of stars. If the universe were infinite, static and eternal, every line of sight would end on a star and the sky would blaze. Switch on a finite age, stellar lifetimes or expansion and watch the sky go dark.</source>
         <translation>Mira un trozo de cielo en un universo lleno de estrellas. Si el universo fuera infinito, estático y eterno, toda línea de visión acabaría en una estrella y el cielo ardería. Enciende una edad finita, las vidas estelares o la expansión y mira oscurecerse el cielo.</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/registry.py" line="503" />
+        <location filename="../gui/simulators/registry.py" line="535" />
         <source>Start with &lt;b&gt;Olbers' universe&lt;/b&gt;: the patch is completely covered by stars.</source>
         <translation>Empieza con el &lt;b&gt;universo de Olbers&lt;/b&gt;: el trozo de cielo está completamente cubierto de estrellas.</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/registry.py" line="504" />
+        <location filename="../gui/simulators/registry.py" line="536" />
         <source>Tick &lt;b&gt;The universe has a finite age&lt;/b&gt; and shorten the light-travel distance.</source>
         <translation>Marca &lt;b&gt;El universo tiene una edad finita&lt;/b&gt; y acorta la distancia recorrida por la luz.</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/registry.py" line="505" />
+        <location filename="../gui/simulators/registry.py" line="537" />
         <source>Try &lt;b&gt;Stars shine for a limited time&lt;/b&gt; and &lt;b&gt;The universe expands&lt;/b&gt; as well.</source>
         <translation>Prueba también &lt;b&gt;Las estrellas brillan un tiempo limitado&lt;/b&gt; y &lt;b&gt;El universo se expande&lt;/b&gt;.</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/registry.py" line="506" />
+        <location filename="../gui/simulators/registry.py" line="538" />
         <source>Compare the plots: the brightness curve and the shell argument show why each change works.</source>
         <translation>Compara las gráficas: la curva de brillo y el argumento de las capas muestran por qué funciona cada cambio.</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/registry.py" line="509" />
+        <location filename="../gui/simulators/registry.py" line="541" />
         <source>Keep an infinite age but lower the star density. Does the sky ever get dark?</source>
         <translation>Mantén una edad infinita pero baja la densidad de estrellas. ¿Llega a oscurecerse el cielo?</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/registry.py" line="510" />
+        <location filename="../gui/simulators/registry.py" line="542" />
         <source>Which is more effective in our universe, the finite age or redshift dimming? (Read &lt;b&gt;Our universe&lt;/b&gt;.)</source>
         <translation>¿Qué es más eficaz en nuestro universo, la edad finita o la atenuación por corrimiento al rojo? (Lee &lt;b&gt;Nuestro universo&lt;/b&gt;.)</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/registry.py" line="512" />
+        <location filename="../gui/simulators/registry.py" line="544" />
         <source>Find the light-travel distance at which half of the sky is covered.</source>
         <translation>Encuentra la distancia recorrida por la luz a la que queda cubierta la mitad del cielo.</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/registry.py" line="521" />
+        <location filename="../gui/simulators/registry.py" line="554" />
         <source>Likelihood &amp; MCMC Explorer</source>
         <translation>Explorador de verosimilitud y MCMC</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/registry.py" line="522" />
+        <location filename="../gui/simulators/registry.py" line="555" />
         <source>Watch a measurement being made, one step at a time.</source>
         <translation>Mira cómo se hace una medida, paso a paso.</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/registry.py" line="524" />
+        <location filename="../gui/simulators/registry.py" line="557" />
         <source>Every number in cosmology comes from three pieces: a model, a likelihood that says how well it fits the data, and a way to explore the parameters. Here a random walker explores Ωm and ΩΛ against real supernovae, and the cloud it leaves behind is the measurement.</source>
         <translation>Todo número en cosmología sale de tres piezas: un modelo, una verosimilitud que dice cómo de bien encaja con los datos, y una manera de explorar los parámetros. Aquí un caminante aleatorio explora Ωm y ΩΛ frente a supernovas reales, y la nube que deja atrás es la medida.</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/registry.py" line="529" />
+        <location filename="../gui/simulators/registry.py" line="562" />
         <source>Press &lt;b&gt;Run the chain&lt;/b&gt;, then &lt;b&gt;Watch it walk&lt;/b&gt; to see the walker leave its starting corner and settle into the good region.</source>
         <translation>Pulsa &lt;b&gt;Ejecutar la cadena&lt;/b&gt; y después &lt;b&gt;Míralo caminar&lt;/b&gt; para ver cómo el caminante deja su esquina de partida y se asienta en la región buena.</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/registry.py" line="531" />
+        <location filename="../gui/simulators/registry.py" line="564" />
         <source>Read the mean and the ± in &lt;b&gt;What the chain says&lt;/b&gt;: that is the measurement.</source>
         <translation>Lee la media y el ± en &lt;b&gt;Lo que dice la cadena&lt;/b&gt;: eso es la medida.</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/registry.py" line="532" />
+        <location filename="../gui/simulators/registry.py" line="565" />
         <source>Change the &lt;b&gt;proposal step σ&lt;/b&gt; and watch the acceptance rate and the shape of the cloud.</source>
         <translation>Cambia la &lt;b&gt;σ del paso propuesto&lt;/b&gt; y observa la tasa de aceptación y la forma de la nube.</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/registry.py" line="533" />
+        <location filename="../gui/simulators/registry.py" line="566" />
         <source>Press &lt;b&gt;Run 4 chains&lt;/b&gt; to check R̂: four walkers from four corners must agree.</source>
         <translation>Pulsa &lt;b&gt;Ejecutar 4 cadenas&lt;/b&gt; para comprobar R̂: cuatro caminantes desde cuatro esquinas tienen que coincidir.</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/registry.py" line="536" />
+        <location filename="../gui/simulators/registry.py" line="569" />
         <source>Set σ = 0.005. The acceptance rate goes above 90% — why is the answer still wrong?</source>
         <translation>Pon σ = 0,005. La tasa de aceptación pasa del 90 %: ¿por qué sigue estando mal la respuesta?</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/registry.py" line="537" />
+        <location filename="../gui/simulators/registry.py" line="570" />
         <source>Set σ = 0.4. Almost nothing is accepted; what happens to the effective sample size?</source>
         <translation>Pon σ = 0,4. Casi nada se acepta; ¿qué le pasa al tamaño de muestra efectivo?</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/registry.py" line="538" />
+        <location filename="../gui/simulators/registry.py" line="571" />
         <source>Tick &lt;b&gt;Assume a flat universe&lt;/b&gt;: one parameter instead of two, and a much tighter Ωm.</source>
         <translation>Marca &lt;b&gt;Suponer un universo plano&lt;/b&gt;: un parámetro en lugar de dos, y un Ωm mucho más ajustado.</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/registry.py" line="539" />
+        <location filename="../gui/simulators/registry.py" line="572" />
         <source>Compare the 1998-like sample with Pantheon+: the same method, twenty-five years of data.</source>
         <translation>Compara la muestra al estilo de 1998 con Pantheon+: el mismo método, veinticinco años de datos.</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/registry.py" line="548" />
+        <location filename="../gui/simulators/registry.py" line="582" />
         <source>Distance Ladder Builder</source>
         <translation>Constructor de la escalera de distancias</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/registry.py" line="549" />
+        <location filename="../gui/simulators/registry.py" line="583" />
         <source>Climb from parallax to H0 and follow every error bar.</source>
         <translation>Sube de la paralaje a H0 siguiendo cada barra de error.</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/registry.py" line="551" />
+        <location filename="../gui/simulators/registry.py" line="585" />
         <source>The local Hubble constant rests on three rungs: parallaxes calibrate Cepheids, Cepheids calibrate type Ia supernovae, and distant supernovae measure the expansion. Design the observing programme, watch the uncertainty of each rung flow into H0, and see why a systematic error survives any amount of data. The measurements are simulated.</source>
         <translation>La constante de Hubble local se apoya en tres peldaños: las paralajes calibran las cefeidas, las cefeidas calibran las supernovas de tipo Ia, y las supernovas lejanas miden la expansión. Diseña el programa de observación, mira cómo la incertidumbre de cada peldaño desemboca en H0, y comprueba por qué un error sistemático sobrevive a cualquier cantidad de datos. Las medidas son simuladas.</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/registry.py" line="557" />
+        <location filename="../gui/simulators/registry.py" line="591" />
         <source>Choose an &lt;b&gt;observing programme&lt;/b&gt;, or set the numbers of stars and supernovae yourself.</source>
         <translation>Elige un &lt;b&gt;programa de observación&lt;/b&gt;, o fija tú mismo el número de estrellas y de supernovas.</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/registry.py" line="558" />
+        <location filename="../gui/simulators/registry.py" line="592" />
         <source>Read &lt;b&gt;The three rungs&lt;/b&gt;: each panel is one step of the ladder with its own fit.</source>
         <translation>Lee &lt;b&gt;Los tres peldaños&lt;/b&gt;: cada panel es un escalón de la escalera con su propio ajuste.</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/registry.py" line="559" />
+        <location filename="../gui/simulators/registry.py" line="593" />
         <source>Open &lt;b&gt;Error budget&lt;/b&gt; to see how much each rung contributes to the uncertainty of H0.</source>
         <translation>Abre &lt;b&gt;Reparto del error&lt;/b&gt; para ver cuánto aporta cada peldaño a la incertidumbre de H0.</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/registry.py" line="560" />
+        <location filename="../gui/simulators/registry.py" line="594" />
         <source>Press &lt;b&gt;Repeat 300×&lt;/b&gt; to check the error bar by rerunning the whole measurement.</source>
         <translation>Pulsa &lt;b&gt;Repetir 300×&lt;/b&gt; para comprobar la barra de error repitiendo la medida entera.</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/registry.py" line="561" />
+        <location filename="../gui/simulators/registry.py" line="595" />
         <source>Add a &lt;b&gt;systematic&lt;/b&gt; — a parallax zero-point offset or crowding — and compare the shift with the error bar.</source>
         <translation>Añade un &lt;b&gt;sistemático&lt;/b&gt; — un desplazamiento del punto cero de la paralaje o la aglomeración — y compara el desplazamiento con la barra de error.</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/registry.py" line="565" />
+        <location filename="../gui/simulators/registry.py" line="599" />
         <source>Start from the Key Project preset. Which rung limits it, and what does fixing only that rung achieve?</source>
         <translation>Empieza por el ajuste del Key Project. ¿Qué peldaño lo limita, y qué se consigue arreglando solo ese?</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/registry.py" line="567" />
+        <location filename="../gui/simulators/registry.py" line="601" />
         <source>Add 2000 Hubble-flow supernovae. Why does the total error barely move?</source>
         <translation>Añade 2000 supernovas del flujo de Hubble. ¿Por qué apenas se mueve el error total?</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/registry.py" line="568" />
+        <location filename="../gui/simulators/registry.py" line="602" />
         <source>Set a parallax offset of +20 µas: how many σ does the toy H0 move, and would you notice?</source>
         <translation>Pon un desplazamiento de paralaje de +20 µas: ¿cuántas σ se mueve el H0 de juguete, y te darías cuenta?</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/registry.py" line="569" />
+        <location filename="../gui/simulators/registry.py" line="603" />
         <source>Set the true H0 to 67.4. How precise must the ladder be to rule out 73 at 5σ?</source>
         <translation>Fija el H0 verdadero en 67,4. ¿Qué precisión necesita la escalera para descartar 73 con 5σ?</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/registry.py" line="578" />
+        <location filename="../gui/simulators/registry.py" line="613" />
         <source>Survey Designer</source>
         <translation>Diseñador de sondeos</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/registry.py" line="579" />
+        <location filename="../gui/simulators/registry.py" line="614" />
         <source>Choose area, depth and time, and see the error bars you would get.</source>
         <translation>Elige el área, la profundidad y el tiempo, y mira las barras de error que obtendrías.</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/registry.py" line="581" />
+        <location filename="../gui/simulators/registry.py" line="616" />
         <source>A redshift survey measures the expansion history through the baryon acoustic oscillation scale. Pick a tracer, a redshift range, a sky area and an amount of telescope time, and the forecast shows how precisely each redshift slice would be measured — and whether the survey is limited by its volume, by too few galaxies, or by systematic errors.</source>
         <translation>Un sondeo de corrimientos al rojo mide la historia de la expansión a través de la escala de las oscilaciones acústicas de bariones. Elige un trazador, un rango de corrimiento al rojo, un área de cielo y una cantidad de tiempo de telescopio, y la previsión muestra con qué precisión se mediría cada rebanada de corrimiento al rojo, y si el sondeo está limitado por su volumen, por tener pocas galaxias o por los errores sistemáticos.</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/registry.py" line="587" />
+        <location filename="../gui/simulators/registry.py" line="622" />
         <source>Start from a &lt;b&gt;programme&lt;/b&gt; such as BOSS, DESI or Euclid, or build your own.</source>
         <translation>Empieza por un &lt;b&gt;programa&lt;/b&gt; como BOSS, DESI o Euclid, o construye el tuyo.</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/registry.py" line="588" />
+        <location filename="../gui/simulators/registry.py" line="623" />
         <source>Change the &lt;b&gt;tracer&lt;/b&gt;, the redshift range and the &lt;b&gt;target density&lt;/b&gt;, and watch n̄P.</source>
         <translation>Cambia el &lt;b&gt;trazador&lt;/b&gt;, el rango de corrimiento al rojo y la &lt;b&gt;densidad objetivo&lt;/b&gt;, y observa n̄P.</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/registry.py" line="589" />
+        <location filename="../gui/simulators/registry.py" line="624" />
         <source>Set the &lt;b&gt;sky area&lt;/b&gt; and the &lt;b&gt;telescope time&lt;/b&gt;; if the spectra run out, the density is diluted.</source>
         <translation>Fija el &lt;b&gt;área de cielo&lt;/b&gt; y el &lt;b&gt;tiempo de telescopio&lt;/b&gt;; si se acaban los espectros, la densidad se diluye.</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/registry.py" line="591" />
+        <location filename="../gui/simulators/registry.py" line="626" />
         <source>Open &lt;b&gt;Wide or deep?&lt;/b&gt; to see the best area for the galaxies you can afford.</source>
         <translation>Abre &lt;b&gt;¿Ancho o profundo?&lt;/b&gt; para ver la mejor área para las galaxias que te puedes permitir.</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/registry.py" line="592" />
+        <location filename="../gui/simulators/registry.py" line="627" />
         <source>Add a &lt;b&gt;systematic floor&lt;/b&gt; to see when more data stops helping.</source>
         <translation>Añade un &lt;b&gt;suelo sistemático&lt;/b&gt; para ver cuándo deja de ayudar tener más datos.</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/registry.py" line="595" />
+        <location filename="../gui/simulators/registry.py" line="630" />
         <source>Compare the BOSS and DESI programmes: what gives DESI its factor of two?</source>
         <translation>Compara los programas BOSS y DESI: ¿qué le da a DESI su factor dos?</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/registry.py" line="596" />
+        <location filename="../gui/simulators/registry.py" line="631" />
         <source>Choose quasars. Why does doubling their density help more than doubling the area?</source>
         <translation>Elige cuásares. ¿Por qué duplicar su densidad ayuda más que duplicar el área?</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/registry.py" line="597" />
+        <location filename="../gui/simulators/registry.py" line="632" />
         <source>Keep the number of galaxies fixed and find the area where the error is smallest.</source>
         <translation>Mantén fijo el número de galaxias y encuentra el área en la que el error es menor.</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/registry.py" line="598" />
+        <location filename="../gui/simulators/registry.py" line="633" />
         <source>With a 0.3% systematic floor, how many years are worth observing?</source>
         <translation>Con un suelo sistemático del 0,3 %, ¿cuántos años merece la pena observar?</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/registry.py" line="607" />
+        <location filename="../gui/simulators/registry.py" line="643" />
         <source>Standard Siren Explorer</source>
         <translation>Explorador de sirenas estándar</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/registry.py" line="608" />
+        <location filename="../gui/simulators/registry.py" line="644" />
         <source>Measure H₀ from a gravitational-wave merger.</source>
         <translation>Mide H₀ a partir de una fusión detectada en ondas gravitacionales.</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/registry.py" line="610" />
+        <location filename="../gui/simulators/registry.py" line="646" />
         <source>A merging pair of neutron stars or black holes gives its own distance away: relativity fixes the amplitude of the wave, so the strain that arrives here is a distance with no calibration behind it. Add the redshift of the host galaxy and you have H₀ without a single rung of the distance ladder — if you can find the host, and if you can tell how the binary was tilted.</source>
         <translation>Una pareja de estrellas de neutrones o de agujeros negros que se fusiona delata su propia distancia: la relatividad fija la amplitud de la onda, así que la deformación que llega aquí es una distancia sin ninguna calibración detrás. Añade el corrimiento al rojo de la galaxia anfitriona y tienes H₀ sin un solo peldaño de la escalera de distancias, si consigues encontrar la anfitriona y si puedes saber cómo estaba inclinado el sistema binario.</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/registry.py" line="617" />
+        <location filename="../gui/simulators/registry.py" line="653" />
         <source>Start from &lt;b&gt;GW170817&lt;/b&gt;, the one merger so far whose host galaxy was identified.</source>
         <translation>Empieza por &lt;b&gt;GW170817&lt;/b&gt;, la única fusión hasta ahora cuya galaxia anfitriona se identificó.</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/registry.py" line="618" />
+        <location filename="../gui/simulators/registry.py" line="654" />
         <source>Watch the &lt;b&gt;chirp&lt;/b&gt;: its rising frequency gives the masses, its amplitude the distance.</source>
         <translation>Observa el &lt;b&gt;gorjeo&lt;/b&gt;: su frecuencia creciente da las masas, y su amplitud, la distancia.</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/registry.py" line="620" />
+        <location filename="../gui/simulators/registry.py" line="656" />
         <source>Open &lt;b&gt;Distance vs inclination&lt;/b&gt; to see why the distance error is so lopsided.</source>
         <translation>Abre &lt;b&gt;Distancia frente a inclinación&lt;/b&gt; para ver por qué el error de la distancia es tan asimétrico.</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/registry.py" line="621" />
+        <location filename="../gui/simulators/registry.py" line="657" />
         <source>Change the &lt;b&gt;detector network&lt;/b&gt;: sensitivity sets the reach, the number of sites sets the sky area.</source>
         <translation>Cambia la &lt;b&gt;red de detectores&lt;/b&gt;: la sensibilidad fija el alcance, y el número de emplazamientos, el área en el cielo.</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/registry.py" line="623" />
+        <location filename="../gui/simulators/registry.py" line="659" />
         <source>Turn off &lt;b&gt;the host galaxy is known&lt;/b&gt; to make it a dark siren and watch the candidates multiply.</source>
         <translation>Desactiva &lt;b&gt;se conoce la galaxia anfitriona&lt;/b&gt; para convertirla en una sirena oscura y mira multiplicarse las candidatas.</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/registry.py" line="625" />
+        <location filename="../gui/simulators/registry.py" line="661" />
         <source>Raise the &lt;b&gt;number of events&lt;/b&gt; until the error crosses the 2% line.</source>
         <translation>Sube el &lt;b&gt;número de sucesos&lt;/b&gt; hasta que el error cruce la línea del 2 %.</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/registry.py" line="628" />
+        <location filename="../gui/simulators/registry.py" line="664" />
         <source>Reproduce GW170817: 40 Mpc, SNR 32, H₀ to about 15%. Which error dominates?</source>
         <translation>Reproduce GW170817: 40 Mpc, SNR 32, H₀ con un 15 % aproximadamente. ¿Qué error domina?</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/registry.py" line="629" />
+        <location filename="../gui/simulators/registry.py" line="665" />
         <source>Move the same merger to 400 Mpc. What happens first — the SNR or the host?</source>
         <translation>Lleva la misma fusión a 400 Mpc. ¿Qué falla antes, la SNR o la anfitriona?</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/registry.py" line="630" />
+        <location filename="../gui/simulators/registry.py" line="666" />
         <source>Compare a face-on and an edge-on binary at the same distance. Which is measured better?</source>
         <translation>Compara un sistema binario visto de frente y de canto a la misma distancia. ¿Cuál se mide mejor?</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/registry.py" line="631" />
+        <location filename="../gui/simulators/registry.py" line="667" />
         <source>How many bright sirens does it take to beat the Hubble tension at 2%?</source>
         <translation>¿Cuántas sirenas brillantes hacen falta para batir la tensión de Hubble con un 2 %?</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/registry.py" line="632" />
+        <location filename="../gui/simulators/registry.py" line="668" />
         <source>Switch to the Einstein Telescope. How far can a neutron-star merger be heard?</source>
         <translation>Cambia al Telescopio Einstein. ¿Hasta dónde se puede oír la fusión de dos estrellas de neutrones?</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/registry.py" line="641" />
+        <location filename="../gui/simulators/registry.py" line="678" />
         <source>Redshift Survey Slice</source>
         <translation>Rebanada de un sondeo de corrimientos al rojo</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/registry.py" line="642" />
+        <location filename="../gui/simulators/registry.py" line="679" />
         <source>Build a cone diagram and find the cosmic web in it.</source>
         <translation>Construye un diagrama de cono y encuentra la red cósmica dentro.</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/registry.py" line="644" />
+        <location filename="../gui/simulators/registry.py" line="681" />
         <source>A mock catalogue: a simulated universe, observed the way a telescope would observe it. Galaxies are sampled from a density field grown from random initial conditions, then placed at the distance their redshift implies. Switch the observing effects on one at a time and watch what each of them does to the map — and to the clustering measured from it.</source>
         <translation>Un catálogo simulado: un universo simulado, observado como lo observaría un telescopio. Las galaxias se muestrean de un campo de densidad crecido a partir de condiciones iniciales aleatorias y luego se colocan a la distancia que implica su corrimiento al rojo. Enciende los efectos de observación uno a uno y mira qué le hace cada uno al mapa, y al agrupamiento medido a partir de él.</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/registry.py" line="650" />
+        <location filename="../gui/simulators/registry.py" line="687" />
         <source>Start from a &lt;b&gt;survey&lt;/b&gt;: CfA2 and SDSS are the real slices, &lt;b&gt;the true universe&lt;/b&gt; has no observing effects at all.</source>
         <translation>Empieza por un &lt;b&gt;sondeo&lt;/b&gt;: CfA2 y SDSS son las rebanadas reales, y &lt;b&gt;el universo verdadero&lt;/b&gt; no tiene ningún efecto de observación.</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/registry.py" line="652" />
+        <location filename="../gui/simulators/registry.py" line="689" />
         <source>Read the &lt;b&gt;cone diagram&lt;/b&gt;: we are at the point, distance grows outwards, and the filaments and voids are the cosmic web.</source>
         <translation>Lee el &lt;b&gt;diagrama de cono&lt;/b&gt;: nosotros estamos en el vértice, la distancia crece hacia fuera, y los filamentos y los vacíos son la red cósmica.</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/registry.py" line="654" />
+        <location filename="../gui/simulators/registry.py" line="691" />
         <source>Open &lt;b&gt;Truth vs observed&lt;/b&gt; to see the same galaxies with and without their motions.</source>
         <translation>Abre &lt;b&gt;Verdad frente a observación&lt;/b&gt; para ver las mismas galaxias con y sin sus movimientos.</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/registry.py" line="655" />
+        <location filename="../gui/simulators/registry.py" line="692" />
         <source>Raise the &lt;b&gt;cluster velocity dispersion&lt;/b&gt; until the fingers of God are unmistakable.</source>
         <translation>Sube la &lt;b&gt;dispersión de velocidades del cúmulo&lt;/b&gt; hasta que los dedos de Dios sean inconfundibles.</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/registry.py" line="656" />
+        <location filename="../gui/simulators/registry.py" line="693" />
         <source>Set an &lt;b&gt;apparent magnitude limit&lt;/b&gt; and watch the &lt;b&gt;Selection&lt;/b&gt; tab: the far edge empties out because of the telescope, not the universe.</source>
         <translation>Fija un &lt;b&gt;límite de magnitud aparente&lt;/b&gt; y mira la pestaña &lt;b&gt;Selección&lt;/b&gt;: el borde lejano se vacía por culpa del telescopio, no del universo.</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/registry.py" line="658" />
+        <location filename="../gui/simulators/registry.py" line="695" />
         <source>Change the &lt;b&gt;random seed&lt;/b&gt;: a different universe, the same statistics.</source>
         <translation>Cambia la &lt;b&gt;semilla aleatoria&lt;/b&gt;: otro universo, la misma estadística.</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/registry.py" line="661" />
+        <location filename="../gui/simulators/registry.py" line="698" />
         <source>Compare the true universe with the observed one. Which structures move, and which way?</source>
         <translation>Compara el universo verdadero con el observado. ¿Qué estructuras se mueven, y hacia dónde?</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/registry.py" line="662" />
+        <location filename="../gui/simulators/registry.py" line="699" />
         <source>Turn the peculiar velocities off but keep the cluster dispersion. What is left?</source>
         <translation>Apaga las velocidades peculiares pero deja la dispersión del cúmulo. ¿Qué queda?</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/registry.py" line="663" />
+        <location filename="../gui/simulators/registry.py" line="700" />
         <source>Raise the redshift error to 0.02. How much of the cosmic web survives?</source>
         <translation>Sube el error del corrimiento al rojo a 0,02. ¿Cuánto sobrevive de la red cósmica?</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/registry.py" line="664" />
+        <location filename="../gui/simulators/registry.py" line="701" />
         <source>In the correlation function, find the scale below which the mock has no structure.</source>
         <translation>En la función de correlación, encuentra la escala por debajo de la cual el catálogo simulado no tiene estructura.</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/registry.py" line="665" />
+        <location filename="../gui/simulators/registry.py" line="702" />
         <source>Raise the bias to 2.5. The galaxies clump harder — does ξ change shape or only height?</source>
         <translation>Sube el sesgo a 2,5. Las galaxias se agrupan más: ¿cambia ξ de forma o solo de altura?</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/registry.py" line="674" />
+        <location filename="../gui/simulators/registry.py" line="712" />
         <source>CMB Sky Viewer</source>
         <translation>Visor del cielo del FCM</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/registry.py" line="675" />
+        <location filename="../gui/simulators/registry.py" line="713" />
         <source>The real microwave sky, with the mask and the filters.</source>
         <translation>El cielo de microondas real, con su máscara y sus filtros.</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/registry.py" line="677" />
+        <location filename="../gui/simulators/registry.py" line="715" />
         <source>This is not a model. It is the WMAP nine-year map of the whole sky: the oldest light there is, released 380 000 years after the Big Bang, with the ripples that every galaxy grew from. Apply the analysis mask the team published, blur the map or keep only its fine detail, and measure what is left — the size of the spots, how alike two points are, and whether the distribution is the Gaussian inflation predicts.</source>
         <translation>Esto no es un modelo. Es el mapa de todo el cielo de los nueve años de WMAP: la luz más antigua que existe, liberada 380 000 años después del Big Bang, con las ondulaciones de las que creció cada galaxia. Aplica la máscara de análisis que publicó el equipo, difumina el mapa o quédate solo con su detalle fino, y mide lo que queda: el tamaño de las manchas, cuánto se parecen dos puntos y si la distribución es la gaussiana que predice la inflación.</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/registry.py" line="684" />
+        <location filename="../gui/simulators/registry.py" line="722" />
         <source>Turn the &lt;b&gt;KQ85 mask&lt;/b&gt; off and on. The bright band is our own galaxy, not the early universe.</source>
         <translation>Enciende y apaga la &lt;b&gt;máscara KQ85&lt;/b&gt;. La banda brillante es nuestra propia galaxia, no el universo temprano.</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/registry.py" line="686" />
+        <location filename="../gui/simulators/registry.py" line="724" />
         <source>Raise &lt;b&gt;Smooth by&lt;/b&gt; and watch the rms fall in the summary.</source>
         <translation>Sube &lt;b&gt;Suavizar en&lt;/b&gt; y mira caer el rms en el resumen.</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/registry.py" line="687" />
+        <location filename="../gui/simulators/registry.py" line="725" />
         <source>Tick &lt;b&gt;keep only what is smaller&lt;/b&gt; to subtract the blur and leave the degree-scale spots.</source>
         <translation>Marca &lt;b&gt;quedarse solo con lo más pequeño&lt;/b&gt; para restar el difuminado y dejar las manchas de escala de un grado.</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/registry.py" line="689" />
+        <location filename="../gui/simulators/registry.py" line="727" />
         <source>Open &lt;b&gt;Correlation function&lt;/b&gt; and read the spot size off the half-way point.</source>
         <translation>Abre &lt;b&gt;Función de correlación&lt;/b&gt; y lee el tamaño de las manchas en el punto en el que cae a la mitad.</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/registry.py" line="690" />
+        <location filename="../gui/simulators/registry.py" line="728" />
         <source>Switch the &lt;b&gt;projection&lt;/b&gt; between Mollweide and longitude–latitude.</source>
         <translation>Cambia la &lt;b&gt;proyección&lt;/b&gt; entre Mollweide y longitud-latitud.</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/registry.py" line="693" />
+        <location filename="../gui/simulators/registry.py" line="731" />
         <source>With the mask off, how much larger are the extremes? Whose light is that?</source>
         <translation>Con la máscara quitada, ¿cuánto mayores son los extremos? ¿De quién es esa luz?</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/registry.py" line="694" />
+        <location filename="../gui/simulators/registry.py" line="732" />
         <source>Smooth by 5°. How much of the 67 µK is left, and what has been thrown away?</source>
         <translation>Suaviza 5°. ¿Cuánto queda de los 67 µK, y qué se ha tirado?</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/registry.py" line="695" />
+        <location filename="../gui/simulators/registry.py" line="733" />
         <source>In &lt;b&gt;How much survives blurring&lt;/b&gt;, find the scale where the curve bends.</source>
         <translation>En &lt;b&gt;Cuánto sobrevive al difuminado&lt;/b&gt;, encuentra la escala en la que se dobla la curva.</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/registry.py" line="696" />
+        <location filename="../gui/simulators/registry.py" line="734" />
         <source>Compare the histogram with the Gaussian. Inflation predicts that shape.</source>
         <translation>Compara el histograma con la gaussiana. La inflación predice esa forma.</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/registry.py" line="697" />
+        <location filename="../gui/simulators/registry.py" line="735" />
         <source>Find the coldest spot. It is a real feature, and it has its own literature.</source>
         <translation>Encuentra la mancha más fría. Es una estructura real, y tiene literatura propia.</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/registry.py" line="706" />
+        <location filename="../gui/simulators/registry.py" line="745" />
         <source>Recombination Explorer</source>
         <translation>Explorador de la recombinación</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/registry.py" line="707" />
+        <location filename="../gui/simulators/registry.py" line="746" />
         <source>Why the universe became transparent at 3000 K, not 158 000 K.</source>
         <translation>Por qué el universo se volvió transparente a 3000 K y no a 158 000 K.</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/registry.py" line="709" />
+        <location filename="../gui/simulators/registry.py" line="748" />
         <source>380 000 years after the Big Bang the free electrons were captured by protons, and light could suddenly travel for ever: that light is the cosmic microwave background. Follow the number of free electrons as the universe cools, compare the naive equilibrium answer with the real one, and see where the CMB photons scattered for the last time.</source>
         <translation>380 000 años después del Big Bang los electrones libres fueron capturados por los protones, y la luz pudo viajar de pronto para siempre: esa luz es el fondo cósmico de microondas. Sigue el número de electrones libres mientras el universo se enfría, compara la respuesta ingenua del equilibrio con la real, y mira dónde se dispersaron por última vez los fotones del FCM.</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/registry.py" line="715" />
+        <location filename="../gui/simulators/registry.py" line="754" />
         <source>Read &lt;b&gt;Free electrons&lt;/b&gt;: the solid curve is the real history, the dashed one the Saha equilibrium it lags behind.</source>
         <translation>Lee &lt;b&gt;Electrones libres&lt;/b&gt;: la curva continua es la historia real, y la discontinua, el equilibrio de Saha del que va rezagada.</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/registry.py" line="717" />
+        <location filename="../gui/simulators/registry.py" line="756" />
         <source>Open &lt;b&gt;The last-scattering surface&lt;/b&gt; to see where the photons we receive today were last deflected, and how thick that shell is.</source>
         <translation>Abre &lt;b&gt;La superficie de última dispersión&lt;/b&gt; para ver dónde se desviaron por última vez los fotones que recibimos hoy, y cómo de gruesa es esa capa.</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/registry.py" line="719" />
+        <location filename="../gui/simulators/registry.py" line="758" />
         <source>Open &lt;b&gt;Why so cold?&lt;/b&gt; to count the photons that can still ionise an atom.</source>
         <translation>Abre &lt;b&gt;¿Por qué tan frío?&lt;/b&gt; para contar los fotones que todavía pueden ionizar un átomo.</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/registry.py" line="720" />
+        <location filename="../gui/simulators/registry.py" line="759" />
         <source>Change the &lt;b&gt;baryon density&lt;/b&gt; or today's &lt;b&gt;CMB temperature&lt;/b&gt; and watch the moment of transparency move.</source>
         <translation>Cambia la &lt;b&gt;densidad de bariones&lt;/b&gt; o la &lt;b&gt;temperatura del FCM&lt;/b&gt; de hoy y mira moverse el momento de la transparencia.</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/registry.py" line="724" />
+        <location filename="../gui/simulators/registry.py" line="763" />
         <source>At what temperature is half of the hydrogen neutral? Compare it with 13.6 eV.</source>
         <translation>¿A qué temperatura está neutro la mitad del hidrógeno? Compárala con 13,6 eV.</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/registry.py" line="725" />
+        <location filename="../gui/simulators/registry.py" line="764" />
         <source>How much later than Saha does the real recombination happen, and why?</source>
         <translation>¿Cuánto más tarde que Saha ocurre la recombinación real, y por qué?</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/registry.py" line="726" />
+        <location filename="../gui/simulators/registry.py" line="765" />
         <source>Switch to the logarithmic axis. How many electrons never find a proton?</source>
         <translation>Cambia al eje logarítmico. ¿Cuántos electrones no encuentran nunca un protón?</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/registry.py" line="727" />
+        <location filename="../gui/simulators/registry.py" line="766" />
         <source>Double today's CMB temperature. Does last scattering happen at a different temperature, or only at a different redshift?</source>
         <translation>Duplica la temperatura del FCM de hoy. ¿La última dispersión ocurre a otra temperatura, o solo a otro corrimiento al rojo?</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/registry.py" line="729" />
+        <location filename="../gui/simulators/registry.py" line="768" />
         <source>Lower Ωb h² to 0.01. What happens to the electrons left over?</source>
         <translation>Baja Ωb h² a 0,01. ¿Qué pasa con los electrones sobrantes?</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/registry.py" line="738" />
+        <location filename="../gui/simulators/registry.py" line="778" />
         <source>The Far Future</source>
         <translation>El futuro lejano</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/registry.py" line="739" />
+        <location filename="../gui/simulators/registry.py" line="779" />
         <source>Heat death, Big Rip or Big Crunch: how the universe ends.</source>
         <translation>Muerte térmica, Big Rip o Big Crunch: cómo termina el universo.</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/registry.py" line="741" />
+        <location filename="../gui/simulators/registry.py" line="781" />
         <source>Run the universe forward. Choose what the dark energy does and follow the expansion for hundreds of billions of years, then along a timeline that reaches 10¹⁰⁰ years: the last stars, evaporating galaxies and black holes. If the dark energy is phantom, watch the Big Rip take apart clusters, galaxies, the Solar System and finally atoms.</source>
         <translation>Haz correr el universo hacia delante. Elige qué hace la energía oscura y sigue la expansión durante cientos de miles de millones de años, y después a lo largo de una cronología que llega a 10¹⁰⁰ años: las últimas estrellas, las galaxias que se evaporan y los agujeros negros. Si la energía oscura es fantasma, mira al Big Rip desmontar los cúmulos, las galaxias, el Sistema Solar y por fin los átomos.</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/registry.py" line="747" />
+        <location filename="../gui/simulators/registry.py" line="787" />
         <source>Pick a &lt;b&gt;universe&lt;/b&gt;, or move the sliders to make your own.</source>
         <translation>Elige un &lt;b&gt;universo&lt;/b&gt;, o mueve los deslizadores para hacer el tuyo.</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/registry.py" line="748" />
+        <location filename="../gui/simulators/registry.py" line="788" />
         <source>&lt;b&gt;Expansion&lt;/b&gt; shows the size of the universe from today onwards; a dashed line marks the end, if there is one.</source>
         <translation>&lt;b&gt;Expansión&lt;/b&gt; muestra el tamaño del universo de hoy en adelante; una línea discontinua marca el final, si lo hay.</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/registry.py" line="750" />
+        <location filename="../gui/simulators/registry.py" line="790" />
         <source>&lt;b&gt;The next 10¹⁰⁰ years&lt;/b&gt; puts the milestones on a logarithmic axis. Faded ones never happen in this universe.</source>
         <translation>&lt;b&gt;Los próximos 10¹⁰⁰ años&lt;/b&gt; pone los hitos en un eje logarítmico. Los apagados no ocurren nunca en este universo.</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/registry.py" line="752" />
+        <location filename="../gui/simulators/registry.py" line="792" />
         <source>&lt;b&gt;Big Rip countdown&lt;/b&gt; shows when each bound system is torn apart.</source>
         <translation>&lt;b&gt;Cuenta atrás para el Big Rip&lt;/b&gt; muestra cuándo se desgarra cada sistema ligado.</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/registry.py" line="753" />
+        <location filename="../gui/simulators/registry.py" line="793" />
         <source>&lt;b&gt;Galaxies we can still reach&lt;/b&gt; counts the galaxies a message sent at each moment could ever arrive at.</source>
         <translation>&lt;b&gt;Galaxias a las que todavía podemos llegar&lt;/b&gt; cuenta las galaxias a las que podría llegar algún día un mensaje enviado en cada momento.</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/registry.py" line="757" />
+        <location filename="../gui/simulators/registry.py" line="797" />
         <source>In our universe, what fraction of the galaxies we can see could we still reach today?</source>
         <translation>En nuestro universo, ¿a qué fracción de las galaxias que vemos podríamos llegar todavía hoy?</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/registry.py" line="758" />
+        <location filename="../gui/simulators/registry.py" line="798" />
         <source>Choose w = −1.5. How long before the Big Rip does the Earth explode?</source>
         <translation>Elige w = −1,5. ¿Cuánto antes del Big Rip estalla la Tierra?</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/registry.py" line="759" />
+        <location filename="../gui/simulators/registry.py" line="799" />
         <source>Bring w from −1.5 towards −1. How fast does the Big Rip recede?</source>
         <translation>Lleva w de −1,5 hacia −1. ¿Con qué rapidez se aleja el Big Rip?</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/registry.py" line="760" />
+        <location filename="../gui/simulators/registry.py" line="800" />
         <source>Give dark energy a negative value. When does the Big Crunch come?</source>
         <translation>Dale a la energía oscura un valor negativo. ¿Cuándo llega el Big Crunch?</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/registry.py" line="761" />
+        <location filename="../gui/simulators/registry.py" line="801" />
         <source>Switch dark energy off. Which milestones stop happening, and why?</source>
         <translation>Apaga la energía oscura. ¿Qué hitos dejan de ocurrir, y por qué?</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/registry.py" line="770" />
+        <location filename="../gui/simulators/registry.py" line="811" />
         <source>Halo Mass Function Explorer</source>
         <translation>Explorador de la función de masa de halos</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/registry.py" line="771" />
+        <location filename="../gui/simulators/registry.py" line="812" />
         <source>How many haloes of each mass, when — and why clusters weigh σ8.</source>
         <translation>Cuántos halos hay de cada masa, y cuándo; y por qué los cúmulos pesan σ8.</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/registry.py" line="773" />
+        <location filename="../gui/simulators/registry.py" line="814" />
         <source>Every galaxy lives in a halo of dark matter, and the halo mass function says how many haloes of each mass there are. It follows from the ripples in the early universe alone: a region collapses once its overdensity passes a threshold. Go back in time to the first star-forming haloes, or count the giant clusters on today's sky and see how steeply they depend on σ8.</source>
         <translation>Cada galaxia vive en un halo de materia oscura, y la función de masa de halos dice cuántos halos hay de cada masa. Se deduce solo de las ondulaciones del universo temprano: una región colapsa en cuanto su sobredensidad pasa un umbral. Vuelve atrás hasta los primeros halos capaces de formar estrellas, o cuenta los cúmulos gigantes del cielo de hoy y comprueba lo bruscamente que dependen de σ8.</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/registry.py" line="779" />
+        <location filename="../gui/simulators/registry.py" line="820" />
         <source>Move &lt;b&gt;σ8&lt;/b&gt; and &lt;b&gt;Ωm&lt;/b&gt;; the dashed curves stay at Planck 2018 for comparison.</source>
         <translation>Mueve &lt;b&gt;σ8&lt;/b&gt; y &lt;b&gt;Ωm&lt;/b&gt;; las curvas discontinuas se quedan en Planck 2018 para comparar.</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/registry.py" line="780" />
+        <location filename="../gui/simulators/registry.py" line="821" />
         <source>&lt;b&gt;Mass function&lt;/b&gt; shows how many haloes there are of each mass at the chosen &lt;b&gt;redshift&lt;/b&gt;.</source>
         <translation>&lt;b&gt;Función de masa&lt;/b&gt; muestra cuántos halos hay de cada masa al &lt;b&gt;corrimiento al rojo&lt;/b&gt; elegido.</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/registry.py" line="782" />
+        <location filename="../gui/simulators/registry.py" line="823" />
         <source>&lt;b&gt;Clusters on the sky&lt;/b&gt; counts every halo above the &lt;b&gt;threshold&lt;/b&gt; out to z = 1, for several values of σ8.</source>
         <translation>&lt;b&gt;Cúmulos en el cielo&lt;/b&gt; cuenta todos los halos por encima del &lt;b&gt;umbral&lt;/b&gt; hasta z = 1, para varios valores de σ8.</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/registry.py" line="784" />
+        <location filename="../gui/simulators/registry.py" line="825" />
         <source>&lt;b&gt;Rare peaks&lt;/b&gt; shows σ(M): a halo forms where it crosses δc = 1.686.</source>
         <translation>&lt;b&gt;Picos raros&lt;/b&gt; muestra σ(M): un halo se forma donde cruza δc = 1,686.</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/registry.py" line="785" />
+        <location filename="../gui/simulators/registry.py" line="826" />
         <source>&lt;b&gt;Across cosmic time&lt;/b&gt; follows small haloes, galaxies and clusters from z = 20 to today.</source>
         <translation>&lt;b&gt;A lo largo del tiempo cósmico&lt;/b&gt; sigue a los halos pequeños, las galaxias y los cúmulos desde z = 20 hasta hoy.</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/registry.py" line="789" />
+        <location filename="../gui/simulators/registry.py" line="830" />
         <source>Raise σ8 by 10%. How much do the clusters above 10¹⁵ M☉/h change?</source>
         <translation>Sube σ8 un 10 %. ¿Cuánto cambian los cúmulos por encima de 10¹⁵ M☉/h?</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/registry.py" line="790" />
+        <location filename="../gui/simulators/registry.py" line="831" />
         <source>Lower the threshold to 10¹³ M☉/h and repeat. Is the effect smaller?</source>
         <translation>Baja el umbral a 10¹³ M☉/h y repite. ¿Es menor el efecto?</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/registry.py" line="791" />
+        <location filename="../gui/simulators/registry.py" line="832" />
         <source>Go to z = 20. How many haloes can make the first stars?</source>
         <translation>Ve a z = 20. ¿Cuántos halos pueden formar las primeras estrellas?</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/registry.py" line="792" />
+        <location filename="../gui/simulators/registry.py" line="833" />
         <source>Find the redshift at which the typical collapsing halo was the size of the Milky Way.</source>
         <translation>Encuentra el corrimiento al rojo al que el halo típico que colapsaba tenía el tamaño de la Vía Láctea.</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/registry.py" line="793" />
+        <location filename="../gui/simulators/registry.py" line="834" />
         <source>Switch between Press–Schechter and Sheth–Tormen. Where do they disagree most?</source>
         <translation>Cambia entre Press-Schechter y Sheth-Tormen. ¿Dónde discrepan más?</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/registry.py" line="802" />
+        <location filename="../gui/simulators/registry.py" line="844" />
         <source>21-cm Global Signal Explorer</source>
         <translation>Explorador de la señal global de 21 cm</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/registry.py" line="803" />
+        <location filename="../gui/simulators/registry.py" line="845" />
         <source>Listen to hydrogen from the dark ages and the first stars.</source>
         <translation>Escucha al hidrógeno de la edad oscura y de las primeras estrellas.</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/registry.py" line="805" />
+        <location filename="../gui/simulators/registry.py" line="847" />
         <source>Neutral hydrogen absorbs and emits at 21 cm, and that line, stretched by the expansion, arrives today at radio frequencies between about 10 and 200 MHz. Averaged over the whole sky it records the history of the gas: cooling in the dark ages, the first starlight, the first X-ray heating and reionisation. Change the astrophysics and compare with the contested EDGES detection.</source>
         <translation>El hidrógeno neutro absorbe y emite en 21 cm, y esa línea, estirada por la expansión, llega hoy en frecuencias de radio entre unos 10 y 200 MHz. Promediada sobre todo el cielo registra la historia del gas: el enfriamiento de la edad oscura, la primera luz de las estrellas, el primer calentamiento por rayos X y la reionización. Cambia la astrofísica y compara con la discutida detección de EDGES.</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/registry.py" line="812" />
+        <location filename="../gui/simulators/registry.py" line="854" />
         <source>&lt;b&gt;The global signal&lt;/b&gt; shows the brightness temperature against frequency; the top axis gives the redshift.</source>
         <translation>&lt;b&gt;La señal global&lt;/b&gt; muestra la temperatura de brillo frente a la frecuencia; el eje superior da el corrimiento al rojo.</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/registry.py" line="814" />
+        <location filename="../gui/simulators/registry.py" line="856" />
         <source>Move &lt;b&gt;Lyman-α coupling&lt;/b&gt; to change when the first stars light up, and &lt;b&gt;X-ray heating&lt;/b&gt; to change when and how much the gas is warmed.</source>
         <translation>Mueve el &lt;b&gt;acoplamiento Lyman-α&lt;/b&gt; para cambiar cuándo se encienden las primeras estrellas, y el &lt;b&gt;calentamiento por rayos X&lt;/b&gt; para cambiar cuándo y cuánto se calienta el gas.</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/registry.py" line="816" />
+        <location filename="../gui/simulators/registry.py" line="858" />
         <source>&lt;b&gt;Three temperatures&lt;/b&gt; shows why: absorption wherever the spin temperature is below the background.</source>
         <translation>&lt;b&gt;Tres temperaturas&lt;/b&gt; enseña por qué: hay absorción allí donde la temperatura de espín está por debajo del fondo.</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/registry.py" line="818" />
+        <location filename="../gui/simulators/registry.py" line="860" />
         <source>&lt;b&gt;What couples the spins&lt;/b&gt; shows collisions giving way to starlight.</source>
         <translation>&lt;b&gt;Qué acopla los espines&lt;/b&gt; muestra cómo las colisiones dejan paso a la luz de las estrellas.</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/registry.py" line="819" />
+        <location filename="../gui/simulators/registry.py" line="861" />
         <source>Add an &lt;b&gt;extra radio background&lt;/b&gt; to try to reach the depth EDGES reported.</source>
         <translation>Añade un &lt;b&gt;fondo de radio adicional&lt;/b&gt; para intentar llegar a la profundidad que anunció EDGES.</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/registry.py" line="822" />
+        <location filename="../gui/simulators/registry.py" line="864" />
         <source>Where is the dark-ages trough, and why can it not be seen from the ground?</source>
         <translation>¿Dónde está el valle de la edad oscura, y por qué no se puede ver desde el suelo?</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/registry.py" line="823" />
+        <location filename="../gui/simulators/registry.py" line="865" />
         <source>Switch the X-ray heating off. What happens to the emission?</source>
         <translation>Apaga el calentamiento por rayos X. ¿Qué le pasa a la emisión?</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/registry.py" line="824" />
+        <location filename="../gui/simulators/registry.py" line="866" />
         <source>Make the first stars form later. Which way does the trough move in frequency?</source>
         <translation>Haz que las primeras estrellas se formen más tarde. ¿Hacia dónde se mueve el valle en frecuencia?</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/registry.py" line="825" />
+        <location filename="../gui/simulators/registry.py" line="867" />
         <source>How big a radio background does it take to match EDGES?</source>
         <translation>¿Cómo de grande tiene que ser el fondo de radio para igualar a EDGES?</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/registry.py" line="826" />
+        <location filename="../gui/simulators/registry.py" line="868" />
         <source>Delay reionisation to z = 6. What changes at the high-frequency end?</source>
         <translation>Retrasa la reionización hasta z = 6. ¿Qué cambia en el extremo de alta frecuencia?</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/registry.py" line="835" />
+        <location filename="../gui/simulators/registry.py" line="878" />
         <source>Dark Matter Detection</source>
         <translation>Detección de materia oscura</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/registry.py" line="836" />
+        <location filename="../gui/simulators/registry.py" line="879" />
         <source>Build an underground detector and draw your own exclusion curve.</source>
         <translation>Construye un detector subterráneo y dibuja tu propia curva de exclusión.</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/registry.py" line="838" />
+        <location filename="../gui/simulators/registry.py" line="881" />
         <source>If dark matter is made of WIMPs, a few of them should bounce off atomic nuclei in a detector deep underground. Choose the target, the size, the threshold and the background of your detector, pick a WIMP, and see the recoil spectrum it would leave, the events of a single run, the yearly modulation — and the exclusion curve a null result would draw.</source>
         <translation>Si la materia oscura está hecha de WIMP, unos cuantos deberían rebotar contra los núcleos atómicos de un detector enterrado a gran profundidad. Elige el blanco, el tamaño, el umbral y el fondo de tu detector, elige un WIMP, y mira el espectro de retrocesos que dejaría, los sucesos de una sola tirada, la modulación anual y la curva de exclusión que dibujaría un resultado nulo.</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/registry.py" line="844" />
+        <location filename="../gui/simulators/registry.py" line="887" />
         <source>Start from an &lt;b&gt;experiment&lt;/b&gt;, or change the target, exposure, threshold and background yourself.</source>
         <translation>Empieza por un &lt;b&gt;experimento&lt;/b&gt;, o cambia tú mismo el blanco, la exposición, el umbral y el fondo.</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/registry.py" line="846" />
+        <location filename="../gui/simulators/registry.py" line="889" />
         <source>Set the &lt;b&gt;WIMP mass&lt;/b&gt; and &lt;b&gt;cross-section&lt;/b&gt;. The summary says how many events it would give and whether it would be discovered, excluded or hidden.</source>
         <translation>Fija la &lt;b&gt;masa del WIMP&lt;/b&gt; y la &lt;b&gt;sección eficaz&lt;/b&gt;. El resumen dice cuántos sucesos daría y si sería descubierto, excluido u oculto.</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/registry.py" line="848" />
+        <location filename="../gui/simulators/registry.py" line="891" />
         <source>&lt;b&gt;Exclusion curve&lt;/b&gt;: everything above your curve would have been seen. Your WIMP is the round dot.</source>
         <translation>&lt;b&gt;Curva de exclusión&lt;/b&gt;: todo lo que queda por encima de tu curva se habría visto. Tu WIMP es el punto redondo.</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/registry.py" line="850" />
+        <location filename="../gui/simulators/registry.py" line="893" />
         <source>&lt;b&gt;A simulated run&lt;/b&gt; draws one random outcome; press &lt;b&gt;Run the experiment again&lt;/b&gt; for another.</source>
         <translation>&lt;b&gt;Una tirada simulada&lt;/b&gt; sortea un resultado aleatorio; pulsa &lt;b&gt;Repetir el experimento&lt;/b&gt; para otro.</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/registry.py" line="852" />
+        <location filename="../gui/simulators/registry.py" line="895" />
         <source>&lt;b&gt;Annual modulation&lt;/b&gt; shows the few-per-cent yearly swing as the Earth orbits the Sun.</source>
         <translation>&lt;b&gt;Modulación anual&lt;/b&gt; muestra el vaivén anual de unos pocos por ciento mientras la Tierra orbita el Sol.</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/registry.py" line="855" />
+        <location filename="../gui/simulators/registry.py" line="898" />
         <source>With the xenon detector, at what WIMP mass is the limit strongest? Why does it weaken on both sides?</source>
         <translation>Con el detector de xenón, ¿a qué masa de WIMP es más fuerte el límite? ¿Por qué se debilita a ambos lados?</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/registry.py" line="857" />
+        <location filename="../gui/simulators/registry.py" line="900" />
         <source>Set the WIMP mass to 5 GeV. Which detector can still see it?</source>
         <translation>Pon la masa del WIMP en 5 GeV. ¿Qué detector puede verlo todavía?</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/registry.py" line="858" />
+        <location filename="../gui/simulators/registry.py" line="901" />
         <source>Double the exposure with no background. How much lower does the curve go? Now add 20 background events.</source>
         <translation>Duplica la exposición sin fondo. ¿Cuánto baja la curva? Ahora añade 20 sucesos de fondo.</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/registry.py" line="860" />
+        <location filename="../gui/simulators/registry.py" line="903" />
         <source>Find a WIMP that is excluded but would not have been discovered.</source>
         <translation>Encuentra un WIMP que quede excluido pero que no se hubiera descubierto.</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/registry.py" line="861" />
+        <location filename="../gui/simulators/registry.py" line="904" />
         <source>Run the same experiment several times. How much does the number of events jump?</source>
         <translation>Repite el mismo experimento varias veces. ¿Cuánto salta el número de sucesos?</translation>
     </message>
