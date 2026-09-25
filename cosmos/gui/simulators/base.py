@@ -58,6 +58,19 @@ class SimulatorBase(QWidget):
         """Values a guided challenge can check. Override in simulators that have challenges."""
         return {}
 
+    def provenance(self, plot: str = "") -> list[str]:
+        """What an exported plot or table from here should say about itself (V2).
+
+        ``plot`` is the exporting plot's ``export_name``, because a simulator can
+        show a measurement in one tab and a simulation in the next. Return one or
+        more lines naming what is on screen *now* — which sample is selected,
+        whether it was measured or generated, and the model behind it. An empty
+        list leaves the exported file with the standing description in
+        :mod:`cosmos.provenance`, which has to cover every case the simulator
+        offers; override wherever the simulator can tell which one it is showing.
+        """
+        return []
+
     def finish_controls(self) -> None:
         self.controls.addStretch(1)
 
