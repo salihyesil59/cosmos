@@ -144,6 +144,12 @@ class SandboxSimulator(SimulatorBase):
         self.display.addWidget(self.score)
         tabs = QTabWidget()
         self.report = RichBrowser(font_pt=10.5)
+        # The report card compares four things at once — a tick, the test, your
+        # value and what is required — and four columns have a width below which
+        # they cannot be squeezed. In the smallest window this pane is about 350
+        # pixels wide, which is less than that, so here the table is scrolled
+        # rather than clipped. At any ordinary window size it fits (D5).
+        self.report.setProperty("scrolls_sideways", True)
         self.expansion_plot = PlotWidget(self._draw_expansion, export_name="my_universe_expansion")
         self.cmb_plot = PlotWidget(self._draw_cmb, export_name="my_universe_cmb")
         tabs.addTab(self.report, tr("Report card"))
