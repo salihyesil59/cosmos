@@ -193,9 +193,13 @@ class _Renderer:
     def render(self, text: str) -> RenderedDocument:
         body = self._render_fragment(text.replace("\r\n", "\n"))
         p = self.ctx.palette
+        # A width makes Qt wrap the cells instead of laying the table out at its
+        # content's natural width, which on a narrow pane — the report card of S18,
+        # say — ran hundreds of pixels past the edge. 99% rather than 100% because
+        # the one-pixel border is drawn outside that width (D5).
         body = body.replace(
             "<table>",
-            f'<table class="data" cellspacing="0" cellpadding="6" border="1" '
+            f'<table class="data" width="99%" cellspacing="0" cellpadding="6" border="1" '
             f'style="border-color:{p.border}; margin-top:8px; margin-bottom:8px;">',
         )
         self.doc.html = f"<html><body>{body}</body></html>"
