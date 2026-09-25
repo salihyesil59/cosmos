@@ -51,6 +51,8 @@ class GlossaryPage(QWidget):
         left.addWidget(self.search)
         self.list = QListWidget()
         self.list.setMaximumWidth(300)
+        self.list.setTextElideMode(Qt.ElideRight)
+        self.list.setHorizontalScrollBarPolicy(Qt.ScrollBarAlwaysOff)
         for key, term in ctx.glossary.items():
             item = QListWidgetItem(term.term)
             item.setData(Qt.UserRole, key)

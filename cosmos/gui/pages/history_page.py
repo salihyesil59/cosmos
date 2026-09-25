@@ -74,6 +74,7 @@ class HistoryPage(QWidget):
         tl = QVBoxLayout(timeline_host)
         tl.setContentsMargins(0, 8, 0, 0)
         self.timeline_scroll = QScrollArea()
+        self.timeline_scroll.setProperty("scrolls_sideways", True)   # it is a timeline
         self.timeline_scroll.setWidgetResizable(True)
         inner = QWidget()
         self.timeline_layout = QVBoxLayout(inner)

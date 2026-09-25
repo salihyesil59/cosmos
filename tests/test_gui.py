@@ -1781,3 +1781,39 @@ def test_a_lesson_keeps_a_readable_measure(window):
     browser.resize(1400, 600)
     pump()
     assert 0 < browser.viewport().width() <= RichBrowser.MEASURE
+
+
+def test_the_window_comes_back_the_way_it_was_left(window):
+    """D2: size, place and panel widths are remembered, like the panels themselves."""
+    from PySide6.QtCore import QByteArray
+
+    store = window.ctx.store
+    store.data.window_geometry = store.data.window_layout = ""
+    window._remember_window()
+    assert store.data.window_geometry and store.data.window_layout
+    # What was written is exactly what Qt accepts back.
+    assert window.restoreGeometry(QByteArray.fromBase64(store.data.window_geometry.encode("ascii")))
+    assert window.restoreState(QByteArray.fromBase64(store.data.window_layout.encode("ascii")))
+
+    # A setting damaged by hand is ignored rather than fatal.
+    store.data.window_geometry = "these are not bytes"
+    store.data.window_layout = "ş"
+    window._restore_window()
+    pump()
+    assert window.isVisible()
+
+    # Closing hides every panel; that must not be read as the learner closing them.
+    store.data.window_geometry = store.data.window_layout = ""
+    window.show_panel(window.guide_dock)
+    pump()
+    assert store.data.panels_open == ["guide"]
+    window._panels_ready = False            # what closeEvent does
+    window.guide_dock.hide()
+    pump()
+    assert store.data.panels_open == ["guide"]
+    window._panels_ready = True
+    window.show_panel(window.guide_dock)
+    pump()
+    window.guide_dock.hide()
+    pump()
+    assert store.data.panels_open == []

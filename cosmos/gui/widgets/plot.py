@@ -51,7 +51,9 @@ class PlotWidget(QWidget):
         self.figure = Figure(figsize=(6, 4), layout="constrained")
         self.canvas = FigureCanvasQTAgg(self.figure)
         self.canvas.setSizePolicy(QSizePolicy.Expanding, QSizePolicy.Expanding)
-        self.canvas.setMinimumHeight(220)
+        # Low enough that a simulator still fits a 768-pixel screen, high enough
+        # that the axes stay readable.
+        self.canvas.setMinimumHeight(180)
 
         layout = QVBoxLayout(self)
         layout.setContentsMargins(0, 0, 0, 0)

@@ -17,7 +17,7 @@ from PySide6.QtWidgets import (
 
 from cosmos.gui.context import AppContext
 from cosmos.gui.simulators.registry import SIMULATORS
-from cosmos.gui.widgets.common import card, centred, muted_label, title_label
+from cosmos.gui.widgets.common import FlowLayout, card, centred, muted_label, title_label
 from cosmos.gui.widgets.common import labelled_row
 from cosmos.i18n import tr, tr_noop
 from cosmos import streaks
@@ -208,10 +208,8 @@ class HomePage(QWidget):
         self.layout_.addWidget(
             muted_label(tr("Hands-on tools to explore the ideas from the lessons. You can open them at any time."))
         )
-        sims = QGridLayout()
-        sims.setSpacing(8)
-        columns = 3
-        for i, info in enumerate(SIMULATORS.values()):
+        sims = FlowLayout(spacing=8)
+        for info in SIMULATORS.values():
             # "&" would otherwise become a keyboard mnemonic and vanish from the label.
             btn = QPushButton(f"{info.icon}  {tr(info.title)}".replace("&", "&&"))
             btn.setStyleSheet("QPushButton { text-align: left; padding: 9px 12px; }")
@@ -219,9 +217,7 @@ class HomePage(QWidget):
             # a wall of text on the page a learner sees first (D1).
             btn.setToolTip(f"<b>{tr(info.tagline)}</b><br>{tr(info.description)}")
             btn.clicked.connect(lambda _=False, sid=info.id: ctx.navigate(f"sim:{sid}"))
-            sims.addWidget(btn, i // columns, i % columns)
-        for column in range(columns):
-            sims.setColumnStretch(column, 1)
+            sims.addWidget(btn)
         self.layout_.addLayout(sims)
         self.layout_.addStretch(1)
 

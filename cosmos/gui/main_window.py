@@ -2,7 +2,7 @@
 
 from __future__ import annotations
 
-from PySide6.QtCore import QSize, Qt
+from PySide6.QtCore import QByteArray, QSize, Qt
 from PySide6.QtGui import QAction, QActionGroup, QColor, QIcon, QKeySequence, QPainter, QPen, QPixmap
 from PySide6.QtWidgets import (
     QApplication,
@@ -139,7 +139,7 @@ class MainWindow(QMainWindow):
         self._build_notes()
         self._build_tutor()
         self._build_actions()
-        self._restore_panels()
+        self._restore_window()
         # The status bar stays quiet until something happens: it still shows what a
         # control does while the pointer is over it.
         self.statusBar().clearMessage()
@@ -338,6 +338,26 @@ class MainWindow(QMainWindow):
                     dock.raise_()
         if self.ctx.store.data.nav_hidden:
             self.nav_dock.hide()
+
+    def _restore_window(self) -> None:
+        """Open at the size, place and panel widths the window was closed at (D2)."""
+        data = self.ctx.store.data
+        for saved, restore in ((data.window_geometry, self.restoreGeometry),
+                               (data.window_layout, self.restoreState)):
+            if not saved:
+                continue
+            try:
+                restore(QByteArray.fromBase64(saved.encode("ascii")))
+            except (ValueError, TypeError):
+                pass          # a corrupted or foreign setting is not worth a crash
+        # restoreState brings back whichever panels were docked; which of them are
+        # open is the learner's own setting, so it has the last word.
+        self._restore_panels()
+
+    def _remember_window(self) -> None:
+        data = self.ctx.store.data
+        data.window_geometry = bytes(self.saveGeometry().toBase64()).decode("ascii")
+        data.window_layout = bytes(self.saveState().toBase64()).decode("ascii")
 
     def _remember_panels(self) -> None:
         if not getattr(self, "_panels_ready", False):
@@ -1359,6 +1379,9 @@ class MainWindow(QMainWindow):
     def closeEvent(self, event):  # noqa: N802
         from PySide6.QtCore import QThreadPool
 
+        # Closing hides every panel, which must not be mistaken for the learner
+        # closing them: what was open stays open for next time.
+        self._panels_ready = False
         QThreadPool.globalInstance().waitForDone(3000)   # an update check may still be waiting
         self.notes.save()
         worker = getattr(self.tutor, "_worker", None)
@@ -1366,5 +1389,6 @@ class MainWindow(QMainWindow):
             worker.wait(2000)
         for page in self._sim_pages.values():
             page.simulator.on_hidden()
+        self._remember_window()
         self.ctx.store.save()
         super().closeEvent(event)
