@@ -243,7 +243,8 @@ class CalculatorSimulator(SimulatorBase):
                                         export_name="distances_vs_z")
         self.age_plot = PlotWidget(self._draw_ages, csv_provider=self._curve_csv, export_name="age_vs_z")
         plots.addTab(self.distance_plot, tr("Distances vs redshift"))
-        plots.addTab(self.age_plot, tr("Age & lookback time"))
+        # "&" alone would become a keyboard accelerator and vanish from the tab.
+        plots.addTab(self.age_plot, tr("Age & lookback time").replace("&", "&&"))
         split.addWidget(plots)
         split.setSizes([330, 90, 380])
         self.display.addWidget(split, 1)

@@ -24,13 +24,19 @@ class RichBrowser(QTextBrowser):
     lessonRequested = Signal(str)
     routeRequested = Signal(str)
 
-    def __init__(self, parent=None, font_pt: float = 11.0):
+    # A line of text stops being comfortable to read past roughly 90 characters, so
+    # the page keeps its column that wide and centres it when the window is wider (D1).
+    MEASURE = 820
+
+    def __init__(self, parent=None, font_pt: float = 11.0, measure: int | None = MEASURE):
         super().__init__(parent)
+        self._measure = measure
         self._font_pt = font_pt
         self._math_view = "full"
         self.document_info = None      # the last RenderedDocument, for callers that need its counts
         self._markdown = ""
         self._images: dict[str, QImage] = {}
+        self._side_margin = 0
         self.setOpenLinks(False)
         self.setOpenExternalLinks(False)
         self.anchorClicked.connect(self._on_anchor)
@@ -73,6 +79,15 @@ class RichBrowser(QTextBrowser):
         self.document().setDocumentMargin(18)
         self.setHtml(doc.html)
         self.verticalScrollBar().setValue(scroll)
+
+    def resizeEvent(self, event):  # noqa: N802 (Qt override)
+        """Keep the text column at a readable width, centred in whatever room there is."""
+        super().resizeEvent(event)
+        if self._measure:
+            margin = max(0, (self.viewport().width() + self._side_margin * 2 - self._measure) // 2)
+            if margin != self._side_margin:
+                self._side_margin = margin
+                self.setViewportMargins(margin, 0, margin, 0)
 
     def loadResource(self, kind: int, url: QUrl):  # noqa: N802 (Qt override)
         key = url.toString()

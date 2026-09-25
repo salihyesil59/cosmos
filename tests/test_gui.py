@@ -7,6 +7,7 @@ import pytest
 
 os.environ.setdefault("QT_QPA_PLATFORM", "offscreen")
 
+from PySide6.QtCore import Qt  # noqa: E402
 from PySide6.QtWidgets import QApplication  # noqa: E402
 
 
@@ -991,7 +992,7 @@ def test_a_wrong_quiz_answer_joins_the_deck(window):
     assert "L0.1#0" in store.data.review
     assert store.data.review["L0.1#0"]["box"] == 1
     window._update_review_action()
-    assert window.review_action.text() == "🔁 " + "Review"      # not due until tomorrow
+    assert window.review_action.text() == "Review"             # not due until tomorrow
     store.forget_reviews()
 
 
@@ -1669,3 +1670,114 @@ def test_exporting_the_website(window, tmp_path, monkeypatch):
     monkeypatch.setattr(QFileDialog, "getExistingDirectory", staticmethod(lambda *a, **k: ""))
     window.export_website()
     assert len(built) == 1                      # cancelled: nothing built
+
+
+# --------------------------------------------------------------- D1: a calmer interface
+def test_the_window_opens_with_nothing_in_the_way(window):
+    """D1: the page is the whole window until the learner asks for a panel."""
+    from cosmos.progress import UserData
+
+    # A fresh install has every panel closed and the navigation showing.
+    assert UserData().panels_open == [] and UserData().nav_hidden is False
+    # No panel may take more than a third of a normal window.
+    for dock in (window.guide_dock, window.notes_dock, window.tutor_dock):
+        assert dock.maximumWidth() <= 420
+    # And start-up puts the window back exactly as it was left.
+    window.ctx.store.data.panels_open = []
+    window._restore_panels()
+    pump()
+    assert not window.guide_dock.isVisible()
+    assert not window.notes_dock.isVisible()
+    assert not window.tutor_dock.isVisible()
+    window.ctx.store.data.panels_open = ["notes"]
+    window._restore_panels()
+    pump()
+    assert window.notes_dock.isVisible() and not window.guide_dock.isVisible()
+    window.notes_dock.hide()
+    pump()
+
+
+def test_the_toolbar_carries_only_what_you_reach_for(window):
+    """D1: nine controls, each drawn with an icon rather than an emoji in its label."""
+    actions = [a for a in window.toolbar.actions() if not a.isSeparator() and a.text()]
+    assert len(actions) == 9
+    for kept in (window.nav_action, window.back_action, window.forward_action,
+                 window.bookmark_action, window.guide_action, window.notes_action,
+                 window.tutor_action):
+        assert kept in actions
+    # These moved to the menus and the navigation list; they were in three places at once.
+    assert window.theme_action not in actions and window.review_action not in actions
+    for action in actions:
+        assert not action.icon().isNull(), action.text()
+        assert all(ord(ch) < 0x2000 for ch in action.text()), action.text()
+
+
+def test_the_icons_are_drawn_in_code():
+    """D1: one pen, one grid, so the set looks the same on every operating system."""
+    from cosmos.gui import nav_icons
+
+    for name in nav_icons.GLYPHS:
+        assert not nav_icons.icon(name).isNull(), name
+    assert nav_icons.icon("home") is nav_icons.icon("home")          # drawn once, then cached
+    nav_icons.clear_cache()
+    assert nav_icons.icon("home", "#ff0000") is not nav_icons.icon("home", "#00ff00")
+
+
+def test_the_navigation_opens_one_section_at_a_time(window):
+    """D1: the list used to show 58 lessons and 29 simulators all at once."""
+    window.navigate("lesson:L2.1")
+    pump()
+    open_levels = [item for item in window.level_items if item.isExpanded()]
+    assert len(open_levels) == 1
+    assert window.lesson_items["L2.1"].parent() is open_levels[0]
+    assert not window.sims_item.isExpanded()
+
+    window.navigate("sim:S3")
+    pump()
+    assert window.sims_item.isExpanded() and not window.curriculum_item.isExpanded()
+
+    window.navigate("glossary")
+    pump()
+    assert not window.sims_item.isExpanded() and not window.curriculum_item.isExpanded()
+    # Long titles are shortened, never pushed under a horizontal scrollbar.
+    assert window.sidebar.horizontalScrollBarPolicy() == Qt.ScrollBarAlwaysOff
+
+
+def test_the_navigation_folds_away(window):
+    """D1: Ctrl+B gives the page the whole window, and the choice is remembered."""
+    window.toggle_navigation()
+    pump()
+    assert not window.nav_dock.isVisible() and window.ctx.store.data.nav_hidden
+    window.toggle_navigation()
+    pump()
+    assert window.nav_dock.isVisible() and not window.ctx.store.data.nav_hidden
+
+
+def test_a_panel_comes_when_it_is_needed_and_is_remembered(window):
+    """D1: clicking a term still explains it, by opening the Guide on the way."""
+    store = window.ctx.store
+    for dock in (window.guide_dock, window.notes_dock, window.tutor_dock):
+        dock.hide()
+    pump()
+    assert store.data.panels_open == []
+    window.navigate("lesson:L1.1")
+    pump()
+    window.ctx.signals.glossaryRequested.emit("redshift")
+    pump()
+    assert window.guide_dock.isVisible()
+    assert store.data.panels_open == ["guide"]
+    window.guide_dock.hide()
+    pump()
+    assert store.data.panels_open == []
+
+
+def test_a_lesson_keeps_a_readable_measure(window):
+    """D1: text no longer runs the full width of a large screen."""
+    from cosmos.gui.widgets.rich_browser import RichBrowser
+
+    window.navigate("lesson:L1.1")
+    pump()
+    browser = window.lesson_page.browser
+    browser.resize(1400, 600)
+    pump()
+    assert 0 < browser.viewport().width() <= RichBrowser.MEASURE

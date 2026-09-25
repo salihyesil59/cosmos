@@ -4,6 +4,34 @@ All notable changes to Cosmos are recorded here. Versions follow
 [semantic versioning](https://semver.org): until 1.0 the interface and the save
 format may still change between releases.
 
+## Unreleased
+
+### Changed
+
+- **The window opens on the page, not on the furniture** (`D1`). The Guide, Notes
+  and Tutor panels start closed and open on **F1**, **F2**, **F3** or their toolbar
+  buttons; they never take more than a third of the window, and whichever you leave
+  open comes back next time. Clicking a highlighted term in a lesson still brings
+  the Guide with it. On a 1440-wide window a lesson now has about 1200 px instead of
+  570, and a simulator's plot is no longer squeezed into a corner.
+- **The navigation list keeps one section open at a time.** Opening a level folds
+  the others, so the list stays about a dozen rows instead of 99. Long titles are
+  shortened with an ellipsis rather than pushing a horizontal scrollbar under the
+  list, and **Ctrl+B** folds the list away entirely.
+- **The toolbar is down to nine controls** — navigation, back, forward, home,
+  continue, search, bookmark and the three panels. Glossary, Reference, Progress,
+  Review, Theme and Tour were in the toolbar, the menus and the navigation list at
+  the same time; they stay in the last two.
+- **One icon set, drawn in code** instead of emoji, so the glyphs share a pen, sit
+  on the text baseline and look the same on Windows, macOS and Linux. They take the
+  colour of the current theme.
+- **Pages hold a readable width.** Lesson, reference, glossary and problem text is
+  capped at about 90 characters a line and centred; the home page and the simulator
+  list are held to one column instead of stretching across a wide screen. The home
+  page lists each simulator on one line, with its tagline in the tooltip.
+- Tabs are underlined words rather than stacked boxes, the toolbar has more air, and
+  the status bar no longer holds a permanent tip — it speaks when something happens.
+
 ## 0.3.0 — 2026-09-24
 
 A second full interface language, and with it the last open item on the roadmap:

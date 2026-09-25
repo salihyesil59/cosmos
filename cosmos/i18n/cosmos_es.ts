@@ -590,7 +590,7 @@
     </message>
     <message>
         <location filename="../gui/labels.py" line="122" />
-        <location filename="../gui/simulators/calculator.py" line="390" />
+        <location filename="../gui/simulators/calculator.py" line="391" />
         <location filename="../gui/simulators/future_sim.py" line="33" />
         <location filename="../gui/simulators/powers_of_ten.py" line="79" />
         <source>years</source>
@@ -598,7 +598,7 @@
     </message>
     <message>
         <location filename="../gui/labels.py" line="122" />
-        <location filename="../gui/simulators/calculator.py" line="392" />
+        <location filename="../gui/simulators/calculator.py" line="393" />
         <location filename="../gui/simulators/future_sim.py" line="32" />
         <location filename="../gui/simulators/powers_of_ten.py" line="78" />
         <source>million years</source>
@@ -606,7 +606,7 @@
     </message>
     <message>
         <location filename="../gui/labels.py" line="122" />
-        <location filename="../gui/simulators/calculator.py" line="393" />
+        <location filename="../gui/simulators/calculator.py" line="394" />
         <location filename="../gui/simulators/future_sim.py" line="32" />
         <location filename="../gui/simulators/powers_of_ten.py" line="78" />
         <source>billion years</source>
@@ -626,593 +626,594 @@
         <translation>nanosegundos</translation>
     </message>
     <message>
-        <location filename="../gui/main_window.py" line="104" />
+        <location filename="../gui/main_window.py" line="108" />
         <source>Learn Cosmology</source>
         <translation>Aprende cosmología</translation>
     </message>
     <message>
-        <location filename="../gui/main_window.py" line="138" />
-        <source>Tip: hover over any control for a short explanation.</source>
-        <translation>Consejo: pasa el ratón por encima de cualquier control para ver una explicación breve.</translation>
-    </message>
-    <message>
-        <location filename="../gui/main_window.py" line="174" />
-        <location filename="../gui/main_window.py" line="288" />
+        <location filename="../gui/main_window.py" line="192" />
+        <location filename="../gui/main_window.py" line="384" />
         <source>Home</source>
         <translation>Inicio</translation>
     </message>
     <message>
-        <location filename="../gui/main_window.py" line="174" />
+        <location filename="../gui/main_window.py" line="192" />
         <source>Welcome page and where to continue</source>
         <translation>Página de bienvenida y por dónde continuar</translation>
     </message>
     <message>
-        <location filename="../gui/main_window.py" line="175" />
+        <location filename="../gui/main_window.py" line="193" />
         <source>Course</source>
         <translation>Curso</translation>
     </message>
     <message>
-        <location filename="../gui/main_window.py" line="175" />
+        <location filename="../gui/main_window.py" line="193" />
         <source>All lessons, grouped by level</source>
         <translation>Todas las lecciones, agrupadas por nivel</translation>
     </message>
     <message>
-        <location filename="../gui/main_window.py" line="189" />
-        <location filename="../gui/main_window.py" line="394" />
-        <location filename="../gui/main_window.py" line="1169" />
-        <location filename="../gui/pages/home.py" line="205" />
+        <location filename="../gui/main_window.py" line="209" />
+        <location filename="../gui/main_window.py" line="506" />
+        <location filename="../gui/main_window.py" line="1302" />
+        <location filename="../gui/pages/home.py" line="207" />
         <location filename="../gui/pages/simulators.py" line="50" />
         <source>Simulators</source>
         <translation>Simuladores</translation>
     </message>
     <message>
-        <location filename="../gui/main_window.py" line="189" />
+        <location filename="../gui/main_window.py" line="209" />
         <source>Interactive tools</source>
         <translation>Herramientas interactivas</translation>
     </message>
     <message>
-        <location filename="../gui/main_window.py" line="197" />
+        <location filename="../gui/main_window.py" line="217" />
         <location filename="../gui/pages/problems_page.py" line="85" />
         <source>Problem sets</source>
         <translation>Series de problemas</translation>
     </message>
     <message>
-        <location filename="../gui/main_window.py" line="198" />
+        <location filename="../gui/main_window.py" line="218" />
         <source>Worked numeric problems with checked answers, one set per level</source>
         <translation>Problemas numéricos resueltos con respuestas comprobadas, una serie por nivel</translation>
     </message>
     <message>
-        <location filename="../gui/main_window.py" line="199" />
-        <location filename="../gui/main_window.py" line="291" />
+        <location filename="../gui/main_window.py" line="220" />
+        <location filename="../gui/main_window.py" line="388" />
         <location filename="../gui/pages/glossary.py" line="43" />
         <source>Glossary</source>
         <translation>Glosario</translation>
     </message>
     <message>
-        <location filename="../gui/main_window.py" line="199" />
+        <location filename="../gui/main_window.py" line="220" />
         <source>Definitions of all important terms</source>
         <translation>Definiciones de todos los términos importantes</translation>
     </message>
     <message>
-        <location filename="../gui/main_window.py" line="200" />
-        <location filename="../gui/main_window.py" line="293" />
+        <location filename="../gui/main_window.py" line="222" />
+        <location filename="../gui/main_window.py" line="390" />
         <location filename="../gui/pages/reference.py" line="150" />
         <source>Reference</source>
         <translation>Referencia</translation>
     </message>
     <message>
-        <location filename="../gui/main_window.py" line="201" />
+        <location filename="../gui/main_window.py" line="223" />
         <source>Formula sheet, constants, units and models</source>
         <translation>Formulario, constantes, unidades y modelos</translation>
     </message>
     <message>
-        <location filename="../gui/main_window.py" line="202" />
-        <location filename="../gui/main_window.py" line="295" />
+        <location filename="../gui/main_window.py" line="224" />
+        <location filename="../gui/main_window.py" line="392" />
         <source>History</source>
         <translation>Historia</translation>
     </message>
     <message>
-        <location filename="../gui/main_window.py" line="203" />
+        <location filename="../gui/main_window.py" line="225" />
         <source>The discoveries and the people behind them</source>
         <translation>Los descubrimientos y las personas que hay detrás</translation>
     </message>
     <message>
-        <location filename="../gui/main_window.py" line="204" />
+        <location filename="../gui/main_window.py" line="226" />
         <location filename="../gui/pages/search_page.py" line="38" />
         <source>Search</source>
         <translation>Buscar</translation>
     </message>
     <message>
-        <location filename="../gui/main_window.py" line="205" />
+        <location filename="../gui/main_window.py" line="227" />
         <source>Search lessons, glossary, simulators and formulas</source>
         <translation>Busca en las lecciones, el glosario, los simuladores y las fórmulas</translation>
     </message>
     <message>
-        <location filename="../gui/main_window.py" line="206" />
+        <location filename="../gui/main_window.py" line="228" />
         <location filename="../gui/pages/notes_page.py" line="50" />
         <source>Notes &amp; bookmarks</source>
         <translation>Notas y marcadores</translation>
     </message>
     <message>
-        <location filename="../gui/main_window.py" line="206" />
+        <location filename="../gui/main_window.py" line="228" />
         <source>Everything you saved</source>
         <translation>Todo lo que has guardado</translation>
     </message>
     <message>
-        <location filename="../gui/main_window.py" line="207" />
-        <location filename="../gui/main_window.py" line="305" />
-        <location filename="../gui/main_window.py" line="611" />
-        <location filename="../gui/main_window.py" line="669" />
+        <location filename="../gui/main_window.py" line="229" />
+        <location filename="../gui/main_window.py" line="403" />
+        <location filename="../gui/main_window.py" line="724" />
+        <location filename="../gui/main_window.py" line="783" />
         <location filename="../gui/pages/review_page.py" line="66" />
         <source>Review</source>
         <translation>Repaso</translation>
     </message>
     <message>
-        <location filename="../gui/main_window.py" line="208" />
+        <location filename="../gui/main_window.py" line="230" />
         <source>Quiz questions you got wrong, brought back on a schedule</source>
         <translation>Las preguntas que fallaste, traídas de vuelta según un calendario</translation>
     </message>
     <message>
-        <location filename="../gui/main_window.py" line="209" />
-        <location filename="../gui/main_window.py" line="303" />
+        <location filename="../gui/main_window.py" line="231" />
+        <location filename="../gui/main_window.py" line="401" />
         <source>Progress</source>
         <translation>Progreso</translation>
     </message>
     <message>
-        <location filename="../gui/main_window.py" line="209" />
+        <location filename="../gui/main_window.py" line="231" />
         <source>Your progress and the lesson map</source>
         <translation>Tu progreso y el mapa de lecciones</translation>
     </message>
     <message>
-        <location filename="../gui/main_window.py" line="210" />
-        <location filename="../gui/main_window.py" line="398" />
+        <location filename="../gui/main_window.py" line="233" />
+        <location filename="../gui/main_window.py" line="510" />
         <location filename="../gui/pages/classroom_page.py" line="98" />
         <source>Classroom</source>
         <translation>Aula</translation>
     </message>
     <message>
-        <location filename="../gui/main_window.py" line="211" />
-        <location filename="../gui/main_window.py" line="399" />
+        <location filename="../gui/main_window.py" line="234" />
+        <location filename="../gui/main_window.py" line="511" />
         <source>A progress report to hand on, and teacher notes per lesson</source>
         <translation>Un informe de progreso para entregar y notas para el profesorado en cada lección</translation>
     </message>
     <message>
-        <location filename="../gui/main_window.py" line="219" />
-        <location filename="../gui/main_window.py" line="1136" />
+        <location filename="../gui/main_window.py" line="241" />
+        <location filename="../gui/main_window.py" line="378" />
+        <location filename="../gui/main_window.py" line="1266" />
         <source>Navigation</source>
         <translation>Navegación</translation>
     </message>
     <message>
-        <location filename="../gui/main_window.py" line="229" />
-        <location filename="../gui/main_window.py" line="329" />
+        <location filename="../gui/main_window.py" line="293" />
+        <location filename="../gui/main_window.py" line="427" />
         <source>Guide</source>
         <translation>Guía</translation>
     </message>
     <message>
-        <location filename="../gui/main_window.py" line="241" />
-        <location filename="../gui/main_window.py" line="297" />
+        <location filename="../gui/main_window.py" line="298" />
+        <location filename="../gui/main_window.py" line="394" />
         <location filename="../gui/pages/notes_page.py" line="97" />
         <source>Notes</source>
         <translation>Notas</translation>
     </message>
     <message>
-        <location filename="../gui/main_window.py" line="256" />
-        <location filename="../gui/main_window.py" line="337" />
+        <location filename="../gui/main_window.py" line="306" />
+        <location filename="../gui/main_window.py" line="439" />
         <source>Tutor</source>
         <translation>Tutor</translation>
     </message>
     <message>
-        <location filename="../gui/main_window.py" line="284" />
+        <location filename="../gui/main_window.py" line="378" />
+        <source>Show or hide the list of lessons (Ctrl+B)</source>
+        <translation>Mostrar u ocultar la lista de lecciones (Ctrl+B)</translation>
+    </message>
+    <message>
+        <location filename="../gui/main_window.py" line="380" />
         <location filename="../gui/widgets/tour.py" line="53" />
         <source>Back</source>
         <translation>Atrás</translation>
     </message>
     <message>
-        <location filename="../gui/main_window.py" line="284" />
+        <location filename="../gui/main_window.py" line="380" />
         <source>Go back to the previous page (Alt+Left)</source>
         <translation>Vuelve a la página anterior (Alt+Izquierda)</translation>
     </message>
     <message>
-        <location filename="../gui/main_window.py" line="286" />
+        <location filename="../gui/main_window.py" line="382" />
         <source>Forward</source>
         <translation>Adelante</translation>
     </message>
     <message>
-        <location filename="../gui/main_window.py" line="286" />
+        <location filename="../gui/main_window.py" line="382" />
         <source>Go forward (Alt+Right)</source>
         <translation>Avanza (Alt+Derecha)</translation>
     </message>
     <message>
-        <location filename="../gui/main_window.py" line="288" />
+        <location filename="../gui/main_window.py" line="384" />
         <source>Home page (Ctrl+H)</source>
         <translation>Página de inicio (Ctrl+H)</translation>
     </message>
     <message>
-        <location filename="../gui/main_window.py" line="289" />
+        <location filename="../gui/main_window.py" line="386" />
         <source>Continue</source>
         <translation>Continuar</translation>
     </message>
     <message>
-        <location filename="../gui/main_window.py" line="289" />
+        <location filename="../gui/main_window.py" line="386" />
         <source>Open the next recommended lesson (Ctrl+L)</source>
         <translation>Abre la siguiente lección recomendada (Ctrl+L)</translation>
     </message>
     <message>
-        <location filename="../gui/main_window.py" line="291" />
+        <location filename="../gui/main_window.py" line="388" />
         <source>Open the glossary (Ctrl+G)</source>
         <translation>Abre el glosario (Ctrl+G)</translation>
     </message>
     <message>
-        <location filename="../gui/main_window.py" line="293" />
+        <location filename="../gui/main_window.py" line="390" />
         <source>Formula sheet, constants and units (Ctrl+R)</source>
         <translation>Formulario, constantes y unidades (Ctrl+R)</translation>
     </message>
     <message>
-        <location filename="../gui/main_window.py" line="295" />
+        <location filename="../gui/main_window.py" line="392" />
         <source>The history of cosmology and its scientists</source>
         <translation>La historia de la cosmología y sus científicos</translation>
     </message>
     <message>
-        <location filename="../gui/main_window.py" line="297" />
+        <location filename="../gui/main_window.py" line="394" />
         <source>All your notes and bookmarks (Ctrl+Shift+N)</source>
         <translation>Todas tus notas y marcadores (Ctrl+Mayús+N)</translation>
     </message>
     <message>
-        <location filename="../gui/main_window.py" line="299" />
-        <location filename="../gui/main_window.py" line="684" />
+        <location filename="../gui/main_window.py" line="396" />
+        <location filename="../gui/main_window.py" line="812" />
         <source>Bookmark</source>
         <translation>Marcador</translation>
     </message>
     <message>
-        <location filename="../gui/main_window.py" line="299" />
+        <location filename="../gui/main_window.py" line="396" />
         <source>Bookmark the current page (Ctrl+D)</source>
         <translation>Guarda un marcador de la página actual (Ctrl+D)</translation>
     </message>
     <message>
-        <location filename="../gui/main_window.py" line="302" />
+        <location filename="../gui/main_window.py" line="399" />
         <source>Find</source>
         <translation>Buscar</translation>
     </message>
     <message>
-        <location filename="../gui/main_window.py" line="302" />
+        <location filename="../gui/main_window.py" line="399" />
         <source>Search the whole course (Ctrl+F)</source>
         <translation>Busca en todo el curso (Ctrl+F)</translation>
     </message>
     <message>
-        <location filename="../gui/main_window.py" line="303" />
+        <location filename="../gui/main_window.py" line="401" />
         <source>Your progress and lesson map (Ctrl+P)</source>
         <translation>Tu progreso y el mapa de lecciones (Ctrl+P)</translation>
     </message>
     <message>
-        <location filename="../gui/main_window.py" line="306" />
+        <location filename="../gui/main_window.py" line="404" />
         <source>Quiz questions you got wrong, brought back on a schedule (Ctrl+Shift+R)</source>
         <translation>Las preguntas que fallaste, traídas de vuelta según un calendario (Ctrl+Mayús+R)</translation>
     </message>
     <message>
-        <location filename="../gui/main_window.py" line="309" />
-        <location filename="../gui/main_window.py" line="451" />
+        <location filename="../gui/main_window.py" line="407" />
+        <location filename="../gui/main_window.py" line="564" />
         <source>Theme</source>
         <translation>Tema</translation>
     </message>
     <message>
-        <location filename="../gui/main_window.py" line="310" />
+        <location filename="../gui/main_window.py" line="408" />
         <source>Cycle dark, light and high-contrast themes (Ctrl+T)</source>
         <translation>Alterna los temas oscuro, claro y de alto contraste (Ctrl+T)</translation>
     </message>
     <message>
-        <location filename="../gui/main_window.py" line="312" />
+        <location filename="../gui/main_window.py" line="410" />
         <source>Larger text</source>
         <translation>Texto más grande</translation>
     </message>
     <message>
-        <location filename="../gui/main_window.py" line="312" />
+        <location filename="../gui/main_window.py" line="410" />
         <source>Make every label and control bigger (Ctrl++)</source>
         <translation>Agranda todas las etiquetas y controles (Ctrl++)</translation>
     </message>
     <message>
-        <location filename="../gui/main_window.py" line="314" />
+        <location filename="../gui/main_window.py" line="412" />
         <source>Smaller text</source>
         <translation>Texto más pequeño</translation>
     </message>
     <message>
-        <location filename="../gui/main_window.py" line="314" />
+        <location filename="../gui/main_window.py" line="412" />
         <source>Fit more on the screen (Ctrl+-)</source>
         <translation>Cabe más en la pantalla (Ctrl+-)</translation>
     </message>
     <message>
-        <location filename="../gui/main_window.py" line="316" />
+        <location filename="../gui/main_window.py" line="414" />
         <source>Reset text size</source>
         <translation>Restablecer el tamaño del texto</translation>
     </message>
     <message>
-        <location filename="../gui/main_window.py" line="316" />
+        <location filename="../gui/main_window.py" line="414" />
         <source>Back to the standard size (Ctrl+0)</source>
         <translation>Vuelve al tamaño estándar (Ctrl+0)</translation>
     </message>
     <message>
-        <location filename="../gui/main_window.py" line="318" />
+        <location filename="../gui/main_window.py" line="416" />
         <source>Move focus to the next area</source>
         <translation>Llevar el foco a la siguiente zona</translation>
     </message>
     <message>
-        <location filename="../gui/main_window.py" line="319" />
+        <location filename="../gui/main_window.py" line="417" />
         <source>Cycle the keyboard focus between the lesson list, the page and the side panels (F6)</source>
         <translation>Mueve el foco del teclado entre la lista de lecciones, la página y los paneles laterales (F6)</translation>
     </message>
     <message>
-        <location filename="../gui/main_window.py" line="330" />
+        <location filename="../gui/main_window.py" line="430" />
         <source>Show or hide the Guide panel (F1)</source>
         <translation>Muestra u oculta el panel Guía (F1)</translation>
     </message>
     <message>
-        <location filename="../gui/main_window.py" line="333" />
+        <location filename="../gui/main_window.py" line="433" />
         <source>Notes panel</source>
         <translation>Panel de notas</translation>
     </message>
     <message>
-        <location filename="../gui/main_window.py" line="334" />
+        <location filename="../gui/main_window.py" line="436" />
         <source>Show or hide the Notes panel (F2)</source>
         <translation>Muestra u oculta el panel Notas (F2)</translation>
     </message>
     <message>
-        <location filename="../gui/main_window.py" line="338" />
+        <location filename="../gui/main_window.py" line="442" />
         <source>Ask the Tutor about this page (F3) — needs your own API key</source>
         <translation>Pregunta al Tutor sobre esta página (F3): necesita tu propia clave de API</translation>
     </message>
     <message>
-        <location filename="../gui/main_window.py" line="340" />
+        <location filename="../gui/main_window.py" line="444" />
         <source>Tour</source>
         <translation>Recorrido</translation>
     </message>
     <message>
-        <location filename="../gui/main_window.py" line="340" />
+        <location filename="../gui/main_window.py" line="444" />
         <source>Replay the guided tour of the app</source>
         <translation>Vuelve a reproducir el recorrido guiado por la aplicación</translation>
     </message>
     <message>
-        <location filename="../gui/main_window.py" line="357" />
+        <location filename="../gui/main_window.py" line="469" />
         <source>&amp;File</source>
         <translation>&amp;Archivo</translation>
     </message>
     <message>
-        <location filename="../gui/main_window.py" line="358" />
+        <location filename="../gui/main_window.py" line="470" />
         <source>Export notes…</source>
         <translation>Exportar notas…</translation>
     </message>
     <message>
-        <location filename="../gui/main_window.py" line="358" />
+        <location filename="../gui/main_window.py" line="470" />
         <source>Save all notes and bookmarks as a Markdown file</source>
         <translation>Guarda todas las notas y marcadores en un archivo Markdown</translation>
     </message>
     <message>
-        <location filename="../gui/main_window.py" line="360" />
+        <location filename="../gui/main_window.py" line="472" />
         <source>Back up progress…</source>
         <translation>Copia de seguridad del progreso…</translation>
     </message>
     <message>
-        <location filename="../gui/main_window.py" line="361" />
+        <location filename="../gui/main_window.py" line="473" />
         <source>Save everything you have learned, your notes and your review deck in one file, to keep or to carry to another computer</source>
         <translation>Guarda en un solo archivo todo lo que has aprendido, tus notas y tu mazo de repaso, para conservarlo o llevarlo a otro ordenador</translation>
     </message>
     <message>
-        <location filename="../gui/main_window.py" line="364" />
+        <location filename="../gui/main_window.py" line="476" />
         <source>Restore progress…</source>
         <translation>Restaurar el progreso…</translation>
     </message>
     <message>
-        <location filename="../gui/main_window.py" line="365" />
+        <location filename="../gui/main_window.py" line="477" />
         <source>Replace your progress with a backup made earlier, here or on another computer</source>
         <translation>Sustituye tu progreso por una copia de seguridad hecha antes, aquí o en otro ordenador</translation>
     </message>
     <message>
-        <location filename="../gui/main_window.py" line="370" />
+        <location filename="../gui/main_window.py" line="482" />
         <source>Print this lesson as PDF…</source>
         <translation>Imprimir esta lección en PDF…</translation>
     </message>
     <message>
-        <location filename="../gui/main_window.py" line="371" />
+        <location filename="../gui/main_window.py" line="483" />
         <source>Save the lesson you are reading, with its figures and quiz, as a PDF (Ctrl+P is Progress; this is Ctrl+Shift+P)</source>
         <translation>Guarda como PDF la lección que estás leyendo, con sus figuras y su cuestionario (Ctrl+P es Progreso; esto es Ctrl+Mayús+P)</translation>
     </message>
     <message>
-        <location filename="../gui/main_window.py" line="375" />
+        <location filename="../gui/main_window.py" line="487" />
         <source>Print this level as PDF…</source>
         <translation>Imprimir este nivel en PDF…</translation>
     </message>
     <message>
-        <location filename="../gui/main_window.py" line="376" />
+        <location filename="../gui/main_window.py" line="488" />
         <source>Every lesson of one level, each starting on a new page</source>
         <translation>Todas las lecciones de un nivel, cada una empezando en una página nueva</translation>
     </message>
     <message>
-        <location filename="../gui/main_window.py" line="378" />
+        <location filename="../gui/main_window.py" line="490" />
         <source>Print the whole course as PDF…</source>
         <translation>Imprimir todo el curso en PDF…</translation>
     </message>
     <message>
-        <location filename="../gui/main_window.py" line="379" />
+        <location filename="../gui/main_window.py" line="491" />
         <source>All lessons in one file. It is long; give it a moment.</source>
         <translation>Todas las lecciones en un solo archivo. Es largo; dale un momento.</translation>
     </message>
     <message>
-        <location filename="../gui/main_window.py" line="381" />
+        <location filename="../gui/main_window.py" line="493" />
         <source>Export the course as a website…</source>
         <translation>Exportar el curso como sitio web…</translation>
     </message>
     <message>
-        <location filename="../gui/main_window.py" line="382" />
+        <location filename="../gui/main_window.py" line="494" />
         <source>Every lesson, the glossary, the formulas and the problems as web pages that open in any browser, without installing anything</source>
         <translation>Todas las lecciones, el glosario, las fórmulas y los problemas como páginas web que se abren en cualquier navegador, sin instalar nada</translation>
     </message>
     <message>
-        <location filename="../gui/main_window.py" line="385" />
+        <location filename="../gui/main_window.py" line="497" />
         <source>Print the “Remember this” sheet…</source>
         <translation>Imprimir la hoja «Recuerda esto»…</translation>
     </message>
     <message>
-        <location filename="../gui/main_window.py" line="386" />
+        <location filename="../gui/main_window.py" line="498" />
         <source>The key points of every lesson you have completed, on a few pages</source>
         <translation>Las ideas clave de cada lección que has completado, en unas pocas páginas</translation>
     </message>
     <message>
-        <location filename="../gui/main_window.py" line="389" />
+        <location filename="../gui/main_window.py" line="501" />
         <source>Quit</source>
         <translation>Salir</translation>
     </message>
     <message>
-        <location filename="../gui/main_window.py" line="389" />
+        <location filename="../gui/main_window.py" line="501" />
         <source>Close Cosmos</source>
         <translation>Cierra Cosmos</translation>
     </message>
     <message>
-        <location filename="../gui/main_window.py" line="390" />
+        <location filename="../gui/main_window.py" line="502" />
         <source>&amp;Learn</source>
         <translation>&amp;Aprender</translation>
     </message>
     <message>
-        <location filename="../gui/main_window.py" line="394" />
+        <location filename="../gui/main_window.py" line="506" />
         <source>All simulators</source>
         <translation>Todos los simuladores</translation>
     </message>
     <message>
-        <location filename="../gui/main_window.py" line="395" />
+        <location filename="../gui/main_window.py" line="507" />
         <source>“Remember this” sheet</source>
         <translation>Hoja «Recuerda esto»</translation>
     </message>
     <message>
-        <location filename="../gui/main_window.py" line="396" />
+        <location filename="../gui/main_window.py" line="508" />
         <source>The key points of the lessons you have completed, in the Guide panel</source>
         <translation>Las ideas clave de las lecciones que has completado, en el panel Guía</translation>
     </message>
     <message>
-        <location filename="../gui/main_window.py" line="405" />
+        <location filename="../gui/main_window.py" line="517" />
         <source>&amp;View</source>
         <translation>&amp;Ver</translation>
     </message>
     <message>
-        <location filename="../gui/main_window.py" line="407" />
+        <location filename="../gui/main_window.py" line="520" />
         <source>Text size</source>
         <translation>Tamaño del texto</translation>
     </message>
     <message>
-        <location filename="../gui/main_window.py" line="418" />
+        <location filename="../gui/main_window.py" line="531" />
         <source>&amp;Help</source>
         <translation>A&amp;yuda</translation>
     </message>
     <message>
-        <location filename="../gui/main_window.py" line="420" />
+        <location filename="../gui/main_window.py" line="533" />
         <source>How to use Cosmos</source>
         <translation>Cómo usar Cosmos</translation>
     </message>
     <message>
-        <location filename="../gui/main_window.py" line="420" />
+        <location filename="../gui/main_window.py" line="533" />
         <source>Show help in the Guide panel</source>
         <translation>Muestra la ayuda en el panel Guía</translation>
     </message>
     <message>
-        <location filename="../gui/main_window.py" line="421" />
-        <location filename="../gui/main_window.py" line="788" />
+        <location filename="../gui/main_window.py" line="534" />
+        <location filename="../gui/main_window.py" line="918" />
         <source>Keyboard shortcuts</source>
         <translation>Atajos de teclado</translation>
     </message>
     <message>
-        <location filename="../gui/main_window.py" line="421" />
+        <location filename="../gui/main_window.py" line="534" />
         <source>Every command you can reach without the mouse</source>
         <translation>Todas las órdenes que puedes alcanzar sin el ratón</translation>
     </message>
     <message>
-        <location filename="../gui/main_window.py" line="423" />
+        <location filename="../gui/main_window.py" line="536" />
         <source>Simulator plugins…</source>
         <translation>Complementos de simuladores…</translation>
     </message>
     <message>
-        <location filename="../gui/main_window.py" line="424" />
+        <location filename="../gui/main_window.py" line="537" />
         <source>Add your own simulator by dropping a Python file in a folder</source>
         <translation>Añade tu propio simulador dejando un archivo de Python en una carpeta</translation>
     </message>
     <message>
-        <location filename="../gui/main_window.py" line="427" />
+        <location filename="../gui/main_window.py" line="540" />
         <source>Check for updates now</source>
         <translation>Buscar actualizaciones ahora</translation>
     </message>
     <message>
-        <location filename="../gui/main_window.py" line="428" />
+        <location filename="../gui/main_window.py" line="541" />
         <source>Ask GitHub whether a newer Cosmos has been released. Nothing about you or this computer is sent.</source>
         <translation>Pregunta a GitHub si se ha publicado una versión más reciente de Cosmos. No se envía nada sobre ti ni sobre este ordenador.</translation>
     </message>
     <message>
-        <location filename="../gui/main_window.py" line="433" />
+        <location filename="../gui/main_window.py" line="546" />
         <source>Check for updates on start-up</source>
         <translation>Buscar actualizaciones al iniciar</translation>
     </message>
     <message>
-        <location filename="../gui/main_window.py" line="434" />
+        <location filename="../gui/main_window.py" line="547" />
         <source>Look once a day, in the background. Off by default; nothing is ever uploaded.</source>
         <translation>Mira una vez al día, en segundo plano. Desactivado por defecto; nunca se sube nada.</translation>
     </message>
     <message>
-        <location filename="../gui/main_window.py" line="439" />
+        <location filename="../gui/main_window.py" line="552" />
         <source>About Cosmos</source>
         <translation>Acerca de Cosmos</translation>
     </message>
     <message>
-        <location filename="../gui/main_window.py" line="439" />
+        <location filename="../gui/main_window.py" line="552" />
         <source>Version and credits</source>
         <translation>Versión y créditos</translation>
     </message>
     <message>
-        <location filename="../gui/main_window.py" line="445" />
+        <location filename="../gui/main_window.py" line="558" />
         <source>Dark</source>
         <translation>Oscuro</translation>
     </message>
     <message>
-        <location filename="../gui/main_window.py" line="445" />
+        <location filename="../gui/main_window.py" line="558" />
         <source>Light</source>
         <translation>Claro</translation>
     </message>
     <message>
-        <location filename="../gui/main_window.py" line="445" />
+        <location filename="../gui/main_window.py" line="558" />
         <source>High contrast</source>
         <translation>Alto contraste</translation>
     </message>
     <message>
-        <location filename="../gui/main_window.py" line="447" />
+        <location filename="../gui/main_window.py" line="560" />
         <source>Easy on the eyes in a dark room.</source>
         <translation>Cómodo para la vista en una habitación oscura.</translation>
     </message>
     <message>
-        <location filename="../gui/main_window.py" line="448" />
+        <location filename="../gui/main_window.py" line="561" />
         <source>Better in bright daylight, and for printing screenshots.</source>
         <translation>Mejor con luz de día intensa, y para imprimir capturas de pantalla.</translation>
     </message>
     <message>
-        <location filename="../gui/main_window.py" line="449" />
+        <location filename="../gui/main_window.py" line="562" />
         <source>Pure white on black with the strongest accents, for low vision or glare.</source>
         <translation>Blanco puro sobre negro con los acentos más fuertes, para baja visión o reflejos.</translation>
     </message>
     <message>
-        <location filename="../gui/main_window.py" line="471" />
-        <location filename="../gui/main_window.py" line="495" />
+        <location filename="../gui/main_window.py" line="584" />
+        <location filename="../gui/main_window.py" line="608" />
         <source>Language</source>
         <translation>Idioma</translation>
     </message>
     <message>
-        <location filename="../gui/main_window.py" line="479" />
+        <location filename="../gui/main_window.py" line="592" />
         <source>Applies the next time Cosmos starts.</source>
         <translation>Se aplica la próxima vez que se inicie Cosmos.</translation>
     </message>
     <message>
-        <location filename="../gui/main_window.py" line="484" />
+        <location filename="../gui/main_window.py" line="597" />
         <source>Add a language…</source>
         <translation>Añadir un idioma…</translation>
     </message>
     <message>
-        <location filename="../gui/main_window.py" line="485" />
+        <location filename="../gui/main_window.py" line="598" />
         <source>See README: tools/update_translations.py creates the file to translate.</source>
         <translation>Consulta el README: tools/update_translations.py crea el archivo que hay que traducir.</translation>
     </message>
     <message>
-        <location filename="../gui/main_window.py" line="496" />
+        <location filename="../gui/main_window.py" line="609" />
         <source>The interface language changes the next time you start Cosmos.
 
 The course content — lessons, quizzes and the glossary — is written in English.</source>
@@ -1221,12 +1222,12 @@ The course content — lessons, quizzes and the glossary — is written in Engli
 El contenido del curso — las lecciones, los cuestionarios y el glosario — está escrito en inglés.</translation>
     </message>
     <message>
-        <location filename="../gui/main_window.py" line="501" />
+        <location filename="../gui/main_window.py" line="614" />
         <source>Add a language</source>
         <translation>Añadir un idioma</translation>
     </message>
     <message>
-        <location filename="../gui/main_window.py" line="502" />
+        <location filename="../gui/main_window.py" line="615" />
         <source>Interface translations live in cosmos/i18n as Qt .ts files.
 
 1. python tools/update_translations.py --language &lt;code&gt;
@@ -1243,409 +1244,409 @@ The new language then appears in this menu.</source>
 El idioma nuevo aparece entonces en este menú.</translation>
     </message>
     <message>
-        <location filename="../gui/main_window.py" line="610" />
-        <location filename="../gui/main_window.py" line="668" />
+        <location filename="../gui/main_window.py" line="723" />
+        <location filename="../gui/main_window.py" line="782" />
         <source>Review ({count})</source>
         <translation>Repaso ({count})</translation>
     </message>
     <message>
-        <location filename="../gui/main_window.py" line="666" />
+        <location filename="../gui/main_window.py" line="780" />
         <location filename="../gui/widgets/prereq_map.py" line="28" />
         <source>Status: {status}</source>
         <translation>Estado: {status}</translation>
     </message>
     <message>
-        <location filename="../gui/main_window.py" line="684" />
+        <location filename="../gui/main_window.py" line="812" />
         <source>Bookmarked</source>
         <translation>Guardada en marcadores</translation>
     </message>
     <message>
-        <location filename="../gui/main_window.py" line="694" />
+        <location filename="../gui/main_window.py" line="823" />
         <source>Badge earned: {names}</source>
         <translation>Insignia conseguida: {names}</translation>
     </message>
     <message>
-        <location filename="../gui/main_window.py" line="712" />
+        <location filename="../gui/main_window.py" line="841" />
         <source>Daily goal reached: {steps} steps today. Streak: {days} day(s).</source>
         <translation>Meta diaria alcanzada: {steps} pasos hoy. Racha: {days} día(s).</translation>
     </message>
     <message>
-        <location filename="../gui/main_window.py" line="734" />
+        <location filename="../gui/main_window.py" line="863" />
         <source>Theme: {name}</source>
         <translation>Tema: {name}</translation>
     </message>
     <message>
-        <location filename="../gui/main_window.py" line="750" />
+        <location filename="../gui/main_window.py" line="879" />
         <source>Text size: {percent}</source>
         <translation>Tamaño del texto: {percent}</translation>
     </message>
     <message>
-        <location filename="../gui/main_window.py" line="783" />
+        <location filename="../gui/main_window.py" line="913" />
         <source>Every command in Cosmos can be reached from the keyboard.</source>
         <translation>Todas las órdenes de Cosmos se pueden alcanzar desde el teclado.</translation>
     </message>
     <message>
-        <location filename="../gui/main_window.py" line="785" />
+        <location filename="../gui/main_window.py" line="915" />
         <source>Tab and Shift+Tab move between controls; F6 jumps between the lesson list, the page and the side panels.</source>
         <translation>Tab y Mayús+Tab mueven entre controles; F6 salta entre la lista de lecciones, la página y los paneles laterales.</translation>
     </message>
     <message>
-        <location filename="../gui/main_window.py" line="810" />
+        <location filename="../gui/main_window.py" line="940" />
         <source>Back up progress</source>
         <translation>Copia de seguridad del progreso</translation>
     </message>
     <message>
-        <location filename="../gui/main_window.py" line="811" />
-        <location filename="../gui/main_window.py" line="827" />
+        <location filename="../gui/main_window.py" line="941" />
+        <location filename="../gui/main_window.py" line="957" />
         <source>Cosmos backup</source>
         <translation>Copia de seguridad de Cosmos</translation>
     </message>
     <message>
-        <location filename="../gui/main_window.py" line="817" />
+        <location filename="../gui/main_window.py" line="947" />
         <source>Could not save the backup</source>
         <translation>No se pudo guardar la copia de seguridad</translation>
     </message>
     <message>
-        <location filename="../gui/main_window.py" line="819" />
+        <location filename="../gui/main_window.py" line="949" />
         <source>Progress backed up to {path}</source>
         <translation>Progreso guardado en {path}</translation>
     </message>
     <message>
-        <location filename="../gui/main_window.py" line="826" />
-        <location filename="../gui/main_window.py" line="831" />
+        <location filename="../gui/main_window.py" line="956" />
+        <location filename="../gui/main_window.py" line="961" />
         <source>Restore progress</source>
         <translation>Restaurar el progreso</translation>
     </message>
     <message>
-        <location filename="../gui/main_window.py" line="832" />
+        <location filename="../gui/main_window.py" line="962" />
         <source>Replace your current progress, notes, bookmarks and review deck with the ones in this backup? What you have now will be lost unless you back it up first.</source>
         <translation>¿Sustituir tu progreso, notas, marcadores y mazo de repaso actuales por los de esta copia de seguridad? Lo que tienes ahora se perderá si no haces antes una copia.</translation>
     </message>
     <message>
-        <location filename="../gui/main_window.py" line="839" />
+        <location filename="../gui/main_window.py" line="969" />
         <source>Could not restore the backup</source>
         <translation>No se pudo restaurar la copia de seguridad</translation>
     </message>
     <message>
-        <location filename="../gui/main_window.py" line="840" />
+        <location filename="../gui/main_window.py" line="970" />
         <source>Nothing was changed.</source>
         <translation>No se cambió nada.</translation>
     </message>
     <message>
-        <location filename="../gui/main_window.py" line="844" />
+        <location filename="../gui/main_window.py" line="974" />
         <source>Progress restored from {path}</source>
         <translation>Progreso restaurado desde {path}</translation>
     </message>
     <message>
-        <location filename="../gui/main_window.py" line="854" />
-        <location filename="../gui/main_window.py" line="950" />
+        <location filename="../gui/main_window.py" line="984" />
+        <location filename="../gui/main_window.py" line="1080" />
         <source>Save as PDF</source>
         <translation>Guardar como PDF</translation>
     </message>
     <message>
-        <location filename="../gui/main_window.py" line="863" />
-        <location filename="../gui/main_window.py" line="959" />
+        <location filename="../gui/main_window.py" line="993" />
+        <location filename="../gui/main_window.py" line="1089" />
         <source>Could not save the PDF</source>
         <translation>No se pudo guardar el PDF</translation>
     </message>
     <message>
-        <location filename="../gui/main_window.py" line="869" />
-        <location filename="../gui/main_window.py" line="964" />
+        <location filename="../gui/main_window.py" line="999" />
+        <location filename="../gui/main_window.py" line="1094" />
         <location filename="../gui/pages/classroom_page.py" line="187" />
         <source>Saved {pages} page(s) to {path}</source>
         <translation>Se guardaron {pages} página(s) en {path}</translation>
     </message>
     <message>
-        <location filename="../gui/main_window.py" line="874" />
+        <location filename="../gui/main_window.py" line="1004" />
         <source>Open a lesson first, then print it.</source>
         <translation>Abre primero una lección y luego imprímela.</translation>
     </message>
     <message>
-        <location filename="../gui/main_window.py" line="885" />
+        <location filename="../gui/main_window.py" line="1015" />
         <location filename="../gui/pages/problems_page.py" line="184" />
         <source>Level {number} · {title}</source>
         <translation>Nivel {number} · {title}</translation>
     </message>
     <message>
-        <location filename="../gui/main_window.py" line="890" />
+        <location filename="../gui/main_window.py" line="1020" />
         <source>The whole course</source>
         <translation>Todo el curso</translation>
     </message>
     <message>
-        <location filename="../gui/main_window.py" line="900" />
+        <location filename="../gui/main_window.py" line="1030" />
         <source>Choose a folder for the website</source>
         <translation>Elige una carpeta para el sitio web</translation>
     </message>
     <message>
-        <location filename="../gui/main_window.py" line="906" />
+        <location filename="../gui/main_window.py" line="1036" />
         <source>Replace the website?</source>
         <translation>¿Sustituir el sitio web?</translation>
     </message>
     <message>
-        <location filename="../gui/main_window.py" line="907" />
+        <location filename="../gui/main_window.py" line="1037" />
         <source>{path} already exists. Replace it with a fresh copy?</source>
         <translation>{path} ya existe. ¿Sustituirlo por una copia nueva?</translation>
     </message>
     <message>
-        <location filename="../gui/main_window.py" line="911" />
+        <location filename="../gui/main_window.py" line="1041" />
         <source>Building the website — this takes about a minute…</source>
         <translation>Construyendo el sitio web: esto tarda alrededor de un minuto…</translation>
     </message>
     <message>
-        <location filename="../gui/main_window.py" line="916" />
+        <location filename="../gui/main_window.py" line="1046" />
         <source>Could not write the website</source>
         <translation>No se pudo escribir el sitio web</translation>
     </message>
     <message>
-        <location filename="../gui/main_window.py" line="921" />
+        <location filename="../gui/main_window.py" line="1051" />
         <source>Website written: {pages} pages in {path}. Open index.html in a browser.</source>
         <translation>Sitio web escrito: {pages} páginas en {path}. Abre index.html en un navegador.</translation>
     </message>
     <message>
-        <location filename="../gui/main_window.py" line="936" />
-        <location filename="../gui/main_window.py" line="954" />
-        <location filename="../gui/pages/lesson.py" line="215" />
+        <location filename="../gui/main_window.py" line="1066" />
+        <location filename="../gui/main_window.py" line="1084" />
+        <location filename="../gui/pages/lesson.py" line="223" />
         <source>Remember this</source>
         <translation>Recuerda esto</translation>
     </message>
     <message>
-        <location filename="../gui/main_window.py" line="936" />
+        <location filename="../gui/main_window.py" line="1066" />
         <source>{count} completed lesson(s)</source>
         <translation>{count} lección(es) completada(s)</translation>
     </message>
     <message>
-        <location filename="../gui/main_window.py" line="937" />
+        <location filename="../gui/main_window.py" line="1067" />
         <source>the whole course</source>
         <translation>todo el curso</translation>
     </message>
     <message>
-        <location filename="../gui/main_window.py" line="980" />
+        <location filename="../gui/main_window.py" line="1110" />
         <source>{count} plugin(s) could not be loaded ({names}). See Help → Simulator plugins.</source>
         <translation>No se pudieron cargar {count} complemento(s) ({names}). Consulta Ayuda → Complementos de simuladores.</translation>
     </message>
     <message>
-        <location filename="../gui/main_window.py" line="984" />
+        <location filename="../gui/main_window.py" line="1114" />
         <source>Loaded {count} simulator plugin(s).</source>
         <translation>Se cargaron {count} complemento(s) de simulador.</translation>
     </message>
     <message>
-        <location filename="../gui/main_window.py" line="996" />
+        <location filename="../gui/main_window.py" line="1126" />
         <source>Simulator plugins</source>
         <translation>Complementos de simuladores</translation>
     </message>
     <message>
-        <location filename="../gui/main_window.py" line="998" />
+        <location filename="../gui/main_window.py" line="1128" />
         <source>You can add your own simulator without changing Cosmos. Put one Python file in this folder and restart:</source>
         <translation>Puedes añadir tu propio simulador sin cambiar Cosmos. Pon un archivo de Python en esta carpeta y reinicia:</translation>
     </message>
     <message>
-        <location filename="../gui/main_window.py" line="1003" />
+        <location filename="../gui/main_window.py" line="1133" />
         <source>The folder contains a README with a complete example. A plugin is ordinary Python and runs with the same permissions as Cosmos itself, so only add files you wrote or trust.</source>
         <translation>La carpeta contiene un README con un ejemplo completo. Un complemento es Python corriente y se ejecuta con los mismos permisos que Cosmos, así que añade solo archivos que hayas escrito tú o en los que confíes.</translation>
     </message>
     <message>
-        <location filename="../gui/main_window.py" line="1008" />
+        <location filename="../gui/main_window.py" line="1138" />
         <source>Loaded</source>
         <translation>Cargado</translation>
     </message>
     <message>
-        <location filename="../gui/main_window.py" line="1012" />
+        <location filename="../gui/main_window.py" line="1142" />
         <source>Not loaded</source>
         <translation>No cargado</translation>
     </message>
     <message>
-        <location filename="../gui/main_window.py" line="1016" />
+        <location filename="../gui/main_window.py" line="1146" />
         <source>No plugins are installed.</source>
         <translation>No hay complementos instalados.</translation>
     </message>
     <message>
-        <location filename="../gui/main_window.py" line="1026" />
+        <location filename="../gui/main_window.py" line="1156" />
         <source>Cosmos will look for updates once a day.</source>
         <translation>Cosmos buscará actualizaciones una vez al día.</translation>
     </message>
     <message>
-        <location filename="../gui/main_window.py" line="1027" />
+        <location filename="../gui/main_window.py" line="1157" />
         <source>Cosmos will not look for updates.</source>
         <translation>Cosmos no buscará actualizaciones.</translation>
     </message>
     <message>
-        <location filename="../gui/main_window.py" line="1038" />
+        <location filename="../gui/main_window.py" line="1168" />
         <source>Check for updates?</source>
         <translation>¿Buscar actualizaciones?</translation>
     </message>
     <message>
-        <location filename="../gui/main_window.py" line="1039" />
+        <location filename="../gui/main_window.py" line="1169" />
         <source>Shall Cosmos look for a newer version once a day?</source>
         <translation>¿Quieres que Cosmos busque una versión más reciente una vez al día?</translation>
     </message>
     <message>
-        <location filename="../gui/main_window.py" line="1041" />
+        <location filename="../gui/main_window.py" line="1171" />
         <source>It asks GitHub for the latest release number and nothing else. No information about you, this computer or your progress is sent, and there is no identifier of any kind. You can change this at any time under Help.</source>
         <translation>Le pide a GitHub el número de la última versión y nada más. No se envía ninguna información sobre ti, sobre este ordenador ni sobre tu progreso, y no hay identificador de ningún tipo. Puedes cambiarlo cuando quieras en Ayuda.</translation>
     </message>
     <message>
-        <location filename="../gui/main_window.py" line="1044" />
+        <location filename="../gui/main_window.py" line="1174" />
         <source>Yes, check daily</source>
         <translation>Sí, buscar a diario</translation>
     </message>
     <message>
-        <location filename="../gui/main_window.py" line="1045" />
+        <location filename="../gui/main_window.py" line="1175" />
         <source>No, thanks</source>
         <translation>No, gracias</translation>
     </message>
     <message>
-        <location filename="../gui/main_window.py" line="1067" />
+        <location filename="../gui/main_window.py" line="1197" />
         <source>Looking for a newer version…</source>
         <translation>Buscando una versión más reciente…</translation>
     </message>
     <message>
-        <location filename="../gui/main_window.py" line="1091" />
+        <location filename="../gui/main_window.py" line="1221" />
         <source>No newer version found — or the check could not reach GitHub.</source>
         <translation>No se encontró ninguna versión más reciente, o la comprobación no pudo llegar a GitHub.</translation>
     </message>
     <message>
-        <location filename="../gui/main_window.py" line="1094" />
+        <location filename="../gui/main_window.py" line="1224" />
         <source>Cosmos {version} is available.</source>
         <translation>Cosmos {version} está disponible.</translation>
     </message>
     <message>
-        <location filename="../gui/main_window.py" line="1098" />
+        <location filename="../gui/main_window.py" line="1228" />
         <source>A newer Cosmos is available</source>
         <translation>Hay una versión más reciente de Cosmos</translation>
     </message>
     <message>
-        <location filename="../gui/main_window.py" line="1099" />
+        <location filename="../gui/main_window.py" line="1229" />
         <source>Version {version} has been released.</source>
         <translation>Se ha publicado la versión {version}.</translation>
     </message>
     <message>
-        <location filename="../gui/main_window.py" line="1102" />
+        <location filename="../gui/main_window.py" line="1232" />
         <source>Open the release page</source>
         <translation>Abrir la página de la versión</translation>
     </message>
     <message>
-        <location filename="../gui/main_window.py" line="1103" />
+        <location filename="../gui/main_window.py" line="1233" />
         <source>Later</source>
         <translation>Más tarde</translation>
     </message>
     <message>
-        <location filename="../gui/main_window.py" line="1130" />
+        <location filename="../gui/main_window.py" line="1260" />
         <source>Welcome to Cosmos!</source>
         <translation>¡Bienvenida o bienvenido a Cosmos!</translation>
     </message>
     <message>
-        <location filename="../gui/main_window.py" line="1131" />
+        <location filename="../gui/main_window.py" line="1261" />
         <source>This short tour shows you around. It takes less than a minute. You can leave with &lt;b&gt;Skip tour&lt;/b&gt; or the Esc key and replay it later from the &lt;b&gt;Tour&lt;/b&gt; button.</source>
         <translation>Este recorrido breve te enseña la aplicación. Dura menos de un minuto. Puedes salir con &lt;b&gt;Saltar el recorrido&lt;/b&gt; o la tecla Esc, y repetirlo luego desde el botón &lt;b&gt;Recorrido&lt;/b&gt;.</translation>
     </message>
     <message>
-        <location filename="../gui/main_window.py" line="1137" />
-        <source>The sidebar lists the whole course. Lessons are grouped into levels. The icon next to each lesson shows its status: &lt;b&gt;filled with ✓&lt;/b&gt; = completed, &lt;b&gt;ring&lt;/b&gt; = ready, &lt;b&gt;small grey circle&lt;/b&gt; = prerequisites missing.</source>
-        <translation>La barra lateral lista todo el curso. Las lecciones están agrupadas en niveles. El icono junto a cada lección muestra su estado: &lt;b&gt;relleno con ✓&lt;/b&gt; = completada, &lt;b&gt;anillo&lt;/b&gt; = lista, &lt;b&gt;círculo gris pequeño&lt;/b&gt; = faltan requisitos previos.</translation>
+        <location filename="../gui/main_window.py" line="1267" />
+        <source>This list is the whole course. Lessons are grouped into levels, and only the section you are in stays open, so the list never gets long. The icon next to each lesson shows its status: &lt;b&gt;filled with ✓&lt;/b&gt; = completed, &lt;b&gt;ring&lt;/b&gt; = ready, &lt;b&gt;small grey circle&lt;/b&gt; = prerequisites missing. &lt;b&gt;Ctrl+B&lt;/b&gt; folds the list away entirely.</source>
+        <translation>Esta lista es el curso entero. Las lecciones se agrupan en niveles y solo permanece abierta la sección en la que estás, así que la lista nunca se alarga. El icono junto a cada lección indica su estado: &lt;b&gt;relleno con ✓&lt;/b&gt; = completada, &lt;b&gt;anillo&lt;/b&gt; = lista para empezar, &lt;b&gt;círculo gris pequeño&lt;/b&gt; = faltan requisitos previos. &lt;b&gt;Ctrl+B&lt;/b&gt; pliega la lista por completo.</translation>
     </message>
     <message>
-        <location filename="../gui/main_window.py" line="1143" />
+        <location filename="../gui/main_window.py" line="1274" />
         <source>Start here</source>
         <translation>Empieza aquí</translation>
     </message>
     <message>
-        <location filename="../gui/main_window.py" line="1144" />
+        <location filename="../gui/main_window.py" line="1275" />
         <source>This button always takes you to the next lesson you are ready for. If you are new to cosmology, simply follow it.</source>
         <translation>Este botón te lleva siempre a la siguiente lección para la que estás preparado. Si la cosmología es nueva para ti, basta con seguirlo.</translation>
     </message>
     <message>
-        <location filename="../gui/main_window.py" line="1149" />
+        <location filename="../gui/main_window.py" line="1280" />
         <source>The Guide panel</source>
         <translation>El panel Guía</translation>
     </message>
     <message>
-        <location filename="../gui/main_window.py" line="1150" />
-        <source>The Guide explains the page you are on: how to use it, what to try and where to go next. When you click a coloured term in a lesson, its definition appears here too.</source>
-        <translation>La Guía explica la página en la que estás: cómo usarla, qué probar y adónde ir después. Cuando pulsas un término de color en una lección, su definición también aparece aquí.</translation>
+        <location filename="../gui/main_window.py" line="1281" />
+        <source>The Guide explains the page you are on: how to use it, what to try and where to go next. When you click a coloured term in a lesson, its definition appears here too. It stays out of the way until you ask for it with &lt;b&gt;F1&lt;/b&gt; or the toolbar button.</source>
+        <translation>La Guía explica la página en la que estás: cómo usarla, qué probar y adónde ir después. Cuando pulsas un término coloreado en una lección, su definición también aparece aquí. Se mantiene apartada hasta que la pides con &lt;b&gt;F1&lt;/b&gt; o con el botón de la barra de herramientas.</translation>
     </message>
     <message>
-        <location filename="../gui/main_window.py" line="1155" />
+        <location filename="../gui/main_window.py" line="1288" />
         <source>Lessons and quizzes</source>
         <translation>Lecciones y cuestionarios</translation>
     </message>
     <message>
-        <location filename="../gui/main_window.py" line="1156" />
+        <location filename="../gui/main_window.py" line="1289" />
         <source>Each lesson has a &lt;b&gt;Lesson&lt;/b&gt; tab with explanations, formulas and figures, and a &lt;b&gt;Quiz&lt;/b&gt; tab. Score at least 70% to complete the lesson.</source>
         <translation>Cada lección tiene una pestaña &lt;b&gt;Lección&lt;/b&gt; con explicaciones, fórmulas y figuras, y una pestaña &lt;b&gt;Cuestionario&lt;/b&gt;. Acierta al menos el 70 % para completar la lección.</translation>
     </message>
     <message>
-        <location filename="../gui/main_window.py" line="1162" />
+        <location filename="../gui/main_window.py" line="1295" />
         <source>Two ways to read a lesson</source>
         <translation>Dos maneras de leer una lección</translation>
     </message>
     <message>
-        <location filename="../gui/main_window.py" line="1163" />
+        <location filename="../gui/main_window.py" line="1296" />
         <source>Every lesson has a &lt;b&gt;View&lt;/b&gt; switch at the top right. &lt;b&gt;Intuitive&lt;/b&gt; tells the story in words, hiding the formulas and derivations; &lt;b&gt;With the maths&lt;/b&gt; shows the complete lesson. Switch whenever you like — your choice is remembered.</source>
         <translation>Cada lección tiene un selector &lt;b&gt;Vista&lt;/b&gt; arriba a la derecha. &lt;b&gt;Intuitiva&lt;/b&gt; cuenta la historia con palabras y oculta las fórmulas y las deducciones; &lt;b&gt;Con las matemáticas&lt;/b&gt; muestra la lección completa. Cambia cuando quieras: se recuerda tu elección.</translation>
     </message>
     <message>
-        <location filename="../gui/main_window.py" line="1170" />
+        <location filename="../gui/main_window.py" line="1303" />
         <source>Simulators let you experiment. Lessons link to them with &lt;b&gt;Try it&lt;/b&gt; boxes, and you can open them any time from the sidebar.</source>
         <translation>Los simuladores te dejan experimentar. Las lecciones enlazan con ellos mediante cajas &lt;b&gt;Pruébalo&lt;/b&gt;, y puedes abrirlos cuando quieras desde la barra lateral.</translation>
     </message>
     <message>
-        <location filename="../gui/main_window.py" line="1176" />
-        <location filename="../gui/pages/simulators.py" line="118" />
+        <location filename="../gui/main_window.py" line="1309" />
+        <location filename="../gui/pages/simulators.py" line="120" />
         <source>Challenges</source>
         <translation>Retos</translation>
     </message>
     <message>
-        <location filename="../gui/main_window.py" line="1177" />
+        <location filename="../gui/main_window.py" line="1310" />
         <source>Many simulators open with a &lt;b&gt;challenge&lt;/b&gt;: a concrete task such as finding a universe that ends in a Big Crunch. Set the controls and press &lt;b&gt;Check my answer&lt;/b&gt;; hints are there if you need them, and solved challenges earn badges.</source>
         <translation>Muchos simuladores empiezan con un &lt;b&gt;reto&lt;/b&gt;: una tarea concreta, como encontrar un universo que termine en un Big Crunch. Ajusta los controles y pulsa &lt;b&gt;Comprobar mi respuesta&lt;/b&gt;; tienes pistas si las necesitas, y los retos resueltos dan insignias.</translation>
     </message>
     <message>
-        <location filename="../gui/main_window.py" line="1184" />
+        <location filename="../gui/main_window.py" line="1317" />
         <source>Search and the formula sheet</source>
         <translation>La búsqueda y el formulario</translation>
     </message>
     <message>
-        <location filename="../gui/main_window.py" line="1185" />
+        <location filename="../gui/main_window.py" line="1318" />
         <source>The &lt;b&gt;search box&lt;/b&gt; (Ctrl+F) looks through lessons, the glossary, the simulators and the formula sheet at once. &lt;b&gt;Reference&lt;/b&gt; (Ctrl+R) collects every formula, constant and unit conversion in one place.</source>
         <translation>El &lt;b&gt;cuadro de búsqueda&lt;/b&gt; (Ctrl+F) mira a la vez en las lecciones, el glosario, los simuladores y el formulario. &lt;b&gt;Referencia&lt;/b&gt; (Ctrl+R) reúne todas las fórmulas, constantes y conversiones de unidades en un solo sitio.</translation>
     </message>
     <message>
-        <location filename="../gui/main_window.py" line="1191" />
+        <location filename="../gui/main_window.py" line="1324" />
         <source>Your own notes</source>
         <translation>Tus propias notas</translation>
     </message>
     <message>
-        <location filename="../gui/main_window.py" line="1192" />
+        <location filename="../gui/main_window.py" line="1325" />
         <source>The &lt;b&gt;Notes&lt;/b&gt; panel, next to the Guide, is a private notebook: one note per page, saved automatically. Press &lt;b&gt;☆ Bookmark&lt;/b&gt; (Ctrl+D) to keep a link to a page, and open &lt;b&gt;Notes &amp;amp; bookmarks&lt;/b&gt; to see or export everything you saved.</source>
         <translation>El panel &lt;b&gt;Notas&lt;/b&gt;, junto a la Guía, es un cuaderno privado: una nota por página, guardada automáticamente. Pulsa &lt;b&gt;☆ Marcador&lt;/b&gt; (Ctrl+D) para conservar un enlace a una página, y abre &lt;b&gt;Notas y marcadores&lt;/b&gt; para ver o exportar todo lo que has guardado.</translation>
     </message>
     <message>
-        <location filename="../gui/main_window.py" line="1199" />
+        <location filename="../gui/main_window.py" line="1332" />
         <source>Toolbar</source>
         <translation>Barra de herramientas</translation>
     </message>
     <message>
-        <location filename="../gui/main_window.py" line="1200" />
-        <source>Go &lt;b&gt;Back&lt;/b&gt; and &lt;b&gt;Forward&lt;/b&gt; between pages, open the &lt;b&gt;Glossary&lt;/b&gt; and your &lt;b&gt;Progress&lt;/b&gt; map, toggle the Guide panel, switch the &lt;b&gt;Theme&lt;/b&gt;, or replay this tour.</source>
-        <translation>Ve &lt;b&gt;Atrás&lt;/b&gt; y &lt;b&gt;Adelante&lt;/b&gt; entre páginas, abre el &lt;b&gt;Glosario&lt;/b&gt; y tu mapa de &lt;b&gt;Progreso&lt;/b&gt;, muestra u oculta el panel Guía, cambia el &lt;b&gt;Tema&lt;/b&gt; o repite este recorrido.</translation>
+        <location filename="../gui/main_window.py" line="1333" />
+        <source>Go &lt;b&gt;Back&lt;/b&gt; and &lt;b&gt;Forward&lt;/b&gt; between pages, jump &lt;b&gt;Home&lt;/b&gt; or &lt;b&gt;Continue&lt;/b&gt; where you left off. On the right are the search box and the three side panels. Everything else lives in the menus and in the list on the left.</source>
+        <translation>Ve &lt;b&gt;Atrás&lt;/b&gt; y &lt;b&gt;Adelante&lt;/b&gt; entre páginas, salta a &lt;b&gt;Inicio&lt;/b&gt; o &lt;b&gt;Continúa&lt;/b&gt; donde lo dejaste. A la derecha están el cuadro de búsqueda y los tres paneles laterales. Todo lo demás vive en los menús y en la lista de la izquierda.</translation>
     </message>
     <message>
-        <location filename="../gui/main_window.py" line="1205" />
+        <location filename="../gui/main_window.py" line="1339" />
         <source>History and badges</source>
         <translation>Historia e insignias</translation>
     </message>
     <message>
-        <location filename="../gui/main_window.py" line="1206" />
+        <location filename="../gui/main_window.py" line="1340" />
         <source>&lt;b&gt;History&lt;/b&gt; follows cosmology from Copernicus to the latest surveys, with cards for the scientists. &lt;b&gt;Progress&lt;/b&gt; shows your lesson map and the &lt;b&gt;badges&lt;/b&gt; you have earned.</source>
         <translation>&lt;b&gt;Historia&lt;/b&gt; sigue la cosmología desde Copérnico hasta los sondeos más recientes, con fichas de los científicos. &lt;b&gt;Progreso&lt;/b&gt; muestra tu mapa de lecciones y las &lt;b&gt;insignias&lt;/b&gt; que has conseguido.</translation>
     </message>
     <message>
-        <location filename="../gui/main_window.py" line="1211" />
+        <location filename="../gui/main_window.py" line="1345" />
         <source>You're ready</source>
         <translation>Ya estás</translation>
     </message>
     <message>
-        <location filename="../gui/main_window.py" line="1212" />
+        <location filename="../gui/main_window.py" line="1346" />
         <source>Every control has a tooltip, and &lt;b&gt;?&lt;/b&gt; buttons give detailed explanations. Enjoy exploring the universe!</source>
         <translation>Cada control tiene una descripción emergente, y los botones &lt;b&gt;?&lt;/b&gt; dan explicaciones detalladas. ¡Disfruta explorando el universo!</translation>
     </message>
@@ -1856,8 +1857,8 @@ nada, y la aplicación no tiene ni idea de quién es quien aprende.
     </message>
     <message>
         <location filename="../gui/pages/classroom_page.py" line="138" />
-        <location filename="../gui/pages/lesson.py" line="95" />
-        <location filename="../gui/pages/lesson.py" line="312" />
+        <location filename="../gui/pages/lesson.py" line="98" />
+        <location filename="../gui/pages/lesson.py" line="320" />
         <location filename="../gui/rendering/pdf.py" line="80" />
         <source>Teacher notes</source>
         <translation>Notas para el profesorado</translation>
@@ -2196,7 +2197,7 @@ los paneles laterales, y lo que tiene el teclado se dibuja con un contorno claro
     </message>
     <message>
         <location filename="../gui/pages/home.py" line="163" />
-        <location filename="../gui/pages/home.py" line="281" />
+        <location filename="../gui/pages/home.py" line="288" />
         <source>{steps} steps a day</source>
         <translation>{steps} pasos al día</translation>
     </message>
@@ -2221,176 +2222,175 @@ los paneles laterales, y lo que tiene el teclado se dibuja con un contorno claro
         <translation>Niveles del curso</translation>
     </message>
     <message>
-        <location filename="../gui/pages/home.py" line="183" />
-        <location filename="../gui/pages/lesson.py" line="130" />
+        <location filename="../gui/pages/home.py" line="185" />
+        <location filename="../gui/pages/lesson.py" line="138" />
         <source>LEVEL {number}</source>
         <translation>NIVEL {number}</translation>
     </message>
     <message>
-        <location filename="../gui/pages/home.py" line="194" />
+        <location filename="../gui/pages/home.py" line="196" />
         <source>Open level</source>
         <translation>Abrir el nivel</translation>
     </message>
     <message>
-        <location filename="../gui/pages/home.py" line="197" />
+        <location filename="../gui/pages/home.py" line="199" />
         <source>Opens the first unfinished lesson of this level (starts at {lesson}).</source>
         <translation>Abre la primera lección sin terminar de este nivel (empieza en {lesson}).</translation>
     </message>
     <message>
-        <location filename="../gui/pages/home.py" line="207" />
+        <location filename="../gui/pages/home.py" line="209" />
         <source>Hands-on tools to explore the ideas from the lessons. You can open them at any time.</source>
         <translation>Herramientas prácticas para explorar las ideas de las lecciones. Puedes abrirlas cuando quieras.</translation>
     </message>
     <message>
-        <location filename="../gui/pages/home.py" line="233" />
+        <location filename="../gui/pages/home.py" line="240" />
         <source>Course progress: &lt;b&gt;{done}&lt;/b&gt; of {total} lessons completed</source>
         <translation>Progreso del curso: &lt;b&gt;{done}&lt;/b&gt; de {total} lecciones completadas</translation>
     </message>
     <message>
-        <location filename="../gui/pages/home.py" line="236" />
+        <location filename="../gui/pages/home.py" line="243" />
         <source>Review the course</source>
         <translation>Repasar el curso</translation>
     </message>
     <message>
-        <location filename="../gui/pages/home.py" line="237" />
+        <location filename="../gui/pages/home.py" line="244" />
         <source>You have completed every lesson. Congratulations!</source>
         <translation>Has completado todas las lecciones. ¡Enhorabuena!</translation>
     </message>
     <message>
-        <location filename="../gui/pages/home.py" line="241" />
+        <location filename="../gui/pages/home.py" line="248" />
         <source>Start learning</source>
         <translation>Empezar a aprender</translation>
     </message>
     <message>
-        <location filename="../gui/pages/home.py" line="241" />
+        <location filename="../gui/pages/home.py" line="248" />
         <source>Continue learning</source>
         <translation>Seguir aprendiendo</translation>
     </message>
     <message>
-        <location filename="../gui/pages/home.py" line="249" />
+        <location filename="../gui/pages/home.py" line="256" />
         <source>Review {count} question(s)</source>
         <translation>Repasar {count} pregunta(s)</translation>
     </message>
     <message>
-        <location filename="../gui/pages/home.py" line="254" />
+        <location filename="../gui/pages/home.py" line="261" />
         <source>{done} of {total} lessons completed</source>
         <translation>{done} de {total} lecciones completadas</translation>
     </message>
     <message>
-        <location filename="../gui/pages/home.py" line="260" />
+        <location filename="../gui/pages/home.py" line="267" />
         <source>{days}-day streak</source>
         <translation>Racha de {days} días</translation>
     </message>
     <message>
-        <location filename="../gui/pages/home.py" line="262" />
+        <location filename="../gui/pages/home.py" line="269" />
         <source>Start a streak today</source>
         <translation>Empieza hoy una racha</translation>
     </message>
     <message>
-        <location filename="../gui/pages/home.py" line="267" />
+        <location filename="../gui/pages/home.py" line="274" />
         <source>Today: &lt;b&gt;{steps}&lt;/b&gt; of {goal} steps</source>
         <translation>Hoy: &lt;b&gt;{steps}&lt;/b&gt; de {goal} pasos</translation>
     </message>
     <message>
-        <location filename="../gui/pages/home.py" line="269" />
+        <location filename="../gui/pages/home.py" line="276" />
         <source>goal reached ✓</source>
         <translation>meta alcanzada ✓</translation>
     </message>
     <message>
-        <location filename="../gui/pages/home.py" line="272" />
+        <location filename="../gui/pages/home.py" line="279" />
         <source>Today: &lt;b&gt;{steps}&lt;/b&gt; steps</source>
         <translation>Hoy: &lt;b&gt;{steps}&lt;/b&gt; pasos</translation>
     </message>
     <message>
-        <location filename="../gui/pages/home.py" line="274" />
+        <location filename="../gui/pages/home.py" line="281" />
         <source>Study a little today to keep your streak going.</source>
         <translation>Estudia un poco hoy para mantener viva tu racha.</translation>
     </message>
     <message>
-        <location filename="../gui/pages/home.py" line="277" />
+        <location filename="../gui/pages/home.py" line="284" />
         <source>Last seven days: {marks}   Longest streak: {longest} days</source>
         <translation>Últimos siete días: {marks}   Racha más larga: {longest} días</translation>
     </message>
     <message>
-        <location filename="../gui/pages/lesson.py" line="48" />
+        <location filename="../gui/pages/lesson.py" line="50" />
         <source>View:</source>
         <translation>Vista:</translation>
     </message>
     <message>
-        <location filename="../gui/pages/lesson.py" line="92" />
+        <location filename="../gui/pages/lesson.py" line="94" />
         <location filename="../gui/search.py" line="12" />
         <source>Lesson</source>
         <translation>Lección</translation>
     </message>
     <message>
-        <location filename="../gui/pages/lesson.py" line="93" />
+        <location filename="../gui/pages/lesson.py" line="95" />
         <location filename="../gui/rendering/pdf.py" line="66" />
         <source>Quiz</source>
         <translation>Cuestionario</translation>
     </message>
     <message>
-        <location filename="../gui/pages/lesson.py" line="100" />
-        <source>◀ Previous lesson</source>
-        <translation>◀ Lección anterior</translation>
+        <location filename="../gui/pages/lesson.py" line="103" />
+        <source>Previous lesson</source>
+        <translation>Lección anterior</translation>
     </message>
     <message>
-        <location filename="../gui/pages/lesson.py" line="107" />
+        <location filename="../gui/pages/lesson.py" line="111" />
         <source>Add the terms to my flashcards</source>
         <translation>Añadir los términos a mis tarjetas</translation>
     </message>
     <message>
-        <location filename="../gui/pages/lesson.py" line="108" />
+        <location filename="../gui/pages/lesson.py" line="112" />
         <source>Put every glossary term this lesson uses into your flashcard deck. They come back on the Review page until you know them.</source>
         <translation>Pon en tu mazo de tarjetas todos los términos del glosario que usa esta lección. Vuelven en la página Repaso hasta que los sepas.</translation>
     </message>
     <message>
-        <location filename="../gui/pages/lesson.py" line="112" />
-        <source>Take the quiz ▶</source>
-        <translation>Hacer el cuestionario ▶</translation>
+        <location filename="../gui/pages/lesson.py" line="116" />
+        <source>Take the quiz</source>
+        <translation>Hacer el cuestionario</translation>
     </message>
     <message>
-        <location filename="../gui/pages/lesson.py" line="117" />
-        <location filename="../gui/widgets/quiz.py" line="136" />
-        <source>Next lesson ▶</source>
-        <translation>Lección siguiente ▶</translation>
+        <location filename="../gui/pages/lesson.py" line="123" />
+        <source>Next lesson</source>
+        <translation>Lección siguiente</translation>
     </message>
     <message>
-        <location filename="../gui/pages/lesson.py" line="134" />
+        <location filename="../gui/pages/lesson.py" line="142" />
         <source>≈ {minutes} min read</source>
         <translation>≈ {minutes} min de lectura</translation>
     </message>
     <message>
-        <location filename="../gui/pages/lesson.py" line="156" />
+        <location filename="../gui/pages/lesson.py" line="164" />
         <source>Open the {title}: {tagline}</source>
         <translation>Abrir el {title}: {tagline}</translation>
     </message>
     <message>
-        <location filename="../gui/pages/lesson.py" line="232" />
+        <location filename="../gui/pages/lesson.py" line="240" />
         <source>Completed</source>
         <translation>Completada</translation>
     </message>
     <message>
-        <location filename="../gui/pages/lesson.py" line="233" />
+        <location filename="../gui/pages/lesson.py" line="241" />
         <source>Ready to learn</source>
         <translation>Lista para aprender</translation>
     </message>
     <message>
-        <location filename="../gui/pages/lesson.py" line="234" />
+        <location filename="../gui/pages/lesson.py" line="242" />
         <source>Prerequisites missing</source>
         <translation>Faltan requisitos previos</translation>
     </message>
     <message>
-        <location filename="../gui/pages/lesson.py" line="246" />
+        <location filename="../gui/pages/lesson.py" line="254" />
         <source>This lesson builds on {lessons}. You can read it now, but it will be easier after completing those first.</source>
         <translation>Esta lección se apoya en {lessons}. Puedes leerla ahora, pero será más fácil si completas antes esas.</translation>
     </message>
     <message>
-        <location filename="../gui/pages/lesson.py" line="259" />
+        <location filename="../gui/pages/lesson.py" line="267" />
         <source>How to study this lesson</source>
         <translation>Cómo estudiar esta lección</translation>
     </message>
     <message>
-        <location filename="../gui/pages/lesson.py" line="261" />
+        <location filename="../gui/pages/lesson.py" line="269" />
         <source>1. Read the lesson from top to bottom. Formulas are explained in words right after they appear.
    Prefer the ideas without the algebra? Switch the **View** at the top right to *Intuitive*.
 2. Click the coloured glossary terms to see definitions here without losing your place.
@@ -2403,32 +2403,32 @@ los paneles laterales, y lo que tiene el teclado se dibuja con un contorno claro
 4. Termina con la pestaña **Cuestionario**. Cada respuesta viene con una explicación.</translation>
     </message>
     <message>
-        <location filename="../gui/pages/lesson.py" line="270" />
+        <location filename="../gui/pages/lesson.py" line="278" />
         <source>Builds on</source>
         <translation>Se apoya en</translation>
     </message>
     <message>
-        <location filename="../gui/pages/lesson.py" line="274" />
+        <location filename="../gui/pages/lesson.py" line="282" />
         <source>Related simulators</source>
         <translation>Simuladores relacionados</translation>
     </message>
     <message>
-        <location filename="../gui/pages/lesson.py" line="280" />
+        <location filename="../gui/pages/lesson.py" line="288" />
         <source>Practise</source>
         <translation>Practicar</translation>
     </message>
     <message>
-        <location filename="../gui/pages/lesson.py" line="285" />
+        <location filename="../gui/pages/lesson.py" line="293" />
         <source>Leads to</source>
         <translation>Lleva a</translation>
     </message>
     <message>
-        <location filename="../gui/pages/lesson.py" line="292" />
+        <location filename="../gui/pages/lesson.py" line="300" />
         <source>{added} new term(s) added to your flashcards; they are due today on the Review page</source>
         <translation>{added} término(s) nuevo(s) añadido(s) a tus tarjetas; tocan hoy en la página Repaso</translation>
     </message>
     <message>
-        <location filename="../gui/pages/lesson.py" line="294" />
+        <location filename="../gui/pages/lesson.py" line="302" />
         <source>Every term of this lesson is already in your flashcards</source>
         <translation>Todos los términos de esta lección ya están en tus tarjetas</translation>
     </message>
@@ -3230,37 +3230,37 @@ curso y te deja cambiar tú mismo los parámetros.
         <translation>Elige un simulador. Cada ficha lista las lecciones a las que acompaña.</translation>
     </message>
     <message>
-        <location filename="../gui/pages/simulators.py" line="61" />
+        <location filename="../gui/pages/simulators.py" line="63" />
         <source>Supports lessons: {lessons}</source>
         <translation>Acompaña a las lecciones: {lessons}</translation>
     </message>
     <message>
-        <location filename="../gui/pages/simulators.py" line="62" />
+        <location filename="../gui/pages/simulators.py" line="64" />
         <source>Open simulator</source>
         <translation>Abrir el simulador</translation>
     </message>
     <message>
-        <location filename="../gui/pages/simulators.py" line="85" />
+        <location filename="../gui/pages/simulators.py" line="87" />
         <source>SIMULATOR</source>
         <translation>SIMULADOR</translation>
     </message>
     <message>
-        <location filename="../gui/pages/simulators.py" line="107" />
+        <location filename="../gui/pages/simulators.py" line="109" />
         <source>How to use</source>
         <translation>Cómo usarlo</translation>
     </message>
     <message>
-        <location filename="../gui/pages/simulators.py" line="109" />
+        <location filename="../gui/pages/simulators.py" line="111" />
         <source>Things to try</source>
         <translation>Cosas que probar</translation>
     </message>
     <message>
-        <location filename="../gui/pages/simulators.py" line="113" />
+        <location filename="../gui/pages/simulators.py" line="115" />
         <source>Related lessons</source>
         <translation>Lecciones relacionadas</translation>
     </message>
     <message>
-        <location filename="../gui/pages/simulators.py" line="119" />
+        <location filename="../gui/pages/simulators.py" line="121" />
         <source>This simulator has {total} guided challenges ({solved} solved). Read the task at the top, set the controls, then press **Check my answer**.</source>
         <translation>Este simulador tiene {total} retos guiados ({solved} resueltos). Lee la tarea de arriba, ajusta los controles y pulsa **Comprobar mi respuesta**.</translation>
     </message>
@@ -3632,7 +3632,7 @@ curso y te deja cambiar tú mismo los parámetros.
     </message>
     <message>
         <location filename="../gui/simulators/calculator.py" line="39" />
-        <location filename="../gui/simulators/calculator.py" line="342" />
+        <location filename="../gui/simulators/calculator.py" line="343" />
         <source>Age of the universe today</source>
         <translation>Edad del universo hoy</translation>
     </message>
@@ -3653,7 +3653,7 @@ curso y te deja cambiar tú mismo los parámetros.
     </message>
     <message>
         <location filename="../gui/simulators/calculator.py" line="47" />
-        <location filename="../gui/simulators/calculator.py" line="344" />
+        <location filename="../gui/simulators/calculator.py" line="345" />
         <source>Lookback time</source>
         <translation>Tiempo de retroceso</translation>
     </message>
@@ -3664,7 +3664,7 @@ curso y te deja cambiar tú mismo los parámetros.
     </message>
     <message>
         <location filename="../gui/simulators/calculator.py" line="51" />
-        <location filename="../gui/simulators/calculator.py" line="345" />
+        <location filename="../gui/simulators/calculator.py" line="346" />
         <source>Comoving distance</source>
         <translation>Distancia comóvil</translation>
     </message>
@@ -3675,7 +3675,7 @@ curso y te deja cambiar tú mismo los parámetros.
     </message>
     <message>
         <location filename="../gui/simulators/calculator.py" line="56" />
-        <location filename="../gui/simulators/calculator.py" line="346" />
+        <location filename="../gui/simulators/calculator.py" line="347" />
         <source>Light-travel distance</source>
         <translation>Distancia recorrida por la luz</translation>
     </message>
@@ -3686,7 +3686,7 @@ curso y te deja cambiar tú mismo los parámetros.
     </message>
     <message>
         <location filename="../gui/simulators/calculator.py" line="61" />
-        <location filename="../gui/simulators/calculator.py" line="347" />
+        <location filename="../gui/simulators/calculator.py" line="348" />
         <source>Luminosity distance</source>
         <translation>Distancia de luminosidad</translation>
     </message>
@@ -3697,7 +3697,7 @@ curso y te deja cambiar tú mismo los parámetros.
     </message>
     <message>
         <location filename="../gui/simulators/calculator.py" line="66" />
-        <location filename="../gui/simulators/calculator.py" line="348" />
+        <location filename="../gui/simulators/calculator.py" line="349" />
         <source>Angular diameter distance</source>
         <translation>Distancia de diámetro angular</translation>
     </message>
@@ -3708,7 +3708,7 @@ curso y te deja cambiar tú mismo los parámetros.
     </message>
     <message>
         <location filename="../gui/simulators/calculator.py" line="71" />
-        <location filename="../gui/simulators/calculator.py" line="349" />
+        <location filename="../gui/simulators/calculator.py" line="350" />
         <source>Recession velocity today</source>
         <translation>Velocidad de recesión hoy</translation>
     </message>
@@ -3719,7 +3719,7 @@ curso y te deja cambiar tú mismo los parámetros.
     </message>
     <message>
         <location filename="../gui/simulators/calculator.py" line="76" />
-        <location filename="../gui/simulators/calculator.py" line="350" />
+        <location filename="../gui/simulators/calculator.py" line="351" />
         <source>Recession velocity at emission</source>
         <translation>Velocidad de recesión en la emisión</translation>
     </message>
@@ -3730,7 +3730,7 @@ curso y te deja cambiar tú mismo los parámetros.
     </message>
     <message>
         <location filename="../gui/simulators/calculator.py" line="80" />
-        <location filename="../gui/simulators/calculator.py" line="360" />
+        <location filename="../gui/simulators/calculator.py" line="361" />
         <source>Particle horizon today</source>
         <translation>Horizonte de partículas hoy</translation>
     </message>
@@ -3741,7 +3741,7 @@ curso y te deja cambiar tú mismo los parámetros.
     </message>
     <message>
         <location filename="../gui/simulators/calculator.py" line="84" />
-        <location filename="../gui/simulators/calculator.py" line="361" />
+        <location filename="../gui/simulators/calculator.py" line="362" />
         <source>Event horizon today</source>
         <translation>Horizonte de sucesos hoy</translation>
     </message>
@@ -3772,7 +3772,7 @@ curso y te deja cambiar tú mismo los parámetros.
     </message>
     <message>
         <location filename="../gui/simulators/calculator.py" line="97" />
-        <location filename="../gui/simulators/calculator.py" line="354" />
+        <location filename="../gui/simulators/calculator.py" line="355" />
         <source>Hubble parameter H(z)</source>
         <translation>Parámetro de Hubble H(z)</translation>
     </message>
@@ -3788,7 +3788,7 @@ curso y te deja cambiar tú mismo los parámetros.
     </message>
     <message>
         <location filename="../gui/simulators/calculator.py" line="105" />
-        <location filename="../gui/simulators/calculator.py" line="356" />
+        <location filename="../gui/simulators/calculator.py" line="357" />
         <source>CMB temperature at z</source>
         <translation>Temperatura del FCM a z</translation>
     </message>
@@ -3799,7 +3799,7 @@ curso y te deja cambiar tú mismo los parámetros.
     </message>
     <message>
         <location filename="../gui/simulators/calculator.py" line="109" />
-        <location filename="../gui/simulators/calculator.py" line="357" />
+        <location filename="../gui/simulators/calculator.py" line="358" />
         <source>Neutrino background temperature at z</source>
         <translation>Temperatura del fondo de neutrinos a z</translation>
     </message>
@@ -3810,7 +3810,7 @@ curso y te deja cambiar tú mismo los parámetros.
     </message>
     <message>
         <location filename="../gui/simulators/calculator.py" line="114" />
-        <location filename="../gui/simulators/calculator.py" line="359" />
+        <location filename="../gui/simulators/calculator.py" line="360" />
         <source>Curvature Ωk</source>
         <translation>Curvatura Ωk</translation>
     </message>
@@ -3821,7 +3821,7 @@ curso y te deja cambiar tú mismo los parámetros.
     </message>
     <message>
         <location filename="../gui/simulators/calculator.py" line="118" />
-        <location filename="../gui/simulators/calculator.py" line="363" />
+        <location filename="../gui/simulators/calculator.py" line="364" />
         <source>Critical density today</source>
         <translation>Densidad crítica hoy</translation>
     </message>
@@ -3832,7 +3832,7 @@ curso y te deja cambiar tú mismo los parámetros.
     </message>
     <message>
         <location filename="../gui/simulators/calculator.py" line="122" />
-        <location filename="../gui/simulators/calculator.py" line="366" />
+        <location filename="../gui/simulators/calculator.py" line="367" />
         <source>Deceleration parameter q0</source>
         <translation>Parámetro de deceleración q0</translation>
     </message>
@@ -4042,88 +4042,88 @@ curso y te deja cambiar tú mismo los parámetros.
         <translation>Distancias frente al corrimiento al rojo</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/calculator.py" line="246" />
+        <location filename="../gui/simulators/calculator.py" line="247" />
         <source>Age &amp; lookback time</source>
         <translation>Edad y tiempo de retroceso</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/calculator.py" line="321" />
+        <location filename="../gui/simulators/calculator.py" line="322" />
         <source>&lt;b&gt;This universe has no Big Bang.&lt;/b&gt; Going back in time it never reaches zero size, so ages are undefined. Reduce ΩΛ or increase Ωm.</source>
         <translation>&lt;b&gt;Este universo no tiene Big Bang.&lt;/b&gt; Yendo hacia atrás en el tiempo nunca llega a tamaño cero, así que las edades no están definidas. Reduce ΩΛ o aumenta Ωm.</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/calculator.py" line="340" />
+        <location filename="../gui/simulators/calculator.py" line="341" />
         <location filename="../gui/simulators/expansion.py" line="156" />
         <location filename="../gui/simulators/supernova_sim.py" line="166" />
         <source>accelerating</source>
         <translation>acelerándose</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/calculator.py" line="340" />
+        <location filename="../gui/simulators/calculator.py" line="341" />
         <location filename="../gui/simulators/expansion.py" line="156" />
         <location filename="../gui/simulators/supernova_sim.py" line="166" />
         <source>decelerating</source>
         <translation>frenándose</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/calculator.py" line="343" />
+        <location filename="../gui/simulators/calculator.py" line="344" />
         <source>Age at z = {z}</source>
         <translation>Edad a z = {z}</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/calculator.py" line="351" />
+        <location filename="../gui/simulators/calculator.py" line="352" />
         <source>Distance modulus m − M</source>
         <translation>Módulo de distancia m − M</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/calculator.py" line="352" />
+        <location filename="../gui/simulators/calculator.py" line="353" />
         <source>mag</source>
         <translation>mag</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/calculator.py" line="353" />
+        <location filename="../gui/simulators/calculator.py" line="354" />
         <source>Scale: 1 arcsec corresponds to</source>
         <translation>Escala: 1 segundo de arco corresponde a</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/calculator.py" line="355" />
+        <location filename="../gui/simulators/calculator.py" line="356" />
         <source>Scale factor a = 1/(1+z)</source>
         <translation>Factor de escala a = 1/(1+z)</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/calculator.py" line="362" />
+        <location filename="../gui/simulators/calculator.py" line="363" />
         <source>not computed for recollapsing universes</source>
         <translation>no se calcula para universos que vuelven a colapsar</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/calculator.py" line="364" />
+        <location filename="../gui/simulators/calculator.py" line="365" />
         <source>{density} kg/m³  (≈ {atoms} H atoms/m³)</source>
         <translation>{density} kg/m³  (≈ {atoms} átomos de H/m³)</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/calculator.py" line="367" />
+        <location filename="../gui/simulators/calculator.py" line="368" />
         <source>Fate</source>
         <translation>Destino</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/calculator.py" line="399" />
+        <location filename="../gui/simulators/calculator.py" line="400" />
         <source>faster than light</source>
         <translation>más deprisa que la luz</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/calculator.py" line="399" />
+        <location filename="../gui/simulators/calculator.py" line="400" />
         <source>slower than light</source>
         <translation>más despacio que la luz</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/calculator.py" line="405" />
+        <location filename="../gui/simulators/calculator.py" line="406" />
         <location filename="../gui/simulators/cosmic_timeline.py" line="64" />
         <location filename="../gui/simulators/olbers_sim.py" line="193" />
         <source>infinite</source>
         <translation>infinito</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/calculator.py" line="408" />
+        <location filename="../gui/simulators/calculator.py" line="409" />
         <source>{mpc} Mpc  ({gly} billion ly)</source>
         <translation>{mpc} Mpc  ({gly} miles de millones de años luz)</translation>
     </message>
@@ -10651,17 +10651,17 @@ Juntos dan el volumen efectivo, $V_\mathrm{eff} = V\,[\bar nP/(1+\bar nP)]^2$, y
         <translation>&lt;b&gt;Todavía no.&lt;/b&gt; El simulador no está en el estado que pide el reto.</translation>
     </message>
     <message>
-        <location filename="../gui/widgets/common.py" line="205" />
+        <location filename="../gui/widgets/common.py" line="224" />
         <source>Custom (your own values)</source>
         <translation>Personalizado (tus propios valores)</translation>
     </message>
     <message>
-        <location filename="../gui/widgets/common.py" line="206" />
+        <location filename="../gui/widgets/common.py" line="225" />
         <source>Values you set with the controls below.</source>
         <translation>Valores que fijas con los controles de abajo.</translation>
     </message>
     <message>
-        <location filename="../gui/widgets/common.py" line="212" />
+        <location filename="../gui/widgets/common.py" line="231" />
         <source>Load the parameters of a well-known cosmological model.</source>
         <translation>Carga los parámetros de un modelo cosmológico muy conocido.</translation>
     </message>
@@ -10886,6 +10886,11 @@ Apunta lo que te sorprendió, un número que quieras recordar o una pregunta a l
         <translation>Repasar la lección</translation>
     </message>
     <message>
+        <location filename="../gui/widgets/quiz.py" line="136" />
+        <source>Next lesson ▶</source>
+        <translation>Lección siguiente ▶</translation>
+    </message>
+    <message>
         <location filename="../gui/widgets/quiz.py" line="157" />
         <source>This quiz has {count} questions about “{lesson}”. After each answer you will see an explanation. Score at least {score} to complete the lesson; you can retry as often as you like.</source>
         <translation>Este cuestionario tiene {count} preguntas sobre «{lesson}». Después de cada respuesta verás una explicación. Acierta al menos {score} para completar la lección; puedes reintentarlo tantas veces como quieras.</translation>
@@ -10962,12 +10967,12 @@ Apunta lo que te sorprendió, un número que quieras recordar o una pregunta a l
         <translation>&lt;b&gt;Todas.&lt;/b&gt; Cada tarjeta subió una caja, y las que pasaron la última caja han dejado el mazo para siempre.</translation>
     </message>
     <message>
-        <location filename="../gui/widgets/rich_browser.py" line="112" />
+        <location filename="../gui/widgets/rich_browser.py" line="127" />
         <source>Click to open in the Guide panel.</source>
         <translation>Pulsa para abrirlo en el panel Guía.</translation>
     </message>
     <message>
-        <location filename="../gui/widgets/rich_browser.py" line="117" />
+        <location filename="../gui/widgets/rich_browser.py" line="132" />
         <source>Open this simulator</source>
         <translation>Abrir este simulador</translation>
     </message>

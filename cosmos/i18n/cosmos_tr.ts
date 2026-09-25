@@ -590,7 +590,7 @@
     </message>
     <message>
         <location filename="../gui/labels.py" line="122" />
-        <location filename="../gui/simulators/calculator.py" line="390" />
+        <location filename="../gui/simulators/calculator.py" line="391" />
         <location filename="../gui/simulators/future_sim.py" line="33" />
         <location filename="../gui/simulators/powers_of_ten.py" line="79" />
         <source>years</source>
@@ -598,7 +598,7 @@
     </message>
     <message>
         <location filename="../gui/labels.py" line="122" />
-        <location filename="../gui/simulators/calculator.py" line="392" />
+        <location filename="../gui/simulators/calculator.py" line="393" />
         <location filename="../gui/simulators/future_sim.py" line="32" />
         <location filename="../gui/simulators/powers_of_ten.py" line="78" />
         <source>million years</source>
@@ -606,7 +606,7 @@
     </message>
     <message>
         <location filename="../gui/labels.py" line="122" />
-        <location filename="../gui/simulators/calculator.py" line="393" />
+        <location filename="../gui/simulators/calculator.py" line="394" />
         <location filename="../gui/simulators/future_sim.py" line="32" />
         <location filename="../gui/simulators/powers_of_ten.py" line="78" />
         <source>billion years</source>
@@ -626,605 +626,606 @@
         <translation>nanosaniye</translation>
     </message>
     <message>
-        <location filename="../gui/main_window.py" line="104" />
+        <location filename="../gui/main_window.py" line="108" />
         <source>Learn Cosmology</source>
         <translation>Kozmoloji Öğren</translation>
     </message>
     <message>
-        <location filename="../gui/main_window.py" line="138" />
-        <source>Tip: hover over any control for a short explanation.</source>
-        <translation>İpucu: kısa bir açıklama için herhangi bir denetimin üzerine gelin.</translation>
-    </message>
-    <message>
-        <location filename="../gui/main_window.py" line="174" />
-        <location filename="../gui/main_window.py" line="288" />
+        <location filename="../gui/main_window.py" line="192" />
+        <location filename="../gui/main_window.py" line="384" />
         <source>Home</source>
         <translation>Ana sayfa</translation>
     </message>
     <message>
-        <location filename="../gui/main_window.py" line="174" />
+        <location filename="../gui/main_window.py" line="192" />
         <source>Welcome page and where to continue</source>
         <translation>Karşılama sayfası ve kaldığınız yer</translation>
     </message>
     <message>
-        <location filename="../gui/main_window.py" line="175" />
+        <location filename="../gui/main_window.py" line="193" />
         <source>Course</source>
         <translation>Ders programı</translation>
     </message>
     <message>
-        <location filename="../gui/main_window.py" line="175" />
+        <location filename="../gui/main_window.py" line="193" />
         <source>All lessons, grouped by level</source>
         <translation>Seviyelere göre gruplanmış tüm dersler</translation>
     </message>
     <message>
-        <location filename="../gui/main_window.py" line="189" />
-        <location filename="../gui/main_window.py" line="394" />
-        <location filename="../gui/main_window.py" line="1169" />
-        <location filename="../gui/pages/home.py" line="205" />
+        <location filename="../gui/main_window.py" line="209" />
+        <location filename="../gui/main_window.py" line="506" />
+        <location filename="../gui/main_window.py" line="1302" />
+        <location filename="../gui/pages/home.py" line="207" />
         <location filename="../gui/pages/simulators.py" line="50" />
         <source>Simulators</source>
         <translation>Simülatörler</translation>
     </message>
     <message>
-        <location filename="../gui/main_window.py" line="189" />
+        <location filename="../gui/main_window.py" line="209" />
         <source>Interactive tools</source>
         <translation>Etkileşimli araçlar</translation>
     </message>
     <message>
-        <location filename="../gui/main_window.py" line="197" />
+        <location filename="../gui/main_window.py" line="217" />
         <location filename="../gui/pages/problems_page.py" line="85" />
         <source>Problem sets</source>
         <translation>Problem setleri</translation>
     </message>
     <message>
-        <location filename="../gui/main_window.py" line="198" />
+        <location filename="../gui/main_window.py" line="218" />
         <source>Worked numeric problems with checked answers, one set per level</source>
         <translation>Cevabı denetlenen sayısal problemler, her seviye için bir set</translation>
     </message>
     <message>
-        <location filename="../gui/main_window.py" line="199" />
-        <location filename="../gui/main_window.py" line="291" />
+        <location filename="../gui/main_window.py" line="220" />
+        <location filename="../gui/main_window.py" line="388" />
         <location filename="../gui/pages/glossary.py" line="43" />
         <source>Glossary</source>
         <translation>Sözlük</translation>
     </message>
     <message>
-        <location filename="../gui/main_window.py" line="199" />
+        <location filename="../gui/main_window.py" line="220" />
         <source>Definitions of all important terms</source>
         <translation>Önemli tüm terimlerin tanımları</translation>
     </message>
     <message>
-        <location filename="../gui/main_window.py" line="200" />
-        <location filename="../gui/main_window.py" line="293" />
+        <location filename="../gui/main_window.py" line="222" />
+        <location filename="../gui/main_window.py" line="390" />
         <location filename="../gui/pages/reference.py" line="150" />
         <source>Reference</source>
         <translation>Başvuru</translation>
     </message>
     <message>
-        <location filename="../gui/main_window.py" line="201" />
+        <location filename="../gui/main_window.py" line="223" />
         <source>Formula sheet, constants, units and models</source>
         <translation>Formül sayfası, sabitler, birimler ve modeller</translation>
     </message>
     <message>
-        <location filename="../gui/main_window.py" line="202" />
-        <location filename="../gui/main_window.py" line="295" />
+        <location filename="../gui/main_window.py" line="224" />
+        <location filename="../gui/main_window.py" line="392" />
         <source>History</source>
         <translation>Tarihçe</translation>
     </message>
     <message>
-        <location filename="../gui/main_window.py" line="203" />
+        <location filename="../gui/main_window.py" line="225" />
         <source>The discoveries and the people behind them</source>
         <translation>Keşifler ve arkalarındaki insanlar</translation>
     </message>
     <message>
-        <location filename="../gui/main_window.py" line="204" />
+        <location filename="../gui/main_window.py" line="226" />
         <location filename="../gui/pages/search_page.py" line="38" />
         <source>Search</source>
         <translation>Ara</translation>
     </message>
     <message>
-        <location filename="../gui/main_window.py" line="205" />
+        <location filename="../gui/main_window.py" line="227" />
         <source>Search lessons, glossary, simulators and formulas</source>
         <translation>Derslerde, sözlükte, simülatörlerde ve formüllerde ara</translation>
     </message>
     <message>
-        <location filename="../gui/main_window.py" line="206" />
+        <location filename="../gui/main_window.py" line="228" />
         <location filename="../gui/pages/notes_page.py" line="50" />
         <source>Notes &amp; bookmarks</source>
         <translation>Notlar ve yer imleri</translation>
     </message>
     <message>
-        <location filename="../gui/main_window.py" line="206" />
+        <location filename="../gui/main_window.py" line="228" />
         <source>Everything you saved</source>
         <translation>Kaydettiğiniz her şey</translation>
     </message>
     <message>
-        <location filename="../gui/main_window.py" line="207" />
-        <location filename="../gui/main_window.py" line="305" />
-        <location filename="../gui/main_window.py" line="611" />
-        <location filename="../gui/main_window.py" line="669" />
+        <location filename="../gui/main_window.py" line="229" />
+        <location filename="../gui/main_window.py" line="403" />
+        <location filename="../gui/main_window.py" line="724" />
+        <location filename="../gui/main_window.py" line="783" />
         <location filename="../gui/pages/review_page.py" line="66" />
         <source>Review</source>
         <translation>Tekrar</translation>
     </message>
     <message>
-        <location filename="../gui/main_window.py" line="208" />
+        <location filename="../gui/main_window.py" line="230" />
         <source>Quiz questions you got wrong, brought back on a schedule</source>
         <translation>Yanlış yanıtladığınız sınav soruları, bir takvime göre geri getirilir</translation>
     </message>
     <message>
-        <location filename="../gui/main_window.py" line="209" />
-        <location filename="../gui/main_window.py" line="303" />
+        <location filename="../gui/main_window.py" line="231" />
+        <location filename="../gui/main_window.py" line="401" />
         <source>Progress</source>
         <translation>İlerleme</translation>
     </message>
     <message>
-        <location filename="../gui/main_window.py" line="209" />
+        <location filename="../gui/main_window.py" line="231" />
         <source>Your progress and the lesson map</source>
         <translation>İlerlemeniz ve ders haritası</translation>
     </message>
     <message>
-        <location filename="../gui/main_window.py" line="210" />
-        <location filename="../gui/main_window.py" line="398" />
+        <location filename="../gui/main_window.py" line="233" />
+        <location filename="../gui/main_window.py" line="510" />
         <location filename="../gui/pages/classroom_page.py" line="98" />
         <source>Classroom</source>
         <translation>Sınıf</translation>
     </message>
     <message>
-        <location filename="../gui/main_window.py" line="211" />
-        <location filename="../gui/main_window.py" line="399" />
+        <location filename="../gui/main_window.py" line="234" />
+        <location filename="../gui/main_window.py" line="511" />
         <source>A progress report to hand on, and teacher notes per lesson</source>
         <translation>Başkasına verilebilecek bir ilerleme raporu ve ders başına öğretmen notları</translation>
     </message>
     <message>
-        <location filename="../gui/main_window.py" line="219" />
-        <location filename="../gui/main_window.py" line="1136" />
+        <location filename="../gui/main_window.py" line="241" />
+        <location filename="../gui/main_window.py" line="378" />
+        <location filename="../gui/main_window.py" line="1266" />
         <source>Navigation</source>
         <translation>Gezinme</translation>
     </message>
     <message>
-        <location filename="../gui/main_window.py" line="229" />
-        <location filename="../gui/main_window.py" line="329" />
+        <location filename="../gui/main_window.py" line="293" />
+        <location filename="../gui/main_window.py" line="427" />
         <source>Guide</source>
         <translation>Rehber</translation>
     </message>
     <message>
-        <location filename="../gui/main_window.py" line="241" />
-        <location filename="../gui/main_window.py" line="297" />
+        <location filename="../gui/main_window.py" line="298" />
+        <location filename="../gui/main_window.py" line="394" />
         <location filename="../gui/pages/notes_page.py" line="97" />
         <source>Notes</source>
         <translation>Notlar</translation>
     </message>
     <message>
-        <location filename="../gui/main_window.py" line="256" />
-        <location filename="../gui/main_window.py" line="337" />
+        <location filename="../gui/main_window.py" line="306" />
+        <location filename="../gui/main_window.py" line="439" />
         <source>Tutor</source>
         <translation>Öğretmen</translation>
     </message>
     <message>
-        <location filename="../gui/main_window.py" line="284" />
+        <location filename="../gui/main_window.py" line="378" />
+        <source>Show or hide the list of lessons (Ctrl+B)</source>
+        <translation>Ders listesini göster veya gizle (Ctrl+B)</translation>
+    </message>
+    <message>
+        <location filename="../gui/main_window.py" line="380" />
         <location filename="../gui/widgets/tour.py" line="53" />
         <source>Back</source>
         <translation>Geri</translation>
     </message>
     <message>
-        <location filename="../gui/main_window.py" line="284" />
+        <location filename="../gui/main_window.py" line="380" />
         <source>Go back to the previous page (Alt+Left)</source>
         <translation>Önceki sayfaya dön (Alt+Sol)</translation>
     </message>
     <message>
-        <location filename="../gui/main_window.py" line="286" />
+        <location filename="../gui/main_window.py" line="382" />
         <source>Forward</source>
         <translation>İleri</translation>
     </message>
     <message>
-        <location filename="../gui/main_window.py" line="286" />
+        <location filename="../gui/main_window.py" line="382" />
         <source>Go forward (Alt+Right)</source>
         <translation>İleri git (Alt+Sağ)</translation>
     </message>
     <message>
-        <location filename="../gui/main_window.py" line="288" />
+        <location filename="../gui/main_window.py" line="384" />
         <source>Home page (Ctrl+H)</source>
         <translation>Ana sayfa (Ctrl+H)</translation>
     </message>
     <message>
-        <location filename="../gui/main_window.py" line="289" />
+        <location filename="../gui/main_window.py" line="386" />
         <source>Continue</source>
         <translation>Devam et</translation>
     </message>
     <message>
-        <location filename="../gui/main_window.py" line="289" />
+        <location filename="../gui/main_window.py" line="386" />
         <source>Open the next recommended lesson (Ctrl+L)</source>
         <translation>Önerilen bir sonraki dersi aç (Ctrl+L)</translation>
     </message>
     <message>
-        <location filename="../gui/main_window.py" line="291" />
+        <location filename="../gui/main_window.py" line="388" />
         <source>Open the glossary (Ctrl+G)</source>
         <translation>Sözlüğü aç (Ctrl+G)</translation>
     </message>
     <message>
-        <location filename="../gui/main_window.py" line="293" />
+        <location filename="../gui/main_window.py" line="390" />
         <source>Formula sheet, constants and units (Ctrl+R)</source>
         <translation>Formül sayfası, sabitler ve birimler (Ctrl+R)</translation>
     </message>
     <message>
-        <location filename="../gui/main_window.py" line="295" />
+        <location filename="../gui/main_window.py" line="392" />
         <source>The history of cosmology and its scientists</source>
         <translation>Kozmolojinin tarihi ve bilim insanları</translation>
     </message>
     <message>
-        <location filename="../gui/main_window.py" line="297" />
+        <location filename="../gui/main_window.py" line="394" />
         <source>All your notes and bookmarks (Ctrl+Shift+N)</source>
         <translation>Tüm notlarınız ve yer imleriniz (Ctrl+Shift+N)</translation>
     </message>
     <message>
-        <location filename="../gui/main_window.py" line="299" />
-        <location filename="../gui/main_window.py" line="684" />
+        <location filename="../gui/main_window.py" line="396" />
+        <location filename="../gui/main_window.py" line="812" />
         <source>Bookmark</source>
         <translation>Yer imi</translation>
     </message>
     <message>
-        <location filename="../gui/main_window.py" line="299" />
+        <location filename="../gui/main_window.py" line="396" />
         <source>Bookmark the current page (Ctrl+D)</source>
         <translation>Bu sayfayı yer imlerine ekle (Ctrl+D)</translation>
     </message>
     <message>
-        <location filename="../gui/main_window.py" line="302" />
+        <location filename="../gui/main_window.py" line="399" />
         <source>Find</source>
         <translation>Bul</translation>
     </message>
     <message>
-        <location filename="../gui/main_window.py" line="302" />
+        <location filename="../gui/main_window.py" line="399" />
         <source>Search the whole course (Ctrl+F)</source>
         <translation>Tüm kursta ara (Ctrl+F)</translation>
     </message>
     <message>
-        <location filename="../gui/main_window.py" line="303" />
+        <location filename="../gui/main_window.py" line="401" />
         <source>Your progress and lesson map (Ctrl+P)</source>
         <translation>İlerlemeniz ve ders haritanız (Ctrl+P)</translation>
     </message>
     <message>
-        <location filename="../gui/main_window.py" line="306" />
+        <location filename="../gui/main_window.py" line="404" />
         <source>Quiz questions you got wrong, brought back on a schedule (Ctrl+Shift+R)</source>
         <translation>Yanlış yanıtladığınız sınav soruları, bir takvime göre geri getirilir (Ctrl+Shift+R)</translation>
     </message>
     <message>
-        <location filename="../gui/main_window.py" line="309" />
-        <location filename="../gui/main_window.py" line="451" />
+        <location filename="../gui/main_window.py" line="407" />
+        <location filename="../gui/main_window.py" line="564" />
         <source>Theme</source>
         <translation>Tema</translation>
     </message>
     <message>
-        <location filename="../gui/main_window.py" line="310" />
+        <location filename="../gui/main_window.py" line="408" />
         <source>Cycle dark, light and high-contrast themes (Ctrl+T)</source>
         <translation>Koyu, açık ve yüksek kontrast temaları arasında geçiş yapın (Ctrl+T)</translation>
     </message>
     <message>
-        <location filename="../gui/main_window.py" line="312" />
+        <location filename="../gui/main_window.py" line="410" />
         <source>Larger text</source>
         <translation>Daha büyük yazı</translation>
     </message>
     <message>
-        <location filename="../gui/main_window.py" line="312" />
+        <location filename="../gui/main_window.py" line="410" />
         <source>Make every label and control bigger (Ctrl++)</source>
         <translation>Tüm etiket ve denetimleri büyütün (Ctrl++)</translation>
     </message>
     <message>
-        <location filename="../gui/main_window.py" line="314" />
+        <location filename="../gui/main_window.py" line="412" />
         <source>Smaller text</source>
         <translation>Daha küçük yazı</translation>
     </message>
     <message>
-        <location filename="../gui/main_window.py" line="314" />
+        <location filename="../gui/main_window.py" line="412" />
         <source>Fit more on the screen (Ctrl+-)</source>
         <translation>Ekrana daha çok şey sığdırın (Ctrl+-)</translation>
     </message>
     <message>
-        <location filename="../gui/main_window.py" line="316" />
+        <location filename="../gui/main_window.py" line="414" />
         <source>Reset text size</source>
         <translation>Yazı boyutunu sıfırla</translation>
     </message>
     <message>
-        <location filename="../gui/main_window.py" line="316" />
+        <location filename="../gui/main_window.py" line="414" />
         <source>Back to the standard size (Ctrl+0)</source>
         <translation>Standart boyuta dönün (Ctrl+0)</translation>
     </message>
     <message>
-        <location filename="../gui/main_window.py" line="318" />
+        <location filename="../gui/main_window.py" line="416" />
         <source>Move focus to the next area</source>
         <translation>Odağı bir sonraki alana taşı</translation>
     </message>
     <message>
-        <location filename="../gui/main_window.py" line="319" />
+        <location filename="../gui/main_window.py" line="417" />
         <source>Cycle the keyboard focus between the lesson list, the page and the side panels (F6)</source>
         <translation>Klavye odağını ders listesi, sayfa ve yan paneller arasında dolaştırın (F6)</translation>
     </message>
     <message>
-        <location filename="../gui/main_window.py" line="330" />
+        <location filename="../gui/main_window.py" line="430" />
         <source>Show or hide the Guide panel (F1)</source>
         <translation>Rehber panelini göster veya gizle (F1)</translation>
     </message>
     <message>
-        <location filename="../gui/main_window.py" line="333" />
+        <location filename="../gui/main_window.py" line="433" />
         <source>Notes panel</source>
         <translation>Not paneli</translation>
     </message>
     <message>
-        <location filename="../gui/main_window.py" line="334" />
+        <location filename="../gui/main_window.py" line="436" />
         <source>Show or hide the Notes panel (F2)</source>
         <translation>Not panelini göster veya gizle (F2)</translation>
     </message>
     <message>
-        <location filename="../gui/main_window.py" line="338" />
+        <location filename="../gui/main_window.py" line="442" />
         <source>Ask the Tutor about this page (F3) — needs your own API key</source>
         <translation>Bu sayfa hakkında Öğretmen'e sorun (F3) — kendi API anahtarınızı gerektirir</translation>
     </message>
     <message>
-        <location filename="../gui/main_window.py" line="340" />
+        <location filename="../gui/main_window.py" line="444" />
         <source>Tour</source>
         <translation>Tanıtım</translation>
     </message>
     <message>
-        <location filename="../gui/main_window.py" line="340" />
+        <location filename="../gui/main_window.py" line="444" />
         <source>Replay the guided tour of the app</source>
         <translation>Uygulamanın rehberli tanıtımını yeniden oynat</translation>
     </message>
     <message>
-        <location filename="../gui/main_window.py" line="357" />
+        <location filename="../gui/main_window.py" line="469" />
         <source>&amp;File</source>
         <translation>&amp;Dosya</translation>
     </message>
     <message>
-        <location filename="../gui/main_window.py" line="358" />
+        <location filename="../gui/main_window.py" line="470" />
         <source>Export notes…</source>
         <translation>Notları dışa aktar…</translation>
     </message>
     <message>
-        <location filename="../gui/main_window.py" line="358" />
+        <location filename="../gui/main_window.py" line="470" />
         <source>Save all notes and bookmarks as a Markdown file</source>
         <translation>Tüm notları ve yer imlerini bir Markdown dosyası olarak kaydet</translation>
     </message>
     <message>
-        <location filename="../gui/main_window.py" line="360" />
+        <location filename="../gui/main_window.py" line="472" />
         <source>Back up progress…</source>
         <translation>İlerlemeyi yedekle…</translation>
     </message>
     <message>
-        <location filename="../gui/main_window.py" line="361" />
+        <location filename="../gui/main_window.py" line="473" />
         <source>Save everything you have learned, your notes and your review deck in one file, to keep or to carry to another computer</source>
         <translation>Öğrendiğiniz her şeyi, notlarınızı ve tekrar destenizi saklamak ya da başka bir bilgisayara taşımak için tek bir dosyaya kaydedin</translation>
     </message>
     <message>
-        <location filename="../gui/main_window.py" line="364" />
+        <location filename="../gui/main_window.py" line="476" />
         <source>Restore progress…</source>
         <translation>İlerlemeyi geri yükle…</translation>
     </message>
     <message>
-        <location filename="../gui/main_window.py" line="365" />
+        <location filename="../gui/main_window.py" line="477" />
         <source>Replace your progress with a backup made earlier, here or on another computer</source>
         <translation>İlerlemenizi, burada ya da başka bir bilgisayarda daha önce alınmış bir yedekle değiştirin</translation>
     </message>
     <message>
-        <location filename="../gui/main_window.py" line="370" />
+        <location filename="../gui/main_window.py" line="482" />
         <source>Print this lesson as PDF…</source>
         <translation>Bu dersi PDF olarak yazdır…</translation>
     </message>
     <message>
-        <location filename="../gui/main_window.py" line="371" />
+        <location filename="../gui/main_window.py" line="483" />
         <source>Save the lesson you are reading, with its figures and quiz, as a PDF (Ctrl+P is Progress; this is Ctrl+Shift+P)</source>
         <translation>Okuduğunuz dersi, figürleri ve sınavıyla birlikte PDF olarak kaydedin (Ctrl+P İlerleme'dir; bu Ctrl+Shift+P)</translation>
     </message>
     <message>
-        <location filename="../gui/main_window.py" line="375" />
+        <location filename="../gui/main_window.py" line="487" />
         <source>Print this level as PDF…</source>
         <translation>Bu seviyeyi PDF olarak yazdır…</translation>
     </message>
     <message>
-        <location filename="../gui/main_window.py" line="376" />
+        <location filename="../gui/main_window.py" line="488" />
         <source>Every lesson of one level, each starting on a new page</source>
         <translation>Bir seviyenin her dersi, her biri yeni bir sayfada başlar</translation>
     </message>
     <message>
-        <location filename="../gui/main_window.py" line="378" />
+        <location filename="../gui/main_window.py" line="490" />
         <source>Print the whole course as PDF…</source>
         <translation>Tüm kursu PDF olarak yazdır…</translation>
     </message>
     <message>
-        <location filename="../gui/main_window.py" line="379" />
+        <location filename="../gui/main_window.py" line="491" />
         <source>All lessons in one file. It is long; give it a moment.</source>
         <translation>Tüm dersler tek dosyada. Uzundur; biraz zaman tanıyın.</translation>
     </message>
     <message>
-        <location filename="../gui/main_window.py" line="381" />
+        <location filename="../gui/main_window.py" line="493" />
         <source>Export the course as a website…</source>
         <translation>Kursu web sitesi olarak dışa aktar…</translation>
     </message>
     <message>
-        <location filename="../gui/main_window.py" line="382" />
+        <location filename="../gui/main_window.py" line="494" />
         <source>Every lesson, the glossary, the formulas and the problems as web pages that open in any browser, without installing anything</source>
         <translation>Her ders, sözlük, formüller ve problemler; hiçbir şey kurmadan her tarayıcıda açılan web sayfaları olarak</translation>
     </message>
     <message>
-        <location filename="../gui/main_window.py" line="385" />
+        <location filename="../gui/main_window.py" line="497" />
         <source>Print the “Remember this” sheet…</source>
         <translation>“Bunu hatırla” sayfasını yazdır…</translation>
     </message>
     <message>
-        <location filename="../gui/main_window.py" line="386" />
+        <location filename="../gui/main_window.py" line="498" />
         <source>The key points of every lesson you have completed, on a few pages</source>
         <translation>Tamamladığınız her dersin ana noktaları, birkaç sayfada</translation>
     </message>
     <message>
-        <location filename="../gui/main_window.py" line="389" />
+        <location filename="../gui/main_window.py" line="501" />
         <source>Quit</source>
         <translation>Çık</translation>
     </message>
     <message>
-        <location filename="../gui/main_window.py" line="389" />
+        <location filename="../gui/main_window.py" line="501" />
         <source>Close Cosmos</source>
         <translation>Cosmos'u kapat</translation>
     </message>
     <message>
-        <location filename="../gui/main_window.py" line="390" />
+        <location filename="../gui/main_window.py" line="502" />
         <source>&amp;Learn</source>
         <translation>&amp;Öğren</translation>
     </message>
     <message>
-        <location filename="../gui/main_window.py" line="394" />
+        <location filename="../gui/main_window.py" line="506" />
         <source>All simulators</source>
         <translation>Tüm simülatörler</translation>
     </message>
     <message>
-        <location filename="../gui/main_window.py" line="395" />
+        <location filename="../gui/main_window.py" line="507" />
         <source>“Remember this” sheet</source>
         <translation>“Bunu hatırla” sayfası</translation>
     </message>
     <message>
-        <location filename="../gui/main_window.py" line="396" />
+        <location filename="../gui/main_window.py" line="508" />
         <source>The key points of the lessons you have completed, in the Guide panel</source>
         <translation>Tamamladığınız derslerin ana noktaları, Rehber panelinde</translation>
     </message>
     <message>
-        <location filename="../gui/main_window.py" line="405" />
+        <location filename="../gui/main_window.py" line="517" />
         <source>&amp;View</source>
         <translation>&amp;Görünüm</translation>
     </message>
     <message>
-        <location filename="../gui/main_window.py" line="407" />
+        <location filename="../gui/main_window.py" line="520" />
         <source>Text size</source>
         <translation>Yazı boyutu</translation>
     </message>
     <message>
-        <location filename="../gui/main_window.py" line="418" />
+        <location filename="../gui/main_window.py" line="531" />
         <source>&amp;Help</source>
         <translation>&amp;Yardım</translation>
     </message>
     <message>
-        <location filename="../gui/main_window.py" line="420" />
+        <location filename="../gui/main_window.py" line="533" />
         <source>How to use Cosmos</source>
         <translation>Cosmos nasıl kullanılır</translation>
     </message>
     <message>
-        <location filename="../gui/main_window.py" line="420" />
+        <location filename="../gui/main_window.py" line="533" />
         <source>Show help in the Guide panel</source>
         <translation>Yardımı Rehber panelinde göster</translation>
     </message>
     <message>
-        <location filename="../gui/main_window.py" line="421" />
-        <location filename="../gui/main_window.py" line="788" />
+        <location filename="../gui/main_window.py" line="534" />
+        <location filename="../gui/main_window.py" line="918" />
         <source>Keyboard shortcuts</source>
         <translation>Klavye kısayolları</translation>
     </message>
     <message>
-        <location filename="../gui/main_window.py" line="421" />
+        <location filename="../gui/main_window.py" line="534" />
         <source>Every command you can reach without the mouse</source>
         <translation>Fareye dokunmadan ulaşabileceğiniz tüm komutlar</translation>
     </message>
     <message>
-        <location filename="../gui/main_window.py" line="423" />
+        <location filename="../gui/main_window.py" line="536" />
         <source>Simulator plugins…</source>
         <translation>Simülatör eklentileri…</translation>
     </message>
     <message>
-        <location filename="../gui/main_window.py" line="424" />
+        <location filename="../gui/main_window.py" line="537" />
         <source>Add your own simulator by dropping a Python file in a folder</source>
         <translation>Bir klasöre Python dosyası bırakarak kendi simülatörünüzü ekleyin</translation>
     </message>
     <message>
-        <location filename="../gui/main_window.py" line="427" />
+        <location filename="../gui/main_window.py" line="540" />
         <source>Check for updates now</source>
         <translation>Şimdi güncelleme denetle</translation>
     </message>
     <message>
-        <location filename="../gui/main_window.py" line="428" />
+        <location filename="../gui/main_window.py" line="541" />
         <source>Ask GitHub whether a newer Cosmos has been released. Nothing about you or this computer is sent.</source>
         <translation>GitHub'a daha yeni bir Cosmos yayımlanıp yayımlanmadığını sorar. Sizinle ya da bu bilgisayarla ilgili hiçbir şey gönderilmez.</translation>
     </message>
     <message>
-        <location filename="../gui/main_window.py" line="433" />
+        <location filename="../gui/main_window.py" line="546" />
         <source>Check for updates on start-up</source>
         <translation>Açılışta güncelleme denetle</translation>
     </message>
     <message>
-        <location filename="../gui/main_window.py" line="434" />
+        <location filename="../gui/main_window.py" line="547" />
         <source>Look once a day, in the background. Off by default; nothing is ever uploaded.</source>
         <translation>Günde bir kez, arka planda bakar. Varsayılan olarak kapalıdır; hiçbir şey yüklenmez.</translation>
     </message>
     <message>
-        <location filename="../gui/main_window.py" line="439" />
+        <location filename="../gui/main_window.py" line="552" />
         <source>About Cosmos</source>
         <translation>Cosmos hakkında</translation>
     </message>
     <message>
-        <location filename="../gui/main_window.py" line="439" />
+        <location filename="../gui/main_window.py" line="552" />
         <source>Version and credits</source>
         <translation>Sürüm ve emeği geçenler</translation>
     </message>
     <message>
-        <location filename="../gui/main_window.py" line="445" />
+        <location filename="../gui/main_window.py" line="558" />
         <source>Dark</source>
         <translation>Koyu</translation>
     </message>
     <message>
-        <location filename="../gui/main_window.py" line="445" />
+        <location filename="../gui/main_window.py" line="558" />
         <source>Light</source>
         <translation>Açık</translation>
     </message>
     <message>
-        <location filename="../gui/main_window.py" line="445" />
+        <location filename="../gui/main_window.py" line="558" />
         <source>High contrast</source>
         <translation>Yüksek kontrast</translation>
     </message>
     <message>
-        <location filename="../gui/main_window.py" line="447" />
+        <location filename="../gui/main_window.py" line="560" />
         <source>Easy on the eyes in a dark room.</source>
         <translation>Karanlık bir odada göz yormaz.</translation>
     </message>
     <message>
-        <location filename="../gui/main_window.py" line="448" />
+        <location filename="../gui/main_window.py" line="561" />
         <source>Better in bright daylight, and for printing screenshots.</source>
         <translation>Parlak gün ışığında ve ekran görüntüsü basmak için daha iyidir.</translation>
     </message>
     <message>
-        <location filename="../gui/main_window.py" line="449" />
+        <location filename="../gui/main_window.py" line="562" />
         <source>Pure white on black with the strongest accents, for low vision or glare.</source>
         <translation>Siyah üzerine saf beyaz ve en güçlü vurgular; az görme ya da parlama için.</translation>
     </message>
     <message>
-        <location filename="../gui/main_window.py" line="471" />
-        <location filename="../gui/main_window.py" line="495" />
+        <location filename="../gui/main_window.py" line="584" />
+        <location filename="../gui/main_window.py" line="608" />
         <source>Language</source>
         <translation>Dil</translation>
     </message>
     <message>
-        <location filename="../gui/main_window.py" line="479" />
+        <location filename="../gui/main_window.py" line="592" />
         <source>Applies the next time Cosmos starts.</source>
         <translation>Cosmos'un bir sonraki açılışında geçerli olur.</translation>
     </message>
     <message>
-        <location filename="../gui/main_window.py" line="484" />
+        <location filename="../gui/main_window.py" line="597" />
         <source>Add a language…</source>
         <translation>Dil ekle…</translation>
     </message>
     <message>
-        <location filename="../gui/main_window.py" line="485" />
+        <location filename="../gui/main_window.py" line="598" />
         <source>See README: tools/update_translations.py creates the file to translate.</source>
         <translation>README'ye bakın: çevrilecek dosyayı tools/update_translations.py oluşturur.</translation>
     </message>
     <message>
-        <location filename="../gui/main_window.py" line="496" />
+        <location filename="../gui/main_window.py" line="609" />
         <source>The interface language changes the next time you start Cosmos.
 
 The course content — lessons, quizzes and the glossary — is written in English.</source>
         <translation>Arayüz dili, Cosmos'u bir sonraki açışınızda değişir. Kurs içeriği — dersler, sınavlar ve sözlük — İngilizce yazılmıştır.</translation>
     </message>
     <message>
-        <location filename="../gui/main_window.py" line="501" />
+        <location filename="../gui/main_window.py" line="614" />
         <source>Add a language</source>
         <translation>Dil ekle</translation>
     </message>
     <message>
-        <location filename="../gui/main_window.py" line="502" />
+        <location filename="../gui/main_window.py" line="615" />
         <source>Interface translations live in cosmos/i18n as Qt .ts files.
 
 1. python tools/update_translations.py --language &lt;code&gt;
@@ -1235,409 +1236,409 @@ The new language then appears in this menu.</source>
         <translation>Arayüz çevirileri cosmos/i18n klasöründe Qt .ts dosyaları olarak durur. 1. python tools/update_translations.py --language &lt;kod&gt; 2. Dosyayı Qt Linguist ile çevirin (pyside6-linguist) 3. python tools/update_translations.py --release Yeni dil bundan sonra bu menüde görünür.</translation>
     </message>
     <message>
-        <location filename="../gui/main_window.py" line="610" />
-        <location filename="../gui/main_window.py" line="668" />
+        <location filename="../gui/main_window.py" line="723" />
+        <location filename="../gui/main_window.py" line="782" />
         <source>Review ({count})</source>
         <translation>Tekrar ({count})</translation>
     </message>
     <message>
-        <location filename="../gui/main_window.py" line="666" />
+        <location filename="../gui/main_window.py" line="780" />
         <location filename="../gui/widgets/prereq_map.py" line="28" />
         <source>Status: {status}</source>
         <translation>Durum: {status}</translation>
     </message>
     <message>
-        <location filename="../gui/main_window.py" line="684" />
+        <location filename="../gui/main_window.py" line="812" />
         <source>Bookmarked</source>
         <translation>Yer imlerinde</translation>
     </message>
     <message>
-        <location filename="../gui/main_window.py" line="694" />
+        <location filename="../gui/main_window.py" line="823" />
         <source>Badge earned: {names}</source>
         <translation>Rozet kazanıldı: {names}</translation>
     </message>
     <message>
-        <location filename="../gui/main_window.py" line="712" />
+        <location filename="../gui/main_window.py" line="841" />
         <source>Daily goal reached: {steps} steps today. Streak: {days} day(s).</source>
         <translation>Günlük hedefe ulaşıldı: bugün {steps} adım. Seri: {days} gün.</translation>
     </message>
     <message>
-        <location filename="../gui/main_window.py" line="734" />
+        <location filename="../gui/main_window.py" line="863" />
         <source>Theme: {name}</source>
         <translation>Tema: {name}</translation>
     </message>
     <message>
-        <location filename="../gui/main_window.py" line="750" />
+        <location filename="../gui/main_window.py" line="879" />
         <source>Text size: {percent}</source>
         <translation>Yazı boyutu: {percent}</translation>
     </message>
     <message>
-        <location filename="../gui/main_window.py" line="783" />
+        <location filename="../gui/main_window.py" line="913" />
         <source>Every command in Cosmos can be reached from the keyboard.</source>
         <translation>Cosmos'taki her komuta klavyeden ulaşılabilir.</translation>
     </message>
     <message>
-        <location filename="../gui/main_window.py" line="785" />
+        <location filename="../gui/main_window.py" line="915" />
         <source>Tab and Shift+Tab move between controls; F6 jumps between the lesson list, the page and the side panels.</source>
         <translation>Tab ve Shift+Tab denetimler arasında gezinir; F6 ders listesi, sayfa ve yan paneller arasında atlar.</translation>
     </message>
     <message>
-        <location filename="../gui/main_window.py" line="810" />
+        <location filename="../gui/main_window.py" line="940" />
         <source>Back up progress</source>
         <translation>İlerlemeyi yedekle</translation>
     </message>
     <message>
-        <location filename="../gui/main_window.py" line="811" />
-        <location filename="../gui/main_window.py" line="827" />
+        <location filename="../gui/main_window.py" line="941" />
+        <location filename="../gui/main_window.py" line="957" />
         <source>Cosmos backup</source>
         <translation>Cosmos yedeği</translation>
     </message>
     <message>
-        <location filename="../gui/main_window.py" line="817" />
+        <location filename="../gui/main_window.py" line="947" />
         <source>Could not save the backup</source>
         <translation>Yedek kaydedilemedi</translation>
     </message>
     <message>
-        <location filename="../gui/main_window.py" line="819" />
+        <location filename="../gui/main_window.py" line="949" />
         <source>Progress backed up to {path}</source>
         <translation>İlerleme {path} konumuna yedeklendi</translation>
     </message>
     <message>
-        <location filename="../gui/main_window.py" line="826" />
-        <location filename="../gui/main_window.py" line="831" />
+        <location filename="../gui/main_window.py" line="956" />
+        <location filename="../gui/main_window.py" line="961" />
         <source>Restore progress</source>
         <translation>İlerlemeyi geri yükle</translation>
     </message>
     <message>
-        <location filename="../gui/main_window.py" line="832" />
+        <location filename="../gui/main_window.py" line="962" />
         <source>Replace your current progress, notes, bookmarks and review deck with the ones in this backup? What you have now will be lost unless you back it up first.</source>
         <translation>Şimdiki ilerlemeniz, notlarınız, yer imleriniz ve tekrar desteniz bu yedektekilerle değiştirilsin mi? Önce yedeklemezseniz şu an elinizde olanlar kaybolur.</translation>
     </message>
     <message>
-        <location filename="../gui/main_window.py" line="839" />
+        <location filename="../gui/main_window.py" line="969" />
         <source>Could not restore the backup</source>
         <translation>Yedek geri yüklenemedi</translation>
     </message>
     <message>
-        <location filename="../gui/main_window.py" line="840" />
+        <location filename="../gui/main_window.py" line="970" />
         <source>Nothing was changed.</source>
         <translation>Hiçbir şey değiştirilmedi.</translation>
     </message>
     <message>
-        <location filename="../gui/main_window.py" line="844" />
+        <location filename="../gui/main_window.py" line="974" />
         <source>Progress restored from {path}</source>
         <translation>İlerleme {path} dosyasından geri yüklendi</translation>
     </message>
     <message>
-        <location filename="../gui/main_window.py" line="854" />
-        <location filename="../gui/main_window.py" line="950" />
+        <location filename="../gui/main_window.py" line="984" />
+        <location filename="../gui/main_window.py" line="1080" />
         <source>Save as PDF</source>
         <translation>PDF olarak kaydet</translation>
     </message>
     <message>
-        <location filename="../gui/main_window.py" line="863" />
-        <location filename="../gui/main_window.py" line="959" />
+        <location filename="../gui/main_window.py" line="993" />
+        <location filename="../gui/main_window.py" line="1089" />
         <source>Could not save the PDF</source>
         <translation>PDF kaydedilemedi</translation>
     </message>
     <message>
-        <location filename="../gui/main_window.py" line="869" />
-        <location filename="../gui/main_window.py" line="964" />
+        <location filename="../gui/main_window.py" line="999" />
+        <location filename="../gui/main_window.py" line="1094" />
         <location filename="../gui/pages/classroom_page.py" line="187" />
         <source>Saved {pages} page(s) to {path}</source>
         <translation>{pages} sayfa {path} konumuna kaydedildi</translation>
     </message>
     <message>
-        <location filename="../gui/main_window.py" line="874" />
+        <location filename="../gui/main_window.py" line="1004" />
         <source>Open a lesson first, then print it.</source>
         <translation>Önce bir ders açın, sonra yazdırın.</translation>
     </message>
     <message>
-        <location filename="../gui/main_window.py" line="885" />
+        <location filename="../gui/main_window.py" line="1015" />
         <location filename="../gui/pages/problems_page.py" line="184" />
         <source>Level {number} · {title}</source>
         <translation>Seviye {number} · {title}</translation>
     </message>
     <message>
-        <location filename="../gui/main_window.py" line="890" />
+        <location filename="../gui/main_window.py" line="1020" />
         <source>The whole course</source>
         <translation>Tüm kurs</translation>
     </message>
     <message>
-        <location filename="../gui/main_window.py" line="900" />
+        <location filename="../gui/main_window.py" line="1030" />
         <source>Choose a folder for the website</source>
         <translation>Web sitesi için bir klasör seçin</translation>
     </message>
     <message>
-        <location filename="../gui/main_window.py" line="906" />
+        <location filename="../gui/main_window.py" line="1036" />
         <source>Replace the website?</source>
         <translation>Web sitesi değiştirilsin mi?</translation>
     </message>
     <message>
-        <location filename="../gui/main_window.py" line="907" />
+        <location filename="../gui/main_window.py" line="1037" />
         <source>{path} already exists. Replace it with a fresh copy?</source>
         <translation>{path} zaten var. Yeni bir kopyayla değiştirilsin mi?</translation>
     </message>
     <message>
-        <location filename="../gui/main_window.py" line="911" />
+        <location filename="../gui/main_window.py" line="1041" />
         <source>Building the website — this takes about a minute…</source>
         <translation>Web sitesi oluşturuluyor — bu yaklaşık bir dakika sürer…</translation>
     </message>
     <message>
-        <location filename="../gui/main_window.py" line="916" />
+        <location filename="../gui/main_window.py" line="1046" />
         <source>Could not write the website</source>
         <translation>Web sitesi yazılamadı</translation>
     </message>
     <message>
-        <location filename="../gui/main_window.py" line="921" />
+        <location filename="../gui/main_window.py" line="1051" />
         <source>Website written: {pages} pages in {path}. Open index.html in a browser.</source>
         <translation>Web sitesi yazıldı: {path} içinde {pages} sayfa. index.html dosyasını bir tarayıcıda açın.</translation>
     </message>
     <message>
-        <location filename="../gui/main_window.py" line="936" />
-        <location filename="../gui/main_window.py" line="954" />
-        <location filename="../gui/pages/lesson.py" line="215" />
+        <location filename="../gui/main_window.py" line="1066" />
+        <location filename="../gui/main_window.py" line="1084" />
+        <location filename="../gui/pages/lesson.py" line="223" />
         <source>Remember this</source>
         <translation>Bunu hatırla</translation>
     </message>
     <message>
-        <location filename="../gui/main_window.py" line="936" />
+        <location filename="../gui/main_window.py" line="1066" />
         <source>{count} completed lesson(s)</source>
         <translation>{count} tamamlanmış ders</translation>
     </message>
     <message>
-        <location filename="../gui/main_window.py" line="937" />
+        <location filename="../gui/main_window.py" line="1067" />
         <source>the whole course</source>
         <translation>kursun tamamı</translation>
     </message>
     <message>
-        <location filename="../gui/main_window.py" line="980" />
+        <location filename="../gui/main_window.py" line="1110" />
         <source>{count} plugin(s) could not be loaded ({names}). See Help → Simulator plugins.</source>
         <translation>{count} eklenti yüklenemedi ({names}). Yardım → Simülatör eklentileri'ne bakın.</translation>
     </message>
     <message>
-        <location filename="../gui/main_window.py" line="984" />
+        <location filename="../gui/main_window.py" line="1114" />
         <source>Loaded {count} simulator plugin(s).</source>
         <translation>{count} simülatör eklentisi yüklendi.</translation>
     </message>
     <message>
-        <location filename="../gui/main_window.py" line="996" />
+        <location filename="../gui/main_window.py" line="1126" />
         <source>Simulator plugins</source>
         <translation>Simülatör eklentileri</translation>
     </message>
     <message>
-        <location filename="../gui/main_window.py" line="998" />
+        <location filename="../gui/main_window.py" line="1128" />
         <source>You can add your own simulator without changing Cosmos. Put one Python file in this folder and restart:</source>
         <translation>Cosmos'u değiştirmeden kendi simülatörünüzü ekleyebilirsiniz. Bu klasöre tek bir Python dosyası koyup uygulamayı yeniden başlatın:</translation>
     </message>
     <message>
-        <location filename="../gui/main_window.py" line="1003" />
+        <location filename="../gui/main_window.py" line="1133" />
         <source>The folder contains a README with a complete example. A plugin is ordinary Python and runs with the same permissions as Cosmos itself, so only add files you wrote or trust.</source>
         <translation>Klasörde tam bir örnek içeren bir README dosyası vardır. Bir eklenti sıradan Python'dur ve Cosmos'un kendisiyle aynı izinlerle çalışır; bu yüzden yalnızca kendi yazdığınız ya da güvendiğiniz dosyaları ekleyin.</translation>
     </message>
     <message>
-        <location filename="../gui/main_window.py" line="1008" />
+        <location filename="../gui/main_window.py" line="1138" />
         <source>Loaded</source>
         <translation>Yüklenenler</translation>
     </message>
     <message>
-        <location filename="../gui/main_window.py" line="1012" />
+        <location filename="../gui/main_window.py" line="1142" />
         <source>Not loaded</source>
         <translation>Yüklenemeyenler</translation>
     </message>
     <message>
-        <location filename="../gui/main_window.py" line="1016" />
+        <location filename="../gui/main_window.py" line="1146" />
         <source>No plugins are installed.</source>
         <translation>Kurulu eklenti yok.</translation>
     </message>
     <message>
-        <location filename="../gui/main_window.py" line="1026" />
+        <location filename="../gui/main_window.py" line="1156" />
         <source>Cosmos will look for updates once a day.</source>
         <translation>Cosmos günde bir kez güncelleme arayacak.</translation>
     </message>
     <message>
-        <location filename="../gui/main_window.py" line="1027" />
+        <location filename="../gui/main_window.py" line="1157" />
         <source>Cosmos will not look for updates.</source>
         <translation>Cosmos güncelleme aramayacak.</translation>
     </message>
     <message>
-        <location filename="../gui/main_window.py" line="1038" />
+        <location filename="../gui/main_window.py" line="1168" />
         <source>Check for updates?</source>
         <translation>Güncellemeler denetlensin mi?</translation>
     </message>
     <message>
-        <location filename="../gui/main_window.py" line="1039" />
+        <location filename="../gui/main_window.py" line="1169" />
         <source>Shall Cosmos look for a newer version once a day?</source>
         <translation>Cosmos günde bir kez daha yeni bir sürüm arasın mı?</translation>
     </message>
     <message>
-        <location filename="../gui/main_window.py" line="1041" />
+        <location filename="../gui/main_window.py" line="1171" />
         <source>It asks GitHub for the latest release number and nothing else. No information about you, this computer or your progress is sent, and there is no identifier of any kind. You can change this at any time under Help.</source>
         <translation>GitHub'a yalnızca en son sürüm numarasını sorar, başka hiçbir şey değil. Sizinle, bu bilgisayarla ya da ilerlemenizle ilgili hiçbir bilgi gönderilmez ve hiçbir türde tanımlayıcı yoktur. Bunu Yardım menüsünden istediğiniz zaman değiştirebilirsiniz.</translation>
     </message>
     <message>
-        <location filename="../gui/main_window.py" line="1044" />
+        <location filename="../gui/main_window.py" line="1174" />
         <source>Yes, check daily</source>
         <translation>Evet, her gün denetle</translation>
     </message>
     <message>
-        <location filename="../gui/main_window.py" line="1045" />
+        <location filename="../gui/main_window.py" line="1175" />
         <source>No, thanks</source>
         <translation>Hayır, teşekkürler</translation>
     </message>
     <message>
-        <location filename="../gui/main_window.py" line="1067" />
+        <location filename="../gui/main_window.py" line="1197" />
         <source>Looking for a newer version…</source>
         <translation>Daha yeni bir sürüm aranıyor…</translation>
     </message>
     <message>
-        <location filename="../gui/main_window.py" line="1091" />
+        <location filename="../gui/main_window.py" line="1221" />
         <source>No newer version found — or the check could not reach GitHub.</source>
         <translation>Daha yeni bir sürüm bulunamadı — ya da denetim GitHub'a ulaşamadı.</translation>
     </message>
     <message>
-        <location filename="../gui/main_window.py" line="1094" />
+        <location filename="../gui/main_window.py" line="1224" />
         <source>Cosmos {version} is available.</source>
         <translation>Cosmos {version} yayımlandı.</translation>
     </message>
     <message>
-        <location filename="../gui/main_window.py" line="1098" />
+        <location filename="../gui/main_window.py" line="1228" />
         <source>A newer Cosmos is available</source>
         <translation>Daha yeni bir Cosmos var</translation>
     </message>
     <message>
-        <location filename="../gui/main_window.py" line="1099" />
+        <location filename="../gui/main_window.py" line="1229" />
         <source>Version {version} has been released.</source>
         <translation>{version} sürümü yayımlandı.</translation>
     </message>
     <message>
-        <location filename="../gui/main_window.py" line="1102" />
+        <location filename="../gui/main_window.py" line="1232" />
         <source>Open the release page</source>
         <translation>Sürüm sayfasını aç</translation>
     </message>
     <message>
-        <location filename="../gui/main_window.py" line="1103" />
+        <location filename="../gui/main_window.py" line="1233" />
         <source>Later</source>
         <translation>Sonra</translation>
     </message>
     <message>
-        <location filename="../gui/main_window.py" line="1130" />
+        <location filename="../gui/main_window.py" line="1260" />
         <source>Welcome to Cosmos!</source>
         <translation>Cosmos'a hoş geldiniz!</translation>
     </message>
     <message>
-        <location filename="../gui/main_window.py" line="1131" />
+        <location filename="../gui/main_window.py" line="1261" />
         <source>This short tour shows you around. It takes less than a minute. You can leave with &lt;b&gt;Skip tour&lt;/b&gt; or the Esc key and replay it later from the &lt;b&gt;Tour&lt;/b&gt; button.</source>
         <translation>Bu kısa tur size programı tanıtır ve bir dakikadan az sürer. &lt;b&gt;Turu geç&lt;/b&gt; ya da Esc tuşu ile çıkabilir, daha sonra &lt;b&gt;Tur&lt;/b&gt; düğmesinden yeniden izleyebilirsiniz.</translation>
     </message>
     <message>
-        <location filename="../gui/main_window.py" line="1137" />
-        <source>The sidebar lists the whole course. Lessons are grouped into levels. The icon next to each lesson shows its status: &lt;b&gt;filled with ✓&lt;/b&gt; = completed, &lt;b&gt;ring&lt;/b&gt; = ready, &lt;b&gt;small grey circle&lt;/b&gt; = prerequisites missing.</source>
-        <translation>Kenar çubuğu tüm kursu listeler. Dersler seviyelere ayrılmıştır. Her dersin yanındaki simge durumunu gösterir: &lt;b&gt;✓ ile dolu&lt;/b&gt; = tamamlandı, &lt;b&gt;halka&lt;/b&gt; = hazır, &lt;b&gt;küçük gri daire&lt;/b&gt; = ön koşullar eksik.</translation>
+        <location filename="../gui/main_window.py" line="1267" />
+        <source>This list is the whole course. Lessons are grouped into levels, and only the section you are in stays open, so the list never gets long. The icon next to each lesson shows its status: &lt;b&gt;filled with ✓&lt;/b&gt; = completed, &lt;b&gt;ring&lt;/b&gt; = ready, &lt;b&gt;small grey circle&lt;/b&gt; = prerequisites missing. &lt;b&gt;Ctrl+B&lt;/b&gt; folds the list away entirely.</source>
+        <translation>Bu liste dersin tamamıdır. Dersler seviyelere ayrılmıştır ve yalnızca içinde bulunduğunuz bölüm açık kalır, böylece liste hiç uzamaz. Her dersin yanındaki simge durumunu gösterir: &lt;b&gt;içi dolu ✓&lt;/b&gt; = tamamlandı, &lt;b&gt;halka&lt;/b&gt; = hazır, &lt;b&gt;küçük gri daire&lt;/b&gt; = ön koşullar eksik. &lt;b&gt;Ctrl+B&lt;/b&gt; listeyi tümüyle katlar.</translation>
     </message>
     <message>
-        <location filename="../gui/main_window.py" line="1143" />
+        <location filename="../gui/main_window.py" line="1274" />
         <source>Start here</source>
         <translation>Buradan başlayın</translation>
     </message>
     <message>
-        <location filename="../gui/main_window.py" line="1144" />
+        <location filename="../gui/main_window.py" line="1275" />
         <source>This button always takes you to the next lesson you are ready for. If you are new to cosmology, simply follow it.</source>
         <translation>Bu düğme sizi her zaman hazır olduğunuz bir sonraki derse götürür. Kozmolojiye yeniyseniz yalnızca onu izleyin.</translation>
     </message>
     <message>
-        <location filename="../gui/main_window.py" line="1149" />
+        <location filename="../gui/main_window.py" line="1280" />
         <source>The Guide panel</source>
         <translation>Rehber paneli</translation>
     </message>
     <message>
-        <location filename="../gui/main_window.py" line="1150" />
-        <source>The Guide explains the page you are on: how to use it, what to try and where to go next. When you click a coloured term in a lesson, its definition appears here too.</source>
-        <translation>Rehber, bulunduğunuz sayfayı anlatır: nasıl kullanılır, neler denenebilir ve sonra nereye gidilir. Bir derste renkli bir terime tıkladığınızda tanımı da burada görünür.</translation>
+        <location filename="../gui/main_window.py" line="1281" />
+        <source>The Guide explains the page you are on: how to use it, what to try and where to go next. When you click a coloured term in a lesson, its definition appears here too. It stays out of the way until you ask for it with &lt;b&gt;F1&lt;/b&gt; or the toolbar button.</source>
+        <translation>Rehber, bulunduğunuz sayfayı anlatır: nasıl kullanılır, ne denenir, sonra nereye gidilir. Bir derste renkli bir terime tıkladığınızda tanımı da burada görünür. &lt;b&gt;F1&lt;/b&gt; ile ya da araç çubuğundaki düğmeyle isteyene kadar yoldan çekilir.</translation>
     </message>
     <message>
-        <location filename="../gui/main_window.py" line="1155" />
+        <location filename="../gui/main_window.py" line="1288" />
         <source>Lessons and quizzes</source>
         <translation>Dersler ve testler</translation>
     </message>
     <message>
-        <location filename="../gui/main_window.py" line="1156" />
+        <location filename="../gui/main_window.py" line="1289" />
         <source>Each lesson has a &lt;b&gt;Lesson&lt;/b&gt; tab with explanations, formulas and figures, and a &lt;b&gt;Quiz&lt;/b&gt; tab. Score at least 70% to complete the lesson.</source>
         <translation>Her dersin açıklamalar, formüller ve şekiller içeren bir &lt;b&gt;Ders&lt;/b&gt; sekmesi ile bir &lt;b&gt;Test&lt;/b&gt; sekmesi vardır. Dersi tamamlamak için en az %70 alın.</translation>
     </message>
     <message>
-        <location filename="../gui/main_window.py" line="1162" />
+        <location filename="../gui/main_window.py" line="1295" />
         <source>Two ways to read a lesson</source>
         <translation>Bir dersi okumanın iki yolu</translation>
     </message>
     <message>
-        <location filename="../gui/main_window.py" line="1163" />
+        <location filename="../gui/main_window.py" line="1296" />
         <source>Every lesson has a &lt;b&gt;View&lt;/b&gt; switch at the top right. &lt;b&gt;Intuitive&lt;/b&gt; tells the story in words, hiding the formulas and derivations; &lt;b&gt;With the maths&lt;/b&gt; shows the complete lesson. Switch whenever you like — your choice is remembered.</source>
         <translation>Her dersin sağ üstünde bir &lt;b&gt;Görünüm&lt;/b&gt; anahtarı vardır. &lt;b&gt;Sezgisel&lt;/b&gt; konuyu formülleri ve türetmeleri gizleyerek sözle anlatır; &lt;b&gt;Matematikle&lt;/b&gt; dersin tamamını gösterir. İstediğiniz zaman değiştirin — seçiminiz hatırlanır.</translation>
     </message>
     <message>
-        <location filename="../gui/main_window.py" line="1170" />
+        <location filename="../gui/main_window.py" line="1303" />
         <source>Simulators let you experiment. Lessons link to them with &lt;b&gt;Try it&lt;/b&gt; boxes, and you can open them any time from the sidebar.</source>
         <translation>Simülatörler deney yapmanızı sağlar. Dersler onlara &lt;b&gt;Deneyin&lt;/b&gt; kutularıyla bağlanır, ayrıca kenar çubuğundan istediğiniz zaman açabilirsiniz.</translation>
     </message>
     <message>
-        <location filename="../gui/main_window.py" line="1176" />
-        <location filename="../gui/pages/simulators.py" line="118" />
+        <location filename="../gui/main_window.py" line="1309" />
+        <location filename="../gui/pages/simulators.py" line="120" />
         <source>Challenges</source>
         <translation>Görevler</translation>
     </message>
     <message>
-        <location filename="../gui/main_window.py" line="1177" />
+        <location filename="../gui/main_window.py" line="1310" />
         <source>Many simulators open with a &lt;b&gt;challenge&lt;/b&gt;: a concrete task such as finding a universe that ends in a Big Crunch. Set the controls and press &lt;b&gt;Check my answer&lt;/b&gt;; hints are there if you need them, and solved challenges earn badges.</source>
         <translation>Birçok simülatör bir &lt;b&gt;görev&lt;/b&gt; ile açılır: örneğin Büyük Çöküş ile biten bir evren bulmak gibi somut bir iş. Denetimleri ayarlayın ve &lt;b&gt;Cevabımı kontrol et&lt;/b&gt; düğmesine basın; gerekirse ipuçları hazır, çözülen görevler rozet kazandırır.</translation>
     </message>
     <message>
-        <location filename="../gui/main_window.py" line="1184" />
+        <location filename="../gui/main_window.py" line="1317" />
         <source>Search and the formula sheet</source>
         <translation>Arama ve formül sayfası</translation>
     </message>
     <message>
-        <location filename="../gui/main_window.py" line="1185" />
+        <location filename="../gui/main_window.py" line="1318" />
         <source>The &lt;b&gt;search box&lt;/b&gt; (Ctrl+F) looks through lessons, the glossary, the simulators and the formula sheet at once. &lt;b&gt;Reference&lt;/b&gt; (Ctrl+R) collects every formula, constant and unit conversion in one place.</source>
         <translation>&lt;b&gt;Arama kutusu&lt;/b&gt; (Ctrl+F) dersleri, sözlüğü, simülatörleri ve formül sayfasını aynı anda tarar. &lt;b&gt;Başvuru&lt;/b&gt; (Ctrl+R) her formülü, sabiti ve birim dönüşümünü tek yerde toplar.</translation>
     </message>
     <message>
-        <location filename="../gui/main_window.py" line="1191" />
+        <location filename="../gui/main_window.py" line="1324" />
         <source>Your own notes</source>
         <translation>Kendi notlarınız</translation>
     </message>
     <message>
-        <location filename="../gui/main_window.py" line="1192" />
+        <location filename="../gui/main_window.py" line="1325" />
         <source>The &lt;b&gt;Notes&lt;/b&gt; panel, next to the Guide, is a private notebook: one note per page, saved automatically. Press &lt;b&gt;☆ Bookmark&lt;/b&gt; (Ctrl+D) to keep a link to a page, and open &lt;b&gt;Notes &amp;amp; bookmarks&lt;/b&gt; to see or export everything you saved.</source>
         <translation>Rehberin yanındaki &lt;b&gt;Notlar&lt;/b&gt; paneli özel bir defterdir: sayfa başına bir not, kendiliğinden kaydedilir. Bir sayfaya bağlantı tutmak için &lt;b&gt;☆ Yer imi&lt;/b&gt; (Ctrl+D) düğmesine basın, kaydettiğiniz her şeyi görmek veya dışa aktarmak için &lt;b&gt;Notlar &amp;amp; yer imleri&lt;/b&gt; sayfasını açın.</translation>
     </message>
     <message>
-        <location filename="../gui/main_window.py" line="1199" />
+        <location filename="../gui/main_window.py" line="1332" />
         <source>Toolbar</source>
         <translation>Araç çubuğu</translation>
     </message>
     <message>
-        <location filename="../gui/main_window.py" line="1200" />
-        <source>Go &lt;b&gt;Back&lt;/b&gt; and &lt;b&gt;Forward&lt;/b&gt; between pages, open the &lt;b&gt;Glossary&lt;/b&gt; and your &lt;b&gt;Progress&lt;/b&gt; map, toggle the Guide panel, switch the &lt;b&gt;Theme&lt;/b&gt;, or replay this tour.</source>
-        <translation>Sayfalar arasında &lt;b&gt;Geri&lt;/b&gt; ve &lt;b&gt;İleri&lt;/b&gt; gidin, &lt;b&gt;Sözlük&lt;/b&gt; ile &lt;b&gt;İlerleme&lt;/b&gt; haritanızı açın, Rehber panelini gizleyip gösterin, &lt;b&gt;Tema&lt;/b&gt;yı değiştirin veya bu turu yeniden izleyin.</translation>
+        <location filename="../gui/main_window.py" line="1333" />
+        <source>Go &lt;b&gt;Back&lt;/b&gt; and &lt;b&gt;Forward&lt;/b&gt; between pages, jump &lt;b&gt;Home&lt;/b&gt; or &lt;b&gt;Continue&lt;/b&gt; where you left off. On the right are the search box and the three side panels. Everything else lives in the menus and in the list on the left.</source>
+        <translation>Sayfalar arasında &lt;b&gt;Geri&lt;/b&gt; ve &lt;b&gt;İleri&lt;/b&gt; gidin, &lt;b&gt;Ana sayfa&lt;/b&gt;'ya atlayın ya da kaldığınız yerden &lt;b&gt;Devam&lt;/b&gt; edin. Sağda arama kutusu ve üç yan panel var. Geri kalan her şey menülerde ve soldaki listede.</translation>
     </message>
     <message>
-        <location filename="../gui/main_window.py" line="1205" />
+        <location filename="../gui/main_window.py" line="1339" />
         <source>History and badges</source>
         <translation>Tarihçe ve rozetler</translation>
     </message>
     <message>
-        <location filename="../gui/main_window.py" line="1206" />
+        <location filename="../gui/main_window.py" line="1340" />
         <source>&lt;b&gt;History&lt;/b&gt; follows cosmology from Copernicus to the latest surveys, with cards for the scientists. &lt;b&gt;Progress&lt;/b&gt; shows your lesson map and the &lt;b&gt;badges&lt;/b&gt; you have earned.</source>
         <translation>&lt;b&gt;Tarihçe&lt;/b&gt; kozmolojiyi Kopernik'ten en son taramalara kadar izler ve bilim insanları için kartlar içerir. &lt;b&gt;İlerleme&lt;/b&gt; ders haritanızı ve kazandığınız &lt;b&gt;rozetleri&lt;/b&gt; gösterir.</translation>
     </message>
     <message>
-        <location filename="../gui/main_window.py" line="1211" />
+        <location filename="../gui/main_window.py" line="1345" />
         <source>You're ready</source>
         <translation>Hazırsınız</translation>
     </message>
     <message>
-        <location filename="../gui/main_window.py" line="1212" />
+        <location filename="../gui/main_window.py" line="1346" />
         <source>Every control has a tooltip, and &lt;b&gt;?&lt;/b&gt; buttons give detailed explanations. Enjoy exploring the universe!</source>
         <translation>Her denetimin bir ipucu balonu vardır ve &lt;b&gt;?&lt;/b&gt; düğmeleri ayrıntılı açıklama verir. Evreni keşfetmenin tadını çıkarın!</translation>
     </message>
@@ -1848,8 +1849,8 @@ yüklenmez ve uygulamanın öğrencinin kim olduğuna dair hiçbir bilgisi yoktu
     </message>
     <message>
         <location filename="../gui/pages/classroom_page.py" line="138" />
-        <location filename="../gui/pages/lesson.py" line="95" />
-        <location filename="../gui/pages/lesson.py" line="312" />
+        <location filename="../gui/pages/lesson.py" line="98" />
+        <location filename="../gui/pages/lesson.py" line="320" />
         <location filename="../gui/rendering/pdf.py" line="80" />
         <source>Teacher notes</source>
         <translation>Öğretmen notları</translation>
@@ -2188,7 +2189,7 @@ paneller arasında atlar, ve klavyenin bulunduğu yer belirgin bir çerçeveyle
     </message>
     <message>
         <location filename="../gui/pages/home.py" line="163" />
-        <location filename="../gui/pages/home.py" line="281" />
+        <location filename="../gui/pages/home.py" line="288" />
         <source>{steps} steps a day</source>
         <translation>Günde {steps} adım</translation>
     </message>
@@ -2213,176 +2214,175 @@ paneller arasında atlar, ve klavyenin bulunduğu yer belirgin bir çerçeveyle
         <translation>Kurs seviyeleri</translation>
     </message>
     <message>
-        <location filename="../gui/pages/home.py" line="183" />
-        <location filename="../gui/pages/lesson.py" line="130" />
+        <location filename="../gui/pages/home.py" line="185" />
+        <location filename="../gui/pages/lesson.py" line="138" />
         <source>LEVEL {number}</source>
         <translation>SEVİYE {number}</translation>
     </message>
     <message>
-        <location filename="../gui/pages/home.py" line="194" />
+        <location filename="../gui/pages/home.py" line="196" />
         <source>Open level</source>
         <translation>Seviyeyi aç</translation>
     </message>
     <message>
-        <location filename="../gui/pages/home.py" line="197" />
+        <location filename="../gui/pages/home.py" line="199" />
         <source>Opens the first unfinished lesson of this level (starts at {lesson}).</source>
         <translation>Bu seviyenin bitmemiş ilk dersini açar ({lesson} ile başlar).</translation>
     </message>
     <message>
-        <location filename="../gui/pages/home.py" line="207" />
+        <location filename="../gui/pages/home.py" line="209" />
         <source>Hands-on tools to explore the ideas from the lessons. You can open them at any time.</source>
         <translation>Derslerdeki fikirleri kendiniz denemeniz için araçlar. İstediğiniz zaman açabilirsiniz.</translation>
     </message>
     <message>
-        <location filename="../gui/pages/home.py" line="233" />
+        <location filename="../gui/pages/home.py" line="240" />
         <source>Course progress: &lt;b&gt;{done}&lt;/b&gt; of {total} lessons completed</source>
         <translation>Kurs ilerlemesi: {total} dersin &lt;b&gt;{done}&lt;/b&gt; tanesi tamamlandı</translation>
     </message>
     <message>
-        <location filename="../gui/pages/home.py" line="236" />
+        <location filename="../gui/pages/home.py" line="243" />
         <source>Review the course</source>
         <translation>Kursu gözden geçir</translation>
     </message>
     <message>
-        <location filename="../gui/pages/home.py" line="237" />
+        <location filename="../gui/pages/home.py" line="244" />
         <source>You have completed every lesson. Congratulations!</source>
         <translation>Bütün dersleri tamamladınız. Tebrikler!</translation>
     </message>
     <message>
-        <location filename="../gui/pages/home.py" line="241" />
+        <location filename="../gui/pages/home.py" line="248" />
         <source>Start learning</source>
         <translation>Öğrenmeye başla</translation>
     </message>
     <message>
-        <location filename="../gui/pages/home.py" line="241" />
+        <location filename="../gui/pages/home.py" line="248" />
         <source>Continue learning</source>
         <translation>Öğrenmeye devam et</translation>
     </message>
     <message>
-        <location filename="../gui/pages/home.py" line="249" />
+        <location filename="../gui/pages/home.py" line="256" />
         <source>Review {count} question(s)</source>
         <translation>{count} soruyu tekrar et</translation>
     </message>
     <message>
-        <location filename="../gui/pages/home.py" line="254" />
+        <location filename="../gui/pages/home.py" line="261" />
         <source>{done} of {total} lessons completed</source>
         <translation>{total} dersin {done} tanesi tamamlandı</translation>
     </message>
     <message>
-        <location filename="../gui/pages/home.py" line="260" />
+        <location filename="../gui/pages/home.py" line="267" />
         <source>{days}-day streak</source>
         <translation>{days} günlük seri</translation>
     </message>
     <message>
-        <location filename="../gui/pages/home.py" line="262" />
+        <location filename="../gui/pages/home.py" line="269" />
         <source>Start a streak today</source>
         <translation>Bugün bir seri başlatın</translation>
     </message>
     <message>
-        <location filename="../gui/pages/home.py" line="267" />
+        <location filename="../gui/pages/home.py" line="274" />
         <source>Today: &lt;b&gt;{steps}&lt;/b&gt; of {goal} steps</source>
         <translation>Bugün: {goal} adımdan &lt;b&gt;{steps}&lt;/b&gt;</translation>
     </message>
     <message>
-        <location filename="../gui/pages/home.py" line="269" />
+        <location filename="../gui/pages/home.py" line="276" />
         <source>goal reached ✓</source>
         <translation>hedefe ulaşıldı ✓</translation>
     </message>
     <message>
-        <location filename="../gui/pages/home.py" line="272" />
+        <location filename="../gui/pages/home.py" line="279" />
         <source>Today: &lt;b&gt;{steps}&lt;/b&gt; steps</source>
         <translation>Bugün: &lt;b&gt;{steps}&lt;/b&gt; adım</translation>
     </message>
     <message>
-        <location filename="../gui/pages/home.py" line="274" />
+        <location filename="../gui/pages/home.py" line="281" />
         <source>Study a little today to keep your streak going.</source>
         <translation>Serinizi sürdürmek için bugün biraz çalışın.</translation>
     </message>
     <message>
-        <location filename="../gui/pages/home.py" line="277" />
+        <location filename="../gui/pages/home.py" line="284" />
         <source>Last seven days: {marks}   Longest streak: {longest} days</source>
         <translation>Son yedi gün: {marks}   En uzun seri: {longest} gün</translation>
     </message>
     <message>
-        <location filename="../gui/pages/lesson.py" line="48" />
+        <location filename="../gui/pages/lesson.py" line="50" />
         <source>View:</source>
         <translation>Görünüm:</translation>
     </message>
     <message>
-        <location filename="../gui/pages/lesson.py" line="92" />
+        <location filename="../gui/pages/lesson.py" line="94" />
         <location filename="../gui/search.py" line="12" />
         <source>Lesson</source>
         <translation>Ders</translation>
     </message>
     <message>
-        <location filename="../gui/pages/lesson.py" line="93" />
+        <location filename="../gui/pages/lesson.py" line="95" />
         <location filename="../gui/rendering/pdf.py" line="66" />
         <source>Quiz</source>
         <translation>Sınav</translation>
     </message>
     <message>
-        <location filename="../gui/pages/lesson.py" line="100" />
-        <source>◀ Previous lesson</source>
-        <translation>◀ Önceki ders</translation>
+        <location filename="../gui/pages/lesson.py" line="103" />
+        <source>Previous lesson</source>
+        <translation>Önceki ders</translation>
     </message>
     <message>
-        <location filename="../gui/pages/lesson.py" line="107" />
+        <location filename="../gui/pages/lesson.py" line="111" />
         <source>Add the terms to my flashcards</source>
         <translation>Terimleri kartlarıma ekle</translation>
     </message>
     <message>
-        <location filename="../gui/pages/lesson.py" line="108" />
+        <location filename="../gui/pages/lesson.py" line="112" />
         <source>Put every glossary term this lesson uses into your flashcard deck. They come back on the Review page until you know them.</source>
         <translation>Bu dersin kullandığı her sözlük terimini kart destenize koyun. Onları öğrenene kadar Tekrar sayfasında geri gelirler.</translation>
     </message>
     <message>
-        <location filename="../gui/pages/lesson.py" line="112" />
-        <source>Take the quiz ▶</source>
-        <translation>Sınava geç ▶</translation>
+        <location filename="../gui/pages/lesson.py" line="116" />
+        <source>Take the quiz</source>
+        <translation>Sınava geç</translation>
     </message>
     <message>
-        <location filename="../gui/pages/lesson.py" line="117" />
-        <location filename="../gui/widgets/quiz.py" line="136" />
-        <source>Next lesson ▶</source>
-        <translation>Sonraki ders ▶</translation>
+        <location filename="../gui/pages/lesson.py" line="123" />
+        <source>Next lesson</source>
+        <translation>Sonraki ders</translation>
     </message>
     <message>
-        <location filename="../gui/pages/lesson.py" line="134" />
+        <location filename="../gui/pages/lesson.py" line="142" />
         <source>≈ {minutes} min read</source>
         <translation>≈ {minutes} dakikalık okuma</translation>
     </message>
     <message>
-        <location filename="../gui/pages/lesson.py" line="156" />
+        <location filename="../gui/pages/lesson.py" line="164" />
         <source>Open the {title}: {tagline}</source>
         <translation>{title} simülatörünü açın: {tagline}</translation>
     </message>
     <message>
-        <location filename="../gui/pages/lesson.py" line="232" />
+        <location filename="../gui/pages/lesson.py" line="240" />
         <source>Completed</source>
         <translation>Tamamlandı</translation>
     </message>
     <message>
-        <location filename="../gui/pages/lesson.py" line="233" />
+        <location filename="../gui/pages/lesson.py" line="241" />
         <source>Ready to learn</source>
         <translation>Öğrenmeye hazır</translation>
     </message>
     <message>
-        <location filename="../gui/pages/lesson.py" line="234" />
+        <location filename="../gui/pages/lesson.py" line="242" />
         <source>Prerequisites missing</source>
         <translation>Ön koşullar eksik</translation>
     </message>
     <message>
-        <location filename="../gui/pages/lesson.py" line="246" />
+        <location filename="../gui/pages/lesson.py" line="254" />
         <source>This lesson builds on {lessons}. You can read it now, but it will be easier after completing those first.</source>
         <translation>Bu ders {lessons} üzerine kuruludur. Şimdi de okuyabilirsiniz, ama önce onları tamamlarsanız daha kolay olur.</translation>
     </message>
     <message>
-        <location filename="../gui/pages/lesson.py" line="259" />
+        <location filename="../gui/pages/lesson.py" line="267" />
         <source>How to study this lesson</source>
         <translation>Bu ders nasıl çalışılır</translation>
     </message>
     <message>
-        <location filename="../gui/pages/lesson.py" line="261" />
+        <location filename="../gui/pages/lesson.py" line="269" />
         <source>1. Read the lesson from top to bottom. Formulas are explained in words right after they appear.
    Prefer the ideas without the algebra? Switch the **View** at the top right to *Intuitive*.
 2. Click the coloured glossary terms to see definitions here without losing your place.
@@ -2395,32 +2395,32 @@ paneller arasında atlar, ve klavyenin bulunduğu yer belirgin bir çerçeveyle
 4. **Test** sekmesiyle bitirin. Her cevabın bir açıklaması vardır.</translation>
     </message>
     <message>
-        <location filename="../gui/pages/lesson.py" line="270" />
+        <location filename="../gui/pages/lesson.py" line="278" />
         <source>Builds on</source>
         <translation>Şunlara dayanır</translation>
     </message>
     <message>
-        <location filename="../gui/pages/lesson.py" line="274" />
+        <location filename="../gui/pages/lesson.py" line="282" />
         <source>Related simulators</source>
         <translation>İlgili simülatörler</translation>
     </message>
     <message>
-        <location filename="../gui/pages/lesson.py" line="280" />
+        <location filename="../gui/pages/lesson.py" line="288" />
         <source>Practise</source>
         <translation>Alıştırma yapın</translation>
     </message>
     <message>
-        <location filename="../gui/pages/lesson.py" line="285" />
+        <location filename="../gui/pages/lesson.py" line="293" />
         <source>Leads to</source>
         <translation>Şunlara götürür</translation>
     </message>
     <message>
-        <location filename="../gui/pages/lesson.py" line="292" />
+        <location filename="../gui/pages/lesson.py" line="300" />
         <source>{added} new term(s) added to your flashcards; they are due today on the Review page</source>
         <translation>{added} yeni terim kartlarınıza eklendi; bugün Tekrar sayfasında sizi bekliyorlar</translation>
     </message>
     <message>
-        <location filename="../gui/pages/lesson.py" line="294" />
+        <location filename="../gui/pages/lesson.py" line="302" />
         <source>Every term of this lesson is already in your flashcards</source>
         <translation>Bu dersin bütün terimleri zaten kartlarınızda</translation>
     </message>
@@ -3224,37 +3224,37 @@ parametreleri kendiniz değiştirmenize izin verir.
         <translation>Bir simülatör seçin. Her kart, desteklediği dersleri listeler.</translation>
     </message>
     <message>
-        <location filename="../gui/pages/simulators.py" line="61" />
+        <location filename="../gui/pages/simulators.py" line="63" />
         <source>Supports lessons: {lessons}</source>
         <translation>Desteklediği dersler: {lessons}</translation>
     </message>
     <message>
-        <location filename="../gui/pages/simulators.py" line="62" />
+        <location filename="../gui/pages/simulators.py" line="64" />
         <source>Open simulator</source>
         <translation>Simülatörü aç</translation>
     </message>
     <message>
-        <location filename="../gui/pages/simulators.py" line="85" />
+        <location filename="../gui/pages/simulators.py" line="87" />
         <source>SIMULATOR</source>
         <translation>SİMÜLATÖR</translation>
     </message>
     <message>
-        <location filename="../gui/pages/simulators.py" line="107" />
+        <location filename="../gui/pages/simulators.py" line="109" />
         <source>How to use</source>
         <translation>Nasıl kullanılır</translation>
     </message>
     <message>
-        <location filename="../gui/pages/simulators.py" line="109" />
+        <location filename="../gui/pages/simulators.py" line="111" />
         <source>Things to try</source>
         <translation>Denenecek şeyler</translation>
     </message>
     <message>
-        <location filename="../gui/pages/simulators.py" line="113" />
+        <location filename="../gui/pages/simulators.py" line="115" />
         <source>Related lessons</source>
         <translation>İlgili dersler</translation>
     </message>
     <message>
-        <location filename="../gui/pages/simulators.py" line="119" />
+        <location filename="../gui/pages/simulators.py" line="121" />
         <source>This simulator has {total} guided challenges ({solved} solved). Read the task at the top, set the controls, then press **Check my answer**.</source>
         <translation>Bu simülatörde {total} yönlendirmeli görev var ({solved} tanesi çözüldü). Üstteki görevi okuyun, denetimleri ayarlayın, sonra **Cevabımı kontrol et** düğmesine basın.</translation>
     </message>
@@ -3626,7 +3626,7 @@ parametreleri kendiniz değiştirmenize izin verir.
     </message>
     <message>
         <location filename="../gui/simulators/calculator.py" line="39" />
-        <location filename="../gui/simulators/calculator.py" line="342" />
+        <location filename="../gui/simulators/calculator.py" line="343" />
         <source>Age of the universe today</source>
         <translation>Evrenin bugünkü yaşı</translation>
     </message>
@@ -3647,7 +3647,7 @@ parametreleri kendiniz değiştirmenize izin verir.
     </message>
     <message>
         <location filename="../gui/simulators/calculator.py" line="47" />
-        <location filename="../gui/simulators/calculator.py" line="344" />
+        <location filename="../gui/simulators/calculator.py" line="345" />
         <source>Lookback time</source>
         <translation>Geriye bakış süresi</translation>
     </message>
@@ -3658,7 +3658,7 @@ parametreleri kendiniz değiştirmenize izin verir.
     </message>
     <message>
         <location filename="../gui/simulators/calculator.py" line="51" />
-        <location filename="../gui/simulators/calculator.py" line="345" />
+        <location filename="../gui/simulators/calculator.py" line="346" />
         <source>Comoving distance</source>
         <translation>Eş hareketli uzaklık</translation>
     </message>
@@ -3669,7 +3669,7 @@ parametreleri kendiniz değiştirmenize izin verir.
     </message>
     <message>
         <location filename="../gui/simulators/calculator.py" line="56" />
-        <location filename="../gui/simulators/calculator.py" line="346" />
+        <location filename="../gui/simulators/calculator.py" line="347" />
         <source>Light-travel distance</source>
         <translation>Işığın gittiği uzaklık</translation>
     </message>
@@ -3680,7 +3680,7 @@ parametreleri kendiniz değiştirmenize izin verir.
     </message>
     <message>
         <location filename="../gui/simulators/calculator.py" line="61" />
-        <location filename="../gui/simulators/calculator.py" line="347" />
+        <location filename="../gui/simulators/calculator.py" line="348" />
         <source>Luminosity distance</source>
         <translation>Işıtma uzaklığı</translation>
     </message>
@@ -3691,7 +3691,7 @@ parametreleri kendiniz değiştirmenize izin verir.
     </message>
     <message>
         <location filename="../gui/simulators/calculator.py" line="66" />
-        <location filename="../gui/simulators/calculator.py" line="348" />
+        <location filename="../gui/simulators/calculator.py" line="349" />
         <source>Angular diameter distance</source>
         <translation>Açısal çap uzaklığı</translation>
     </message>
@@ -3702,7 +3702,7 @@ parametreleri kendiniz değiştirmenize izin verir.
     </message>
     <message>
         <location filename="../gui/simulators/calculator.py" line="71" />
-        <location filename="../gui/simulators/calculator.py" line="349" />
+        <location filename="../gui/simulators/calculator.py" line="350" />
         <source>Recession velocity today</source>
         <translation>Bugünkü uzaklaşma hızı</translation>
     </message>
@@ -3713,7 +3713,7 @@ parametreleri kendiniz değiştirmenize izin verir.
     </message>
     <message>
         <location filename="../gui/simulators/calculator.py" line="76" />
-        <location filename="../gui/simulators/calculator.py" line="350" />
+        <location filename="../gui/simulators/calculator.py" line="351" />
         <source>Recession velocity at emission</source>
         <translation>Yayılma anındaki uzaklaşma hızı</translation>
     </message>
@@ -3724,7 +3724,7 @@ parametreleri kendiniz değiştirmenize izin verir.
     </message>
     <message>
         <location filename="../gui/simulators/calculator.py" line="80" />
-        <location filename="../gui/simulators/calculator.py" line="360" />
+        <location filename="../gui/simulators/calculator.py" line="361" />
         <source>Particle horizon today</source>
         <translation>Bugünkü parçacık ufku</translation>
     </message>
@@ -3735,7 +3735,7 @@ parametreleri kendiniz değiştirmenize izin verir.
     </message>
     <message>
         <location filename="../gui/simulators/calculator.py" line="84" />
-        <location filename="../gui/simulators/calculator.py" line="361" />
+        <location filename="../gui/simulators/calculator.py" line="362" />
         <source>Event horizon today</source>
         <translation>Bugünkü olay ufku</translation>
     </message>
@@ -3766,7 +3766,7 @@ parametreleri kendiniz değiştirmenize izin verir.
     </message>
     <message>
         <location filename="../gui/simulators/calculator.py" line="97" />
-        <location filename="../gui/simulators/calculator.py" line="354" />
+        <location filename="../gui/simulators/calculator.py" line="355" />
         <source>Hubble parameter H(z)</source>
         <translation>Hubble parametresi H(z)</translation>
     </message>
@@ -3782,7 +3782,7 @@ parametreleri kendiniz değiştirmenize izin verir.
     </message>
     <message>
         <location filename="../gui/simulators/calculator.py" line="105" />
-        <location filename="../gui/simulators/calculator.py" line="356" />
+        <location filename="../gui/simulators/calculator.py" line="357" />
         <source>CMB temperature at z</source>
         <translation>z'deki KMF sıcaklığı</translation>
     </message>
@@ -3793,7 +3793,7 @@ parametreleri kendiniz değiştirmenize izin verir.
     </message>
     <message>
         <location filename="../gui/simulators/calculator.py" line="109" />
-        <location filename="../gui/simulators/calculator.py" line="357" />
+        <location filename="../gui/simulators/calculator.py" line="358" />
         <source>Neutrino background temperature at z</source>
         <translation>z'deki nötrino fon sıcaklığı</translation>
     </message>
@@ -3804,7 +3804,7 @@ parametreleri kendiniz değiştirmenize izin verir.
     </message>
     <message>
         <location filename="../gui/simulators/calculator.py" line="114" />
-        <location filename="../gui/simulators/calculator.py" line="359" />
+        <location filename="../gui/simulators/calculator.py" line="360" />
         <source>Curvature Ωk</source>
         <translation>Eğrilik Ωk</translation>
     </message>
@@ -3815,7 +3815,7 @@ parametreleri kendiniz değiştirmenize izin verir.
     </message>
     <message>
         <location filename="../gui/simulators/calculator.py" line="118" />
-        <location filename="../gui/simulators/calculator.py" line="363" />
+        <location filename="../gui/simulators/calculator.py" line="364" />
         <source>Critical density today</source>
         <translation>Bugünkü kritik yoğunluk</translation>
     </message>
@@ -3826,7 +3826,7 @@ parametreleri kendiniz değiştirmenize izin verir.
     </message>
     <message>
         <location filename="../gui/simulators/calculator.py" line="122" />
-        <location filename="../gui/simulators/calculator.py" line="366" />
+        <location filename="../gui/simulators/calculator.py" line="367" />
         <source>Deceleration parameter q0</source>
         <translation>Yavaşlama parametresi q0</translation>
     </message>
@@ -4036,88 +4036,88 @@ parametreleri kendiniz değiştirmenize izin verir.
         <translation>Uzaklıklara karşı kırmızıya kayma</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/calculator.py" line="246" />
+        <location filename="../gui/simulators/calculator.py" line="247" />
         <source>Age &amp; lookback time</source>
         <translation>Yaş ve geriye bakış süresi</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/calculator.py" line="321" />
+        <location filename="../gui/simulators/calculator.py" line="322" />
         <source>&lt;b&gt;This universe has no Big Bang.&lt;/b&gt; Going back in time it never reaches zero size, so ages are undefined. Reduce ΩΛ or increase Ωm.</source>
         <translation>&lt;b&gt;Bu evrende Büyük Patlama yok.&lt;/b&gt; Zamanda geriye gidildiğinde hiç sıfır boyuta ulaşmaz, bu yüzden yaşlar tanımsızdır. ΩΛ'yı azaltın ya da Ωm'yi artırın.</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/calculator.py" line="340" />
+        <location filename="../gui/simulators/calculator.py" line="341" />
         <location filename="../gui/simulators/expansion.py" line="156" />
         <location filename="../gui/simulators/supernova_sim.py" line="166" />
         <source>accelerating</source>
         <translation>hızlanıyor</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/calculator.py" line="340" />
+        <location filename="../gui/simulators/calculator.py" line="341" />
         <location filename="../gui/simulators/expansion.py" line="156" />
         <location filename="../gui/simulators/supernova_sim.py" line="166" />
         <source>decelerating</source>
         <translation>yavaşlıyor</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/calculator.py" line="343" />
+        <location filename="../gui/simulators/calculator.py" line="344" />
         <source>Age at z = {z}</source>
         <translation>z = {z} iken yaş</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/calculator.py" line="351" />
+        <location filename="../gui/simulators/calculator.py" line="352" />
         <source>Distance modulus m − M</source>
         <translation>Uzaklık modülü m − M</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/calculator.py" line="352" />
+        <location filename="../gui/simulators/calculator.py" line="353" />
         <source>mag</source>
         <translation>kadir</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/calculator.py" line="353" />
+        <location filename="../gui/simulators/calculator.py" line="354" />
         <source>Scale: 1 arcsec corresponds to</source>
         <translation>Ölçek: 1 yay saniyesi şuna karşılık gelir</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/calculator.py" line="355" />
+        <location filename="../gui/simulators/calculator.py" line="356" />
         <source>Scale factor a = 1/(1+z)</source>
         <translation>Ölçek çarpanı a = 1/(1+z)</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/calculator.py" line="362" />
+        <location filename="../gui/simulators/calculator.py" line="363" />
         <source>not computed for recollapsing universes</source>
         <translation>yeniden çöken evrenler için hesaplanmaz</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/calculator.py" line="364" />
+        <location filename="../gui/simulators/calculator.py" line="365" />
         <source>{density} kg/m³  (≈ {atoms} H atoms/m³)</source>
         <translation>{density} kg/m³  (≈ {atoms} H atomu/m³)</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/calculator.py" line="367" />
+        <location filename="../gui/simulators/calculator.py" line="368" />
         <source>Fate</source>
         <translation>Kader</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/calculator.py" line="399" />
+        <location filename="../gui/simulators/calculator.py" line="400" />
         <source>faster than light</source>
         <translation>ışıktan hızlı</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/calculator.py" line="399" />
+        <location filename="../gui/simulators/calculator.py" line="400" />
         <source>slower than light</source>
         <translation>ışıktan yavaş</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/calculator.py" line="405" />
+        <location filename="../gui/simulators/calculator.py" line="406" />
         <location filename="../gui/simulators/cosmic_timeline.py" line="64" />
         <location filename="../gui/simulators/olbers_sim.py" line="193" />
         <source>infinite</source>
         <translation>sonsuz</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/calculator.py" line="408" />
+        <location filename="../gui/simulators/calculator.py" line="409" />
         <source>{mpc} Mpc  ({gly} billion ly)</source>
         <translation>{mpc} Mpc  ({gly} milyar ışık yılı)</translation>
     </message>
@@ -10645,17 +10645,17 @@ Together they give the effective volume, $V_\mathrm{eff} = V\,[\bar nP/(1+\bar n
         <translation>&lt;b&gt;Henüz değil.&lt;/b&gt; Simülatör, görevin istediği durumda değil.</translation>
     </message>
     <message>
-        <location filename="../gui/widgets/common.py" line="205" />
+        <location filename="../gui/widgets/common.py" line="224" />
         <source>Custom (your own values)</source>
         <translation>Özel (kendi değerleriniz)</translation>
     </message>
     <message>
-        <location filename="../gui/widgets/common.py" line="206" />
+        <location filename="../gui/widgets/common.py" line="225" />
         <source>Values you set with the controls below.</source>
         <translation>Aşağıdaki denetimlerle belirlediğiniz değerler.</translation>
     </message>
     <message>
-        <location filename="../gui/widgets/common.py" line="212" />
+        <location filename="../gui/widgets/common.py" line="231" />
         <source>Load the parameters of a well-known cosmological model.</source>
         <translation>İyi bilinen bir kozmolojik modelin parametrelerini yükleyin.</translation>
     </message>
@@ -10878,6 +10878,11 @@ Write down what surprised you, a number you want to remember, or a question to c
         <translation>Dersi gözden geçir</translation>
     </message>
     <message>
+        <location filename="../gui/widgets/quiz.py" line="136" />
+        <source>Next lesson ▶</source>
+        <translation>Sonraki ders ▶</translation>
+    </message>
+    <message>
         <location filename="../gui/widgets/quiz.py" line="157" />
         <source>This quiz has {count} questions about “{lesson}”. After each answer you will see an explanation. Score at least {score} to complete the lesson; you can retry as often as you like.</source>
         <translation>Bu testte “{lesson}” konusunda {count} soru var. Her cevaptan sonra bir açıklama göreceksiniz. Dersi tamamlamak için en az {score} alın; istediğiniz kadar yeniden deneyebilirsiniz.</translation>
@@ -10954,12 +10959,12 @@ Write down what surprised you, a number you want to remember, or a question to c
         <translation>&lt;b&gt;Hepsi doğru.&lt;/b&gt; Her kart bir kutu yukarı çıktı; son kutuyu geçenler desteden temelli ayrıldı.</translation>
     </message>
     <message>
-        <location filename="../gui/widgets/rich_browser.py" line="112" />
+        <location filename="../gui/widgets/rich_browser.py" line="127" />
         <source>Click to open in the Guide panel.</source>
         <translation>Rehber panelinde açmak için tıklayın.</translation>
     </message>
     <message>
-        <location filename="../gui/widgets/rich_browser.py" line="117" />
+        <location filename="../gui/widgets/rich_browser.py" line="132" />
         <source>Open this simulator</source>
         <translation>Bu simülatörü aç</translation>
     </message>

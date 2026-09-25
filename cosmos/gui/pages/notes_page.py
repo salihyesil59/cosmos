@@ -19,7 +19,7 @@ from PySide6.QtWidgets import (
 
 from cosmos.gui.context import AppContext
 from cosmos.gui.routes import route_title
-from cosmos.gui.widgets.common import card, muted_label, title_label
+from cosmos.gui.widgets.common import card, centred, muted_label, title_label
 from cosmos.i18n import tr, tr_noop
 
 GUIDE = tr_noop("""
@@ -63,7 +63,7 @@ class NotesPage(QWidget):
         self.body = QVBoxLayout(host)
         self.body.setContentsMargins(0, 0, 8, 0)
         self.body.setSpacing(10)
-        scroll.setWidget(host)
+        scroll.setWidget(centred(host))
         root.addWidget(scroll, 1)
         self.refresh()
 

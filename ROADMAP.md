@@ -251,3 +251,17 @@ safer and more portable. ★ marks the ones worth doing first; ticked items are 
 - [x] `E17` A test that keeps the numbers in the README (lessons, simulators, questions) in step with the content
 - [x] `E18` A second full interface language (Spanish), with a contributor guide for translators
 - [x] `E19` Export the course as a static website that runs in a browser without installing anything
+
+## Phase 5 — Making room
+
+Everything the course needs is now in the app, and that had become the problem:
+the Guide panel opened with the window and took nearly half of it, the navigation
+list showed 58 lessons and 29 simulators at once, and the toolbar repeated what the
+menus and the list already offered. Phase 5 takes nothing away — it decides what is
+on screen before you ask for it.
+
+### Interface
+
+- [x] ★ `D1` A calmer window: side panels closed until asked for and never wider
+  than a third, one section of the navigation open at a time, a nine-item toolbar,
+  a readable text measure, and one set of icons drawn in code instead of emoji

@@ -116,8 +116,9 @@ def _stylesheet(p: Palette, scale: float = 1.0) -> str:
         padding: 6px; border-radius: 4px;
     }}
     QToolBar {{ background: {p.surface}; border: none; border-bottom: 1px solid {p.border};
-                spacing: 4px; padding: 4px; }}
-    QToolBar QToolButton {{ padding: 5px 10px; border-radius: 6px; }}
+                spacing: 6px; padding: 6px 10px; }}
+    QToolBar::separator {{ background: {p.border}; width: 1px; margin: 4px 4px; }}
+    QToolBar QToolButton {{ padding: 6px 10px; border-radius: 7px; }}
     QToolBar QToolButton:hover {{ background: {p.surface_alt}; }}
     QToolBar QToolButton:checked {{ background: {p.mix(p.accent, 0.25)}; }}
     QStatusBar {{ background: {p.surface}; color: {p.muted}; border-top: 1px solid {p.border}; }}
@@ -129,12 +130,16 @@ def _stylesheet(p: Palette, scale: float = 1.0) -> str:
         background: {p.surface}; border: none; border-right: 1px solid {p.border};
         padding-top: 6px; outline: 0;
     }}
-    QTreeWidget#sidebar::item {{ padding: 5px 4px; border-radius: 5px; }}
+    QTreeWidget#sidebar::item {{ padding: 6px 4px; border-radius: 6px; }}
     QTreeWidget#sidebar::item:hover {{ background: {p.surface_alt}; }}
     QTreeWidget#sidebar::item:selected {{ background: {p.mix(p.accent, 0.3)}; color: {p.text}; }}
 
     QDockWidget {{ titlebar-close-icon: none; }}
-    QDockWidget::title {{ background: {p.surface}; padding: 6px; border-bottom: 1px solid {p.border}; }}
+    QDockWidget {{ font-size: {_pt(9, scale)}; color: {p.muted}; }}
+    QDockWidget::title {{
+        background: {p.surface}; padding: 7px 10px; border-bottom: 1px solid {p.border};
+        text-align: left;
+    }}
 
     QFrame[card="true"] {{
         background: {p.surface}; border: 1px solid {p.border}; border-radius: 10px;
@@ -172,12 +177,15 @@ def _stylesheet(p: Palette, scale: float = 1.0) -> str:
     QPushButton[role="primary"]:hover {{ background: {p.mix("#ffffff", 0.15, p.accent)}; }}
     QFrame[card="true"][earned="no"] {{ background: {p.bg}; border-style: dashed; }}
     QFrame#challengeBar {{ border-color: {p.accent2}; }}
-    QPushButton[segment="left"] {{ border-top-right-radius: 0; border-bottom-right-radius: 0; padding: 4px 10px; }}
+    /* The checked half is bold, so both halves carry room for the bolder text. */
+    QPushButton[segment="left"] {{ border-top-right-radius: 0; border-bottom-right-radius: 0; padding: 5px 14px; }}
     QPushButton[segment="right"] {{
-        border-top-left-radius: 0; border-bottom-left-radius: 0; border-left: none; padding: 4px 10px;
+        border-top-left-radius: 0; border-bottom-left-radius: 0; border-left: none; padding: 5px 14px;
     }}
+    /* No bolder font here: Qt measures the button with the normal weight, so a bold
+       label would be drawn wider than the button it sits in. The accent says enough. */
     QPushButton[segment]:checked {{
-        background: {p.accent}; color: {p.accent_text}; border-color: {p.accent}; font-weight: 600;
+        background: {p.accent}; color: {p.accent_text}; border-color: {p.accent};
     }}
     QPushButton[role="link"] {{ background: transparent; border: none; color: {p.link}; padding: 2px;
                                 text-align: left; }}
@@ -201,12 +209,13 @@ def _stylesheet(p: Palette, scale: float = 1.0) -> str:
     QLineEdit:focus, QDoubleSpinBox:focus, QSpinBox:focus, QComboBox:focus {{ border-color: {p.accent}; }}
     QComboBox QAbstractItemView {{ background: {p.surface}; selection-background-color: {p.mix(p.accent, 0.35)}; }}
 
-    QTabWidget::pane {{ border: 1px solid {p.border}; border-radius: 6px; background: {p.surface}; top: -1px; }}
+    QTabWidget::pane {{ border: 1px solid {p.border}; border-radius: 8px; background: {p.surface}; top: -1px; }}
     QTabBar::tab {{
-        background: {p.surface_alt}; border: 1px solid {p.border}; padding: 6px 16px;
-        border-top-left-radius: 6px; border-top-right-radius: 6px; margin-right: 2px; color: {p.muted};
+        background: transparent; border: none; border-bottom: 2px solid transparent;
+        padding: 7px 14px; margin-right: 2px; color: {p.muted};
     }}
-    QTabBar::tab:selected {{ background: {p.surface}; color: {p.text}; border-bottom-color: {p.surface}; }}
+    QTabBar::tab:hover {{ color: {p.text}; }}
+    QTabBar::tab:selected {{ color: {p.text}; border-bottom: 2px solid {p.accent}; font-weight: 600; }}
 
     QTextBrowser, QListWidget, QTableWidget {{
         background: {p.surface}; border: 1px solid {p.border}; border-radius: 6px;

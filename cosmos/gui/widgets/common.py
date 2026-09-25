@@ -61,6 +61,25 @@ class InfoButton(QToolButton):
         popup.show()
 
 
+def centred(widget: QWidget, max_width: int = 1120) -> QWidget:
+    """Hold a page to a comfortable width and centre it in whatever room there is.
+
+    Cards stretched across a full-screen window are hard to read and hard to scan;
+    a fixed column keeps the page looking the same whether the side panels are
+    open or not (D1).
+    """
+    widget.setMaximumWidth(max_width)
+    holder = QWidget()
+    layout = QHBoxLayout(holder)
+    layout.setContentsMargins(0, 0, 0, 0)
+    layout.addStretch(1)
+    # The column grows to its maximum first; only what is left over goes to the
+    # margins, which is why its stretch is so much larger than theirs.
+    layout.addWidget(widget, 100)
+    layout.addStretch(1)
+    return holder
+
+
 def labelled_row(label: str, widget: QWidget, info: tuple[str, str] | None = None) -> QWidget:
     row = QWidget()
     layout = QHBoxLayout(row)
