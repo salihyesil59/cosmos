@@ -17,7 +17,7 @@ from cosmos.content.loader import load_challenges
 from cosmos.gui.context import AppContext
 from cosmos.gui.simulators.registry import SIMULATORS, SimulatorInfo
 from cosmos.gui.widgets.challenge_bar import ChallengeBar
-from cosmos.gui.widgets.common import card, centred, muted_label, title_label
+from cosmos.gui.widgets.common import card, centred, muted_label, scrolling_page, title_label
 from cosmos.i18n import tr, tr_noop
 
 HUB_GUIDE = tr_noop("""
@@ -80,7 +80,11 @@ class SimulatorHostPage(QWidget):
     def __init__(self, ctx: AppContext, info: SimulatorInfo, parent: QWidget | None = None):
         super().__init__(parent)
         self.ctx, self.info = ctx, info
-        root = QVBoxLayout(self)
+        outer = QVBoxLayout(self)
+        outer.setContentsMargins(0, 0, 0, 0)
+        body = QWidget()
+        outer.addWidget(scrolling_page(body))
+        root = QVBoxLayout(body)
         root.setContentsMargins(16, 12, 16, 10)
         root.setSpacing(6)
         head = QHBoxLayout()

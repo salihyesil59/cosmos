@@ -19,7 +19,7 @@ from cosmos.content.loader import load_problems
 from cosmos.content.models import Problem
 from cosmos.gui.context import AppContext
 from cosmos.gui.simulators.registry import SIMULATORS
-from cosmos.gui.widgets.common import Banner, muted_label, title_label
+from cosmos.gui.widgets.common import Banner, FlowLayout, muted_label, title_label
 from cosmos.gui.widgets.rich_browser import RichBrowser
 from cosmos.i18n import tr, tr_noop
 from cosmos.problems import Verdict, check_answer, format_answer
@@ -103,7 +103,9 @@ class ProblemsPage(QWidget):
         self.title = title_label("", "subtitle")
         dl.addWidget(self.kicker)
         dl.addWidget(self.title)
-        links = QHBoxLayout()
+        # Both button rows carry lesson and simulator names, which can be long in any
+        # language, so they wrap rather than run off the edge of a small window (D2).
+        links = FlowLayout(spacing=8)
         self.lesson_btn = QPushButton()
         self.lesson_btn.setToolTip(tr("The lesson that explains the physics behind this problem."))
         self.lesson_btn.clicked.connect(lambda: self.current and ctx.navigate(f"lesson:{self.current.lesson}"))
@@ -113,7 +115,6 @@ class ProblemsPage(QWidget):
             lambda: self.current and self.current.simulator and ctx.navigate(f"sim:{self.current.simulator}"))
         links.addWidget(self.lesson_btn)
         links.addWidget(self.sim_btn)
-        links.addStretch(1)
         dl.addLayout(links)
 
         self.view = RichBrowser(font_pt=11.0)
@@ -140,7 +141,7 @@ class ProblemsPage(QWidget):
         self.feedback.hide()
         dl.addWidget(self.feedback)
 
-        buttons = QHBoxLayout()
+        buttons = FlowLayout(spacing=8)
         self.hint_btn = QPushButton()
         self.hint_btn.clicked.connect(self.show_hint)
         self.solution_btn = QPushButton(tr("Show the worked solution"))
@@ -149,11 +150,8 @@ class ProblemsPage(QWidget):
         self.prev_btn.clicked.connect(lambda: self._step(-1))
         self.next_btn = QPushButton(tr("Next ▶"))
         self.next_btn.clicked.connect(lambda: self._step(1))
-        for w in (self.hint_btn, self.solution_btn):
+        for w in (self.hint_btn, self.solution_btn, self.prev_btn, self.next_btn):
             buttons.addWidget(w)
-        buttons.addStretch(1)
-        buttons.addWidget(self.prev_btn)
-        buttons.addWidget(self.next_btn)
         dl.addLayout(buttons)
 
         split.addWidget(detail)

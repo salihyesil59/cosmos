@@ -4,13 +4,16 @@ from __future__ import annotations
 
 import math
 
-from PySide6.QtCore import QPoint, Qt, Signal
+from PySide6.QtCore import QPoint, QRect, QSize, Qt, Signal
 from PySide6.QtWidgets import (
     QComboBox,
     QDoubleSpinBox,
     QFrame,
     QHBoxLayout,
     QLabel,
+    QLayout,
+    QScrollArea,
+    QSizePolicy,
     QSlider,
     QToolButton,
     QVBoxLayout,
@@ -59,6 +62,94 @@ class InfoButton(QToolButton):
         pos = self.mapToGlobal(QPoint(self.width() + 4, 0))
         popup.move(pos)
         popup.show()
+
+
+class FlowLayout(QLayout):
+    """A row of widgets that wraps onto the next line when the window is narrow.
+
+    Qt has no such layout of its own. A row of buttons in a QHBoxLayout cannot get
+    narrower than the sum of its buttons, so on a small window the last ones are
+    simply cut off; here they move down instead (D2).
+    """
+
+    def __init__(self, parent: QWidget | None = None, spacing: int = 8):
+        super().__init__(parent)
+        self._items: list = []
+        self.setSpacing(spacing)
+
+    def addItem(self, item):        # noqa: N802 (Qt override)
+        self._items.append(item)
+
+    def insertWidget(self, index: int, widget: QWidget) -> None:    # noqa: N802 (Qt-style name)
+        """Put a widget at a chosen place in the row rather than at its end."""
+        self.addWidget(widget)          # lets Qt reparent it and wrap it in an item
+        self._items.insert(index, self._items.pop())
+
+    def count(self) -> int:
+        return len(self._items)
+
+    def itemAt(self, index: int):   # noqa: N802 (Qt override)
+        return self._items[index] if 0 <= index < len(self._items) else None
+
+    def takeAt(self, index: int):   # noqa: N802 (Qt override)
+        return self._items.pop(index) if 0 <= index < len(self._items) else None
+
+    def expandingDirections(self):  # noqa: N802 (Qt override)
+        return Qt.Orientations(Qt.Orientation(0))
+
+    def hasHeightForWidth(self) -> bool:    # noqa: N802 (Qt override)
+        return True
+
+    def heightForWidth(self, width: int) -> int:    # noqa: N802 (Qt override)
+        return self._lay_out(QRect(0, 0, width, 0), apply=False)
+
+    def setGeometry(self, rect):    # noqa: N802 (Qt override)
+        super().setGeometry(rect)
+        self._lay_out(rect, apply=True)
+
+    def sizeHint(self) -> QSize:    # noqa: N802 (Qt override)
+        return self.minimumSize()
+
+    def minimumSize(self) -> QSize:     # noqa: N802 (Qt override)
+        # The widest single item, not the sum: anything wider than that wraps.
+        size = QSize(0, 0)
+        for item in self._items:
+            size = size.expandedTo(item.minimumSize())
+        margins = self.contentsMargins()
+        return size + QSize(margins.left() + margins.right(), margins.top() + margins.bottom())
+
+    def _lay_out(self, rect: QRect, apply: bool) -> int:
+        """Place the items inside ``rect``; returns the height they needed."""
+        margins = self.contentsMargins()
+        x = rect.x() + margins.left()
+        y = rect.y() + margins.top()
+        right = rect.right() - margins.right()
+        spacing, line_height = self.spacing(), 0
+        for item in self._items:
+            hint = item.sizeHint()
+            if line_height and x + hint.width() > right:
+                x = rect.x() + margins.left()
+                y += line_height + spacing
+                line_height = 0
+            if apply:
+                item.setGeometry(QRect(QPoint(x, y), hint))
+            x += hint.width() + spacing
+            line_height = max(line_height, hint.height())
+        return y + line_height - rect.y() + margins.bottom()
+
+
+def scrolling_page(page: QWidget) -> QScrollArea:
+    """Let a page scroll up and down rather than be cut off on a short screen (D2).
+
+    Sideways it never scrolls: the page is always exactly as wide as the window.
+    """
+    area = QScrollArea()
+    area.setWidgetResizable(True)
+    area.setHorizontalScrollBarPolicy(Qt.ScrollBarAlwaysOff)
+    area.setFrameShape(QScrollArea.NoFrame)
+    area.setSizePolicy(QSizePolicy.Expanding, QSizePolicy.Expanding)
+    area.setWidget(page)
+    return area
 
 
 def centred(widget: QWidget, max_width: int = 1120) -> QWidget:

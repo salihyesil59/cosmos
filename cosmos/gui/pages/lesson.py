@@ -22,7 +22,7 @@ from cosmos.gui import nav_icons
 from cosmos.gui.context import AppContext
 from cosmos.gui.simulators.registry import SIMULATORS
 from cosmos.gui.rendering.lesson_html import FULL_VIEW, INTUITIVE_VIEW
-from cosmos.gui.widgets.common import Banner, muted_label, title_label
+from cosmos.gui.widgets.common import Banner, FlowLayout, muted_label, title_label
 from cosmos.gui.widgets.quiz import QuizWidget
 from cosmos.gui.widgets.rich_browser import RichBrowser
 from cosmos.progress import LessonStatus
@@ -99,15 +99,17 @@ class LessonPage(QWidget):
         self.tabs.setTabVisible(self.teacher_tab, False)
         root.addWidget(self.tabs, 1)
 
-        nav = QHBoxLayout()
+        # Six buttons and a simulator link or two are more than a narrow window can
+        # hold in one row, so the row wraps instead of cutting the last ones off.
+        nav = FlowLayout(spacing=8)
         self.prev_btn = QPushButton(tr("Previous lesson"))
         self.prev_btn.setIcon(nav_icons.icon("back", size=14))
         self.prev_btn.clicked.connect(self._go_prev)
         nav.addWidget(self.prev_btn)
-        self.sim_buttons = QHBoxLayout()
-        nav.addStretch(1)
-        nav.addLayout(self.sim_buttons)
-        nav.addStretch(1)
+        # The simulator links belong in the row itself, not in a block of their own:
+        # a block cannot wrap, and some lessons link to four simulators.
+        self.nav_row = nav
+        self.sim_buttons: list[QPushButton] = []
         self.terms_btn = QPushButton(tr("Add the terms to my flashcards"))
         self.terms_btn.setToolTip(tr("Put every glossary term this lesson uses into your flashcard deck. They "
                                      "come back on the Review page until you know them."))
@@ -153,18 +155,19 @@ class LessonPage(QWidget):
         self.terms = review.lesson_terms(lesson.body, lesson.id, self.ctx.glossary)
         self.terms_btn.setVisible(bool(self.terms))
 
-        while self.sim_buttons.count():
-            item = self.sim_buttons.takeAt(0)
-            if item.widget():
-                item.widget().hide()
-                item.widget().deleteLater()
+        for old_button in self.sim_buttons:
+            self.nav_row.removeWidget(old_button)
+            old_button.hide()
+            old_button.deleteLater()
+        self.sim_buttons = []
         for sid in lesson.simulators:
             info = SIMULATORS[sid]
             btn = QPushButton(f"{info.icon} {tr(info.title)}".replace("&", "&&"))  # keep "&" visible
             btn.setToolTip(tr("Open the {title}: {tagline}")
                            .format(title=tr(info.title), tagline=tr(info.tagline)))
             btn.clicked.connect(lambda _=False, s=sid: self.ctx.navigate(f"sim:{s}"))
-            self.sim_buttons.addWidget(btn)
+            self.nav_row.insertWidget(1 + len(self.sim_buttons), btn)   # right after "Previous lesson"
+            self.sim_buttons.append(btn)
 
         self.prev_btn.setEnabled(cur.previous_lesson(lesson_id) is not None)
         self.next_btn.setEnabled(cur.next_lesson(lesson_id) is not None)

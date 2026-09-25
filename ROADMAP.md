@@ -265,3 +265,5 @@ on screen before you ask for it.
 - [x] ★ `D1` A calmer window: side panels closed until asked for and never wider
   than a third, one section of the navigation open at a time, a nine-item toolbar,
   a readable text measure, and one set of icons drawn in code instead of emoji
+- [x] ★ `D2` A window that stays where you put it, and a test that keeps every page
+  inside the smallest window the app offers

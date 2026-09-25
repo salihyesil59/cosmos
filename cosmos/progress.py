@@ -52,6 +52,8 @@ class UserData:
     achievements: dict[str, str] = field(default_factory=dict)      # achievement id -> ISO timestamp
     panels_open: list[str] = field(default_factory=list)            # side panels left open: "guide", "notes", "tutor"
     nav_hidden: bool = False                                        # the navigation list is folded away (Ctrl+B)
+    window_geometry: str = ""                                       # base64 QMainWindow.saveGeometry()
+    window_layout: str = ""                                         # base64 QMainWindow.saveState()
 
     @classmethod
     def from_dict(cls, data: dict) -> UserData:
@@ -64,7 +66,7 @@ BACKUP_FORMAT = 1
 # Settings that belong to a computer rather than to a learner: a restored backup keeps
 # whatever this machine already uses.
 _DEVICE_FIELDS = ("theme", "language", "font_scale", "update_check", "update_last_checked",
-                  "panels_open", "nav_hidden")
+                  "panels_open", "nav_hidden", "window_geometry", "window_layout")
 _RECORD_FIELDS = ("quiz_best", "completed", "lessons_opened", "simulators_opened", "notes",
                   "bookmarks", "challenges_done", "problems_solved", "review", "achievements", "flashcards")
 
@@ -108,7 +110,8 @@ class ProgressStore:
                              bookmarks=list(kept.bookmarks), language=kept.language,
                              font_scale=kept.font_scale, classroom=kept.classroom,
                              update_check=kept.update_check, daily_goal=kept.daily_goal,
-                             panels_open=list(kept.panels_open), nav_hidden=kept.nav_hidden)
+                             panels_open=list(kept.panels_open), nav_hidden=kept.nav_hidden,
+                             window_geometry=kept.window_geometry, window_layout=kept.window_layout)
         self.save()
 
     # ------------------------------------------------------ backup (G21)

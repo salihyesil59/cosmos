@@ -6,6 +6,37 @@ format may still change between releases.
 
 ## Unreleased
 
+### Added
+
+- **The window opens where you left it** (`D2`): its size, its position, whether it
+  was maximised, and how wide you dragged the side panels. Until now it reset to
+  1440x900 on every start, which sat oddly next to panels that were remembered.
+- **A layout test** that opens every page — the whole course, every simulator, the
+  glossary, the problems, the lesson map — at the smallest window size the app
+  offers, and fails if anything has to be scrolled sideways or is cut off. Nothing
+  checked this before, which is how the interface drifted into being cramped.
+
+### Fixed
+
+- Rows of buttons that were wider than a small window now **wrap onto the next
+  line** instead of losing their last buttons: the row under a lesson (some lessons
+  link to five simulators), both rows on the problem page, and the list of
+  simulators on the home page.
+- The **simulator and progress pages scroll up and down** when the window is too
+  short for them, rather than squeezing their contents. A simulator needed 852
+  pixels of height and the window allowed 700, so the controls were cut off on a
+  1366x768 laptop.
+- Long glossary terms are shortened with an ellipsis instead of pushing a
+  horizontal scrollbar under the list.
+- Plots may now be 180 pixels tall rather than 220, which is what let a simulator
+  fit a short screen at all.
+- The **"With the maths" button** was drawn bold when selected but measured
+  unbold, so its own label did not fit inside it.
+- The **"Age & lookback time"** tab in the cosmology calculator lost its `&`, which
+  Qt had taken for a keyboard shortcut.
+- The test suite now points Qt at the system fonts. Without them every glyph is the
+  same empty box, so any measurement of how wide a label is would have been fiction.
+
 ### Changed
 
 - **The window opens on the page, not on the furniture** (`D1`). The Guide, Notes

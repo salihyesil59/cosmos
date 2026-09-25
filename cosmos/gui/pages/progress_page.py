@@ -19,7 +19,7 @@ from cosmos.content.loader import load_problems
 from cosmos.gui.context import AppContext
 from cosmos.gui.simulators.registry import SIMULATORS
 from cosmos.gui.theme import repolish
-from cosmos.gui.widgets.common import card, muted_label, title_label
+from cosmos.gui.widgets.common import card, muted_label, scrolling_page, title_label
 from cosmos.gui.widgets.prereq_map import PrerequisiteMap
 from cosmos.i18n import tr, tr_noop
 
@@ -54,7 +54,11 @@ class ProgressPage(QWidget):
     def __init__(self, ctx: AppContext, parent: QWidget | None = None):
         super().__init__(parent)
         self.ctx = ctx
-        root = QVBoxLayout(self)
+        outer = QVBoxLayout(self)
+        outer.setContentsMargins(0, 0, 0, 0)
+        body = QWidget()
+        outer.addWidget(scrolling_page(body))
+        root = QVBoxLayout(body)
         root.setContentsMargins(20, 14, 20, 12)
         root.setSpacing(10)
         head = QHBoxLayout()
@@ -120,6 +124,7 @@ class ProgressPage(QWidget):
         root.addWidget(muted_label(tr("Click a lesson to open it. Arrows show which lessons build on which.")))
         self.map = PrerequisiteMap(ctx)
         self.map.setObjectName("prereqMap")
+        self.map.setProperty("scrolls_sideways", True)      # it is a map: you drag it
         self.map.lessonClicked.connect(lambda lid: ctx.navigate(f"lesson:{lid}"))
         root.addWidget(self.map, 1)
         ctx.signals.progressChanged.connect(self.refresh)
