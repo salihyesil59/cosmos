@@ -11,6 +11,8 @@ every test in one place.
 import os
 from pathlib import Path
 
+import pytest
+
 os.environ.setdefault("QT_QPA_PLATFORM", "offscreen")
 
 if not os.environ.get("QT_QPA_FONTDIR"):
@@ -20,3 +22,11 @@ if not os.environ.get("QT_QPA_FONTDIR"):
         if candidate.is_dir():
             os.environ["QT_QPA_FONTDIR"] = str(candidate)
             break
+
+
+@pytest.fixture(scope="session")
+def qt_app():
+    """A Qt application, for tests that draw something but need no window."""
+    from PySide6.QtWidgets import QApplication
+
+    return QApplication.instance() or QApplication([])

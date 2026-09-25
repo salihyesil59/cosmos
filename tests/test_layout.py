@@ -60,9 +60,15 @@ def shrink_to_minimum(window) -> None:
     pump()
 
 
-def test_no_page_is_wider_than_the_window_it_lives_in(window):
+def test_every_page_fits_the_smallest_window(window):
+    """One sweep of the whole app, looking for both ways a page can overflow.
+
+    The two checks share a sweep on purpose: opening all 58 lessons and all 29
+    simulators is the expensive part of this file, and doing it twice also made a
+    Windows-only scipy flake (a temporary file it fails to reopen) much more likely.
+    """
     shrink_to_minimum(window)
-    too_wide = []
+    too_wide, sideways = [], []
     for route in every_route(window):
         window.navigate(route)
         pump()
@@ -70,23 +76,15 @@ def test_no_page_is_wider_than_the_window_it_lives_in(window):
         needed = page.minimumSizeHint().width()
         if needed > page.width():
             too_wide.append(f"{route} needs {needed}px, has {page.width()}px")
-    assert not too_wide, "cut off at the smallest window size: " + "; ".join(too_wide)
-
-
-def test_nothing_has_to_be_scrolled_sideways(window):
-    shrink_to_minimum(window)
-    offenders = []
-    for route in every_route(window):
-        window.navigate(route)
-        pump()
-        for area in window.stack.currentWidget().findChildren(QAbstractScrollArea):
+        for area in page.findChildren(QAbstractScrollArea):
             if area.property("scrolls_sideways"):
                 continue          # a map or a timeline: dragging it is the point
             bar = area.horizontalScrollBar()
             if bar.isVisible() and bar.maximum() > 0:
                 name = area.objectName() or type(area).__name__
-                offenders.append(f"{route}/{name} runs {bar.maximum()}px past the edge")
-    assert not offenders, "sideways scrolling nobody asked for: " + "; ".join(offenders)
+                sideways.append(f"{route}/{name} runs {bar.maximum()}px past the edge")
+    assert not too_wide, "cut off at the smallest window size: " + "; ".join(too_wide)
+    assert not sideways, "sideways scrolling nobody asked for: " + "; ".join(sideways)
 
 
 def test_the_declared_minimum_size_is_honest(window):

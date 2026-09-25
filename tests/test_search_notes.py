@@ -61,6 +61,17 @@ def test_route_titles(ctx):
     assert route_title(ctx, "lesson:L4.3").endswith("Big Bang Nucleosynthesis")
     assert "Interactive Cosmic Timeline" in route_title(ctx, "sim:S10")
     assert "glossary" in route_title(ctx, "glossary:redshift")
-    assert route_title(ctx, "reference") == "∑  Reference"
-    assert route_title(ctx, "lesson:L9.9") == "•  lesson:L9.9"      # deleted lesson still shows something
+    # D3: the name is the name; the icon is drawn beside it, not pasted in front of it.
+    assert route_title(ctx, "reference") == "Reference"
+    assert route_title(ctx, "lesson:L9.9") == "lesson:L9.9"     # deleted lesson still shows something
     assert is_noteworthy("lesson:L1.1") and not is_noteworthy("search:abc")
+
+
+def test_route_icons(ctx, qt_app):
+    """Every page a bookmark can point at has an icon, drawn like the navigation's."""
+    from cosmos.gui.routes import route_icon
+
+    for route in ("home", "reference", "progress", "notes", "classroom", "history",
+                  "lesson:L4.3", "sim:S10", "glossary:redshift", "problems:p0-proxima"):
+        assert not route_icon(ctx, route).isNull(), route
+    assert route_icon(ctx, "nothing:here").isNull()

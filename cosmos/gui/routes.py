@@ -1,50 +1,71 @@
-"""Human-readable names for routes, used by bookmarks, notes and search."""
+"""Human-readable names and icons for routes, used by bookmarks, notes and search."""
 
 from __future__ import annotations
 
+from PySide6.QtGui import QIcon
+
 from cosmos.gui.context import AppContext
 
+# Which drawn glyph stands for each kind of page. The names come from
+# ``cosmos.gui.nav_icons``, so a bookmark carries the same icon as the navigation
+# list and follows the theme with it.
 STATIC_TITLES = {
-    "home": ("⌂", "Home"),
-    "sims": ("🧪", "All simulators"),
-    "glossary": ("📖", "Glossary"),
-    "progress": ("📈", "Progress"),
-    "reference": ("∑", "Reference"),
-    "notes": ("📝", "Notes & bookmarks"),
-    "search": ("🔎", "Search"),
-    "problems": ("✏", "Problem sets"),
-    "review": ("🔁", "Review"),
-    "classroom": ("🎓", "Classroom"),
+    "home": ("home", "Home"),
+    "sims": ("simulator", "All simulators"),
+    "glossary": ("glossary", "Glossary"),
+    "progress": ("progress", "Progress"),
+    "reference": ("reference", "Reference"),
+    "notes": ("notes", "Notes & bookmarks"),
+    "search": ("search", "Search"),
+    "problems": ("problems", "Problem sets"),
+    "review": ("review", "Review"),
+    "classroom": ("classroom", "Classroom"),
+    "history": ("history", "History"),
 }
 
 
 def route_parts(ctx: AppContext, route: str) -> tuple[str, str]:
-    """Return an icon and a title for a route, even for routes that no longer exist."""
+    """A glyph name and a title for a route, even for routes that no longer exist.
+
+    For a simulator the first value is its own symbol rather than a glyph name;
+    ``route_icon`` knows the difference.
+    """
     from cosmos.gui.simulators.registry import SIMULATORS
 
     kind, _, target = route.partition(":")
     if kind == "lesson" and target in ctx.curriculum.lessons:
-        return "📖", f"{target}  {ctx.curriculum.lessons[target].title}"
+        return "course", f"{target}  {ctx.curriculum.lessons[target].title}"
     if kind == "sim" and target in SIMULATORS:
         return SIMULATORS[target].icon, SIMULATORS[target].title
     if kind == "glossary" and target in ctx.glossary:
-        return "🔤", f"{ctx.glossary[target].term} (glossary)"
+        return "glossary", f"{ctx.glossary[target].term} (glossary)"
     if kind == "problems" and target:
         from cosmos.content.loader import load_problems
 
         problem = next((p for s in load_problems() for p in s.problems if p.id == target), None)
         if problem:
-            return "✏", f"{problem.title} (problem, level {problem.level})"
+            return "problems", f"{problem.title} (problem, level {problem.level})"
     if kind == "search" and target:
-        return "🔎", f"Search: {target}"
+        return "search", f"Search: {target}"
     if kind in STATIC_TITLES:
         return STATIC_TITLES[kind]
-    return "•", route
+    return "", route
 
 
 def route_title(ctx: AppContext, route: str) -> str:
-    icon, title = route_parts(ctx, route)
-    return f"{icon}  {title}"
+    """The name of a page, with nothing pasted in front of it."""
+    return route_parts(ctx, route)[1]
+
+
+def route_icon(ctx: AppContext, route: str, size: int = 16) -> QIcon:
+    """The icon for a page, drawn in the current theme."""
+    from cosmos.gui import nav_icons
+
+    mark = route_parts(ctx, route)[0]
+    if not mark:
+        return QIcon()
+    return nav_icons.icon(mark, size=size) if mark in nav_icons.GLYPHS \
+        else nav_icons.text_icon(mark, size=size)
 
 
 def page_context(ctx: AppContext, route: str) -> str:

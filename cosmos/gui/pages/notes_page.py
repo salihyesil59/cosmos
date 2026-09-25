@@ -18,7 +18,7 @@ from PySide6.QtWidgets import (
 )
 
 from cosmos.gui.context import AppContext
-from cosmos.gui.routes import route_title
+from cosmos.gui.routes import route_icon, route_title
 from cosmos.gui.widgets.common import card, centred, muted_label, title_label
 from cosmos.i18n import tr, tr_noop
 
@@ -138,6 +138,9 @@ class NotesPage(QWidget):
         layout = QVBoxLayout(frame)
         layout.setContentsMargins(14, 10, 14, 10)
         top = QHBoxLayout()
+        mark = QLabel()
+        mark.setPixmap(route_icon(self.ctx, route).pixmap(16, 16))
+        top.addWidget(mark, 0, Qt.AlignTop)
         label = QLabel(route_title(self.ctx, route))
         label.setWordWrap(True)
         top.addWidget(label, 1)

@@ -34,11 +34,29 @@ format may still change between releases.
   unbold, so its own label did not fit inside it.
 - The **"Age & lookback time"** tab in the cosmology calculator lost its `&`, which
   Qt had taken for a keyboard shortcut.
+- The cosmic-web figure worked its Voronoi cloud out afresh on every redraw. The
+  cloud never changes, so it is now computed once — which also stops scipy's
+  Qhull opening a temporary file each time, something it occasionally fails to
+  do on Windows and which the new layout test made fire reliably.
 - The test suite now points Qt at the system fonts. Without them every glyph is the
   same empty box, so any measurement of how wide a label is would have been fiction.
 
 ### Changed
 
+- **No emoji left in the interface** (`D3`). Nineteen of the twenty-nine simulators
+  already used a mathematical or geometric sign; the other ten used emoji, drawn in
+  colour, at their own size, from a font that differs on every operating system.
+  Each now has a sign of its own from Mathematical Operators, Arrows or Geometric
+  Shapes — the MCMC explorer steps to and fro (⇌), the distance ladder has rungs
+  (≣), dark matter detection is a recoil (⊗) — and two simulators no longer share
+  the same one. Every sign is painted into an icon, so it sits on the text baseline
+  and takes the theme's colour like the drawn glyphs do, including in the
+  navigation list, where simulators had no icon at all.
+- **Bookmarks, notes and search results** carry the same drawn icons instead of an
+  emoji pasted into their text. A page's name is now just its name, which is also
+  how it reads in an exported notes file.
+- The course website exported from **File → Export the course as a website** picks
+  up the new signs, since both read the same registry.
 - **The window opens on the page, not on the furniture** (`D1`). The Guide, Notes
   and Tutor panels start closed and open on **F1**, **F2**, **F3** or their toolbar
   buttons; they never take more than a third of the window, and whichever you leave

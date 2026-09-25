@@ -5,6 +5,7 @@ from __future__ import annotations
 from PySide6.QtCore import QByteArray, QSize, Qt
 from PySide6.QtGui import QAction, QActionGroup, QColor, QIcon, QKeySequence, QPainter, QPen, QPixmap
 from PySide6.QtWidgets import (
+    QAbstractButton,
     QApplication,
     QDockWidget,
     QHeaderView,
@@ -48,6 +49,7 @@ from cosmos.progress import LessonStatus
 
 ROUTE_ROLE = Qt.UserRole
 GLYPH_ROLE = Qt.UserRole + 1
+SYMBOL_ROLE = Qt.UserRole + 2
 
 
 def status_icon(status: LessonStatus) -> QIcon:
@@ -211,6 +213,8 @@ class MainWindow(QMainWindow):
         for info in SIMULATORS.values():
             item = QTreeWidgetItem([tr(info.title)])
             item.setData(0, ROUTE_ROLE, f"sim:{info.id}")
+            item.setData(0, SYMBOL_ROLE, info.icon)
+            item.setIcon(0, nav_icons.text_icon(info.icon, size=16))
             item.setToolTip(0, tr(info.tagline))
             self.sims_item.addChild(item)
             self.sim_items[info.id] = item
@@ -810,10 +814,19 @@ class MainWindow(QMainWindow):
             glyph = item.data(0, GLYPH_ROLE)
             if glyph:
                 item.setIcon(0, nav_icons.icon(glyph, size=16))
+        for item in self.sim_items.values():
+            item.setIcon(0, nav_icons.text_icon(item.data(0, SYMBOL_ROLE), size=16))
         for entry in self.findChildren(QAction):
             glyph = entry.property("glyph")
             if glyph:
                 entry.setIcon(nav_icons.icon(glyph))
+        # Buttons that name a simulator carry its symbol; they follow the theme too.
+        for button in self.findChildren(QAbstractButton):
+            symbol = button.property("symbol")
+            if symbol:
+                button.setIcon(nav_icons.text_icon(symbol, size=16))
+        self.lesson_page.retheme_tabs()
+        self.notes_page.refresh()
         self._refresh_sidebar()
         self._update_bookmark_action()
 

@@ -131,6 +131,12 @@ class LessonPage(QWidget):
 
         self.tabs.currentChanged.connect(self._tab_changed)
 
+    def retheme_tabs(self) -> None:
+        """Redraw the tab icons after the theme changed."""
+        for index, glyph in enumerate(("glossary", "problems", "classroom")):
+            if index < self.tabs.count():
+                self.tabs.setTabIcon(index, nav_icons.icon(glyph, size=16))
+
     # ------------------------------------------------------------------ api
     def load(self, lesson_id: str) -> None:
         cur, store = self.ctx.curriculum, self.ctx.store
@@ -162,7 +168,9 @@ class LessonPage(QWidget):
         self.sim_buttons = []
         for sid in lesson.simulators:
             info = SIMULATORS[sid]
-            btn = QPushButton(f"{info.icon} {tr(info.title)}".replace("&", "&&"))  # keep "&" visible
+            btn = QPushButton(tr(info.title).replace("&", "&&"))       # keep "&" visible
+            btn.setIcon(nav_icons.text_icon(info.icon, size=16))
+            btn.setProperty("symbol", info.icon)
             btn.setToolTip(tr("Open the {title}: {tagline}")
                            .format(title=tr(info.title), tagline=tr(info.tagline)))
             btn.clicked.connect(lambda _=False, s=sid: self.ctx.navigate(f"sim:{s}"))

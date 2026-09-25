@@ -8,6 +8,7 @@ from __future__ import annotations
 
 import functools
 import io
+from functools import lru_cache
 
 import numpy as np
 from matplotlib.backends.backend_agg import FigureCanvasAgg
@@ -294,8 +295,14 @@ def _olbers_sky_coverage(fig, p: Palette):
     ax.legend(loc="lower right", fontsize=8)
 
 
-@figure("cosmic_web_illustration")
-def _cosmic_web(fig, p: Palette):
+@lru_cache(maxsize=1)
+def _cosmic_web_points():
+    """The filament cloud behind the cosmic-web figure.
+
+    The seed is fixed, so the cloud is the same every time; only its colour follows
+    the theme. Working it out once also keeps scipy's Qhull from opening a fresh
+    temporary file on every redraw, which it occasionally fails to do on Windows.
+    """
     from scipy.spatial import Voronoi
 
     rng = np.random.default_rng(42)
@@ -316,7 +323,12 @@ def _cosmic_web(fig, p: Palette):
     points.append(rng.uniform(0, 1, (200, 2)) * [1.8, 1.0])
     pts = np.vstack(points)
     inside = (pts[:, 0] > 0) & (pts[:, 0] < 1.8) & (pts[:, 1] > 0) & (pts[:, 1] < 1)
-    pts = pts[inside]
+    return pts[inside]
+
+
+@figure("cosmic_web_illustration")
+def _cosmic_web(fig, p: Palette):
+    pts = _cosmic_web_points()
     ax = fig.add_subplot()
     ax.scatter(pts[:, 0], pts[:, 1], s=1.2, color=p.series[0], alpha=0.75, linewidths=0)
     ax.set_xlim(0, 1.8)

@@ -5,6 +5,7 @@ from __future__ import annotations
 from PySide6.QtCore import Qt
 from PySide6.QtWidgets import QLineEdit, QListWidget, QListWidgetItem, QVBoxLayout, QWidget
 
+from cosmos.gui import nav_icons
 from cosmos.gui.context import AppContext
 from cosmos.gui.search import KIND_COUNTS, KIND_LABELS, search
 from cosmos.gui.widgets.common import muted_label, title_label
@@ -80,7 +81,8 @@ class SearchPage(QWidget):
         self.count.setText(tr("{count} results — {summary}").format(count=len(self.hits), summary=summary)
                            if self.hits else tr("Nothing found. Try a shorter or more common word."))
         for hit in self.hits:
-            item = QListWidgetItem(f"{hit.icon}  {hit.title}\n      {hit.label} · {hit.subtitle}\n      {hit.snippet}")
+            item = QListWidgetItem(f"{hit.title}\n{hit.label} · {hit.subtitle}\n{hit.snippet}")
+            item.setIcon(nav_icons.icon(hit.glyph, size=16))
             item.setData(Qt.UserRole, hit.route)
             item.setToolTip(tr("Open {route}").format(route=hit.route))
             self.list.addItem(item)
