@@ -4,7 +4,15 @@ All notable changes to Cosmos are recorded here. Versions follow
 [semantic versioning](https://semver.org): until 1.0 the interface and the save
 format may still change between releases.
 
-## Unreleased
+## 0.7.0 — 2026-09-26
+
+This release is for the people who could not use the app. A screen reader met 577
+controls with no name, and a plot — where the answer usually is — as a blank
+rectangle; every one of them can now say what it is, and every plot reads itself
+out. The high-contrast theme was measured rather than taken on trust, which
+cleared it and caught three colours in the *light* theme that were too pale for
+body text. And the Reference page no longer freezes for two and a half seconds
+before it appears.
 
 ### Added
 
@@ -84,6 +92,18 @@ format may still change between releases.
   sweep cannot flatter itself about its coverage. It found the Guide panel's close
   button on the way in, and it plants a nameless button of its own to prove it
   would still notice.
+
+### Downloads
+
+| Platform | File |
+|---|---|
+| Windows | `Cosmos-0.7.0-windows-amd64.zip` — one executable, no installer |
+| macOS | `Cosmos-0.7.0-macos-arm64.zip` — an app bundle |
+| Linux | `Cosmos-0.7.0-linux-x86_64.AppImage` or the equivalent `.tar.gz` |
+| Any browser | `Cosmos-0.7.0-website.zip` — the reading edition: unzip and open `index.html` |
+
+Nothing needs to be installed: each package contains its own Python and Qt, and
+every build runs `--selftest` before it is published.
 
 ## 0.6.0 — 2026-09-26
 
