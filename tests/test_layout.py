@@ -65,6 +65,31 @@ def every_route(window) -> list[str]:
     return static + lessons + [f"sim:{sim_id}" for sim_id in SIMULATORS]
 
 
+def what_is_wide(page, limit: int = 4) -> str:
+    """The widgets asking for the most room, so a failure names a culprit.
+
+    "review needs 874px" says nothing a person can act on; the button, label or
+    panel that wanted those pixels is the thing to look at, and when the number
+    only misbehaves in a full run it is the only way to see what moved.
+    """
+    from PySide6.QtWidgets import QWidget
+
+    found = []
+    for child in page.findChildren(QWidget):
+        width = child.minimumSizeHint().width()
+        if width <= 0:
+            continue
+        name = child.objectName() or type(child).__name__
+        text = getattr(child, "text", None)
+        try:
+            label = text() if callable(text) else ""
+        except TypeError:                       # some text() take arguments
+            label = ""
+        found.append((width, f"{name} {label[:44]!r}" if label else name))
+    found.sort(reverse=True)
+    return ", ".join(f"{width}px {name}" for width, name in found[:limit])
+
+
 def shrink_to_minimum(window) -> None:
     needs_real_fonts()
     for dock in (window.guide_dock, window.notes_dock, window.tutor_dock):
@@ -88,7 +113,8 @@ def test_every_page_fits_the_smallest_window(window):
         page = window.stack.currentWidget()
         needed = page.minimumSizeHint().width()
         if needed > page.width():
-            too_wide.append(f"{route} needs {needed}px, has {page.width()}px")
+            too_wide.append(f"{route} needs {needed}px, has {page.width()}px "
+                            f"(widest: {what_is_wide(page)})")
         for area in page.findChildren(QAbstractScrollArea):
             if area.property("scrolls_sideways"):
                 continue          # a map or a timeline: dragging it is the point
@@ -129,7 +155,8 @@ def test_the_declared_minimum_size_is_honest(window):
     pump()
     needed = window.minimumSizeHint()
     assert needed.width() <= window.minimumWidth(), (
-        f"the window says it works at {window.minimumWidth()}px wide but needs {needed.width()}px")
+        f"the window says it works at {window.minimumWidth()}px wide but needs {needed.width()}px "
+        f"(widest: {what_is_wide(window)})")
     assert needed.height() <= window.minimumHeight(), (
         f"the window says it works at {window.minimumHeight()}px tall but needs {needed.height()}px")
 

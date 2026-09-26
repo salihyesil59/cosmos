@@ -181,8 +181,14 @@ def _stylesheet(p: Palette, scale: float = 1.0) -> str:
     QPushButton:hover {{ border-color: {p.accent}; }}
     QPushButton:pressed {{ background: {p.mix(p.accent, 0.2)}; }}
     QPushButton:disabled {{ color: {p.muted}; border-color: {p.border}; }}
+    /* No bolder font here either. No interface font on any of the three platforms has
+       a real semibold face, so Qt synthesises the 600 weight — and a synthesised
+       weight measures differently depending on what else the process has loaded,
+       which made the width of a hidden flashcard button set the Review page's
+       minimum and, through it, the whole window's. The accent background is the
+       emphasis; the weight was only ever making it fragile. */
     QPushButton[role="primary"] {{
-        background: {p.accent}; color: {p.accent_text}; border: 1px solid {p.accent}; font-weight: 600;
+        background: {p.accent}; color: {p.accent_text}; border: 1px solid {p.accent};
     }}
     QPushButton[role="primary"]:hover {{ background: {p.mix("#ffffff", 0.15, p.accent)}; }}
     QFrame[card="true"][earned="no"] {{ background: {p.bg}; border-style: dashed; }}
