@@ -322,9 +322,9 @@ doing first.
 - [x] ★ `A1` Every control announces itself: names taken from the labels already
   beside them, names for the icon-only buttons, and a test that counts what is
   left
-- [ ] ★ `A2` A plot a screen reader can read: a name and a description on every
-  canvas, and for the ones that already export their numbers, a text alternative
-  that says what the curve does
+- [x] ★ `A2` A plot a screen reader can read: a name and a description on every
+  canvas, read off the finished figure so it says what the curve actually does
+  and moves when the controls move
 - [ ] `A3` A keyboard-only path through every simulator, with a sensible tab
   order, and a test that walks it
 - [ ] `A4` The high-contrast theme checked against a contrast ratio rather than

@@ -20,6 +20,23 @@ format may still change between releases.
   about instead of "question mark"; and a search box takes its name from the
   placeholder, which is the only thing that ever said what the box was for and
   which vanishes the moment you type.
+- **Every plot can be read out loud** (`A2`). A canvas is where the answer
+  usually is, and to a screen reader it was a blank rectangle. All sixty-odd of
+  them now carry a description — the axes and their ranges, then each labelled
+  series with how many points it has and which way it goes: *"Rotation curve of a
+  spiral galaxy. Horizontal axis Distance from the centre (kpc), 0 to 32. Vertical
+  axis Orbital speed (km/s), 0 to 350. 3 series: Bulge, rises to about 147 near
+  0.52, then falls to 36; …"*
+- **The description is read off the figure, not written by hand** (`A2`). That is
+  what makes it cover every plot at once, follow the sliders as they move, and
+  stay true without anybody keeping it in step — there is nothing to keep in step,
+  because it is a reading of the picture that was actually drawn. It knows a peak
+  from a trough, twenty scattered measurements from a curve that rises, a
+  logarithmic axis, an image, a bar chart, and an unlabelled axis it should not
+  announce as "vertical".
+- **A canvas can be reached by keyboard** (`A2`). Qt would not give one focus, so
+  the description would never have been read out at all.
+
 - **Markup is no longer read aloud** (`A1`). Labels in this app carry `<b>`,
   `<sub>` and `<br>` because they are drawn, not spoken. `strip_markup` turns
   `Ω<sub>b</sub> h<sup>2</sup>` into something a voice can say.

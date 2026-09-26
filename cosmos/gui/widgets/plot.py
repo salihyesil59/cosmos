@@ -9,6 +9,7 @@ from collections.abc import Callable, Sequence
 
 from matplotlib.backends.backend_qtagg import FigureCanvasQTAgg
 from matplotlib.figure import Figure
+from PySide6.QtCore import Qt
 from PySide6.QtWidgets import (
     QFileDialog,
     QHBoxLayout,
@@ -52,6 +53,9 @@ class PlotWidget(QWidget):
         self.figure = Figure(figsize=(6, 4), layout="constrained")
         self.canvas = FigureCanvasQTAgg(self.figure)
         self.canvas.setSizePolicy(QSizePolicy.Expanding, QSizePolicy.Expanding)
+        # A2: a canvas Qt will not give focus to is a canvas a screen reader cannot
+        # reach, and the description below would never be read out.
+        self.canvas.setFocusPolicy(Qt.StrongFocus)
         # Low enough that a simulator still fits a 768-pixel screen, high enough
         # that the axes stay readable.
         self.canvas.setMinimumHeight(180)
@@ -105,7 +109,26 @@ class PlotWidget(QWidget):
             style_axes(ax, p)
             if ax.get_legend():
                 style_legend(ax.get_legend(), p)
+        self._describe()
         self.canvas.draw_idle()
+
+    def _describe(self) -> None:
+        """A2: read the finished figure back out as words, for a screen reader.
+
+        Done after every redraw, so the description follows the sliders rather
+        than describing the plot as it was when the page opened.
+        """
+        from cosmos.gui.rendering import figure_text
+
+        self.canvas.setAccessibleName(self._name.replace("_", " "))
+        try:
+            self.canvas.setAccessibleDescription(figure_text.describe(self.figure))
+        except Exception:                       # noqa: BLE001 - a description is never worth a crash
+            self.canvas.setAccessibleDescription("")
+
+    def description(self) -> str:
+        """What this plot would be read out as. Used by the tests and the export."""
+        return self.canvas.accessibleDescription()
 
     # -------------------------------------------------------- provenance (V2)
     def owning_simulator(self):
