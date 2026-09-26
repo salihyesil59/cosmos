@@ -14,15 +14,28 @@ import pytest
 
 os.environ.setdefault("QT_QPA_PLATFORM", "offscreen")
 
-from PySide6.QtGui import QFontInfo, QFontMetrics  # noqa: E402
+from PySide6.QtGui import QFont, QFontInfo, QFontMetrics  # noqa: E402
 from PySide6.QtWidgets import QAbstractScrollArea, QApplication  # noqa: E402
 
 
 def needs_real_fonts() -> None:
-    """Skip rather than lie: with no fonts every glyph is the same empty box."""
-    metrics = QFontMetrics(QApplication.instance().font())
+    """Skip rather than lie: a width is a fact only if Qt could load the face.
+
+    With no fonts at all, every glyph is the same empty box. There is a quieter way to
+    be lied to: headless, Qt sometimes fails to load the semibold face that the
+    headings and primary buttons ask for, reports no family for it, and measures them
+    in a substitute half as wide again as anything the app draws. The session pins
+    that face open (see ``conftest.py``); this is the check that we are not measuring
+    fiction if it is lost anyway.
+    """
+    font = QApplication.instance().font()
+    metrics = QFontMetrics(font)
     if metrics.horizontalAdvance("i") == metrics.horizontalAdvance("W"):
         pytest.skip("no usable fonts in this environment, so widths mean nothing")
+    bold = QFont(font)
+    bold.setWeight(QFont.Weight(600))
+    if not QFontInfo(bold).family():
+        pytest.skip("the semibold face could not be loaded, so bold widths mean nothing")
 
 
 @pytest.fixture(scope="module")

@@ -3,6 +3,11 @@
 Every achievement reports its progress as ``(done, goal)`` so the interface can
 show a bar for the ones that are still locked. The rules are GUI independent and
 read nothing but :class:`~cosmos.progress.ProgressStore` and the curriculum.
+
+Each one also names the glyph it is shown with. Most reuse a mark the interface
+already has — the flask for the simulators, the pencil for the problems, the cap
+for finishing the course — because a badge carries its own title and description
+and needs no mark of its very own (D3).
 """
 
 from __future__ import annotations
@@ -19,7 +24,7 @@ PERFECT_SCORE = 0.999      # floating-point safe "100%"
 class Achievement:
     id: str
     title: str
-    icon: str
+    glyph: str                 # a name from cosmos.gui.nav_icons, drawn where it is shown
     description: str
     progress: Callable[[object, object], tuple[int, int]]
 
@@ -91,74 +96,74 @@ def _challenges_total() -> int:
 
 
 ACHIEVEMENTS: list[Achievement] = [
-    Achievement("first-steps", _("First steps"), "🌱",
+    Achievement("first-steps", _("First steps"), "course",
                 _("Complete your first lesson."),
                 lambda s, c: (_completed(s, c), 1)),
-    Achievement("five-lessons", _("Getting your bearings"), "🧭",
+    Achievement("five-lessons", _("Getting your bearings"), "tour",
                 _("Complete five lessons."),
                 lambda s, c: (_completed(s, c), 5)),
-    Achievement("halfway", _("Halfway to the horizon"), "🌗",
+    Achievement("halfway", _("Halfway to the horizon"), "progress",
                 _("Complete half of the course."),
                 lambda s, c: (_completed(s, c), max(1, len(c.lessons) // 2))),
-    Achievement("graduate", _("Cosmologist"), "🎓",
+    Achievement("graduate", _("Cosmologist"), "classroom",
                 _("Complete every lesson of the course."),
                 lambda s, c: (_completed(s, c), len(c.lessons))),
-    Achievement("level-clear", _("Level cleared"), "🏁",
+    Achievement("level-clear", _("Level cleared"), "flag",
                 _("Complete every lesson of one level."),
                 lambda s, c: (_levels_completed(s, c), 1)),
-    Achievement("all-levels", _("Every level"), "🗺",
+    Achievement("all-levels", _("Every level"), "map",
                 _("Complete every level of the course."),
                 lambda s, c: (_levels_completed(s, c), len(c.levels))),
-    Achievement("advanced", _("Into the deep end"), "🔭",
+    Achievement("advanced", _("Into the deep end"), "telescope",
                 _("Complete the advanced topics of Level 6."),
                 lambda s, c: (sum(1 for i in c.levels[-1].lesson_ids if s.is_completed(i)),
                               len(c.levels[-1].lesson_ids))),
-    Achievement("perfect-quiz", _("Flawless"), "💯",
+    Achievement("perfect-quiz", _("Flawless"), "check",
                 _("Score 100% on a quiz."),
                 lambda s, c: (_perfect_quizzes(s), 1)),
-    Achievement("five-perfect", _("Perfectionist"), "✨",
+    Achievement("five-perfect", _("Perfectionist"), "medal",
                 _("Score 100% on five quizzes."),
                 lambda s, c: (_perfect_quizzes(s), 5)),
-    Achievement("experimenter", _("Experimenter"), "🧪",
+    Achievement("experimenter", _("Experimenter"), "simulator",
                 _("Open five different simulators."),
                 lambda s, c: (_simulators_opened(s), 5)),
-    Achievement("all-simulators", _("Master of instruments"), "🛠",
+    Achievement("all-simulators", _("Master of instruments"), "simulator",
                 _("Open every simulator in the app."),
                 lambda s, c: (_simulators_opened(s), _all_simulators())),
-    Achievement("challenger", _("Challenge accepted"), "🎯",
+    Achievement("challenger", _("Challenge accepted"), "target",
                 _("Finish a simulator challenge."),
                 lambda s, c: (len(s.data.challenges_done), 1)),
-    Achievement("challenge-master", _("Challenge master"), "🏆",
+    Achievement("challenge-master", _("Challenge master"), "trophy",
                 _("Finish every simulator challenge."),
                 lambda s, c: (len(s.data.challenges_done), _challenges_total())),
-    Achievement("problem-solver", _("Problem solver"), "✏",
+    Achievement("problem-solver", _("Problem solver"), "problems",
                 _("Solve ten worked problems."),
                 lambda s, c: (len(s.data.problems_solved), 10)),
-    Achievement("problem-set", _("Worked through"), "📐",
+    Achievement("problem-set", _("Worked through"), "problems",
                 _("Solve every problem of one level's set."),
                 lambda s, c: (_problem_sets_finished(s), 1)),
-    Achievement("first-try", _("Sharp shooter"), "🏹",
+    Achievement("first-try", _("Sharp shooter"), "target",
                 _("Solve five problems at the first attempt."),
                 lambda s, c: (_first_try(s), 5)),
-    Achievement("note-taker", _("Note-taker"), "📝",
+    Achievement("note-taker", _("Note-taker"), "notes",
                 _("Write notes on three pages."),
                 lambda s, c: (len(s.data.notes), 3)),
-    Achievement("curator", _("Curator"), "⭐",
+    Achievement("curator", _("Curator"), "bookmarked",
                 _("Bookmark five pages."),
                 lambda s, c: (len(s.data.bookmarks), 5)),
-    Achievement("reviewer", _("Second time round"), "🔁",
+    Achievement("reviewer", _("Second time round"), "review",
                 _("Clear a review session: answer every question that was due."),
                 lambda s, c: (int(s.data.reviews_cleared > 0), 1)),
-    Achievement("spaced-out", _("It stuck"), "🧠",
+    Achievement("spaced-out", _("It stuck"), "pin",
                 _("Learn five questions for good: five correct reviews in a row for each."),
                 lambda s, c: (_cards_learned(s), 5)),
-    Achievement("lexicon", _("Words of the trade"), "🃏",
+    Achievement("lexicon", _("Words of the trade"), "flashcards",
                 _("Learn ten glossary terms for good with the flashcards."),
                 lambda s, c: (s.data.terms_learned, 10)),
-    Achievement("streak-week", _("A week in a row"), "🔥",
+    Achievement("streak-week", _("A week in a row"), "flame",
                 _("Study seven days in a row (one day off in between is allowed)."),
                 lambda s, c: (_longest_streak(s), 7)),
-    Achievement("historian", _("Historian"), "🏛",
+    Achievement("historian", _("Historian"), "history",
                 _("Read the history of cosmology from Copernicus to today."),
                 lambda s, c: (int("history" in s.data.pages_seen), 1)),
 ]

@@ -87,7 +87,10 @@ class SimulatorPlugin:
     how_to_use: list[str] = field(default_factory=list)
     things_to_try: list[str] = field(default_factory=list)
     lessons: list[str] = field(default_factory=list)
-    icon: str = "🔌"
+    # A plugin's mark is drawn like every other simulator's, in one colour on the icons'
+    # grid, so it has to be a character that has no colour of its own: an emoji would be
+    # painted by the font in its own colours and ignore the theme (D3).
+    icon: str = "◈"
 
     def validate(self) -> None:
         """Raise ValueError if the plugin could not be shown safely."""

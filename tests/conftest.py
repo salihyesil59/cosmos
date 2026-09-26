@@ -24,6 +24,35 @@ if not os.environ.get("QT_QPA_FONTDIR"):
             break
 
 
+_pinned_face: dict = {}
+
+
+@pytest.fixture(autouse=True)
+def keep_the_bold_face_loaded():
+    """Hold the semibold face open, so Qt cannot lose it halfway through a run.
+
+    Qt drops a font engine it has not drawn with for half a minute. Headless, pointed
+    at a font folder rather than the system's own font stack, it sometimes fails to
+    load this one back: ``QFontInfo`` then reports no family at all, and every heading
+    and primary button — the ones the stylesheet asks for at weight 600 — is measured
+    in a substitute half as wide again as the face the app really draws. One live font
+    per interface font keeps the engine in the cache, and the widths stay honest.
+    """
+    from PySide6.QtWidgets import QApplication
+
+    app = QApplication.instance()
+    if app is not None:
+        from PySide6.QtGui import QFont, QFontMetrics
+
+        wanted = (app.font().family(), app.font().pointSizeF())
+        if _pinned_face.get("for") != wanted:
+            bold = QFont(app.font())
+            bold.setWeight(QFont.Weight(600))
+            QFontMetrics(bold).horizontalAdvance("W")      # measuring is what loads it
+            _pinned_face["for"], _pinned_face["font"] = wanted, bold
+    yield
+
+
 @pytest.fixture(autouse=True)
 def theme_stays_put():
     """A test that changes the theme or the text size puts them back afterwards.
