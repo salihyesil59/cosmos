@@ -18,6 +18,26 @@ format may still change between releases.
   app invents, each with the recipe and the module that runs it. Every entry links
   to the simulators and lesson figures that use it. Reachable from Help → Data &
   methods, or at the route `reference:data`.
+- **The engine's report card, with numbers instead of a claim** (`V4`). The Data
+  & methods page used to say the physics was checked against astropy and against
+  published values, which a reader had to take on trust. It now shows the table:
+  eighteen checks, each with the quantity, what it was compared against, the
+  largest disagreement found anywhere in the range tested, and the most that would
+  be accepted before the test suite fails. The comparisons with astropy agree to
+  about one part in 10^14 — far inside the limits the tests set — and the two
+  universes that can be solved with a pen come out exact.
+- **Checks of three different kinds** (`V4`). Ten against astropy, four against
+  closed forms, four against published measurements. The split is the point, and a
+  test enforces it: if astropy and this engine ever shared a mistake, only the
+  mathematics and the published numbers would notice.
+- **The numbers travel with the app** (`V4`). astropy is a development dependency
+  and is not in a packaged build, so those comparisons are run where it is
+  installed and recorded in `cosmos/data/validation.json`, which the app shows
+  with the date it was measured and a footnote saying so. A test compares the
+  record with a fresh run on every change, and `write_record` refuses to save a
+  partial run, so what ships cannot quietly go stale or look more complete than it
+  is. `python tools/record_validation.py` repeats the whole thing.
+
 - **Eight lesson figures were inventing their data without saying so** (`V5`).
   The course draws 67 figures; fourteen of them make their numbers up, and eight
   of those said nothing about it. One had a legend reading "measurements" beside
