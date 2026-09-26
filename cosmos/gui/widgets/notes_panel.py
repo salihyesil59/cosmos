@@ -8,7 +8,7 @@ from PySide6.QtWidgets import QHBoxLayout, QLabel, QPushButton, QTextEdit, QVBox
 from cosmos.gui import nav_icons
 from cosmos.gui.context import AppContext
 from cosmos.gui.routes import is_noteworthy, route_title
-from cosmos.gui.widgets.common import muted_label
+from cosmos.gui.widgets.common import muted_label, placeholder
 from cosmos.i18n import tr
 
 SAVE_DELAY_MS = 700
@@ -43,7 +43,7 @@ class NotesPanel(QWidget):
 
         self.editor = QTextEdit()
         self.editor.setObjectName("noteEditor")
-        self.editor.setPlaceholderText(tr("Your notes about this page…\n\nWrite down what surprised you, a number you "
+        placeholder(self.editor, tr("Your notes about this page…\n\nWrite down what surprised you, a number you "
                                           "want to remember, "
             "or a question to come back to. Notes are saved automatically on this computer.")
         )

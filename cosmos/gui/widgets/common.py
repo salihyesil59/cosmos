@@ -3,6 +3,7 @@
 from __future__ import annotations
 
 import math
+import re
 
 from PySide6.QtCore import QPoint, QRect, QSize, Qt, Signal
 from PySide6.QtWidgets import (
@@ -22,6 +23,38 @@ from PySide6.QtWidgets import (
 
 from cosmos.gui.theme import repolish
 from cosmos.i18n import tr
+
+_MARKUP = re.compile(r"<[^>]+>")
+_SPACE = re.compile(r"\s+")
+
+
+def describe(widget, name: str, description: str = "") -> None:
+    """Give a control a name a screen reader can announce (A1)."""
+    widget.setAccessibleName(strip_markup(name))
+    if description:
+        widget.setAccessibleDescription(strip_markup(description))
+
+
+def placeholder(edit, text: str) -> None:
+    """Set a field's placeholder, and use it as the field's name (A1).
+
+    A search box has no label beside it: the placeholder is what tells a sighted
+    user what the box is for, so it is exactly the name to announce. It vanishes
+    as soon as anything is typed, which is precisely when a name is still needed.
+    """
+    edit.setPlaceholderText(text)
+    if not edit.accessibleName():
+        edit.setAccessibleName(strip_markup(text.split("…")[0].split("(")[0].strip() or text))
+
+
+def strip_markup(text: str) -> str:
+    """A label as a screen reader should hear it (A1).
+
+    Labels in this app carry rich text — <b>, <sub>, <br> — because they are drawn,
+    not spoken. Read aloud, the tags are noise, and a line break in the middle of a
+    name is worse than none.
+    """
+    return _SPACE.sub(" ", _MARKUP.sub(" ", text)).strip()
 
 
 class InfoPopup(QFrame):
@@ -54,6 +87,9 @@ class InfoButton(QToolButton):
         self.setCursor(Qt.PointingHandCursor)
         self.setToolTip(f"<b>{title}</b><br>{text}")
         self.setStatusTip(f"{title}: click for an explanation")
+        # A1: every one of these announces itself as "?" otherwise.
+        self.setAccessibleName(tr("About {title}").format(title=strip_markup(title)))
+        self.setAccessibleDescription(strip_markup(text))
         self.clicked.connect(self._show_popup)
 
     def _show_popup(self):
@@ -183,8 +219,13 @@ def labelled_row(label: str, widget: QWidget, info: tuple[str, str] | None = Non
         widget.setSizeAdjustPolicy(QComboBox.AdjustToMinimumContentsLengthWithIcon)
         widget.setMinimumContentsLength(14)
     layout.addWidget(widget, 1)
+    if not widget.accessibleName():
+        widget.setAccessibleName(strip_markup(label))          # A1
     if info:
-        layout.addWidget(InfoButton(*info))
+        button = InfoButton(*info)
+        layout.addWidget(button)
+        if not widget.accessibleDescription():
+            widget.setAccessibleDescription(strip_markup(info[1]))
     return row
 
 
@@ -243,6 +284,16 @@ class ParameterSlider(QWidget):
             for w in (self.label, self.slider, self.spin):
                 w.setToolTip(tooltip)
                 w.setStatusTip(tooltip)
+
+        # A1: sighted users read the label to the left; a screen reader announces
+        # "slider" and "spin box" and leaves the learner to guess which parameter
+        # they are changing. Qt will not make that connection on its own.
+        name = strip_markup(label)
+        self.slider.setAccessibleName(name)
+        self.spin.setAccessibleName(name)
+        if tooltip:
+            self.slider.setAccessibleDescription(tooltip)
+            self.spin.setAccessibleDescription(tooltip)
 
         self.slider.valueChanged.connect(self._from_slider)
         self.spin.valueChanged.connect(self._from_spin)

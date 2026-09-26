@@ -5775,73 +5775,78 @@ parametreleri kendiniz değiştirmenize izin verir.
         <translation>Hangi gökadaların çizileceğini seçin.</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/hubble_fit.py" line="35" />
+        <location filename="../gui/simulators/hubble_fit.py" line="30" />
+        <source>Data set</source>
+        <translation>Veri kümesi</translation>
+    </message>
+    <message>
+        <location filename="../gui/simulators/hubble_fit.py" line="36" />
         <source>2 · Fit the line v = H0 × d</source>
         <translation>2 · v = H0 × d doğrusunu uydur</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/hubble_fit.py" line="38" />
+        <location filename="../gui/simulators/hubble_fit.py" line="39" />
         <source>Your H0 (km/s/Mpc)</source>
         <translation>Sizin H0'ınız (km/s/Mpc)</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/hubble_fit.py" line="39" />
+        <location filename="../gui/simulators/hubble_fit.py" line="40" />
         <source>Slope of the line</source>
         <translation>Doğrunun eğimi</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/hubble_fit.py" line="39" />
+        <location filename="../gui/simulators/hubble_fit.py" line="40" />
         <source>Move this until the line runs through the middle of the points. The residual sum below gets smaller as the fit improves.</source>
         <translation>Doğru noktaların ortasından geçene kadar bunu oynatın. Uyum iyileştikçe aşağıdaki artık toplamı küçülür.</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/hubble_fit.py" line="47" />
+        <location filename="../gui/simulators/hubble_fit.py" line="48" />
         <source>Find best fit (least squares)</source>
         <translation>En iyi uyumu bul (en küçük kareler)</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/hubble_fit.py" line="49" />
+        <location filename="../gui/simulators/hubble_fit.py" line="50" />
         <source>Compute the slope that minimises the sum of squared residuals.</source>
         <translation>Artıkların karelerinin toplamını en küçük yapan eğimi hesapla.</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/hubble_fit.py" line="54" />
+        <location filename="../gui/simulators/hubble_fit.py" line="55" />
         <source>Result</source>
         <translation>Sonuç</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/hubble_fit.py" line="56" />
-        <location filename="../gui/simulators/hubble_fit.py" line="91" />
+        <location filename="../gui/simulators/hubble_fit.py" line="57" />
+        <location filename="../gui/simulators/hubble_fit.py" line="92" />
         <source>Press &lt;b&gt;Find best fit&lt;/b&gt; to compute H0 and the Hubble time.</source>
         <translation>H0'ı ve Hubble süresini hesaplamak için &lt;b&gt;En iyi uyumu bul&lt;/b&gt; düğmesine basın.</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/hubble_fit.py" line="88" />
+        <location filename="../gui/simulators/hubble_fit.py" line="89" />
         <source>&lt;b&gt;Simulated data.&lt;/b&gt;</source>
         <translation>&lt;b&gt;Benzetilmiş veri.&lt;/b&gt;</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/hubble_fit.py" line="88" />
+        <location filename="../gui/simulators/hubble_fit.py" line="89" />
         <source>Real historical data.</source>
         <translation>Gerçek tarihsel veri.</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/hubble_fit.py" line="100" />
+        <location filename="../gui/simulators/hubble_fit.py" line="101" />
         <source>Typical miss (RMS residual): &lt;b&gt;{rms} km/s&lt;/b&gt;&lt;br&gt;Hubble time for your slope: &lt;b&gt;{hubble_time} billion years&lt;/b&gt;</source>
         <translation>Tipik sapma (RMS artık): &lt;b&gt;{rms} km/s&lt;/b&gt;&lt;br&gt;Sizin eğiminiz için Hubble süresi: &lt;b&gt;{hubble_time} milyar yıl&lt;/b&gt;</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/hubble_fit.py" line="112" />
+        <location filename="../gui/simulators/hubble_fit.py" line="113" />
         <source>Hubble's value is about seven times larger than today's because his distances were too small. His Hubble time of {years} billion years was shorter than geologists' estimates of the age of the Earth, a real puzzle at the time.</source>
         <translation>Hubble'ın değeri bugünkünün yaklaşık yedi katıdır, çünkü uzaklıkları çok küçüktü. Onun {years} milyar yıllık Hubble süresi, jeologların Dünya'nın yaşı için verdiği kestirimlerden kısaydı; o zamanlar gerçek bir bilmeceydi.</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/hubble_fit.py" line="116" />
+        <location filename="../gui/simulators/hubble_fit.py" line="117" />
         <source>Close to modern measurements (67–73 km/s/Mpc). The Hubble time is close to the true age of 13.8 billion years.</source>
         <translation>Modern ölçümlere yakın (67–73 km/s/Mpc). Hubble süresi, 13,8 milyar yıllık gerçek yaşa yakındır.</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/hubble_fit.py" line="120" />
+        <location filename="../gui/simulators/hubble_fit.py" line="121" />
         <source>H0 = &lt;b&gt;{h0} ± {error} km/s/Mpc&lt;/b&gt;&lt;br&gt;Hubble time 1/H0 = &lt;b&gt;{hubble_time} billion years&lt;/b&gt;&lt;br&gt;Points: {points}&lt;br&gt;&lt;br&gt;{comment}</source>
         <translation>H0 = &lt;b&gt;{h0} ± {error} km/s/Mpc&lt;/b&gt;&lt;br&gt;Hubble süresi 1/H0 = &lt;b&gt;{hubble_time} milyar yıl&lt;/b&gt;&lt;br&gt;Nokta sayısı: {points}&lt;br&gt;&lt;br&gt;{comment}</translation>
     </message>
@@ -10214,7 +10219,7 @@ yani gerçek uzaklık artı gökadanın kendi hareketinin eklediğidir. Bir duva
     </message>
     <message>
         <location filename="../gui/simulators/spectrum.py" line="161" />
-        <location filename="../gui/widgets/challenge_bar.py" line="64" />
+        <location filename="../gui/widgets/challenge_bar.py" line="66" />
         <source>Check my answer</source>
         <translation>Cevabımı kontrol et</translation>
     </message>
@@ -10661,76 +10666,83 @@ Together they give the effective volume, $V_\mathrm{eff} = V\,[\bar nP/(1+\bar n
     </message>
     <message>
         <location filename="../gui/widgets/challenge_bar.py" line="46" />
+        <location filename="../gui/widgets/challenge_bar.py" line="47" />
         <source>Previous challenge</source>
         <translation>Önceki görev</translation>
     </message>
     <message>
-        <location filename="../gui/widgets/challenge_bar.py" line="51" />
+        <location filename="../gui/widgets/challenge_bar.py" line="52" />
+        <location filename="../gui/widgets/challenge_bar.py" line="53" />
         <source>Next challenge</source>
         <translation>Sonraki görev</translation>
     </message>
     <message>
-        <location filename="../gui/widgets/challenge_bar.py" line="67" />
+        <location filename="../gui/widgets/challenge_bar.py" line="69" />
         <source>Look at the current settings of the simulator and see whether they solve the challenge.</source>
         <translation>Simülatörün şu anki ayarlarına bakar ve görevi çözüp çözmediğinizi söyler.</translation>
     </message>
     <message>
-        <location filename="../gui/widgets/challenge_bar.py" line="70" />
+        <location filename="../gui/widgets/challenge_bar.py" line="72" />
         <source>Show a hint</source>
         <translation>İpucu göster</translation>
     </message>
     <message>
-        <location filename="../gui/widgets/challenge_bar.py" line="101" />
+        <location filename="../gui/widgets/challenge_bar.py" line="103" />
         <source>Challenge {number} of {total}</source>
         <translation>Görev {number} / {total}</translation>
     </message>
     <message>
-        <location filename="../gui/widgets/challenge_bar.py" line="103" />
+        <location filename="../gui/widgets/challenge_bar.py" line="105" />
         <source>{solved} of {total} solved</source>
         <translation>{total} görevin {solved} tanesi çözüldü</translation>
     </message>
     <message>
-        <location filename="../gui/widgets/challenge_bar.py" line="108" />
+        <location filename="../gui/widgets/challenge_bar.py" line="110" />
         <source>&lt;b&gt;Solved.&lt;/b&gt;</source>
         <translation>&lt;b&gt;Çözüldü.&lt;/b&gt;</translation>
     </message>
     <message>
-        <location filename="../gui/widgets/challenge_bar.py" line="112" />
+        <location filename="../gui/widgets/challenge_bar.py" line="114" />
         <source>&lt;b&gt;Hint.&lt;/b&gt;</source>
         <translation>&lt;b&gt;İpucu.&lt;/b&gt;</translation>
     </message>
     <message>
-        <location filename="../gui/widgets/challenge_bar.py" line="123" />
+        <location filename="../gui/widgets/challenge_bar.py" line="125" />
         <source>&lt;b&gt;Solved!&lt;/b&gt;</source>
         <translation>&lt;b&gt;Çözüldü!&lt;/b&gt;</translation>
     </message>
     <message>
-        <location filename="../gui/widgets/challenge_bar.py" line="125" />
+        <location filename="../gui/widgets/challenge_bar.py" line="127" />
         <source>Use the arrows above for the next challenge.</source>
         <translation>Sonraki görev için yukarıdaki okları kullanın.</translation>
     </message>
     <message>
-        <location filename="../gui/widgets/challenge_bar.py" line="130" />
+        <location filename="../gui/widgets/challenge_bar.py" line="132" />
         <source>Look again at: {fields}.</source>
         <translation>Şunlara yeniden bakın: {fields}.</translation>
     </message>
     <message>
-        <location filename="../gui/widgets/challenge_bar.py" line="131" />
+        <location filename="../gui/widgets/challenge_bar.py" line="133" />
         <source>&lt;b&gt;Not yet.&lt;/b&gt; The simulator is not in the state the challenge asks for.</source>
         <translation>&lt;b&gt;Henüz değil.&lt;/b&gt; Simülatör, görevin istediği durumda değil.</translation>
     </message>
     <message>
-        <location filename="../gui/widgets/common.py" line="315" />
+        <location filename="../gui/widgets/common.py" line="91" />
+        <source>About {title}</source>
+        <translation>{title} hakkında</translation>
+    </message>
+    <message>
+        <location filename="../gui/widgets/common.py" line="366" />
         <source>Custom (your own values)</source>
         <translation>Özel (kendi değerleriniz)</translation>
     </message>
     <message>
-        <location filename="../gui/widgets/common.py" line="316" />
+        <location filename="../gui/widgets/common.py" line="367" />
         <source>Values you set with the controls below.</source>
         <translation>Aşağıdaki denetimlerle belirlediğiniz değerler.</translation>
     </message>
     <message>
-        <location filename="../gui/widgets/common.py" line="322" />
+        <location filename="../gui/widgets/common.py" line="373" />
         <source>Load the parameters of a well-known cosmological model.</source>
         <translation>İyi bilinen bir kozmolojik modelin parametrelerini yükleyin.</translation>
     </message>
@@ -10797,21 +10809,22 @@ Together they give the effective volume, $V_\mathrm{eff} = V\,[\bar nP/(1+\bar n
     </message>
     <message>
         <location filename="../gui/widgets/guide_panel.py" line="36" />
+        <location filename="../gui/widgets/guide_panel.py" line="37" />
         <source>Hide this definition</source>
         <translation>Bu tanımı gizle</translation>
     </message>
     <message>
-        <location filename="../gui/widgets/guide_panel.py" line="47" />
+        <location filename="../gui/widgets/guide_panel.py" line="48" />
         <source>Open in Glossary</source>
         <translation>Sözlükte aç</translation>
     </message>
     <message>
-        <location filename="../gui/widgets/guide_panel.py" line="86" />
+        <location filename="../gui/widgets/guide_panel.py" line="87" />
         <source>See also:</source>
         <translation>Ayrıca bakın:</translation>
     </message>
     <message>
-        <location filename="../gui/widgets/guide_panel.py" line="88" />
+        <location filename="../gui/widgets/guide_panel.py" line="89" />
         <source>Lessons:</source>
         <translation>Dersler:</translation>
     </message>

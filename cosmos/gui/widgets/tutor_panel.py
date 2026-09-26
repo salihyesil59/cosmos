@@ -21,7 +21,7 @@ from PySide6.QtWidgets import (
 from cosmos import tutor
 from cosmos.gui.context import AppContext
 from cosmos.gui.routes import route_title
-from cosmos.gui.widgets.common import labelled_row, muted_label
+from cosmos.gui.widgets.common import labelled_row, muted_label, placeholder
 from cosmos.gui.widgets.rich_browser import RichBrowser
 from cosmos.i18n import tr, tr_noop
 
@@ -109,7 +109,7 @@ class TutorPanel(QWidget):
         layout.addLayout(suggestions)
 
         self.question = QTextEdit()
-        self.question.setPlaceholderText(tr("Ask about this page…  (Ctrl+Enter to send)"))
+        placeholder(self.question, tr("Ask about this page…  (Ctrl+Enter to send)"))
         self.question.setAcceptRichText(False)
         self.question.setMaximumHeight(90)
         layout.addWidget(self.question)
@@ -137,7 +137,7 @@ class TutorPanel(QWidget):
         cl = QVBoxLayout(connection)
         self.key_edit = QLineEdit(self.config.api_key)
         self.key_edit.setEchoMode(QLineEdit.Password)
-        self.key_edit.setPlaceholderText("sk-ant-…")
+        placeholder(self.key_edit, "sk-ant-…")
         self.key_edit.textChanged.connect(self._key_changed)
         cl.addWidget(labelled_row(tr("API key"), self.key_edit, (
             "Your own API key",

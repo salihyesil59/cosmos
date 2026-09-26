@@ -34,6 +34,7 @@ class GuidePanel(QWidget):
         nav_icons.set_glyph(close, "close", 12)
         close.setFixedWidth(30)
         close.setToolTip(tr("Hide this definition"))
+        close.setAccessibleName(tr("Hide this definition"))
         close.clicked.connect(lambda: self.term_card.hide())
         head.addWidget(close)
         tc.addLayout(head)

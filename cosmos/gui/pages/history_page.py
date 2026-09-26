@@ -19,7 +19,7 @@ from cosmos.content.loader import load_history
 from cosmos.gui import nav_icons
 from cosmos.gui.context import AppContext
 from cosmos.gui.theme import theme
-from cosmos.gui.widgets.common import card, muted_label, title_label
+from cosmos.gui.widgets.common import card, muted_label, placeholder, title_label
 from cosmos.gui.widgets.rich_browser import RichBrowser
 from cosmos.i18n import tr, tr_noop
 
@@ -63,7 +63,7 @@ class HistoryPage(QWidget):
             .format(events=len(self.events), first=self.events[0].year, last=self.events[-1].year,
                     people=len(self.scientists))))
         self.search = QLineEdit()
-        self.search.setPlaceholderText(tr("Filter by name, year or keyword…  (e.g. Hubble, 1998, dark matter)"))
+        placeholder(self.search, tr("Filter by name, year or keyword…  (e.g. Hubble, 1998, dark matter)"))
         self.search.setClearButtonEnabled(True)
         self.search.textChanged.connect(self._refresh)
         root.addWidget(self.search)

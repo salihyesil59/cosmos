@@ -20,7 +20,7 @@ from cosmos.content.models import Problem
 from cosmos.gui import nav_icons
 from cosmos.gui.context import AppContext
 from cosmos.gui.simulators.registry import SIMULATORS
-from cosmos.gui.widgets.common import Banner, FlowLayout, muted_label, title_label
+from cosmos.gui.widgets.common import Banner, FlowLayout, muted_label, placeholder, title_label
 from cosmos.gui.widgets.rich_browser import RichBrowser
 from cosmos.i18n import tr, tr_noop
 from cosmos.problems import Verdict, check_answer, format_answer
@@ -128,7 +128,7 @@ class ProblemsPage(QWidget):
         answer_row = QHBoxLayout()
         answer_row.addWidget(QLabel(tr("Your answer:")))
         self.answer = QLineEdit()
-        self.answer.setPlaceholderText(tr("a number, e.g. 4.25 or 5.6e11"))
+        placeholder(self.answer, tr("a number, e.g. 4.25 or 5.6e11"))
         self.answer.returnPressed.connect(self.check)
         answer_row.addWidget(self.answer, 1)
         self.unit = QLabel()
