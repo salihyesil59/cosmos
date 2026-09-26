@@ -58,6 +58,33 @@ format may still change between releases.
   file, simulator, lesson or module that does not exist, or if the README that
   travels with the data stops agreeing with it.
 
+### Changed
+
+- **The last emoji left the interface** (`D3`). Phase 5 replaced the navigation's
+  emoji with glyphs drawn in code, but the tabs and buttons further in kept theirs,
+  and they were the ones that showed: the Reference page labelled its Models tab
+  with a galaxy that Windows drew as a colour emoji, its Constants tab with a pair
+  of scales that changed shape with the font, and its Formulas tab with a sigma
+  wide enough to push the word beside it out of the tab. Forty-odd labels across
+  the Reference and History tabs, the home, problems, review, notes and classroom
+  pages, the flashcards, the challenge strip, the notes panel and nine simulators
+  now carry a drawn icon instead of a character: twelve new glyphs on the same
+  24x24 grid, in the same colours, on the same baseline as the text. Marks that
+  live inside a sentence or a table — the ✓ ● ○ of a lesson's status, a problem's
+  stars — are still characters, because an icon cannot go there.
+- **Icons that follow the theme, wherever they are** (`D3`). A drawn glyph is
+  painted in the theme's ink, so it has to be redrawn when the theme changes. Only
+  the sidebar, the toolbar and the lesson tabs were; the rest would have kept the
+  old colours. Every button, action and tab bar now leaves the glyph's name on
+  itself, and the window redraws all of them at once. A glyph on a primary button
+  takes that button's own ink, which also fixes the arrow on **Take the quiz**:
+  it had been drawn in the page's text colour on a filled blue button since the
+  icons were introduced.
+- **The Turkish and Spanish interfaces kept their translations.** The labels that
+  lost a symbol kept the translated words beside it, so nothing fell back to
+  English; the three sentences that named a symbol — "press ☆ in the Notes panel"
+  and its kind — were reworded in all three languages.
+
 ## 0.5.0 — 2026-09-25
 
 The interface work of 0.4.0, finished off: a window small enough for a 1024x768

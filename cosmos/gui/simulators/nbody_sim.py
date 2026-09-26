@@ -21,6 +21,7 @@ from PySide6.QtWidgets import (
     QWidget,
 )
 
+from cosmos.gui import nav_icons
 from cosmos.gui.simulators.base import SimulatorBase
 from cosmos.gui.theme import theme
 from cosmos.gui.widgets.common import InfoButton, ParameterSlider, labelled_row, muted_label
@@ -124,7 +125,8 @@ class NBodySimulator(SimulatorBase):
         run = QGroupBox(tr("2 · Run"))
         rl = QVBoxLayout(run)
         buttons = QHBoxLayout()
-        self.play = QPushButton(tr("▶ Play"))
+        self.play = QPushButton(tr("Play"))
+        nav_icons.set_glyph(self.play, "continue", 14)
         self.play.setProperty("role", "primary")
         self.play.setCheckable(True)
         self.play.toggled.connect(self._toggle)
@@ -191,7 +193,8 @@ class NBodySimulator(SimulatorBase):
         self._render()
 
     def _toggle(self, on: bool) -> None:
-        self.play.setText(tr("⏸ Pause") if on else tr("▶ Play"))
+        self.play.setText(tr("Pause") if on else tr("Play"))
+        nav_icons.set_glyph(self.play, "pause" if on else "continue", 14)
         if on:
             if self.sim.growth >= self.D_MAX - 1e-6:
                 self.restart()

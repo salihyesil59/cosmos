@@ -570,21 +570,21 @@
     <message>
         <location filename="../gui/labels.py" line="121" />
         <location filename="../gui/simulators/future_sim.py" line="34" />
-        <location filename="../gui/simulators/powers_of_ten.py" line="80" />
+        <location filename="../gui/simulators/powers_of_ten.py" line="81" />
         <source>minutes</source>
         <translation>minutos</translation>
     </message>
     <message>
         <location filename="../gui/labels.py" line="121" />
         <location filename="../gui/simulators/future_sim.py" line="33" />
-        <location filename="../gui/simulators/powers_of_ten.py" line="79" />
+        <location filename="../gui/simulators/powers_of_ten.py" line="80" />
         <source>hours</source>
         <translation>horas</translation>
     </message>
     <message>
         <location filename="../gui/labels.py" line="121" />
         <location filename="../gui/simulators/future_sim.py" line="33" />
-        <location filename="../gui/simulators/powers_of_ten.py" line="79" />
+        <location filename="../gui/simulators/powers_of_ten.py" line="80" />
         <source>days</source>
         <translation>días</translation>
     </message>
@@ -592,7 +592,7 @@
         <location filename="../gui/labels.py" line="122" />
         <location filename="../gui/simulators/calculator.py" line="391" />
         <location filename="../gui/simulators/future_sim.py" line="33" />
-        <location filename="../gui/simulators/powers_of_ten.py" line="79" />
+        <location filename="../gui/simulators/powers_of_ten.py" line="80" />
         <source>years</source>
         <translation>años</translation>
     </message>
@@ -600,7 +600,7 @@
         <location filename="../gui/labels.py" line="122" />
         <location filename="../gui/simulators/calculator.py" line="393" />
         <location filename="../gui/simulators/future_sim.py" line="32" />
-        <location filename="../gui/simulators/powers_of_ten.py" line="78" />
+        <location filename="../gui/simulators/powers_of_ten.py" line="79" />
         <source>million years</source>
         <translation>millones de años</translation>
     </message>
@@ -608,196 +608,196 @@
         <location filename="../gui/labels.py" line="122" />
         <location filename="../gui/simulators/calculator.py" line="394" />
         <location filename="../gui/simulators/future_sim.py" line="32" />
-        <location filename="../gui/simulators/powers_of_ten.py" line="78" />
+        <location filename="../gui/simulators/powers_of_ten.py" line="79" />
         <source>billion years</source>
         <translation>miles de millones de años</translation>
     </message>
     <message>
         <location filename="../gui/labels.py" line="123" />
         <location filename="../gui/simulators/future_sim.py" line="34" />
-        <location filename="../gui/simulators/powers_of_ten.py" line="80" />
+        <location filename="../gui/simulators/powers_of_ten.py" line="81" />
         <source>seconds</source>
         <translation>segundos</translation>
     </message>
     <message>
         <location filename="../gui/labels.py" line="123" />
-        <location filename="../gui/simulators/powers_of_ten.py" line="83" />
+        <location filename="../gui/simulators/powers_of_ten.py" line="84" />
         <source>nanoseconds</source>
         <translation>nanosegundos</translation>
     </message>
     <message>
-        <location filename="../gui/main_window.py" line="110" />
+        <location filename="../gui/main_window.py" line="111" />
         <source>Learn Cosmology</source>
         <translation>Aprende cosmología</translation>
     </message>
     <message>
-        <location filename="../gui/main_window.py" line="200" />
+        <location filename="../gui/main_window.py" line="201" />
         <location filename="../gui/main_window.py" line="426" />
         <source>Home</source>
         <translation>Inicio</translation>
     </message>
     <message>
-        <location filename="../gui/main_window.py" line="200" />
+        <location filename="../gui/main_window.py" line="201" />
         <source>Welcome page and where to continue</source>
         <translation>Página de bienvenida y por dónde continuar</translation>
     </message>
     <message>
-        <location filename="../gui/main_window.py" line="201" />
+        <location filename="../gui/main_window.py" line="202" />
         <source>Course</source>
         <translation>Curso</translation>
     </message>
     <message>
-        <location filename="../gui/main_window.py" line="201" />
+        <location filename="../gui/main_window.py" line="202" />
         <source>All lessons, grouped by level</source>
         <translation>Todas las lecciones, agrupadas por nivel</translation>
     </message>
     <message>
-        <location filename="../gui/main_window.py" line="217" />
+        <location filename="../gui/main_window.py" line="218" />
         <location filename="../gui/main_window.py" line="548" />
-        <location filename="../gui/main_window.py" line="1358" />
-        <location filename="../gui/pages/home.py" line="208" />
+        <location filename="../gui/main_window.py" line="1365" />
+        <location filename="../gui/pages/home.py" line="210" />
         <location filename="../gui/pages/simulators.py" line="50" />
         <source>Simulators</source>
         <translation>Simuladores</translation>
     </message>
     <message>
-        <location filename="../gui/main_window.py" line="217" />
+        <location filename="../gui/main_window.py" line="218" />
         <source>Interactive tools</source>
         <translation>Herramientas interactivas</translation>
     </message>
     <message>
-        <location filename="../gui/main_window.py" line="228" />
+        <location filename="../gui/main_window.py" line="229" />
         <source>{count} simulators</source>
         <translation>{count} simuladores</translation>
     </message>
     <message>
-        <location filename="../gui/main_window.py" line="239" />
+        <location filename="../gui/main_window.py" line="240" />
         <location filename="../gui/pages/problems_page.py" line="86" />
         <source>Problem sets</source>
         <translation>Series de problemas</translation>
     </message>
     <message>
-        <location filename="../gui/main_window.py" line="240" />
+        <location filename="../gui/main_window.py" line="241" />
         <source>Worked numeric problems with checked answers, one set per level</source>
         <translation>Problemas numéricos resueltos con respuestas comprobadas, una serie por nivel</translation>
     </message>
     <message>
-        <location filename="../gui/main_window.py" line="242" />
+        <location filename="../gui/main_window.py" line="243" />
         <location filename="../gui/main_window.py" line="430" />
-        <location filename="../gui/pages/glossary.py" line="43" />
+        <location filename="../gui/pages/glossary.py" line="44" />
         <source>Glossary</source>
         <translation>Glosario</translation>
     </message>
     <message>
-        <location filename="../gui/main_window.py" line="242" />
+        <location filename="../gui/main_window.py" line="243" />
         <source>Definitions of all important terms</source>
         <translation>Definiciones de todos los términos importantes</translation>
     </message>
     <message>
-        <location filename="../gui/main_window.py" line="244" />
+        <location filename="../gui/main_window.py" line="245" />
         <location filename="../gui/main_window.py" line="432" />
-        <location filename="../gui/pages/reference.py" line="152" />
+        <location filename="../gui/pages/reference.py" line="153" />
         <source>Reference</source>
         <translation>Referencia</translation>
     </message>
     <message>
-        <location filename="../gui/main_window.py" line="245" />
+        <location filename="../gui/main_window.py" line="246" />
         <source>Formula sheet, constants, units and models</source>
         <translation>Formulario, constantes, unidades y modelos</translation>
     </message>
     <message>
-        <location filename="../gui/main_window.py" line="246" />
+        <location filename="../gui/main_window.py" line="247" />
         <location filename="../gui/main_window.py" line="434" />
         <source>History</source>
         <translation>Historia</translation>
     </message>
     <message>
-        <location filename="../gui/main_window.py" line="247" />
+        <location filename="../gui/main_window.py" line="248" />
         <source>The discoveries and the people behind them</source>
         <translation>Los descubrimientos y las personas que hay detrás</translation>
     </message>
     <message>
-        <location filename="../gui/main_window.py" line="248" />
+        <location filename="../gui/main_window.py" line="249" />
         <location filename="../gui/pages/search_page.py" line="39" />
         <source>Search</source>
         <translation>Buscar</translation>
     </message>
     <message>
-        <location filename="../gui/main_window.py" line="249" />
+        <location filename="../gui/main_window.py" line="250" />
         <source>Search lessons, glossary, simulators and formulas</source>
         <translation>Busca en las lecciones, el glosario, los simuladores y las fórmulas</translation>
     </message>
     <message>
-        <location filename="../gui/main_window.py" line="250" />
-        <location filename="../gui/pages/notes_page.py" line="50" />
+        <location filename="../gui/main_window.py" line="251" />
+        <location filename="../gui/pages/notes_page.py" line="51" />
         <source>Notes &amp; bookmarks</source>
         <translation>Notas y marcadores</translation>
     </message>
     <message>
-        <location filename="../gui/main_window.py" line="250" />
+        <location filename="../gui/main_window.py" line="251" />
         <source>Everything you saved</source>
         <translation>Todo lo que has guardado</translation>
     </message>
     <message>
-        <location filename="../gui/main_window.py" line="251" />
+        <location filename="../gui/main_window.py" line="252" />
         <location filename="../gui/main_window.py" line="445" />
         <location filename="../gui/main_window.py" line="771" />
         <location filename="../gui/main_window.py" line="830" />
-        <location filename="../gui/pages/review_page.py" line="66" />
+        <location filename="../gui/pages/review_page.py" line="67" />
         <source>Review</source>
         <translation>Repaso</translation>
     </message>
     <message>
-        <location filename="../gui/main_window.py" line="252" />
+        <location filename="../gui/main_window.py" line="253" />
         <source>Quiz questions you got wrong, brought back on a schedule</source>
         <translation>Las preguntas que fallaste, traídas de vuelta según un calendario</translation>
     </message>
     <message>
-        <location filename="../gui/main_window.py" line="253" />
+        <location filename="../gui/main_window.py" line="254" />
         <location filename="../gui/main_window.py" line="443" />
         <source>Progress</source>
         <translation>Progreso</translation>
     </message>
     <message>
-        <location filename="../gui/main_window.py" line="253" />
+        <location filename="../gui/main_window.py" line="254" />
         <source>Your progress and the lesson map</source>
         <translation>Tu progreso y el mapa de lecciones</translation>
     </message>
     <message>
-        <location filename="../gui/main_window.py" line="255" />
+        <location filename="../gui/main_window.py" line="256" />
         <location filename="../gui/main_window.py" line="552" />
-        <location filename="../gui/pages/classroom_page.py" line="98" />
+        <location filename="../gui/pages/classroom_page.py" line="99" />
         <source>Classroom</source>
         <translation>Aula</translation>
     </message>
     <message>
-        <location filename="../gui/main_window.py" line="256" />
+        <location filename="../gui/main_window.py" line="257" />
         <location filename="../gui/main_window.py" line="553" />
         <source>A progress report to hand on, and teacher notes per lesson</source>
         <translation>Un informe de progreso para entregar y notas para el profesorado en cada lección</translation>
     </message>
     <message>
-        <location filename="../gui/main_window.py" line="263" />
+        <location filename="../gui/main_window.py" line="264" />
         <location filename="../gui/main_window.py" line="420" />
-        <location filename="../gui/main_window.py" line="1322" />
+        <location filename="../gui/main_window.py" line="1329" />
         <source>Navigation</source>
         <translation>Navegación</translation>
     </message>
     <message>
-        <location filename="../gui/main_window.py" line="315" />
+        <location filename="../gui/main_window.py" line="316" />
         <location filename="../gui/main_window.py" line="469" />
         <source>Guide</source>
         <translation>Guía</translation>
     </message>
     <message>
-        <location filename="../gui/main_window.py" line="320" />
+        <location filename="../gui/main_window.py" line="321" />
         <location filename="../gui/main_window.py" line="436" />
-        <location filename="../gui/pages/notes_page.py" line="97" />
+        <location filename="../gui/pages/notes_page.py" line="100" />
         <source>Notes</source>
         <translation>Notas</translation>
     </message>
     <message>
-        <location filename="../gui/main_window.py" line="328" />
+        <location filename="../gui/main_window.py" line="329" />
         <location filename="../gui/main_window.py" line="481" />
         <source>Tutor</source>
         <translation>Tutor</translation>
@@ -865,7 +865,7 @@
     </message>
     <message>
         <location filename="../gui/main_window.py" line="438" />
-        <location filename="../gui/main_window.py" line="868" />
+        <location filename="../gui/main_window.py" line="875" />
         <source>Bookmark</source>
         <translation>Marcador</translation>
     </message>
@@ -1117,7 +1117,7 @@
     </message>
     <message>
         <location filename="../gui/main_window.py" line="576" />
-        <location filename="../gui/main_window.py" line="974" />
+        <location filename="../gui/main_window.py" line="981" />
         <source>Keyboard shortcuts</source>
         <translation>Atajos de teclado</translation>
     </message>
@@ -1138,7 +1138,7 @@
     </message>
     <message>
         <location filename="../gui/main_window.py" line="582" />
-        <location filename="../gui/pages/reference.py" line="193" />
+        <location filename="../gui/pages/reference.py" line="194" />
         <source>Data &amp;&amp; methods</source>
         <translation>Datos y métodos</translation>
     </message>
@@ -1272,402 +1272,403 @@ El idioma nuevo aparece entonces en este menú.</translation>
         <translation>Estado: {status}</translation>
     </message>
     <message>
-        <location filename="../gui/main_window.py" line="868" />
+        <location filename="../gui/main_window.py" line="875" />
+        <location filename="../gui/widgets/notes_panel.py" line="123" />
         <source>Bookmarked</source>
         <translation>Guardada en marcadores</translation>
     </message>
     <message>
-        <location filename="../gui/main_window.py" line="879" />
+        <location filename="../gui/main_window.py" line="886" />
         <source>Badge earned: {names}</source>
         <translation>Insignia conseguida: {names}</translation>
     </message>
     <message>
-        <location filename="../gui/main_window.py" line="897" />
+        <location filename="../gui/main_window.py" line="904" />
         <source>Daily goal reached: {steps} steps today. Streak: {days} day(s).</source>
         <translation>Meta diaria alcanzada: {steps} pasos hoy. Racha: {days} día(s).</translation>
     </message>
     <message>
-        <location filename="../gui/main_window.py" line="919" />
+        <location filename="../gui/main_window.py" line="926" />
         <source>Theme: {name}</source>
         <translation>Tema: {name}</translation>
     </message>
     <message>
-        <location filename="../gui/main_window.py" line="935" />
+        <location filename="../gui/main_window.py" line="942" />
         <source>Text size: {percent}</source>
         <translation>Tamaño del texto: {percent}</translation>
     </message>
     <message>
-        <location filename="../gui/main_window.py" line="969" />
+        <location filename="../gui/main_window.py" line="976" />
         <source>Every command in Cosmos can be reached from the keyboard.</source>
         <translation>Todas las órdenes de Cosmos se pueden alcanzar desde el teclado.</translation>
     </message>
     <message>
-        <location filename="../gui/main_window.py" line="971" />
+        <location filename="../gui/main_window.py" line="978" />
         <source>Tab and Shift+Tab move between controls; F6 jumps between the lesson list, the page and the side panels.</source>
         <translation>Tab y Mayús+Tab mueven entre controles; F6 salta entre la lista de lecciones, la página y los paneles laterales.</translation>
     </message>
     <message>
-        <location filename="../gui/main_window.py" line="996" />
+        <location filename="../gui/main_window.py" line="1003" />
         <source>Back up progress</source>
         <translation>Copia de seguridad del progreso</translation>
     </message>
     <message>
-        <location filename="../gui/main_window.py" line="997" />
-        <location filename="../gui/main_window.py" line="1013" />
+        <location filename="../gui/main_window.py" line="1004" />
+        <location filename="../gui/main_window.py" line="1020" />
         <source>Cosmos backup</source>
         <translation>Copia de seguridad de Cosmos</translation>
     </message>
     <message>
-        <location filename="../gui/main_window.py" line="1003" />
+        <location filename="../gui/main_window.py" line="1010" />
         <source>Could not save the backup</source>
         <translation>No se pudo guardar la copia de seguridad</translation>
     </message>
     <message>
-        <location filename="../gui/main_window.py" line="1005" />
+        <location filename="../gui/main_window.py" line="1012" />
         <source>Progress backed up to {path}</source>
         <translation>Progreso guardado en {path}</translation>
     </message>
     <message>
-        <location filename="../gui/main_window.py" line="1012" />
-        <location filename="../gui/main_window.py" line="1017" />
+        <location filename="../gui/main_window.py" line="1019" />
+        <location filename="../gui/main_window.py" line="1024" />
         <source>Restore progress</source>
         <translation>Restaurar el progreso</translation>
     </message>
     <message>
-        <location filename="../gui/main_window.py" line="1018" />
+        <location filename="../gui/main_window.py" line="1025" />
         <source>Replace your current progress, notes, bookmarks and review deck with the ones in this backup? What you have now will be lost unless you back it up first.</source>
         <translation>¿Sustituir tu progreso, notas, marcadores y mazo de repaso actuales por los de esta copia de seguridad? Lo que tienes ahora se perderá si no haces antes una copia.</translation>
     </message>
     <message>
-        <location filename="../gui/main_window.py" line="1025" />
+        <location filename="../gui/main_window.py" line="1032" />
         <source>Could not restore the backup</source>
         <translation>No se pudo restaurar la copia de seguridad</translation>
     </message>
     <message>
-        <location filename="../gui/main_window.py" line="1026" />
+        <location filename="../gui/main_window.py" line="1033" />
         <source>Nothing was changed.</source>
         <translation>No se cambió nada.</translation>
     </message>
     <message>
-        <location filename="../gui/main_window.py" line="1030" />
+        <location filename="../gui/main_window.py" line="1037" />
         <source>Progress restored from {path}</source>
         <translation>Progreso restaurado desde {path}</translation>
     </message>
     <message>
-        <location filename="../gui/main_window.py" line="1040" />
-        <location filename="../gui/main_window.py" line="1136" />
+        <location filename="../gui/main_window.py" line="1047" />
+        <location filename="../gui/main_window.py" line="1143" />
         <source>Save as PDF</source>
         <translation>Guardar como PDF</translation>
     </message>
     <message>
-        <location filename="../gui/main_window.py" line="1049" />
-        <location filename="../gui/main_window.py" line="1145" />
+        <location filename="../gui/main_window.py" line="1056" />
+        <location filename="../gui/main_window.py" line="1152" />
         <source>Could not save the PDF</source>
         <translation>No se pudo guardar el PDF</translation>
     </message>
     <message>
-        <location filename="../gui/main_window.py" line="1055" />
-        <location filename="../gui/main_window.py" line="1150" />
-        <location filename="../gui/pages/classroom_page.py" line="187" />
+        <location filename="../gui/main_window.py" line="1062" />
+        <location filename="../gui/main_window.py" line="1157" />
+        <location filename="../gui/pages/classroom_page.py" line="190" />
         <source>Saved {pages} page(s) to {path}</source>
         <translation>Se guardaron {pages} página(s) en {path}</translation>
     </message>
     <message>
-        <location filename="../gui/main_window.py" line="1060" />
+        <location filename="../gui/main_window.py" line="1067" />
         <source>Open a lesson first, then print it.</source>
         <translation>Abre primero una lección y luego imprímela.</translation>
     </message>
     <message>
-        <location filename="../gui/main_window.py" line="1071" />
-        <location filename="../gui/pages/problems_page.py" line="183" />
+        <location filename="../gui/main_window.py" line="1078" />
+        <location filename="../gui/pages/problems_page.py" line="188" />
         <source>Level {number} · {title}</source>
         <translation>Nivel {number} · {title}</translation>
     </message>
     <message>
-        <location filename="../gui/main_window.py" line="1076" />
+        <location filename="../gui/main_window.py" line="1083" />
         <source>The whole course</source>
         <translation>Todo el curso</translation>
     </message>
     <message>
-        <location filename="../gui/main_window.py" line="1086" />
+        <location filename="../gui/main_window.py" line="1093" />
         <source>Choose a folder for the website</source>
         <translation>Elige una carpeta para el sitio web</translation>
     </message>
     <message>
-        <location filename="../gui/main_window.py" line="1092" />
+        <location filename="../gui/main_window.py" line="1099" />
         <source>Replace the website?</source>
         <translation>¿Sustituir el sitio web?</translation>
     </message>
     <message>
-        <location filename="../gui/main_window.py" line="1093" />
+        <location filename="../gui/main_window.py" line="1100" />
         <source>{path} already exists. Replace it with a fresh copy?</source>
         <translation>{path} ya existe. ¿Sustituirlo por una copia nueva?</translation>
     </message>
     <message>
-        <location filename="../gui/main_window.py" line="1097" />
+        <location filename="../gui/main_window.py" line="1104" />
         <source>Building the website — this takes about a minute…</source>
         <translation>Construyendo el sitio web: esto tarda alrededor de un minuto…</translation>
     </message>
     <message>
-        <location filename="../gui/main_window.py" line="1102" />
+        <location filename="../gui/main_window.py" line="1109" />
         <source>Could not write the website</source>
         <translation>No se pudo escribir el sitio web</translation>
     </message>
     <message>
-        <location filename="../gui/main_window.py" line="1107" />
+        <location filename="../gui/main_window.py" line="1114" />
         <source>Website written: {pages} pages in {path}. Open index.html in a browser.</source>
         <translation>Sitio web escrito: {pages} páginas en {path}. Abre index.html en un navegador.</translation>
     </message>
     <message>
-        <location filename="../gui/main_window.py" line="1122" />
-        <location filename="../gui/main_window.py" line="1140" />
-        <location filename="../gui/pages/lesson.py" line="245" />
+        <location filename="../gui/main_window.py" line="1129" />
+        <location filename="../gui/main_window.py" line="1147" />
+        <location filename="../gui/pages/lesson.py" line="239" />
         <source>Remember this</source>
         <translation>Recuerda esto</translation>
     </message>
     <message>
-        <location filename="../gui/main_window.py" line="1122" />
+        <location filename="../gui/main_window.py" line="1129" />
         <source>{count} completed lesson(s)</source>
         <translation>{count} lección(es) completada(s)</translation>
     </message>
     <message>
-        <location filename="../gui/main_window.py" line="1123" />
+        <location filename="../gui/main_window.py" line="1130" />
         <source>the whole course</source>
         <translation>todo el curso</translation>
     </message>
     <message>
-        <location filename="../gui/main_window.py" line="1166" />
+        <location filename="../gui/main_window.py" line="1173" />
         <source>{count} plugin(s) could not be loaded ({names}). See Help → Simulator plugins.</source>
         <translation>No se pudieron cargar {count} complemento(s) ({names}). Consulta Ayuda → Complementos de simuladores.</translation>
     </message>
     <message>
-        <location filename="../gui/main_window.py" line="1170" />
+        <location filename="../gui/main_window.py" line="1177" />
         <source>Loaded {count} simulator plugin(s).</source>
         <translation>Se cargaron {count} complemento(s) de simulador.</translation>
     </message>
     <message>
-        <location filename="../gui/main_window.py" line="1182" />
+        <location filename="../gui/main_window.py" line="1189" />
         <source>Simulator plugins</source>
         <translation>Complementos de simuladores</translation>
     </message>
     <message>
-        <location filename="../gui/main_window.py" line="1184" />
+        <location filename="../gui/main_window.py" line="1191" />
         <source>You can add your own simulator without changing Cosmos. Put one Python file in this folder and restart:</source>
         <translation>Puedes añadir tu propio simulador sin cambiar Cosmos. Pon un archivo de Python en esta carpeta y reinicia:</translation>
     </message>
     <message>
-        <location filename="../gui/main_window.py" line="1189" />
+        <location filename="../gui/main_window.py" line="1196" />
         <source>The folder contains a README with a complete example. A plugin is ordinary Python and runs with the same permissions as Cosmos itself, so only add files you wrote or trust.</source>
         <translation>La carpeta contiene un README con un ejemplo completo. Un complemento es Python corriente y se ejecuta con los mismos permisos que Cosmos, así que añade solo archivos que hayas escrito tú o en los que confíes.</translation>
     </message>
     <message>
-        <location filename="../gui/main_window.py" line="1194" />
+        <location filename="../gui/main_window.py" line="1201" />
         <source>Loaded</source>
         <translation>Cargado</translation>
     </message>
     <message>
-        <location filename="../gui/main_window.py" line="1198" />
+        <location filename="../gui/main_window.py" line="1205" />
         <source>Not loaded</source>
         <translation>No cargado</translation>
     </message>
     <message>
-        <location filename="../gui/main_window.py" line="1202" />
+        <location filename="../gui/main_window.py" line="1209" />
         <source>No plugins are installed.</source>
         <translation>No hay complementos instalados.</translation>
     </message>
     <message>
-        <location filename="../gui/main_window.py" line="1212" />
+        <location filename="../gui/main_window.py" line="1219" />
         <source>Cosmos will look for updates once a day.</source>
         <translation>Cosmos buscará actualizaciones una vez al día.</translation>
     </message>
     <message>
-        <location filename="../gui/main_window.py" line="1213" />
+        <location filename="../gui/main_window.py" line="1220" />
         <source>Cosmos will not look for updates.</source>
         <translation>Cosmos no buscará actualizaciones.</translation>
     </message>
     <message>
-        <location filename="../gui/main_window.py" line="1224" />
+        <location filename="../gui/main_window.py" line="1231" />
         <source>Check for updates?</source>
         <translation>¿Buscar actualizaciones?</translation>
     </message>
     <message>
-        <location filename="../gui/main_window.py" line="1225" />
+        <location filename="../gui/main_window.py" line="1232" />
         <source>Shall Cosmos look for a newer version once a day?</source>
         <translation>¿Quieres que Cosmos busque una versión más reciente una vez al día?</translation>
     </message>
     <message>
-        <location filename="../gui/main_window.py" line="1227" />
+        <location filename="../gui/main_window.py" line="1234" />
         <source>It asks GitHub for the latest release number and nothing else. No information about you, this computer or your progress is sent, and there is no identifier of any kind. You can change this at any time under Help.</source>
         <translation>Le pide a GitHub el número de la última versión y nada más. No se envía ninguna información sobre ti, sobre este ordenador ni sobre tu progreso, y no hay identificador de ningún tipo. Puedes cambiarlo cuando quieras en Ayuda.</translation>
     </message>
     <message>
-        <location filename="../gui/main_window.py" line="1230" />
+        <location filename="../gui/main_window.py" line="1237" />
         <source>Yes, check daily</source>
         <translation>Sí, buscar a diario</translation>
     </message>
     <message>
-        <location filename="../gui/main_window.py" line="1231" />
+        <location filename="../gui/main_window.py" line="1238" />
         <source>No, thanks</source>
         <translation>No, gracias</translation>
     </message>
     <message>
-        <location filename="../gui/main_window.py" line="1253" />
+        <location filename="../gui/main_window.py" line="1260" />
         <source>Looking for a newer version…</source>
         <translation>Buscando una versión más reciente…</translation>
     </message>
     <message>
-        <location filename="../gui/main_window.py" line="1277" />
+        <location filename="../gui/main_window.py" line="1284" />
         <source>No newer version found — or the check could not reach GitHub.</source>
         <translation>No se encontró ninguna versión más reciente, o la comprobación no pudo llegar a GitHub.</translation>
     </message>
     <message>
-        <location filename="../gui/main_window.py" line="1280" />
+        <location filename="../gui/main_window.py" line="1287" />
         <source>Cosmos {version} is available.</source>
         <translation>Cosmos {version} está disponible.</translation>
     </message>
     <message>
-        <location filename="../gui/main_window.py" line="1284" />
+        <location filename="../gui/main_window.py" line="1291" />
         <source>A newer Cosmos is available</source>
         <translation>Hay una versión más reciente de Cosmos</translation>
     </message>
     <message>
-        <location filename="../gui/main_window.py" line="1285" />
+        <location filename="../gui/main_window.py" line="1292" />
         <source>Version {version} has been released.</source>
         <translation>Se ha publicado la versión {version}.</translation>
     </message>
     <message>
-        <location filename="../gui/main_window.py" line="1288" />
+        <location filename="../gui/main_window.py" line="1295" />
         <source>Open the release page</source>
         <translation>Abrir la página de la versión</translation>
     </message>
     <message>
-        <location filename="../gui/main_window.py" line="1289" />
+        <location filename="../gui/main_window.py" line="1296" />
         <source>Later</source>
         <translation>Más tarde</translation>
     </message>
     <message>
-        <location filename="../gui/main_window.py" line="1316" />
+        <location filename="../gui/main_window.py" line="1323" />
         <source>Welcome to Cosmos!</source>
         <translation>¡Bienvenida o bienvenido a Cosmos!</translation>
     </message>
     <message>
-        <location filename="../gui/main_window.py" line="1317" />
+        <location filename="../gui/main_window.py" line="1324" />
         <source>This short tour shows you around. It takes less than a minute. You can leave with &lt;b&gt;Skip tour&lt;/b&gt; or the Esc key and replay it later from the &lt;b&gt;Tour&lt;/b&gt; button.</source>
         <translation>Este recorrido breve te enseña la aplicación. Dura menos de un minuto. Puedes salir con &lt;b&gt;Saltar el recorrido&lt;/b&gt; o la tecla Esc, y repetirlo luego desde el botón &lt;b&gt;Recorrido&lt;/b&gt;.</translation>
     </message>
     <message>
-        <location filename="../gui/main_window.py" line="1323" />
+        <location filename="../gui/main_window.py" line="1330" />
         <source>This list is the whole course. Lessons are grouped into levels, and only the section you are in stays open, so the list never gets long. The icon next to each lesson shows its status: &lt;b&gt;filled with ✓&lt;/b&gt; = completed, &lt;b&gt;ring&lt;/b&gt; = ready, &lt;b&gt;small grey circle&lt;/b&gt; = prerequisites missing. &lt;b&gt;Ctrl+B&lt;/b&gt; folds the list away entirely.</source>
         <translation>Esta lista es el curso entero. Las lecciones se agrupan en niveles y solo permanece abierta la sección en la que estás, así que la lista nunca se alarga. El icono junto a cada lección indica su estado: &lt;b&gt;relleno con ✓&lt;/b&gt; = completada, &lt;b&gt;anillo&lt;/b&gt; = lista para empezar, &lt;b&gt;círculo gris pequeño&lt;/b&gt; = faltan requisitos previos. &lt;b&gt;Ctrl+B&lt;/b&gt; pliega la lista por completo.</translation>
     </message>
     <message>
-        <location filename="../gui/main_window.py" line="1330" />
+        <location filename="../gui/main_window.py" line="1337" />
         <source>Start here</source>
         <translation>Empieza aquí</translation>
     </message>
     <message>
-        <location filename="../gui/main_window.py" line="1331" />
+        <location filename="../gui/main_window.py" line="1338" />
         <source>This button always takes you to the next lesson you are ready for. If you are new to cosmology, simply follow it.</source>
         <translation>Este botón te lleva siempre a la siguiente lección para la que estás preparado. Si la cosmología es nueva para ti, basta con seguirlo.</translation>
     </message>
     <message>
-        <location filename="../gui/main_window.py" line="1336" />
+        <location filename="../gui/main_window.py" line="1343" />
         <source>The Guide panel</source>
         <translation>El panel Guía</translation>
     </message>
     <message>
-        <location filename="../gui/main_window.py" line="1337" />
+        <location filename="../gui/main_window.py" line="1344" />
         <source>The Guide explains the page you are on: how to use it, what to try and where to go next. When you click a coloured term in a lesson, its definition appears here too. It stays out of the way until you ask for it with &lt;b&gt;F1&lt;/b&gt; or the toolbar button.</source>
         <translation>La Guía explica la página en la que estás: cómo usarla, qué probar y adónde ir después. Cuando pulsas un término coloreado en una lección, su definición también aparece aquí. Se mantiene apartada hasta que la pides con &lt;b&gt;F1&lt;/b&gt; o con el botón de la barra de herramientas.</translation>
     </message>
     <message>
-        <location filename="../gui/main_window.py" line="1344" />
+        <location filename="../gui/main_window.py" line="1351" />
         <source>Lessons and quizzes</source>
         <translation>Lecciones y cuestionarios</translation>
     </message>
     <message>
-        <location filename="../gui/main_window.py" line="1345" />
+        <location filename="../gui/main_window.py" line="1352" />
         <source>Each lesson has a &lt;b&gt;Lesson&lt;/b&gt; tab with explanations, formulas and figures, and a &lt;b&gt;Quiz&lt;/b&gt; tab. Score at least 70% to complete the lesson.</source>
         <translation>Cada lección tiene una pestaña &lt;b&gt;Lección&lt;/b&gt; con explicaciones, fórmulas y figuras, y una pestaña &lt;b&gt;Cuestionario&lt;/b&gt;. Acierta al menos el 70 % para completar la lección.</translation>
     </message>
     <message>
-        <location filename="../gui/main_window.py" line="1351" />
+        <location filename="../gui/main_window.py" line="1358" />
         <source>Two ways to read a lesson</source>
         <translation>Dos maneras de leer una lección</translation>
     </message>
     <message>
-        <location filename="../gui/main_window.py" line="1352" />
+        <location filename="../gui/main_window.py" line="1359" />
         <source>Every lesson has a &lt;b&gt;View&lt;/b&gt; switch at the top right. &lt;b&gt;Intuitive&lt;/b&gt; tells the story in words, hiding the formulas and derivations; &lt;b&gt;With the maths&lt;/b&gt; shows the complete lesson. Switch whenever you like — your choice is remembered.</source>
         <translation>Cada lección tiene un selector &lt;b&gt;Vista&lt;/b&gt; arriba a la derecha. &lt;b&gt;Intuitiva&lt;/b&gt; cuenta la historia con palabras y oculta las fórmulas y las deducciones; &lt;b&gt;Con las matemáticas&lt;/b&gt; muestra la lección completa. Cambia cuando quieras: se recuerda tu elección.</translation>
     </message>
     <message>
-        <location filename="../gui/main_window.py" line="1359" />
+        <location filename="../gui/main_window.py" line="1366" />
         <source>Simulators let you experiment. Lessons link to them with &lt;b&gt;Try it&lt;/b&gt; boxes, and you can open them any time from the sidebar.</source>
         <translation>Los simuladores te dejan experimentar. Las lecciones enlazan con ellos mediante cajas &lt;b&gt;Pruébalo&lt;/b&gt;, y puedes abrirlos cuando quieras desde la barra lateral.</translation>
     </message>
     <message>
-        <location filename="../gui/main_window.py" line="1365" />
+        <location filename="../gui/main_window.py" line="1372" />
         <location filename="../gui/pages/simulators.py" line="131" />
         <source>Challenges</source>
         <translation>Retos</translation>
     </message>
     <message>
-        <location filename="../gui/main_window.py" line="1366" />
+        <location filename="../gui/main_window.py" line="1373" />
         <source>Many simulators open with a &lt;b&gt;challenge&lt;/b&gt;: a concrete task such as finding a universe that ends in a Big Crunch. Set the controls and press &lt;b&gt;Check my answer&lt;/b&gt;; hints are there if you need them, and solved challenges earn badges.</source>
         <translation>Muchos simuladores empiezan con un &lt;b&gt;reto&lt;/b&gt;: una tarea concreta, como encontrar un universo que termine en un Big Crunch. Ajusta los controles y pulsa &lt;b&gt;Comprobar mi respuesta&lt;/b&gt;; tienes pistas si las necesitas, y los retos resueltos dan insignias.</translation>
     </message>
     <message>
-        <location filename="../gui/main_window.py" line="1373" />
+        <location filename="../gui/main_window.py" line="1380" />
         <source>Search and the formula sheet</source>
         <translation>La búsqueda y el formulario</translation>
     </message>
     <message>
-        <location filename="../gui/main_window.py" line="1374" />
+        <location filename="../gui/main_window.py" line="1381" />
         <source>The &lt;b&gt;search box&lt;/b&gt; (Ctrl+F) looks through lessons, the glossary, the simulators and the formula sheet at once. &lt;b&gt;Reference&lt;/b&gt; (Ctrl+R) collects every formula, constant and unit conversion in one place.</source>
         <translation>El &lt;b&gt;cuadro de búsqueda&lt;/b&gt; (Ctrl+F) mira a la vez en las lecciones, el glosario, los simuladores y el formulario. &lt;b&gt;Referencia&lt;/b&gt; (Ctrl+R) reúne todas las fórmulas, constantes y conversiones de unidades en un solo sitio.</translation>
     </message>
     <message>
-        <location filename="../gui/main_window.py" line="1380" />
+        <location filename="../gui/main_window.py" line="1387" />
         <source>Your own notes</source>
         <translation>Tus propias notas</translation>
     </message>
     <message>
-        <location filename="../gui/main_window.py" line="1381" />
-        <source>The &lt;b&gt;Notes&lt;/b&gt; panel, next to the Guide, is a private notebook: one note per page, saved automatically. Press &lt;b&gt;☆ Bookmark&lt;/b&gt; (Ctrl+D) to keep a link to a page, and open &lt;b&gt;Notes &amp;amp; bookmarks&lt;/b&gt; to see or export everything you saved.</source>
-        <translation>El panel &lt;b&gt;Notas&lt;/b&gt;, junto a la Guía, es un cuaderno privado: una nota por página, guardada automáticamente. Pulsa &lt;b&gt;☆ Marcador&lt;/b&gt; (Ctrl+D) para conservar un enlace a una página, y abre &lt;b&gt;Notas y marcadores&lt;/b&gt; para ver o exportar todo lo que has guardado.</translation>
+        <location filename="../gui/main_window.py" line="1388" />
+        <source>The &lt;b&gt;Notes&lt;/b&gt; panel, next to the Guide, is a private notebook: one note per page, saved automatically. Press &lt;b&gt;Bookmark this page&lt;/b&gt; (Ctrl+D) to keep a link to a page, and open &lt;b&gt;Notes &amp;amp; bookmarks&lt;/b&gt; to see or export everything you saved.</source>
+        <translation>El panel &lt;b&gt;Notas&lt;/b&gt;, junto a la Guía, es un cuaderno privado: una nota por página, guardada automáticamente. Pulsa &lt;b&gt;Guardar esta página en marcadores&lt;/b&gt; (Ctrl+D) para conservar un enlace a una página, y abre &lt;b&gt;Notas y marcadores&lt;/b&gt; para ver o exportar todo lo que has guardado.</translation>
     </message>
     <message>
-        <location filename="../gui/main_window.py" line="1388" />
+        <location filename="../gui/main_window.py" line="1395" />
         <source>Toolbar</source>
         <translation>Barra de herramientas</translation>
     </message>
     <message>
-        <location filename="../gui/main_window.py" line="1389" />
+        <location filename="../gui/main_window.py" line="1396" />
         <source>Go &lt;b&gt;Back&lt;/b&gt; and &lt;b&gt;Forward&lt;/b&gt; between pages, jump &lt;b&gt;Home&lt;/b&gt; or &lt;b&gt;Continue&lt;/b&gt; where you left off. On the right are the search box and the three side panels. Everything else lives in the menus and in the list on the left.</source>
         <translation>Ve &lt;b&gt;Atrás&lt;/b&gt; y &lt;b&gt;Adelante&lt;/b&gt; entre páginas, salta a &lt;b&gt;Inicio&lt;/b&gt; o &lt;b&gt;Continúa&lt;/b&gt; donde lo dejaste. A la derecha están el cuadro de búsqueda y los tres paneles laterales. Todo lo demás vive en los menús y en la lista de la izquierda.</translation>
     </message>
     <message>
-        <location filename="../gui/main_window.py" line="1395" />
+        <location filename="../gui/main_window.py" line="1402" />
         <source>History and badges</source>
         <translation>Historia e insignias</translation>
     </message>
     <message>
-        <location filename="../gui/main_window.py" line="1396" />
+        <location filename="../gui/main_window.py" line="1403" />
         <source>&lt;b&gt;History&lt;/b&gt; follows cosmology from Copernicus to the latest surveys, with cards for the scientists. &lt;b&gt;Progress&lt;/b&gt; shows your lesson map and the &lt;b&gt;badges&lt;/b&gt; you have earned.</source>
         <translation>&lt;b&gt;Historia&lt;/b&gt; sigue la cosmología desde Copérnico hasta los sondeos más recientes, con fichas de los científicos. &lt;b&gt;Progreso&lt;/b&gt; muestra tu mapa de lecciones y las &lt;b&gt;insignias&lt;/b&gt; que has conseguido.</translation>
     </message>
     <message>
-        <location filename="../gui/main_window.py" line="1401" />
+        <location filename="../gui/main_window.py" line="1408" />
         <source>You're ready</source>
         <translation>Ya estás</translation>
     </message>
     <message>
-        <location filename="../gui/main_window.py" line="1402" />
+        <location filename="../gui/main_window.py" line="1409" />
         <source>Every control has a tooltip, and &lt;b&gt;?&lt;/b&gt; buttons give detailed explanations. Enjoy exploring the universe!</source>
         <translation>Cada control tiene una descripción emergente, y los botones &lt;b&gt;?&lt;/b&gt; dan explicaciones detalladas. ¡Disfruta explorando el universo!</translation>
     </message>
     <message>
-        <location filename="../gui/pages/classroom_page.py" line="25" />
+        <location filename="../gui/pages/classroom_page.py" line="26" />
         <source>
 ## Classroom
 
@@ -1707,202 +1708,202 @@ nada, y la aplicación no tiene ni idea de quién es quien aprende.
 </translation>
     </message>
     <message>
-        <location filename="../gui/pages/classroom_page.py" line="45" />
-        <location filename="../gui/pages/classroom_page.py" line="180" />
+        <location filename="../gui/pages/classroom_page.py" line="46" />
+        <location filename="../gui/pages/classroom_page.py" line="183" />
         <source>Progress report</source>
         <translation>Informe de progreso</translation>
     </message>
     <message>
-        <location filename="../gui/pages/classroom_page.py" line="46" />
+        <location filename="../gui/pages/classroom_page.py" line="47" />
         <source>Generated</source>
         <translation>Generado</translation>
     </message>
     <message>
-        <location filename="../gui/pages/classroom_page.py" line="47" />
+        <location filename="../gui/pages/classroom_page.py" line="48" />
         <source>Summary</source>
         <translation>Resumen</translation>
     </message>
     <message>
-        <location filename="../gui/pages/classroom_page.py" line="48" />
+        <location filename="../gui/pages/classroom_page.py" line="49" />
         <location filename="../gui/pages/progress_page.py" line="75" />
         <source>Lessons completed</source>
         <translation>Lecciones completadas</translation>
     </message>
     <message>
-        <location filename="../gui/pages/classroom_page.py" line="49" />
+        <location filename="../gui/pages/classroom_page.py" line="50" />
         <source>about {minutes} minutes of reading</source>
         <translation>unos {minutes} minutos de lectura</translation>
     </message>
     <message>
-        <location filename="../gui/pages/classroom_page.py" line="50" />
+        <location filename="../gui/pages/classroom_page.py" line="51" />
         <source>Average quiz score</source>
         <translation>Nota media de los cuestionarios</translation>
     </message>
     <message>
-        <location filename="../gui/pages/classroom_page.py" line="51" />
+        <location filename="../gui/pages/classroom_page.py" line="52" />
         <source>perfect</source>
         <translation>perfecto</translation>
     </message>
     <message>
-        <location filename="../gui/pages/classroom_page.py" line="52" />
+        <location filename="../gui/pages/classroom_page.py" line="53" />
         <source>Simulator challenges</source>
         <translation>Retos de los simuladores</translation>
     </message>
     <message>
-        <location filename="../gui/pages/classroom_page.py" line="53" />
+        <location filename="../gui/pages/classroom_page.py" line="54" />
         <source>Worked problems</source>
         <translation>Problemas resueltos</translation>
     </message>
     <message>
-        <location filename="../gui/pages/classroom_page.py" line="54" />
+        <location filename="../gui/pages/classroom_page.py" line="55" />
         <source>at the first attempt</source>
         <translation>al primer intento</translation>
     </message>
     <message>
-        <location filename="../gui/pages/classroom_page.py" line="55" />
+        <location filename="../gui/pages/classroom_page.py" line="56" />
         <location filename="../gui/pages/progress_page.py" line="92" />
         <source>Badges</source>
         <translation>Insignias</translation>
     </message>
     <message>
-        <location filename="../gui/pages/classroom_page.py" line="56" />
+        <location filename="../gui/pages/classroom_page.py" line="57" />
         <source>Review deck</source>
         <translation>Mazo de repaso</translation>
     </message>
     <message>
-        <location filename="../gui/pages/classroom_page.py" line="57" />
+        <location filename="../gui/pages/classroom_page.py" line="58" />
         <source>waiting</source>
         <translation>esperando</translation>
     </message>
     <message>
-        <location filename="../gui/pages/classroom_page.py" line="58" />
-        <location filename="../gui/pages/review_page.py" line="266" />
+        <location filename="../gui/pages/classroom_page.py" line="59" />
+        <location filename="../gui/pages/review_page.py" line="271" />
         <source>due today</source>
         <translation>para hoy</translation>
     </message>
     <message>
-        <location filename="../gui/pages/classroom_page.py" line="59" />
+        <location filename="../gui/pages/classroom_page.py" line="60" />
         <source>learned for good</source>
         <translation>aprendidas para siempre</translation>
     </message>
     <message>
-        <location filename="../gui/pages/classroom_page.py" line="60" />
+        <location filename="../gui/pages/classroom_page.py" line="61" />
         <source>Last lesson completed</source>
         <translation>Última lección completada</translation>
     </message>
     <message>
-        <location filename="../gui/pages/classroom_page.py" line="61" />
+        <location filename="../gui/pages/classroom_page.py" line="62" />
         <source>By level</source>
         <translation>Por nivel</translation>
     </message>
     <message>
-        <location filename="../gui/pages/classroom_page.py" line="62" />
+        <location filename="../gui/pages/classroom_page.py" line="63" />
         <source>Level</source>
         <translation>Nivel</translation>
     </message>
     <message>
-        <location filename="../gui/pages/classroom_page.py" line="63" />
+        <location filename="../gui/pages/classroom_page.py" line="64" />
         <source>Lessons</source>
         <translation>Lecciones</translation>
     </message>
     <message>
-        <location filename="../gui/pages/classroom_page.py" line="64" />
+        <location filename="../gui/pages/classroom_page.py" line="65" />
         <source>Average quiz</source>
         <translation>Media del cuestionario</translation>
     </message>
     <message>
-        <location filename="../gui/pages/classroom_page.py" line="65" />
+        <location filename="../gui/pages/classroom_page.py" line="66" />
         <source>Worth going over again</source>
         <translation>Vale la pena repasarlas</translation>
     </message>
     <message>
-        <location filename="../gui/pages/classroom_page.py" line="66" />
+        <location filename="../gui/pages/classroom_page.py" line="67" />
         <source>Completed, but only just. A pass at 70% leaves plenty unlearned.</source>
         <translation>Completadas, pero por poco. Un aprobado del 70 % deja mucho sin aprender.</translation>
     </message>
     <message>
-        <location filename="../gui/pages/classroom_page.py" line="67" />
+        <location filename="../gui/pages/classroom_page.py" line="68" />
         <source>Simulators not yet opened</source>
         <translation>Simuladores todavía sin abrir</translation>
     </message>
     <message>
-        <location filename="../gui/pages/classroom_page.py" line="68" />
+        <location filename="../gui/pages/classroom_page.py" line="69" />
         <source>Everything in this report is read from this computer only. Nothing was uploaded.</source>
         <translation>Todo lo que hay en este informe se lee solo de este ordenador. No se subió nada.</translation>
     </message>
     <message>
-        <location filename="../gui/pages/classroom_page.py" line="73" />
+        <location filename="../gui/pages/classroom_page.py" line="74" />
         <source>Common misconception</source>
         <translation>Malentendido frecuente</translation>
     </message>
     <message>
-        <location filename="../gui/pages/classroom_page.py" line="74" />
+        <location filename="../gui/pages/classroom_page.py" line="75" />
         <source>Discussion question</source>
         <translation>Pregunta de debate</translation>
     </message>
     <message>
-        <location filename="../gui/pages/classroom_page.py" line="75" />
+        <location filename="../gui/pages/classroom_page.py" line="76" />
         <source>Show them</source>
         <translation>Enséñales</translation>
     </message>
     <message>
-        <location filename="../gui/pages/classroom_page.py" line="100" />
+        <location filename="../gui/pages/classroom_page.py" line="101" />
         <source>A progress report to hand on, and teacher notes for every lesson.</source>
         <translation>Un informe de progreso para entregar y notas para el profesorado en cada lección.</translation>
     </message>
     <message>
-        <location filename="../gui/pages/classroom_page.py" line="102" />
-        <location filename="../gui/pages/notes_page.py" line="54" />
-        <source>⬇  Export as Markdown…</source>
-        <translation>⬇  Exportar como Markdown…</translation>
+        <location filename="../gui/pages/classroom_page.py" line="103" />
+        <location filename="../gui/pages/notes_page.py" line="55" />
+        <source>Export as Markdown…</source>
+        <translation>Exportar como Markdown…</translation>
     </message>
     <message>
-        <location filename="../gui/pages/classroom_page.py" line="104" />
-        <source>⬇  Export as PDF…</source>
-        <translation>⬇  Exportar como PDF…</translation>
+        <location filename="../gui/pages/classroom_page.py" line="105" />
+        <source>Export as PDF…</source>
+        <translation>Exportar como PDF…</translation>
     </message>
     <message>
-        <location filename="../gui/pages/classroom_page.py" line="110" />
+        <location filename="../gui/pages/classroom_page.py" line="113" />
         <source>Classroom mode: show teacher notes inside every lesson</source>
         <translation>Modo Aula: mostrar las notas para el profesorado dentro de cada lección</translation>
     </message>
     <message>
-        <location filename="../gui/pages/classroom_page.py" line="111" />
+        <location filename="../gui/pages/classroom_page.py" line="114" />
         <source>Adds a Teacher notes tab to each lesson and includes the notes when you print it. It changes nothing about the learner's progress.</source>
         <translation>Añade una pestaña de Notas para el profesorado a cada lección e incluye las notas al imprimirla. No cambia nada del progreso de quien aprende.</translation>
     </message>
     <message>
-        <location filename="../gui/pages/classroom_page.py" line="138" />
-        <location filename="../gui/pages/lesson.py" line="109" />
-        <location filename="../gui/pages/lesson.py" line="342" />
+        <location filename="../gui/pages/classroom_page.py" line="141" />
+        <location filename="../gui/pages/lesson.py" line="108" />
+        <location filename="../gui/pages/lesson.py" line="336" />
         <location filename="../gui/rendering/pdf.py" line="80" />
         <source>Teacher notes</source>
         <translation>Notas para el profesorado</translation>
     </message>
     <message>
-        <location filename="../gui/pages/classroom_page.py" line="157" />
-        <location filename="../gui/pages/classroom_page.py" line="174" />
+        <location filename="../gui/pages/classroom_page.py" line="160" />
+        <location filename="../gui/pages/classroom_page.py" line="177" />
         <source>Save the report</source>
         <translation>Guardar el informe</translation>
     </message>
     <message>
-        <location filename="../gui/pages/classroom_page.py" line="166" />
-        <location filename="../gui/pages/classroom_page.py" line="184" />
+        <location filename="../gui/pages/classroom_page.py" line="169" />
+        <location filename="../gui/pages/classroom_page.py" line="187" />
         <source>Could not save the report</source>
         <translation>No se pudo guardar el informe</translation>
     </message>
     <message>
-        <location filename="../gui/pages/classroom_page.py" line="168" />
+        <location filename="../gui/pages/classroom_page.py" line="171" />
         <source>Saved the report to {path}</source>
         <translation>Informe guardado en {path}</translation>
     </message>
     <message>
-        <location filename="../gui/pages/classroom_page.py" line="180" />
+        <location filename="../gui/pages/classroom_page.py" line="183" />
         <source>Cosmos</source>
         <translation>Cosmos</translation>
     </message>
     <message>
-        <location filename="../gui/pages/glossary.py" line="21" />
+        <location filename="../gui/pages/glossary.py" line="22" />
         <source>
 ## Glossary
 
@@ -1931,37 +1932,37 @@ Todos los términos importantes del curso en un solo sitio.
 </translation>
     </message>
     <message>
-        <location filename="../gui/pages/glossary.py" line="48" />
+        <location filename="../gui/pages/glossary.py" line="49" />
         <source>Search terms…  (e.g. redshift, parsec, dark matter)</source>
         <translation>Buscar términos…  (p. ej. corrimiento al rojo, pársec, materia oscura)</translation>
     </message>
     <message>
-        <location filename="../gui/pages/glossary.py" line="72" />
+        <location filename="../gui/pages/glossary.py" line="73" />
         <source>Flashcards come back on the Review page: tomorrow, then after 3, 7, 16 and 35 days, until you know the term for good.</source>
         <translation>Las tarjetas vuelven en la página Repaso: mañana, y después de 3, 7, 16 y 35 días, hasta que sepas el término para siempre.</translation>
     </message>
     <message>
-        <location filename="../gui/pages/glossary.py" line="125" />
-        <source>✓ In my flashcards — remove</source>
-        <translation>✓ En mis tarjetas — quitar</translation>
+        <location filename="../gui/pages/glossary.py" line="126" />
+        <source>In my flashcards — remove</source>
+        <translation>En mis tarjetas — quitar</translation>
     </message>
     <message>
-        <location filename="../gui/pages/glossary.py" line="125" />
+        <location filename="../gui/pages/glossary.py" line="126" />
         <source>Add to my flashcards</source>
         <translation>Añadir a mis tarjetas</translation>
     </message>
     <message>
-        <location filename="../gui/pages/glossary.py" line="136" />
+        <location filename="../gui/pages/glossary.py" line="138" />
         <source>“{term}” removed from your flashcards</source>
         <translation>«{term}» quitado de tus tarjetas</translation>
     </message>
     <message>
-        <location filename="../gui/pages/glossary.py" line="139" />
+        <location filename="../gui/pages/glossary.py" line="141" />
         <source>“{term}” added to your flashcards: it is due today on the Review page</source>
         <translation>«{term}» añadido a tus tarjetas: toca hoy en la página Repaso</translation>
     </message>
     <message>
-        <location filename="../gui/pages/history_page.py" line="25" />
+        <location filename="../gui/pages/history_page.py" line="26" />
         <source>
 ## The history of cosmology
 
@@ -1996,62 +1997,62 @@ y la ciencia van juntas.
 </translation>
     </message>
     <message>
-        <location filename="../gui/pages/history_page.py" line="43" />
+        <location filename="../gui/pages/history_page.py" line="44" />
         <source>Idea</source>
         <translation>Idea</translation>
     </message>
     <message>
-        <location filename="../gui/pages/history_page.py" line="44" />
+        <location filename="../gui/pages/history_page.py" line="45" />
         <source>Theory</source>
         <translation>Teoría</translation>
     </message>
     <message>
-        <location filename="../gui/pages/history_page.py" line="45" />
+        <location filename="../gui/pages/history_page.py" line="46" />
         <source>Observation</source>
         <translation>Observación</translation>
     </message>
     <message>
-        <location filename="../gui/pages/history_page.py" line="46" />
+        <location filename="../gui/pages/history_page.py" line="47" />
         <source>Open problem</source>
         <translation>Problema abierto</translation>
     </message>
     <message>
-        <location filename="../gui/pages/history_page.py" line="59" />
+        <location filename="../gui/pages/history_page.py" line="60" />
         <source>The history of cosmology</source>
         <translation>La historia de la cosmología</translation>
     </message>
     <message>
-        <location filename="../gui/pages/history_page.py" line="61" />
+        <location filename="../gui/pages/history_page.py" line="62" />
         <source>{events} milestones between {first} and {last}, and {people} of the people behind them.</source>
         <translation>{events} hitos entre {first} y {last}, y {people} de las personas que hay detrás.</translation>
     </message>
     <message>
-        <location filename="../gui/pages/history_page.py" line="65" />
+        <location filename="../gui/pages/history_page.py" line="66" />
         <source>Filter by name, year or keyword…  (e.g. Hubble, 1998, dark matter)</source>
         <translation>Filtrar por nombre, año o palabra clave…  (p. ej. Hubble, 1998, materia oscura)</translation>
     </message>
     <message>
-        <location filename="../gui/pages/history_page.py" line="87" />
+        <location filename="../gui/pages/history_page.py" line="88" />
         <source>Timeline</source>
         <translation>Cronología</translation>
     </message>
     <message>
-        <location filename="../gui/pages/history_page.py" line="103" />
+        <location filename="../gui/pages/history_page.py" line="104" />
         <source>Scientists</source>
         <translation>Científicos</translation>
     </message>
     <message>
-        <location filename="../gui/pages/history_page.py" line="166" />
+        <location filename="../gui/pages/history_page.py" line="168" />
         <source>{n} milestones shown</source>
         <translation>{n} hitos mostrados</translation>
     </message>
     <message>
-        <location filename="../gui/pages/history_page.py" line="194" />
+        <location filename="../gui/pages/history_page.py" line="198" />
         <source>Open {lesson}</source>
         <translation>Abrir {lesson}</translation>
     </message>
     <message>
-        <location filename="../gui/pages/history_page.py" line="214" />
+        <location filename="../gui/pages/history_page.py" line="218" />
         <source>Read more</source>
         <translation>Leer más</translation>
     </message>
@@ -2197,134 +2198,134 @@ los paneles laterales, y lo que tiene el teclado se dibuja con un contorno claro
         <translation>Un curso interactivo de cosmología: la ciencia del universo en su conjunto. Empieza por cómo de grande es el universo y cómo lo medimos, y sube hasta el universo en expansión, la materia oscura, la energía oscura y los primeros minutos después del Big Bang.</translation>
     </message>
     <message>
-        <location filename="../gui/pages/home.py" line="129" />
+        <location filename="../gui/pages/home.py" line="130" />
         <source>Take the guided tour</source>
         <translation>Hacer el recorrido guiado</translation>
     </message>
     <message>
-        <location filename="../gui/pages/home.py" line="137" />
+        <location filename="../gui/pages/home.py" line="138" />
         <source>Questions you got wrong, brought back just before you would forget them (Ctrl+Shift+R)</source>
         <translation>Las preguntas que fallaste, traídas de vuelta justo antes de que las olvidaras (Ctrl+Mayús+R)</translation>
     </message>
     <message>
-        <location filename="../gui/pages/home.py" line="163" />
+        <location filename="../gui/pages/home.py" line="165" />
         <source>No daily goal</source>
         <translation>Sin meta diaria</translation>
     </message>
     <message>
-        <location filename="../gui/pages/home.py" line="164" />
-        <location filename="../gui/pages/home.py" line="294" />
+        <location filename="../gui/pages/home.py" line="166" />
+        <location filename="../gui/pages/home.py" line="296" />
         <source>{steps} steps a day</source>
         <translation>{steps} pasos al día</translation>
     </message>
     <message>
-        <location filename="../gui/pages/home.py" line="166" />
+        <location filename="../gui/pages/home.py" line="168" />
         <source>Daily goal</source>
         <translation>Meta diaria</translation>
     </message>
     <message>
-        <location filename="../gui/pages/home.py" line="167" />
+        <location filename="../gui/pages/home.py" line="169" />
         <source>What counts as a step</source>
         <translation>Qué cuenta como un paso</translation>
     </message>
     <message>
-        <location filename="../gui/pages/home.py" line="168" />
+        <location filename="../gui/pages/home.py" line="170" />
         <source>Every quiz question you answer, every review and flashcard, every attempt at a worked problem and every simulator challenge you solve. Ten a day is about fifteen minutes.</source>
         <translation>Cada pregunta de cuestionario que respondes, cada repaso y cada tarjeta, cada intento en un problema y cada reto de simulador que resuelves. Diez al día son unos quince minutos.</translation>
     </message>
     <message>
-        <location filename="../gui/pages/home.py" line="174" />
+        <location filename="../gui/pages/home.py" line="176" />
         <source>Course levels</source>
         <translation>Niveles del curso</translation>
     </message>
     <message>
-        <location filename="../gui/pages/home.py" line="186" />
-        <location filename="../gui/pages/lesson.py" line="157" />
+        <location filename="../gui/pages/home.py" line="188" />
+        <location filename="../gui/pages/lesson.py" line="151" />
         <source>LEVEL {number}</source>
         <translation>NIVEL {number}</translation>
     </message>
     <message>
-        <location filename="../gui/pages/home.py" line="197" />
+        <location filename="../gui/pages/home.py" line="199" />
         <source>Open level</source>
         <translation>Abrir el nivel</translation>
     </message>
     <message>
-        <location filename="../gui/pages/home.py" line="200" />
+        <location filename="../gui/pages/home.py" line="202" />
         <source>Opens the first unfinished lesson of this level (starts at {lesson}).</source>
         <translation>Abre la primera lección sin terminar de este nivel (empieza en {lesson}).</translation>
     </message>
     <message>
-        <location filename="../gui/pages/home.py" line="210" />
+        <location filename="../gui/pages/home.py" line="212" />
         <source>Hands-on tools to explore the ideas from the lessons. You can open them at any time.</source>
         <translation>Herramientas prácticas para explorar las ideas de las lecciones. Puedes abrirlas cuando quieras.</translation>
     </message>
     <message>
-        <location filename="../gui/pages/home.py" line="246" />
+        <location filename="../gui/pages/home.py" line="248" />
         <source>Course progress: &lt;b&gt;{done}&lt;/b&gt; of {total} lessons completed</source>
         <translation>Progreso del curso: &lt;b&gt;{done}&lt;/b&gt; de {total} lecciones completadas</translation>
     </message>
     <message>
-        <location filename="../gui/pages/home.py" line="249" />
+        <location filename="../gui/pages/home.py" line="251" />
         <source>Review the course</source>
         <translation>Repasar el curso</translation>
     </message>
     <message>
-        <location filename="../gui/pages/home.py" line="250" />
+        <location filename="../gui/pages/home.py" line="252" />
         <source>You have completed every lesson. Congratulations!</source>
         <translation>Has completado todas las lecciones. ¡Enhorabuena!</translation>
     </message>
     <message>
-        <location filename="../gui/pages/home.py" line="254" />
+        <location filename="../gui/pages/home.py" line="256" />
         <source>Start learning</source>
         <translation>Empezar a aprender</translation>
     </message>
     <message>
-        <location filename="../gui/pages/home.py" line="254" />
+        <location filename="../gui/pages/home.py" line="256" />
         <source>Continue learning</source>
         <translation>Seguir aprendiendo</translation>
     </message>
     <message>
-        <location filename="../gui/pages/home.py" line="262" />
+        <location filename="../gui/pages/home.py" line="264" />
         <source>Review {count} question(s)</source>
         <translation>Repasar {count} pregunta(s)</translation>
     </message>
     <message>
-        <location filename="../gui/pages/home.py" line="267" />
+        <location filename="../gui/pages/home.py" line="269" />
         <source>{done} of {total} lessons completed</source>
         <translation>{done} de {total} lecciones completadas</translation>
     </message>
     <message>
-        <location filename="../gui/pages/home.py" line="273" />
+        <location filename="../gui/pages/home.py" line="275" />
         <source>{days}-day streak</source>
         <translation>Racha de {days} días</translation>
     </message>
     <message>
-        <location filename="../gui/pages/home.py" line="275" />
+        <location filename="../gui/pages/home.py" line="277" />
         <source>Start a streak today</source>
         <translation>Empieza hoy una racha</translation>
     </message>
     <message>
-        <location filename="../gui/pages/home.py" line="280" />
+        <location filename="../gui/pages/home.py" line="282" />
         <source>Today: &lt;b&gt;{steps}&lt;/b&gt; of {goal} steps</source>
         <translation>Hoy: &lt;b&gt;{steps}&lt;/b&gt; de {goal} pasos</translation>
     </message>
     <message>
-        <location filename="../gui/pages/home.py" line="282" />
+        <location filename="../gui/pages/home.py" line="284" />
         <source>goal reached ✓</source>
         <translation>meta alcanzada ✓</translation>
     </message>
     <message>
-        <location filename="../gui/pages/home.py" line="285" />
+        <location filename="../gui/pages/home.py" line="287" />
         <source>Today: &lt;b&gt;{steps}&lt;/b&gt; steps</source>
         <translation>Hoy: &lt;b&gt;{steps}&lt;/b&gt; pasos</translation>
     </message>
     <message>
-        <location filename="../gui/pages/home.py" line="287" />
+        <location filename="../gui/pages/home.py" line="289" />
         <source>Study a little today to keep your streak going.</source>
         <translation>Estudia un poco hoy para mantener viva tu racha.</translation>
     </message>
     <message>
-        <location filename="../gui/pages/home.py" line="290" />
+        <location filename="../gui/pages/home.py" line="292" />
         <source>Last seven days: {marks}   Longest streak: {longest} days</source>
         <translation>Últimos siete días: {marks}   Racha más larga: {longest} días</translation>
     </message>
@@ -2367,51 +2368,52 @@ los paneles laterales, y lo que tiene el teclado se dibuja con un contorno claro
     </message>
     <message>
         <location filename="../gui/pages/lesson.py" line="136" />
+        <location filename="../gui/widgets/quiz.py" line="137" />
         <source>Next lesson</source>
         <translation>Lección siguiente</translation>
     </message>
     <message>
-        <location filename="../gui/pages/lesson.py" line="161" />
+        <location filename="../gui/pages/lesson.py" line="155" />
         <source>≈ {minutes} min read</source>
         <translation>≈ {minutes} min de lectura</translation>
     </message>
     <message>
-        <location filename="../gui/pages/lesson.py" line="185" />
+        <location filename="../gui/pages/lesson.py" line="179" />
         <source>Open the {title}: {tagline}</source>
         <translation>Abrir el {title}: {tagline}</translation>
     </message>
     <message>
-        <location filename="../gui/pages/lesson.py" line="262" />
+        <location filename="../gui/pages/lesson.py" line="256" />
         <source>Completed</source>
         <translation>Completada</translation>
     </message>
     <message>
-        <location filename="../gui/pages/lesson.py" line="263" />
+        <location filename="../gui/pages/lesson.py" line="257" />
         <source>Ready to learn</source>
         <translation>Lista para aprender</translation>
     </message>
     <message>
-        <location filename="../gui/pages/lesson.py" line="264" />
+        <location filename="../gui/pages/lesson.py" line="258" />
         <source>Prerequisites missing</source>
         <translation>Faltan requisitos previos</translation>
     </message>
     <message>
-        <location filename="../gui/pages/lesson.py" line="267" />
+        <location filename="../gui/pages/lesson.py" line="261" />
         <source>best quiz score {score}</source>
         <translation>mejor puntuación del cuestionario {score}</translation>
     </message>
     <message>
-        <location filename="../gui/pages/lesson.py" line="276" />
+        <location filename="../gui/pages/lesson.py" line="270" />
         <source>This lesson builds on {lessons}. You can read it now, but it will be easier after completing those first.</source>
         <translation>Esta lección se apoya en {lessons}. Puedes leerla ahora, pero será más fácil si completas antes esas.</translation>
     </message>
     <message>
-        <location filename="../gui/pages/lesson.py" line="289" />
+        <location filename="../gui/pages/lesson.py" line="283" />
         <source>How to study this lesson</source>
         <translation>Cómo estudiar esta lección</translation>
     </message>
     <message>
-        <location filename="../gui/pages/lesson.py" line="291" />
+        <location filename="../gui/pages/lesson.py" line="285" />
         <source>1. Read the lesson from top to bottom. Formulas are explained in words right after they appear.
    Prefer the ideas without the algebra? Switch the **View** at the top right to *Intuitive*.
 2. Click the coloured glossary terms to see definitions here without losing your place.
@@ -2424,44 +2426,44 @@ los paneles laterales, y lo que tiene el teclado se dibuja con un contorno claro
 4. Termina con la pestaña **Cuestionario**. Cada respuesta viene con una explicación.</translation>
     </message>
     <message>
-        <location filename="../gui/pages/lesson.py" line="300" />
+        <location filename="../gui/pages/lesson.py" line="294" />
         <source>Builds on</source>
         <translation>Se apoya en</translation>
     </message>
     <message>
-        <location filename="../gui/pages/lesson.py" line="304" />
+        <location filename="../gui/pages/lesson.py" line="298" />
         <source>Related simulators</source>
         <translation>Simuladores relacionados</translation>
     </message>
     <message>
-        <location filename="../gui/pages/lesson.py" line="310" />
+        <location filename="../gui/pages/lesson.py" line="304" />
         <source>Practise</source>
         <translation>Practicar</translation>
     </message>
     <message>
-        <location filename="../gui/pages/lesson.py" line="315" />
+        <location filename="../gui/pages/lesson.py" line="309" />
         <source>Leads to</source>
         <translation>Lleva a</translation>
     </message>
     <message>
-        <location filename="../gui/pages/lesson.py" line="322" />
+        <location filename="../gui/pages/lesson.py" line="316" />
         <source>{added} new term(s) added to your flashcards; they are due today on the Review page</source>
         <translation>{added} término(s) nuevo(s) añadido(s) a tus tarjetas; tocan hoy en la página Repaso</translation>
     </message>
     <message>
-        <location filename="../gui/pages/lesson.py" line="324" />
+        <location filename="../gui/pages/lesson.py" line="318" />
         <source>Every term of this lesson is already in your flashcards</source>
         <translation>Todos los términos de esta lección ya están en tus tarjetas</translation>
     </message>
     <message>
-        <location filename="../gui/pages/notes_page.py" line="25" />
+        <location filename="../gui/pages/notes_page.py" line="26" />
         <source>
 ## Notes &amp; bookmarks
 
 Everything you saved while working through the course.
 
-- **Bookmarks** are pages you marked with the ☆ button in the Notes panel (or
-  Ctrl+D). Click one to go straight back to it.
+- **Bookmarks** are pages you marked with the **Bookmark this page** button in
+  the Notes panel (or Ctrl+D). Click one to go straight back to it.
 - **Notes** are your own words, one note per page. Open the page and edit the
   note in the Notes panel on the right.
 - **Export** writes all of it into a single Markdown file you can keep or print.
@@ -2474,7 +2476,7 @@ uploaded anywhere.
 
 Todo lo que guardaste mientras recorrías el curso.
 
-- Los **marcadores** son páginas que marcaste con el botón ☆ del panel Notas (o con
+- Los **marcadores** son páginas que marcaste con el botón **Guardar esta página en marcadores** del panel Notas (o con
   Ctrl+D). Pulsa uno para volver directamente a ella.
 - Las **notas** son tus propias palabras, una nota por página. Abre la página y edita
   la nota en el panel Notas de la derecha.
@@ -2485,78 +2487,78 @@ nada a ninguna parte.
 </translation>
     </message>
     <message>
-        <location filename="../gui/pages/notes_page.py" line="55" />
+        <location filename="../gui/pages/notes_page.py" line="57" />
         <source>Save every bookmark and note into one text file.</source>
         <translation>Guarda todos los marcadores y notas en un solo archivo de texto.</translation>
     </message>
     <message>
-        <location filename="../gui/pages/notes_page.py" line="86" />
+        <location filename="../gui/pages/notes_page.py" line="88" />
         <source>{bookmarks} bookmarks · {notes} notes</source>
         <translation>{bookmarks} marcadores · {notes} notas</translation>
     </message>
     <message>
-        <location filename="../gui/pages/notes_page.py" line="90" />
+        <location filename="../gui/pages/notes_page.py" line="92" />
         <source>Bookmarks</source>
         <translation>Marcadores</translation>
     </message>
     <message>
-        <location filename="../gui/pages/notes_page.py" line="92" />
-        <source>No bookmarks yet. Open any lesson or simulator and press ☆ in the Notes panel (Ctrl+D).</source>
-        <translation>Aún no hay marcadores. Abre cualquier lección o simulador y pulsa ☆ en el panel Notas (Ctrl+D).</translation>
+        <location filename="../gui/pages/notes_page.py" line="95" />
+        <source>No bookmarks yet. Open any lesson or simulator and press &lt;b&gt;Bookmark this page&lt;/b&gt; in the Notes panel (Ctrl+D).</source>
+        <translation>Aún no hay marcadores. Abre cualquier lección o simulador y pulsa &lt;b&gt;Guardar esta página en marcadores&lt;/b&gt; en el panel Notas (Ctrl+D).</translation>
     </message>
     <message>
-        <location filename="../gui/pages/notes_page.py" line="99" />
+        <location filename="../gui/pages/notes_page.py" line="102" />
         <source>No notes yet. The Notes panel on the right of every page is your private notebook.</source>
         <translation>Aún no hay notas. El panel Notas, a la derecha de cada página, es tu cuaderno privado.</translation>
     </message>
     <message>
-        <location filename="../gui/pages/notes_page.py" line="110" />
+        <location filename="../gui/pages/notes_page.py" line="113" />
         <source>Export notes</source>
         <translation>Exportar notas</translation>
     </message>
     <message>
-        <location filename="../gui/pages/notes_page.py" line="111" />
+        <location filename="../gui/pages/notes_page.py" line="114" />
         <source>Markdown (*.md);;Text (*.txt)</source>
         <translation>Markdown (*.md);;Texto (*.txt)</translation>
     </message>
     <message>
-        <location filename="../gui/pages/notes_page.py" line="117" />
+        <location filename="../gui/pages/notes_page.py" line="120" />
         <source>Export failed</source>
         <translation>Falló la exportación</translation>
     </message>
     <message>
-        <location filename="../gui/pages/notes_page.py" line="118" />
+        <location filename="../gui/pages/notes_page.py" line="121" />
         <source>The file could not be written:</source>
         <translation>No se pudo escribir el archivo:</translation>
     </message>
     <message>
-        <location filename="../gui/pages/notes_page.py" line="120" />
+        <location filename="../gui/pages/notes_page.py" line="123" />
         <source>Exported to {path}</source>
         <translation>Exportado a {path}</translation>
     </message>
     <message>
-        <location filename="../gui/pages/notes_page.py" line="147" />
+        <location filename="../gui/pages/notes_page.py" line="150" />
         <source>Open</source>
         <translation>Abrir</translation>
     </message>
     <message>
-        <location filename="../gui/pages/notes_page.py" line="158" />
+        <location filename="../gui/pages/notes_page.py" line="161" />
         <source>Remove</source>
         <translation>Quitar</translation>
     </message>
     <message>
-        <location filename="../gui/pages/notes_page.py" line="159" />
+        <location filename="../gui/pages/notes_page.py" line="162" />
         <source>Remove this bookmark. Your note for the page is kept.</source>
         <translation>Quita este marcador. Tu nota de la página se conserva.</translation>
     </message>
     <message>
-        <location filename="../gui/pages/notes_page.py" line="169" />
-        <location filename="../gui/pages/notes_page.py" line="181" />
+        <location filename="../gui/pages/notes_page.py" line="172" />
+        <location filename="../gui/pages/notes_page.py" line="184" />
         <source>Delete note</source>
         <translation>Borrar la nota</translation>
     </message>
     <message>
-        <location filename="../gui/pages/notes_page.py" line="182" />
+        <location filename="../gui/pages/notes_page.py" line="185" />
         <source>Delete your note for {page}?</source>
         <translation>¿Borrar tu nota de {page}?</translation>
     </message>
@@ -2646,92 +2648,94 @@ y por acertar al primer intento.
         <translation>La lección que explica la física que hay detrás de este problema.</translation>
     </message>
     <message>
-        <location filename="../gui/pages/problems_page.py" line="114" />
+        <location filename="../gui/pages/problems_page.py" line="115" />
         <source>A simulator that can compute or visualise part of the answer.</source>
         <translation>Un simulador que puede calcular o visualizar parte de la respuesta.</translation>
     </message>
     <message>
-        <location filename="../gui/pages/problems_page.py" line="128" />
+        <location filename="../gui/pages/problems_page.py" line="129" />
         <source>Your answer:</source>
         <translation>Tu respuesta:</translation>
     </message>
     <message>
-        <location filename="../gui/pages/problems_page.py" line="130" />
+        <location filename="../gui/pages/problems_page.py" line="131" />
         <source>a number, e.g. 4.25 or 5.6e11</source>
         <translation>un número, p. ej. 4.25 o 5.6e11</translation>
     </message>
     <message>
-        <location filename="../gui/pages/problems_page.py" line="135" />
-        <source>✓  Check</source>
-        <translation>✓  Comprobar</translation>
+        <location filename="../gui/pages/problems_page.py" line="136" />
+        <source>Check</source>
+        <translation>Comprobar</translation>
     </message>
     <message>
-        <location filename="../gui/pages/problems_page.py" line="148" />
+        <location filename="../gui/pages/problems_page.py" line="150" />
         <source>Show the worked solution</source>
         <translation>Mostrar la solución desarrollada</translation>
     </message>
     <message>
-        <location filename="../gui/pages/problems_page.py" line="150" />
-        <source>◀ Previous</source>
-        <translation>◀ Anterior</translation>
-    </message>
-    <message>
         <location filename="../gui/pages/problems_page.py" line="152" />
-        <source>Next ▶</source>
-        <translation>Siguiente ▶</translation>
+        <source>Previous</source>
+        <translation>Anterior</translation>
     </message>
     <message>
-        <location filename="../gui/pages/problems_page.py" line="174" />
+        <location filename="../gui/pages/problems_page.py" line="155" />
+        <location filename="../gui/widgets/tour.py" line="54" />
+        <location filename="../gui/widgets/tour.py" line="87" />
+        <source>Next</source>
+        <translation>Siguiente</translation>
+    </message>
+    <message>
+        <location filename="../gui/pages/problems_page.py" line="179" />
         <source>{solved} of {total} problems solved, in {sets} sets — one for every level.</source>
         <translation>{solved} de {total} problemas resueltos, en {sets} series: una por cada nivel.</translation>
     </message>
     <message>
-        <location filename="../gui/pages/problems_page.py" line="194" />
+        <location filename="../gui/pages/problems_page.py" line="199" />
         <source>Difficulty {stars} · lesson {lesson}</source>
         <translation>Dificultad {stars} · lección {lesson}</translation>
     </message>
     <message>
-        <location filename="../gui/pages/problems_page.py" line="210" />
+        <location filename="../gui/pages/problems_page.py" line="215" />
         <source>LEVEL {level} · PROBLEM {number} OF {total}</source>
         <translation>NIVEL {level} · PROBLEMA {number} DE {total}</translation>
     </message>
     <message>
-        <location filename="../gui/pages/problems_page.py" line="235" />
+        <location filename="../gui/pages/problems_page.py" line="240" />
         <source>&lt;b&gt;Solved.&lt;/b&gt; You can still try it again or read the worked solution.</source>
         <translation>&lt;b&gt;Resuelto.&lt;/b&gt; Puedes volver a intentarlo o leer la solución desarrollada.</translation>
     </message>
     <message>
-        <location filename="../gui/pages/problems_page.py" line="252" />
+        <location filename="../gui/pages/problems_page.py" line="257" />
         <source>&lt;b&gt;Correct!&lt;/b&gt; The answer is {answer} {unit}.</source>
         <translation>&lt;b&gt;¡Correcto!&lt;/b&gt; La respuesta es {answer} {unit}.</translation>
     </message>
     <message>
-        <location filename="../gui/pages/problems_page.py" line="255" />
+        <location filename="../gui/pages/problems_page.py" line="260" />
         <source>First try!</source>
         <translation>¡Al primer intento!</translation>
     </message>
     <message>
-        <location filename="../gui/pages/problems_page.py" line="288" />
+        <location filename="../gui/pages/problems_page.py" line="293" />
         <source>Hint {number}</source>
         <translation>Pista {number}</translation>
     </message>
     <message>
-        <location filename="../gui/pages/problems_page.py" line="290" />
+        <location filename="../gui/pages/problems_page.py" line="295" />
         <source>Worked solution</source>
         <translation>Solución desarrollada</translation>
     </message>
     <message>
-        <location filename="../gui/pages/problems_page.py" line="291" />
+        <location filename="../gui/pages/problems_page.py" line="296" />
         <source>Answer: {answer} {unit}</source>
         <translation>Respuesta: {answer} {unit}</translation>
     </message>
     <message>
-        <location filename="../gui/pages/problems_page.py" line="299" />
+        <location filename="../gui/pages/problems_page.py" line="304" />
         <source>Show a hint ({count} left)</source>
         <translation>Mostrar una pista (quedan {count})</translation>
     </message>
     <message>
-        <location filename="../gui/pages/problems_page.py" line="304" />
+        <location filename="../gui/pages/problems_page.py" line="309" />
         <source>Try an answer (or use every hint) first — the solution teaches more once you have struggled with the problem.</source>
         <translation>Prueba antes una respuesta (o usa todas las pistas): la solución enseña más cuando ya has peleado con el problema.</translation>
     </message>
@@ -2859,7 +2863,7 @@ los retos y las insignias. Tus notas, marcadores y ajustes se conservan.
         <translation>¿Borrar todas las notas de los cuestionarios, las lecciones completadas, los retos y las insignias? Tus notas y marcadores se conservan. Esto no se puede deshacer.</translation>
     </message>
     <message>
-        <location filename="../gui/pages/reference.py" line="26" />
+        <location filename="../gui/pages/reference.py" line="27" />
         <source>
 ## Reference
 
@@ -2898,52 +2902,52 @@ trabajas en un simulador.
 </translation>
     </message>
     <message>
-        <location filename="../gui/pages/reference.py" line="106" />
+        <location filename="../gui/pages/reference.py" line="107" />
         <source>Quantity</source>
         <translation>Magnitud</translation>
     </message>
     <message>
-        <location filename="../gui/pages/reference.py" line="111" />
+        <location filename="../gui/pages/reference.py" line="112" />
         <source>Unit</source>
         <translation>Unidad</translation>
     </message>
     <message>
-        <location filename="../gui/pages/reference.py" line="141" />
+        <location filename="../gui/pages/reference.py" line="142" />
         <source>In base units: {value} {unit}</source>
         <translation>En unidades base: {value} {unit}</translation>
     </message>
     <message>
-        <location filename="../gui/pages/reference.py" line="154" />
+        <location filename="../gui/pages/reference.py" line="155" />
         <source>{formulas} formulas, {constants} constants, unit conversions, the parameters of every model in the app, and where all of its data comes from.</source>
         <translation>{formulas} fórmulas, {constants} constantes, conversiones de unidades, los parámetros de cada modelo de la aplicación y de dónde vienen todos sus datos.</translation>
     </message>
     <message>
-        <location filename="../gui/pages/reference.py" line="166" />
+        <location filename="../gui/pages/reference.py" line="167" />
         <source>Filter formulas…  (e.g. redshift, Friedmann, horizon, L4.3)</source>
         <translation>Filtrar fórmulas…  (p. ej. corrimiento al rojo, Friedmann, horizonte, L4.3)</translation>
     </message>
     <message>
-        <location filename="../gui/pages/reference.py" line="168" />
+        <location filename="../gui/pages/reference.py" line="169" />
         <source>Show only the formulas whose name, topic, symbols or lesson match.</source>
         <translation>Muestra solo las fórmulas cuyo nombre, tema, símbolos o lección coincidan.</translation>
     </message>
     <message>
-        <location filename="../gui/pages/reference.py" line="173" />
+        <location filename="../gui/pages/reference.py" line="174" />
         <source>Formulas</source>
         <translation>Fórmulas</translation>
     </message>
     <message>
-        <location filename="../gui/pages/reference.py" line="185" />
+        <location filename="../gui/pages/reference.py" line="186" />
         <source>Constants &amp;&amp; units</source>
         <translation>Constantes &amp;&amp; unidades</translation>
     </message>
     <message>
-        <location filename="../gui/pages/reference.py" line="189" />
+        <location filename="../gui/pages/reference.py" line="190" />
         <source>Models</source>
         <translation>Modelos</translation>
     </message>
     <message>
-        <location filename="../gui/pages/review_page.py" line="29" />
+        <location filename="../gui/pages/review_page.py" line="30" />
         <source>
 ## Review
 
@@ -2990,159 +2994,160 @@ significa, dale la vuelta a la tarjeta y sé honesto sobre si lo sabías.
 </translation>
     </message>
     <message>
-        <location filename="../gui/pages/review_page.py" line="70" />
+        <location filename="../gui/pages/review_page.py" line="71" />
         <source>Empty the deck…</source>
         <translation>Vaciar el mazo…</translation>
     </message>
     <message>
-        <location filename="../gui/pages/review_page.py" line="71" />
+        <location filename="../gui/pages/review_page.py" line="72" />
         <source>Remove every question from the review deck. Your quiz scores and completed lessons are not affected.</source>
         <translation>Quita todas las preguntas del mazo de repaso. No afecta a tus notas de los cuestionarios ni a las lecciones completadas.</translation>
     </message>
     <message>
-        <location filename="../gui/pages/review_page.py" line="92" />
-        <source>Start the review ▶</source>
-        <translation>Empezar el repaso ▶</translation>
+        <location filename="../gui/pages/review_page.py" line="93" />
+        <location filename="../gui/widgets/quiz.py" line="174" />
+        <source>Start the review</source>
+        <translation>Empezar el repaso</translation>
     </message>
     <message>
-        <location filename="../gui/pages/review_page.py" line="100" />
+        <location filename="../gui/pages/review_page.py" line="103" />
         <source>Glossary flashcards</source>
         <translation>Tarjetas del glosario</translation>
     </message>
     <message>
-        <location filename="../gui/pages/review_page.py" line="105" />
-        <source>Start the flashcards ▶</source>
-        <translation>Empezar las tarjetas ▶</translation>
+        <location filename="../gui/pages/review_page.py" line="108" />
+        <source>Start the flashcards</source>
+        <translation>Empezar las tarjetas</translation>
     </message>
     <message>
-        <location filename="../gui/pages/review_page.py" line="109" />
+        <location filename="../gui/pages/review_page.py" line="114" />
         <source>Choose terms in the Glossary</source>
         <translation>Elige términos en el Glosario</translation>
     </message>
     <message>
-        <location filename="../gui/pages/review_page.py" line="112" />
+        <location filename="../gui/pages/review_page.py" line="117" />
         <source>Empty the flashcards…</source>
         <translation>Vaciar las tarjetas…</translation>
     </message>
     <message>
-        <location filename="../gui/pages/review_page.py" line="121" />
+        <location filename="../gui/pages/review_page.py" line="126" />
         <source>The next two weeks</source>
         <translation>Las próximas dos semanas</translation>
     </message>
     <message>
-        <location filename="../gui/pages/review_page.py" line="129" />
+        <location filename="../gui/pages/review_page.py" line="134" />
         <source>What is in the deck</source>
         <translation>Qué hay en el mazo</translation>
     </message>
     <message>
-        <location filename="../gui/pages/review_page.py" line="168" />
+        <location filename="../gui/pages/review_page.py" line="173" />
         <source>Questions you got wrong, brought back just before you would forget them.</source>
         <translation>Las preguntas que fallaste, traídas de vuelta justo antes de que las olvidaras.</translation>
     </message>
     <message>
-        <location filename="../gui/pages/review_page.py" line="169" />
+        <location filename="../gui/pages/review_page.py" line="174" />
         <source>Nothing here yet — and that is a good sign.</source>
         <translation>Aquí todavía no hay nada, y eso es buena señal.</translation>
     </message>
     <message>
-        <location filename="../gui/pages/review_page.py" line="173" />
+        <location filename="../gui/pages/review_page.py" line="178" />
         <source>{count} question(s) are due today</source>
         <translation>{count} pregunta(s) tocan hoy</translation>
     </message>
     <message>
-        <location filename="../gui/pages/review_page.py" line="175" />
+        <location filename="../gui/pages/review_page.py" line="180" />
         <source>From {lessons} lesson(s). It should take about {minutes} minute(s).</source>
         <translation>De {lessons} lección(es). Debería llevarte unos {minutes} minuto(s).</translation>
     </message>
     <message>
-        <location filename="../gui/pages/review_page.py" line="180" />
+        <location filename="../gui/pages/review_page.py" line="185" />
         <source>Nothing due today</source>
         <translation>Hoy no toca nada</translation>
     </message>
     <message>
-        <location filename="../gui/pages/review_page.py" line="182" />
+        <location filename="../gui/pages/review_page.py" line="187" />
         <source>{total} question(s) are waiting; the next one comes back on {date}.</source>
         <translation>{total} pregunta(s) esperando; la siguiente vuelve el {date}.</translation>
     </message>
     <message>
-        <location filename="../gui/pages/review_page.py" line="185" />
+        <location filename="../gui/pages/review_page.py" line="190" />
         <source>The deck is empty</source>
         <translation>El mazo está vacío</translation>
     </message>
     <message>
-        <location filename="../gui/pages/review_page.py" line="187" />
+        <location filename="../gui/pages/review_page.py" line="192" />
         <source>Any quiz question you answer wrongly is kept here and asked again tomorrow, then at growing intervals until you have it for good.</source>
         <translation>Toda pregunta de cuestionario que respondas mal se guarda aquí y se vuelve a preguntar mañana, y luego a intervalos crecientes hasta que la tengas para siempre.</translation>
     </message>
     <message>
-        <location filename="../gui/pages/review_page.py" line="210" />
+        <location filename="../gui/pages/review_page.py" line="215" />
         <source>{count} term(s) due today, out of {total} in your deck.</source>
         <translation>{count} término(s) tocan hoy, de los {total} de tu mazo.</translation>
     </message>
     <message>
-        <location filename="../gui/pages/review_page.py" line="213" />
+        <location filename="../gui/pages/review_page.py" line="218" />
         <source>Nothing due today. {total} term(s) are in your deck.</source>
         <translation>Hoy no toca nada. Hay {total} término(s) en tu mazo.</translation>
     </message>
     <message>
-        <location filename="../gui/pages/review_page.py" line="215" />
+        <location filename="../gui/pages/review_page.py" line="220" />
         <source>No terms yet. Add them from the Glossary, or from a lesson with "Add the terms to my flashcards".</source>
         <translation>Aún no hay términos. Añádelos desde el Glosario, o desde una lección con «Añadir los términos a mis tarjetas».</translation>
     </message>
     <message>
-        <location filename="../gui/pages/review_page.py" line="218" />
+        <location filename="../gui/pages/review_page.py" line="223" />
         <source>Learned for good so far: {count}.</source>
         <translation>Aprendidos para siempre hasta ahora: {count}.</translation>
     </message>
     <message>
-        <location filename="../gui/pages/review_page.py" line="246" />
+        <location filename="../gui/pages/review_page.py" line="251" />
         <source>{count} question(s) due on {date}</source>
         <translation>{count} pregunta(s) tocan el {date}</translation>
     </message>
     <message>
-        <location filename="../gui/pages/review_page.py" line="250" />
-        <location filename="../gui/simulators/nbody_sim.py" line="228" />
+        <location filename="../gui/pages/review_page.py" line="255" />
+        <location filename="../gui/simulators/nbody_sim.py" line="231" />
         <location filename="../gui/simulators/spacetime.py" line="139" />
         <source>today</source>
         <translation>hoy</translation>
     </message>
     <message>
-        <location filename="../gui/pages/review_page.py" line="260" />
+        <location filename="../gui/pages/review_page.py" line="265" />
         <source>No questions are waiting.</source>
         <translation>No hay preguntas esperando.</translation>
     </message>
     <message>
-        <location filename="../gui/pages/review_page.py" line="267" />
+        <location filename="../gui/pages/review_page.py" line="272" />
         <source>in {days} day(s)</source>
         <translation>dentro de {days} día(s)</translation>
     </message>
     <message>
-        <location filename="../gui/pages/review_page.py" line="269" />
+        <location filename="../gui/pages/review_page.py" line="274" />
         <source>question {number}, box {box} of {boxes}, {when}</source>
         <translation>pregunta {number}, caja {box} de {boxes}, {when}</translation>
     </message>
     <message>
-        <location filename="../gui/pages/review_page.py" line="275" />
+        <location filename="../gui/pages/review_page.py" line="280" />
         <source>… and {count} more.</source>
         <translation>… y {count} más.</translation>
     </message>
     <message>
-        <location filename="../gui/pages/review_page.py" line="296" />
+        <location filename="../gui/pages/review_page.py" line="301" />
         <source>Empty the flashcards?</source>
         <translation>¿Vaciar las tarjetas?</translation>
     </message>
     <message>
-        <location filename="../gui/pages/review_page.py" line="297" />
+        <location filename="../gui/pages/review_page.py" line="302" />
         <source>This removes every glossary term from your flashcard deck. Nothing else is affected.</source>
         <translation>Esto quita todos los términos del glosario de tu mazo de tarjetas. No afecta a nada más.</translation>
     </message>
     <message>
-        <location filename="../gui/pages/review_page.py" line="312" />
+        <location filename="../gui/pages/review_page.py" line="317" />
         <source>Empty the review deck?</source>
         <translation>¿Vaciar el mazo de repaso?</translation>
     </message>
     <message>
-        <location filename="../gui/pages/review_page.py" line="313" />
+        <location filename="../gui/pages/review_page.py" line="318" />
         <source>This removes every question waiting for review. Your quiz scores, completed lessons and badges are not affected.</source>
         <translation>Esto quita todas las preguntas que esperan repaso. No afecta a tus notas de los cuestionarios, ni a las lecciones completadas, ni a las insignias.</translation>
     </message>
@@ -3370,117 +3375,118 @@ curso y te deja cambiar tú mismo los parámetros.
         <translation>{n} problemas</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/balloon.py" line="30" />
+        <location filename="../gui/simulators/balloon.py" line="31" />
         <source>Click a galaxy to stand on it.</source>
         <translation>Pulsa una galaxia para situarte en ella.</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/balloon.py" line="162" />
+        <location filename="../gui/simulators/balloon.py" line="163" />
         <location filename="../gui/simulators/future_sim.py" line="103" />
         <source>Expansion</source>
         <translation>Expansión</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/balloon.py" line="165" />
-        <location filename="../gui/simulators/balloon.py" line="232" />
-        <location filename="../gui/simulators/inflation_sim.py" line="52" />
-        <location filename="../gui/simulators/inflation_sim.py" line="138" />
-        <location filename="../gui/simulators/nbody_sim.py" line="127" />
-        <location filename="../gui/simulators/nbody_sim.py" line="194" />
-        <location filename="../gui/simulators/powers_of_ten.py" line="198" />
-        <location filename="../gui/simulators/powers_of_ten.py" line="256" />
-        <source>▶ Play</source>
-        <translation>▶ Reproducir</translation>
+        <location filename="../gui/simulators/balloon.py" line="166" />
+        <location filename="../gui/simulators/balloon.py" line="236" />
+        <location filename="../gui/simulators/inflation_sim.py" line="53" />
+        <location filename="../gui/simulators/inflation_sim.py" line="140" />
+        <location filename="../gui/simulators/nbody_sim.py" line="128" />
+        <location filename="../gui/simulators/nbody_sim.py" line="196" />
+        <location filename="../gui/simulators/powers_of_ten.py" line="199" />
+        <location filename="../gui/simulators/powers_of_ten.py" line="258" />
+        <source>Play</source>
+        <translation>Reproducir</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/balloon.py" line="169" />
-        <source>⟲ Reset</source>
-        <translation>⟲ Reiniciar</translation>
+        <location filename="../gui/simulators/balloon.py" line="171" />
+        <location filename="../gui/simulators/nbody_sim.py" line="136" />
+        <source>Reset</source>
+        <translation>Reiniciar</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/balloon.py" line="175" />
+        <location filename="../gui/simulators/balloon.py" line="178" />
         <source>Speed</source>
         <translation>Velocidad</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/balloon.py" line="176" />
+        <location filename="../gui/simulators/balloon.py" line="179" />
         <source>Animation speed</source>
         <translation>Velocidad de la animación</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/balloon.py" line="176" />
+        <location filename="../gui/simulators/balloon.py" line="179" />
         <source>Only changes how fast the animation runs, not the physics.</source>
         <translation>Solo cambia lo rápido que corre la animación, no la física.</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/balloon.py" line="180" />
+        <location filename="../gui/simulators/balloon.py" line="183" />
         <location filename="../gui/simulators/calculator.py" line="101" />
         <source>Scale factor a</source>
         <translation>Factor de escala a</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/balloon.py" line="181" />
+        <location filename="../gui/simulators/balloon.py" line="184" />
         <source>Scale factor</source>
         <translation>Factor de escala</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/balloon.py" line="181" />
+        <location filename="../gui/simulators/balloon.py" line="184" />
         <source>Drag to set the size of the universe directly. a = 2 means every distance is twice as large as at the start.</source>
         <translation>Arrastra para fijar directamente el tamaño del universo. a = 2 significa que todas las distancias son el doble que al principio.</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/balloon.py" line="187" />
+        <location filename="../gui/simulators/balloon.py" line="190" />
         <location filename="../gui/simulators/rotation_curve.py" line="98" />
         <source>Show</source>
         <translation>Mostrar</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/balloon.py" line="189" />
+        <location filename="../gui/simulators/balloon.py" line="192" />
         <source>Comoving grid</source>
         <translation>Rejilla comóvil</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/balloon.py" line="191" />
+        <location filename="../gui/simulators/balloon.py" line="194" />
         <source>The grid stretches with space. Galaxies keep their grid coordinates.</source>
         <translation>La rejilla se estira con el espacio. Las galaxias conservan sus coordenadas en la rejilla.</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/balloon.py" line="192" />
+        <location filename="../gui/simulators/balloon.py" line="195" />
         <source>Recession velocity arrows</source>
         <translation>Flechas de velocidad de recesión</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/balloon.py" line="194" />
+        <location filename="../gui/simulators/balloon.py" line="197" />
         <source>Arrow length ∝ recession speed ∝ distance from the galaxy you stand on.</source>
         <translation>Longitud de la flecha ∝ velocidad de recesión ∝ distancia a la galaxia en la que estás.</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/balloon.py" line="197" />
-        <source>💡 Emit light</source>
-        <translation>💡 Emitir luz</translation>
+        <location filename="../gui/simulators/balloon.py" line="200" />
+        <source>Emit light</source>
+        <translation>Emitir luz</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/balloon.py" line="198" />
+        <location filename="../gui/simulators/balloon.py" line="202" />
         <source>Emit a light wave now; watch its wavelength grow as the universe expands.</source>
         <translation>Emite ahora una onda de luz; mira cómo crece su longitud de onda mientras el universo se expande.</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/balloon.py" line="203" />
+        <location filename="../gui/simulators/balloon.py" line="207" />
         <source>Measurements from your galaxy</source>
         <translation>Medidas desde tu galaxia</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/balloon.py" line="232" />
-        <location filename="../gui/simulators/cosmic_timeline.py" line="239" />
-        <location filename="../gui/simulators/inflation_sim.py" line="138" />
-        <location filename="../gui/simulators/mcmc_sim.py" line="175" />
-        <location filename="../gui/simulators/nbody_sim.py" line="194" />
-        <location filename="../gui/simulators/powers_of_ten.py" line="256" />
-        <source>⏸ Pause</source>
-        <translation>⏸ Pausa</translation>
+        <location filename="../gui/simulators/balloon.py" line="236" />
+        <location filename="../gui/simulators/cosmic_timeline.py" line="241" />
+        <location filename="../gui/simulators/inflation_sim.py" line="140" />
+        <location filename="../gui/simulators/mcmc_sim.py" line="191" />
+        <location filename="../gui/simulators/nbody_sim.py" line="196" />
+        <location filename="../gui/simulators/powers_of_ten.py" line="258" />
+        <source>Pause</source>
+        <translation>Pausa</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/balloon.py" line="276" />
+        <location filename="../gui/simulators/balloon.py" line="281" />
         <source>Scale factor: &lt;b&gt;{a}&lt;/b&gt; (distances × {growth} since the start)&lt;br&gt;&lt;br&gt;Nearest galaxy: comoving {near} cells → proper &lt;b&gt;{near_proper}&lt;/b&gt; cells&lt;br&gt;Farthest galaxy: comoving {far} cells → proper &lt;b&gt;{far_proper}&lt;/b&gt; cells&lt;br&gt;&lt;br&gt;The farthest galaxy is {ratio}× farther away and recedes &lt;b&gt;{ratio}× faster&lt;/b&gt;: v ∝ d, the Hubble–Lemaître law.&lt;br&gt;&lt;br&gt;&lt;i&gt;Click another galaxy: the pattern is identical. There is no centre.&lt;/i&gt;</source>
         <translation>Factor de escala: &lt;b&gt;{a}&lt;/b&gt; (distancias × {growth} desde el principio)&lt;br&gt;&lt;br&gt;Galaxia más cercana: {near} celdas comóviles → &lt;b&gt;{near_proper}&lt;/b&gt; celdas propias&lt;br&gt;Galaxia más lejana: {far} celdas comóviles → &lt;b&gt;{far_proper}&lt;/b&gt; celdas propias&lt;br&gt;&lt;br&gt;La galaxia más lejana está {ratio} veces más lejos y se aleja &lt;b&gt;{ratio} veces más deprisa&lt;/b&gt;: v ∝ d, la ley de Hubble-Lemaître.&lt;br&gt;&lt;br&gt;&lt;i&gt;Pulsa otra galaxia: el patrón es idéntico. No hay centro.&lt;/i&gt;</translation>
     </message>
@@ -3601,7 +3607,7 @@ curso y te deja cambiar tú mismo los parámetros.
     </message>
     <message>
         <location filename="../gui/simulators/bbn_explorer.py" line="86" />
-        <location filename="../gui/simulators/inflation_sim.py" line="63" />
+        <location filename="../gui/simulators/inflation_sim.py" line="65" />
         <source>Predictions</source>
         <translation>Predicciones</translation>
     </message>
@@ -3883,7 +3889,7 @@ curso y te deja cambiar tú mismo los parámetros.
     </message>
     <message>
         <location filename="../gui/simulators/calculator.py" line="154" />
-        <location filename="../gui/simulators/expansion.py" line="33" />
+        <location filename="../gui/simulators/expansion.py" line="34" />
         <location filename="../gui/simulators/sandbox.py" line="91" />
         <location filename="../gui/simulators/spacetime.py" line="38" />
         <source>Preset</source>
@@ -3891,8 +3897,8 @@ curso y te deja cambiar tú mismo los parámetros.
     </message>
     <message>
         <location filename="../gui/simulators/calculator.py" line="156" />
-        <location filename="../gui/simulators/expansion.py" line="34" />
-        <location filename="../gui/simulators/ladder_sim.py" line="41" />
+        <location filename="../gui/simulators/expansion.py" line="35" />
+        <location filename="../gui/simulators/ladder_sim.py" line="42" />
         <source>Presets</source>
         <translation>Ajustes predefinidos</translation>
     </message>
@@ -3903,7 +3909,7 @@ curso y te deja cambiar tú mismo los parámetros.
     </message>
     <message>
         <location filename="../gui/simulators/calculator.py" line="160" />
-        <location filename="../gui/simulators/expansion.py" line="46" />
+        <location filename="../gui/simulators/expansion.py" line="47" />
         <location filename="../gui/simulators/sandbox.py" line="96" />
         <source>H0 (km/s/Mpc)</source>
         <translation>H0 (km/s/Mpc)</translation>
@@ -3911,7 +3917,7 @@ curso y te deja cambiar tú mismo los parámetros.
     <message>
         <location filename="../gui/simulators/calculator.py" line="161" />
         <location filename="../gui/simulators/cmb_spectrum.py" line="66" />
-        <location filename="../gui/simulators/expansion.py" line="47" />
+        <location filename="../gui/simulators/expansion.py" line="48" />
         <location filename="../gui/simulators/sandbox.py" line="47" />
         <location filename="../gui/simulators/supernova_sim.py" line="111" />
         <source>Hubble constant</source>
@@ -3924,7 +3930,7 @@ curso y te deja cambiar tú mismo los parámetros.
     </message>
     <message>
         <location filename="../gui/simulators/calculator.py" line="164" />
-        <location filename="../gui/simulators/expansion.py" line="36" />
+        <location filename="../gui/simulators/expansion.py" line="37" />
         <location filename="../gui/simulators/spacetime.py" line="39" />
         <source>Ωm matter</source>
         <translation>Ωm materia</translation>
@@ -3941,7 +3947,7 @@ curso y te deja cambiar tú mismo los parámetros.
     </message>
     <message>
         <location filename="../gui/simulators/calculator.py" line="168" />
-        <location filename="../gui/simulators/expansion.py" line="41" />
+        <location filename="../gui/simulators/expansion.py" line="42" />
         <location filename="../gui/simulators/sandbox.py" line="101" />
         <location filename="../gui/simulators/spacetime.py" line="40" />
         <source>ΩΛ dark energy</source>
@@ -3985,7 +3991,7 @@ curso y te deja cambiar tú mismo los parámetros.
     <message>
         <location filename="../gui/simulators/calculator.py" line="183" />
         <location filename="../gui/simulators/halo_sim.py" line="66" />
-        <location filename="../gui/simulators/spectrum.py" line="136" />
+        <location filename="../gui/simulators/spectrum.py" line="137" />
         <source>Redshift z</source>
         <translation>Corrimiento al rojo z</translation>
     </message>
@@ -4078,15 +4084,15 @@ curso y te deja cambiar tú mismo los parámetros.
     </message>
     <message>
         <location filename="../gui/simulators/calculator.py" line="341" />
-        <location filename="../gui/simulators/expansion.py" line="156" />
-        <location filename="../gui/simulators/supernova_sim.py" line="166" />
+        <location filename="../gui/simulators/expansion.py" line="158" />
+        <location filename="../gui/simulators/supernova_sim.py" line="182" />
         <source>accelerating</source>
         <translation>acelerándose</translation>
     </message>
     <message>
         <location filename="../gui/simulators/calculator.py" line="341" />
-        <location filename="../gui/simulators/expansion.py" line="156" />
-        <location filename="../gui/simulators/supernova_sim.py" line="166" />
+        <location filename="../gui/simulators/expansion.py" line="158" />
+        <location filename="../gui/simulators/supernova_sim.py" line="182" />
         <source>decelerating</source>
         <translation>frenándose</translation>
     </message>
@@ -4142,7 +4148,7 @@ curso y te deja cambiar tú mismo los parámetros.
     </message>
     <message>
         <location filename="../gui/simulators/calculator.py" line="406" />
-        <location filename="../gui/simulators/cosmic_timeline.py" line="64" />
+        <location filename="../gui/simulators/cosmic_timeline.py" line="65" />
         <location filename="../gui/simulators/olbers_sim.py" line="193" />
         <source>infinite</source>
         <translation>infinito</translation>
@@ -4249,7 +4255,7 @@ curso y te deja cambiar tú mismo los parámetros.
     </message>
     <message>
         <location filename="../gui/simulators/cmb_spectrum.py" line="88" />
-        <location filename="../gui/simulators/nbody_sim.py" line="82" />
+        <location filename="../gui/simulators/nbody_sim.py" line="83" />
         <source>Amplitude</source>
         <translation>Amplitud</translation>
     </message>
@@ -4465,264 +4471,264 @@ curso y te deja cambiar tú mismo los parámetros.
 - **Derecha (ℓ &gt; 1300):** la difusión de los fotones borra las ondulaciones más pequeñas (amortiguamiento de Silk).</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/cosmic_timeline.py" line="25" />
+        <location filename="../gui/simulators/cosmic_timeline.py" line="26" />
         <source>Speculative: no direct evidence yet</source>
         <translation>Especulativo: todavía sin evidencia directa</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/cosmic_timeline.py" line="26" />
+        <location filename="../gui/simulators/cosmic_timeline.py" line="27" />
         <source>Well-motivated theory, indirect evidence</source>
         <translation>Teoría bien fundada, evidencia indirecta</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/cosmic_timeline.py" line="27" />
+        <location filename="../gui/simulators/cosmic_timeline.py" line="28" />
         <source>Physics tested in laboratories and accelerators</source>
         <translation>Física probada en laboratorios y aceleradores</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/cosmic_timeline.py" line="28" />
+        <location filename="../gui/simulators/cosmic_timeline.py" line="29" />
         <source>Directly observed</source>
         <translation>Observado directamente</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/cosmic_timeline.py" line="33" />
+        <location filename="../gui/simulators/cosmic_timeline.py" line="34" />
         <source>the Planck temperature, where known physics ends</source>
         <translation>la temperatura de Planck, donde acaba la física conocida</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/cosmic_timeline.py" line="34" />
+        <location filename="../gui/simulators/cosmic_timeline.py" line="35" />
         <source>collisions at the Large Hadron Collider</source>
         <translation>colisiones en el Gran Colisionador de Hadrones</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/cosmic_timeline.py" line="35" />
+        <location filename="../gui/simulators/cosmic_timeline.py" line="36" />
         <source>heavy-ion collisions that melt protons into quarks</source>
         <translation>colisiones de iones pesados que funden los protones en quarks</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/cosmic_timeline.py" line="36" />
+        <location filename="../gui/simulators/cosmic_timeline.py" line="37" />
         <source>the hottest nuclear fusion in massive stars</source>
         <translation>la fusión nuclear más caliente de las estrellas masivas</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/cosmic_timeline.py" line="37" />
+        <location filename="../gui/simulators/cosmic_timeline.py" line="38" />
         <source>the core of the Sun</source>
         <translation>el núcleo del Sol</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/cosmic_timeline.py" line="38" />
+        <location filename="../gui/simulators/cosmic_timeline.py" line="39" />
         <source>the surface of the Sun</source>
         <translation>la superficie del Sol</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/cosmic_timeline.py" line="39" />
+        <location filename="../gui/simulators/cosmic_timeline.py" line="40" />
         <source>a candle flame</source>
         <translation>la llama de una vela</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/cosmic_timeline.py" line="40" />
+        <location filename="../gui/simulators/cosmic_timeline.py" line="41" />
         <source>boiling water</source>
         <translation>agua hirviendo</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/cosmic_timeline.py" line="41" />
+        <location filename="../gui/simulators/cosmic_timeline.py" line="42" />
         <source>a comfortable room</source>
         <translation>una habitación agradable</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/cosmic_timeline.py" line="42" />
+        <location filename="../gui/simulators/cosmic_timeline.py" line="43" />
         <source>liquid nitrogen</source>
         <translation>nitrógeno líquido</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/cosmic_timeline.py" line="43" />
+        <location filename="../gui/simulators/cosmic_timeline.py" line="44" />
         <source>deep space today</source>
         <translation>el espacio profundo de hoy</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/cosmic_timeline.py" line="44" />
+        <location filename="../gui/simulators/cosmic_timeline.py" line="45" />
         <source>colder than anything in the universe today</source>
         <translation>más frío que cualquier cosa del universo actual</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/cosmic_timeline.py" line="67" />
+        <location filename="../gui/simulators/cosmic_timeline.py" line="68" />
         <source>m</source>
         <translation>m</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/cosmic_timeline.py" line="69" />
+        <location filename="../gui/simulators/cosmic_timeline.py" line="70" />
         <source>km</source>
         <translation>km</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/cosmic_timeline.py" line="72" />
+        <location filename="../gui/simulators/cosmic_timeline.py" line="73" />
         <source>light-days</source>
         <translation>días luz</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/cosmic_timeline.py" line="72" />
+        <location filename="../gui/simulators/cosmic_timeline.py" line="73" />
         <source>light-hours</source>
         <translation>horas luz</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/cosmic_timeline.py" line="73" />
+        <location filename="../gui/simulators/cosmic_timeline.py" line="74" />
         <source>light-minutes</source>
         <translation>minutos luz</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/cosmic_timeline.py" line="73" />
+        <location filename="../gui/simulators/cosmic_timeline.py" line="74" />
         <source>light-seconds</source>
         <translation>segundos luz</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/cosmic_timeline.py" line="77" />
+        <location filename="../gui/simulators/cosmic_timeline.py" line="78" />
         <source>light-years</source>
         <translation>años luz</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/cosmic_timeline.py" line="79" />
+        <location filename="../gui/simulators/cosmic_timeline.py" line="80" />
         <source>million light-years</source>
         <translation>millones de años luz</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/cosmic_timeline.py" line="80" />
+        <location filename="../gui/simulators/cosmic_timeline.py" line="81" />
         <source>billion light-years</source>
         <translation>miles de millones de años luz</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/cosmic_timeline.py" line="96" />
+        <location filename="../gui/simulators/cosmic_timeline.py" line="97" />
         <source>1 · Travel through time</source>
         <translation>1 · Viajar por el tiempo</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/cosmic_timeline.py" line="99" />
+        <location filename="../gui/simulators/cosmic_timeline.py" line="100" />
         <source>log₁₀ of time since the Big Bang (seconds)</source>
         <translation>log₁₀ del tiempo desde el Big Bang (segundos)</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/cosmic_timeline.py" line="101" />
+        <location filename="../gui/simulators/cosmic_timeline.py" line="102" />
         <source>A logarithmic time axis</source>
         <translation>Un eje de tiempo logarítmico</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/cosmic_timeline.py" line="102" />
+        <location filename="../gui/simulators/cosmic_timeline.py" line="103" />
         <source>Each step of 1 multiplies the time by ten. A log scale is the only way to show 10⁻⁴³ seconds and 13.8 billion years on the same slider. 0 is one second, 7.5 is one year and 17.64 is today.</source>
         <translation>Cada paso de 1 multiplica el tiempo por diez. Una escala logarítmica es la única manera de mostrar 10⁻⁴³ segundos y 13 800 millones de años en el mismo deslizador. 0 es un segundo, 7,5 es un año y 17,64 es hoy.</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/cosmic_timeline.py" line="110" />
+        <location filename="../gui/simulators/cosmic_timeline.py" line="111" />
         <source>Jump to an epoch…</source>
         <translation>Saltar a una época…</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/cosmic_timeline.py" line="113" />
+        <location filename="../gui/simulators/cosmic_timeline.py" line="114" />
         <source>Epoch</source>
         <translation>Época</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/cosmic_timeline.py" line="114" />
+        <location filename="../gui/simulators/cosmic_timeline.py" line="115" />
         <source>Jump to an epoch</source>
         <translation>Saltar a una época</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/cosmic_timeline.py" line="114" />
+        <location filename="../gui/simulators/cosmic_timeline.py" line="115" />
         <source>Moves the time slider to the middle of the chosen epoch.</source>
         <translation>Mueve el deslizador del tiempo al centro de la época elegida.</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/cosmic_timeline.py" line="116" />
-        <location filename="../gui/simulators/cosmic_timeline.py" line="239" />
-        <source>▶ Play history</source>
-        <translation>▶ Reproducir la historia</translation>
+        <location filename="../gui/simulators/cosmic_timeline.py" line="117" />
+        <location filename="../gui/simulators/cosmic_timeline.py" line="241" />
+        <source>Play history</source>
+        <translation>Reproducir la historia</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/cosmic_timeline.py" line="119" />
+        <location filename="../gui/simulators/cosmic_timeline.py" line="121" />
         <source>Sweep through cosmic history from the Planck era to the far future.</source>
         <translation>Recorre la historia cósmica desde la era de Planck hasta el futuro lejano.</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/cosmic_timeline.py" line="121" />
+        <location filename="../gui/simulators/cosmic_timeline.py" line="123" />
         <source>Today</source>
         <translation>Hoy</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/cosmic_timeline.py" line="122" />
+        <location filename="../gui/simulators/cosmic_timeline.py" line="124" />
         <source>Jump back to the present day.</source>
         <translation>Vuelve de un salto al día de hoy.</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/cosmic_timeline.py" line="129" />
+        <location filename="../gui/simulators/cosmic_timeline.py" line="131" />
         <source>The universe at this moment</source>
         <translation>El universo en este momento</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/cosmic_timeline.py" line="184" />
+        <location filename="../gui/simulators/cosmic_timeline.py" line="186" />
         <source>(the future)</source>
         <translation>(el futuro)</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/cosmic_timeline.py" line="188" />
+        <location filename="../gui/simulators/cosmic_timeline.py" line="190" />
         <source>(today's size)</source>
         <translation>(el tamaño de hoy)</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/cosmic_timeline.py" line="190" />
+        <location filename="../gui/simulators/cosmic_timeline.py" line="192" />
         <source>(distances were {factor} times smaller than today)</source>
         <translation>(las distancias eran {factor} veces menores que hoy)</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/cosmic_timeline.py" line="192" />
+        <location filename="../gui/simulators/cosmic_timeline.py" line="194" />
         <source>(distances are {factor} times larger than today)</source>
         <translation>(las distancias son {factor} veces mayores que hoy)</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/cosmic_timeline.py" line="193" />
+        <location filename="../gui/simulators/cosmic_timeline.py" line="195" />
         <source>Redshift of light emitted then: z = {z}&lt;br&gt;</source>
         <translation>Corrimiento al rojo de la luz emitida entonces: z = {z}&lt;br&gt;</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/cosmic_timeline.py" line="196" />
+        <location filename="../gui/simulators/cosmic_timeline.py" line="198" />
         <source>Temperature: &lt;b&gt;{temperature} K&lt;/b&gt;&lt;br&gt;Typical particle energy kT: &lt;b&gt;{energy}&lt;/b&gt;&lt;br&gt;About as hot as: {comparison}&lt;br&gt;Scale factor a: &lt;b&gt;{a}&lt;/b&gt; {size}&lt;br&gt;</source>
         <translation>Temperatura: &lt;b&gt;{temperature} K&lt;/b&gt;&lt;br&gt;Energía típica de las partículas kT: &lt;b&gt;{energy}&lt;/b&gt;&lt;br&gt;Tan caliente como: {comparison}&lt;br&gt;Factor de escala a: &lt;b&gt;{a}&lt;/b&gt; {size}&lt;br&gt;</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/cosmic_timeline.py" line="203" />
+        <location filename="../gui/simulators/cosmic_timeline.py" line="205" />
         <source>Density: &lt;b&gt;{density} kg/m³&lt;/b&gt; (water: 1000)&lt;br&gt;Particle horizon: &lt;b&gt;{horizon}&lt;/b&gt;&lt;br&gt;Energy budget: radiation {radiation}%, matter {matter}%, dark energy {dark_energy}%</source>
         <translation>Densidad: &lt;b&gt;{density} kg/m³&lt;/b&gt; (el agua: 1000)&lt;br&gt;Horizonte de partículas: &lt;b&gt;{horizon}&lt;/b&gt;&lt;br&gt;Reparto de la energía: radiación {radiation} %, materia {matter} %, energía oscura {dark_energy} %</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/cosmic_timeline.py" line="216" />
-        <location filename="../gui/simulators/cosmic_timeline.py" line="314" />
+        <location filename="../gui/simulators/cosmic_timeline.py" line="218" />
+        <location filename="../gui/simulators/cosmic_timeline.py" line="317" />
         <source>lesson {id}</source>
         <translation>lección {id}</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/cosmic_timeline.py" line="223" />
+        <location filename="../gui/simulators/cosmic_timeline.py" line="225" />
         <source>After &lt;b&gt;{epoch}&lt;/b&gt;</source>
         <translation>Después de &lt;b&gt;{epoch}&lt;/b&gt;</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/cosmic_timeline.py" line="224" />
+        <location filename="../gui/simulators/cosmic_timeline.py" line="226" />
         <source>Before every known epoch</source>
         <translation>Antes de cualquier época conocida</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/cosmic_timeline.py" line="226" />
+        <location filename="../gui/simulators/cosmic_timeline.py" line="228" />
         <source>next: &lt;b&gt;{epoch}&lt;/b&gt; at {time}</source>
         <translation>siguiente: &lt;b&gt;{epoch}&lt;/b&gt; a {time}</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/cosmic_timeline.py" line="229" />
+        <location filename="../gui/simulators/cosmic_timeline.py" line="231" />
         <source>The physics of this period is not known: numbers are extrapolations.</source>
         <translation>La física de este periodo no se conoce: los números son extrapolaciones.</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/cosmic_timeline.py" line="312" />
+        <location filename="../gui/simulators/cosmic_timeline.py" line="315" />
         <source>Epochs and their lessons</source>
         <translation>Épocas y sus lecciones</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/cosmic_timeline.py" line="317" />
+        <location filename="../gui/simulators/cosmic_timeline.py" line="320" />
         <source>Before about 10⁻¹¹ s the temperatures are extrapolations of known physics. After one second they come from the Planck 2018 ΛCDM model.</source>
         <translation>Antes de unos 10⁻¹¹ s las temperaturas son extrapolaciones de la física conocida. A partir de un segundo salen del modelo ΛCDM de Planck 2018.</translation>
     </message>
@@ -5094,97 +5100,97 @@ curso y te deja cambiar tú mismo los parámetros.
         <translation>Una curva de exclusión dice: si un WIMP tuviera esta masa y esta sección eficaz, el detector habría visto sucesos suficientes para notarlo, y no fue así. Por debajo de la curva no se descarta nada. Cada experimento nuevo empuja la curva hacia abajo, hasta que el fondo de los neutrinos solares y atmosféricos, la niebla de neutrinos, hace que seguir avanzando sea muy lento.</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/expansion.py" line="30" />
+        <location filename="../gui/simulators/expansion.py" line="31" />
         <source>Universe contents</source>
         <translation>Contenido del universo</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/expansion.py" line="34" />
+        <location filename="../gui/simulators/expansion.py" line="35" />
         <source>Load a named model. Moving any slider switches back to custom values.</source>
         <translation>Carga un modelo con nombre. Mover cualquier deslizador vuelve a valores propios.</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/expansion.py" line="37" />
+        <location filename="../gui/simulators/expansion.py" line="38" />
         <source>Matter density Ωm</source>
         <translation>Densidad de materia Ωm</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/expansion.py" line="37" />
+        <location filename="../gui/simulators/expansion.py" line="38" />
         <source>Matter (ordinary + dark) slows the expansion. Above 1 without dark energy, the universe recollapses.</source>
         <translation>La materia (ordinaria + oscura) frena la expansión. Por encima de 1 sin energía oscura, el universo vuelve a colapsar.</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/expansion.py" line="42" />
+        <location filename="../gui/simulators/expansion.py" line="43" />
         <source>Dark energy density ΩΛ</source>
         <translation>Densidad de energía oscura ΩΛ</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/expansion.py" line="42" />
+        <location filename="../gui/simulators/expansion.py" line="43" />
         <source>A positive cosmological constant accelerates the expansion. Negative values act like extra attraction and cause recollapse.</source>
         <translation>Una constante cosmológica positiva acelera la expansión. Los valores negativos actúan como atracción adicional y provocan un nuevo colapso.</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/expansion.py" line="47" />
+        <location filename="../gui/simulators/expansion.py" line="48" />
         <source>Sets the time scale: a larger H0 makes every universe younger, but does not change the shape of the curves.</source>
         <translation>Fija la escala de tiempo: un H0 mayor hace más joven a cualquier universo, pero no cambia la forma de las curvas.</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/expansion.py" line="50" />
+        <location filename="../gui/simulators/expansion.py" line="51" />
         <source>Include radiation</source>
         <translation>Incluir la radiación</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/expansion.py" line="51" />
+        <location filename="../gui/simulators/expansion.py" line="52" />
         <source>Radiation only matters in the first ~100 000 years; the effect on this plot is tiny.</source>
         <translation>La radiación solo importa en los primeros ~100 000 años; el efecto en esta gráfica es diminuto.</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/expansion.py" line="57" />
+        <location filename="../gui/simulators/expansion.py" line="58" />
         <source>Compare</source>
         <translation>Comparar</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/expansion.py" line="59" />
-        <source>📌 Pin curve</source>
-        <translation>📌 Fijar la curva</translation>
+        <location filename="../gui/simulators/expansion.py" line="60" />
+        <source>Pin curve</source>
+        <translation>Fijar la curva</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/expansion.py" line="60" />
+        <location filename="../gui/simulators/expansion.py" line="62" />
         <source>Keep the current a(t) curve on the plot to compare with other models (up to 5).</source>
         <translation>Mantiene en la gráfica la curva a(t) actual para compararla con otros modelos (hasta 5).</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/expansion.py" line="62" />
+        <location filename="../gui/simulators/expansion.py" line="64" />
         <source>Clear pins</source>
         <translation>Quitar las curvas fijadas</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/expansion.py" line="68" />
+        <location filename="../gui/simulators/expansion.py" line="70" />
         <source>This universe</source>
         <translation>Este universo</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/expansion.py" line="81" />
+        <location filename="../gui/simulators/expansion.py" line="83" />
         <source>Click anywhere on this map to choose Ωm and ΩΛ.</source>
         <translation>Pulsa en cualquier punto de este mapa para elegir Ωm y ΩΛ.</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/expansion.py" line="142" />
+        <location filename="../gui/simulators/expansion.py" line="144" />
         <source>{years} billion years</source>
         <translation>{years} miles de millones de años</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/expansion.py" line="143" />
+        <location filename="../gui/simulators/expansion.py" line="145" />
         <source>undefined (no Big Bang)</source>
         <translation>indefinida (sin Big Bang)</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/expansion.py" line="146" />
+        <location filename="../gui/simulators/expansion.py" line="148" />
         <source>Big Crunch in: &lt;b&gt;{years} billion years&lt;/b&gt;</source>
         <translation>Big Crunch dentro de: &lt;b&gt;{years} miles de millones de años&lt;/b&gt;</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/expansion.py" line="149" />
+        <location filename="../gui/simulators/expansion.py" line="151" />
         <source>Age: &lt;b&gt;{age}&lt;/b&gt;{crunch}&lt;br&gt;Geometry: &lt;b&gt;{geometry}&lt;/b&gt; (Ωk = {curvature})&lt;br&gt;Today: &lt;b&gt;{trend}&lt;/b&gt; (q0 = {q0})&lt;br&gt;Hubble time 1/H0: {hubble} billion years&lt;br&gt;&lt;br&gt;&lt;span style='color:{colour}'&gt;&lt;b&gt;Fate: this universe {fate}.&lt;/b&gt;&lt;/span&gt;&lt;br&gt;{explanation}</source>
         <translation>Edad: &lt;b&gt;{age}&lt;/b&gt;{crunch}&lt;br&gt;Geometría: &lt;b&gt;{geometry}&lt;/b&gt; (Ωk = {curvature})&lt;br&gt;Hoy: &lt;b&gt;{trend}&lt;/b&gt; (q0 = {q0})&lt;br&gt;Tiempo de Hubble 1/H0: {hubble} miles de millones de años&lt;br&gt;&lt;br&gt;&lt;span style='color:{colour}'&gt;&lt;b&gt;Destino: este universo {fate}.&lt;/b&gt;&lt;/span&gt;&lt;br&gt;{explanation}</translation>
     </message>
@@ -5789,138 +5795,138 @@ curso y te deja cambiar tú mismo los parámetros.
     </message>
     <message>
         <location filename="../gui/simulators/hubble_fit.py" line="56" />
-        <location filename="../gui/simulators/hubble_fit.py" line="79" />
+        <location filename="../gui/simulators/hubble_fit.py" line="91" />
         <source>Press &lt;b&gt;Find best fit&lt;/b&gt; to compute H0 and the Hubble time.</source>
         <translation>Pulsa &lt;b&gt;Buscar el mejor ajuste&lt;/b&gt; para calcular H0 y el tiempo de Hubble.</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/hubble_fit.py" line="76" />
-        <source>⚠ Simulated data.</source>
-        <translation>⚠ Datos simulados.</translation>
+        <location filename="../gui/simulators/hubble_fit.py" line="88" />
+        <source>&lt;b&gt;Simulated data.&lt;/b&gt;</source>
+        <translation>&lt;b&gt;Datos simulados.&lt;/b&gt;</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/hubble_fit.py" line="76" />
+        <location filename="../gui/simulators/hubble_fit.py" line="88" />
         <source>Real historical data.</source>
         <translation>Datos históricos reales.</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/hubble_fit.py" line="88" />
+        <location filename="../gui/simulators/hubble_fit.py" line="100" />
         <source>Typical miss (RMS residual): &lt;b&gt;{rms} km/s&lt;/b&gt;&lt;br&gt;Hubble time for your slope: &lt;b&gt;{hubble_time} billion years&lt;/b&gt;</source>
         <translation>Desviación típica (residuo RMS): &lt;b&gt;{rms} km/s&lt;/b&gt;&lt;br&gt;Tiempo de Hubble para tu pendiente: &lt;b&gt;{hubble_time} miles de millones de años&lt;/b&gt;</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/hubble_fit.py" line="100" />
+        <location filename="../gui/simulators/hubble_fit.py" line="112" />
         <source>Hubble's value is about seven times larger than today's because his distances were too small. His Hubble time of {years} billion years was shorter than geologists' estimates of the age of the Earth, a real puzzle at the time.</source>
         <translation>El valor de Hubble es unas siete veces mayor que el de hoy porque sus distancias eran demasiado pequeñas. Su tiempo de Hubble de {years} miles de millones de años era más corto que las estimaciones geológicas de la edad de la Tierra, un verdadero enigma en su momento.</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/hubble_fit.py" line="104" />
+        <location filename="../gui/simulators/hubble_fit.py" line="116" />
         <source>Close to modern measurements (67–73 km/s/Mpc). The Hubble time is close to the true age of 13.8 billion years.</source>
         <translation>Cerca de las medidas modernas (67-73 km/s/Mpc). El tiempo de Hubble se acerca a la edad verdadera de 13 800 millones de años.</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/hubble_fit.py" line="108" />
+        <location filename="../gui/simulators/hubble_fit.py" line="120" />
         <source>H0 = &lt;b&gt;{h0} ± {error} km/s/Mpc&lt;/b&gt;&lt;br&gt;Hubble time 1/H0 = &lt;b&gt;{hubble_time} billion years&lt;/b&gt;&lt;br&gt;Points: {points}&lt;br&gt;&lt;br&gt;{comment}</source>
         <translation>H0 = &lt;b&gt;{h0} ± {error} km/s/Mpc&lt;/b&gt;&lt;br&gt;Tiempo de Hubble 1/H0 = &lt;b&gt;{hubble_time} miles de millones de años&lt;/b&gt;&lt;br&gt;Puntos: {points}&lt;br&gt;&lt;br&gt;{comment}</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/inflation_sim.py" line="26" />
+        <location filename="../gui/simulators/inflation_sim.py" line="27" />
         <source>1 · The inflaton potential</source>
         <translation>1 · El potencial del inflatón</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/inflation_sim.py" line="33" />
+        <location filename="../gui/simulators/inflation_sim.py" line="34" />
         <location filename="../gui/widgets/tutor_panel.py" line="153" />
         <source>Model</source>
         <translation>Modelo</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/inflation_sim.py" line="34" />
+        <location filename="../gui/simulators/inflation_sim.py" line="35" />
         <source>Inflation models</source>
         <translation>Modelos de inflación</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/inflation_sim.py" line="35" />
+        <location filename="../gui/simulators/inflation_sim.py" line="36" />
         <source>Each model is a different shape for the energy of the inflaton field. The field rolls slowly down the potential; the shape decides how the universe expands and which fluctuations are created.</source>
         <translation>Cada modelo es una forma distinta para la energía del campo inflatón. El campo rueda despacio potencial abajo; la forma decide cómo se expande el universo y qué fluctuaciones se crean.</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/inflation_sim.py" line="39" />
+        <location filename="../gui/simulators/inflation_sim.py" line="40" />
         <source>Parameter</source>
         <translation>Parámetro</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/inflation_sim.py" line="42" />
+        <location filename="../gui/simulators/inflation_sim.py" line="43" />
         <source>N*  e-folds before the end</source>
         <translation>N*  e-folds antes del final</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/inflation_sim.py" line="43" />
+        <location filename="../gui/simulators/inflation_sim.py" line="44" />
         <source>N*</source>
         <translation>N*</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/inflation_sim.py" line="43" />
+        <location filename="../gui/simulators/inflation_sim.py" line="44" />
         <source>When the scales we observe in the CMB left the horizon, measured in e-folds before inflation ended. It depends on how the universe reheated; 50–60 is typical.</source>
         <translation>Cuándo salieron del horizonte las escalas que observamos en el FCM, medido en e-folds antes de que terminara la inflación. Depende de cómo se recalentó el universo; 50-60 es lo habitual.</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/inflation_sim.py" line="49" />
+        <location filename="../gui/simulators/inflation_sim.py" line="50" />
         <source>2 · Watch the field roll</source>
         <translation>2 · Mira rodar el campo</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/inflation_sim.py" line="56" />
+        <location filename="../gui/simulators/inflation_sim.py" line="58" />
         <source>Rewind</source>
         <translation>Rebobinar</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/inflation_sim.py" line="108" />
+        <location filename="../gui/simulators/inflation_sim.py" line="110" />
         <source>This parameter value does not give enough inflation. Try another.</source>
         <translation>Este valor del parámetro no da inflación suficiente. Prueba otro.</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/inflation_sim.py" line="115" />
+        <location filename="../gui/simulators/inflation_sim.py" line="117" />
         <source>&lt;b&gt;Consistent with observations.&lt;/b&gt;</source>
         <translation>&lt;b&gt;Compatible con las observaciones.&lt;/b&gt;</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/inflation_sim.py" line="115" />
+        <location filename="../gui/simulators/inflation_sim.py" line="117" />
         <source>&lt;b&gt;Ruled out by observations.&lt;/b&gt;</source>
         <translation>&lt;b&gt;Descartado por las observaciones.&lt;/b&gt;</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/inflation_sim.py" line="116" />
+        <location filename="../gui/simulators/inflation_sim.py" line="118" />
         <source>Planck measures nₛ = {n_s} ± {error}; BICEP/Keck limit r &lt; {limit}.</source>
         <translation>Planck mide nₛ = {n_s} ± {error}; el límite de BICEP/Keck es r &lt; {limit}.</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/inflation_sim.py" line="120" />
+        <location filename="../gui/simulators/inflation_sim.py" line="122" />
         <source>Spectral index nₛ: &lt;b&gt;{n_s}&lt;/b&gt;&lt;br&gt;Tensor-to-scalar ratio r: &lt;b&gt;{r}&lt;/b&gt;&lt;br&gt;Slow-roll ε = {epsilon}, η = {eta}&lt;br&gt;Field when CMB scales left: φ* = {phi_star} M_Pl&lt;br&gt;Field at the end: {phi_end} M_Pl&lt;br&gt;Energy scale V*¼: &lt;b&gt;{energy} GeV&lt;/b&gt;&lt;br&gt;Hubble rate during inflation: {hubble} GeV&lt;br&gt;Full solution: inflation lasted {efolds} e-folds from the start of the run</source>
         <translation>Índice espectral nₛ: &lt;b&gt;{n_s}&lt;/b&gt;&lt;br&gt;Razón tensor-escalar r: &lt;b&gt;{r}&lt;/b&gt;&lt;br&gt;Rodadura lenta ε = {epsilon}, η = {eta}&lt;br&gt;Campo cuando salieron las escalas del FCM: φ* = {phi_star} M_Pl&lt;br&gt;Campo al final: {phi_end} M_Pl&lt;br&gt;Escala de energía V*¼: &lt;b&gt;{energy} GeV&lt;/b&gt;&lt;br&gt;Ritmo de Hubble durante la inflación: {hubble} GeV&lt;br&gt;Solución completa: la inflación duró {efolds} e-folds desde el inicio de la simulación</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/ladder_sim.py" line="20" />
+        <location filename="../gui/simulators/ladder_sim.py" line="21" />
         <source>1 · Parallaxes → Leavitt law</source>
         <translation>1 · Paralajes → ley de Leavitt</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/ladder_sim.py" line="21" />
+        <location filename="../gui/simulators/ladder_sim.py" line="22" />
         <source>2 · Cepheid hosts → supernova M_B</source>
         <translation>2 · Galaxias con cefeidas → M_B de las supernovas</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/ladder_sim.py" line="22" />
+        <location filename="../gui/simulators/ladder_sim.py" line="23" />
         <source>3 · Hubble-flow supernovae → H0</source>
         <translation>3 · Supernovas del flujo de Hubble → H0</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/ladder_sim.py" line="34" />
+        <location filename="../gui/simulators/ladder_sim.py" line="35" />
         <source>0 · The toy universe</source>
         <translation>0 · El universo de juguete</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/ladder_sim.py" line="37" />
+        <location filename="../gui/simulators/ladder_sim.py" line="38" />
         <location filename="../gui/simulators/olbers_sim.py" line="26" />
         <location filename="../gui/simulators/siren_sim.py" line="31" />
         <location filename="../gui/simulators/slice_sim.py" line="32" />
@@ -5929,240 +5935,240 @@ curso y te deja cambiar tú mismo los parámetros.
         <translation>Personalizado</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/ladder_sim.py" line="40" />
+        <location filename="../gui/simulators/ladder_sim.py" line="41" />
         <source>Observing programme</source>
         <translation>Programa de observación</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/ladder_sim.py" line="42" />
+        <location filename="../gui/simulators/ladder_sim.py" line="43" />
         <source>Toy versions of real programmes: how many stars and supernovae they measured and how precisely. The numbers they produce here are simulated, not the published results.</source>
         <translation>Versiones de juguete de programas reales: cuántas estrellas y supernovas midieron y con qué precisión. Los números que producen aquí son simulados, no los resultados publicados.</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/ladder_sim.py" line="45" />
+        <location filename="../gui/simulators/ladder_sim.py" line="46" />
         <source>True H0 of the toy universe</source>
         <translation>H0 verdadero del universo de juguete</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/ladder_sim.py" line="46" />
+        <location filename="../gui/simulators/ladder_sim.py" line="47" />
         <source>Why can you set the truth?</source>
         <translation>¿Por qué puedes fijar la verdad?</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/ladder_sim.py" line="47" />
+        <location filename="../gui/simulators/ladder_sim.py" line="48" />
         <source>In a simulation you know the answer, so you can see whether the ladder recovers it. Real astronomers never get this luxury — which is why systematic errors are so hard to catch.</source>
         <translation>En una simulación conoces la respuesta, así que puedes ver si la escalera la recupera. Los astrónomos reales nunca tienen ese lujo, y por eso los errores sistemáticos son tan difíciles de cazar.</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/ladder_sim.py" line="51" />
-        <location filename="../gui/simulators/mcmc_sim.py" line="74" />
-        <location filename="../gui/simulators/nbody_sim.py" line="111" />
+        <location filename="../gui/simulators/ladder_sim.py" line="52" />
+        <location filename="../gui/simulators/mcmc_sim.py" line="75" />
+        <location filename="../gui/simulators/nbody_sim.py" line="112" />
         <location filename="../gui/simulators/slice_sim.py" line="44" />
         <source>Random seed</source>
         <translation>Semilla aleatoria</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/ladder_sim.py" line="59" />
+        <location filename="../gui/simulators/ladder_sim.py" line="60" />
         <source>Milky Way Cepheids with parallaxes</source>
         <translation>Cefeidas de la Vía Láctea con paralajes</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/ladder_sim.py" line="60" />
+        <location filename="../gui/simulators/ladder_sim.py" line="61" />
         <source>The first rung</source>
         <translation>El primer peldaño</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/ladder_sim.py" line="61" />
+        <location filename="../gui/simulators/ladder_sim.py" line="62" />
         <source>Parallax is pure geometry: the tiny shift of a star as the Earth orbits the Sun. It gives the distance to nearby Cepheids, and so their true brightness.</source>
         <translation>La paralaje es geometría pura: el diminuto desplazamiento de una estrella mientras la Tierra orbita el Sol. Da la distancia a las cefeidas cercanas y, con ella, su brillo verdadero.</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/ladder_sim.py" line="65" />
+        <location filename="../gui/simulators/ladder_sim.py" line="66" />
         <source>Parallax error (µas)</source>
         <translation>Error de paralaje (µas)</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/ladder_sim.py" line="66" />
+        <location filename="../gui/simulators/ladder_sim.py" line="67" />
         <source>Micro-arcseconds</source>
         <translation>Microsegundos de arco</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/ladder_sim.py" line="67" />
+        <location filename="../gui/simulators/ladder_sim.py" line="68" />
         <source>A µas is the width of a coin on the Moon seen from Earth. Hipparcos reached about 1000 µas, HST spatial scanning and Gaia about 20–30 µas for these stars.</source>
         <translation>Un µas es el ancho de una moneda en la Luna visto desde la Tierra. Hipparcos llegó a unos 1000 µas; el barrido espacial del HST y Gaia, a unos 20-30 µas para estas estrellas.</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/ladder_sim.py" line="71" />
+        <location filename="../gui/simulators/ladder_sim.py" line="72" />
         <source>Parallax zero-point offset (µas) — systematic</source>
         <translation>Desplazamiento del punto cero de la paralaje (µas) — sistemático</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/ladder_sim.py" line="72" />
+        <location filename="../gui/simulators/ladder_sim.py" line="73" />
         <source>A systematic error</source>
         <translation>Un error sistemático</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/ladder_sim.py" line="73" />
+        <location filename="../gui/simulators/ladder_sim.py" line="74" />
         <source>If every parallax is off by the same small amount, averaging more stars does not help. Gaia's parallax zero point is corrected at the level of about 10–20 µas.</source>
         <translation>Si todas las paralajes se desvían en la misma cantidad pequeña, promediar más estrellas no ayuda. El punto cero de la paralaje de Gaia se corrige a un nivel de unos 10-20 µas.</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/ladder_sim.py" line="83" />
+        <location filename="../gui/simulators/ladder_sim.py" line="84" />
         <source>Galaxies with Cepheids and a supernova</source>
         <translation>Galaxias con cefeidas y una supernova</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/ladder_sim.py" line="84" />
+        <location filename="../gui/simulators/ladder_sim.py" line="85" />
         <source>The bottleneck</source>
         <translation>El cuello de botella</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/ladder_sim.py" line="85" />
+        <location filename="../gui/simulators/ladder_sim.py" line="86" />
         <source>A type Ia supernova must explode in a galaxy close enough for HST or JWST to resolve its Cepheids. Only about one such event happens every year or two.</source>
         <translation>Una supernova de tipo Ia tiene que estallar en una galaxia lo bastante cercana como para que el HST o el JWST resuelvan sus cefeidas. Solo ocurre uno de estos sucesos cada uno o dos años.</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/ladder_sim.py" line="88" />
+        <location filename="../gui/simulators/ladder_sim.py" line="89" />
         <source>Cepheids per galaxy</source>
         <translation>Cefeidas por galaxia</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/ladder_sim.py" line="90" />
+        <location filename="../gui/simulators/ladder_sim.py" line="91" />
         <source>Leavitt law scatter (mag)</source>
         <translation>Dispersión de la ley de Leavitt (mag)</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/ladder_sim.py" line="91" />
+        <location filename="../gui/simulators/ladder_sim.py" line="92" />
         <source>Intrinsic scatter</source>
         <translation>Dispersión intrínseca</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/ladder_sim.py" line="92" />
+        <location filename="../gui/simulators/ladder_sim.py" line="93" />
         <source>Cepheids of the same period are not exactly equally bright. Near-infrared observations reduce the scatter and the effect of dust.</source>
         <translation>Las cefeidas del mismo periodo no brillan exactamente igual. Las observaciones en el infrarrojo cercano reducen la dispersión y el efecto del polvo.</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/ladder_sim.py" line="96" />
+        <location filename="../gui/simulators/ladder_sim.py" line="97" />
         <source>Crowding bias (mag) — systematic</source>
         <translation>Sesgo por aglomeración (mag) — sistemático</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/ladder_sim.py" line="97" />
+        <location filename="../gui/simulators/ladder_sim.py" line="98" />
         <source>Blended stars</source>
         <translation>Estrellas mezcladas</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/ladder_sim.py" line="98" />
+        <location filename="../gui/simulators/ladder_sim.py" line="99" />
         <source>In a distant galaxy a Cepheid can blend with its neighbours and look brighter than it is. Positive values make every host look closer. JWST's sharper images test exactly this.</source>
         <translation>En una galaxia lejana una cefeida puede mezclarse con sus vecinas y parecer más brillante de lo que es. Los valores positivos hacen que toda galaxia anfitriona parezca más cercana. Las imágenes más nítidas del JWST ponen a prueba justo esto.</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/ladder_sim.py" line="108" />
+        <location filename="../gui/simulators/ladder_sim.py" line="109" />
         <source>Supernovae in the Hubble flow</source>
         <translation>Supernovas en el flujo de Hubble</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/ladder_sim.py" line="109" />
+        <location filename="../gui/simulators/ladder_sim.py" line="110" />
         <source>Far enough to ignore local motions</source>
         <translation>Lo bastante lejos como para ignorar los movimientos locales</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/ladder_sim.py" line="110" />
+        <location filename="../gui/simulators/ladder_sim.py" line="111" />
         <source>Between z ≈ 0.023 and 0.15 the expansion dominates over the galaxies' own motions, yet the result hardly depends on dark energy.</source>
         <translation>Entre z ≈ 0,023 y 0,15 la expansión domina sobre los movimientos propios de las galaxias, y aun así el resultado apenas depende de la energía oscura.</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/ladder_sim.py" line="113" />
+        <location filename="../gui/simulators/ladder_sim.py" line="114" />
         <source>Supernova scatter (mag)</source>
         <translation>Dispersión de las supernovas (mag)</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/ladder_sim.py" line="119" />
-        <source>🔭 New observation</source>
-        <translation>🔭 Nueva observación</translation>
+        <location filename="../gui/simulators/ladder_sim.py" line="120" />
+        <source>New observation</source>
+        <translation>Nueva observación</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/ladder_sim.py" line="121" />
+        <location filename="../gui/simulators/ladder_sim.py" line="123" />
         <source>The same programme with new random measurement errors.</source>
         <translation>El mismo programa con nuevos errores de medida aleatorios.</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/ladder_sim.py" line="123" />
+        <location filename="../gui/simulators/ladder_sim.py" line="125" />
         <source>Repeat {count}×</source>
         <translation>Repetir {count}×</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/ladder_sim.py" line="124" />
+        <location filename="../gui/simulators/ladder_sim.py" line="126" />
         <source>Run the whole ladder many times: the spread of H0 is the real error bar.</source>
         <translation>Recorre la escalera entera muchas veces: la dispersión de H0 es la verdadera barra de error.</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/ladder_sim.py" line="130" />
+        <location filename="../gui/simulators/ladder_sim.py" line="132" />
         <source>Your H0</source>
         <translation>Tu H0</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/ladder_sim.py" line="136" />
+        <location filename="../gui/simulators/ladder_sim.py" line="138" />
         <source>Simulated measurements. Real ladders add anchors such as the LMC and NGC 4258, and fit everything at once.</source>
         <translation>Medidas simuladas. Las escaleras reales añaden anclajes como la Gran Nube de Magallanes y NGC 4258, y lo ajustan todo a la vez.</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/ladder_sim.py" line="146" />
+        <location filename="../gui/simulators/ladder_sim.py" line="148" />
         <source>The three rungs</source>
         <translation>Los tres peldaños</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/ladder_sim.py" line="147" />
+        <location filename="../gui/simulators/ladder_sim.py" line="149" />
         <source>Error budget</source>
         <translation>Reparto del error</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/ladder_sim.py" line="219" />
+        <location filename="../gui/simulators/ladder_sim.py" line="221" />
         <source>H0 = &lt;b&gt;{h0} ± {error} km/s/Mpc&lt;/b&gt; ({percent}%)</source>
         <translation>H0 = &lt;b&gt;{h0} ± {error} km/s/Mpc&lt;/b&gt; ({percent} %)</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/ladder_sim.py" line="221" />
+        <location filename="../gui/simulators/ladder_sim.py" line="223" />
         <source>True value of this toy universe: {truth}; off by {miss}</source>
         <translation>Valor verdadero de este universo de juguete: {truth}; desviación de {miss}</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/ladder_sim.py" line="226" />
+        <location filename="../gui/simulators/ladder_sim.py" line="228" />
         <source>{rung}: ± {percent}%</source>
         <translation>{rung}: ± {percent} %</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/ladder_sim.py" line="228" />
+        <location filename="../gui/simulators/ladder_sim.py" line="230" />
         <source>Systematic shift, not in the error bar: &lt;b&gt;{shift} km/s/Mpc&lt;/b&gt;</source>
         <translation>Desplazamiento sistemático, fuera de la barra de error: &lt;b&gt;{shift} km/s/Mpc&lt;/b&gt;</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/ladder_sim.py" line="231" />
+        <location filename="../gui/simulators/ladder_sim.py" line="233" />
         <source>{count} repeats: mean {mean}, spread ± {spread}</source>
         <translation>{count} repeticiones: media {mean}, dispersión ± {spread}</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/ladder_sim.py" line="234" />
+        <location filename="../gui/simulators/ladder_sim.py" line="236" />
         <source>Difference from Planck (67.4 ± 0.5): &lt;b&gt;{sigma}σ&lt;/b&gt;</source>
         <translation>Diferencia con Planck (67,4 ± 0,5): &lt;b&gt;{sigma}σ&lt;/b&gt;</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/ladder_sim.py" line="241" />
+        <location filename="../gui/simulators/ladder_sim.py" line="243" />
         <source>&lt;b&gt;The systematic error is larger than the error bar.&lt;/b&gt; H0 is shifted by {shift} km/s/Mpc, and no amount of extra data will reveal it — only an independent check can.</source>
         <translation>&lt;b&gt;El error sistemático es mayor que la barra de error.&lt;/b&gt; H0 está desplazado en {shift} km/s/Mpc, y ninguna cantidad de datos adicionales lo revelará: solo puede hacerlo una comprobación independiente.</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/ladder_sim.py" line="247" />
+        <location filename="../gui/simulators/ladder_sim.py" line="249" />
         <source>&lt;b&gt;Simulated ladder.&lt;/b&gt; The weakest rung right now is &lt;b&gt;{rung}&lt;/b&gt;: improving the others hardly changes the total, because errors add in quadrature.</source>
         <translation>&lt;b&gt;Escalera simulada.&lt;/b&gt; El peldaño más débil ahora mismo es &lt;b&gt;{rung}&lt;/b&gt;: mejorar los otros apenas cambia el total, porque los errores se suman en cuadratura.</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/ladder_sim.py" line="373" />
+        <location filename="../gui/simulators/ladder_sim.py" line="375" />
         <source>How the errors combine</source>
         <translation>Cómo se combinan los errores</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/ladder_sim.py" line="374" />
+        <location filename="../gui/simulators/ladder_sim.py" line="376" />
         <source>The three rungs are independent, so their percentage errors add **in quadrature**:
 
 $$\sigma_{H_0}/H_0 = \sqrt{\sigma_1^2 + \sigma_2^2 + \sigma_3^2}$$
@@ -6372,230 +6378,230 @@ Reducir a la mitad el término mayor ayuda mucho más que eliminar el menor. Un 
         <translation>Medir el tamaño del anillo, por tanto, **pesa** la lente, materia oscura incluida.</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/mcmc_sim.py" line="30" />
+        <location filename="../gui/simulators/mcmc_sim.py" line="31" />
         <source>1 · The data</source>
         <translation>1 · Los datos</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/mcmc_sim.py" line="36" />
+        <location filename="../gui/simulators/mcmc_sim.py" line="37" />
         <location filename="../gui/simulators/supernova_sim.py" line="42" />
         <source>Sample</source>
         <translation>Muestra</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/mcmc_sim.py" line="37" />
+        <location filename="../gui/simulators/mcmc_sim.py" line="38" />
         <source>What the likelihood sees</source>
         <translation>Lo que ve la verosimilitud</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/mcmc_sim.py" line="38" />
+        <location filename="../gui/simulators/mcmc_sim.py" line="39" />
         <source>Every supernova contributes one term to χ². The real Pantheon+ sample is the default; the simulated ones let you see what fewer or noisier measurements would give.</source>
         <translation>Cada supernova aporta un término a χ². La muestra real Pantheon+ es la predeterminada; las simuladas te dejan ver qué darían medidas menos numerosas o más ruidosas.</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/mcmc_sim.py" line="40" />
+        <location filename="../gui/simulators/mcmc_sim.py" line="41" />
         <location filename="../gui/simulators/supernova_sim.py" line="47" />
         <source>Assume a flat universe (ΩΛ = 1 − Ωm)</source>
         <translation>Suponer un universo plano (ΩΛ = 1 − Ωm)</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/mcmc_sim.py" line="41" />
+        <location filename="../gui/simulators/mcmc_sim.py" line="42" />
         <source>One parameter instead of two. The chain then explores a line, not a plane.</source>
         <translation>Un parámetro en lugar de dos. La cadena explora entonces una recta, no un plano.</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/mcmc_sim.py" line="47" />
+        <location filename="../gui/simulators/mcmc_sim.py" line="48" />
         <source>Second probe</source>
         <translation>Segunda sonda</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/mcmc_sim.py" line="48" />
+        <location filename="../gui/simulators/mcmc_sim.py" line="49" />
         <source>Combining measurements</source>
         <translation>Combinar medidas</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/mcmc_sim.py" line="49" />
+        <location filename="../gui/simulators/mcmc_sim.py" line="50" />
         <source>Independent measurements multiply: the posterior is the supernova likelihood times the second probe. Supernovae alone allow a long diagonal band; a probe that constrains a different direction cuts it down to a small patch.</source>
         <translation>Las medidas independientes se multiplican: la posterior es la verosimilitud de las supernovas por la de la segunda sonda. Las supernovas solas permiten una banda diagonal larga; una sonda que restringe una dirección distinta la recorta hasta dejar una mancha pequeña.</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/mcmc_sim.py" line="54" />
+        <location filename="../gui/simulators/mcmc_sim.py" line="55" />
         <source>2 · The chain</source>
         <translation>2 · La cadena</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/mcmc_sim.py" line="57" />
+        <location filename="../gui/simulators/mcmc_sim.py" line="58" />
         <source>Steps</source>
         <translation>Pasos</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/mcmc_sim.py" line="58" />
+        <location filename="../gui/simulators/mcmc_sim.py" line="59" />
         <source>Length of the chain</source>
         <translation>Longitud de la cadena</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/mcmc_sim.py" line="59" />
+        <location filename="../gui/simulators/mcmc_sim.py" line="60" />
         <source>Each step proposes a new universe and accepts or rejects it. More steps mean a smoother posterior, but the useful number is the effective sample size, not the raw count.</source>
         <translation>Cada paso propone un universo nuevo y lo acepta o lo rechaza. Más pasos dan una posterior más suave, pero el número útil es el tamaño de muestra efectivo, no el recuento bruto.</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/mcmc_sim.py" line="63" />
+        <location filename="../gui/simulators/mcmc_sim.py" line="64" />
         <source>Proposal step σ</source>
         <translation>σ del paso propuesto</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/mcmc_sim.py" line="64" />
+        <location filename="../gui/simulators/mcmc_sim.py" line="65" />
         <source>How far each proposal jumps</source>
         <translation>Cuánto salta cada propuesta</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/mcmc_sim.py" line="65" />
+        <location filename="../gui/simulators/mcmc_sim.py" line="66" />
         <source>Too small and the walker crawls, accepting almost everything but exploring nothing. Too large and almost every proposal is rejected. An acceptance rate around 0.25 is healthy.</source>
         <translation>Si es demasiado pequeño, el caminante se arrastra: acepta casi todo pero no explora nada. Si es demasiado grande, casi todas las propuestas se rechazan. Una tasa de aceptación en torno a 0,25 es saludable.</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/mcmc_sim.py" line="69" />
+        <location filename="../gui/simulators/mcmc_sim.py" line="70" />
         <source>Burn-in (fraction)</source>
         <translation>Calentamiento (fracción)</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/mcmc_sim.py" line="70" />
+        <location filename="../gui/simulators/mcmc_sim.py" line="71" />
         <source>Throwing away the start</source>
         <translation>Tirar el principio</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/mcmc_sim.py" line="71" />
+        <location filename="../gui/simulators/mcmc_sim.py" line="72" />
         <source>The walker begins wherever you put it, not in the good region. The first steps are discarded so they do not bias the answer.</source>
         <translation>El caminante empieza donde tú lo pongas, no en la región buena. Los primeros pasos se descartan para que no sesguen la respuesta.</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/mcmc_sim.py" line="78" />
-        <source>▶ Run the chain</source>
-        <translation>▶ Ejecutar la cadena</translation>
+        <location filename="../gui/simulators/mcmc_sim.py" line="79" />
+        <source>Run the chain</source>
+        <translation>Ejecutar la cadena</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/mcmc_sim.py" line="81" />
-        <location filename="../gui/simulators/mcmc_sim.py" line="175" />
+        <location filename="../gui/simulators/mcmc_sim.py" line="83" />
+        <location filename="../gui/simulators/mcmc_sim.py" line="191" />
         <source>Watch it walk</source>
         <translation>Míralo caminar</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/mcmc_sim.py" line="83" />
+        <location filename="../gui/simulators/mcmc_sim.py" line="86" />
         <source>Reveal the chain step by step.</source>
         <translation>Revela la cadena paso a paso.</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/mcmc_sim.py" line="88" />
+        <location filename="../gui/simulators/mcmc_sim.py" line="91" />
         <source>Run {count} chains and check convergence</source>
         <translation>Ejecutar {count} cadenas y comprobar la convergencia</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/mcmc_sim.py" line="90" />
+        <location filename="../gui/simulators/mcmc_sim.py" line="93" />
         <source>Start four walkers from different corners and compare them with R̂.</source>
         <translation>Lanza cuatro caminantes desde esquinas distintas y los compara con R̂.</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/mcmc_sim.py" line="95" />
+        <location filename="../gui/simulators/mcmc_sim.py" line="98" />
         <source>What the chain says</source>
         <translation>Lo que dice la cadena</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/mcmc_sim.py" line="101" />
+        <location filename="../gui/simulators/mcmc_sim.py" line="104" />
         <source>The magnitude offset (M and H0 together) is fitted away, so the chain measures the densities only.</source>
         <translation>El desplazamiento de magnitud (M y H0 juntos) se ajusta y se elimina, así que la cadena mide solo las densidades.</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/mcmc_sim.py" line="111" />
+        <location filename="../gui/simulators/mcmc_sim.py" line="114" />
         <source>Posterior</source>
         <translation>Posterior</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/mcmc_sim.py" line="112" />
+        <location filename="../gui/simulators/mcmc_sim.py" line="115" />
         <source>Walk and χ²</source>
         <translation>Recorrido y χ²</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/mcmc_sim.py" line="207" />
+        <location filename="../gui/simulators/mcmc_sim.py" line="224" />
         <source>Ωm = &lt;b&gt;{value} ± {error}&lt;/b&gt;</source>
         <translation>Ωm = &lt;b&gt;{value} ± {error}&lt;/b&gt;</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/mcmc_sim.py" line="209" />
+        <location filename="../gui/simulators/mcmc_sim.py" line="226" />
         <source>ΩΛ = &lt;b&gt;{value} ± {error}&lt;/b&gt;</source>
         <translation>ΩΛ = &lt;b&gt;{value} ± {error}&lt;/b&gt;</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/mcmc_sim.py" line="211" />
+        <location filename="../gui/simulators/mcmc_sim.py" line="228" />
         <source>Correlation between them: &lt;b&gt;{value}&lt;/b&gt;</source>
         <translation>Correlación entre ambos: &lt;b&gt;{value}&lt;/b&gt;</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/mcmc_sim.py" line="214" />
+        <location filename="../gui/simulators/mcmc_sim.py" line="231" />
         <source>68% interval for Ωm: {low} … {high}</source>
         <translation>Intervalo del 68 % para Ωm: {low} … {high}</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/mcmc_sim.py" line="216" />
+        <location filename="../gui/simulators/mcmc_sim.py" line="233" />
         <source>Acceptance rate: &lt;b&gt;{rate}&lt;/b&gt;  (aim for about 25%)</source>
         <translation>Tasa de aceptación: &lt;b&gt;{rate}&lt;/b&gt;  (apunta a un 25 % aproximadamente)</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/mcmc_sim.py" line="218" />
+        <location filename="../gui/simulators/mcmc_sim.py" line="235" />
         <source>Steps kept: {kept} of {total}</source>
         <translation>Pasos conservados: {kept} de {total}</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/mcmc_sim.py" line="222" />
+        <location filename="../gui/simulators/mcmc_sim.py" line="239" />
         <source>Autocorrelation length: {tau} steps → &lt;b&gt;{neff}&lt;/b&gt; independent samples</source>
         <translation>Longitud de autocorrelación: {tau} pasos → &lt;b&gt;{neff}&lt;/b&gt; muestras independientes</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/mcmc_sim.py" line="226" />
+        <location filename="../gui/simulators/mcmc_sim.py" line="243" />
         <source>R̂ from {count} chains: &lt;b&gt;{rhat}&lt;/b&gt; (converged below 1.01)</source>
         <translation>R̂ de {count} cadenas: &lt;b&gt;{rhat}&lt;/b&gt; (convergido por debajo de 1,01)</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/mcmc_sim.py" line="230" />
+        <location filename="../gui/simulators/mcmc_sim.py" line="247" />
         <source>χ² at the mean: {chi2} for {dof} degrees of freedom (χ²/dof = {reduced})</source>
         <translation>χ² en la media: {chi2} con {dof} grados de libertad (χ²/gl = {reduced})</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/mcmc_sim.py" line="236" />
+        <location filename="../gui/simulators/mcmc_sim.py" line="253" />
         <source>Derived from the samples: q0 = &lt;b&gt;{q0} ± {error}&lt;/b&gt; (ignoring the correlation would give ± {naive})</source>
         <translation>Derivado de las muestras: q0 = &lt;b&gt;{q0} ± {error}&lt;/b&gt; (ignorar la correlación daría ± {naive})</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/mcmc_sim.py" line="240" />
+        <location filename="../gui/simulators/mcmc_sim.py" line="257" />
         <source>Ωk = {value} ± {error}; accelerating in {fraction} of the samples</source>
         <translation>Ωk = {value} ± {error}; se acelera en {fraction} de las muestras</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/mcmc_sim.py" line="254" />
+        <location filename="../gui/simulators/mcmc_sim.py" line="271" />
         <source>&lt;b&gt;Almost everything is rejected.&lt;/b&gt; The proposal step is too large: the walker keeps suggesting universes the data rule out. Make σ smaller.</source>
         <translation>&lt;b&gt;Casi todo se rechaza.&lt;/b&gt; El paso propuesto es demasiado grande: el caminante no para de sugerir universos que los datos descartan. Reduce σ.</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/mcmc_sim.py" line="258" />
+        <location filename="../gui/simulators/mcmc_sim.py" line="275" />
         <source>&lt;b&gt;Almost everything is accepted.&lt;/b&gt; The steps are so small that the walker barely moves; the cloud looks tight but it has not explored. Make σ larger.</source>
         <translation>&lt;b&gt;Casi todo se acepta.&lt;/b&gt; Los pasos son tan pequeños que el caminante apenas se mueve; la nube parece estrecha pero no ha explorado. Aumenta σ.</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/mcmc_sim.py" line="262" />
+        <location filename="../gui/simulators/mcmc_sim.py" line="279" />
         <source>&lt;b&gt;Real measurement.&lt;/b&gt; {citation}. The contours below are your own posterior, sampled step by step from these supernovae.</source>
         <translation>&lt;b&gt;Medida real.&lt;/b&gt; {citation}. Los contornos de abajo son tu propia posterior, muestreada paso a paso a partir de estas supernovas.</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/mcmc_sim.py" line="266" />
+        <location filename="../gui/simulators/mcmc_sim.py" line="283" />
         <source>&lt;b&gt;Simulated data.&lt;/b&gt; The chain works the same way; only the scatter is invented.</source>
         <translation>&lt;b&gt;Datos simulados.&lt;/b&gt; La cadena funciona igual; solo la dispersión es inventada.</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/mcmc_sim.py" line="382" />
+        <location filename="../gui/simulators/mcmc_sim.py" line="399" />
         <source>What the numbers mean</source>
         <translation>Qué significan los números</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/mcmc_sim.py" line="383" />
+        <location filename="../gui/simulators/mcmc_sim.py" line="400" />
         <source>- **Acceptance rate** — the fraction of proposals the walker took. Near 25% is healthy for two parameters; 1% or 95% both mean the step size is wrong.
 - **Autocorrelation length** — how many steps before the walker forgets where it was. The effective sample size is the chain length divided by it.
 - **R̂** — four walkers started far apart should end up describing the same distribution. Above 1.01 they have not met yet.
@@ -6606,173 +6612,168 @@ Reducir a la mitad el término mayor ayuda mucho más que eliminar el menor. Un 
 - El desplazamiento de magnitud se ajusta y se elimina en cada paso, y por eso H0 no aparece aquí: las supernovas solas miden la *forma* de la expansión, no su ritmo.</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/nbody_sim.py" line="72" />
+        <location filename="../gui/simulators/nbody_sim.py" line="73" />
         <source>1 · Initial ripples</source>
         <translation>1 · Ondulaciones iniciales</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/nbody_sim.py" line="75" />
+        <location filename="../gui/simulators/nbody_sim.py" line="76" />
         <source>Spectral index n</source>
         <translation>Índice espectral n</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/nbody_sim.py" line="76" />
+        <location filename="../gui/simulators/nbody_sim.py" line="77" />
         <source>Power spectrum slope</source>
         <translation>Pendiente del espectro de potencias</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/nbody_sim.py" line="77" />
+        <location filename="../gui/simulators/nbody_sim.py" line="78" />
         <source>Initial fluctuations have power P(k) ∝ kⁿ. Smaller n puts more power on large scales (big coherent structures); larger n gives more small clumps.</source>
         <translation>Las fluctuaciones iniciales tienen potencia P(k) ∝ kⁿ. Un n menor pone más potencia en las escalas grandes (estructuras coherentes grandes); un n mayor da más grumos pequeños.</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/nbody_sim.py" line="81" />
+        <location filename="../gui/simulators/nbody_sim.py" line="82" />
         <source>Fluctuation strength</source>
         <translation>Intensidad de las fluctuaciones</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/nbody_sim.py" line="82" />
+        <location filename="../gui/simulators/nbody_sim.py" line="83" />
         <source>RMS density contrast per grid cell when the growth factor reaches D = 1. Stronger ripples collapse earlier.</source>
         <translation>Contraste de densidad rms por celda de la rejilla cuando el factor de crecimiento llega a D = 1. Las ondulaciones más fuertes colapsan antes.</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/nbody_sim.py" line="88" />
+        <location filename="../gui/simulators/nbody_sim.py" line="89" />
         <source>Cold dark matter</source>
         <translation>Materia oscura fría</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/nbody_sim.py" line="89" />
+        <location filename="../gui/simulators/nbody_sim.py" line="90" />
         <source>Warm dark matter</source>
         <translation>Materia oscura templada</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/nbody_sim.py" line="97" />
+        <location filename="../gui/simulators/nbody_sim.py" line="98" />
         <source>Cold or warm?</source>
         <translation>¿Fría o templada?</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/nbody_sim.py" line="98" />
+        <location filename="../gui/simulators/nbody_sim.py" line="99" />
         <source>Cold dark matter particles move slowly, so fluctuations survive on all scales. Warm dark matter particles move fast enough early on to smooth out the smallest ripples, so fewer small halos form.</source>
         <translation>Las partículas de materia oscura fría se mueven despacio, así que las fluctuaciones sobreviven en todas las escalas. Las de materia oscura templada se mueven lo bastante rápido al principio como para suavizar las ondulaciones más pequeñas, de modo que se forman menos halos pequeños.</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/nbody_sim.py" line="103" />
+        <location filename="../gui/simulators/nbody_sim.py" line="104" />
         <source>Free-streaming scale (cells)</source>
         <translation>Escala de libre recorrido (celdas)</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/nbody_sim.py" line="104" />
+        <location filename="../gui/simulators/nbody_sim.py" line="105" />
         <source>Cutoff</source>
         <translation>Corte</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/nbody_sim.py" line="104" />
+        <location filename="../gui/simulators/nbody_sim.py" line="105" />
         <source>Fluctuations smaller than this are erased in the warm dark matter model.</source>
         <translation>Las fluctuaciones más pequeñas que esto se borran en el modelo de materia oscura templada.</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/nbody_sim.py" line="110" />
+        <location filename="../gui/simulators/nbody_sim.py" line="111" />
         <source>Different numbers give different random universes with the same statistics.</source>
         <translation>Números distintos dan universos aleatorios distintos con la misma estadística.</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/nbody_sim.py" line="113" />
+        <location filename="../gui/simulators/nbody_sim.py" line="114" />
         <source>96 × 96 particles (fast)</source>
         <translation>96 × 96 partículas (rápido)</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/nbody_sim.py" line="114" />
+        <location filename="../gui/simulators/nbody_sim.py" line="115" />
         <source>128 × 128 particles</source>
         <translation>128 × 128 partículas</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/nbody_sim.py" line="115" />
+        <location filename="../gui/simulators/nbody_sim.py" line="116" />
         <source>192 × 192 particles (detailed)</source>
         <translation>192 × 192 partículas (detallado)</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/nbody_sim.py" line="117" />
+        <location filename="../gui/simulators/nbody_sim.py" line="118" />
         <source>Resolution</source>
         <translation>Resolución</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/nbody_sim.py" line="118" />
+        <location filename="../gui/simulators/nbody_sim.py" line="119" />
         <source>Apply and restart</source>
         <translation>Aplicar y reiniciar</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/nbody_sim.py" line="119" />
+        <location filename="../gui/simulators/nbody_sim.py" line="120" />
         <source>Create new initial conditions with these settings.</source>
         <translation>Crea condiciones iniciales nuevas con estos ajustes.</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/nbody_sim.py" line="124" />
+        <location filename="../gui/simulators/nbody_sim.py" line="125" />
         <source>2 · Run</source>
         <translation>2 · Ejecución</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/nbody_sim.py" line="131" />
+        <location filename="../gui/simulators/nbody_sim.py" line="133" />
         <source>Step</source>
         <translation>Paso</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/nbody_sim.py" line="132" />
+        <location filename="../gui/simulators/nbody_sim.py" line="134" />
         <source>Advance a little bit</source>
         <translation>Avanzar un poco</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/nbody_sim.py" line="134" />
-        <source>Reset</source>
-        <translation>Reiniciar</translation>
-    </message>
-    <message>
-        <location filename="../gui/simulators/nbody_sim.py" line="139" />
+        <location filename="../gui/simulators/nbody_sim.py" line="141" />
         <source>Speed (steps per frame)</source>
         <translation>Velocidad (pasos por fotograma)</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/nbody_sim.py" line="144" />
+        <location filename="../gui/simulators/nbody_sim.py" line="146" />
         <source>Colours</source>
         <translation>Colores</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/nbody_sim.py" line="147" />
+        <location filename="../gui/simulators/nbody_sim.py" line="149" />
         <source>What is happening</source>
         <translation>Qué está pasando</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/nbody_sim.py" line="153" />
+        <location filename="../gui/simulators/nbody_sim.py" line="155" />
         <source>A two-dimensional toy universe in a periodic box. Real simulations are 3D and use billions of particles, but the physics is the same.</source>
         <translation>Un universo de juguete bidimensional en una caja periódica. Las simulaciones reales son en 3D y usan miles de millones de partículas, pero la física es la misma.</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/nbody_sim.py" line="228" />
+        <location filename="../gui/simulators/nbody_sim.py" line="231" />
         <location filename="../gui/simulators/spacetime.py" line="139" />
         <source>future</source>
         <translation>futuro</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/nbody_sim.py" line="229" />
+        <location filename="../gui/simulators/nbody_sim.py" line="232" />
         <source>growth factor D = {d}  ({epoch} in an Einstein–de Sitter universe)</source>
         <translation>factor de crecimiento D = {d}  ({epoch} en un universo de Einstein-de Sitter)</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/nbody_sim.py" line="234" />
+        <location filename="../gui/simulators/nbody_sim.py" line="237" />
         <source>linear: ripples simply grow</source>
         <translation>lineal: las ondulaciones simplemente crecen</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/nbody_sim.py" line="235" />
+        <location filename="../gui/simulators/nbody_sim.py" line="238" />
         <source>quasi-linear: sheets and filaments form</source>
         <translation>cuasilineal: se forman láminas y filamentos</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/nbody_sim.py" line="236" />
+        <location filename="../gui/simulators/nbody_sim.py" line="239" />
         <source>non-linear: halos collapse and merge</source>
         <translation>no lineal: los halos colapsan y se fusionan</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/nbody_sim.py" line="238" />
+        <location filename="../gui/simulators/nbody_sim.py" line="241" />
         <source>Growth factor D: &lt;b&gt;{d}&lt;/b&gt;&lt;br&gt;RMS density contrast: &lt;b&gt;{sigma}&lt;/b&gt; (linear theory: {linear})&lt;br&gt;Particles in dense clumps (δ &gt; 4): &lt;b&gt;{collapsed}&lt;/b&gt;&lt;br&gt;Steps: {steps}&lt;br&gt;Stage: &lt;b&gt;{phase}&lt;/b&gt;</source>
         <translation>Factor de crecimiento D: &lt;b&gt;{d}&lt;/b&gt;&lt;br&gt;Contraste de densidad rms: &lt;b&gt;{sigma}&lt;/b&gt; (teoría lineal: {linear})&lt;br&gt;Partículas en grumos densos (δ &gt; 4): &lt;b&gt;{collapsed}&lt;/b&gt;&lt;br&gt;Pasos: {steps}&lt;br&gt;Etapa: &lt;b&gt;{phase}&lt;/b&gt;</translation>
     </message>
@@ -6977,77 +6978,77 @@ Reducir a la mitad el término mayor ayuda mucho más que eliminar el menor. Un 
         <translation>Las estrellas se colocan al azar en un universo didáctico medido en radios estelares. Las estrellas cercanas se dibujan como discos; más allá de 400 radios estelares, cada píxel vacío se sigue a lo largo de su línea de visión con la probabilidad exacta de dar con una estrella. El cielo es **simulado**, no una imagen del cielo real.</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/powers_of_ten.py" line="96" />
+        <location filename="../gui/simulators/powers_of_ten.py" line="97" />
         <source>Scroll the mouse wheel to zoom in and out.</source>
         <translation>Gira la rueda del ratón para acercar y alejar.</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/powers_of_ten.py" line="191" />
+        <location filename="../gui/simulators/powers_of_ten.py" line="192" />
         <source>Zoom</source>
         <translation>Zoom</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/powers_of_ten.py" line="194" />
+        <location filename="../gui/simulators/powers_of_ten.py" line="195" />
         <source>Field of view: 10^x metres</source>
         <translation>Campo de visión: 10^x metros</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/powers_of_ten.py" line="195" />
+        <location filename="../gui/simulators/powers_of_ten.py" line="196" />
         <source>Powers of ten</source>
         <translation>Potencias de diez</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/powers_of_ten.py" line="195" />
+        <location filename="../gui/simulators/powers_of_ten.py" line="196" />
         <source>Each whole step multiplies the width of the view by ten.</source>
         <translation>Cada paso entero multiplica por diez la anchura de la vista.</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/powers_of_ten.py" line="200" />
+        <location filename="../gui/simulators/powers_of_ten.py" line="202" />
         <source>Fly automatically from the current scale outward. Click again to pause.</source>
         <translation>Vuela automáticamente desde la escala actual hacia fuera. Pulsa otra vez para pausar.</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/powers_of_ten.py" line="204" />
+        <location filename="../gui/simulators/powers_of_ten.py" line="206" />
         <source>Zoom out</source>
         <translation>Alejar</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/powers_of_ten.py" line="204" />
+        <location filename="../gui/simulators/powers_of_ten.py" line="206" />
         <source>Zoom in</source>
         <translation>Acercar</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/powers_of_ten.py" line="205" />
+        <location filename="../gui/simulators/powers_of_ten.py" line="207" />
         <source>Direction</source>
         <translation>Dirección</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/powers_of_ten.py" line="207" />
+        <location filename="../gui/simulators/powers_of_ten.py" line="209" />
         <source>Choose an object…</source>
         <translation>Elige un objeto…</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/powers_of_ten.py" line="211" />
+        <location filename="../gui/simulators/powers_of_ten.py" line="213" />
         <source>Jump to</source>
         <translation>Saltar a</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/powers_of_ten.py" line="214" />
+        <location filename="../gui/simulators/powers_of_ten.py" line="216" />
         <source>At this scale</source>
         <translation>A esta escala</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/powers_of_ten.py" line="222" />
+        <location filename="../gui/simulators/powers_of_ten.py" line="224" />
         <source>What you are looking at</source>
         <translation>Qué estás mirando</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/powers_of_ten.py" line="245" />
+        <location filename="../gui/simulators/powers_of_ten.py" line="247" />
         <source>Width of view: &lt;b&gt;{metres} m&lt;/b&gt;&lt;br&gt;= &lt;b&gt;{in_units}&lt;/b&gt;&lt;br&gt;Light needs &lt;b&gt;{time}&lt;/b&gt; to cross it.</source>
         <translation>Anchura de la vista: &lt;b&gt;{metres} m&lt;/b&gt;&lt;br&gt;= &lt;b&gt;{in_units}&lt;/b&gt;&lt;br&gt;La luz necesita &lt;b&gt;{time}&lt;/b&gt; para cruzarla.</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/powers_of_ten.py" line="253" />
+        <location filename="../gui/simulators/powers_of_ten.py" line="255" />
         <source>&lt;i&gt;Mostly empty space at this scale. Keep zooming!&lt;/i&gt;</source>
         <translation>&lt;i&gt;A esta escala es casi todo espacio vacío. ¡Sigue alejándote!&lt;/i&gt;</translation>
     </message>
@@ -9018,42 +9019,42 @@ Reducir a la mitad el término mayor ayuda mucho más que eliminar el menor. Un 
         <translation>Las curvas reales vienen de SPARC; la ilustrativa se genera aquí.</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/rotation_curve.py" line="140" />
+        <location filename="../gui/simulators/rotation_curve.py" line="158" />
         <source>A synthetic curve generated by the app from disk + bulge + halo.</source>
         <translation>Una curva sintética generada por la aplicación a partir de disco + bulbo + halo.</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/rotation_curve.py" line="142" />
+        <location filename="../gui/simulators/rotation_curve.py" line="160" />
         <source>&lt;b&gt;Synthetic curve.&lt;/b&gt; Generated inside the app with the flat shape real spirals show. Choose a galaxy from the list for real measurements.</source>
         <translation>&lt;b&gt;Curva sintética.&lt;/b&gt; Generada dentro de la aplicación con la forma plana que muestran las espirales reales. Elige una galaxia de la lista para ver medidas reales.</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/rotation_curve.py" line="150" />
+        <location filename="../gui/simulators/rotation_curve.py" line="168" />
         <source>Hubble type T = {type}, distance {distance} Mpc, inclination {inclination}°, quality Q = {quality}</source>
         <translation>Tipo de Hubble T = {type}, distancia {distance} Mpc, inclinación {inclination}°, calidad Q = {quality}</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/rotation_curve.py" line="156" />
+        <location filename="../gui/simulators/rotation_curve.py" line="174" />
         <source>&lt;b&gt;Real measurements: {galaxy}.&lt;/b&gt; {citation}. {points} points out to {radius} kpc, flat rotation speed {speed} ± {error} km/s.</source>
         <translation>&lt;b&gt;Medidas reales: {galaxy}.&lt;/b&gt; {citation}. {points} puntos hasta {radius} kpc, velocidad de rotación plana {speed} ± {error} km/s.</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/rotation_curve.py" line="163" />
+        <location filename="../gui/simulators/rotation_curve.py" line="181" />
         <source>Inside {radius} kpc</source>
         <translation>Dentro de {radius} kpc</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/rotation_curve.py" line="234" />
+        <location filename="../gui/simulators/rotation_curve.py" line="252" />
         <source>Missing mass MOND explains without dark matter</source>
         <translation>Masa que falta y que MOND explica sin materia oscura</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/rotation_curve.py" line="235" />
+        <location filename="../gui/simulators/rotation_curve.py" line="253" />
         <source>Dark matter share</source>
         <translation>Proporción de materia oscura</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/rotation_curve.py" line="237" />
+        <location filename="../gui/simulators/rotation_curve.py" line="255" />
         <source>Speed from visible matter: &lt;b&gt;{visible} km/s&lt;/b&gt;&lt;br&gt;Model total: &lt;b&gt;{total} km/s&lt;/b&gt; (data ≈ {observed} km/s)&lt;br&gt;Mass from visible matter: {mass_visible} M☉&lt;br&gt;Mass required by the model: {mass_total} M☉&lt;br&gt;{share_label}: &lt;b&gt;{share}&lt;/b&gt;&lt;br&gt;Fit quality χ²/point: &lt;b&gt;{chi2}&lt;/b&gt; (about 1 is a good fit)</source>
         <translation>Velocidad debida a la materia visible: &lt;b&gt;{visible} km/s&lt;/b&gt;&lt;br&gt;Total del modelo: &lt;b&gt;{total} km/s&lt;/b&gt; (datos ≈ {observed} km/s)&lt;br&gt;Masa de la materia visible: {mass_visible} M☉&lt;br&gt;Masa que exige el modelo: {mass_total} M☉&lt;br&gt;{share_label}: &lt;b&gt;{share}&lt;/b&gt;&lt;br&gt;Calidad del ajuste χ²/punto: &lt;b&gt;{chi2}&lt;/b&gt; (alrededor de 1 es un buen ajuste)</translation>
     </message>
@@ -9701,57 +9702,57 @@ Nada de esa expresión se calibró con nada. El gorjeo da $\mathcal{M}_c$, la am
         <translation>¿Son gaussianas las ondulaciones?</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/sky_sim.py" line="130" />
+        <location filename="../gui/simulators/sky_sim.py" line="148" />
         <source>Fluctuations: &lt;b&gt;{rms} µK&lt;/b&gt; rms, from {low} to {high} µK</source>
         <translation>Fluctuaciones: &lt;b&gt;{rms} µK&lt;/b&gt; rms, de {low} a {high} µK</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/sky_sim.py" line="132" />
+        <location filename="../gui/simulators/sky_sim.py" line="150" />
         <source>That is &lt;b&gt;{ratio}&lt;/b&gt; of the 2.725 K average — one part in {inverse}</source>
         <translation>Eso es &lt;b&gt;{ratio}&lt;/b&gt; del promedio de 2,725 K: una parte en {inverse}</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/sky_sim.py" line="135" />
+        <location filename="../gui/simulators/sky_sim.py" line="153" />
         <source>Sky used: &lt;b&gt;{percent}&lt;/b&gt;</source>
         <translation>Cielo utilizado: &lt;b&gt;{percent}&lt;/b&gt;</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/sky_sim.py" line="136" />
+        <location filename="../gui/simulators/sky_sim.py" line="154" />
         <source>Typical spot size: &lt;b&gt;{size}°&lt;/b&gt; across</source>
         <translation>Tamaño típico de las manchas: &lt;b&gt;{size}°&lt;/b&gt; de ancho</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/sky_sim.py" line="138" />
+        <location filename="../gui/simulators/sky_sim.py" line="156" />
         <source>Hottest at ℓ={hot_lon}°, b={hot_lat}°; coldest at ℓ={cold_lon}°, b={cold_lat}°</source>
         <translation>La más caliente en ℓ={hot_lon}°, b={hot_lat}°; la más fría en ℓ={cold_lon}°, b={cold_lat}°</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/sky_sim.py" line="147" />
+        <location filename="../gui/simulators/sky_sim.py" line="165" />
         <source>&lt;b&gt;The Galaxy is in the picture.&lt;/b&gt; The bright band across the middle is our own galaxy, not the early universe. Every published measurement masks it first — the extremes you see now are foreground, not cosmology.</source>
         <translation>&lt;b&gt;Nuestra galaxia está en la imagen.&lt;/b&gt; La banda brillante que cruza el centro es nuestra propia galaxia, no el universo temprano. Toda medida publicada la enmascara primero: los extremos que ves ahora son primer plano, no cosmología.</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/sky_sim.py" line="153" />
+        <location filename="../gui/simulators/sky_sim.py" line="171" />
         <source>&lt;b&gt;Only the fine detail.&lt;/b&gt; Everything larger than {width}° has been subtracted, which is how the smooth foregrounds are suppressed and the degree-scale spots stand out.</source>
         <translation>&lt;b&gt;Solo el detalle fino.&lt;/b&gt; Se ha restado todo lo mayor que {width}°, que es como se suprimen los primeros planos suaves y destacan las manchas de escala de un grado.</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/sky_sim.py" line="159" />
+        <location filename="../gui/simulators/sky_sim.py" line="177" />
         <source>&lt;b&gt;Blurred past the signal.&lt;/b&gt; At {width}° the acoustic spots have been averaged away and the rms has fallen to {rms} µK from about 67.</source>
         <translation>&lt;b&gt;Difuminado más allá de la señal.&lt;/b&gt; A {width}° las manchas acústicas se han promediado hasta desaparecer y el rms ha caído a {rms} µK desde unos 67.</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/sky_sim.py" line="165" />
+        <location filename="../gui/simulators/sky_sim.py" line="183" />
         <source>&lt;b&gt;The oldest light there is.&lt;/b&gt; These ripples are a few parts in a hundred thousand of the average temperature, released 380 000 years after the Big Bang, and every structure in the universe grew from them.</source>
         <translation>&lt;b&gt;La luz más antigua que existe.&lt;/b&gt; Estas ondulaciones son unas pocas partes en cien mil de la temperatura media, se liberaron 380 000 años después del Big Bang, y de ellas creció toda estructura del universo.</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/sky_sim.py" line="292" />
+        <location filename="../gui/simulators/sky_sim.py" line="310" />
         <source>One part in a hundred thousand</source>
         <translation>Una parte en cien mil</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/sky_sim.py" line="293" />
+        <location filename="../gui/simulators/sky_sim.py" line="311" />
         <source>The whole map spans about ±250 µK around 2.725 K. That is a contrast of $10^{-5}$ — and it is the largest contrast the universe had at that moment. Everything you have ever seen, every galaxy and every star, grew out of ripples this small by nothing but gravity pulling for 13.8 billion years.</source>
         <translation>El mapa entero abarca unos ±250 µK alrededor de 2,725 K. Eso es un contraste de $10^{-5}$, y es el mayor contraste que tuvo el universo en aquel momento. Todo lo que has visto en tu vida, cada galaxia y cada estrella, creció de ondulaciones así de pequeñas por nada más que la gravedad tirando durante 13 800 millones de años.</translation>
     </message>
@@ -9921,82 +9922,82 @@ Nada de esa expresión se calibró con nada. El gorjeo da $\mathcal{M}_c$, la am
         <translation>El cielo real (SDSS)</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/slice_sim.py" line="196" />
+        <location filename="../gui/simulators/slice_sim.py" line="215" />
         <source>&lt;b&gt;{galaxies}&lt;/b&gt; galaxies, median redshift &lt;b&gt;{z}&lt;/b&gt;</source>
         <translation>&lt;b&gt;{galaxies}&lt;/b&gt; galaxias, corrimiento al rojo mediano &lt;b&gt;{z}&lt;/b&gt;</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/slice_sim.py" line="198" />
+        <location filename="../gui/simulators/slice_sim.py" line="217" />
         <source>Line-of-sight velocities: {rms} km/s rms, which move a galaxy by {shift} Mpc/h</source>
         <translation>Velocidades en la línea de visión: {rms} km/s rms, que mueven una galaxia {shift} Mpc/h</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/slice_sim.py" line="200" />
+        <location filename="../gui/simulators/slice_sim.py" line="219" />
         <source>Radial stretch in the densest regions: &lt;b&gt;{finger} Mpc/h&lt;/b&gt;</source>
         <translation>Estiramiento radial en las regiones más densas: &lt;b&gt;{finger} Mpc/h&lt;/b&gt;</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/slice_sim.py" line="202" />
+        <location filename="../gui/simulators/slice_sim.py" line="221" />
         <source>Completeness {complete}, growth rate f = {f}</source>
         <translation>Completitud {complete}, tasa de crecimiento f = {f}</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/slice_sim.py" line="210" />
+        <location filename="../gui/simulators/slice_sim.py" line="229" />
         <source>&lt;b&gt;Only {galaxies} galaxies.&lt;/b&gt; The slice is too sparse to see the cosmic web. Raise the density, widen the slice, or relax the magnitude limit.</source>
         <translation>&lt;b&gt;Solo {galaxies} galaxias.&lt;/b&gt; La rebanada es demasiado dispersa para ver la red cósmica. Sube la densidad, ensancha la rebanada o relaja el límite de magnitud.</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/slice_sim.py" line="216" />
+        <location filename="../gui/simulators/slice_sim.py" line="235" />
         <source>&lt;b&gt;The redshifts are blurred.&lt;/b&gt; An error of {sigma} in z moves a galaxy by about {blur} Mpc/h — far more than any peculiar velocity, and enough to wash the filaments out.</source>
         <translation>&lt;b&gt;Los corrimientos al rojo están emborronados.&lt;/b&gt; Un error de {sigma} en z mueve una galaxia unos {blur} Mpc/h, mucho más que cualquier velocidad peculiar y bastante para borrar los filamentos.</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/slice_sim.py" line="223" />
+        <location filename="../gui/simulators/slice_sim.py" line="242" />
         <source>&lt;b&gt;A flux-limited catalogue.&lt;/b&gt; At the far edge only {drop} of the galaxies are bright enough to be seen, so the thinning out there is the telescope, not the universe.</source>
         <translation>&lt;b&gt;Un catálogo limitado por flujo.&lt;/b&gt; En el borde lejano solo {drop} de las galaxias son lo bastante brillantes para verse, así que el adelgazamiento de allí es el telescopio, no el universo.</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/slice_sim.py" line="229" />
+        <location filename="../gui/simulators/slice_sim.py" line="248" />
         <source>&lt;b&gt;The true universe.&lt;/b&gt; No velocities, no selection: this is where the galaxies really are. Every other setting shows what a telescope would have made of it.</source>
         <translation>&lt;b&gt;El universo verdadero.&lt;/b&gt; Sin velocidades, sin selección: aquí es donde están de verdad las galaxias. Todos los demás ajustes muestran qué habría hecho de él un telescopio.</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/slice_sim.py" line="234" />
+        <location filename="../gui/simulators/slice_sim.py" line="253" />
         <source>&lt;b&gt;Redshift space.&lt;/b&gt; Each galaxy is drawn at the distance its redshift implies, so infall squashes the filaments and cluster orbits stretch them towards us.</source>
         <translation>&lt;b&gt;Espacio de corrimientos al rojo.&lt;/b&gt; Cada galaxia se dibuja a la distancia que implica su corrimiento al rojo, así que la caída hacia dentro aplasta los filamentos y las órbitas de los cúmulos los estiran hacia nosotros.</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/slice_sim.py" line="275" />
+        <location filename="../gui/simulators/slice_sim.py" line="294" />
         <source>us</source>
         <translation>nosotros</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/slice_sim.py" line="286" />
+        <location filename="../gui/simulators/slice_sim.py" line="305" />
         <source>Where the galaxies really are</source>
         <translation>Dónde están de verdad las galaxias</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/slice_sim.py" line="289" />
+        <location filename="../gui/simulators/slice_sim.py" line="308" />
         <source>Where their redshifts put them</source>
         <translation>Dónde las colocan sus corrimientos al rojo</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/slice_sim.py" line="301" />
+        <location filename="../gui/simulators/slice_sim.py" line="320" />
         <source>How the catalogue thins out with distance</source>
         <translation>Cómo se adelgaza el catálogo con la distancia</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/slice_sim.py" line="333" />
+        <location filename="../gui/simulators/slice_sim.py" line="352" />
         <source>Clustering measured from the mock, by counting pairs</source>
         <translation>Agrupamiento medido en el catálogo simulado, contando pares</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/slice_sim.py" line="409" />
+        <location filename="../gui/simulators/slice_sim.py" line="428" />
         <source>Two spaces, one universe</source>
         <translation>Dos espacios, un universo</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/slice_sim.py" line="410" />
+        <location filename="../gui/simulators/slice_sim.py" line="429" />
         <source>A redshift is not a distance. What a survey plots is
 
 $$s = r + \frac{(1+z)\,v_\parallel}{H(z)},$$
@@ -10120,182 +10121,183 @@ la distancia verdadera más lo que añada el movimiento propio de la galaxia. La
         <translation>Factor de escala a = &lt;b&gt;{a}&lt;/b&gt; ({epoch})&lt;br&gt;Edad del universo: &lt;b&gt;{age} Gaños&lt;/b&gt;&lt;br&gt;Horizonte de partículas: &lt;b&gt;{horizon} miles de millones de años luz&lt;/b&gt; (propio)&lt;br&gt;Horizonte de sucesos: &lt;b&gt;{event}&lt;/b&gt;&lt;br&gt;Esfera de Hubble: &lt;b&gt;{hubble} miles de millones de años luz&lt;/b&gt;&lt;br&gt;El cono de luz del pasado es más ancho en &lt;b&gt;{cone} miles de millones de años luz&lt;/b&gt;, cuando el universo tenía {cone_age} Gaños (a = {cone_a})</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/spectrum.py" line="114" />
+        <location filename="../gui/simulators/spectrum.py" line="115" />
         <source>1 · What causes the shift?</source>
         <translation>1 · ¿Qué causa el desplazamiento?</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/spectrum.py" line="116" />
+        <location filename="../gui/simulators/spectrum.py" line="117" />
         <source>Doppler motion (a moving light source)</source>
         <translation>Movimiento Doppler (una fuente de luz en movimiento)</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/spectrum.py" line="117" />
+        <location filename="../gui/simulators/spectrum.py" line="118" />
         <source>A star or galaxy moving towards or away from us through space.</source>
         <translation>Una estrella o una galaxia que se acerca o se aleja de nosotros a través del espacio.</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/spectrum.py" line="118" />
+        <location filename="../gui/simulators/spectrum.py" line="119" />
         <source>Cosmic expansion (a distant galaxy)</source>
         <translation>Expansión cósmica (una galaxia lejana)</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/spectrum.py" line="119" />
+        <location filename="../gui/simulators/spectrum.py" line="120" />
         <source>Light stretched by the expansion of the universe: 1 + z = 1/a.</source>
         <translation>Luz estirada por la expansión del universo: 1 + z = 1/a.</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/spectrum.py" line="128" />
+        <location filename="../gui/simulators/spectrum.py" line="129" />
         <source>2 · Amount of shift</source>
         <translation>2 · Cantidad de desplazamiento</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/spectrum.py" line="131" />
+        <location filename="../gui/simulators/spectrum.py" line="132" />
         <source>Radial velocity (km/s)</source>
         <translation>Velocidad radial (km/s)</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/spectrum.py" line="132" />
+        <location filename="../gui/simulators/spectrum.py" line="133" />
         <source>Radial velocity</source>
         <translation>Velocidad radial</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/spectrum.py" line="132" />
+        <location filename="../gui/simulators/spectrum.py" line="133" />
         <source>Positive: moving away (redshift). Negative: approaching (blueshift). The relativistic Doppler formula is used, so the speed never reaches c.</source>
         <translation>Positiva: se aleja (corrimiento al rojo). Negativa: se acerca (corrimiento al azul). Se usa la fórmula Doppler relativista, así que la velocidad nunca llega a c.</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/spectrum.py" line="137" />
+        <location filename="../gui/simulators/spectrum.py" line="138" />
         <source>Cosmological redshift</source>
         <translation>Corrimiento al rojo cosmológico</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/spectrum.py" line="137" />
+        <location filename="../gui/simulators/spectrum.py" line="138" />
         <source>How much the universe has expanded since the light left the galaxy: 1 + z = 1/a.</source>
         <translation>Cuánto se ha expandido el universo desde que la luz salió de la galaxia: 1 + z = 1/a.</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/spectrum.py" line="144" />
+        <location filename="../gui/simulators/spectrum.py" line="145" />
         <source>Readout</source>
         <translation>Lectura</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/spectrum.py" line="152" />
+        <location filename="../gui/simulators/spectrum.py" line="153" />
         <source>Challenge: Mystery galaxy</source>
         <translation>Reto: galaxia misteriosa</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/spectrum.py" line="154" />
+        <location filename="../gui/simulators/spectrum.py" line="155" />
         <source>Match the redshift of an unknown galaxy by lining up the lines.</source>
         <translation>Iguala el corrimiento al rojo de una galaxia desconocida alineando las líneas.</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/spectrum.py" line="157" />
-        <source>🔭 New mystery galaxy</source>
-        <translation>🔭 Nueva galaxia misteriosa</translation>
+        <location filename="../gui/simulators/spectrum.py" line="158" />
+        <source>New mystery galaxy</source>
+        <translation>Nueva galaxia misteriosa</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/spectrum.py" line="159" />
+        <location filename="../gui/simulators/spectrum.py" line="161" />
+        <location filename="../gui/widgets/challenge_bar.py" line="64" />
         <source>Check my answer</source>
         <translation>Comprobar mi respuesta</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/spectrum.py" line="193" />
+        <location filename="../gui/simulators/spectrum.py" line="195" />
         <source>Redshift z = &lt;b&gt;{z}&lt;/b&gt;</source>
         <translation>Corrimiento al rojo z = &lt;b&gt;{z}&lt;/b&gt;</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/spectrum.py" line="194" />
+        <location filename="../gui/simulators/spectrum.py" line="196" />
         <source>Every wavelength × &lt;b&gt;{factor}&lt;/b&gt;</source>
         <translation>Cada longitud de onda × &lt;b&gt;{factor}&lt;/b&gt;</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/spectrum.py" line="195" />
+        <location filename="../gui/simulators/spectrum.py" line="197" />
         <source>Hα (656.3 nm) observed at &lt;b&gt;{wavelength} nm&lt;/b&gt; ({band})</source>
         <translation>Hα (656,3 nm) observada en &lt;b&gt;{wavelength} nm&lt;/b&gt; ({band})</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/spectrum.py" line="200" />
+        <location filename="../gui/simulators/spectrum.py" line="202" />
         <source>receding</source>
         <translation>alejándose</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/spectrum.py" line="200" />
+        <location filename="../gui/simulators/spectrum.py" line="202" />
         <source>approaching</source>
         <translation>acercándose</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/spectrum.py" line="200" />
+        <location filename="../gui/simulators/spectrum.py" line="202" />
         <source>at rest</source>
         <translation>en reposo</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/spectrum.py" line="201" />
+        <location filename="../gui/simulators/spectrum.py" line="203" />
         <source>Source is &lt;b&gt;{direction}&lt;/b&gt; at {speed} km/s = {fraction}% of c</source>
         <translation>La fuente está &lt;b&gt;{direction}&lt;/b&gt; a {speed} km/s = {fraction} % de c</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/spectrum.py" line="204" />
+        <location filename="../gui/simulators/spectrum.py" line="206" />
         <source>Simple estimate z ≈ v/c = {z}</source>
         <translation>Estimación sencilla z ≈ v/c = {z}</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/spectrum.py" line="209" />
+        <location filename="../gui/simulators/spectrum.py" line="211" />
         <source>Universe size at emission: &lt;b&gt;{a}&lt;/b&gt; × today</source>
         <translation>Tamaño del universo en la emisión: &lt;b&gt;{a}&lt;/b&gt; × el de hoy</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/spectrum.py" line="210" />
+        <location filename="../gui/simulators/spectrum.py" line="212" />
         <source>Light travelled for &lt;b&gt;{years} billion years&lt;/b&gt;</source>
         <translation>La luz viajó durante &lt;b&gt;{years} miles de millones de años&lt;/b&gt;</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/spectrum.py" line="212" />
+        <location filename="../gui/simulators/spectrum.py" line="214" />
         <source>Universe was &lt;b&gt;{years} billion years&lt;/b&gt; old (Planck 2018)</source>
         <translation>El universo tenía &lt;b&gt;{years} miles de millones de años&lt;/b&gt; (Planck 2018)</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/spectrum.py" line="217" />
+        <location filename="../gui/simulators/spectrum.py" line="219" />
         <source>Laboratory (rest frame)</source>
         <translation>Laboratorio (sistema en reposo)</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/spectrum.py" line="217" />
+        <location filename="../gui/simulators/spectrum.py" line="219" />
         <source>Observed</source>
         <translation>Observado</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/spectrum.py" line="219" />
+        <location filename="../gui/simulators/spectrum.py" line="221" />
         <source>Mystery galaxy</source>
         <translation>Galaxia misteriosa</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/spectrum.py" line="220" />
+        <location filename="../gui/simulators/spectrum.py" line="222" />
         <source>Your guess</source>
         <translation>Tu conjetura</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/spectrum.py" line="228" />
+        <location filename="../gui/simulators/spectrum.py" line="230" />
         <source>&lt;b&gt;Mystery galaxy!&lt;/b&gt; Its spectrum is in the upper strip. Move the redshift slider until the lines in your guess line up with the mystery spectrum, then press &lt;b&gt;Check my answer&lt;/b&gt;.</source>
         <translation>&lt;b&gt;¡Galaxia misteriosa!&lt;/b&gt; Su espectro está en la franja de arriba. Mueve el deslizador del corrimiento al rojo hasta que las líneas de tu conjetura se alineen con el espectro misterioso, y pulsa &lt;b&gt;Comprobar mi respuesta&lt;/b&gt;.</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/spectrum.py" line="242" />
+        <location filename="../gui/simulators/spectrum.py" line="244" />
         <source>&lt;b&gt;Excellent!&lt;/b&gt; The true redshift is z = {truth}. Your guess {guess} is within {error}. The light left this galaxy {years} billion years ago.</source>
         <translation>&lt;b&gt;¡Excelente!&lt;/b&gt; El corrimiento al rojo verdadero es z = {truth}. Tu conjetura {guess} está dentro de {error}. La luz salió de esta galaxia hace {years} miles de millones de años.</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/spectrum.py" line="251" />
+        <location filename="../gui/simulators/spectrum.py" line="253" />
         <source>higher</source>
         <translation>mayor</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/spectrum.py" line="251" />
+        <location filename="../gui/simulators/spectrum.py" line="253" />
         <source>lower</source>
         <translation>menor</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/spectrum.py" line="252" />
+        <location filename="../gui/simulators/spectrum.py" line="254" />
         <source>Not yet: the lines do not match. Try a &lt;b&gt;{hint}&lt;/b&gt; redshift.</source>
         <translation>Todavía no: las líneas no coinciden. Prueba con un corrimiento al rojo &lt;b&gt;{hint}&lt;/b&gt;.</translation>
     </message>
@@ -10410,17 +10412,17 @@ la distancia verdadera más lo que añada el movimiento propio de la galaxia. La
         <translation>&lt;b&gt;Datos simulados.&lt;/b&gt; Estas supernovas se generan dentro de la aplicación para parecerse a los sondeos reales, de modo que puedas repetir tú el análisis de 1998. Cambia la muestra a Pantheon+ para ver las medidas reales.</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/supernova_sim.py" line="159" />
+        <location filename="../gui/simulators/supernova_sim.py" line="175" />
         <source>Best fit: &lt;b&gt;Ωm = {om}, ΩΛ = {ol}&lt;/b&gt;</source>
         <translation>Mejor ajuste: &lt;b&gt;Ωm = {om}, ΩΛ = {ol}&lt;/b&gt;</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/supernova_sim.py" line="160" />
+        <location filename="../gui/simulators/supernova_sim.py" line="176" />
         <source>(flat)</source>
         <translation>(plano)</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/supernova_sim.py" line="161" />
+        <location filename="../gui/simulators/supernova_sim.py" line="177" />
         <source>Deceleration parameter q0 = &lt;b&gt;{q0}&lt;/b&gt; ({trend})&lt;br&gt;Evidence for acceleration: &lt;b&gt;{sigma}σ&lt;/b&gt;&lt;br&gt;Evidence for dark energy (ΩΛ &gt; 0, no flatness assumed): {dark_energy}σ&lt;br&gt;Hubble constant with this calibration: &lt;b&gt;{h0} km/s/Mpc&lt;/b&gt;&lt;br&gt;Number of supernovae: {count}</source>
         <translation>Parámetro de deceleración q0 = &lt;b&gt;{q0}&lt;/b&gt; ({trend})&lt;br&gt;Evidencia de aceleración: &lt;b&gt;{sigma}σ&lt;/b&gt;&lt;br&gt;Evidencia de energía oscura (ΩΛ &gt; 0, sin suponer planitud): {dark_energy}σ&lt;br&gt;Constante de Hubble con esta calibración: &lt;b&gt;{h0} km/s/Mpc&lt;/b&gt;&lt;br&gt;Número de supernovas: {count}</translation>
     </message>
@@ -10641,67 +10643,62 @@ Together they give the effective volume, $V_\mathrm{eff} = V\,[\bar nP/(1+\bar n
 Juntos dan el volumen efectivo, $V_\mathrm{eff} = V\,[\bar nP/(1+\bar nP)]^2$, y el error de la distancia cae como $1/\sqrt{V_\mathrm{eff}}$.</translation>
     </message>
     <message>
-        <location filename="../gui/widgets/challenge_bar.py" line="44" />
+        <location filename="../gui/widgets/challenge_bar.py" line="46" />
         <source>Previous challenge</source>
         <translation>Reto anterior</translation>
     </message>
     <message>
-        <location filename="../gui/widgets/challenge_bar.py" line="48" />
+        <location filename="../gui/widgets/challenge_bar.py" line="51" />
         <source>Next challenge</source>
         <translation>Reto siguiente</translation>
     </message>
     <message>
-        <location filename="../gui/widgets/challenge_bar.py" line="61" />
-        <source>✓  Check my answer</source>
-        <translation>✓  Comprobar mi respuesta</translation>
-    </message>
-    <message>
-        <location filename="../gui/widgets/challenge_bar.py" line="63" />
+        <location filename="../gui/widgets/challenge_bar.py" line="67" />
         <source>Look at the current settings of the simulator and see whether they solve the challenge.</source>
         <translation>Mira los ajustes actuales del simulador y comprueba si resuelven el reto.</translation>
     </message>
     <message>
-        <location filename="../gui/widgets/challenge_bar.py" line="66" />
+        <location filename="../gui/widgets/challenge_bar.py" line="70" />
         <source>Show a hint</source>
         <translation>Mostrar una pista</translation>
     </message>
     <message>
-        <location filename="../gui/widgets/challenge_bar.py" line="97" />
+        <location filename="../gui/widgets/challenge_bar.py" line="101" />
         <source>Challenge {number} of {total}</source>
         <translation>Reto {number} de {total}</translation>
     </message>
     <message>
-        <location filename="../gui/widgets/challenge_bar.py" line="99" />
+        <location filename="../gui/widgets/challenge_bar.py" line="103" />
         <source>{solved} of {total} solved</source>
         <translation>{solved} de {total} resueltos</translation>
     </message>
     <message>
-        <location filename="../gui/widgets/challenge_bar.py" line="104" />
+        <location filename="../gui/widgets/challenge_bar.py" line="108" />
         <source>&lt;b&gt;Solved.&lt;/b&gt;</source>
         <translation>&lt;b&gt;Resuelto.&lt;/b&gt;</translation>
     </message>
     <message>
-        <location filename="../gui/widgets/challenge_bar.py" line="108" />
+        <location filename="../gui/widgets/challenge_bar.py" line="112" />
         <source>&lt;b&gt;Hint.&lt;/b&gt;</source>
         <translation>&lt;b&gt;Pista.&lt;/b&gt;</translation>
     </message>
     <message>
-        <location filename="../gui/widgets/challenge_bar.py" line="119" />
+        <location filename="../gui/widgets/challenge_bar.py" line="123" />
         <source>&lt;b&gt;Solved!&lt;/b&gt;</source>
         <translation>&lt;b&gt;¡Resuelto!&lt;/b&gt;</translation>
     </message>
     <message>
-        <location filename="../gui/widgets/challenge_bar.py" line="121" />
-        <source>Press ▶ for the next challenge.</source>
-        <translation>Pulsa ▶ para el reto siguiente.</translation>
+        <location filename="../gui/widgets/challenge_bar.py" line="125" />
+        <source>Use the arrows above for the next challenge.</source>
+        <translation>Usa las flechas de arriba para el reto siguiente.</translation>
     </message>
     <message>
-        <location filename="../gui/widgets/challenge_bar.py" line="126" />
+        <location filename="../gui/widgets/challenge_bar.py" line="130" />
         <source>Look again at: {fields}.</source>
         <translation>Vuelve a mirar: {fields}.</translation>
     </message>
     <message>
-        <location filename="../gui/widgets/challenge_bar.py" line="127" />
+        <location filename="../gui/widgets/challenge_bar.py" line="131" />
         <source>&lt;b&gt;Not yet.&lt;/b&gt; The simulator is not in the state the challenge asks for.</source>
         <translation>&lt;b&gt;Todavía no.&lt;/b&gt; El simulador no está en el estado que pide el reto.</translation>
     </message>
@@ -10721,99 +10718,100 @@ Juntos dan el volumen efectivo, $V_\mathrm{eff} = V\,[\bar nP/(1+\bar nP)]^2$, y
         <translation>Carga los parámetros de un modelo cosmológico muy conocido.</translation>
     </message>
     <message>
-        <location filename="../gui/widgets/flashcards.py" line="54" />
-        <location filename="../gui/widgets/flashcards.py" line="144" />
+        <location filename="../gui/widgets/flashcards.py" line="55" />
+        <location filename="../gui/widgets/flashcards.py" line="147" />
         <source>What does it mean? Say it to yourself, then turn the card over.</source>
         <translation>¿Qué significa? Dilo en voz baja y después dale la vuelta a la tarjeta.</translation>
     </message>
     <message>
-        <location filename="../gui/widgets/flashcards.py" line="66" />
+        <location filename="../gui/widgets/flashcards.py" line="67" />
         <source>Turn the card over (Space)</source>
         <translation>Dar la vuelta a la tarjeta (Espacio)</translation>
     </message>
     <message>
-        <location filename="../gui/widgets/flashcards.py" line="69" />
-        <source>✗ I did not know it (1)</source>
-        <translation>✗ No lo sabía (1)</translation>
+        <location filename="../gui/widgets/flashcards.py" line="70" />
+        <source>I did not know it (1)</source>
+        <translation>No lo sabía (1)</translation>
     </message>
     <message>
-        <location filename="../gui/widgets/flashcards.py" line="70" />
+        <location filename="../gui/widgets/flashcards.py" line="72" />
         <source>It comes back tomorrow.</source>
         <translation>Vuelve mañana.</translation>
     </message>
     <message>
-        <location filename="../gui/widgets/flashcards.py" line="72" />
-        <source>✓ I knew it (2)</source>
-        <translation>✓ Lo sabía (2)</translation>
+        <location filename="../gui/widgets/flashcards.py" line="74" />
+        <source>I knew it (2)</source>
+        <translation>Lo sabía (2)</translation>
     </message>
     <message>
-        <location filename="../gui/widgets/flashcards.py" line="73" />
+        <location filename="../gui/widgets/flashcards.py" line="76" />
         <source>It comes back later: 3 days, a week, 16 days, 35 days, then never.</source>
         <translation>Vuelve más tarde: 3 días, una semana, 16 días, 35 días, y después nunca.</translation>
     </message>
     <message>
-        <location filename="../gui/widgets/flashcards.py" line="75" />
+        <location filename="../gui/widgets/flashcards.py" line="78" />
         <source>Back to the review page</source>
         <translation>Volver a la página de repaso</translation>
     </message>
     <message>
-        <location filename="../gui/widgets/flashcards.py" line="101" />
+        <location filename="../gui/widgets/flashcards.py" line="104" />
         <source>See also: {terms}</source>
         <translation>Véase también: {terms}</translation>
     </message>
     <message>
-        <location filename="../gui/widgets/flashcards.py" line="137" />
+        <location filename="../gui/widgets/flashcards.py" line="140" />
         <source>All done</source>
         <translation>Todo hecho</translation>
     </message>
     <message>
-        <location filename="../gui/widgets/flashcards.py" line="138" />
+        <location filename="../gui/widgets/flashcards.py" line="141" />
         <source>You knew {known} of {total}. The ones you missed come back tomorrow.</source>
         <translation>Sabías {known} de {total}. Las que fallaste vuelven mañana.</translation>
     </message>
     <message>
-        <location filename="../gui/widgets/flashcards.py" line="141" />
+        <location filename="../gui/widgets/flashcards.py" line="144" />
         <source>Card {number} of {total}</source>
         <translation>Tarjeta {number} de {total}</translation>
     </message>
     <message>
-        <location filename="../gui/widgets/guide_panel.py" line="29" />
+        <location filename="../gui/widgets/guide_panel.py" line="30" />
         <source>GLOSSARY</source>
         <translation>GLOSARIO</translation>
     </message>
     <message>
-        <location filename="../gui/widgets/guide_panel.py" line="34" />
+        <location filename="../gui/widgets/guide_panel.py" line="36" />
         <source>Hide this definition</source>
         <translation>Ocultar esta definición</translation>
     </message>
     <message>
-        <location filename="../gui/widgets/guide_panel.py" line="45" />
+        <location filename="../gui/widgets/guide_panel.py" line="47" />
         <source>Open in Glossary</source>
         <translation>Abrir en el Glosario</translation>
     </message>
     <message>
-        <location filename="../gui/widgets/guide_panel.py" line="84" />
+        <location filename="../gui/widgets/guide_panel.py" line="86" />
         <source>See also:</source>
         <translation>Véase también:</translation>
     </message>
     <message>
-        <location filename="../gui/widgets/guide_panel.py" line="86" />
+        <location filename="../gui/widgets/guide_panel.py" line="88" />
         <source>Lessons:</source>
         <translation>Lecciones:</translation>
     </message>
     <message>
-        <location filename="../gui/widgets/notes_panel.py" line="35" />
-        <location filename="../gui/widgets/notes_panel.py" line="77" />
-        <source>☆  Bookmark this page</source>
-        <translation>☆  Guardar esta página en marcadores</translation>
+        <location filename="../gui/widgets/notes_panel.py" line="36" />
+        <location filename="../gui/widgets/notes_panel.py" line="80" />
+        <location filename="../gui/widgets/notes_panel.py" line="123" />
+        <source>Bookmark this page</source>
+        <translation>Guardar esta página en marcadores</translation>
     </message>
     <message>
-        <location filename="../gui/widgets/notes_panel.py" line="37" />
+        <location filename="../gui/widgets/notes_panel.py" line="39" />
         <source>Keep a link to this page in Notes &amp; bookmarks (Ctrl+D).</source>
         <translation>Conserva un enlace a esta página en Notas y marcadores (Ctrl+D).</translation>
     </message>
     <message>
-        <location filename="../gui/widgets/notes_panel.py" line="44" />
+        <location filename="../gui/widgets/notes_panel.py" line="46" />
         <source>Your notes about this page…
 
 Write down what surprised you, a number you want to remember, or a question to come back to. Notes are saved automatically on this computer.</source>
@@ -10822,83 +10820,78 @@ Write down what surprised you, a number you want to remember, or a question to c
 Apunta lo que te sorprendió, un número que quieras recordar o una pregunta a la que volver. Las notas se guardan automáticamente en este ordenador.</translation>
     </message>
     <message>
-        <location filename="../gui/widgets/notes_panel.py" line="55" />
-        <source>📝  All notes &amp;&amp; bookmarks</source>
-        <translation>📝  Todas las notas &amp;&amp; marcadores</translation>
+        <location filename="../gui/widgets/notes_panel.py" line="57" />
+        <source>All notes &amp;&amp; bookmarks</source>
+        <translation>Todas las notas &amp;&amp; marcadores</translation>
     </message>
     <message>
-        <location filename="../gui/widgets/notes_panel.py" line="56" />
+        <location filename="../gui/widgets/notes_panel.py" line="59" />
         <source>Open the page that lists every note and bookmark, and lets you export them.</source>
         <translation>Abre la página que lista todas las notas y marcadores, y te deja exportarlos.</translation>
     </message>
     <message>
-        <location filename="../gui/widgets/notes_panel.py" line="75" />
+        <location filename="../gui/widgets/notes_panel.py" line="78" />
         <source>This page cannot be bookmarked.</source>
         <translation>Esta página no se puede guardar en marcadores.</translation>
     </message>
     <message>
-        <location filename="../gui/widgets/notes_panel.py" line="89" />
+        <location filename="../gui/widgets/notes_panel.py" line="93" />
         <source>Saved automatically.</source>
         <translation>Guardado automáticamente.</translation>
     </message>
     <message>
-        <location filename="../gui/widgets/notes_panel.py" line="97" />
+        <location filename="../gui/widgets/notes_panel.py" line="101" />
         <source>Saved on this computer.</source>
         <translation>Guardado en este ordenador.</translation>
     </message>
     <message>
-        <location filename="../gui/widgets/notes_panel.py" line="106" />
+        <location filename="../gui/widgets/notes_panel.py" line="110" />
         <source>Saving…</source>
         <translation>Guardando…</translation>
     </message>
     <message>
-        <location filename="../gui/widgets/notes_panel.py" line="119" />
-        <source>★  Bookmarked</source>
-        <translation>★  En marcadores</translation>
-    </message>
-    <message>
-        <location filename="../gui/widgets/plot.py" line="65" />
+        <location filename="../gui/widgets/plot.py" line="66" />
         <source>Save image…</source>
         <translation>Guardar imagen…</translation>
     </message>
     <message>
-        <location filename="../gui/widgets/plot.py" line="66" />
+        <location filename="../gui/widgets/plot.py" line="67" />
         <source>Save this plot as a PNG or SVG image.</source>
         <translation>Guarda esta gráfica como imagen PNG o SVG.</translation>
     </message>
     <message>
-        <location filename="../gui/widgets/plot.py" line="70" />
+        <location filename="../gui/widgets/plot.py" line="71" />
         <source>Export data (CSV)…</source>
         <translation>Exportar los datos (CSV)…</translation>
     </message>
     <message>
-        <location filename="../gui/widgets/plot.py" line="71" />
+        <location filename="../gui/widgets/plot.py" line="72" />
         <source>Save the numbers behind this plot as a CSV file (opens in Excel).</source>
         <translation>Guarda los números que hay detrás de esta gráfica en un archivo CSV (se abre en Excel).</translation>
     </message>
     <message>
-        <location filename="../gui/widgets/plot.py" line="112" />
+        <location filename="../gui/widgets/plot.py" line="141" />
         <source>Save plot</source>
         <translation>Guardar la gráfica</translation>
     </message>
     <message>
-        <location filename="../gui/widgets/plot.py" line="113" />
+        <location filename="../gui/widgets/plot.py" line="142" />
         <source>PNG image (*.png);;SVG vector image (*.svg)</source>
         <translation>Imagen PNG (*.png);;Imagen vectorial SVG (*.svg)</translation>
     </message>
     <message>
-        <location filename="../gui/widgets/plot.py" line="120" />
-        <location filename="../gui/widgets/plot.py" line="133" />
+        <location filename="../gui/widgets/plot.py" line="158" />
+        <location filename="../gui/widgets/plot.py" line="174" />
         <source>Could not save</source>
         <translation>No se pudo guardar</translation>
     </message>
     <message>
-        <location filename="../gui/widgets/plot.py" line="125" />
+        <location filename="../gui/widgets/plot.py" line="166" />
         <source>Export data</source>
         <translation>Exportar los datos</translation>
     </message>
     <message>
-        <location filename="../gui/widgets/plot.py" line="126" />
+        <location filename="../gui/widgets/plot.py" line="167" />
         <source>CSV file (*.csv)</source>
         <translation>Archivo CSV (*.csv)</translation>
     </message>
@@ -10908,116 +10901,106 @@ Apunta lo que te sorprendió, un número que quieras recordar o una pregunta a l
         <translation>Pulsa para abrir la lección.</translation>
     </message>
     <message>
-        <location filename="../gui/widgets/quiz.py" line="65" />
-        <location filename="../gui/widgets/quiz.py" line="154" />
+        <location filename="../gui/widgets/quiz.py" line="66" />
+        <location filename="../gui/widgets/quiz.py" line="157" />
         <source>Check your understanding</source>
         <translation>Comprueba lo que has entendido</translation>
     </message>
     <message>
-        <location filename="../gui/widgets/quiz.py" line="71" />
-        <location filename="../gui/widgets/quiz.py" line="155" />
+        <location filename="../gui/widgets/quiz.py" line="72" />
+        <location filename="../gui/widgets/quiz.py" line="158" />
         <source>Start the quiz</source>
         <translation>Empezar el cuestionario</translation>
     </message>
     <message>
-        <location filename="../gui/widgets/quiz.py" line="107" />
+        <location filename="../gui/widgets/quiz.py" line="108" />
         <source>Check answer</source>
         <translation>Comprobar la respuesta</translation>
     </message>
     <message>
-        <location filename="../gui/widgets/quiz.py" line="110" />
-        <location filename="../gui/widgets/quiz.py" line="239" />
+        <location filename="../gui/widgets/quiz.py" line="111" />
+        <location filename="../gui/widgets/quiz.py" line="242" />
         <source>Next question</source>
         <translation>Pregunta siguiente</translation>
     </message>
     <message>
-        <location filename="../gui/widgets/quiz.py" line="130" />
+        <location filename="../gui/widgets/quiz.py" line="131" />
         <source>Try again</source>
         <translation>Volver a intentarlo</translation>
     </message>
     <message>
-        <location filename="../gui/widgets/quiz.py" line="133" />
+        <location filename="../gui/widgets/quiz.py" line="134" />
         <source>Review the lesson</source>
         <translation>Repasar la lección</translation>
     </message>
     <message>
-        <location filename="../gui/widgets/quiz.py" line="136" />
-        <source>Next lesson ▶</source>
-        <translation>Lección siguiente ▶</translation>
-    </message>
-    <message>
-        <location filename="../gui/widgets/quiz.py" line="157" />
+        <location filename="../gui/widgets/quiz.py" line="160" />
         <source>This quiz has {count} questions about “{lesson}”. After each answer you will see an explanation. Score at least {score} to complete the lesson; you can retry as often as you like.</source>
         <translation>Este cuestionario tiene {count} preguntas sobre «{lesson}». Después de cada respuesta verás una explicación. Acierta al menos {score} para completar la lección; puedes reintentarlo tantas veces como quieras.</translation>
     </message>
     <message>
-        <location filename="../gui/widgets/quiz.py" line="161" />
+        <location filename="../gui/widgets/quiz.py" line="164" />
         <source>Your best score so far: &lt;b&gt;{score}&lt;/b&gt;</source>
         <translation>Tu mejor nota hasta ahora: &lt;b&gt;{score}&lt;/b&gt;</translation>
     </message>
     <message>
-        <location filename="../gui/widgets/quiz.py" line="170" />
+        <location filename="../gui/widgets/quiz.py" line="173" />
         <source>Time to review</source>
         <translation>Hora de repasar</translation>
     </message>
     <message>
-        <location filename="../gui/widgets/quiz.py" line="171" />
-        <source>Start the review</source>
-        <translation>Empezar el repaso</translation>
-    </message>
-    <message>
-        <location filename="../gui/widgets/quiz.py" line="173" />
+        <location filename="../gui/widgets/quiz.py" line="176" />
         <source>{count} question(s) you once got wrong are due today, from {lessons} lesson(s). Answer one correctly and it comes back later still; get it wrong and it starts again tomorrow.</source>
         <translation>{count} pregunta(s) que fallaste alguna vez tocan hoy, de {lessons} lección(es). Si aciertas una, vuelve aún más tarde; si fallas, empieza otra vez mañana.</translation>
     </message>
     <message>
-        <location filename="../gui/widgets/quiz.py" line="196" />
+        <location filename="../gui/widgets/quiz.py" line="199" />
         <source>Question {number} of {total}</source>
         <translation>Pregunta {number} de {total}</translation>
     </message>
     <message>
-        <location filename="../gui/widgets/quiz.py" line="197" />
-        <location filename="../gui/widgets/quiz.py" line="235" />
+        <location filename="../gui/widgets/quiz.py" line="200" />
+        <location filename="../gui/widgets/quiz.py" line="238" />
         <source>Correct so far: {count}</source>
         <translation>Aciertos hasta ahora: {count}</translation>
     </message>
     <message>
-        <location filename="../gui/widgets/quiz.py" line="228" />
+        <location filename="../gui/widgets/quiz.py" line="231" />
         <source>&lt;b&gt;Correct!&lt;/b&gt;</source>
         <translation>&lt;b&gt;¡Correcto!&lt;/b&gt;</translation>
     </message>
     <message>
-        <location filename="../gui/widgets/quiz.py" line="231" />
+        <location filename="../gui/widgets/quiz.py" line="234" />
         <source>&lt;b&gt;Not quite.&lt;/b&gt; The right answer is &lt;b&gt;{answer}&lt;/b&gt;.</source>
         <translation>&lt;b&gt;No exactamente.&lt;/b&gt; La respuesta correcta es &lt;b&gt;{answer}&lt;/b&gt;.</translation>
     </message>
     <message>
-        <location filename="../gui/widgets/quiz.py" line="239" />
+        <location filename="../gui/widgets/quiz.py" line="242" />
         <source>See results</source>
         <translation>Ver los resultados</translation>
     </message>
     <message>
-        <location filename="../gui/widgets/quiz.py" line="250" />
+        <location filename="../gui/widgets/quiz.py" line="253" />
         <source>You scored {correct} / {total} ({score})</source>
         <translation>Has sacado {correct} / {total} ({score})</translation>
     </message>
     <message>
-        <location filename="../gui/widgets/quiz.py" line="263" />
+        <location filename="../gui/widgets/quiz.py" line="266" />
         <source>&lt;b&gt;Lesson complete!&lt;/b&gt; Great work. The next lessons that build on this one are now ready.</source>
         <translation>&lt;b&gt;¡Lección completada!&lt;/b&gt; Buen trabajo. Las siguientes lecciones que se apoyan en esta ya están listas.</translation>
     </message>
     <message>
-        <location filename="../gui/widgets/quiz.py" line="269" />
+        <location filename="../gui/widgets/quiz.py" line="272" />
         <source>You need {score} to complete the lesson. Review the explanations, re-read the parts that felt unclear, and try again.</source>
         <translation>Necesitas {score} para completar la lección. Repasa las explicaciones, vuelve a leer las partes que no quedaron claras e inténtalo otra vez.</translation>
     </message>
     <message>
-        <location filename="../gui/widgets/quiz.py" line="281" />
+        <location filename="../gui/widgets/quiz.py" line="284" />
         <source>&lt;b&gt;Review done.&lt;/b&gt; {count} question(s) go back to the start and return tomorrow; the rest have moved further out.</source>
         <translation>&lt;b&gt;Repaso hecho.&lt;/b&gt; {count} pregunta(s) vuelven al principio y regresan mañana; las demás se han alejado más.</translation>
     </message>
     <message>
-        <location filename="../gui/widgets/quiz.py" line="286" />
+        <location filename="../gui/widgets/quiz.py" line="289" />
         <source>&lt;b&gt;All of them.&lt;/b&gt; Every card moved up a box, and the ones that passed the last box have left the deck for good.</source>
         <translation>&lt;b&gt;Todas.&lt;/b&gt; Cada tarjeta subió una caja, y las que pasaron la última caja han dejado el mazo para siempre.</translation>
     </message>
@@ -11035,12 +11018,6 @@ Apunta lo que te sorprendió, un número que quieras recordar o una pregunta a l
         <location filename="../gui/widgets/tour.py" line="52" />
         <source>Skip tour</source>
         <translation>Saltar el recorrido</translation>
-    </message>
-    <message>
-        <location filename="../gui/widgets/tour.py" line="54" />
-        <location filename="../gui/widgets/tour.py" line="87" />
-        <source>Next</source>
-        <translation>Siguiente</translation>
     </message>
     <message>
         <location filename="../gui/widgets/tour.py" line="82" />

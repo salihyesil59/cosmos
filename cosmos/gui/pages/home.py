@@ -124,6 +124,7 @@ class HomePage(QWidget):
         self.continue_btn.setObjectName("continueButton")
         self.continue_btn.setProperty("role", "primary")
         self.continue_btn.setMinimumHeight(38)
+        nav_icons.set_glyph(self.continue_btn, "continue", 16)
         self.continue_btn.clicked.connect(self._continue)
         self.continue_hint = muted_label("")
         tour = QPushButton(tr("Take the guided tour"))
@@ -136,6 +137,7 @@ class HomePage(QWidget):
         self.review_btn = QPushButton()
         self.review_btn.setToolTip(tr("Questions you got wrong, brought back just before you would "
                                       "forget them (Ctrl+Shift+R)"))
+        nav_icons.set_glyph(self.review_btn, "review", 16)
         self.review_btn.clicked.connect(lambda: ctx.navigate("review"))
         row.insertWidget(1, self.review_btn)
         self.layout_.addWidget(hero)
@@ -252,14 +254,14 @@ class HomePage(QWidget):
         else:
             lesson = cur.lessons[nxt]
             verb = tr("Start learning") if done == 0 else tr("Continue learning")
-            self.continue_btn.setText(f"▶  {verb}: {lesson.id} {lesson.title}")
+            self.continue_btn.setText(f"{verb}: {lesson.id} {lesson.title}")
             self.continue_hint.setText(lesson.summary)
             self._next = nxt
         self._refresh_today()
         # G16: only offer a review when there is one to do.
         due = len(store.due_reviews())
         self.review_btn.setVisible(bool(due))
-        self.review_btn.setText("🔁  " + tr("Review {count} question(s)").format(count=due))
+        self.review_btn.setText(tr("Review {count} question(s)").format(count=due))
         for level, bar, status in self.level_widgets:
             d, t = store.level_progress(cur, level.number)
             bar.setRange(0, t)
@@ -270,7 +272,7 @@ class HomePage(QWidget):
         info = self.ctx.store.study_summary()
         streak, steps, goal = info["streak"], info["today"], info["goal"]
         if streak:
-            self.streak_label.setText("🔥 " + tr("{days}-day streak").format(days=streak))
+            self.streak_label.setText(tr("{days}-day streak").format(days=streak))
         else:
             self.streak_label.setText(tr("Start a streak today"))
         if goal:

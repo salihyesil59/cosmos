@@ -7,6 +7,7 @@ from PySide6.QtCore import Qt
 from PySide6.QtWidgets import QCheckBox, QGroupBox, QHBoxLayout, QLabel, QPushButton, QSplitter, QVBoxLayout
 
 from cosmos.gui.labels import physics
+from cosmos.gui import nav_icons
 from cosmos.gui.simulators.base import SimulatorBase
 from cosmos.gui.theme import theme
 from cosmos.gui.widgets.common import ParameterSlider, PresetSelector, labelled_row
@@ -56,7 +57,8 @@ class ExpansionSimulator(SimulatorBase):
 
         pins = QGroupBox(tr("Compare"))
         pl = QHBoxLayout(pins)
-        pin = QPushButton(tr("📌 Pin curve"))
+        pin = QPushButton(tr("Pin curve"))
+        nav_icons.set_glyph(pin, "pin", 14)
         pin.setToolTip(tr("Keep the current a(t) curve on the plot to compare with other models (up to 5)."))
         pin.clicked.connect(self._pin)
         clear = QPushButton(tr("Clear pins"))

@@ -18,6 +18,7 @@ from PySide6.QtWidgets import (
     QWidget,
 )
 
+from cosmos.gui import nav_icons
 from cosmos.gui.simulators.base import SimulatorBase
 from cosmos.gui.theme import theme
 from cosmos.gui.widgets.common import Banner, ParameterSlider
@@ -154,7 +155,8 @@ class SpectrumSimulator(SimulatorBase):
         hint = QLabel(tr("Match the redshift of an unknown galaxy by lining up the lines."))
         hint.setWordWrap(True)
         cl.addWidget(hint)
-        self.new_challenge = QPushButton(tr("🔭 New mystery galaxy"))
+        self.new_challenge = QPushButton(tr("New mystery galaxy"))
+        nav_icons.set_glyph(self.new_challenge, "telescope", 14)
         self.new_challenge.clicked.connect(self._start_challenge)
         self.check = QPushButton(tr("Check my answer"))
         self.check.setEnabled(False)

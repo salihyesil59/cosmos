@@ -7,6 +7,7 @@ from PySide6.QtCore import Qt
 from PySide6.QtWidgets import QComboBox, QGroupBox, QHBoxLayout, QLabel, QPushButton, QTabWidget, QVBoxLayout
 
 from cosmos.gui.labels import physics
+from cosmos.gui import nav_icons
 from cosmos.gui.simulators.base import SimulatorBase
 from cosmos.gui.theme import theme
 from cosmos.gui.widgets.common import Banner, ParameterSlider, labelled_row, muted_label
@@ -116,7 +117,8 @@ class LadderSimulator(SimulatorBase):
         self.controls.addWidget(rung3)
 
         row = QHBoxLayout()
-        observe = QPushButton(tr("🔭 New observation"))
+        observe = QPushButton(tr("New observation"))
+        nav_icons.set_glyph(observe, "telescope", 14)
         observe.setProperty("role", "primary")
         observe.setToolTip(tr("The same programme with new random measurement errors."))
         observe.clicked.connect(self._new_observation)

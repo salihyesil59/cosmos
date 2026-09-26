@@ -16,6 +16,7 @@ from PySide6.QtWidgets import (
 )
 
 from cosmos.content.loader import load_history
+from cosmos.gui import nav_icons
 from cosmos.gui.context import AppContext
 from cosmos.gui.theme import theme
 from cosmos.gui.widgets.common import card, muted_label, title_label
@@ -84,7 +85,7 @@ class HistoryPage(QWidget):
         tl.addWidget(self.timeline_scroll)
         self.timeline_count = muted_label("")
         tl.addWidget(self.timeline_count)
-        self.tabs.addTab(timeline_host, "🕰  " + tr("Timeline"))
+        self.tabs.addTab(timeline_host, tr("Timeline"))
 
         people_host = QWidget()
         pl = QHBoxLayout(people_host)
@@ -100,7 +101,8 @@ class HistoryPage(QWidget):
         self.person_view.lessonRequested.connect(lambda i: ctx.navigate(f"lesson:{i}"))
         self.person_view.glossaryRequested.connect(ctx.signals.glossaryRequested)
         pl.addWidget(self.person_view, 2)
-        self.tabs.addTab(people_host, "👩‍🔬  " + tr("Scientists"))
+        self.tabs.addTab(people_host, tr("Scientists"))
+        nav_icons.set_tab_glyphs(self.tabs, ("timeline", "people"))
 
         self._refresh()
         if self.scientists:
@@ -190,7 +192,9 @@ class HistoryPage(QWidget):
         layout.addLayout(text, 1)
         if event.lesson in self.ctx.curriculum.lessons:
             lesson = self.ctx.curriculum.lessons[event.lesson]
-            button = QPushButton(f"{event.lesson} ▶")
+            button = QPushButton(event.lesson)
+            button.setLayoutDirection(Qt.RightToLeft)      # the arrow after the lesson id
+            nav_icons.set_glyph(button, "forward", 14)
             button.setToolTip(tr("Open {lesson}").format(lesson=f"{event.lesson} {lesson.title}"))
             button.clicked.connect(lambda _=False, lid=event.lesson: self.ctx.navigate(f"lesson:{lid}"))
             layout.addWidget(button, 0, Qt.AlignTop)

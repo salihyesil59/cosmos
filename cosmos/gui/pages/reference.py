@@ -17,6 +17,7 @@ from PySide6.QtWidgets import (
 )
 
 from cosmos.content.loader import load_formulas
+from cosmos.gui import nav_icons
 from cosmos.gui.context import AppContext
 from cosmos.gui.widgets.common import ParameterSlider, labelled_row, muted_label, title_label
 from cosmos.gui.widgets.rich_browser import RichBrowser
@@ -170,7 +171,7 @@ class ReferencePage(QWidget):
         fl.addWidget(self.search)
         self.formula_view = self._browser()
         fl.addWidget(self.formula_view, 1)
-        self.tabs.addTab(formulas_tab, "∑  " + tr("Formulas"))
+        self.tabs.addTab(formulas_tab, tr("Formulas"))
 
         # --- constants and units
         units_tab = QWidget()
@@ -182,15 +183,21 @@ class ReferencePage(QWidget):
         self.constants_view = self._browser()
         ul.addWidget(self.constants_view, 1)
         # "&" in a tab label would turn into a keyboard mnemonic.
-        self.tabs.addTab(units_tab, "⚖  " + tr("Constants && units"))
+        self.tabs.addTab(units_tab, tr("Constants && units"))
 
         # --- models
         self.models_view = self._browser()
-        self.tabs.addTab(self.models_view, "🌌  " + tr("Models"))
+        self.tabs.addTab(self.models_view, tr("Models"))
 
         # --- data and methods (V1)
         self.data_view = self._browser()
-        self.tabs.addTab(self.data_view, "◈  " + tr("Data && methods"))
+        self.tabs.addTab(self.data_view, tr("Data && methods"))
+
+        # Drawn icons rather than symbols in the label: a sigma and a pair of scales
+        # come out of whatever font is to hand, and the galaxy came out as a colour
+        # emoji (D3). The names are left on the tab widget, so a theme change can
+        # redraw them in its own colours.
+        nav_icons.set_tab_glyphs(self.tabs, ("reference", "constants", "models", "data"))
 
         # Filled on the first visit (E12): rendering these needs matplotlib and the
         # physics engine, and nothing on the home page wants either.

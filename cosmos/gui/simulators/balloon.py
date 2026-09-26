@@ -9,6 +9,7 @@ from PySide6.QtCore import QPointF, QRectF, Qt, QTimer, Signal
 from PySide6.QtGui import QColor, QFont, QPainter, QPainterPath, QPen
 from PySide6.QtWidgets import QCheckBox, QGroupBox, QHBoxLayout, QLabel, QPushButton, QSizePolicy, QVBoxLayout, QWidget
 
+from cosmos.gui import nav_icons
 from cosmos.gui.simulators.base import SimulatorBase
 from cosmos.gui.theme import theme
 from cosmos.gui.widgets.common import ParameterSlider
@@ -162,11 +163,13 @@ class BalloonSimulator(SimulatorBase):
         play_box = QGroupBox(tr("Expansion"))
         pl = QVBoxLayout(play_box)
         row = QHBoxLayout()
-        self.play = QPushButton(tr("▶ Play"))
+        self.play = QPushButton(tr("Play"))
         self.play.setCheckable(True)
         self.play.setProperty("role", "primary")
+        nav_icons.set_glyph(self.play, "continue", 14)
         self.play.toggled.connect(self._toggle)
-        reset = QPushButton(tr("⟲ Reset"))
+        reset = QPushButton(tr("Reset"))
+        nav_icons.set_glyph(reset, "reset", 14)
         reset.clicked.connect(self._reset)
         row.addWidget(self.play)
         row.addWidget(reset)
@@ -194,7 +197,8 @@ class BalloonSimulator(SimulatorBase):
         self.arrow_box.setToolTip(tr("Arrow length ∝ recession speed ∝ distance from the galaxy you stand on."))
         sl.addWidget(self.grid_box)
         sl.addWidget(self.arrow_box)
-        self.emit_btn = QPushButton(tr("💡 Emit light"))
+        self.emit_btn = QPushButton(tr("Emit light"))
+        nav_icons.set_glyph(self.emit_btn, "guide", 14)
         self.emit_btn.setToolTip(tr("Emit a light wave now; watch its wavelength grow as the universe expands."))
         self.emit_btn.clicked.connect(self._emit_light)
         sl.addWidget(self.emit_btn)
@@ -229,7 +233,8 @@ class BalloonSimulator(SimulatorBase):
         self.canvas.update()
 
     def _toggle(self, on: bool) -> None:
-        self.play.setText(tr("⏸ Pause") if on else tr("▶ Play"))
+        self.play.setText(tr("Pause") if on else tr("Play"))
+        nav_icons.set_glyph(self.play, "pause" if on else "continue", 14)
         if on:
             if self.scale.value() >= A_END - 1e-6:
                 self.scale.setValue(A_START)

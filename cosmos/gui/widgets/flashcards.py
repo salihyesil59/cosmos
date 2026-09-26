@@ -13,6 +13,7 @@ from dataclasses import dataclass
 from PySide6.QtCore import Qt, Signal
 from PySide6.QtWidgets import QHBoxLayout, QLabel, QPushButton, QVBoxLayout, QWidget
 
+from cosmos.gui import nav_icons
 from cosmos.gui.widgets.common import card, muted_label, title_label
 from cosmos.i18n import tr
 
@@ -66,10 +67,12 @@ class FlashcardSession(QWidget):
         self.reveal_btn = QPushButton(tr("Turn the card over (Space)"))
         self.reveal_btn.setProperty("role", "primary")
         self.reveal_btn.clicked.connect(self.reveal)
-        self.missed_btn = QPushButton(tr("✗ I did not know it (1)"))
+        self.missed_btn = QPushButton(tr("I did not know it (1)"))
+        nav_icons.set_glyph(self.missed_btn, "cross", 14)
         self.missed_btn.setToolTip(tr("It comes back tomorrow."))
         self.missed_btn.clicked.connect(lambda: self.judge(False))
-        self.knew_btn = QPushButton(tr("✓ I knew it (2)"))
+        self.knew_btn = QPushButton(tr("I knew it (2)"))
+        nav_icons.set_glyph(self.knew_btn, "check", 14)
         self.knew_btn.setToolTip(tr("It comes back later: 3 days, a week, 16 days, 35 days, then never."))
         self.knew_btn.clicked.connect(lambda: self.judge(True))
         self.back_btn = QPushButton(tr("Back to the review page"))

@@ -5,6 +5,7 @@ from __future__ import annotations
 from PySide6.QtCore import QTimer, Signal
 from PySide6.QtWidgets import QHBoxLayout, QLabel, QPushButton, QTextEdit, QVBoxLayout, QWidget
 
+from cosmos.gui import nav_icons
 from cosmos.gui.context import AppContext
 from cosmos.gui.routes import is_noteworthy, route_title
 from cosmos.gui.widgets.common import muted_label
@@ -32,7 +33,8 @@ class NotesPanel(QWidget):
         layout.addWidget(self.page_label)
 
         row = QHBoxLayout()
-        self.bookmark_btn = QPushButton(tr("☆  Bookmark this page"))
+        self.bookmark_btn = QPushButton(tr("Bookmark this page"))
+        nav_icons.set_glyph(self.bookmark_btn, "bookmark", 15)
         self.bookmark_btn.setCheckable(True)
         self.bookmark_btn.setToolTip(tr("Keep a link to this page in Notes & bookmarks (Ctrl+D)."))
         self.bookmark_btn.clicked.connect(self._toggle_bookmark)
@@ -52,7 +54,8 @@ class NotesPanel(QWidget):
         self.status = muted_label("")
         layout.addWidget(self.status)
         # "&" in a button label would become a keyboard mnemonic.
-        all_notes = QPushButton(tr("📝  All notes && bookmarks"))
+        all_notes = QPushButton(tr("All notes && bookmarks"))
+        nav_icons.set_glyph(all_notes, "notes", 15)
         all_notes.setToolTip(tr("Open the page that lists every note and bookmark, and lets you export them."))
         all_notes.clicked.connect(lambda: ctx.navigate("notes"))
         layout.addWidget(all_notes)
@@ -74,7 +77,8 @@ class NotesPanel(QWidget):
         if not enabled:
             self.page_label.setText(tr("This page cannot be bookmarked."))
             self.bookmark_btn.setChecked(False)
-            self.bookmark_btn.setText(tr("☆  Bookmark this page"))
+            self.bookmark_btn.setText(tr("Bookmark this page"))
+            nav_icons.set_glyph(self.bookmark_btn, "bookmark", 15)
             self.editor.blockSignals(True)
             self.editor.setPlainText("")
             self.editor.blockSignals(False)
@@ -116,4 +120,5 @@ class NotesPanel(QWidget):
     def _refresh_bookmark(self) -> None:
         marked = self.ctx.store.is_bookmarked(self.route)
         self.bookmark_btn.setChecked(marked)
-        self.bookmark_btn.setText(tr("★  Bookmarked") if marked else "☆  Bookmark this page")
+        self.bookmark_btn.setText(tr("Bookmarked") if marked else tr("Bookmark this page"))
+        nav_icons.set_glyph(self.bookmark_btn, "bookmarked" if marked else "bookmark", 15)

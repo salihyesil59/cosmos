@@ -19,6 +19,7 @@ from PySide6.QtWidgets import (
 )
 
 from cosmos import review
+from cosmos.gui import nav_icons
 from cosmos.gui.context import AppContext
 from cosmos.gui.theme import theme
 from cosmos.gui.widgets.common import card, muted_label, title_label
@@ -89,8 +90,10 @@ class ReviewPage(QWidget):
         self.due_detail = muted_label("")
         self.due_detail.setWordWrap(True)
         bl.addWidget(self.due_detail)
-        self.start_btn = QPushButton(tr("Start the review ▶"))
+        self.start_btn = QPushButton(tr("Start the review"))
         self.start_btn.setProperty("role", "primary")
+        self.start_btn.setLayoutDirection(Qt.RightToLeft)     # the arrow after the words
+        nav_icons.set_glyph(self.start_btn, "continue", 14)
         self.start_btn.clicked.connect(self.start)
         bl.addWidget(self.start_btn, 0, Qt.AlignLeft)
         ol.addWidget(self.banner_card)
@@ -102,8 +105,10 @@ class ReviewPage(QWidget):
         self.flash_detail.setWordWrap(True)
         fl.addWidget(self.flash_detail)
         flash_buttons = QHBoxLayout()
-        self.flash_btn = QPushButton(tr("Start the flashcards ▶"))
+        self.flash_btn = QPushButton(tr("Start the flashcards"))
         self.flash_btn.setProperty("role", "primary")
+        self.flash_btn.setLayoutDirection(Qt.RightToLeft)
+        nav_icons.set_glyph(self.flash_btn, "continue", 14)
         self.flash_btn.clicked.connect(self.start_flashcards)
         flash_buttons.addWidget(self.flash_btn)
         self.glossary_btn = QPushButton(tr("Choose terms in the Glossary"))
