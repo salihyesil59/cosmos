@@ -82,7 +82,9 @@ def test_no_simulator_plot_needs_colour_vision(window_for_styles):
         window.navigate(f"sim:{sim_id}")
         for _ in range(18):
             QApplication.instance().processEvents()
-        for plot in window.stack.currentWidget().findChildren(PlotWidget):
+        page = window.stack.currentWidget()
+        show_every_tab(page)                 # R2: an undrawn figure has no lines to clash
+        for plot in page.findChildren(PlotWidget):
             if clashes := look_alike(plot.figure):
                 guilty[f"{sim_id}/{plot._name}"] = clashes
     assert not guilty, ("plots telling their lines apart by colour alone:\n  "
@@ -192,3 +194,36 @@ def test_it_survives_being_applied_twice(qt_app):
     once = [_style_key(line) for line in ax.lines]
     separate_by_style(ax)
     assert [_style_key(line) for line in ax.lines] == once
+
+
+def show_every_tab(page) -> None:
+    """Open each tab once, so the plots inside them are actually drawn (`R2`).
+
+    A plot in a tab nobody has opened is no longer drawn until it is shown, which
+    is the point of the change — but a sweep that reads those figures would find
+    them empty and pass without checking anything.
+    """
+    from PySide6.QtWidgets import QApplication, QTabWidget
+
+    for _ in range(2):                       # tabs inside tabs
+        for tabs in page.findChildren(QTabWidget):
+            for index in range(tabs.count()):
+                tabs.setCurrentIndex(index)
+                QApplication.instance().processEvents()
+    QApplication.instance().processEvents()
+    # Give Qt time to deliver the show events: a plot deferred because its canvas
+    # had no size yet is drawn when it arrives, and how many turns of the loop that
+    # takes depends on what else the process has open.
+    from cosmos.gui.widgets.plot import PlotWidget
+
+    # Simulators coalesce redraws behind a 40 ms timer, so a sweep that only calls
+    # processEvents is racing it: the timer needs the clock to move, not the queue
+    # to be drained. Wait on both.
+    from PySide6.QtTest import QTest
+
+    for _ in range(40):
+        waiting = [p for p in page.findChildren(PlotWidget)
+                   if not p.in_a_closed_tab() and not p.figure.get_axes()]
+        if not waiting:
+            break
+        QTest.qWait(20)

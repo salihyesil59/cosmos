@@ -360,7 +360,7 @@ started as a crash. ★ marks the ones worth doing first.
   or a backup from another version can produce — takes the whole app down on
   start-up with an `AttributeError`. It should keep what it can read, say what it
   discarded, and open
-- [ ] ★ `R2` No page that makes you wait. `A5` fixed the Reference page; the same
+- [x] ★ `R2` No page that makes you wait. `A5` fixed the Reference page; the same
   measurement across the app says 28 of 44 pages take longer than 0.2 seconds to
   open and two take nearly four — the CMB Sky Viewer at 3.9s and the Redshift
   Survey Slice at 3.5s, both of them loading or generating before they draw

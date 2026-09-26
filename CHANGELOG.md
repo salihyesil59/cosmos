@@ -10,6 +10,26 @@ format may still change between releases.
 
 ### Fixed
 
+- **The slowest pages open three to four times faster** (`R2`). `A5` fixed the
+  Reference page; measuring the rest found 28 of 44 pages taking longer than a
+  fifth of a second and two taking nearly four. The CMB Sky Viewer is down from
+  3.9 seconds to 0.9 and the Redshift Survey Slice from 3.5 to 1.4, with the
+  Cosmology Calculator, the MCMC Explorer and the Halo Mass Function all roughly
+  halved. Nothing now takes longer than a second and a half.
+- **A plot in a tab nobody has opened is not drawn** (`R2`). Sixteen simulators
+  put their plots in tabs and every recompute drew all of them, which was most of
+  the four seconds. The test asks whether the plot sits in a stack showing
+  something else rather than whether it is visible — while a page is being built
+  nothing on it is visible yet, and that answer would defer the very plot the
+  learner is about to look at.
+- **The microwave sky is blurred with one Fourier transform** (`R2`). Longitude
+  wraps, so blurring along it is a circular convolution, which is a multiplication
+  in Fourier space and lets every row of the map carry its own width at once. The
+  old code built and applied a kernel per row — 512 of them per smoothing scale,
+  3591 calls to open one page. Agreement with the loop it replaces is better than
+  0.3% on the rms, the difference being that the loop cut its kernel off at three
+  sigma and this does not.
+
 - **A badly written save file no longer stops the app opening** (`R1`). A
   `progress.json` holding a value of the wrong type — a list where a dictionary
   belongs, which a save interrupted half way through or a file from a version that

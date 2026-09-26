@@ -165,7 +165,42 @@ def plots_on(window, route):
     window.navigate(route)
     for _ in range(20):
         QApplication.instance().processEvents()
-    return window.stack.currentWidget().findChildren(PlotWidget)
+    page = window.stack.currentWidget()
+    show_every_tab(page)
+    return page.findChildren(PlotWidget)
+
+def show_every_tab(page) -> None:
+    """Open each tab once, so the plots inside them are actually drawn (`R2`).
+
+    A plot in a tab nobody has opened is no longer drawn until it is shown, which
+    is the point of the change — but a sweep that reads those figures would find
+    them empty and pass without checking anything.
+    """
+    from PySide6.QtWidgets import QApplication, QTabWidget
+
+    for _ in range(2):                       # tabs inside tabs
+        for tabs in page.findChildren(QTabWidget):
+            for index in range(tabs.count()):
+                tabs.setCurrentIndex(index)
+                QApplication.instance().processEvents()
+    QApplication.instance().processEvents()
+    # Give Qt time to deliver the show events: a plot deferred because its canvas
+    # had no size yet is drawn when it arrives, and how many turns of the loop that
+    # takes depends on what else the process has open.
+    from cosmos.gui.widgets.plot import PlotWidget
+
+    # Simulators coalesce redraws behind a 40 ms timer, so a sweep that only calls
+    # processEvents is racing it: the timer needs the clock to move, not the queue
+    # to be drained. Wait on both.
+    from PySide6.QtTest import QTest
+
+    for _ in range(40):
+        waiting = [p for p in page.findChildren(PlotWidget)
+                   if not p.in_a_closed_tab() and not p.figure.get_axes()]
+        if not waiting:
+            break
+        QTest.qWait(20)
+
 
 
 def test_every_plot_in_every_simulator_can_be_read_out(window):
@@ -186,7 +221,7 @@ def test_a_canvas_can_be_reached_by_keyboard(window):
 
     for plot in plots_on(window, "sim:S1"):
         assert plot.canvas.focusPolicy() != Qt.NoFocus
-        assert plot.canvas.accessibleName()
+        assert plot.canvas.accessibleName(), plot._name
 
 
 def test_the_description_follows_the_controls(window):

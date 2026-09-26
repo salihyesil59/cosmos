@@ -17,6 +17,7 @@ from PySide6.QtWidgets import (
     QMessageBox,
     QPushButton,
     QSizePolicy,
+    QStackedWidget,
     QVBoxLayout,
     QWidget,
 )
@@ -112,9 +113,47 @@ class PlotWidget(QWidget):
             self.refresh()
         super().showEvent(event)
 
+    def resizeEvent(self, event):  # noqa: N802 (Qt override)
+        """The recovery for the other reason a draw is put off (`R2`).
+
+        There are two: the plot sits in a tab nobody has opened, which showEvent
+        above answers, and the canvas has no usable size yet, which it does not.
+        A canvas that reaches its real size while already on screen gets no show
+        event, and without this the plot stays blank for good.
+        """
+        super().resizeEvent(event)
+        if self._dirty and not self.in_a_closed_tab():
+            self.refresh()
+
+    def in_a_closed_tab(self) -> bool:
+        """Is this plot behind a tab nobody has selected? (`R2`)
+
+        Sixteen simulators put their plots in tabs, and drawing all of them on
+        every recompute is most of what made the slowest take four seconds to
+        appear. The question has to be this one and not ``isVisible``: while a
+        page is being built nothing on it is visible yet, so that would defer the
+        plot the learner is about to look at, and getting it drawn again then
+        depends on which Qt event happens to arrive. A tab that is not the
+        current one is a fact that does not change underneath us, and showEvent
+        draws it the moment it is opened.
+        """
+        child, parent = self, self.parentWidget()
+        while parent is not None:
+            if isinstance(parent, QStackedWidget) and parent.currentWidget() is not child:
+                return True
+            child, parent = parent, parent.parentWidget()
+        return False
+
     MIN_DRAW_PX = 40
 
     def refresh(self) -> None:
+        # A plot in a tab nobody has opened is work nobody asked for (R2). Sixteen
+        # of the simulators put their plots in tabs, and drawing all of them on
+        # every recompute is most of what made the slowest of them take four
+        # seconds to appear. showEvent draws it the moment it is actually shown.
+        if self.in_a_closed_tab():
+            self._dirty = True
+            return
         # A canvas that has not been laid out yet would make matplotlib complain about
         # collapsed axes; draw it when it becomes visible instead.
         if self.canvas.width() < self.MIN_DRAW_PX or self.canvas.height() < self.MIN_DRAW_PX:
