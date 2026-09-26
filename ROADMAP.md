@@ -328,11 +328,17 @@ doing first.
 - [x] `A3` A keyboard-only path through every simulator, with a sensible tab
   order, and a test that walks it — which found the order already right, and the
   focus ring missing from the one thing `A2` had just made focusable
-- [ ] `A4` The high-contrast theme checked against a contrast ratio rather than
-  by eye
+- [x] `A4` The high-contrast theme checked against a contrast ratio rather than
+  by eye — which found it comfortably clear, and found three colours in the
+  *light* theme that were not
+- [ ] `A6` Tell the lines on a plot apart by more than their colour. `A4` set out
+  to require that no two series share a lightness, so that a reader who cannot
+  distinguish hue could still separate them, and every theme failed — as would
+  every categorical palette ever published. The answer is line style and markers,
+  used in some figures and not others, not a palette bent around a rule
 
 ### Quality
 
-- [ ] `A5` The Reference page takes 2.6 seconds to open the first time, which is
+- [x] `A5` The Reference page takes 2.6 seconds to open the first time, which is
   the formula sheet, the constants and every preset's age all computed before
   anything is shown. Nobody should wait that long for a page that is mostly text

@@ -55,6 +55,9 @@ DARK = Palette(
     series=("#6ea8fe", "#f5b35c", "#4fd18b", "#ef6b73", "#b58cff", "#4dd0e1", "#e6e9f2"),
 )
 
+# A4: the accent, success and warning colours are used as text, so they clear
+# 4.5:1 against a white surface; the plot series clear 3:1, which is the floor
+# for a line whose colour carries meaning. Measured, not judged by eye.
 LIGHT = Palette(
     name="light",
     bg="#f3f5fa",
@@ -65,12 +68,12 @@ LIGHT = Palette(
     muted="#5b667d",
     accent="#2f6fdb",
     accent_text="#ffffff",
-    accent2="#c7771a",
-    success="#1f9d57",
-    warning="#a87800",
+    accent2="#a66316",
+    success="#1a8449",
+    warning="#976c00",
     danger="#c9384a",
     link="#2059c4",
-    series=("#2f6fdb", "#d9822b", "#1f9d57", "#c9384a", "#7c4dcc", "#0f8fa3", "#1b2233"),
+    series=("#2f6fdb", "#d07b25", "#1a8449", "#c9384a", "#7c4dcc", "#0f8fa3", "#1b2233"),
 )
 
 # A deliberately harsh palette for anyone who needs the contrast (G17): pure white on

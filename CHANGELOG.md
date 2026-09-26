@@ -20,6 +20,31 @@ format may still change between releases.
   about instead of "question mark"; and a search box takes its name from the
   placeholder, which is the only thing that ever said what the box was for and
   which vanishes the moment you type.
+### Changed
+
+- **Three colours in the light theme were too pale to read** (`A4`). Contrast is
+  arithmetic, not taste, and measuring every pair in every theme found the accent,
+  success and warning colours scoring 3.45, 3.49 and 3.92 against a white surface
+  where WCAG asks 4.5 for body text — and one plot colour at 2.93 where a line
+  whose colour carries meaning needs 3. They are darkened by the least that clears
+  the limit with a little room to spare, and the palette is otherwise untouched.
+- **The high-contrast theme was measured, and it earns its name** (`A4`). Its text
+  scores between 9 and 21, well past the stricter AAA level, and its outlines
+  reach 5.9 where the everyday themes use a 1.4 hairline. That last difference is
+  the point of having it, and a test now says so rather than trusting the label.
+
+- **The Reference page opens at once instead of after two and a half seconds**
+  (`A5`). It used to build all four tabs before it appeared — the constants, the
+  models table, the data record, and 76 equations for matplotlib to typeset — so
+  the window froze on a page that is mostly text. Each tab is now built when it
+  is first looked at, and the formula sheet is typeset eight equations at a turn
+  so the app keeps answering while it fills, showing *"Typesetting 76 formulas…"*
+  until it is done. Opening it after a lesson, which is how anybody gets there,
+  went from 2.6 seconds to 0.27; switching tabs costs about 0.03 each, and a
+  second visit is instant because the renderer remembers what it has drawn.
+
+### Added
+
 - **A focus ring on the plots** (`A3`). `A2` made every canvas focusable so a
   screen reader could reach it, which left a sighted keyboard user tabbing onto a
   plot with nothing to show for it. A canvas paints its own pixels and would cover
