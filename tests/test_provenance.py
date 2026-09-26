@@ -15,13 +15,20 @@ import pytest
 from cosmos import provenance
 
 
+#: Files in cosmos/data that the app writes about itself rather than measures.
+#: Named one by one on purpose: the rule is that a data file justifies itself,
+#: and a pattern here would let a real data set slip in behind it.
+OUR_OWN_RECORDS = {"validation.json"}
+
+
 def test_every_bundled_data_file_is_accounted_for():
     """No file may sit in the data folder without saying where it came from."""
     on_disk = {
         f"external/{p.name}" for p in provenance.EXTERNAL_DIR.iterdir()
         if p.is_file() and p.name != "README.md"
     }
-    on_disk |= {p.name for p in provenance.DATA_DIR.iterdir() if p.is_file()}
+    on_disk |= {p.name for p in provenance.DATA_DIR.iterdir()
+                if p.is_file() and p.name not in OUR_OWN_RECORDS}
     described = provenance.bundled_files()
     assert on_disk - described == set(), "a data file with no entry in cosmos/provenance.py"
     assert described - on_disk == set(), "an entry in cosmos/provenance.py with no file"
@@ -130,3 +137,12 @@ class TestTheDataTab:
         page.open_target(first.id)
         assert page.tabs.currentIndex() == 0
         assert page.search.text() == first.title
+
+
+def test_the_apps_own_records_are_what_they_claim_to_be():
+    """The exception above is only for files the app produced itself."""
+    from cosmos import validation
+
+    assert OUR_OWN_RECORDS == {validation.RECORD.name}
+    assert validation.RECORD.parent == provenance.DATA_DIR
+    assert validation.read_record() is not None

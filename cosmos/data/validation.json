@@ -1,0 +1,23 @@
+{
+  "measured": "2026-09-26",
+  "worst": {
+    "age": 2.543988308056879e-11,
+    "angular_diameter_distance": 1.8133159259715474e-14,
+    "comoving_distance": 1.4646912529024572e-14,
+    "critical_density": 3.1795737974960364e-16,
+    "deuterium_abundance": 0.013653867085073636,
+    "distance_duality": 1.6364015077264817e-16,
+    "distance_modulus": 3.552713678800501e-14,
+    "eds_comoving_distance": 2.590846082546751e-14,
+    "einstein_de_sitter_age": 0.0,
+    "evolving_dark_energy": 1.0203091417862601e-13,
+    "expansion_rate": 5.298630551231245e-14,
+    "helium_abundance": 0.0016908188424039905,
+    "last_scattering_redshift": 0.009174311926605505,
+    "lookback_time": 6.140710044536615e-14,
+    "luminosity_distance": 1.8123045952822158e-14,
+    "milne_age": 0.0,
+    "planck18_age": 0.006889591977792264,
+    "radiation_density": 3.2096003785773584e-11
+  }
+}

@@ -295,7 +295,7 @@ first.
   the source, the model parameters and the app version
 - [ ] `V3` "How was this computed?" beside a simulator's result: the formula it
   used, the reference it follows, and the approximations it makes
-- [ ] `V4` The validation report inside the app: what each physics routine is
+- [x] `V4` The validation report inside the app: what each physics routine is
   checked against, and the size of the worst disagreement
 - [x] `V5` One honest number for every figure in the course: a test that no lesson
   figure drawn from generated data can go unlabelled, and none of those labels is
