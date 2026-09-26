@@ -696,7 +696,7 @@
     <message>
         <location filename="../gui/main_window.py" line="247" />
         <location filename="../gui/main_window.py" line="434" />
-        <location filename="../gui/pages/reference.py" line="153" />
+        <location filename="../gui/pages/reference.py" line="154" />
         <source>Reference</source>
         <translation>Referencia</translation>
     </message>
@@ -1138,7 +1138,7 @@
     </message>
     <message>
         <location filename="../gui/main_window.py" line="584" />
-        <location filename="../gui/pages/reference.py" line="194" />
+        <location filename="../gui/pages/reference.py" line="195" />
         <source>Data &amp;&amp; methods</source>
         <translation>Datos y métodos</translation>
     </message>
@@ -2863,7 +2863,7 @@ los retos y las insignias. Tus notas, marcadores y ajustes se conservan.
         <translation>¿Borrar todas las notas de los cuestionarios, las lecciones completadas, los retos y las insignias? Tus notas y marcadores se conservan. Esto no se puede deshacer.</translation>
     </message>
     <message>
-        <location filename="../gui/pages/reference.py" line="27" />
+        <location filename="../gui/pages/reference.py" line="28" />
         <source>
 ## Reference
 
@@ -2902,49 +2902,60 @@ trabajas en un simulador.
 </translation>
     </message>
     <message>
-        <location filename="../gui/pages/reference.py" line="107" />
+        <location filename="../gui/pages/reference.py" line="108" />
         <source>Quantity</source>
         <translation>Magnitud</translation>
     </message>
     <message>
-        <location filename="../gui/pages/reference.py" line="112" />
+        <location filename="../gui/pages/reference.py" line="113" />
         <source>Unit</source>
         <translation>Unidad</translation>
     </message>
     <message>
-        <location filename="../gui/pages/reference.py" line="142" />
+        <location filename="../gui/pages/reference.py" line="143" />
         <source>In base units: {value} {unit}</source>
         <translation>En unidades base: {value} {unit}</translation>
     </message>
     <message>
-        <location filename="../gui/pages/reference.py" line="155" />
+        <location filename="../gui/pages/reference.py" line="156" />
         <source>{formulas} formulas, {constants} constants, unit conversions, the parameters of every model in the app, and where all of its data comes from.</source>
         <translation>{formulas} fórmulas, {constants} constantes, conversiones de unidades, los parámetros de cada modelo de la aplicación y de dónde vienen todos sus datos.</translation>
     </message>
     <message>
-        <location filename="../gui/pages/reference.py" line="167" />
+        <location filename="../gui/pages/reference.py" line="168" />
         <source>Filter formulas…  (e.g. redshift, Friedmann, horizon, L4.3)</source>
         <translation>Filtrar fórmulas…  (p. ej. corrimiento al rojo, Friedmann, horizonte, L4.3)</translation>
     </message>
     <message>
-        <location filename="../gui/pages/reference.py" line="169" />
+        <location filename="../gui/pages/reference.py" line="170" />
         <source>Show only the formulas whose name, topic, symbols or lesson match.</source>
         <translation>Muestra solo las fórmulas cuyo nombre, tema, símbolos o lección coincidan.</translation>
     </message>
     <message>
-        <location filename="../gui/pages/reference.py" line="174" />
+        <location filename="../gui/pages/reference.py" line="175" />
         <source>Formulas</source>
         <translation>Fórmulas</translation>
     </message>
     <message>
-        <location filename="../gui/pages/reference.py" line="186" />
+        <location filename="../gui/pages/reference.py" line="187" />
         <source>Constants &amp;&amp; units</source>
         <translation>Constantes &amp;&amp; unidades</translation>
     </message>
     <message>
-        <location filename="../gui/pages/reference.py" line="190" />
+        <location filename="../gui/pages/reference.py" line="191" />
         <source>Models</source>
         <translation>Modelos</translation>
+    </message>
+    <message>
+        <location filename="../gui/pages/reference.py" line="261" />
+        <source>Formula sheet</source>
+        <extracomment>How many formulas to typeset per turn of the event loop (A5). Small enough that the window keeps answering, large enough to finish in a few ticks.</extracomment>
+        <translation>Hoja de fórmulas</translation>
+    </message>
+    <message>
+        <location filename="../gui/pages/reference.py" line="262" />
+        <source>Typesetting {count} formulas…</source>
+        <translation>Componiendo {count} fórmulas…</translation>
     </message>
     <message>
         <location filename="../gui/pages/review_page.py" line="30" />
@@ -10885,48 +10896,48 @@ Apunta lo que te sorprendió, un número que quieras recordar o una pregunta a l
         <translation>Guardando…</translation>
     </message>
     <message>
-        <location filename="../gui/widgets/plot.py" line="66" />
+        <location filename="../gui/widgets/plot.py" line="83" />
         <source>Save image…</source>
         <translation>Guardar imagen…</translation>
     </message>
     <message>
-        <location filename="../gui/widgets/plot.py" line="67" />
+        <location filename="../gui/widgets/plot.py" line="84" />
         <source>Save this plot as a PNG or SVG image.</source>
         <translation>Guarda esta gráfica como imagen PNG o SVG.</translation>
     </message>
     <message>
-        <location filename="../gui/widgets/plot.py" line="71" />
+        <location filename="../gui/widgets/plot.py" line="88" />
         <source>Export data (CSV)…</source>
         <translation>Exportar los datos (CSV)…</translation>
     </message>
     <message>
-        <location filename="../gui/widgets/plot.py" line="72" />
+        <location filename="../gui/widgets/plot.py" line="89" />
         <source>Save the numbers behind this plot as a CSV file (opens in Excel).</source>
         <translation>Guarda los números que hay detrás de esta gráfica en un archivo CSV (se abre en Excel).</translation>
     </message>
     <message>
-        <location filename="../gui/widgets/plot.py" line="141" />
+        <location filename="../gui/widgets/plot.py" line="184" />
         <source>Save plot</source>
         <translation>Guardar la gráfica</translation>
     </message>
     <message>
-        <location filename="../gui/widgets/plot.py" line="142" />
+        <location filename="../gui/widgets/plot.py" line="185" />
         <source>PNG image (*.png);;SVG vector image (*.svg)</source>
         <translation>Imagen PNG (*.png);;Imagen vectorial SVG (*.svg)</translation>
     </message>
     <message>
-        <location filename="../gui/widgets/plot.py" line="158" />
-        <location filename="../gui/widgets/plot.py" line="174" />
+        <location filename="../gui/widgets/plot.py" line="201" />
+        <location filename="../gui/widgets/plot.py" line="217" />
         <source>Could not save</source>
         <translation>No se pudo guardar</translation>
     </message>
     <message>
-        <location filename="../gui/widgets/plot.py" line="166" />
+        <location filename="../gui/widgets/plot.py" line="209" />
         <source>Export data</source>
         <translation>Exportar los datos</translation>
     </message>
     <message>
-        <location filename="../gui/widgets/plot.py" line="167" />
+        <location filename="../gui/widgets/plot.py" line="210" />
         <source>CSV file (*.csv)</source>
         <translation>Archivo CSV (*.csv)</translation>
     </message>

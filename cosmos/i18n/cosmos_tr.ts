@@ -696,7 +696,7 @@
     <message>
         <location filename="../gui/main_window.py" line="247" />
         <location filename="../gui/main_window.py" line="434" />
-        <location filename="../gui/pages/reference.py" line="153" />
+        <location filename="../gui/pages/reference.py" line="154" />
         <source>Reference</source>
         <translation>Başvuru</translation>
     </message>
@@ -1138,7 +1138,7 @@
     </message>
     <message>
         <location filename="../gui/main_window.py" line="584" />
-        <location filename="../gui/pages/reference.py" line="194" />
+        <location filename="../gui/pages/reference.py" line="195" />
         <source>Data &amp;&amp; methods</source>
         <translation>Veri ve yöntem</translation>
     </message>
@@ -2856,7 +2856,7 @@ rozetleri siler. Notlarınız, yer imleriniz ve ayarlarınız korunur.
         <translation>Bütün sınav puanları, tamamlanan dersler, görevler ve rozetler silinsin mi? Notlarınız ve yer imleriniz korunur. Bu işlem geri alınamaz.</translation>
     </message>
     <message>
-        <location filename="../gui/pages/reference.py" line="27" />
+        <location filename="../gui/pages/reference.py" line="28" />
         <source>
 ## Reference
 
@@ -2896,49 +2896,60 @@ yolu da bu sayfadır.
 </translation>
     </message>
     <message>
-        <location filename="../gui/pages/reference.py" line="107" />
+        <location filename="../gui/pages/reference.py" line="108" />
         <source>Quantity</source>
         <translation>Nicelik</translation>
     </message>
     <message>
-        <location filename="../gui/pages/reference.py" line="112" />
+        <location filename="../gui/pages/reference.py" line="113" />
         <source>Unit</source>
         <translation>Birim</translation>
     </message>
     <message>
-        <location filename="../gui/pages/reference.py" line="142" />
+        <location filename="../gui/pages/reference.py" line="143" />
         <source>In base units: {value} {unit}</source>
         <translation>Temel birimlerle: {value} {unit}</translation>
     </message>
     <message>
-        <location filename="../gui/pages/reference.py" line="155" />
+        <location filename="../gui/pages/reference.py" line="156" />
         <source>{formulas} formulas, {constants} constants, unit conversions, the parameters of every model in the app, and where all of its data comes from.</source>
         <translation>{formulas} formül, {constants} sabit, birim dönüşümleri, uygulamadaki her modelin parametreleri ve bütün verisinin nereden geldiği.</translation>
     </message>
     <message>
-        <location filename="../gui/pages/reference.py" line="167" />
+        <location filename="../gui/pages/reference.py" line="168" />
         <source>Filter formulas…  (e.g. redshift, Friedmann, horizon, L4.3)</source>
         <translation>Formülleri süz…  (örn. redshift, Friedmann, horizon, L4.3)</translation>
     </message>
     <message>
-        <location filename="../gui/pages/reference.py" line="169" />
+        <location filename="../gui/pages/reference.py" line="170" />
         <source>Show only the formulas whose name, topic, symbols or lesson match.</source>
         <translation>Yalnızca adı, konusu, sembolleri veya dersi eşleşen formülleri gösterir.</translation>
     </message>
     <message>
-        <location filename="../gui/pages/reference.py" line="174" />
+        <location filename="../gui/pages/reference.py" line="175" />
         <source>Formulas</source>
         <translation>Formüller</translation>
     </message>
     <message>
-        <location filename="../gui/pages/reference.py" line="186" />
+        <location filename="../gui/pages/reference.py" line="187" />
         <source>Constants &amp;&amp; units</source>
         <translation>Sabitler ve birimler</translation>
     </message>
     <message>
-        <location filename="../gui/pages/reference.py" line="190" />
+        <location filename="../gui/pages/reference.py" line="191" />
         <source>Models</source>
         <translation>Modeller</translation>
+    </message>
+    <message>
+        <location filename="../gui/pages/reference.py" line="261" />
+        <source>Formula sheet</source>
+        <extracomment>How many formulas to typeset per turn of the event loop (A5). Small enough that the window keeps answering, large enough to finish in a few ticks.</extracomment>
+        <translation>Formül sayfası</translation>
+    </message>
+    <message>
+        <location filename="../gui/pages/reference.py" line="262" />
+        <source>Typesetting {count} formulas…</source>
+        <translation>{count} formül diziliyor…</translation>
     </message>
     <message>
         <location filename="../gui/pages/review_page.py" line="30" />
@@ -10878,48 +10889,48 @@ Write down what surprised you, a number you want to remember, or a question to c
         <translation>Kaydediliyor…</translation>
     </message>
     <message>
-        <location filename="../gui/widgets/plot.py" line="66" />
+        <location filename="../gui/widgets/plot.py" line="83" />
         <source>Save image…</source>
         <translation>Görüntüyü kaydet…</translation>
     </message>
     <message>
-        <location filename="../gui/widgets/plot.py" line="67" />
+        <location filename="../gui/widgets/plot.py" line="84" />
         <source>Save this plot as a PNG or SVG image.</source>
         <translation>Bu grafiği PNG ya da SVG görüntüsü olarak kaydedin.</translation>
     </message>
     <message>
-        <location filename="../gui/widgets/plot.py" line="71" />
+        <location filename="../gui/widgets/plot.py" line="88" />
         <source>Export data (CSV)…</source>
         <translation>Veriyi dışa aktar (CSV)…</translation>
     </message>
     <message>
-        <location filename="../gui/widgets/plot.py" line="72" />
+        <location filename="../gui/widgets/plot.py" line="89" />
         <source>Save the numbers behind this plot as a CSV file (opens in Excel).</source>
         <translation>Bu grafiğin arkasındaki sayıları CSV dosyası olarak kaydedin (Excel'de açılır).</translation>
     </message>
     <message>
-        <location filename="../gui/widgets/plot.py" line="141" />
+        <location filename="../gui/widgets/plot.py" line="184" />
         <source>Save plot</source>
         <translation>Grafiği kaydet</translation>
     </message>
     <message>
-        <location filename="../gui/widgets/plot.py" line="142" />
+        <location filename="../gui/widgets/plot.py" line="185" />
         <source>PNG image (*.png);;SVG vector image (*.svg)</source>
         <translation>PNG görüntüsü (*.png);;SVG vektör görüntüsü (*.svg)</translation>
     </message>
     <message>
-        <location filename="../gui/widgets/plot.py" line="158" />
-        <location filename="../gui/widgets/plot.py" line="174" />
+        <location filename="../gui/widgets/plot.py" line="201" />
+        <location filename="../gui/widgets/plot.py" line="217" />
         <source>Could not save</source>
         <translation>Kaydedilemedi</translation>
     </message>
     <message>
-        <location filename="../gui/widgets/plot.py" line="166" />
+        <location filename="../gui/widgets/plot.py" line="209" />
         <source>Export data</source>
         <translation>Veriyi dışa aktar</translation>
     </message>
     <message>
-        <location filename="../gui/widgets/plot.py" line="167" />
+        <location filename="../gui/widgets/plot.py" line="210" />
         <source>CSV file (*.csv)</source>
         <translation>CSV dosyası (*.csv)</translation>
     </message>

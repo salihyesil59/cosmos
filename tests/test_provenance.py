@@ -108,6 +108,9 @@ def page(qt_app, tmp_path_factory):
     ctx = AppContext(load_curriculum(), load_glossary(), store, AppSignals())
     view = ReferencePage(ctx)
     view.refresh()
+    # A5: the page builds a tab when it is first shown rather than all four on
+    # open, so ask for this one the way Help -> Data & methods does.
+    view.open_target("data")
     return view
 
 

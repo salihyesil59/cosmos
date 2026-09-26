@@ -24,6 +24,11 @@ class MathError(ValueError):
     """Raised when mathtext cannot parse a formula."""
 
 
+#: Every formula the renderer has drawn, so a caller can find out whether asking
+#: for it again would be instant. See :func:`is_cached`.
+_rendered: set[tuple] = set()
+
+
 @functools.lru_cache(maxsize=2048)
 def render_png(tex: str, color: str, size_pt: float, device_ratio: float = 1.0) -> bytes:
     """Render ``tex`` (without surrounding dollars) to PNG bytes.
@@ -45,7 +50,19 @@ def render_png(tex: str, color: str, size_pt: float, device_ratio: float = 1.0) 
             )
     except Exception as exc:  # mathtext raises ValueError subclasses
         raise MathError(f"cannot render formula {tex!r}: {exc}") from exc
+    _rendered.add((tex, color, size_pt, device_ratio))
     return buf.getvalue()
+
+
+def is_cached(tex: str, color: str, size_pt: float, device_ratio: float = 1.0) -> bool:
+    """Whether this formula has already been typeset (A5).
+
+    Asking the lru_cache directly is not possible without calling it, which would
+    do the very work we are asking about, so the renderer records what it has
+    drawn. An entry evicted from the cache stays in the set, which can only make
+    this over-report; with 2048 slots and 76 formulas that does not arise.
+    """
+    return (tex, color, size_pt, device_ratio) in _rendered
 
 
 def validate(tex: str) -> None:

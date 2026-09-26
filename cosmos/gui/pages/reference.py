@@ -4,7 +4,7 @@ from __future__ import annotations
 
 import math
 
-from PySide6.QtCore import Qt
+from PySide6.QtCore import Qt, QTimer
 from PySide6.QtWidgets import (
     QComboBox,
     QGroupBox,
@@ -19,6 +19,7 @@ from PySide6.QtWidgets import (
 from cosmos.content.loader import load_formulas
 from cosmos.gui import nav_icons
 from cosmos.gui.context import AppContext
+from cosmos.gui.theme import theme
 from cosmos.gui.widgets.common import ParameterSlider, labelled_row, muted_label, placeholder, title_label
 from cosmos.gui.widgets.rich_browser import RichBrowser
 from cosmos.physics import constants as const
@@ -199,19 +200,98 @@ class ReferencePage(QWidget):
         # redraw them in its own colours.
         nav_icons.set_tab_glyphs(self.tabs, ("reference", "constants", "models", "data"))
 
-        # Filled on the first visit (E12): rendering these needs matplotlib and the
-        # physics engine, and nothing on the home page wants either.
-        self._filled = False
+        # Filled tab by tab on first show (E12, A5): rendering these needs
+        # matplotlib and the physics engine, and nothing on the home page wants
+        # either. Doing all four on open froze the window for two seconds.
+        self._built: set[int] = set()
+        self._wired = False
+        self._pending_maths: list[str] = []
+
+    #: How many formulas to typeset per turn of the event loop (A5). Small enough
+    #: that the window keeps answering, large enough to finish in a few ticks.
+    MATHS_PER_TICK = 8
 
     def refresh(self) -> None:
-        """Render the sheet. Cheap after the first call."""
-        if self._filled:
+        """Fill the sheet. Cheap after the first call.
+
+        The formula sheet is 76 equations, each typeset by matplotlib into an
+        image, and doing all of them at once froze the window for two seconds
+        before the page appeared at all (A5). The cheap tabs go up immediately and
+        the maths is warmed a few at a time, so the page is there to read and the
+        app still answers while the equations arrive.
+        """
+        if not self._wired:
+            self._wired = True
+            self.tabs.currentChanged.connect(self._fill_tab)
+        self._fill_tab()
+
+    def _fill_tab(self, *_args) -> None:
+        """Build the tab now on show, once.
+
+        Each of these costs something worth avoiding until it is wanted: the
+        models table is the first thing to import the physics engine, and the
+        formula sheet is 76 equations for matplotlib to typeset.
+        """
+        index = self.tabs.currentIndex()
+        if index in self._built:
             return
-        self._filled = True
-        self.constants_view.set_markdown_content(self._constants_markdown())
-        self.models_view.set_markdown_content(self._models_markdown())
-        self.data_view.set_markdown_content(self._data_markdown())
-        self._render_formulas()
+        self._built.add(index)
+        # Two of the tabs are the browser itself and two wrap it in a column with
+        # a search box, so ask whether the view is in there rather than whether it
+        # is the tab.
+        page = self.tabs.widget(index)
+
+        def holds(view) -> bool:
+            return page is view or page.isAncestorOf(view)
+
+        if holds(self.formula_view):
+            self._start_typesetting()
+        elif holds(self.constants_view):
+            self.constants_view.set_markdown_content(self._constants_markdown())
+        elif holds(self.models_view):
+            self.models_view.set_markdown_content(self._models_markdown())
+        elif holds(self.data_view):
+            self.data_view.set_markdown_content(self._data_markdown())
+
+    def _start_typesetting(self) -> None:
+        pending = [f.formula for f in self.formulas]
+        if all(self._already_typeset(tex) for tex in pending):
+            self._render_formulas()          # warm from an earlier visit: no wait
+            return
+        heading = "# " + tr("Formula sheet")
+        waiting = tr("Typesetting {count} formulas…").format(count=len(pending))
+        self.formula_view.set_markdown_content(f"{heading}\n\n{waiting}")
+        self._pending_maths = pending
+        QTimer.singleShot(0, self._typeset_some)
+
+    def _already_typeset(self, tex: str) -> bool:
+        from cosmos.gui.rendering import math as mathrender
+
+        return mathrender.is_cached(" ".join(tex.split()), theme().palette.text,
+                                    self._math_size(), self._ratio())
+
+    def _ratio(self) -> float:
+        return max(1.0, self.formula_view.devicePixelRatioF())
+
+    def _math_size(self) -> float:
+        return self.formula_view._font_pt * 1.2
+
+    def _typeset_some(self) -> None:
+        """Typeset the next few formulas, then hand the loop back."""
+        from cosmos.gui.rendering import math as mathrender
+
+        batch, self._pending_maths = (self._pending_maths[:self.MATHS_PER_TICK],
+                                      self._pending_maths[self.MATHS_PER_TICK:])
+        for tex in batch:
+            try:
+                mathrender.render_png(" ".join(tex.split()), theme().palette.text,
+                                      self._math_size(), self._ratio())
+            except mathrender.MathError:
+                pass                          # _render_formulas shows it as broken code
+        if self._pending_maths:
+            QTimer.singleShot(0, self._typeset_some)
+        else:
+            self._render_formulas()
 
     def _browser(self) -> RichBrowser:
         view = RichBrowser(font_pt=11.0)
@@ -254,6 +334,12 @@ class ReferencePage(QWidget):
         ]
 
     def _render_formulas(self, *_args) -> None:
+        if self._pending_maths and not self.search.text().strip():
+            # Still typesetting the whole sheet; the last batch calls back. But a
+            # search is a request for a handful of formulas, and leaving the box
+            # doing nothing for a second is worse than typesetting those few now.
+            return
+        self._pending_maths = []
         found = self.matching_formulas(self.search.text())
         lines = ["# Formula sheet", ""]
         if not found:
