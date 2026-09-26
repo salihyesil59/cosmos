@@ -20,6 +20,18 @@ format may still change between releases.
   about instead of "question mark"; and a search box takes its name from the
   placeholder, which is the only thing that ever said what the box was for and
   which vanishes the moment you type.
+- **A focus ring on the plots** (`A3`). `A2` made every canvas focusable so a
+  screen reader could reach it, which left a sighted keyboard user tabbing onto a
+  plot with nothing to show for it. A canvas paints its own pixels and would cover
+  any border of its own, so the frame around it wears the ring instead — reserved
+  whether or not it is showing, so nothing shifts when focus arrives.
+- **The keyboard path is now checked rather than assumed** (`A3`). All 609
+  controls across the 29 simulators turned out to be reachable by Tab already, and
+  the order already runs down the page and reaches a plot only after the controls
+  that drive it. That is Qt's creation order doing the right thing because the
+  pages are built top down — worth a test rather than a shrug, so that the day
+  somebody builds a panel out of order, something says so.
+
 - **Every plot can be read out loud** (`A2`). A canvas is where the answer
   usually is, and to a screen reader it was a blank rectangle. All sixty-odd of
   them now carry a description — the axes and their ranges, then each labelled
