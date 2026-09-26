@@ -390,6 +390,76 @@ def _export(p: QPainter, c: QColor) -> None:
     _polyline(p, [(4.5, 15.6), (4.5, 20), (19.5, 20), (19.5, 15.6)])
 
 
+def _flag(p: QPainter, c: QColor) -> None:
+    """A flag planted at the end of a stretch: that level is finished."""
+    _stroke(p, c)
+    p.drawLine(QPointF(6.5, 3.6), QPointF(6.5, 20.4))
+    _polyline(p, [(6.5, 5.2), (18.6, 5.2), (15.7, 9.4), (18.6, 13.6), (6.5, 13.6)])
+
+
+def _map(p: QPainter, c: QColor) -> None:
+    """A folded map: the course from end to end."""
+    _stroke(p, c)
+    _polyline(p, [(3.6, 7.0), (9.4, 4.4), (14.6, 7.4), (20.4, 4.8), (20.4, 17.0),
+                  (14.6, 19.6), (9.4, 16.6), (3.6, 19.2)], close=True)
+    _stroke(p, c, 1.4)
+    p.drawLine(QPointF(9.4, 4.4), QPointF(9.4, 16.6))
+    p.drawLine(QPointF(14.6, 7.4), QPointF(14.6, 19.6))
+
+
+def _medal(p: QPainter, c: QColor) -> None:
+    """A medal on its ribbon: full marks, again and again."""
+    _stroke(p, c, 1.5)
+    p.drawLine(QPointF(7.8, 3.6), QPointF(16.2, 3.6))    # the bar it hangs from
+    _polyline(p, [(9.3, 3.6), (10.7, 10.0)])             # and the two straps, tapering
+    _polyline(p, [(14.7, 3.6), (13.3, 10.0)])            # in towards the disc
+    _stroke(p, c)
+    p.drawEllipse(QRectF(6.4, 9.6, 11.2, 11.2))
+
+
+def _trophy(p: QPainter, c: QColor) -> None:
+    """A cup: every challenge in the app, met."""
+    _stroke(p, c)
+    cup = QPainterPath(QPointF(7.2, 4.0))
+    cup.lineTo(QPointF(16.8, 4.0))
+    cup.cubicTo(QPointF(16.8, 10.6), QPointF(14.8, 13.6), QPointF(12, 13.6))
+    cup.cubicTo(QPointF(9.2, 13.6), QPointF(7.2, 10.6), QPointF(7.2, 4.0))
+    p.drawPath(cup)
+    _stroke(p, c, 1.4)
+    for edge, out, inward in ((7.2, 3.4, 8.8), (16.8, 20.6, 15.2)):
+        handle = QPainterPath(QPointF(edge, 5.0))
+        handle.cubicTo(QPointF(out, 5.2), QPointF(out, 10.6), QPointF(inward, 11.4))
+        p.drawPath(handle)
+    _stroke(p, c)
+    p.drawLine(QPointF(12, 13.6), QPointF(12, 17.6))
+    p.drawLine(QPointF(8.4, 20.4), QPointF(15.6, 20.4))
+
+
+def _target(p: QPainter, c: QColor) -> None:
+    """A target: the mark was hit."""
+    _stroke(p, c)
+    p.drawEllipse(QRectF(3.8, 3.8, 16.4, 16.4))
+    _stroke(p, c, 1.4)
+    p.drawEllipse(QRectF(8.4, 8.4, 7.2, 7.2))
+    p.setPen(Qt.NoPen)
+    p.setBrush(c)
+    p.drawEllipse(QRectF(10.6, 10.6, 2.8, 2.8))
+
+
+def _flame(p: QPainter, c: QColor) -> None:
+    """A flame: one day after another, without a gap."""
+    _stroke(p, c)
+    body = QPainterPath(QPointF(13.2, 2.6))
+    body.cubicTo(QPointF(13.8, 7.4), QPointF(18.5, 8.8), QPointF(18.5, 14.1))
+    body.cubicTo(QPointF(18.5, 17.9), QPointF(15.4, 21.0), QPointF(11.9, 21.0))
+    body.cubicTo(QPointF(8.3, 21.0), QPointF(5.3, 17.9), QPointF(5.3, 14.2))
+    body.cubicTo(QPointF(5.3, 11.0), QPointF(7.4, 9.5), QPointF(8.6, 6.8))
+    # the lick that tells a flame from a raindrop
+    body.cubicTo(QPointF(9.5, 9.2), QPointF(10.8, 9.8), QPointF(11.8, 8.9))
+    body.cubicTo(QPointF(12.9, 7.9), QPointF(13.4, 5.4), QPointF(13.2, 2.6))
+    p.drawPath(body)
+
+
 GLYPHS = {
     "home": _home,
     "course": _course,
@@ -428,6 +498,12 @@ GLYPHS = {
     "pin": _pin,
     "export": _export,
     "reset": _review,          # going round again, whether it is a question or a simulation
+    "flag": _flag,
+    "map": _map,
+    "medal": _medal,
+    "trophy": _trophy,
+    "target": _target,
+    "flame": _flame,
 }
 
 _cache: dict[tuple[str, str, int], QIcon] = {}
@@ -496,6 +572,30 @@ def _ink(widget) -> str | None:
     page's colour would disappear into it.
     """
     return theme().palette.accent_text if widget.property("role") == "primary" else None
+
+
+def pixmap(name: str, color: str | None = None, size: int = 18) -> QPixmap:
+    """The named glyph as a picture, for the places that cannot take an icon."""
+    return icon(name, color, size).pixmap(size, size)
+
+
+def set_label_glyph(label, name: str, size: int = 16) -> None:
+    """Draw a glyph into a label, and leave its name on it.
+
+    A label takes a picture rather than an icon, so a badge or a heading that wants a
+    glyph beside plain text comes here instead of to :func:`set_glyph`. The name left
+    behind is what a theme change follows to redraw it, exactly as for a button.
+    """
+    label.setProperty("glyph", name)
+    label.setProperty("glyph_size", size)
+    label.setPixmap(pixmap(name, size=size))
+
+
+def set_label_symbol(label, symbol: str, size: int = 16) -> None:
+    """The same, for a simulator's own symbol, which is a character and not a glyph."""
+    label.setProperty("symbol", symbol)
+    label.setProperty("glyph_size", size)
+    label.setPixmap(text_icon(symbol, size=size).pixmap(size, size))
 
 
 def set_glyph(widget, name: str, size: int = 18) -> None:

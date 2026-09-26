@@ -2,6 +2,9 @@
 
 from __future__ import annotations
 
+from typing import NamedTuple
+
+from PySide6.QtCore import Qt
 from PySide6.QtWidgets import (
     QGridLayout,
     QHBoxLayout,
@@ -16,6 +19,7 @@ from PySide6.QtWidgets import (
 
 from cosmos.achievements import ACHIEVEMENTS
 from cosmos.content.loader import load_problems
+from cosmos.gui import nav_icons
 from cosmos.gui.context import AppContext
 from cosmos.gui.simulators.registry import SIMULATORS
 from cosmos.gui.theme import repolish
@@ -48,6 +52,16 @@ along you are.
 **Reset progress** clears quiz scores, completed lessons, challenges and badges.
 Your notes, bookmarks and settings are kept.
 """)
+
+
+class BadgeCard(NamedTuple):
+    """The pieces of one badge card, named so that a new one cannot shift the rest."""
+
+    frame: QWidget
+    title: QLabel
+    mark: QLabel
+    bar: QProgressBar
+    status: QLabel
 
 
 class ProgressPage(QWidget):
@@ -106,9 +120,17 @@ class ProgressPage(QWidget):
             cl = QVBoxLayout(c)
             cl.setContentsMargins(12, 8, 12, 8)
             cl.setSpacing(2)
-            title = QLabel(f"{achievement.icon}  {tr(achievement.title)}")
+            head = QHBoxLayout()
+            head.setSpacing(8)
+            # A label takes a picture rather than an icon, so the badge's glyph sits in
+            # one of its own beside the title; disabled, Qt greys it with the words.
+            mark = QLabel()
+            nav_icons.set_label_glyph(mark, achievement.glyph, 18)
+            head.addWidget(mark, 0, Qt.AlignTop)
+            title = QLabel(tr(achievement.title))
             title.setWordWrap(True)
-            cl.addWidget(title)
+            head.addWidget(title, 1)
+            cl.addLayout(head)
             text = muted_label(tr(achievement.description))
             cl.addWidget(text)
             bar = QProgressBar()
@@ -118,7 +140,7 @@ class ProgressPage(QWidget):
             status = muted_label("")
             cl.addWidget(status)
             self.badge_grid.addWidget(c, i // 4, i % 4)
-            self.badge_widgets[achievement.id] = (c, title, bar, status)
+            self.badge_widgets[achievement.id] = BadgeCard(c, title, mark, bar, status)
 
         root.addWidget(title_label(tr("Lesson map"), "subtitle"))
         root.addWidget(muted_label(tr("Click a lesson to open it. Arrows show which lessons build on which.")))
@@ -153,16 +175,17 @@ class ProgressPage(QWidget):
         for achievement in ACHIEVEMENTS:
             done, goal = achievement.state(store, cur)
             unlocked = achievement.id in store.data.achievements or done >= goal
-            frame, title, bar, status = self.badge_widgets[achievement.id]
-            bar.setRange(0, max(goal, 1))
-            bar.setValue(done)
-            bar.setVisible(not unlocked)
-            frame.setProperty("earned", "yes" if unlocked else "no")
-            title.setEnabled(unlocked)
+            badge = self.badge_widgets[achievement.id]
+            badge.bar.setRange(0, max(goal, 1))
+            badge.bar.setValue(done)
+            badge.bar.setVisible(not unlocked)
+            badge.frame.setProperty("earned", "yes" if unlocked else "no")
+            badge.title.setEnabled(unlocked)
+            badge.mark.setEnabled(unlocked)
             when = store.data.achievements.get(achievement.id, "")
-            status.setText(tr("Earned {date}").format(date=when[:10]) if unlocked and when else
-                           (tr("Earned") if unlocked else f"{done} / {goal}"))
-            repolish(frame)
+            badge.status.setText(tr("Earned {date}").format(date=when[:10]) if unlocked and when else
+                                 (tr("Earned") if unlocked else f"{done} / {goal}"))
+            repolish(badge.frame)
             earned += int(unlocked)
         self.badge_summary.setText(tr("{earned} of {total} badges earned")
                                    .format(earned=earned, total=len(ACHIEVEMENTS)))

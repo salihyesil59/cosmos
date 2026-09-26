@@ -14,6 +14,7 @@ from PySide6.QtWidgets import (
 )
 
 from cosmos.content.loader import load_challenges
+from cosmos.gui import nav_icons
 from cosmos.gui.context import AppContext
 from cosmos.gui.simulators.registry import GROUP_ORDER, SIMULATORS, SimulatorInfo
 from cosmos.gui.widgets.challenge_bar import ChallengeBar
@@ -65,7 +66,15 @@ class SimulatorHubPage(QWidget):
             c = card()
             cl = QVBoxLayout(c)
             cl.setContentsMargins(16, 14, 16, 14)
-            cl.addWidget(title_label(f"{info.icon}  {info.id} · {tr(info.title)}", "subtitle"))
+            # The simulator's own symbol, drawn on the icons' grid rather than pasted
+            # into the words, so it sits on the same baseline and follows the theme (D3).
+            head = QHBoxLayout()
+            head.setSpacing(8)
+            mark = QLabel()
+            nav_icons.set_label_symbol(mark, info.icon, 20)
+            head.addWidget(mark, 0, Qt.AlignVCenter)
+            head.addWidget(title_label(f"{info.id} · {tr(info.title)}", "subtitle"), 1)
+            cl.addLayout(head)
             cl.addWidget(muted_label(tr(info.description)))
             lessons = ", ".join(info.lessons)
             cl.addWidget(muted_label(tr("Supports lessons: {lessons}").format(lessons=lessons)))
@@ -100,7 +109,13 @@ class SimulatorHostPage(QWidget):
         head.addWidget(badge)
         head.addStretch(1)
         root.addLayout(head)
-        root.addWidget(title_label(f"{info.icon}  {tr(info.title)}"))
+        heading = QHBoxLayout()
+        heading.setSpacing(10)
+        mark = QLabel()
+        nav_icons.set_label_symbol(mark, info.icon, 30)
+        heading.addWidget(mark, 0, Qt.AlignVCenter)
+        heading.addWidget(title_label(tr(info.title)), 1)
+        root.addLayout(heading)
         root.addWidget(muted_label(tr(info.description)))
         self.simulator = info.create()
         self.challenges = load_challenges().get(info.id, [])

@@ -9,6 +9,7 @@ from PySide6.QtWidgets import (
     QApplication,
     QDockWidget,
     QHeaderView,
+    QLabel,
     QMainWindow,
     QMenu,
     QMessageBox,
@@ -851,6 +852,13 @@ class MainWindow(QMainWindow):
                 button.setIcon(nav_icons.text_icon(symbol, size=16))
             elif glyph:
                 nav_icons.set_glyph(button, glyph, button.property("glyph_size") or 18)
+        # Labels carry a picture rather than an icon, and the same two names.
+        for label in self.findChildren(QLabel):
+            size = label.property("glyph_size") or 16
+            if label.property("glyph"):
+                nav_icons.set_label_glyph(label, label.property("glyph"), size)
+            elif label.property("symbol"):
+                nav_icons.set_label_symbol(label, label.property("symbol"), size)
         # Every tab bar that was given icons remembers their names (D3).
         for tabs in self.findChildren(QTabWidget):
             names = tabs.property("glyphs")
@@ -882,7 +890,7 @@ class MainWindow(QMainWindow):
 
         new = self.ctx.store.refresh_achievements(self.ctx.curriculum)
         if new:
-            names = ", ".join(f"{BY_ID[i].icon} {tr(BY_ID[i].title)}" for i in new)
+            names = ", ".join(tr(BY_ID[i].title) for i in new)
             self.statusBar().showMessage(tr("Badge earned: {names}").format(names=names), 12000)
             self.progress_page.refresh()
             self.ctx.signals.achievementsUnlocked.emit(new)

@@ -188,7 +188,7 @@ def test_a_plugin_is_found_and_described(app, plugin_dir):
     assert plugin.id == "P1" and plugin.title == "Tiny"
 
     info = plugins.to_info(plugin)
-    assert info.is_plugin and info.id == "P1" and info.icon == "🔌"
+    assert info.is_plugin and info.id == "P1" and info.icon == "◈"
     simulator = info.create()
     assert type(simulator).__name__ == "Tiny"
 

@@ -412,7 +412,7 @@ def test_history_page(window):
     window.navigate("progress")
     pump()
     assert "badges earned" in window.progress_page.badge_summary.text()
-    assert window.progress_page.badge_widgets["historian"][3].text().startswith("Earned")
+    assert window.progress_page.badge_widgets["historian"].status.text().startswith("Earned")
 
 
 def test_cmb_engines(window):
