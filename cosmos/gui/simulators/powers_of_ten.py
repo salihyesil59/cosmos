@@ -10,6 +10,7 @@ from PySide6.QtCore import QPointF, QRectF, Qt, QTimer, Signal
 from PySide6.QtGui import QColor, QFont, QPainter, QPen, QRadialGradient
 from PySide6.QtWidgets import QComboBox, QGroupBox, QLabel, QPushButton, QSizePolicy, QVBoxLayout, QWidget
 
+from cosmos.gui import nav_icons
 from cosmos.gui.simulators.base import SimulatorBase
 from cosmos.gui.widgets.common import ParameterSlider, labelled_row
 from cosmos.i18n import tr
@@ -195,7 +196,8 @@ class PowersOfTenSimulator(SimulatorBase):
             info=(tr("Powers of ten"), tr("Each whole step multiplies the width of the view by ten.")),
         )
         bl.addWidget(self.slider)
-        self.play = QPushButton(tr("▶ Play"))
+        self.play = QPushButton(tr("Play"))
+        nav_icons.set_glyph(self.play, "continue", 14)
         self.play.setCheckable(True)
         self.play.setToolTip(tr("Fly automatically from the current scale outward. Click again to pause."))
         self.play.toggled.connect(self._toggle_play)
@@ -253,7 +255,8 @@ class PowersOfTenSimulator(SimulatorBase):
             self.visible_label.setText(tr("<i>Mostly empty space at this scale. Keep zooming!</i>"))
 
     def _toggle_play(self, on: bool) -> None:
-        self.play.setText(tr("⏸ Pause") if on else tr("▶ Play"))
+        self.play.setText(tr("Pause") if on else tr("Play"))
+        nav_icons.set_glyph(self.play, "pause" if on else "continue", 14)
         if on:
             self.timer.start()
         else:

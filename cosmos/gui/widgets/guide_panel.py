@@ -5,6 +5,7 @@ from __future__ import annotations
 from PySide6.QtCore import Qt
 from PySide6.QtWidgets import QHBoxLayout, QLabel, QPushButton, QVBoxLayout, QWidget
 
+from cosmos.gui import nav_icons
 from cosmos.gui.context import AppContext
 from cosmos.gui.widgets.common import card, muted_label, title_label
 from cosmos.gui.widgets.rich_browser import RichBrowser
@@ -29,7 +30,8 @@ class GuidePanel(QWidget):
         self.term_kicker = muted_label(tr("GLOSSARY"))
         head.addWidget(self.term_kicker)
         head.addStretch(1)
-        close = QPushButton("✕")
+        close = QPushButton()
+        nav_icons.set_glyph(close, "close", 12)
         close.setFixedWidth(30)
         close.setToolTip(tr("Hide this definition"))
         close.clicked.connect(lambda: self.term_card.hide())

@@ -102,19 +102,19 @@ class LessonPage(QWidget):
         self.quiz.answered_question.connect(self._question_answered)
         self.quiz.nextLessonRequested.connect(self._go_next)
         self.quiz.reviewRequested.connect(lambda: self.tabs.setCurrentIndex(0))
-        self.tabs.addTab(self.browser, nav_icons.icon("glossary", size=16), tr("Lesson"))
-        self.tabs.addTab(self.quiz, nav_icons.icon("problems", size=16), tr("Quiz"))
+        self.tabs.addTab(self.browser, tr("Lesson"))
+        self.tabs.addTab(self.quiz, tr("Quiz"))
         self.teacher = RichBrowser(font_pt=11.0)
-        self.teacher_tab = self.tabs.addTab(self.teacher, nav_icons.icon("classroom", size=16),
-                                            tr("Teacher notes"))
+        self.teacher_tab = self.tabs.addTab(self.teacher, tr("Teacher notes"))
         self.tabs.setTabVisible(self.teacher_tab, False)
+        nav_icons.set_tab_glyphs(self.tabs, ("glossary", "problems", "classroom"))
         root.addWidget(self.tabs, 1)
 
         # Six buttons and a simulator link or two are more than a narrow window can
         # hold in one row, so the row wraps instead of cutting the last ones off.
         nav = FlowLayout(spacing=8)
         self.prev_btn = QPushButton(tr("Previous lesson"))
-        self.prev_btn.setIcon(nav_icons.icon("back", size=14))
+        nav_icons.set_glyph(self.prev_btn, "back", 14)
         self.prev_btn.clicked.connect(self._go_prev)
         nav.addWidget(self.prev_btn)
         # The simulator links belong in the row itself, not in a block of their own:
@@ -128,25 +128,19 @@ class LessonPage(QWidget):
         nav.addWidget(self.terms_btn)
         self.quiz_btn = QPushButton(tr("Take the quiz"))
         self.quiz_btn.setLayoutDirection(Qt.RightToLeft)
-        self.quiz_btn.setIcon(nav_icons.icon("forward", size=14))
         self.quiz_btn.setObjectName("quizButton")
         self.quiz_btn.setProperty("role", "primary")
+        nav_icons.set_glyph(self.quiz_btn, "forward", 14)
         self.quiz_btn.clicked.connect(self._open_quiz)
         nav.addWidget(self.quiz_btn)
         self.next_btn = QPushButton(tr("Next lesson"))
         self.next_btn.setLayoutDirection(Qt.RightToLeft)
-        self.next_btn.setIcon(nav_icons.icon("forward", size=14))
+        nav_icons.set_glyph(self.next_btn, "forward", 14)
         self.next_btn.clicked.connect(self._go_next)
         nav.addWidget(self.next_btn)
         root.addLayout(nav)
 
         self.tabs.currentChanged.connect(self._tab_changed)
-
-    def retheme_tabs(self) -> None:
-        """Redraw the tab icons after the theme changed."""
-        for index, glyph in enumerate(("glossary", "problems", "classroom")):
-            if index < self.tabs.count():
-                self.tabs.setTabIcon(index, nav_icons.icon(glyph, size=16))
 
     # ------------------------------------------------------------------ api
     def load(self, lesson_id: str) -> None:

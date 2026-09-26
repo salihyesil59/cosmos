@@ -8,6 +8,8 @@ of the current theme, and line up with whatever font is in use.
 
 from __future__ import annotations
 
+from collections.abc import Sequence
+
 from PySide6.QtCore import QPointF, QRectF, Qt
 from PySide6.QtGui import QColor, QIcon, QPainter, QPainterPath, QPen, QPixmap
 
@@ -260,6 +262,134 @@ def _focus(p: QPainter, c: QColor) -> None:
     p.drawRoundedRect(QRectF(4.5, 4.5, 15, 15), 2, 2)
 
 
+def _constants(p: QPainter, c: QColor) -> None:
+    """A balance: the measured numbers everything else is weighed against."""
+    _stroke(p, c)
+    p.drawLine(QPointF(4.6, 7.8), QPointF(19.4, 7.8))       # the beam
+    p.drawLine(QPointF(12, 7.8), QPointF(12, 19))           # the post
+    p.drawLine(QPointF(8.5, 19.5), QPointF(15.5, 19.5))     # its foot
+    _stroke(p, c, 1.4)
+    for x in (5.6, 18.4):
+        p.drawLine(QPointF(x, 7.8), QPointF(x, 10.8))       # the cord
+        bowl = QPainterPath(QPointF(x - 3.4, 10.8))         # the pan, hanging from it
+        bowl.quadTo(QPointF(x, 16.4), QPointF(x + 3.4, 10.8))
+        p.drawPath(bowl)
+
+
+def _models(p: QPainter, c: QColor) -> None:
+    """A world with a meridian and an equator: one whole universe, one set of numbers.
+
+    A galaxy would be the obvious drawing, but a tilted ellipse with a bright middle
+    reads as an eye at 16 pixels. A globe stays a globe at every size.
+    """
+    _stroke(p, c)
+    p.drawEllipse(QRectF(3.5, 3.5, 17, 17))
+    p.drawEllipse(QRectF(8.7, 3.5, 6.6, 17))
+    p.drawLine(QPointF(3.6, 12), QPointF(20.4, 12))
+
+
+def _data(p: QPainter, c: QColor) -> None:
+    """A table: the numbers behind the figures, and where they came from."""
+    _stroke(p, c)
+    p.drawRoundedRect(QRectF(3.5, 5, 17, 14), 2, 2)
+    p.drawLine(QPointF(3.5, 9.4), QPointF(20.5, 9.4))
+    _stroke(p, c, 1.4)
+    p.drawLine(QPointF(3.5, 14.2), QPointF(20.5, 14.2))
+    p.drawLine(QPointF(10.6, 9.4), QPointF(10.6, 19))
+
+
+def _timeline(p: QPainter, c: QColor) -> None:
+    """Moments on a line: the history, in order."""
+    _stroke(p, c, 1.4)
+    p.drawLine(QPointF(3.0, 12), QPointF(21.0, 12))
+    _stroke(p, c, 1.6)
+    for x in (5.6, 12.0, 18.4):          # three moments, strung along it
+        p.drawEllipse(QRectF(x - 2.2, 9.8, 4.4, 4.4))
+
+
+def _people(p: QPainter, c: QColor) -> None:
+    """Two figures: the people who did the work."""
+    _stroke(p, c)
+    p.drawEllipse(QRectF(6.0, 4.6, 6.0, 6.0))
+    box = QRectF(3.6, 12.8, 10.8, 10.8)
+    path = QPainterPath()
+    path.arcMoveTo(box, 0)
+    path.arcTo(box, 0, 180)
+    p.drawPath(path)
+    _stroke(p, c, 1.4)
+    p.drawEllipse(QRectF(14.2, 6.8, 4.6, 4.6))
+    box = QRectF(12.6, 14.2, 8.8, 8.8)
+    path = QPainterPath()
+    path.arcMoveTo(box, 76)
+    path.arcTo(box, 76, -76)
+    p.drawPath(path)
+
+
+def _flashcards(p: QPainter, c: QColor) -> None:
+    """A card with another behind it: the deck that brings a term back."""
+    front = QRectF(4.5, 7.5, 11.5, 12.5)
+    behind = QPainterPath()
+    behind.addRoundedRect(QRectF(8, 4.5, 11.5, 12.5), 2, 2)
+    # The back card stops where the front one covers it, rather than drawing through it.
+    hole = QPainterPath()
+    hole.addRoundedRect(front.adjusted(-1.3, -1.3, 1.3, 1.3), 2.8, 2.8)
+    _stroke(p, c)
+    p.drawPath(behind.subtracted(hole))
+    p.drawRoundedRect(front, 2, 2)
+    _stroke(p, c, 1.4)
+    p.drawLine(QPointF(7.4, 13.8), QPointF(13.1, 13.8))      # a word on the front card
+
+
+def _check(p: QPainter, c: QColor) -> None:
+    """A tick: that one is done, or right."""
+    _stroke(p, c, 2.0)
+    _polyline(p, [(5, 12.6), (9.8, 17.4), (19, 6.8)])
+
+
+def _cross(p: QPainter, c: QColor) -> None:
+    """A cross: not that one, or close this."""
+    _stroke(p, c, 2.0)
+    p.drawLine(QPointF(6.4, 6.4), QPointF(17.6, 17.6))
+    p.drawLine(QPointF(17.6, 6.4), QPointF(6.4, 17.6))
+
+
+def _pause(p: QPainter, c: QColor) -> None:
+    p.setPen(Qt.NoPen)
+    p.setBrush(c)
+    p.drawRoundedRect(QRectF(7.2, 5, 3.6, 14), 1.4, 1.4)
+    p.drawRoundedRect(QRectF(13.2, 5, 3.6, 14), 1.4, 1.4)
+
+
+def _telescope(p: QPainter, c: QColor) -> None:
+    """A telescope on its stand: go and look."""
+    p.save()
+    p.translate(11.6, 9.0)
+    p.rotate(-28)
+    _stroke(p, c, 1.5)
+    _polyline(p, [(-8.2, -2.2), (8.2, -3.5), (8.2, 3.5), (-8.2, 2.2)], close=True)
+    p.drawLine(QPointF(-2.0, -2.7), QPointF(-2.0, 2.7))
+    p.restore()
+    _stroke(p, c, 1.5)
+    p.drawLine(QPointF(11.6, 12.4), QPointF(8.0, 20.2))
+    p.drawLine(QPointF(11.6, 12.4), QPointF(15.2, 20.2))
+
+
+def _pin(p: QPainter, c: QColor) -> None:
+    """A drawing pin: keep this one on the plot."""
+    _stroke(p, c)
+    p.drawLine(QPointF(8.5, 4.2), QPointF(15.5, 4.2))
+    _polyline(p, [(10.2, 4.2), (10.2, 9.4), (6.6, 13.4), (17.4, 13.4), (13.8, 9.4), (13.8, 4.2)])
+    p.drawLine(QPointF(12, 13.4), QPointF(12, 20))
+
+
+def _export(p: QPainter, c: QColor) -> None:
+    """An arrow into a tray: take it out of the app as a file."""
+    _stroke(p, c)
+    p.drawLine(QPointF(12, 3.8), QPointF(12, 14.4))
+    _polyline(p, [(7.8, 10.4), (12, 14.8), (16.2, 10.4)])
+    _polyline(p, [(4.5, 15.6), (4.5, 20), (19.5, 20), (19.5, 15.6)])
+
+
 GLYPHS = {
     "home": _home,
     "course": _course,
@@ -284,6 +414,20 @@ GLYPHS = {
     "bookmarked": _bookmarked,
     "panel": _panel,
     "focus": _focus,
+    "constants": _constants,
+    "models": _models,
+    "data": _data,
+    "timeline": _timeline,
+    "people": _people,
+    "flashcards": _flashcards,
+    "check": _check,
+    "cross": _cross,
+    "close": _cross,
+    "pause": _pause,
+    "telescope": _telescope,
+    "pin": _pin,
+    "export": _export,
+    "reset": _review,          # going round again, whether it is a question or a simulation
 }
 
 _cache: dict[tuple[str, str, int], QIcon] = {}
@@ -342,6 +486,41 @@ def text_icon(character: str, color: str | None = None, size: int = 18) -> QIcon
     built = QIcon(pixmap)
     _cache[key] = built
     return built
+
+
+def _ink(widget) -> str | None:
+    """The colour a glyph should take on this widget.
+
+    A primary button is filled with the accent and writes its label in the accent's
+    own ink, which is the opposite of the page's text colour; a glyph drawn in the
+    page's colour would disappear into it.
+    """
+    return theme().palette.accent_text if widget.property("role") == "primary" else None
+
+
+def set_glyph(widget, name: str, size: int = 18) -> None:
+    """Put a glyph on a button or an action, and leave its name on the widget.
+
+    A theme change redraws every glyph in the window by looking for that name, so
+    an icon set this way follows the colours instead of staying in the old ones.
+    Set the widget's ``role`` before calling this, so the glyph can match it.
+    """
+    widget.setProperty("glyph", name)
+    widget.setProperty("glyph_size", size)
+    widget.setIcon(icon(name, _ink(widget), size=size))
+
+
+def set_tab_glyphs(tabs, names: Sequence[str | None], size: int = 16) -> None:
+    """Icon a row of tabs in order, and leave the names on the tab widget.
+
+    ``None`` skips a tab. As with :func:`set_glyph`, the names are what a theme
+    change follows to redraw them.
+    """
+    tabs.setProperty("glyphs", list(names))
+    tabs.setProperty("glyph_size", size)
+    for index, name in enumerate(names):
+        if name and index < tabs.count():
+            tabs.setTabIcon(index, icon(name, size=size))
 
 
 def clear_cache() -> None:

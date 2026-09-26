@@ -14,6 +14,7 @@ from PySide6.QtWidgets import (
     QMessageBox,
     QSizePolicy,
     QStackedWidget,
+    QTabWidget,
     QToolButton,
     QTreeWidget,
     QTreeWidgetItem,
@@ -82,7 +83,7 @@ def status_icon(status: LessonStatus) -> QIcon:
 
 def _command_name(text: str) -> str:
     """A menu label reduced to the plain command, for the keyboard-shortcut sheet."""
-    return text.strip("◀▶◐⌂📖∑🕰📝☆🔎📈💡✎🤖🧭🔁 ").replace("&", "")
+    return text.strip().replace("&", "")
 
 
 def _focus_area(widget: QWidget) -> None:
@@ -407,8 +408,7 @@ class MainWindow(QMainWindow):
             a = QAction(text, self)
             a.setProperty("command", _command_name(text))
             if glyph:
-                a.setProperty("glyph", glyph)
-                a.setIcon(nav_icons.icon(glyph))
+                nav_icons.set_glyph(a, glyph)
             a.setToolTip(tip)
             a.setStatusTip(tip)
             a.triggered.connect(slot)
@@ -842,13 +842,20 @@ class MainWindow(QMainWindow):
         for entry in self.findChildren(QAction):
             glyph = entry.property("glyph")
             if glyph:
-                entry.setIcon(nav_icons.icon(glyph))
-        # Buttons that name a simulator carry its symbol; they follow the theme too.
+                nav_icons.set_glyph(entry, glyph, entry.property("glyph_size") or 18)
+        # Buttons that name a simulator carry its symbol; the rest carry a glyph name.
         for button in self.findChildren(QAbstractButton):
             symbol = button.property("symbol")
+            glyph = button.property("glyph")
             if symbol:
                 button.setIcon(nav_icons.text_icon(symbol, size=16))
-        self.lesson_page.retheme_tabs()
+            elif glyph:
+                nav_icons.set_glyph(button, glyph, button.property("glyph_size") or 18)
+        # Every tab bar that was given icons remembers their names (D3).
+        for tabs in self.findChildren(QTabWidget):
+            names = tabs.property("glyphs")
+            if names:
+                nav_icons.set_tab_glyphs(tabs, names, tabs.property("glyph_size") or 16)
         self.notes_page.refresh()
         self._refresh_sidebar()
         self._update_bookmark_action()
@@ -894,7 +901,7 @@ class MainWindow(QMainWindow):
         if info["goal_met"] and self._goal_announced != key:
             self._goal_announced = key
             self.statusBar().showMessage(
-                "🎯 " + tr("Daily goal reached: {steps} steps today. Streak: {days} day(s).")
+                tr("Daily goal reached: {steps} steps today. Streak: {days} day(s).")
                 .format(steps=info["today"], days=info["streak"]), 10000)
 
     def _refresh_notes(self) -> None:
@@ -1379,7 +1386,7 @@ class MainWindow(QMainWindow):
             TourStep(
                 tr("Your own notes"),
                 tr("The <b>Notes</b> panel, next to the Guide, is a private notebook: one note per page, saved "
-                   "automatically. Press <b>☆ Bookmark</b> (Ctrl+D) to keep a link to a page, and open "
+                   "automatically. Press <b>Bookmark this page</b> (Ctrl+D) to keep a link to a page, and open "
                    "<b>Notes &amp; bookmarks</b> to see or export everything you saved."),
                 target=lambda: self.notes_dock,
                 before=lambda: self.show_panel(self.notes_dock),

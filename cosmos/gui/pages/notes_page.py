@@ -17,6 +17,7 @@ from PySide6.QtWidgets import (
     QWidget,
 )
 
+from cosmos.gui import nav_icons
 from cosmos.gui.context import AppContext
 from cosmos.gui.routes import route_icon, route_title
 from cosmos.gui.widgets.common import card, centred, muted_label, title_label
@@ -27,8 +28,8 @@ GUIDE = tr_noop("""
 
 Everything you saved while working through the course.
 
-- **Bookmarks** are pages you marked with the ☆ button in the Notes panel (or
-  Ctrl+D). Click one to go straight back to it.
+- **Bookmarks** are pages you marked with the **Bookmark this page** button in
+  the Notes panel (or Ctrl+D). Click one to go straight back to it.
 - **Notes** are your own words, one note per page. Open the page and edit the
   note in the Notes panel on the right.
 - **Export** writes all of it into a single Markdown file you can keep or print.
@@ -51,7 +52,8 @@ class NotesPage(QWidget):
         self.subtitle = muted_label("")
         heading.addWidget(self.subtitle)
         head.addLayout(heading, 1)
-        self.export_btn = QPushButton(tr("⬇  Export as Markdown…"))
+        self.export_btn = QPushButton(tr("Export as Markdown…"))
+        nav_icons.set_glyph(self.export_btn, "export", 15)
         self.export_btn.setToolTip(tr("Save every bookmark and note into one text file."))
         self.export_btn.clicked.connect(self.export)
         head.addWidget(self.export_btn, 0, Qt.AlignTop)
@@ -89,8 +91,9 @@ class NotesPage(QWidget):
 
         self.body.addWidget(title_label(tr("Bookmarks"), "subtitle"))
         if not bookmarks:
-            self.body.addWidget(muted_label(tr("No bookmarks yet. Open any lesson or simulator and press ☆ in the "
-                                               "Notes panel (Ctrl+D).")))
+            self.body.addWidget(muted_label(
+                tr("No bookmarks yet. Open any lesson or simulator and press "
+                   "<b>Bookmark this page</b> in the Notes panel (Ctrl+D).")))
         for route in bookmarks:
             self.body.addWidget(self._bookmark_card(route))
 

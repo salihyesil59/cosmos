@@ -6,6 +6,7 @@ from PySide6.QtCore import Qt, Signal
 from PySide6.QtWidgets import QHBoxLayout, QLabel, QPushButton, QVBoxLayout, QWidget
 
 from cosmos.content.models import Challenge
+from cosmos.gui import nav_icons
 from cosmos.gui.challenges import challenge_met, unmet_fields
 from cosmos.gui.context import AppContext
 from cosmos.gui.widgets.common import Banner, card, muted_label
@@ -40,11 +41,13 @@ class ChallengeBar(QWidget):
         head.addStretch(1)
         self.progress = muted_label("")
         head.addWidget(self.progress)
-        prev_btn = QPushButton("◀")
+        prev_btn = QPushButton()
+        nav_icons.set_glyph(prev_btn, "back", 14)
         prev_btn.setToolTip(tr("Previous challenge"))
         prev_btn.setMaximumWidth(36)
         prev_btn.clicked.connect(lambda: self.go(self.index - 1))
-        next_btn = QPushButton("▶")
+        next_btn = QPushButton()
+        nav_icons.set_glyph(next_btn, "forward", 14)
         next_btn.setToolTip(tr("Next challenge"))
         next_btn.setMaximumWidth(36)
         next_btn.clicked.connect(lambda: self.go(self.index + 1))
@@ -58,8 +61,9 @@ class ChallengeBar(QWidget):
         layout.addWidget(self.task)
 
         row = QHBoxLayout()
-        self.check_btn = QPushButton(tr("✓  Check my answer"))
+        self.check_btn = QPushButton(tr("Check my answer"))
         self.check_btn.setProperty("role", "primary")
+        nav_icons.set_glyph(self.check_btn, "check", 14)
         self.check_btn.setToolTip(tr("Look at the current settings of the simulator and see whether they "
                                   "solve the challenge."))
         self.check_btn.clicked.connect(self.check)
@@ -94,7 +98,7 @@ class ChallengeBar(QWidget):
                      if self.ctx.store.is_challenge_done(c.simulator, c.id))
         marks = "".join("●" if self.ctx.store.is_challenge_done(c.simulator, c.id) else "○"
                         for c in self.challenges)
-        self.heading.setText("🎯  " + tr("Challenge {number} of {total}")
+        self.heading.setText(tr("Challenge {number} of {total}")
                              .format(number=self.index + 1, total=len(self.challenges)))
         self.progress.setText(marks + "   " + tr("{solved} of {total} solved")
                               .format(solved=solved, total=len(self.challenges)))
@@ -118,7 +122,7 @@ class ChallengeBar(QWidget):
             self.go(self.index)              # refresh the marks, keeping the learner on this challenge
             message = tr("<b>Solved!</b>") + f" {challenge.success}"
             if any(not self.ctx.store.is_challenge_done(c.simulator, c.id) for c in self.challenges):
-                message += " " + tr("Press ▶ for the next challenge.")
+                message += " " + tr("Use the arrows above for the next challenge.")
             self.feedback.set_message("success", message)
             self.feedback.show()
             return True

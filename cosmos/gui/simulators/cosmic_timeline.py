@@ -10,6 +10,7 @@ from PySide6.QtCore import Qt, QTimer
 from PySide6.QtWidgets import QComboBox, QGroupBox, QHBoxLayout, QLabel, QPushButton, QVBoxLayout
 
 from cosmos.gui.labels import physics
+from cosmos.gui import nav_icons
 from cosmos.gui.simulators.base import SimulatorBase
 from cosmos.gui.theme import theme
 from cosmos.gui.widgets.common import Banner, ParameterSlider, labelled_row
@@ -113,7 +114,8 @@ class CosmicTimelineSimulator(SimulatorBase):
         tl.addWidget(labelled_row(tr("Epoch"), self.epoch_box, (
             tr("Jump to an epoch"), tr("Moves the time slider to the middle of the chosen epoch."))))
         row = QHBoxLayout()
-        self.play = QPushButton(tr("▶ Play history"))
+        self.play = QPushButton(tr("Play history"))
+        nav_icons.set_glyph(self.play, "continue", 14)
         self.play.setCheckable(True)
         self.play.setProperty("role", "primary")
         self.play.setToolTip(tr("Sweep through cosmic history from the Planck era to the far future."))
@@ -236,7 +238,8 @@ class CosmicTimelineSimulator(SimulatorBase):
 
     # ---------------------------------------------------------- animation
     def _toggle(self, on: bool) -> None:
-        self.play.setText(tr("⏸ Pause") if on else tr("▶ Play history"))
+        self.play.setText(tr("Pause") if on else tr("Play history"))
+        nav_icons.set_glyph(self.play, "pause" if on else "continue", 14)
         if on:
             if self.log_time.value() >= LOG_T_MAX - 0.05:
                 self.log_time.setValue(LOG_T_MIN)

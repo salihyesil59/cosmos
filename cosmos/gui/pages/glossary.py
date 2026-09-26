@@ -13,6 +13,7 @@ from PySide6.QtWidgets import (
     QWidget,
 )
 
+from cosmos.gui import nav_icons
 from cosmos.gui.context import AppContext
 from cosmos.gui.widgets.common import muted_label, title_label
 from cosmos.gui.widgets.rich_browser import RichBrowser
@@ -122,7 +123,8 @@ class GlossaryPage(QWidget):
     def _sync_flash_button(self) -> None:
         key = self.current_key
         inside = key is not None and self.ctx.store.has_flashcard(key)
-        self.flash_btn.setText(tr("✓ In my flashcards — remove") if inside else "🃏 " + tr("Add to my flashcards"))
+        self.flash_btn.setText(tr("In my flashcards — remove") if inside else tr("Add to my flashcards"))
+        nav_icons.set_glyph(self.flash_btn, "check" if inside else "flashcards", 16)
         self.flash_btn.setEnabled(key is not None)
 
     def _toggle_flashcard(self) -> None:

@@ -570,21 +570,21 @@
     <message>
         <location filename="../gui/labels.py" line="121" />
         <location filename="../gui/simulators/future_sim.py" line="34" />
-        <location filename="../gui/simulators/powers_of_ten.py" line="80" />
+        <location filename="../gui/simulators/powers_of_ten.py" line="81" />
         <source>minutes</source>
         <translation>dakika</translation>
     </message>
     <message>
         <location filename="../gui/labels.py" line="121" />
         <location filename="../gui/simulators/future_sim.py" line="33" />
-        <location filename="../gui/simulators/powers_of_ten.py" line="79" />
+        <location filename="../gui/simulators/powers_of_ten.py" line="80" />
         <source>hours</source>
         <translation>saat</translation>
     </message>
     <message>
         <location filename="../gui/labels.py" line="121" />
         <location filename="../gui/simulators/future_sim.py" line="33" />
-        <location filename="../gui/simulators/powers_of_ten.py" line="79" />
+        <location filename="../gui/simulators/powers_of_ten.py" line="80" />
         <source>days</source>
         <translation>gün</translation>
     </message>
@@ -592,7 +592,7 @@
         <location filename="../gui/labels.py" line="122" />
         <location filename="../gui/simulators/calculator.py" line="391" />
         <location filename="../gui/simulators/future_sim.py" line="33" />
-        <location filename="../gui/simulators/powers_of_ten.py" line="79" />
+        <location filename="../gui/simulators/powers_of_ten.py" line="80" />
         <source>years</source>
         <translation>yıl</translation>
     </message>
@@ -600,7 +600,7 @@
         <location filename="../gui/labels.py" line="122" />
         <location filename="../gui/simulators/calculator.py" line="393" />
         <location filename="../gui/simulators/future_sim.py" line="32" />
-        <location filename="../gui/simulators/powers_of_ten.py" line="78" />
+        <location filename="../gui/simulators/powers_of_ten.py" line="79" />
         <source>million years</source>
         <translation>milyon yıl</translation>
     </message>
@@ -608,196 +608,196 @@
         <location filename="../gui/labels.py" line="122" />
         <location filename="../gui/simulators/calculator.py" line="394" />
         <location filename="../gui/simulators/future_sim.py" line="32" />
-        <location filename="../gui/simulators/powers_of_ten.py" line="78" />
+        <location filename="../gui/simulators/powers_of_ten.py" line="79" />
         <source>billion years</source>
         <translation>milyar yıl</translation>
     </message>
     <message>
         <location filename="../gui/labels.py" line="123" />
         <location filename="../gui/simulators/future_sim.py" line="34" />
-        <location filename="../gui/simulators/powers_of_ten.py" line="80" />
+        <location filename="../gui/simulators/powers_of_ten.py" line="81" />
         <source>seconds</source>
         <translation>saniye</translation>
     </message>
     <message>
         <location filename="../gui/labels.py" line="123" />
-        <location filename="../gui/simulators/powers_of_ten.py" line="83" />
+        <location filename="../gui/simulators/powers_of_ten.py" line="84" />
         <source>nanoseconds</source>
         <translation>nanosaniye</translation>
     </message>
     <message>
-        <location filename="../gui/main_window.py" line="110" />
+        <location filename="../gui/main_window.py" line="111" />
         <source>Learn Cosmology</source>
         <translation>Kozmoloji Öğren</translation>
     </message>
     <message>
-        <location filename="../gui/main_window.py" line="200" />
+        <location filename="../gui/main_window.py" line="201" />
         <location filename="../gui/main_window.py" line="426" />
         <source>Home</source>
         <translation>Ana sayfa</translation>
     </message>
     <message>
-        <location filename="../gui/main_window.py" line="200" />
+        <location filename="../gui/main_window.py" line="201" />
         <source>Welcome page and where to continue</source>
         <translation>Karşılama sayfası ve kaldığınız yer</translation>
     </message>
     <message>
-        <location filename="../gui/main_window.py" line="201" />
+        <location filename="../gui/main_window.py" line="202" />
         <source>Course</source>
         <translation>Ders programı</translation>
     </message>
     <message>
-        <location filename="../gui/main_window.py" line="201" />
+        <location filename="../gui/main_window.py" line="202" />
         <source>All lessons, grouped by level</source>
         <translation>Seviyelere göre gruplanmış tüm dersler</translation>
     </message>
     <message>
-        <location filename="../gui/main_window.py" line="217" />
+        <location filename="../gui/main_window.py" line="218" />
         <location filename="../gui/main_window.py" line="548" />
-        <location filename="../gui/main_window.py" line="1358" />
-        <location filename="../gui/pages/home.py" line="208" />
+        <location filename="../gui/main_window.py" line="1365" />
+        <location filename="../gui/pages/home.py" line="210" />
         <location filename="../gui/pages/simulators.py" line="50" />
         <source>Simulators</source>
         <translation>Simülatörler</translation>
     </message>
     <message>
-        <location filename="../gui/main_window.py" line="217" />
+        <location filename="../gui/main_window.py" line="218" />
         <source>Interactive tools</source>
         <translation>Etkileşimli araçlar</translation>
     </message>
     <message>
-        <location filename="../gui/main_window.py" line="228" />
+        <location filename="../gui/main_window.py" line="229" />
         <source>{count} simulators</source>
         <translation>{count} simülatör</translation>
     </message>
     <message>
-        <location filename="../gui/main_window.py" line="239" />
+        <location filename="../gui/main_window.py" line="240" />
         <location filename="../gui/pages/problems_page.py" line="86" />
         <source>Problem sets</source>
         <translation>Problem setleri</translation>
     </message>
     <message>
-        <location filename="../gui/main_window.py" line="240" />
+        <location filename="../gui/main_window.py" line="241" />
         <source>Worked numeric problems with checked answers, one set per level</source>
         <translation>Cevabı denetlenen sayısal problemler, her seviye için bir set</translation>
     </message>
     <message>
-        <location filename="../gui/main_window.py" line="242" />
+        <location filename="../gui/main_window.py" line="243" />
         <location filename="../gui/main_window.py" line="430" />
-        <location filename="../gui/pages/glossary.py" line="43" />
+        <location filename="../gui/pages/glossary.py" line="44" />
         <source>Glossary</source>
         <translation>Sözlük</translation>
     </message>
     <message>
-        <location filename="../gui/main_window.py" line="242" />
+        <location filename="../gui/main_window.py" line="243" />
         <source>Definitions of all important terms</source>
         <translation>Önemli tüm terimlerin tanımları</translation>
     </message>
     <message>
-        <location filename="../gui/main_window.py" line="244" />
+        <location filename="../gui/main_window.py" line="245" />
         <location filename="../gui/main_window.py" line="432" />
-        <location filename="../gui/pages/reference.py" line="152" />
+        <location filename="../gui/pages/reference.py" line="153" />
         <source>Reference</source>
         <translation>Başvuru</translation>
     </message>
     <message>
-        <location filename="../gui/main_window.py" line="245" />
+        <location filename="../gui/main_window.py" line="246" />
         <source>Formula sheet, constants, units and models</source>
         <translation>Formül sayfası, sabitler, birimler ve modeller</translation>
     </message>
     <message>
-        <location filename="../gui/main_window.py" line="246" />
+        <location filename="../gui/main_window.py" line="247" />
         <location filename="../gui/main_window.py" line="434" />
         <source>History</source>
         <translation>Tarihçe</translation>
     </message>
     <message>
-        <location filename="../gui/main_window.py" line="247" />
+        <location filename="../gui/main_window.py" line="248" />
         <source>The discoveries and the people behind them</source>
         <translation>Keşifler ve arkalarındaki insanlar</translation>
     </message>
     <message>
-        <location filename="../gui/main_window.py" line="248" />
+        <location filename="../gui/main_window.py" line="249" />
         <location filename="../gui/pages/search_page.py" line="39" />
         <source>Search</source>
         <translation>Ara</translation>
     </message>
     <message>
-        <location filename="../gui/main_window.py" line="249" />
+        <location filename="../gui/main_window.py" line="250" />
         <source>Search lessons, glossary, simulators and formulas</source>
         <translation>Derslerde, sözlükte, simülatörlerde ve formüllerde ara</translation>
     </message>
     <message>
-        <location filename="../gui/main_window.py" line="250" />
-        <location filename="../gui/pages/notes_page.py" line="50" />
+        <location filename="../gui/main_window.py" line="251" />
+        <location filename="../gui/pages/notes_page.py" line="51" />
         <source>Notes &amp; bookmarks</source>
         <translation>Notlar ve yer imleri</translation>
     </message>
     <message>
-        <location filename="../gui/main_window.py" line="250" />
+        <location filename="../gui/main_window.py" line="251" />
         <source>Everything you saved</source>
         <translation>Kaydettiğiniz her şey</translation>
     </message>
     <message>
-        <location filename="../gui/main_window.py" line="251" />
+        <location filename="../gui/main_window.py" line="252" />
         <location filename="../gui/main_window.py" line="445" />
         <location filename="../gui/main_window.py" line="771" />
         <location filename="../gui/main_window.py" line="830" />
-        <location filename="../gui/pages/review_page.py" line="66" />
+        <location filename="../gui/pages/review_page.py" line="67" />
         <source>Review</source>
         <translation>Tekrar</translation>
     </message>
     <message>
-        <location filename="../gui/main_window.py" line="252" />
+        <location filename="../gui/main_window.py" line="253" />
         <source>Quiz questions you got wrong, brought back on a schedule</source>
         <translation>Yanlış yanıtladığınız sınav soruları, bir takvime göre geri getirilir</translation>
     </message>
     <message>
-        <location filename="../gui/main_window.py" line="253" />
+        <location filename="../gui/main_window.py" line="254" />
         <location filename="../gui/main_window.py" line="443" />
         <source>Progress</source>
         <translation>İlerleme</translation>
     </message>
     <message>
-        <location filename="../gui/main_window.py" line="253" />
+        <location filename="../gui/main_window.py" line="254" />
         <source>Your progress and the lesson map</source>
         <translation>İlerlemeniz ve ders haritası</translation>
     </message>
     <message>
-        <location filename="../gui/main_window.py" line="255" />
+        <location filename="../gui/main_window.py" line="256" />
         <location filename="../gui/main_window.py" line="552" />
-        <location filename="../gui/pages/classroom_page.py" line="98" />
+        <location filename="../gui/pages/classroom_page.py" line="99" />
         <source>Classroom</source>
         <translation>Sınıf</translation>
     </message>
     <message>
-        <location filename="../gui/main_window.py" line="256" />
+        <location filename="../gui/main_window.py" line="257" />
         <location filename="../gui/main_window.py" line="553" />
         <source>A progress report to hand on, and teacher notes per lesson</source>
         <translation>Başkasına verilebilecek bir ilerleme raporu ve ders başına öğretmen notları</translation>
     </message>
     <message>
-        <location filename="../gui/main_window.py" line="263" />
+        <location filename="../gui/main_window.py" line="264" />
         <location filename="../gui/main_window.py" line="420" />
-        <location filename="../gui/main_window.py" line="1322" />
+        <location filename="../gui/main_window.py" line="1329" />
         <source>Navigation</source>
         <translation>Gezinme</translation>
     </message>
     <message>
-        <location filename="../gui/main_window.py" line="315" />
+        <location filename="../gui/main_window.py" line="316" />
         <location filename="../gui/main_window.py" line="469" />
         <source>Guide</source>
         <translation>Rehber</translation>
     </message>
     <message>
-        <location filename="../gui/main_window.py" line="320" />
+        <location filename="../gui/main_window.py" line="321" />
         <location filename="../gui/main_window.py" line="436" />
-        <location filename="../gui/pages/notes_page.py" line="97" />
+        <location filename="../gui/pages/notes_page.py" line="100" />
         <source>Notes</source>
         <translation>Notlar</translation>
     </message>
     <message>
-        <location filename="../gui/main_window.py" line="328" />
+        <location filename="../gui/main_window.py" line="329" />
         <location filename="../gui/main_window.py" line="481" />
         <source>Tutor</source>
         <translation>Öğretmen</translation>
@@ -865,7 +865,7 @@
     </message>
     <message>
         <location filename="../gui/main_window.py" line="438" />
-        <location filename="../gui/main_window.py" line="868" />
+        <location filename="../gui/main_window.py" line="875" />
         <source>Bookmark</source>
         <translation>Yer imi</translation>
     </message>
@@ -1117,7 +1117,7 @@
     </message>
     <message>
         <location filename="../gui/main_window.py" line="576" />
-        <location filename="../gui/main_window.py" line="974" />
+        <location filename="../gui/main_window.py" line="981" />
         <source>Keyboard shortcuts</source>
         <translation>Klavye kısayolları</translation>
     </message>
@@ -1138,7 +1138,7 @@
     </message>
     <message>
         <location filename="../gui/main_window.py" line="582" />
-        <location filename="../gui/pages/reference.py" line="193" />
+        <location filename="../gui/pages/reference.py" line="194" />
         <source>Data &amp;&amp; methods</source>
         <translation>Veri ve yöntem</translation>
     </message>
@@ -1264,402 +1264,403 @@ The new language then appears in this menu.</source>
         <translation>Durum: {status}</translation>
     </message>
     <message>
-        <location filename="../gui/main_window.py" line="868" />
+        <location filename="../gui/main_window.py" line="875" />
+        <location filename="../gui/widgets/notes_panel.py" line="123" />
         <source>Bookmarked</source>
         <translation>Yer imlerinde</translation>
     </message>
     <message>
-        <location filename="../gui/main_window.py" line="879" />
+        <location filename="../gui/main_window.py" line="886" />
         <source>Badge earned: {names}</source>
         <translation>Rozet kazanıldı: {names}</translation>
     </message>
     <message>
-        <location filename="../gui/main_window.py" line="897" />
+        <location filename="../gui/main_window.py" line="904" />
         <source>Daily goal reached: {steps} steps today. Streak: {days} day(s).</source>
         <translation>Günlük hedefe ulaşıldı: bugün {steps} adım. Seri: {days} gün.</translation>
     </message>
     <message>
-        <location filename="../gui/main_window.py" line="919" />
+        <location filename="../gui/main_window.py" line="926" />
         <source>Theme: {name}</source>
         <translation>Tema: {name}</translation>
     </message>
     <message>
-        <location filename="../gui/main_window.py" line="935" />
+        <location filename="../gui/main_window.py" line="942" />
         <source>Text size: {percent}</source>
         <translation>Yazı boyutu: {percent}</translation>
     </message>
     <message>
-        <location filename="../gui/main_window.py" line="969" />
+        <location filename="../gui/main_window.py" line="976" />
         <source>Every command in Cosmos can be reached from the keyboard.</source>
         <translation>Cosmos'taki her komuta klavyeden ulaşılabilir.</translation>
     </message>
     <message>
-        <location filename="../gui/main_window.py" line="971" />
+        <location filename="../gui/main_window.py" line="978" />
         <source>Tab and Shift+Tab move between controls; F6 jumps between the lesson list, the page and the side panels.</source>
         <translation>Tab ve Shift+Tab denetimler arasında gezinir; F6 ders listesi, sayfa ve yan paneller arasında atlar.</translation>
     </message>
     <message>
-        <location filename="../gui/main_window.py" line="996" />
+        <location filename="../gui/main_window.py" line="1003" />
         <source>Back up progress</source>
         <translation>İlerlemeyi yedekle</translation>
     </message>
     <message>
-        <location filename="../gui/main_window.py" line="997" />
-        <location filename="../gui/main_window.py" line="1013" />
+        <location filename="../gui/main_window.py" line="1004" />
+        <location filename="../gui/main_window.py" line="1020" />
         <source>Cosmos backup</source>
         <translation>Cosmos yedeği</translation>
     </message>
     <message>
-        <location filename="../gui/main_window.py" line="1003" />
+        <location filename="../gui/main_window.py" line="1010" />
         <source>Could not save the backup</source>
         <translation>Yedek kaydedilemedi</translation>
     </message>
     <message>
-        <location filename="../gui/main_window.py" line="1005" />
+        <location filename="../gui/main_window.py" line="1012" />
         <source>Progress backed up to {path}</source>
         <translation>İlerleme {path} konumuna yedeklendi</translation>
     </message>
     <message>
-        <location filename="../gui/main_window.py" line="1012" />
-        <location filename="../gui/main_window.py" line="1017" />
+        <location filename="../gui/main_window.py" line="1019" />
+        <location filename="../gui/main_window.py" line="1024" />
         <source>Restore progress</source>
         <translation>İlerlemeyi geri yükle</translation>
     </message>
     <message>
-        <location filename="../gui/main_window.py" line="1018" />
+        <location filename="../gui/main_window.py" line="1025" />
         <source>Replace your current progress, notes, bookmarks and review deck with the ones in this backup? What you have now will be lost unless you back it up first.</source>
         <translation>Şimdiki ilerlemeniz, notlarınız, yer imleriniz ve tekrar desteniz bu yedektekilerle değiştirilsin mi? Önce yedeklemezseniz şu an elinizde olanlar kaybolur.</translation>
     </message>
     <message>
-        <location filename="../gui/main_window.py" line="1025" />
+        <location filename="../gui/main_window.py" line="1032" />
         <source>Could not restore the backup</source>
         <translation>Yedek geri yüklenemedi</translation>
     </message>
     <message>
-        <location filename="../gui/main_window.py" line="1026" />
+        <location filename="../gui/main_window.py" line="1033" />
         <source>Nothing was changed.</source>
         <translation>Hiçbir şey değiştirilmedi.</translation>
     </message>
     <message>
-        <location filename="../gui/main_window.py" line="1030" />
+        <location filename="../gui/main_window.py" line="1037" />
         <source>Progress restored from {path}</source>
         <translation>İlerleme {path} dosyasından geri yüklendi</translation>
     </message>
     <message>
-        <location filename="../gui/main_window.py" line="1040" />
-        <location filename="../gui/main_window.py" line="1136" />
+        <location filename="../gui/main_window.py" line="1047" />
+        <location filename="../gui/main_window.py" line="1143" />
         <source>Save as PDF</source>
         <translation>PDF olarak kaydet</translation>
     </message>
     <message>
-        <location filename="../gui/main_window.py" line="1049" />
-        <location filename="../gui/main_window.py" line="1145" />
+        <location filename="../gui/main_window.py" line="1056" />
+        <location filename="../gui/main_window.py" line="1152" />
         <source>Could not save the PDF</source>
         <translation>PDF kaydedilemedi</translation>
     </message>
     <message>
-        <location filename="../gui/main_window.py" line="1055" />
-        <location filename="../gui/main_window.py" line="1150" />
-        <location filename="../gui/pages/classroom_page.py" line="187" />
+        <location filename="../gui/main_window.py" line="1062" />
+        <location filename="../gui/main_window.py" line="1157" />
+        <location filename="../gui/pages/classroom_page.py" line="190" />
         <source>Saved {pages} page(s) to {path}</source>
         <translation>{pages} sayfa {path} konumuna kaydedildi</translation>
     </message>
     <message>
-        <location filename="../gui/main_window.py" line="1060" />
+        <location filename="../gui/main_window.py" line="1067" />
         <source>Open a lesson first, then print it.</source>
         <translation>Önce bir ders açın, sonra yazdırın.</translation>
     </message>
     <message>
-        <location filename="../gui/main_window.py" line="1071" />
-        <location filename="../gui/pages/problems_page.py" line="183" />
+        <location filename="../gui/main_window.py" line="1078" />
+        <location filename="../gui/pages/problems_page.py" line="188" />
         <source>Level {number} · {title}</source>
         <translation>Seviye {number} · {title}</translation>
     </message>
     <message>
-        <location filename="../gui/main_window.py" line="1076" />
+        <location filename="../gui/main_window.py" line="1083" />
         <source>The whole course</source>
         <translation>Tüm kurs</translation>
     </message>
     <message>
-        <location filename="../gui/main_window.py" line="1086" />
+        <location filename="../gui/main_window.py" line="1093" />
         <source>Choose a folder for the website</source>
         <translation>Web sitesi için bir klasör seçin</translation>
     </message>
     <message>
-        <location filename="../gui/main_window.py" line="1092" />
+        <location filename="../gui/main_window.py" line="1099" />
         <source>Replace the website?</source>
         <translation>Web sitesi değiştirilsin mi?</translation>
     </message>
     <message>
-        <location filename="../gui/main_window.py" line="1093" />
+        <location filename="../gui/main_window.py" line="1100" />
         <source>{path} already exists. Replace it with a fresh copy?</source>
         <translation>{path} zaten var. Yeni bir kopyayla değiştirilsin mi?</translation>
     </message>
     <message>
-        <location filename="../gui/main_window.py" line="1097" />
+        <location filename="../gui/main_window.py" line="1104" />
         <source>Building the website — this takes about a minute…</source>
         <translation>Web sitesi oluşturuluyor — bu yaklaşık bir dakika sürer…</translation>
     </message>
     <message>
-        <location filename="../gui/main_window.py" line="1102" />
+        <location filename="../gui/main_window.py" line="1109" />
         <source>Could not write the website</source>
         <translation>Web sitesi yazılamadı</translation>
     </message>
     <message>
-        <location filename="../gui/main_window.py" line="1107" />
+        <location filename="../gui/main_window.py" line="1114" />
         <source>Website written: {pages} pages in {path}. Open index.html in a browser.</source>
         <translation>Web sitesi yazıldı: {path} içinde {pages} sayfa. index.html dosyasını bir tarayıcıda açın.</translation>
     </message>
     <message>
-        <location filename="../gui/main_window.py" line="1122" />
-        <location filename="../gui/main_window.py" line="1140" />
-        <location filename="../gui/pages/lesson.py" line="245" />
+        <location filename="../gui/main_window.py" line="1129" />
+        <location filename="../gui/main_window.py" line="1147" />
+        <location filename="../gui/pages/lesson.py" line="239" />
         <source>Remember this</source>
         <translation>Bunu hatırla</translation>
     </message>
     <message>
-        <location filename="../gui/main_window.py" line="1122" />
+        <location filename="../gui/main_window.py" line="1129" />
         <source>{count} completed lesson(s)</source>
         <translation>{count} tamamlanmış ders</translation>
     </message>
     <message>
-        <location filename="../gui/main_window.py" line="1123" />
+        <location filename="../gui/main_window.py" line="1130" />
         <source>the whole course</source>
         <translation>kursun tamamı</translation>
     </message>
     <message>
-        <location filename="../gui/main_window.py" line="1166" />
+        <location filename="../gui/main_window.py" line="1173" />
         <source>{count} plugin(s) could not be loaded ({names}). See Help → Simulator plugins.</source>
         <translation>{count} eklenti yüklenemedi ({names}). Yardım → Simülatör eklentileri'ne bakın.</translation>
     </message>
     <message>
-        <location filename="../gui/main_window.py" line="1170" />
+        <location filename="../gui/main_window.py" line="1177" />
         <source>Loaded {count} simulator plugin(s).</source>
         <translation>{count} simülatör eklentisi yüklendi.</translation>
     </message>
     <message>
-        <location filename="../gui/main_window.py" line="1182" />
+        <location filename="../gui/main_window.py" line="1189" />
         <source>Simulator plugins</source>
         <translation>Simülatör eklentileri</translation>
     </message>
     <message>
-        <location filename="../gui/main_window.py" line="1184" />
+        <location filename="../gui/main_window.py" line="1191" />
         <source>You can add your own simulator without changing Cosmos. Put one Python file in this folder and restart:</source>
         <translation>Cosmos'u değiştirmeden kendi simülatörünüzü ekleyebilirsiniz. Bu klasöre tek bir Python dosyası koyup uygulamayı yeniden başlatın:</translation>
     </message>
     <message>
-        <location filename="../gui/main_window.py" line="1189" />
+        <location filename="../gui/main_window.py" line="1196" />
         <source>The folder contains a README with a complete example. A plugin is ordinary Python and runs with the same permissions as Cosmos itself, so only add files you wrote or trust.</source>
         <translation>Klasörde tam bir örnek içeren bir README dosyası vardır. Bir eklenti sıradan Python'dur ve Cosmos'un kendisiyle aynı izinlerle çalışır; bu yüzden yalnızca kendi yazdığınız ya da güvendiğiniz dosyaları ekleyin.</translation>
     </message>
     <message>
-        <location filename="../gui/main_window.py" line="1194" />
+        <location filename="../gui/main_window.py" line="1201" />
         <source>Loaded</source>
         <translation>Yüklenenler</translation>
     </message>
     <message>
-        <location filename="../gui/main_window.py" line="1198" />
+        <location filename="../gui/main_window.py" line="1205" />
         <source>Not loaded</source>
         <translation>Yüklenemeyenler</translation>
     </message>
     <message>
-        <location filename="../gui/main_window.py" line="1202" />
+        <location filename="../gui/main_window.py" line="1209" />
         <source>No plugins are installed.</source>
         <translation>Kurulu eklenti yok.</translation>
     </message>
     <message>
-        <location filename="../gui/main_window.py" line="1212" />
+        <location filename="../gui/main_window.py" line="1219" />
         <source>Cosmos will look for updates once a day.</source>
         <translation>Cosmos günde bir kez güncelleme arayacak.</translation>
     </message>
     <message>
-        <location filename="../gui/main_window.py" line="1213" />
+        <location filename="../gui/main_window.py" line="1220" />
         <source>Cosmos will not look for updates.</source>
         <translation>Cosmos güncelleme aramayacak.</translation>
     </message>
     <message>
-        <location filename="../gui/main_window.py" line="1224" />
+        <location filename="../gui/main_window.py" line="1231" />
         <source>Check for updates?</source>
         <translation>Güncellemeler denetlensin mi?</translation>
     </message>
     <message>
-        <location filename="../gui/main_window.py" line="1225" />
+        <location filename="../gui/main_window.py" line="1232" />
         <source>Shall Cosmos look for a newer version once a day?</source>
         <translation>Cosmos günde bir kez daha yeni bir sürüm arasın mı?</translation>
     </message>
     <message>
-        <location filename="../gui/main_window.py" line="1227" />
+        <location filename="../gui/main_window.py" line="1234" />
         <source>It asks GitHub for the latest release number and nothing else. No information about you, this computer or your progress is sent, and there is no identifier of any kind. You can change this at any time under Help.</source>
         <translation>GitHub'a yalnızca en son sürüm numarasını sorar, başka hiçbir şey değil. Sizinle, bu bilgisayarla ya da ilerlemenizle ilgili hiçbir bilgi gönderilmez ve hiçbir türde tanımlayıcı yoktur. Bunu Yardım menüsünden istediğiniz zaman değiştirebilirsiniz.</translation>
     </message>
     <message>
-        <location filename="../gui/main_window.py" line="1230" />
+        <location filename="../gui/main_window.py" line="1237" />
         <source>Yes, check daily</source>
         <translation>Evet, her gün denetle</translation>
     </message>
     <message>
-        <location filename="../gui/main_window.py" line="1231" />
+        <location filename="../gui/main_window.py" line="1238" />
         <source>No, thanks</source>
         <translation>Hayır, teşekkürler</translation>
     </message>
     <message>
-        <location filename="../gui/main_window.py" line="1253" />
+        <location filename="../gui/main_window.py" line="1260" />
         <source>Looking for a newer version…</source>
         <translation>Daha yeni bir sürüm aranıyor…</translation>
     </message>
     <message>
-        <location filename="../gui/main_window.py" line="1277" />
+        <location filename="../gui/main_window.py" line="1284" />
         <source>No newer version found — or the check could not reach GitHub.</source>
         <translation>Daha yeni bir sürüm bulunamadı — ya da denetim GitHub'a ulaşamadı.</translation>
     </message>
     <message>
-        <location filename="../gui/main_window.py" line="1280" />
+        <location filename="../gui/main_window.py" line="1287" />
         <source>Cosmos {version} is available.</source>
         <translation>Cosmos {version} yayımlandı.</translation>
     </message>
     <message>
-        <location filename="../gui/main_window.py" line="1284" />
+        <location filename="../gui/main_window.py" line="1291" />
         <source>A newer Cosmos is available</source>
         <translation>Daha yeni bir Cosmos var</translation>
     </message>
     <message>
-        <location filename="../gui/main_window.py" line="1285" />
+        <location filename="../gui/main_window.py" line="1292" />
         <source>Version {version} has been released.</source>
         <translation>{version} sürümü yayımlandı.</translation>
     </message>
     <message>
-        <location filename="../gui/main_window.py" line="1288" />
+        <location filename="../gui/main_window.py" line="1295" />
         <source>Open the release page</source>
         <translation>Sürüm sayfasını aç</translation>
     </message>
     <message>
-        <location filename="../gui/main_window.py" line="1289" />
+        <location filename="../gui/main_window.py" line="1296" />
         <source>Later</source>
         <translation>Sonra</translation>
     </message>
     <message>
-        <location filename="../gui/main_window.py" line="1316" />
+        <location filename="../gui/main_window.py" line="1323" />
         <source>Welcome to Cosmos!</source>
         <translation>Cosmos'a hoş geldiniz!</translation>
     </message>
     <message>
-        <location filename="../gui/main_window.py" line="1317" />
+        <location filename="../gui/main_window.py" line="1324" />
         <source>This short tour shows you around. It takes less than a minute. You can leave with &lt;b&gt;Skip tour&lt;/b&gt; or the Esc key and replay it later from the &lt;b&gt;Tour&lt;/b&gt; button.</source>
         <translation>Bu kısa tur size programı tanıtır ve bir dakikadan az sürer. &lt;b&gt;Turu geç&lt;/b&gt; ya da Esc tuşu ile çıkabilir, daha sonra &lt;b&gt;Tur&lt;/b&gt; düğmesinden yeniden izleyebilirsiniz.</translation>
     </message>
     <message>
-        <location filename="../gui/main_window.py" line="1323" />
+        <location filename="../gui/main_window.py" line="1330" />
         <source>This list is the whole course. Lessons are grouped into levels, and only the section you are in stays open, so the list never gets long. The icon next to each lesson shows its status: &lt;b&gt;filled with ✓&lt;/b&gt; = completed, &lt;b&gt;ring&lt;/b&gt; = ready, &lt;b&gt;small grey circle&lt;/b&gt; = prerequisites missing. &lt;b&gt;Ctrl+B&lt;/b&gt; folds the list away entirely.</source>
         <translation>Bu liste dersin tamamıdır. Dersler seviyelere ayrılmıştır ve yalnızca içinde bulunduğunuz bölüm açık kalır, böylece liste hiç uzamaz. Her dersin yanındaki simge durumunu gösterir: &lt;b&gt;içi dolu ✓&lt;/b&gt; = tamamlandı, &lt;b&gt;halka&lt;/b&gt; = hazır, &lt;b&gt;küçük gri daire&lt;/b&gt; = ön koşullar eksik. &lt;b&gt;Ctrl+B&lt;/b&gt; listeyi tümüyle katlar.</translation>
     </message>
     <message>
-        <location filename="../gui/main_window.py" line="1330" />
+        <location filename="../gui/main_window.py" line="1337" />
         <source>Start here</source>
         <translation>Buradan başlayın</translation>
     </message>
     <message>
-        <location filename="../gui/main_window.py" line="1331" />
+        <location filename="../gui/main_window.py" line="1338" />
         <source>This button always takes you to the next lesson you are ready for. If you are new to cosmology, simply follow it.</source>
         <translation>Bu düğme sizi her zaman hazır olduğunuz bir sonraki derse götürür. Kozmolojiye yeniyseniz yalnızca onu izleyin.</translation>
     </message>
     <message>
-        <location filename="../gui/main_window.py" line="1336" />
+        <location filename="../gui/main_window.py" line="1343" />
         <source>The Guide panel</source>
         <translation>Rehber paneli</translation>
     </message>
     <message>
-        <location filename="../gui/main_window.py" line="1337" />
+        <location filename="../gui/main_window.py" line="1344" />
         <source>The Guide explains the page you are on: how to use it, what to try and where to go next. When you click a coloured term in a lesson, its definition appears here too. It stays out of the way until you ask for it with &lt;b&gt;F1&lt;/b&gt; or the toolbar button.</source>
         <translation>Rehber, bulunduğunuz sayfayı anlatır: nasıl kullanılır, ne denenir, sonra nereye gidilir. Bir derste renkli bir terime tıkladığınızda tanımı da burada görünür. &lt;b&gt;F1&lt;/b&gt; ile ya da araç çubuğundaki düğmeyle isteyene kadar yoldan çekilir.</translation>
     </message>
     <message>
-        <location filename="../gui/main_window.py" line="1344" />
+        <location filename="../gui/main_window.py" line="1351" />
         <source>Lessons and quizzes</source>
         <translation>Dersler ve testler</translation>
     </message>
     <message>
-        <location filename="../gui/main_window.py" line="1345" />
+        <location filename="../gui/main_window.py" line="1352" />
         <source>Each lesson has a &lt;b&gt;Lesson&lt;/b&gt; tab with explanations, formulas and figures, and a &lt;b&gt;Quiz&lt;/b&gt; tab. Score at least 70% to complete the lesson.</source>
         <translation>Her dersin açıklamalar, formüller ve şekiller içeren bir &lt;b&gt;Ders&lt;/b&gt; sekmesi ile bir &lt;b&gt;Test&lt;/b&gt; sekmesi vardır. Dersi tamamlamak için en az %70 alın.</translation>
     </message>
     <message>
-        <location filename="../gui/main_window.py" line="1351" />
+        <location filename="../gui/main_window.py" line="1358" />
         <source>Two ways to read a lesson</source>
         <translation>Bir dersi okumanın iki yolu</translation>
     </message>
     <message>
-        <location filename="../gui/main_window.py" line="1352" />
+        <location filename="../gui/main_window.py" line="1359" />
         <source>Every lesson has a &lt;b&gt;View&lt;/b&gt; switch at the top right. &lt;b&gt;Intuitive&lt;/b&gt; tells the story in words, hiding the formulas and derivations; &lt;b&gt;With the maths&lt;/b&gt; shows the complete lesson. Switch whenever you like — your choice is remembered.</source>
         <translation>Her dersin sağ üstünde bir &lt;b&gt;Görünüm&lt;/b&gt; anahtarı vardır. &lt;b&gt;Sezgisel&lt;/b&gt; konuyu formülleri ve türetmeleri gizleyerek sözle anlatır; &lt;b&gt;Matematikle&lt;/b&gt; dersin tamamını gösterir. İstediğiniz zaman değiştirin — seçiminiz hatırlanır.</translation>
     </message>
     <message>
-        <location filename="../gui/main_window.py" line="1359" />
+        <location filename="../gui/main_window.py" line="1366" />
         <source>Simulators let you experiment. Lessons link to them with &lt;b&gt;Try it&lt;/b&gt; boxes, and you can open them any time from the sidebar.</source>
         <translation>Simülatörler deney yapmanızı sağlar. Dersler onlara &lt;b&gt;Deneyin&lt;/b&gt; kutularıyla bağlanır, ayrıca kenar çubuğundan istediğiniz zaman açabilirsiniz.</translation>
     </message>
     <message>
-        <location filename="../gui/main_window.py" line="1365" />
+        <location filename="../gui/main_window.py" line="1372" />
         <location filename="../gui/pages/simulators.py" line="131" />
         <source>Challenges</source>
         <translation>Görevler</translation>
     </message>
     <message>
-        <location filename="../gui/main_window.py" line="1366" />
+        <location filename="../gui/main_window.py" line="1373" />
         <source>Many simulators open with a &lt;b&gt;challenge&lt;/b&gt;: a concrete task such as finding a universe that ends in a Big Crunch. Set the controls and press &lt;b&gt;Check my answer&lt;/b&gt;; hints are there if you need them, and solved challenges earn badges.</source>
         <translation>Birçok simülatör bir &lt;b&gt;görev&lt;/b&gt; ile açılır: örneğin Büyük Çöküş ile biten bir evren bulmak gibi somut bir iş. Denetimleri ayarlayın ve &lt;b&gt;Cevabımı kontrol et&lt;/b&gt; düğmesine basın; gerekirse ipuçları hazır, çözülen görevler rozet kazandırır.</translation>
     </message>
     <message>
-        <location filename="../gui/main_window.py" line="1373" />
+        <location filename="../gui/main_window.py" line="1380" />
         <source>Search and the formula sheet</source>
         <translation>Arama ve formül sayfası</translation>
     </message>
     <message>
-        <location filename="../gui/main_window.py" line="1374" />
+        <location filename="../gui/main_window.py" line="1381" />
         <source>The &lt;b&gt;search box&lt;/b&gt; (Ctrl+F) looks through lessons, the glossary, the simulators and the formula sheet at once. &lt;b&gt;Reference&lt;/b&gt; (Ctrl+R) collects every formula, constant and unit conversion in one place.</source>
         <translation>&lt;b&gt;Arama kutusu&lt;/b&gt; (Ctrl+F) dersleri, sözlüğü, simülatörleri ve formül sayfasını aynı anda tarar. &lt;b&gt;Başvuru&lt;/b&gt; (Ctrl+R) her formülü, sabiti ve birim dönüşümünü tek yerde toplar.</translation>
     </message>
     <message>
-        <location filename="../gui/main_window.py" line="1380" />
+        <location filename="../gui/main_window.py" line="1387" />
         <source>Your own notes</source>
         <translation>Kendi notlarınız</translation>
     </message>
     <message>
-        <location filename="../gui/main_window.py" line="1381" />
-        <source>The &lt;b&gt;Notes&lt;/b&gt; panel, next to the Guide, is a private notebook: one note per page, saved automatically. Press &lt;b&gt;☆ Bookmark&lt;/b&gt; (Ctrl+D) to keep a link to a page, and open &lt;b&gt;Notes &amp;amp; bookmarks&lt;/b&gt; to see or export everything you saved.</source>
-        <translation>Rehberin yanındaki &lt;b&gt;Notlar&lt;/b&gt; paneli özel bir defterdir: sayfa başına bir not, kendiliğinden kaydedilir. Bir sayfaya bağlantı tutmak için &lt;b&gt;☆ Yer imi&lt;/b&gt; (Ctrl+D) düğmesine basın, kaydettiğiniz her şeyi görmek veya dışa aktarmak için &lt;b&gt;Notlar &amp;amp; yer imleri&lt;/b&gt; sayfasını açın.</translation>
+        <location filename="../gui/main_window.py" line="1388" />
+        <source>The &lt;b&gt;Notes&lt;/b&gt; panel, next to the Guide, is a private notebook: one note per page, saved automatically. Press &lt;b&gt;Bookmark this page&lt;/b&gt; (Ctrl+D) to keep a link to a page, and open &lt;b&gt;Notes &amp;amp; bookmarks&lt;/b&gt; to see or export everything you saved.</source>
+        <translation>Rehberin yanındaki &lt;b&gt;Notlar&lt;/b&gt; paneli özel bir defterdir: sayfa başına bir not, kendiliğinden kaydedilir. Bir sayfaya bağlantı tutmak için &lt;b&gt;Bu sayfayı yer imlerine ekle&lt;/b&gt; (Ctrl+D) düğmesine basın, kaydettiğiniz her şeyi görmek veya dışa aktarmak için &lt;b&gt;Notlar &amp;amp; yer imleri&lt;/b&gt; sayfasını açın.</translation>
     </message>
     <message>
-        <location filename="../gui/main_window.py" line="1388" />
+        <location filename="../gui/main_window.py" line="1395" />
         <source>Toolbar</source>
         <translation>Araç çubuğu</translation>
     </message>
     <message>
-        <location filename="../gui/main_window.py" line="1389" />
+        <location filename="../gui/main_window.py" line="1396" />
         <source>Go &lt;b&gt;Back&lt;/b&gt; and &lt;b&gt;Forward&lt;/b&gt; between pages, jump &lt;b&gt;Home&lt;/b&gt; or &lt;b&gt;Continue&lt;/b&gt; where you left off. On the right are the search box and the three side panels. Everything else lives in the menus and in the list on the left.</source>
         <translation>Sayfalar arasında &lt;b&gt;Geri&lt;/b&gt; ve &lt;b&gt;İleri&lt;/b&gt; gidin, &lt;b&gt;Ana sayfa&lt;/b&gt;'ya atlayın ya da kaldığınız yerden &lt;b&gt;Devam&lt;/b&gt; edin. Sağda arama kutusu ve üç yan panel var. Geri kalan her şey menülerde ve soldaki listede.</translation>
     </message>
     <message>
-        <location filename="../gui/main_window.py" line="1395" />
+        <location filename="../gui/main_window.py" line="1402" />
         <source>History and badges</source>
         <translation>Tarihçe ve rozetler</translation>
     </message>
     <message>
-        <location filename="../gui/main_window.py" line="1396" />
+        <location filename="../gui/main_window.py" line="1403" />
         <source>&lt;b&gt;History&lt;/b&gt; follows cosmology from Copernicus to the latest surveys, with cards for the scientists. &lt;b&gt;Progress&lt;/b&gt; shows your lesson map and the &lt;b&gt;badges&lt;/b&gt; you have earned.</source>
         <translation>&lt;b&gt;Tarihçe&lt;/b&gt; kozmolojiyi Kopernik'ten en son taramalara kadar izler ve bilim insanları için kartlar içerir. &lt;b&gt;İlerleme&lt;/b&gt; ders haritanızı ve kazandığınız &lt;b&gt;rozetleri&lt;/b&gt; gösterir.</translation>
     </message>
     <message>
-        <location filename="../gui/main_window.py" line="1401" />
+        <location filename="../gui/main_window.py" line="1408" />
         <source>You're ready</source>
         <translation>Hazırsınız</translation>
     </message>
     <message>
-        <location filename="../gui/main_window.py" line="1402" />
+        <location filename="../gui/main_window.py" line="1409" />
         <source>Every control has a tooltip, and &lt;b&gt;?&lt;/b&gt; buttons give detailed explanations. Enjoy exploring the universe!</source>
         <translation>Her denetimin bir ipucu balonu vardır ve &lt;b&gt;?&lt;/b&gt; düğmeleri ayrıntılı açıklama verir. Evreni keşfetmenin tadını çıkarın!</translation>
     </message>
     <message>
-        <location filename="../gui/pages/classroom_page.py" line="25" />
+        <location filename="../gui/pages/classroom_page.py" line="26" />
         <source>
 ## Classroom
 
@@ -1699,202 +1700,202 @@ yüklenmez ve uygulamanın öğrencinin kim olduğuna dair hiçbir bilgisi yoktu
 </translation>
     </message>
     <message>
-        <location filename="../gui/pages/classroom_page.py" line="45" />
-        <location filename="../gui/pages/classroom_page.py" line="180" />
+        <location filename="../gui/pages/classroom_page.py" line="46" />
+        <location filename="../gui/pages/classroom_page.py" line="183" />
         <source>Progress report</source>
         <translation>İlerleme raporu</translation>
     </message>
     <message>
-        <location filename="../gui/pages/classroom_page.py" line="46" />
+        <location filename="../gui/pages/classroom_page.py" line="47" />
         <source>Generated</source>
         <translation>Oluşturulma</translation>
     </message>
     <message>
-        <location filename="../gui/pages/classroom_page.py" line="47" />
+        <location filename="../gui/pages/classroom_page.py" line="48" />
         <source>Summary</source>
         <translation>Özet</translation>
     </message>
     <message>
-        <location filename="../gui/pages/classroom_page.py" line="48" />
+        <location filename="../gui/pages/classroom_page.py" line="49" />
         <location filename="../gui/pages/progress_page.py" line="75" />
         <source>Lessons completed</source>
         <translation>Tamamlanan dersler</translation>
     </message>
     <message>
-        <location filename="../gui/pages/classroom_page.py" line="49" />
+        <location filename="../gui/pages/classroom_page.py" line="50" />
         <source>about {minutes} minutes of reading</source>
         <translation>yaklaşık {minutes} dakikalık okuma</translation>
     </message>
     <message>
-        <location filename="../gui/pages/classroom_page.py" line="50" />
+        <location filename="../gui/pages/classroom_page.py" line="51" />
         <source>Average quiz score</source>
         <translation>Ortalama sınav puanı</translation>
     </message>
     <message>
-        <location filename="../gui/pages/classroom_page.py" line="51" />
+        <location filename="../gui/pages/classroom_page.py" line="52" />
         <source>perfect</source>
         <translation>tam puan</translation>
     </message>
     <message>
-        <location filename="../gui/pages/classroom_page.py" line="52" />
+        <location filename="../gui/pages/classroom_page.py" line="53" />
         <source>Simulator challenges</source>
         <translation>Simülatör görevleri</translation>
     </message>
     <message>
-        <location filename="../gui/pages/classroom_page.py" line="53" />
+        <location filename="../gui/pages/classroom_page.py" line="54" />
         <source>Worked problems</source>
         <translation>Çözülmüş problemler</translation>
     </message>
     <message>
-        <location filename="../gui/pages/classroom_page.py" line="54" />
+        <location filename="../gui/pages/classroom_page.py" line="55" />
         <source>at the first attempt</source>
         <translation>ilk denemede</translation>
     </message>
     <message>
-        <location filename="../gui/pages/classroom_page.py" line="55" />
+        <location filename="../gui/pages/classroom_page.py" line="56" />
         <location filename="../gui/pages/progress_page.py" line="92" />
         <source>Badges</source>
         <translation>Rozetler</translation>
     </message>
     <message>
-        <location filename="../gui/pages/classroom_page.py" line="56" />
+        <location filename="../gui/pages/classroom_page.py" line="57" />
         <source>Review deck</source>
         <translation>Tekrar destesi</translation>
     </message>
     <message>
-        <location filename="../gui/pages/classroom_page.py" line="57" />
+        <location filename="../gui/pages/classroom_page.py" line="58" />
         <source>waiting</source>
         <translation>bekliyor</translation>
     </message>
     <message>
-        <location filename="../gui/pages/classroom_page.py" line="58" />
-        <location filename="../gui/pages/review_page.py" line="266" />
+        <location filename="../gui/pages/classroom_page.py" line="59" />
+        <location filename="../gui/pages/review_page.py" line="271" />
         <source>due today</source>
         <translation>bugün</translation>
     </message>
     <message>
-        <location filename="../gui/pages/classroom_page.py" line="59" />
+        <location filename="../gui/pages/classroom_page.py" line="60" />
         <source>learned for good</source>
         <translation>kalıcı olarak öğrenildi</translation>
     </message>
     <message>
-        <location filename="../gui/pages/classroom_page.py" line="60" />
+        <location filename="../gui/pages/classroom_page.py" line="61" />
         <source>Last lesson completed</source>
         <translation>Son tamamlanan ders</translation>
     </message>
     <message>
-        <location filename="../gui/pages/classroom_page.py" line="61" />
+        <location filename="../gui/pages/classroom_page.py" line="62" />
         <source>By level</source>
         <translation>Seviyeye göre</translation>
     </message>
     <message>
-        <location filename="../gui/pages/classroom_page.py" line="62" />
+        <location filename="../gui/pages/classroom_page.py" line="63" />
         <source>Level</source>
         <translation>Seviye</translation>
     </message>
     <message>
-        <location filename="../gui/pages/classroom_page.py" line="63" />
+        <location filename="../gui/pages/classroom_page.py" line="64" />
         <source>Lessons</source>
         <translation>Dersler</translation>
     </message>
     <message>
-        <location filename="../gui/pages/classroom_page.py" line="64" />
+        <location filename="../gui/pages/classroom_page.py" line="65" />
         <source>Average quiz</source>
         <translation>Sınav ortalaması</translation>
     </message>
     <message>
-        <location filename="../gui/pages/classroom_page.py" line="65" />
+        <location filename="../gui/pages/classroom_page.py" line="66" />
         <source>Worth going over again</source>
         <translation>Yeniden gözden geçirmeye değer</translation>
     </message>
     <message>
-        <location filename="../gui/pages/classroom_page.py" line="66" />
+        <location filename="../gui/pages/classroom_page.py" line="67" />
         <source>Completed, but only just. A pass at 70% leaves plenty unlearned.</source>
         <translation>Tamamlandı, ama kıl payı. %70'lik bir geçiş geride epeyce öğrenilmemiş şey bırakır.</translation>
     </message>
     <message>
-        <location filename="../gui/pages/classroom_page.py" line="67" />
+        <location filename="../gui/pages/classroom_page.py" line="68" />
         <source>Simulators not yet opened</source>
         <translation>Henüz açılmamış simülatörler</translation>
     </message>
     <message>
-        <location filename="../gui/pages/classroom_page.py" line="68" />
+        <location filename="../gui/pages/classroom_page.py" line="69" />
         <source>Everything in this report is read from this computer only. Nothing was uploaded.</source>
         <translation>Bu rapordaki her şey yalnızca bu bilgisayardan okunmuştur. Hiçbir şey yüklenmedi.</translation>
     </message>
     <message>
-        <location filename="../gui/pages/classroom_page.py" line="73" />
+        <location filename="../gui/pages/classroom_page.py" line="74" />
         <source>Common misconception</source>
         <translation>Sık görülen yanlış anlama</translation>
     </message>
     <message>
-        <location filename="../gui/pages/classroom_page.py" line="74" />
+        <location filename="../gui/pages/classroom_page.py" line="75" />
         <source>Discussion question</source>
         <translation>Tartışma sorusu</translation>
     </message>
     <message>
-        <location filename="../gui/pages/classroom_page.py" line="75" />
+        <location filename="../gui/pages/classroom_page.py" line="76" />
         <source>Show them</source>
         <translation>Şunu gösterin</translation>
     </message>
     <message>
-        <location filename="../gui/pages/classroom_page.py" line="100" />
+        <location filename="../gui/pages/classroom_page.py" line="101" />
         <source>A progress report to hand on, and teacher notes for every lesson.</source>
         <translation>Başkasına verilebilecek bir ilerleme raporu ve her ders için öğretmen notları.</translation>
     </message>
     <message>
-        <location filename="../gui/pages/classroom_page.py" line="102" />
-        <location filename="../gui/pages/notes_page.py" line="54" />
-        <source>⬇  Export as Markdown…</source>
-        <translation>⬇  Markdown olarak dışa aktar…</translation>
+        <location filename="../gui/pages/classroom_page.py" line="103" />
+        <location filename="../gui/pages/notes_page.py" line="55" />
+        <source>Export as Markdown…</source>
+        <translation>Markdown olarak dışa aktar…</translation>
     </message>
     <message>
-        <location filename="../gui/pages/classroom_page.py" line="104" />
-        <source>⬇  Export as PDF…</source>
-        <translation>⬇  PDF olarak dışa aktar…</translation>
+        <location filename="../gui/pages/classroom_page.py" line="105" />
+        <source>Export as PDF…</source>
+        <translation>PDF olarak dışa aktar…</translation>
     </message>
     <message>
-        <location filename="../gui/pages/classroom_page.py" line="110" />
+        <location filename="../gui/pages/classroom_page.py" line="113" />
         <source>Classroom mode: show teacher notes inside every lesson</source>
         <translation>Sınıf modu: öğretmen notlarını her dersin içinde göster</translation>
     </message>
     <message>
-        <location filename="../gui/pages/classroom_page.py" line="111" />
+        <location filename="../gui/pages/classroom_page.py" line="114" />
         <source>Adds a Teacher notes tab to each lesson and includes the notes when you print it. It changes nothing about the learner's progress.</source>
         <translation>Her derse bir Öğretmen notları sekmesi ekler ve dersi yazdırdığınızda notları da içerir. Öğrencinin ilerlemesiyle ilgili hiçbir şeyi değiştirmez.</translation>
     </message>
     <message>
-        <location filename="../gui/pages/classroom_page.py" line="138" />
-        <location filename="../gui/pages/lesson.py" line="109" />
-        <location filename="../gui/pages/lesson.py" line="342" />
+        <location filename="../gui/pages/classroom_page.py" line="141" />
+        <location filename="../gui/pages/lesson.py" line="108" />
+        <location filename="../gui/pages/lesson.py" line="336" />
         <location filename="../gui/rendering/pdf.py" line="80" />
         <source>Teacher notes</source>
         <translation>Öğretmen notları</translation>
     </message>
     <message>
-        <location filename="../gui/pages/classroom_page.py" line="157" />
-        <location filename="../gui/pages/classroom_page.py" line="174" />
+        <location filename="../gui/pages/classroom_page.py" line="160" />
+        <location filename="../gui/pages/classroom_page.py" line="177" />
         <source>Save the report</source>
         <translation>Raporu kaydet</translation>
     </message>
     <message>
-        <location filename="../gui/pages/classroom_page.py" line="166" />
-        <location filename="../gui/pages/classroom_page.py" line="184" />
+        <location filename="../gui/pages/classroom_page.py" line="169" />
+        <location filename="../gui/pages/classroom_page.py" line="187" />
         <source>Could not save the report</source>
         <translation>Rapor kaydedilemedi</translation>
     </message>
     <message>
-        <location filename="../gui/pages/classroom_page.py" line="168" />
+        <location filename="../gui/pages/classroom_page.py" line="171" />
         <source>Saved the report to {path}</source>
         <translation>Rapor {path} konumuna kaydedildi</translation>
     </message>
     <message>
-        <location filename="../gui/pages/classroom_page.py" line="180" />
+        <location filename="../gui/pages/classroom_page.py" line="183" />
         <source>Cosmos</source>
         <translation>Cosmos</translation>
     </message>
     <message>
-        <location filename="../gui/pages/glossary.py" line="21" />
+        <location filename="../gui/pages/glossary.py" line="22" />
         <source>
 ## Glossary
 
@@ -1923,37 +1924,37 @@ Kursun bütün önemli terimleri tek bir yerde.
 </translation>
     </message>
     <message>
-        <location filename="../gui/pages/glossary.py" line="48" />
+        <location filename="../gui/pages/glossary.py" line="49" />
         <source>Search terms…  (e.g. redshift, parsec, dark matter)</source>
         <translation>Terimlerde ara…  (örn. redshift, parsec, dark matter)</translation>
     </message>
     <message>
-        <location filename="../gui/pages/glossary.py" line="72" />
+        <location filename="../gui/pages/glossary.py" line="73" />
         <source>Flashcards come back on the Review page: tomorrow, then after 3, 7, 16 and 35 days, until you know the term for good.</source>
         <translation>Kartlar Tekrar sayfasında geri gelir: yarın, sonra 3, 7, 16 ve 35 gün sonra; terimi temelli öğrenene kadar.</translation>
     </message>
     <message>
-        <location filename="../gui/pages/glossary.py" line="125" />
-        <source>✓ In my flashcards — remove</source>
-        <translation>✓ Kartlarımda — çıkar</translation>
+        <location filename="../gui/pages/glossary.py" line="126" />
+        <source>In my flashcards — remove</source>
+        <translation>Kartlarımda — çıkar</translation>
     </message>
     <message>
-        <location filename="../gui/pages/glossary.py" line="125" />
+        <location filename="../gui/pages/glossary.py" line="126" />
         <source>Add to my flashcards</source>
         <translation>Kartlarıma ekle</translation>
     </message>
     <message>
-        <location filename="../gui/pages/glossary.py" line="136" />
+        <location filename="../gui/pages/glossary.py" line="138" />
         <source>“{term}” removed from your flashcards</source>
         <translation>“{term}” kartlarınızdan çıkarıldı</translation>
     </message>
     <message>
-        <location filename="../gui/pages/glossary.py" line="139" />
+        <location filename="../gui/pages/glossary.py" line="141" />
         <source>“{term}” added to your flashcards: it is due today on the Review page</source>
         <translation>“{term}” kartlarınıza eklendi: bugün Tekrar sayfasında sizi bekliyor</translation>
     </message>
     <message>
-        <location filename="../gui/pages/history_page.py" line="25" />
+        <location filename="../gui/pages/history_page.py" line="26" />
         <source>
 ## The history of cosmology
 
@@ -1988,62 +1989,62 @@ kalır.
 </translation>
     </message>
     <message>
-        <location filename="../gui/pages/history_page.py" line="43" />
+        <location filename="../gui/pages/history_page.py" line="44" />
         <source>Idea</source>
         <translation>Fikir</translation>
     </message>
     <message>
-        <location filename="../gui/pages/history_page.py" line="44" />
+        <location filename="../gui/pages/history_page.py" line="45" />
         <source>Theory</source>
         <translation>Kuram</translation>
     </message>
     <message>
-        <location filename="../gui/pages/history_page.py" line="45" />
+        <location filename="../gui/pages/history_page.py" line="46" />
         <source>Observation</source>
         <translation>Gözlem</translation>
     </message>
     <message>
-        <location filename="../gui/pages/history_page.py" line="46" />
+        <location filename="../gui/pages/history_page.py" line="47" />
         <source>Open problem</source>
         <translation>Açık sorun</translation>
     </message>
     <message>
-        <location filename="../gui/pages/history_page.py" line="59" />
+        <location filename="../gui/pages/history_page.py" line="60" />
         <source>The history of cosmology</source>
         <translation>Kozmolojinin tarihi</translation>
     </message>
     <message>
-        <location filename="../gui/pages/history_page.py" line="61" />
+        <location filename="../gui/pages/history_page.py" line="62" />
         <source>{events} milestones between {first} and {last}, and {people} of the people behind them.</source>
         <translation>{first} ile {last} arasında {events} dönüm noktası ve arkalarındaki {people} kişi.</translation>
     </message>
     <message>
-        <location filename="../gui/pages/history_page.py" line="65" />
+        <location filename="../gui/pages/history_page.py" line="66" />
         <source>Filter by name, year or keyword…  (e.g. Hubble, 1998, dark matter)</source>
         <translation>Ada, yıla veya anahtar kelimeye göre süz…  (örn. Hubble, 1998, dark matter)</translation>
     </message>
     <message>
-        <location filename="../gui/pages/history_page.py" line="87" />
+        <location filename="../gui/pages/history_page.py" line="88" />
         <source>Timeline</source>
         <translation>Zaman çizelgesi</translation>
     </message>
     <message>
-        <location filename="../gui/pages/history_page.py" line="103" />
+        <location filename="../gui/pages/history_page.py" line="104" />
         <source>Scientists</source>
         <translation>Bilim insanları</translation>
     </message>
     <message>
-        <location filename="../gui/pages/history_page.py" line="166" />
+        <location filename="../gui/pages/history_page.py" line="168" />
         <source>{n} milestones shown</source>
         <translation>{n} dönüm noktası gösteriliyor</translation>
     </message>
     <message>
-        <location filename="../gui/pages/history_page.py" line="194" />
+        <location filename="../gui/pages/history_page.py" line="198" />
         <source>Open {lesson}</source>
         <translation>{lesson} dersini aç</translation>
     </message>
     <message>
-        <location filename="../gui/pages/history_page.py" line="214" />
+        <location filename="../gui/pages/history_page.py" line="218" />
         <source>Read more</source>
         <translation>Devamını oku</translation>
     </message>
@@ -2189,134 +2190,134 @@ paneller arasında atlar, ve klavyenin bulunduğu yer belirgin bir çerçeveyle
         <translation>Evrenin bütününü inceleyen bilim olan kozmolojide etkileşimli bir kurs. Evrenin ne kadar büyük olduğu ve bunu nasıl ölçtüğümüzle başlayın; genişleyen evrene, karanlık maddeye, karanlık enerjiye ve Büyük Patlama'dan sonraki ilk dakikalara kadar ilerleyin.</translation>
     </message>
     <message>
-        <location filename="../gui/pages/home.py" line="129" />
+        <location filename="../gui/pages/home.py" line="130" />
         <source>Take the guided tour</source>
         <translation>Rehberli tanıtımı izle</translation>
     </message>
     <message>
-        <location filename="../gui/pages/home.py" line="137" />
+        <location filename="../gui/pages/home.py" line="138" />
         <source>Questions you got wrong, brought back just before you would forget them (Ctrl+Shift+R)</source>
         <translation>Yanlış yanıtladığınız sorular, tam unutmak üzereyken geri getirilir (Ctrl+Shift+R)</translation>
     </message>
     <message>
-        <location filename="../gui/pages/home.py" line="163" />
+        <location filename="../gui/pages/home.py" line="165" />
         <source>No daily goal</source>
         <translation>Günlük hedef yok</translation>
     </message>
     <message>
-        <location filename="../gui/pages/home.py" line="164" />
-        <location filename="../gui/pages/home.py" line="294" />
+        <location filename="../gui/pages/home.py" line="166" />
+        <location filename="../gui/pages/home.py" line="296" />
         <source>{steps} steps a day</source>
         <translation>Günde {steps} adım</translation>
     </message>
     <message>
-        <location filename="../gui/pages/home.py" line="166" />
+        <location filename="../gui/pages/home.py" line="168" />
         <source>Daily goal</source>
         <translation>Günlük hedef</translation>
     </message>
     <message>
-        <location filename="../gui/pages/home.py" line="167" />
+        <location filename="../gui/pages/home.py" line="169" />
         <source>What counts as a step</source>
         <translation>Adım olarak ne sayılır</translation>
     </message>
     <message>
-        <location filename="../gui/pages/home.py" line="168" />
+        <location filename="../gui/pages/home.py" line="170" />
         <source>Every quiz question you answer, every review and flashcard, every attempt at a worked problem and every simulator challenge you solve. Ten a day is about fifteen minutes.</source>
         <translation>Yanıtladığınız her sınav sorusu, her tekrar ve kart, çözümlü bir problemdeki her deneme ve çözdüğünüz her simülatör görevi. Günde on adım yaklaşık on beş dakikadır.</translation>
     </message>
     <message>
-        <location filename="../gui/pages/home.py" line="174" />
+        <location filename="../gui/pages/home.py" line="176" />
         <source>Course levels</source>
         <translation>Kurs seviyeleri</translation>
     </message>
     <message>
-        <location filename="../gui/pages/home.py" line="186" />
-        <location filename="../gui/pages/lesson.py" line="157" />
+        <location filename="../gui/pages/home.py" line="188" />
+        <location filename="../gui/pages/lesson.py" line="151" />
         <source>LEVEL {number}</source>
         <translation>SEVİYE {number}</translation>
     </message>
     <message>
-        <location filename="../gui/pages/home.py" line="197" />
+        <location filename="../gui/pages/home.py" line="199" />
         <source>Open level</source>
         <translation>Seviyeyi aç</translation>
     </message>
     <message>
-        <location filename="../gui/pages/home.py" line="200" />
+        <location filename="../gui/pages/home.py" line="202" />
         <source>Opens the first unfinished lesson of this level (starts at {lesson}).</source>
         <translation>Bu seviyenin bitmemiş ilk dersini açar ({lesson} ile başlar).</translation>
     </message>
     <message>
-        <location filename="../gui/pages/home.py" line="210" />
+        <location filename="../gui/pages/home.py" line="212" />
         <source>Hands-on tools to explore the ideas from the lessons. You can open them at any time.</source>
         <translation>Derslerdeki fikirleri kendiniz denemeniz için araçlar. İstediğiniz zaman açabilirsiniz.</translation>
     </message>
     <message>
-        <location filename="../gui/pages/home.py" line="246" />
+        <location filename="../gui/pages/home.py" line="248" />
         <source>Course progress: &lt;b&gt;{done}&lt;/b&gt; of {total} lessons completed</source>
         <translation>Kurs ilerlemesi: {total} dersin &lt;b&gt;{done}&lt;/b&gt; tanesi tamamlandı</translation>
     </message>
     <message>
-        <location filename="../gui/pages/home.py" line="249" />
+        <location filename="../gui/pages/home.py" line="251" />
         <source>Review the course</source>
         <translation>Kursu gözden geçir</translation>
     </message>
     <message>
-        <location filename="../gui/pages/home.py" line="250" />
+        <location filename="../gui/pages/home.py" line="252" />
         <source>You have completed every lesson. Congratulations!</source>
         <translation>Bütün dersleri tamamladınız. Tebrikler!</translation>
     </message>
     <message>
-        <location filename="../gui/pages/home.py" line="254" />
+        <location filename="../gui/pages/home.py" line="256" />
         <source>Start learning</source>
         <translation>Öğrenmeye başla</translation>
     </message>
     <message>
-        <location filename="../gui/pages/home.py" line="254" />
+        <location filename="../gui/pages/home.py" line="256" />
         <source>Continue learning</source>
         <translation>Öğrenmeye devam et</translation>
     </message>
     <message>
-        <location filename="../gui/pages/home.py" line="262" />
+        <location filename="../gui/pages/home.py" line="264" />
         <source>Review {count} question(s)</source>
         <translation>{count} soruyu tekrar et</translation>
     </message>
     <message>
-        <location filename="../gui/pages/home.py" line="267" />
+        <location filename="../gui/pages/home.py" line="269" />
         <source>{done} of {total} lessons completed</source>
         <translation>{total} dersin {done} tanesi tamamlandı</translation>
     </message>
     <message>
-        <location filename="../gui/pages/home.py" line="273" />
+        <location filename="../gui/pages/home.py" line="275" />
         <source>{days}-day streak</source>
         <translation>{days} günlük seri</translation>
     </message>
     <message>
-        <location filename="../gui/pages/home.py" line="275" />
+        <location filename="../gui/pages/home.py" line="277" />
         <source>Start a streak today</source>
         <translation>Bugün bir seri başlatın</translation>
     </message>
     <message>
-        <location filename="../gui/pages/home.py" line="280" />
+        <location filename="../gui/pages/home.py" line="282" />
         <source>Today: &lt;b&gt;{steps}&lt;/b&gt; of {goal} steps</source>
         <translation>Bugün: {goal} adımdan &lt;b&gt;{steps}&lt;/b&gt;</translation>
     </message>
     <message>
-        <location filename="../gui/pages/home.py" line="282" />
+        <location filename="../gui/pages/home.py" line="284" />
         <source>goal reached ✓</source>
         <translation>hedefe ulaşıldı ✓</translation>
     </message>
     <message>
-        <location filename="../gui/pages/home.py" line="285" />
+        <location filename="../gui/pages/home.py" line="287" />
         <source>Today: &lt;b&gt;{steps}&lt;/b&gt; steps</source>
         <translation>Bugün: &lt;b&gt;{steps}&lt;/b&gt; adım</translation>
     </message>
     <message>
-        <location filename="../gui/pages/home.py" line="287" />
+        <location filename="../gui/pages/home.py" line="289" />
         <source>Study a little today to keep your streak going.</source>
         <translation>Serinizi sürdürmek için bugün biraz çalışın.</translation>
     </message>
     <message>
-        <location filename="../gui/pages/home.py" line="290" />
+        <location filename="../gui/pages/home.py" line="292" />
         <source>Last seven days: {marks}   Longest streak: {longest} days</source>
         <translation>Son yedi gün: {marks}   En uzun seri: {longest} gün</translation>
     </message>
@@ -2359,51 +2360,52 @@ paneller arasında atlar, ve klavyenin bulunduğu yer belirgin bir çerçeveyle
     </message>
     <message>
         <location filename="../gui/pages/lesson.py" line="136" />
+        <location filename="../gui/widgets/quiz.py" line="137" />
         <source>Next lesson</source>
         <translation>Sonraki ders</translation>
     </message>
     <message>
-        <location filename="../gui/pages/lesson.py" line="161" />
+        <location filename="../gui/pages/lesson.py" line="155" />
         <source>≈ {minutes} min read</source>
         <translation>≈ {minutes} dakikalık okuma</translation>
     </message>
     <message>
-        <location filename="../gui/pages/lesson.py" line="185" />
+        <location filename="../gui/pages/lesson.py" line="179" />
         <source>Open the {title}: {tagline}</source>
         <translation>{title} simülatörünü açın: {tagline}</translation>
     </message>
     <message>
-        <location filename="../gui/pages/lesson.py" line="262" />
+        <location filename="../gui/pages/lesson.py" line="256" />
         <source>Completed</source>
         <translation>Tamamlandı</translation>
     </message>
     <message>
-        <location filename="../gui/pages/lesson.py" line="263" />
+        <location filename="../gui/pages/lesson.py" line="257" />
         <source>Ready to learn</source>
         <translation>Öğrenmeye hazır</translation>
     </message>
     <message>
-        <location filename="../gui/pages/lesson.py" line="264" />
+        <location filename="../gui/pages/lesson.py" line="258" />
         <source>Prerequisites missing</source>
         <translation>Ön koşullar eksik</translation>
     </message>
     <message>
-        <location filename="../gui/pages/lesson.py" line="267" />
+        <location filename="../gui/pages/lesson.py" line="261" />
         <source>best quiz score {score}</source>
         <translation>en iyi quiz puanı {score}</translation>
     </message>
     <message>
-        <location filename="../gui/pages/lesson.py" line="276" />
+        <location filename="../gui/pages/lesson.py" line="270" />
         <source>This lesson builds on {lessons}. You can read it now, but it will be easier after completing those first.</source>
         <translation>Bu ders {lessons} üzerine kuruludur. Şimdi de okuyabilirsiniz, ama önce onları tamamlarsanız daha kolay olur.</translation>
     </message>
     <message>
-        <location filename="../gui/pages/lesson.py" line="289" />
+        <location filename="../gui/pages/lesson.py" line="283" />
         <source>How to study this lesson</source>
         <translation>Bu ders nasıl çalışılır</translation>
     </message>
     <message>
-        <location filename="../gui/pages/lesson.py" line="291" />
+        <location filename="../gui/pages/lesson.py" line="285" />
         <source>1. Read the lesson from top to bottom. Formulas are explained in words right after they appear.
    Prefer the ideas without the algebra? Switch the **View** at the top right to *Intuitive*.
 2. Click the coloured glossary terms to see definitions here without losing your place.
@@ -2416,44 +2418,44 @@ paneller arasında atlar, ve klavyenin bulunduğu yer belirgin bir çerçeveyle
 4. **Test** sekmesiyle bitirin. Her cevabın bir açıklaması vardır.</translation>
     </message>
     <message>
-        <location filename="../gui/pages/lesson.py" line="300" />
+        <location filename="../gui/pages/lesson.py" line="294" />
         <source>Builds on</source>
         <translation>Şunlara dayanır</translation>
     </message>
     <message>
-        <location filename="../gui/pages/lesson.py" line="304" />
+        <location filename="../gui/pages/lesson.py" line="298" />
         <source>Related simulators</source>
         <translation>İlgili simülatörler</translation>
     </message>
     <message>
-        <location filename="../gui/pages/lesson.py" line="310" />
+        <location filename="../gui/pages/lesson.py" line="304" />
         <source>Practise</source>
         <translation>Alıştırma yapın</translation>
     </message>
     <message>
-        <location filename="../gui/pages/lesson.py" line="315" />
+        <location filename="../gui/pages/lesson.py" line="309" />
         <source>Leads to</source>
         <translation>Şunlara götürür</translation>
     </message>
     <message>
-        <location filename="../gui/pages/lesson.py" line="322" />
+        <location filename="../gui/pages/lesson.py" line="316" />
         <source>{added} new term(s) added to your flashcards; they are due today on the Review page</source>
         <translation>{added} yeni terim kartlarınıza eklendi; bugün Tekrar sayfasında sizi bekliyorlar</translation>
     </message>
     <message>
-        <location filename="../gui/pages/lesson.py" line="324" />
+        <location filename="../gui/pages/lesson.py" line="318" />
         <source>Every term of this lesson is already in your flashcards</source>
         <translation>Bu dersin bütün terimleri zaten kartlarınızda</translation>
     </message>
     <message>
-        <location filename="../gui/pages/notes_page.py" line="25" />
+        <location filename="../gui/pages/notes_page.py" line="26" />
         <source>
 ## Notes &amp; bookmarks
 
 Everything you saved while working through the course.
 
-- **Bookmarks** are pages you marked with the ☆ button in the Notes panel (or
-  Ctrl+D). Click one to go straight back to it.
+- **Bookmarks** are pages you marked with the **Bookmark this page** button in
+  the Notes panel (or Ctrl+D). Click one to go straight back to it.
 - **Notes** are your own words, one note per page. Open the page and edit the
   note in the Notes panel on the right.
 - **Export** writes all of it into a single Markdown file you can keep or print.
@@ -2466,7 +2468,7 @@ uploaded anywhere.
 
 Kurs boyunca kaydettiğiniz her şey.
 
-- **Yer imleri**, Notlar panelindeki ☆ düğmesiyle (ya da Ctrl+D ile)
+- **Yer imleri**, Notlar panelindeki **Bu sayfayı yer imlerine ekle** düğmesiyle (ya da Ctrl+D ile)
   işaretlediğiniz sayfalardır. Doğrudan geri dönmek için birine tıklayın.
 - **Notlar** sizin kendi sözcüklerinizdir, sayfa başına bir not. Sayfayı açın ve
   notu sağdaki Notlar panelinde düzenleyin.
@@ -2478,78 +2480,78 @@ hiçbir yere yüklenmez.
 </translation>
     </message>
     <message>
-        <location filename="../gui/pages/notes_page.py" line="55" />
+        <location filename="../gui/pages/notes_page.py" line="57" />
         <source>Save every bookmark and note into one text file.</source>
         <translation>Bütün yer imlerini ve notları tek bir metin dosyasına kaydeder.</translation>
     </message>
     <message>
-        <location filename="../gui/pages/notes_page.py" line="86" />
+        <location filename="../gui/pages/notes_page.py" line="88" />
         <source>{bookmarks} bookmarks · {notes} notes</source>
         <translation>{bookmarks} yer imi · {notes} not</translation>
     </message>
     <message>
-        <location filename="../gui/pages/notes_page.py" line="90" />
+        <location filename="../gui/pages/notes_page.py" line="92" />
         <source>Bookmarks</source>
         <translation>Yer imleri</translation>
     </message>
     <message>
-        <location filename="../gui/pages/notes_page.py" line="92" />
-        <source>No bookmarks yet. Open any lesson or simulator and press ☆ in the Notes panel (Ctrl+D).</source>
-        <translation>Henüz yer imi yok. Bir ders veya simülatör açıp Not panelindeki ☆ düğmesine basın (Ctrl+D).</translation>
+        <location filename="../gui/pages/notes_page.py" line="95" />
+        <source>No bookmarks yet. Open any lesson or simulator and press &lt;b&gt;Bookmark this page&lt;/b&gt; in the Notes panel (Ctrl+D).</source>
+        <translation>Henüz yer imi yok. Bir ders veya simülatör açıp Not panelindeki &lt;b&gt;Bu sayfayı yer imlerine ekle&lt;/b&gt; düğmesine basın (Ctrl+D).</translation>
     </message>
     <message>
-        <location filename="../gui/pages/notes_page.py" line="99" />
+        <location filename="../gui/pages/notes_page.py" line="102" />
         <source>No notes yet. The Notes panel on the right of every page is your private notebook.</source>
         <translation>Henüz not yok. Her sayfanın sağındaki Not paneli size özel defterinizdir.</translation>
     </message>
     <message>
-        <location filename="../gui/pages/notes_page.py" line="110" />
+        <location filename="../gui/pages/notes_page.py" line="113" />
         <source>Export notes</source>
         <translation>Notları dışa aktar</translation>
     </message>
     <message>
-        <location filename="../gui/pages/notes_page.py" line="111" />
+        <location filename="../gui/pages/notes_page.py" line="114" />
         <source>Markdown (*.md);;Text (*.txt)</source>
         <translation>Markdown (*.md);;Metin (*.txt)</translation>
     </message>
     <message>
-        <location filename="../gui/pages/notes_page.py" line="117" />
+        <location filename="../gui/pages/notes_page.py" line="120" />
         <source>Export failed</source>
         <translation>Dışa aktarma başarısız</translation>
     </message>
     <message>
-        <location filename="../gui/pages/notes_page.py" line="118" />
+        <location filename="../gui/pages/notes_page.py" line="121" />
         <source>The file could not be written:</source>
         <translation>Dosya yazılamadı:</translation>
     </message>
     <message>
-        <location filename="../gui/pages/notes_page.py" line="120" />
+        <location filename="../gui/pages/notes_page.py" line="123" />
         <source>Exported to {path}</source>
         <translation>Şuraya aktarıldı: {path}</translation>
     </message>
     <message>
-        <location filename="../gui/pages/notes_page.py" line="147" />
+        <location filename="../gui/pages/notes_page.py" line="150" />
         <source>Open</source>
         <translation>Aç</translation>
     </message>
     <message>
-        <location filename="../gui/pages/notes_page.py" line="158" />
+        <location filename="../gui/pages/notes_page.py" line="161" />
         <source>Remove</source>
         <translation>Kaldır</translation>
     </message>
     <message>
-        <location filename="../gui/pages/notes_page.py" line="159" />
+        <location filename="../gui/pages/notes_page.py" line="162" />
         <source>Remove this bookmark. Your note for the page is kept.</source>
         <translation>Bu yer imini kaldırır. Sayfaya yazdığınız not korunur.</translation>
     </message>
     <message>
-        <location filename="../gui/pages/notes_page.py" line="169" />
-        <location filename="../gui/pages/notes_page.py" line="181" />
+        <location filename="../gui/pages/notes_page.py" line="172" />
+        <location filename="../gui/pages/notes_page.py" line="184" />
         <source>Delete note</source>
         <translation>Notu sil</translation>
     </message>
     <message>
-        <location filename="../gui/pages/notes_page.py" line="182" />
+        <location filename="../gui/pages/notes_page.py" line="185" />
         <source>Delete your note for {page}?</source>
         <translation>{page} için notunuz silinsin mi?</translation>
     </message>
@@ -2639,92 +2641,94 @@ denemede doğru cevap vermeyi ödüllendirir.
         <translation>Bu problemin arkasındaki fiziği anlatan ders.</translation>
     </message>
     <message>
-        <location filename="../gui/pages/problems_page.py" line="114" />
+        <location filename="../gui/pages/problems_page.py" line="115" />
         <source>A simulator that can compute or visualise part of the answer.</source>
         <translation>Cevabın bir kısmını hesaplayabilen ya da görselleştirebilen bir simülatör.</translation>
     </message>
     <message>
-        <location filename="../gui/pages/problems_page.py" line="128" />
+        <location filename="../gui/pages/problems_page.py" line="129" />
         <source>Your answer:</source>
         <translation>Cevabınız:</translation>
     </message>
     <message>
-        <location filename="../gui/pages/problems_page.py" line="130" />
+        <location filename="../gui/pages/problems_page.py" line="131" />
         <source>a number, e.g. 4.25 or 5.6e11</source>
         <translation>bir sayı, örn. 4,25 ya da 5.6e11</translation>
     </message>
     <message>
-        <location filename="../gui/pages/problems_page.py" line="135" />
-        <source>✓  Check</source>
-        <translation>✓  Kontrol et</translation>
+        <location filename="../gui/pages/problems_page.py" line="136" />
+        <source>Check</source>
+        <translation>Kontrol et</translation>
     </message>
     <message>
-        <location filename="../gui/pages/problems_page.py" line="148" />
+        <location filename="../gui/pages/problems_page.py" line="150" />
         <source>Show the worked solution</source>
         <translation>Çözümlü anlatımı göster</translation>
     </message>
     <message>
-        <location filename="../gui/pages/problems_page.py" line="150" />
-        <source>◀ Previous</source>
-        <translation>◀ Önceki</translation>
-    </message>
-    <message>
         <location filename="../gui/pages/problems_page.py" line="152" />
-        <source>Next ▶</source>
-        <translation>Sonraki ▶</translation>
+        <source>Previous</source>
+        <translation>Önceki</translation>
     </message>
     <message>
-        <location filename="../gui/pages/problems_page.py" line="174" />
+        <location filename="../gui/pages/problems_page.py" line="155" />
+        <location filename="../gui/widgets/tour.py" line="54" />
+        <location filename="../gui/widgets/tour.py" line="87" />
+        <source>Next</source>
+        <translation>Sonraki</translation>
+    </message>
+    <message>
+        <location filename="../gui/pages/problems_page.py" line="179" />
         <source>{solved} of {total} problems solved, in {sets} sets — one for every level.</source>
         <translation>{total} problemin {solved} tanesi çözüldü; {sets} set var, her seviye için bir tane.</translation>
     </message>
     <message>
-        <location filename="../gui/pages/problems_page.py" line="194" />
+        <location filename="../gui/pages/problems_page.py" line="199" />
         <source>Difficulty {stars} · lesson {lesson}</source>
         <translation>Zorluk {stars} · ders {lesson}</translation>
     </message>
     <message>
-        <location filename="../gui/pages/problems_page.py" line="210" />
+        <location filename="../gui/pages/problems_page.py" line="215" />
         <source>LEVEL {level} · PROBLEM {number} OF {total}</source>
         <translation>SEVİYE {level} · PROBLEM {number} / {total}</translation>
     </message>
     <message>
-        <location filename="../gui/pages/problems_page.py" line="235" />
+        <location filename="../gui/pages/problems_page.py" line="240" />
         <source>&lt;b&gt;Solved.&lt;/b&gt; You can still try it again or read the worked solution.</source>
         <translation>&lt;b&gt;Çözüldü.&lt;/b&gt; Yine de yeniden deneyebilir ya da çözümlü anlatımı okuyabilirsiniz.</translation>
     </message>
     <message>
-        <location filename="../gui/pages/problems_page.py" line="252" />
+        <location filename="../gui/pages/problems_page.py" line="257" />
         <source>&lt;b&gt;Correct!&lt;/b&gt; The answer is {answer} {unit}.</source>
         <translation>&lt;b&gt;Doğru!&lt;/b&gt; Cevap {answer} {unit}.</translation>
     </message>
     <message>
-        <location filename="../gui/pages/problems_page.py" line="255" />
+        <location filename="../gui/pages/problems_page.py" line="260" />
         <source>First try!</source>
         <translation>İlk denemede!</translation>
     </message>
     <message>
-        <location filename="../gui/pages/problems_page.py" line="288" />
+        <location filename="../gui/pages/problems_page.py" line="293" />
         <source>Hint {number}</source>
         <translation>İpucu {number}</translation>
     </message>
     <message>
-        <location filename="../gui/pages/problems_page.py" line="290" />
+        <location filename="../gui/pages/problems_page.py" line="295" />
         <source>Worked solution</source>
         <translation>Çözümlü anlatım</translation>
     </message>
     <message>
-        <location filename="../gui/pages/problems_page.py" line="291" />
+        <location filename="../gui/pages/problems_page.py" line="296" />
         <source>Answer: {answer} {unit}</source>
         <translation>Cevap: {answer} {unit}</translation>
     </message>
     <message>
-        <location filename="../gui/pages/problems_page.py" line="299" />
+        <location filename="../gui/pages/problems_page.py" line="304" />
         <source>Show a hint ({count} left)</source>
         <translation>İpucu göster ({count} kaldı)</translation>
     </message>
     <message>
-        <location filename="../gui/pages/problems_page.py" line="304" />
+        <location filename="../gui/pages/problems_page.py" line="309" />
         <source>Try an answer (or use every hint) first — the solution teaches more once you have struggled with the problem.</source>
         <translation>Önce bir cevap deneyin (ya da bütün ipuçlarını kullanın) — problemle biraz uğraştıktan sonra çözüm çok daha öğretici olur.</translation>
     </message>
@@ -2852,7 +2856,7 @@ rozetleri siler. Notlarınız, yer imleriniz ve ayarlarınız korunur.
         <translation>Bütün sınav puanları, tamamlanan dersler, görevler ve rozetler silinsin mi? Notlarınız ve yer imleriniz korunur. Bu işlem geri alınamaz.</translation>
     </message>
     <message>
-        <location filename="../gui/pages/reference.py" line="26" />
+        <location filename="../gui/pages/reference.py" line="27" />
         <source>
 ## Reference
 
@@ -2892,52 +2896,52 @@ yolu da bu sayfadır.
 </translation>
     </message>
     <message>
-        <location filename="../gui/pages/reference.py" line="106" />
+        <location filename="../gui/pages/reference.py" line="107" />
         <source>Quantity</source>
         <translation>Nicelik</translation>
     </message>
     <message>
-        <location filename="../gui/pages/reference.py" line="111" />
+        <location filename="../gui/pages/reference.py" line="112" />
         <source>Unit</source>
         <translation>Birim</translation>
     </message>
     <message>
-        <location filename="../gui/pages/reference.py" line="141" />
+        <location filename="../gui/pages/reference.py" line="142" />
         <source>In base units: {value} {unit}</source>
         <translation>Temel birimlerle: {value} {unit}</translation>
     </message>
     <message>
-        <location filename="../gui/pages/reference.py" line="154" />
+        <location filename="../gui/pages/reference.py" line="155" />
         <source>{formulas} formulas, {constants} constants, unit conversions, the parameters of every model in the app, and where all of its data comes from.</source>
         <translation>{formulas} formül, {constants} sabit, birim dönüşümleri, uygulamadaki her modelin parametreleri ve bütün verisinin nereden geldiği.</translation>
     </message>
     <message>
-        <location filename="../gui/pages/reference.py" line="166" />
+        <location filename="../gui/pages/reference.py" line="167" />
         <source>Filter formulas…  (e.g. redshift, Friedmann, horizon, L4.3)</source>
         <translation>Formülleri süz…  (örn. redshift, Friedmann, horizon, L4.3)</translation>
     </message>
     <message>
-        <location filename="../gui/pages/reference.py" line="168" />
+        <location filename="../gui/pages/reference.py" line="169" />
         <source>Show only the formulas whose name, topic, symbols or lesson match.</source>
         <translation>Yalnızca adı, konusu, sembolleri veya dersi eşleşen formülleri gösterir.</translation>
     </message>
     <message>
-        <location filename="../gui/pages/reference.py" line="173" />
+        <location filename="../gui/pages/reference.py" line="174" />
         <source>Formulas</source>
         <translation>Formüller</translation>
     </message>
     <message>
-        <location filename="../gui/pages/reference.py" line="185" />
+        <location filename="../gui/pages/reference.py" line="186" />
         <source>Constants &amp;&amp; units</source>
         <translation>Sabitler ve birimler</translation>
     </message>
     <message>
-        <location filename="../gui/pages/reference.py" line="189" />
+        <location filename="../gui/pages/reference.py" line="190" />
         <source>Models</source>
         <translation>Modeller</translation>
     </message>
     <message>
-        <location filename="../gui/pages/review_page.py" line="29" />
+        <location filename="../gui/pages/review_page.py" line="30" />
         <source>
 ## Review
 
@@ -2984,159 +2988,160 @@ söyleyin, kartı çevirin ve bilip bilmediğiniz konusunda dürüst olun.
 </translation>
     </message>
     <message>
-        <location filename="../gui/pages/review_page.py" line="70" />
+        <location filename="../gui/pages/review_page.py" line="71" />
         <source>Empty the deck…</source>
         <translation>Desteyi boşalt…</translation>
     </message>
     <message>
-        <location filename="../gui/pages/review_page.py" line="71" />
+        <location filename="../gui/pages/review_page.py" line="72" />
         <source>Remove every question from the review deck. Your quiz scores and completed lessons are not affected.</source>
         <translation>Tekrar destesindeki tüm soruları kaldırır. Sınav puanlarınız ve tamamladığınız dersler etkilenmez.</translation>
     </message>
     <message>
-        <location filename="../gui/pages/review_page.py" line="92" />
-        <source>Start the review ▶</source>
-        <translation>Tekrarı başlat ▶</translation>
+        <location filename="../gui/pages/review_page.py" line="93" />
+        <location filename="../gui/widgets/quiz.py" line="174" />
+        <source>Start the review</source>
+        <translation>Tekrarı başlat</translation>
     </message>
     <message>
-        <location filename="../gui/pages/review_page.py" line="100" />
+        <location filename="../gui/pages/review_page.py" line="103" />
         <source>Glossary flashcards</source>
         <translation>Sözlük kartları</translation>
     </message>
     <message>
-        <location filename="../gui/pages/review_page.py" line="105" />
-        <source>Start the flashcards ▶</source>
-        <translation>Kartlara başla ▶</translation>
+        <location filename="../gui/pages/review_page.py" line="108" />
+        <source>Start the flashcards</source>
+        <translation>Kartlara başla</translation>
     </message>
     <message>
-        <location filename="../gui/pages/review_page.py" line="109" />
+        <location filename="../gui/pages/review_page.py" line="114" />
         <source>Choose terms in the Glossary</source>
         <translation>Sözlük'ten terim seç</translation>
     </message>
     <message>
-        <location filename="../gui/pages/review_page.py" line="112" />
+        <location filename="../gui/pages/review_page.py" line="117" />
         <source>Empty the flashcards…</source>
         <translation>Kartları boşalt…</translation>
     </message>
     <message>
-        <location filename="../gui/pages/review_page.py" line="121" />
+        <location filename="../gui/pages/review_page.py" line="126" />
         <source>The next two weeks</source>
         <translation>Önümüzdeki iki hafta</translation>
     </message>
     <message>
-        <location filename="../gui/pages/review_page.py" line="129" />
+        <location filename="../gui/pages/review_page.py" line="134" />
         <source>What is in the deck</source>
         <translation>Destede neler var</translation>
     </message>
     <message>
-        <location filename="../gui/pages/review_page.py" line="168" />
+        <location filename="../gui/pages/review_page.py" line="173" />
         <source>Questions you got wrong, brought back just before you would forget them.</source>
         <translation>Yanlış yanıtladığınız sorular, tam unutmak üzereyken geri getirilir.</translation>
     </message>
     <message>
-        <location filename="../gui/pages/review_page.py" line="169" />
+        <location filename="../gui/pages/review_page.py" line="174" />
         <source>Nothing here yet — and that is a good sign.</source>
         <translation>Henüz burada bir şey yok — ki bu iyiye işaret.</translation>
     </message>
     <message>
-        <location filename="../gui/pages/review_page.py" line="173" />
+        <location filename="../gui/pages/review_page.py" line="178" />
         <source>{count} question(s) are due today</source>
         <translation>Bugün {count} sorunun zamanı geldi</translation>
     </message>
     <message>
-        <location filename="../gui/pages/review_page.py" line="175" />
+        <location filename="../gui/pages/review_page.py" line="180" />
         <source>From {lessons} lesson(s). It should take about {minutes} minute(s).</source>
         <translation>{lessons} dersten. Yaklaşık {minutes} dakika sürer.</translation>
     </message>
     <message>
-        <location filename="../gui/pages/review_page.py" line="180" />
+        <location filename="../gui/pages/review_page.py" line="185" />
         <source>Nothing due today</source>
         <translation>Bugün zamanı gelen yok</translation>
     </message>
     <message>
-        <location filename="../gui/pages/review_page.py" line="182" />
+        <location filename="../gui/pages/review_page.py" line="187" />
         <source>{total} question(s) are waiting; the next one comes back on {date}.</source>
         <translation>{total} soru bekliyor; bir sonraki {date} tarihinde geri geliyor.</translation>
     </message>
     <message>
-        <location filename="../gui/pages/review_page.py" line="185" />
+        <location filename="../gui/pages/review_page.py" line="190" />
         <source>The deck is empty</source>
         <translation>Deste boş</translation>
     </message>
     <message>
-        <location filename="../gui/pages/review_page.py" line="187" />
+        <location filename="../gui/pages/review_page.py" line="192" />
         <source>Any quiz question you answer wrongly is kept here and asked again tomorrow, then at growing intervals until you have it for good.</source>
         <translation>Yanlış yanıtladığınız her sınav sorusu burada tutulur ve yarın yeniden sorulur, sonra siz onu kalıcı olarak öğrenene dek giderek açılan aralıklarla.</translation>
     </message>
     <message>
-        <location filename="../gui/pages/review_page.py" line="210" />
+        <location filename="../gui/pages/review_page.py" line="215" />
         <source>{count} term(s) due today, out of {total} in your deck.</source>
         <translation>Destenizdeki {total} terimden {count} tanesinin zamanı bugün geldi.</translation>
     </message>
     <message>
-        <location filename="../gui/pages/review_page.py" line="213" />
+        <location filename="../gui/pages/review_page.py" line="218" />
         <source>Nothing due today. {total} term(s) are in your deck.</source>
         <translation>Bugün zamanı gelen yok. Destenizde {total} terim var.</translation>
     </message>
     <message>
-        <location filename="../gui/pages/review_page.py" line="215" />
+        <location filename="../gui/pages/review_page.py" line="220" />
         <source>No terms yet. Add them from the Glossary, or from a lesson with "Add the terms to my flashcards".</source>
         <translation>Henüz terim yok. Onları Sözlük'ten ya da bir dersten "Terimleri kartlarıma ekle" ile ekleyin.</translation>
     </message>
     <message>
-        <location filename="../gui/pages/review_page.py" line="218" />
+        <location filename="../gui/pages/review_page.py" line="223" />
         <source>Learned for good so far: {count}.</source>
         <translation>Şimdiye kadar temelli öğrenilen: {count}.</translation>
     </message>
     <message>
-        <location filename="../gui/pages/review_page.py" line="246" />
+        <location filename="../gui/pages/review_page.py" line="251" />
         <source>{count} question(s) due on {date}</source>
         <translation>{date} tarihinde {count} sorunun zamanı geliyor</translation>
     </message>
     <message>
-        <location filename="../gui/pages/review_page.py" line="250" />
-        <location filename="../gui/simulators/nbody_sim.py" line="228" />
+        <location filename="../gui/pages/review_page.py" line="255" />
+        <location filename="../gui/simulators/nbody_sim.py" line="231" />
         <location filename="../gui/simulators/spacetime.py" line="139" />
         <source>today</source>
         <translation>bugün</translation>
     </message>
     <message>
-        <location filename="../gui/pages/review_page.py" line="260" />
+        <location filename="../gui/pages/review_page.py" line="265" />
         <source>No questions are waiting.</source>
         <translation>Bekleyen soru yok.</translation>
     </message>
     <message>
-        <location filename="../gui/pages/review_page.py" line="267" />
+        <location filename="../gui/pages/review_page.py" line="272" />
         <source>in {days} day(s)</source>
         <translation>{days} gün sonra</translation>
     </message>
     <message>
-        <location filename="../gui/pages/review_page.py" line="269" />
+        <location filename="../gui/pages/review_page.py" line="274" />
         <source>question {number}, box {box} of {boxes}, {when}</source>
         <translation>{number}. soru, {boxes} kutudan {box}. kutuda, {when}</translation>
     </message>
     <message>
-        <location filename="../gui/pages/review_page.py" line="275" />
+        <location filename="../gui/pages/review_page.py" line="280" />
         <source>… and {count} more.</source>
         <translation>… ve {count} tane daha.</translation>
     </message>
     <message>
-        <location filename="../gui/pages/review_page.py" line="296" />
+        <location filename="../gui/pages/review_page.py" line="301" />
         <source>Empty the flashcards?</source>
         <translation>Kartlar boşaltılsın mı?</translation>
     </message>
     <message>
-        <location filename="../gui/pages/review_page.py" line="297" />
+        <location filename="../gui/pages/review_page.py" line="302" />
         <source>This removes every glossary term from your flashcard deck. Nothing else is affected.</source>
         <translation>Bu, kart destenizdeki bütün sözlük terimlerini kaldırır. Başka hiçbir şey etkilenmez.</translation>
     </message>
     <message>
-        <location filename="../gui/pages/review_page.py" line="312" />
+        <location filename="../gui/pages/review_page.py" line="317" />
         <source>Empty the review deck?</source>
         <translation>Tekrar destesi boşaltılsın mı?</translation>
     </message>
     <message>
-        <location filename="../gui/pages/review_page.py" line="313" />
+        <location filename="../gui/pages/review_page.py" line="318" />
         <source>This removes every question waiting for review. Your quiz scores, completed lessons and badges are not affected.</source>
         <translation>Bu, tekrar bekleyen tüm soruları kaldırır. Sınav puanlarınız, tamamladığınız dersler ve rozetleriniz etkilenmez.</translation>
     </message>
@@ -3365,117 +3370,118 @@ parametreleri kendiniz değiştirmenize izin verir.
         <translation>{n} problem</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/balloon.py" line="30" />
+        <location filename="../gui/simulators/balloon.py" line="31" />
         <source>Click a galaxy to stand on it.</source>
         <translation>Üzerinde durmak için bir gökadaya tıklayın.</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/balloon.py" line="162" />
+        <location filename="../gui/simulators/balloon.py" line="163" />
         <location filename="../gui/simulators/future_sim.py" line="103" />
         <source>Expansion</source>
         <translation>Genişleme</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/balloon.py" line="165" />
-        <location filename="../gui/simulators/balloon.py" line="232" />
-        <location filename="../gui/simulators/inflation_sim.py" line="52" />
-        <location filename="../gui/simulators/inflation_sim.py" line="138" />
-        <location filename="../gui/simulators/nbody_sim.py" line="127" />
-        <location filename="../gui/simulators/nbody_sim.py" line="194" />
-        <location filename="../gui/simulators/powers_of_ten.py" line="198" />
-        <location filename="../gui/simulators/powers_of_ten.py" line="256" />
-        <source>▶ Play</source>
-        <translation>▶ Oynat</translation>
+        <location filename="../gui/simulators/balloon.py" line="166" />
+        <location filename="../gui/simulators/balloon.py" line="236" />
+        <location filename="../gui/simulators/inflation_sim.py" line="53" />
+        <location filename="../gui/simulators/inflation_sim.py" line="140" />
+        <location filename="../gui/simulators/nbody_sim.py" line="128" />
+        <location filename="../gui/simulators/nbody_sim.py" line="196" />
+        <location filename="../gui/simulators/powers_of_ten.py" line="199" />
+        <location filename="../gui/simulators/powers_of_ten.py" line="258" />
+        <source>Play</source>
+        <translation>Oynat</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/balloon.py" line="169" />
-        <source>⟲ Reset</source>
-        <translation>⟲ Sıfırla</translation>
+        <location filename="../gui/simulators/balloon.py" line="171" />
+        <location filename="../gui/simulators/nbody_sim.py" line="136" />
+        <source>Reset</source>
+        <translation>Sıfırla</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/balloon.py" line="175" />
+        <location filename="../gui/simulators/balloon.py" line="178" />
         <source>Speed</source>
         <translation>Hız</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/balloon.py" line="176" />
+        <location filename="../gui/simulators/balloon.py" line="179" />
         <source>Animation speed</source>
         <translation>Animasyon hızı</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/balloon.py" line="176" />
+        <location filename="../gui/simulators/balloon.py" line="179" />
         <source>Only changes how fast the animation runs, not the physics.</source>
         <translation>Yalnızca animasyonun ne kadar hızlı aktığını değiştirir, fiziği değil.</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/balloon.py" line="180" />
+        <location filename="../gui/simulators/balloon.py" line="183" />
         <location filename="../gui/simulators/calculator.py" line="101" />
         <source>Scale factor a</source>
         <translation>Ölçek çarpanı a</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/balloon.py" line="181" />
+        <location filename="../gui/simulators/balloon.py" line="184" />
         <source>Scale factor</source>
         <translation>Ölçek çarpanı</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/balloon.py" line="181" />
+        <location filename="../gui/simulators/balloon.py" line="184" />
         <source>Drag to set the size of the universe directly. a = 2 means every distance is twice as large as at the start.</source>
         <translation>Evrenin boyutunu doğrudan ayarlamak için sürükleyin. a = 2, her uzaklığın başlangıçtakinin iki katı olduğu anlamına gelir.</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/balloon.py" line="187" />
+        <location filename="../gui/simulators/balloon.py" line="190" />
         <location filename="../gui/simulators/rotation_curve.py" line="98" />
         <source>Show</source>
         <translation>Göster</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/balloon.py" line="189" />
+        <location filename="../gui/simulators/balloon.py" line="192" />
         <source>Comoving grid</source>
         <translation>Eş hareketli ızgara</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/balloon.py" line="191" />
+        <location filename="../gui/simulators/balloon.py" line="194" />
         <source>The grid stretches with space. Galaxies keep their grid coordinates.</source>
         <translation>Izgara uzayla birlikte esner. Gökadalar ızgara koordinatlarını korur.</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/balloon.py" line="192" />
+        <location filename="../gui/simulators/balloon.py" line="195" />
         <source>Recession velocity arrows</source>
         <translation>Uzaklaşma hızı okları</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/balloon.py" line="194" />
+        <location filename="../gui/simulators/balloon.py" line="197" />
         <source>Arrow length ∝ recession speed ∝ distance from the galaxy you stand on.</source>
         <translation>Ok uzunluğu ∝ uzaklaşma hızı ∝ üzerinde durduğunuz gökadadan olan uzaklık.</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/balloon.py" line="197" />
-        <source>💡 Emit light</source>
-        <translation>💡 Işık yay</translation>
+        <location filename="../gui/simulators/balloon.py" line="200" />
+        <source>Emit light</source>
+        <translation>Işık yay</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/balloon.py" line="198" />
+        <location filename="../gui/simulators/balloon.py" line="202" />
         <source>Emit a light wave now; watch its wavelength grow as the universe expands.</source>
         <translation>Şimdi bir ışık dalgası yayın; evren genişledikçe dalga boyunun büyüyüşünü izleyin.</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/balloon.py" line="203" />
+        <location filename="../gui/simulators/balloon.py" line="207" />
         <source>Measurements from your galaxy</source>
         <translation>Gökadanızdan yapılan ölçümler</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/balloon.py" line="232" />
-        <location filename="../gui/simulators/cosmic_timeline.py" line="239" />
-        <location filename="../gui/simulators/inflation_sim.py" line="138" />
-        <location filename="../gui/simulators/mcmc_sim.py" line="175" />
-        <location filename="../gui/simulators/nbody_sim.py" line="194" />
-        <location filename="../gui/simulators/powers_of_ten.py" line="256" />
-        <source>⏸ Pause</source>
-        <translation>⏸ Duraklat</translation>
+        <location filename="../gui/simulators/balloon.py" line="236" />
+        <location filename="../gui/simulators/cosmic_timeline.py" line="241" />
+        <location filename="../gui/simulators/inflation_sim.py" line="140" />
+        <location filename="../gui/simulators/mcmc_sim.py" line="191" />
+        <location filename="../gui/simulators/nbody_sim.py" line="196" />
+        <location filename="../gui/simulators/powers_of_ten.py" line="258" />
+        <source>Pause</source>
+        <translation>Duraklat</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/balloon.py" line="276" />
+        <location filename="../gui/simulators/balloon.py" line="281" />
         <source>Scale factor: &lt;b&gt;{a}&lt;/b&gt; (distances × {growth} since the start)&lt;br&gt;&lt;br&gt;Nearest galaxy: comoving {near} cells → proper &lt;b&gt;{near_proper}&lt;/b&gt; cells&lt;br&gt;Farthest galaxy: comoving {far} cells → proper &lt;b&gt;{far_proper}&lt;/b&gt; cells&lt;br&gt;&lt;br&gt;The farthest galaxy is {ratio}× farther away and recedes &lt;b&gt;{ratio}× faster&lt;/b&gt;: v ∝ d, the Hubble–Lemaître law.&lt;br&gt;&lt;br&gt;&lt;i&gt;Click another galaxy: the pattern is identical. There is no centre.&lt;/i&gt;</source>
         <translation>Ölçek çarpanı: &lt;b&gt;{a}&lt;/b&gt; (başlangıçtan bu yana uzaklıklar × {growth})&lt;br&gt;&lt;br&gt;En yakın gökada: eş hareketli {near} hücre → öz &lt;b&gt;{near_proper}&lt;/b&gt; hücre&lt;br&gt;En uzak gökada: eş hareketli {far} hücre → öz &lt;b&gt;{far_proper}&lt;/b&gt; hücre&lt;br&gt;&lt;br&gt;En uzak gökada {ratio}× daha uzaktadır ve &lt;b&gt;{ratio}× daha hızlı&lt;/b&gt; uzaklaşır: v ∝ d, Hubble–Lemaître yasası.&lt;br&gt;&lt;br&gt;&lt;i&gt;Başka bir gökadaya tıklayın: desen özdeştir. Merkez diye bir şey yoktur.&lt;/i&gt;</translation>
     </message>
@@ -3596,7 +3602,7 @@ parametreleri kendiniz değiştirmenize izin verir.
     </message>
     <message>
         <location filename="../gui/simulators/bbn_explorer.py" line="86" />
-        <location filename="../gui/simulators/inflation_sim.py" line="63" />
+        <location filename="../gui/simulators/inflation_sim.py" line="65" />
         <source>Predictions</source>
         <translation>Öngörüler</translation>
     </message>
@@ -3878,7 +3884,7 @@ parametreleri kendiniz değiştirmenize izin verir.
     </message>
     <message>
         <location filename="../gui/simulators/calculator.py" line="154" />
-        <location filename="../gui/simulators/expansion.py" line="33" />
+        <location filename="../gui/simulators/expansion.py" line="34" />
         <location filename="../gui/simulators/sandbox.py" line="91" />
         <location filename="../gui/simulators/spacetime.py" line="38" />
         <source>Preset</source>
@@ -3886,8 +3892,8 @@ parametreleri kendiniz değiştirmenize izin verir.
     </message>
     <message>
         <location filename="../gui/simulators/calculator.py" line="156" />
-        <location filename="../gui/simulators/expansion.py" line="34" />
-        <location filename="../gui/simulators/ladder_sim.py" line="41" />
+        <location filename="../gui/simulators/expansion.py" line="35" />
+        <location filename="../gui/simulators/ladder_sim.py" line="42" />
         <source>Presets</source>
         <translation>Hazır ayarlar</translation>
     </message>
@@ -3898,7 +3904,7 @@ parametreleri kendiniz değiştirmenize izin verir.
     </message>
     <message>
         <location filename="../gui/simulators/calculator.py" line="160" />
-        <location filename="../gui/simulators/expansion.py" line="46" />
+        <location filename="../gui/simulators/expansion.py" line="47" />
         <location filename="../gui/simulators/sandbox.py" line="96" />
         <source>H0 (km/s/Mpc)</source>
         <translation>H0 (km/s/Mpc)</translation>
@@ -3906,7 +3912,7 @@ parametreleri kendiniz değiştirmenize izin verir.
     <message>
         <location filename="../gui/simulators/calculator.py" line="161" />
         <location filename="../gui/simulators/cmb_spectrum.py" line="66" />
-        <location filename="../gui/simulators/expansion.py" line="47" />
+        <location filename="../gui/simulators/expansion.py" line="48" />
         <location filename="../gui/simulators/sandbox.py" line="47" />
         <location filename="../gui/simulators/supernova_sim.py" line="111" />
         <source>Hubble constant</source>
@@ -3919,7 +3925,7 @@ parametreleri kendiniz değiştirmenize izin verir.
     </message>
     <message>
         <location filename="../gui/simulators/calculator.py" line="164" />
-        <location filename="../gui/simulators/expansion.py" line="36" />
+        <location filename="../gui/simulators/expansion.py" line="37" />
         <location filename="../gui/simulators/spacetime.py" line="39" />
         <source>Ωm matter</source>
         <translation>Ωm madde</translation>
@@ -3936,7 +3942,7 @@ parametreleri kendiniz değiştirmenize izin verir.
     </message>
     <message>
         <location filename="../gui/simulators/calculator.py" line="168" />
-        <location filename="../gui/simulators/expansion.py" line="41" />
+        <location filename="../gui/simulators/expansion.py" line="42" />
         <location filename="../gui/simulators/sandbox.py" line="101" />
         <location filename="../gui/simulators/spacetime.py" line="40" />
         <source>ΩΛ dark energy</source>
@@ -3980,7 +3986,7 @@ parametreleri kendiniz değiştirmenize izin verir.
     <message>
         <location filename="../gui/simulators/calculator.py" line="183" />
         <location filename="../gui/simulators/halo_sim.py" line="66" />
-        <location filename="../gui/simulators/spectrum.py" line="136" />
+        <location filename="../gui/simulators/spectrum.py" line="137" />
         <source>Redshift z</source>
         <translation>Kırmızıya kayma z</translation>
     </message>
@@ -4073,15 +4079,15 @@ parametreleri kendiniz değiştirmenize izin verir.
     </message>
     <message>
         <location filename="../gui/simulators/calculator.py" line="341" />
-        <location filename="../gui/simulators/expansion.py" line="156" />
-        <location filename="../gui/simulators/supernova_sim.py" line="166" />
+        <location filename="../gui/simulators/expansion.py" line="158" />
+        <location filename="../gui/simulators/supernova_sim.py" line="182" />
         <source>accelerating</source>
         <translation>hızlanıyor</translation>
     </message>
     <message>
         <location filename="../gui/simulators/calculator.py" line="341" />
-        <location filename="../gui/simulators/expansion.py" line="156" />
-        <location filename="../gui/simulators/supernova_sim.py" line="166" />
+        <location filename="../gui/simulators/expansion.py" line="158" />
+        <location filename="../gui/simulators/supernova_sim.py" line="182" />
         <source>decelerating</source>
         <translation>yavaşlıyor</translation>
     </message>
@@ -4137,7 +4143,7 @@ parametreleri kendiniz değiştirmenize izin verir.
     </message>
     <message>
         <location filename="../gui/simulators/calculator.py" line="406" />
-        <location filename="../gui/simulators/cosmic_timeline.py" line="64" />
+        <location filename="../gui/simulators/cosmic_timeline.py" line="65" />
         <location filename="../gui/simulators/olbers_sim.py" line="193" />
         <source>infinite</source>
         <translation>sonsuz</translation>
@@ -4244,7 +4250,7 @@ parametreleri kendiniz değiştirmenize izin verir.
     </message>
     <message>
         <location filename="../gui/simulators/cmb_spectrum.py" line="88" />
-        <location filename="../gui/simulators/nbody_sim.py" line="82" />
+        <location filename="../gui/simulators/nbody_sim.py" line="83" />
         <source>Amplitude</source>
         <translation>Genlik</translation>
     </message>
@@ -4460,264 +4466,264 @@ parametreleri kendiniz değiştirmenize izin verir.
 - **Sağ (ℓ &gt; 1300):** foton yayınımı en küçük dalgacıkları siler (Silk sönümlemesi).</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/cosmic_timeline.py" line="25" />
+        <location filename="../gui/simulators/cosmic_timeline.py" line="26" />
         <source>Speculative: no direct evidence yet</source>
         <translation>Kurgusal: henüz doğrudan kanıt yok</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/cosmic_timeline.py" line="26" />
+        <location filename="../gui/simulators/cosmic_timeline.py" line="27" />
         <source>Well-motivated theory, indirect evidence</source>
         <translation>Sağlam gerekçeli kuram, dolaylı kanıt</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/cosmic_timeline.py" line="27" />
+        <location filename="../gui/simulators/cosmic_timeline.py" line="28" />
         <source>Physics tested in laboratories and accelerators</source>
         <translation>Laboratuvarlarda ve hızlandırıcılarda sınanmış fizik</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/cosmic_timeline.py" line="28" />
+        <location filename="../gui/simulators/cosmic_timeline.py" line="29" />
         <source>Directly observed</source>
         <translation>Doğrudan gözlenmiş</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/cosmic_timeline.py" line="33" />
+        <location filename="../gui/simulators/cosmic_timeline.py" line="34" />
         <source>the Planck temperature, where known physics ends</source>
         <translation>bilinen fiziğin bittiği Planck sıcaklığı</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/cosmic_timeline.py" line="34" />
+        <location filename="../gui/simulators/cosmic_timeline.py" line="35" />
         <source>collisions at the Large Hadron Collider</source>
         <translation>Büyük Hadron Çarpıştırıcısı'ndaki çarpışmalar</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/cosmic_timeline.py" line="35" />
+        <location filename="../gui/simulators/cosmic_timeline.py" line="36" />
         <source>heavy-ion collisions that melt protons into quarks</source>
         <translation>protonları kuarklara eriten ağır iyon çarpışmaları</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/cosmic_timeline.py" line="36" />
+        <location filename="../gui/simulators/cosmic_timeline.py" line="37" />
         <source>the hottest nuclear fusion in massive stars</source>
         <translation>ağır yıldızlardaki en sıcak çekirdek kaynaşması</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/cosmic_timeline.py" line="37" />
+        <location filename="../gui/simulators/cosmic_timeline.py" line="38" />
         <source>the core of the Sun</source>
         <translation>Güneş'in çekirdeği</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/cosmic_timeline.py" line="38" />
+        <location filename="../gui/simulators/cosmic_timeline.py" line="39" />
         <source>the surface of the Sun</source>
         <translation>Güneş'in yüzeyi</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/cosmic_timeline.py" line="39" />
+        <location filename="../gui/simulators/cosmic_timeline.py" line="40" />
         <source>a candle flame</source>
         <translation>bir mum alevi</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/cosmic_timeline.py" line="40" />
+        <location filename="../gui/simulators/cosmic_timeline.py" line="41" />
         <source>boiling water</source>
         <translation>kaynayan su</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/cosmic_timeline.py" line="41" />
+        <location filename="../gui/simulators/cosmic_timeline.py" line="42" />
         <source>a comfortable room</source>
         <translation>rahat bir oda</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/cosmic_timeline.py" line="42" />
+        <location filename="../gui/simulators/cosmic_timeline.py" line="43" />
         <source>liquid nitrogen</source>
         <translation>sıvı azot</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/cosmic_timeline.py" line="43" />
+        <location filename="../gui/simulators/cosmic_timeline.py" line="44" />
         <source>deep space today</source>
         <translation>bugünün derin uzayı</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/cosmic_timeline.py" line="44" />
+        <location filename="../gui/simulators/cosmic_timeline.py" line="45" />
         <source>colder than anything in the universe today</source>
         <translation>bugün evrendeki her şeyden daha soğuk</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/cosmic_timeline.py" line="67" />
+        <location filename="../gui/simulators/cosmic_timeline.py" line="68" />
         <source>m</source>
         <translation>m</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/cosmic_timeline.py" line="69" />
+        <location filename="../gui/simulators/cosmic_timeline.py" line="70" />
         <source>km</source>
         <translation>km</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/cosmic_timeline.py" line="72" />
+        <location filename="../gui/simulators/cosmic_timeline.py" line="73" />
         <source>light-days</source>
         <translation>ışık günü</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/cosmic_timeline.py" line="72" />
+        <location filename="../gui/simulators/cosmic_timeline.py" line="73" />
         <source>light-hours</source>
         <translation>ışık saati</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/cosmic_timeline.py" line="73" />
+        <location filename="../gui/simulators/cosmic_timeline.py" line="74" />
         <source>light-minutes</source>
         <translation>ışık dakikası</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/cosmic_timeline.py" line="73" />
+        <location filename="../gui/simulators/cosmic_timeline.py" line="74" />
         <source>light-seconds</source>
         <translation>ışık saniyesi</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/cosmic_timeline.py" line="77" />
+        <location filename="../gui/simulators/cosmic_timeline.py" line="78" />
         <source>light-years</source>
         <translation>ışık yılı</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/cosmic_timeline.py" line="79" />
+        <location filename="../gui/simulators/cosmic_timeline.py" line="80" />
         <source>million light-years</source>
         <translation>milyon ışık yılı</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/cosmic_timeline.py" line="80" />
+        <location filename="../gui/simulators/cosmic_timeline.py" line="81" />
         <source>billion light-years</source>
         <translation>milyar ışık yılı</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/cosmic_timeline.py" line="96" />
+        <location filename="../gui/simulators/cosmic_timeline.py" line="97" />
         <source>1 · Travel through time</source>
         <translation>1 · Zamanda yolculuk</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/cosmic_timeline.py" line="99" />
+        <location filename="../gui/simulators/cosmic_timeline.py" line="100" />
         <source>log₁₀ of time since the Big Bang (seconds)</source>
         <translation>Büyük Patlama'dan bu yana geçen sürenin log₁₀'u (saniye)</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/cosmic_timeline.py" line="101" />
+        <location filename="../gui/simulators/cosmic_timeline.py" line="102" />
         <source>A logarithmic time axis</source>
         <translation>Logaritmik zaman ekseni</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/cosmic_timeline.py" line="102" />
+        <location filename="../gui/simulators/cosmic_timeline.py" line="103" />
         <source>Each step of 1 multiplies the time by ten. A log scale is the only way to show 10⁻⁴³ seconds and 13.8 billion years on the same slider. 0 is one second, 7.5 is one year and 17.64 is today.</source>
         <translation>Her 1 birimlik adım süreyi onla çarpar. 10⁻⁴³ saniye ile 13,8 milyar yılı aynı kaydırıcıda göstermenin tek yolu logaritmik ölçektir. 0 bir saniye, 7,5 bir yıl, 17,64 ise bugündür.</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/cosmic_timeline.py" line="110" />
+        <location filename="../gui/simulators/cosmic_timeline.py" line="111" />
         <source>Jump to an epoch…</source>
         <translation>Bir çağa atla…</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/cosmic_timeline.py" line="113" />
+        <location filename="../gui/simulators/cosmic_timeline.py" line="114" />
         <source>Epoch</source>
         <translation>Çağ</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/cosmic_timeline.py" line="114" />
+        <location filename="../gui/simulators/cosmic_timeline.py" line="115" />
         <source>Jump to an epoch</source>
         <translation>Bir çağa atla</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/cosmic_timeline.py" line="114" />
+        <location filename="../gui/simulators/cosmic_timeline.py" line="115" />
         <source>Moves the time slider to the middle of the chosen epoch.</source>
         <translation>Zaman kaydırıcısını seçilen çağın ortasına taşır.</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/cosmic_timeline.py" line="116" />
-        <location filename="../gui/simulators/cosmic_timeline.py" line="239" />
-        <source>▶ Play history</source>
-        <translation>▶ Tarihi oynat</translation>
+        <location filename="../gui/simulators/cosmic_timeline.py" line="117" />
+        <location filename="../gui/simulators/cosmic_timeline.py" line="241" />
+        <source>Play history</source>
+        <translation>Tarihi oynat</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/cosmic_timeline.py" line="119" />
+        <location filename="../gui/simulators/cosmic_timeline.py" line="121" />
         <source>Sweep through cosmic history from the Planck era to the far future.</source>
         <translation>Planck çağından uzak geleceğe kadar kozmik tarihi tarayın.</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/cosmic_timeline.py" line="121" />
+        <location filename="../gui/simulators/cosmic_timeline.py" line="123" />
         <source>Today</source>
         <translation>Bugün</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/cosmic_timeline.py" line="122" />
+        <location filename="../gui/simulators/cosmic_timeline.py" line="124" />
         <source>Jump back to the present day.</source>
         <translation>Bugüne geri dön.</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/cosmic_timeline.py" line="129" />
+        <location filename="../gui/simulators/cosmic_timeline.py" line="131" />
         <source>The universe at this moment</source>
         <translation>Bu andaki evren</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/cosmic_timeline.py" line="184" />
+        <location filename="../gui/simulators/cosmic_timeline.py" line="186" />
         <source>(the future)</source>
         <translation>(gelecek)</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/cosmic_timeline.py" line="188" />
+        <location filename="../gui/simulators/cosmic_timeline.py" line="190" />
         <source>(today's size)</source>
         <translation>(bugünkü boyut)</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/cosmic_timeline.py" line="190" />
+        <location filename="../gui/simulators/cosmic_timeline.py" line="192" />
         <source>(distances were {factor} times smaller than today)</source>
         <translation>(uzaklıklar bugünkünden {factor} kat daha küçüktü)</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/cosmic_timeline.py" line="192" />
+        <location filename="../gui/simulators/cosmic_timeline.py" line="194" />
         <source>(distances are {factor} times larger than today)</source>
         <translation>(uzaklıklar bugünkünden {factor} kat daha büyük)</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/cosmic_timeline.py" line="193" />
+        <location filename="../gui/simulators/cosmic_timeline.py" line="195" />
         <source>Redshift of light emitted then: z = {z}&lt;br&gt;</source>
         <translation>O anda yayılan ışığın kırmızıya kayması: z = {z}&lt;br&gt;</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/cosmic_timeline.py" line="196" />
+        <location filename="../gui/simulators/cosmic_timeline.py" line="198" />
         <source>Temperature: &lt;b&gt;{temperature} K&lt;/b&gt;&lt;br&gt;Typical particle energy kT: &lt;b&gt;{energy}&lt;/b&gt;&lt;br&gt;About as hot as: {comparison}&lt;br&gt;Scale factor a: &lt;b&gt;{a}&lt;/b&gt; {size}&lt;br&gt;</source>
         <translation>Sıcaklık: &lt;b&gt;{temperature} K&lt;/b&gt;&lt;br&gt;Tipik parçacık enerjisi kT: &lt;b&gt;{energy}&lt;/b&gt;&lt;br&gt;Şunun kadar sıcak: {comparison}&lt;br&gt;Ölçek çarpanı a: &lt;b&gt;{a}&lt;/b&gt; {size}&lt;br&gt;</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/cosmic_timeline.py" line="203" />
+        <location filename="../gui/simulators/cosmic_timeline.py" line="205" />
         <source>Density: &lt;b&gt;{density} kg/m³&lt;/b&gt; (water: 1000)&lt;br&gt;Particle horizon: &lt;b&gt;{horizon}&lt;/b&gt;&lt;br&gt;Energy budget: radiation {radiation}%, matter {matter}%, dark energy {dark_energy}%</source>
         <translation>Yoğunluk: &lt;b&gt;{density} kg/m³&lt;/b&gt; (su: 1000)&lt;br&gt;Parçacık ufku: &lt;b&gt;{horizon}&lt;/b&gt;&lt;br&gt;Enerji bütçesi: ışınım %{radiation}, madde %{matter}, karanlık enerji %{dark_energy}</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/cosmic_timeline.py" line="216" />
-        <location filename="../gui/simulators/cosmic_timeline.py" line="314" />
+        <location filename="../gui/simulators/cosmic_timeline.py" line="218" />
+        <location filename="../gui/simulators/cosmic_timeline.py" line="317" />
         <source>lesson {id}</source>
         <translation>ders {id}</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/cosmic_timeline.py" line="223" />
+        <location filename="../gui/simulators/cosmic_timeline.py" line="225" />
         <source>After &lt;b&gt;{epoch}&lt;/b&gt;</source>
         <translation>&lt;b&gt;{epoch}&lt;/b&gt; sonrası</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/cosmic_timeline.py" line="224" />
+        <location filename="../gui/simulators/cosmic_timeline.py" line="226" />
         <source>Before every known epoch</source>
         <translation>Bilinen her çağdan önce</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/cosmic_timeline.py" line="226" />
+        <location filename="../gui/simulators/cosmic_timeline.py" line="228" />
         <source>next: &lt;b&gt;{epoch}&lt;/b&gt; at {time}</source>
         <translation>sonraki: {time} anında &lt;b&gt;{epoch}&lt;/b&gt;</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/cosmic_timeline.py" line="229" />
+        <location filename="../gui/simulators/cosmic_timeline.py" line="231" />
         <source>The physics of this period is not known: numbers are extrapolations.</source>
         <translation>Bu dönemin fiziği bilinmiyor: sayılar dışdeğerlemedir.</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/cosmic_timeline.py" line="312" />
+        <location filename="../gui/simulators/cosmic_timeline.py" line="315" />
         <source>Epochs and their lessons</source>
         <translation>Çağlar ve dersleri</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/cosmic_timeline.py" line="317" />
+        <location filename="../gui/simulators/cosmic_timeline.py" line="320" />
         <source>Before about 10⁻¹¹ s the temperatures are extrapolations of known physics. After one second they come from the Planck 2018 ΛCDM model.</source>
         <translation>Yaklaşık 10⁻¹¹ s'den önce sıcaklıklar bilinen fiziğin dışdeğerlemesidir. Bir saniyeden sonra Planck 2018 ΛCDM modelinden gelir.</translation>
     </message>
@@ -5089,97 +5095,97 @@ parametreleri kendiniz değiştirmenize izin verir.
         <translation>Bir dışlama eğrisi şunu söyler: bir WIMP bu kütleye ve bu tesir kesitine sahip olsaydı, dedektör fark edecek kadar olay görürdü; görmedi. Eğrinin altında hiçbir şey dışlanmaz. Her yeni deney eğriyi aşağı iter — ta ki Güneş ve atmosfer nötrinolarından gelen arka plan, yani nötrino sisi, ilerlemeyi çok yavaşlatana kadar.</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/expansion.py" line="30" />
+        <location filename="../gui/simulators/expansion.py" line="31" />
         <source>Universe contents</source>
         <translation>Evrenin içeriği</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/expansion.py" line="34" />
+        <location filename="../gui/simulators/expansion.py" line="35" />
         <source>Load a named model. Moving any slider switches back to custom values.</source>
         <translation>Adlandırılmış bir modeli yükleyin. Herhangi bir kaydırıcıyı oynatmak özel değerlere geri döner.</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/expansion.py" line="37" />
+        <location filename="../gui/simulators/expansion.py" line="38" />
         <source>Matter density Ωm</source>
         <translation>Madde yoğunluğu Ωm</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/expansion.py" line="37" />
+        <location filename="../gui/simulators/expansion.py" line="38" />
         <source>Matter (ordinary + dark) slows the expansion. Above 1 without dark energy, the universe recollapses.</source>
         <translation>Madde (sıradan + karanlık) genişlemeyi yavaşlatır. Karanlık enerji olmadan 1'in üzerinde evren yeniden çöker.</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/expansion.py" line="42" />
+        <location filename="../gui/simulators/expansion.py" line="43" />
         <source>Dark energy density ΩΛ</source>
         <translation>Karanlık enerji yoğunluğu ΩΛ</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/expansion.py" line="42" />
+        <location filename="../gui/simulators/expansion.py" line="43" />
         <source>A positive cosmological constant accelerates the expansion. Negative values act like extra attraction and cause recollapse.</source>
         <translation>Pozitif bir kozmolojik sabit genişlemeyi hızlandırır. Negatif değerler fazladan bir çekim gibi davranır ve yeniden çökmeye yol açar.</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/expansion.py" line="47" />
+        <location filename="../gui/simulators/expansion.py" line="48" />
         <source>Sets the time scale: a larger H0 makes every universe younger, but does not change the shape of the curves.</source>
         <translation>Zaman ölçeğini belirler: daha büyük bir H0 her evreni gençleştirir ama eğrilerin biçimini değiştirmez.</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/expansion.py" line="50" />
+        <location filename="../gui/simulators/expansion.py" line="51" />
         <source>Include radiation</source>
         <translation>Işınımı dahil et</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/expansion.py" line="51" />
+        <location filename="../gui/simulators/expansion.py" line="52" />
         <source>Radiation only matters in the first ~100 000 years; the effect on this plot is tiny.</source>
         <translation>Işınım yalnızca ilk ~100 000 yılda önemlidir; bu grafikteki etkisi çok küçüktür.</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/expansion.py" line="57" />
+        <location filename="../gui/simulators/expansion.py" line="58" />
         <source>Compare</source>
         <translation>Karşılaştır</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/expansion.py" line="59" />
-        <source>📌 Pin curve</source>
-        <translation>📌 Eğriyi sabitle</translation>
+        <location filename="../gui/simulators/expansion.py" line="60" />
+        <source>Pin curve</source>
+        <translation>Eğriyi sabitle</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/expansion.py" line="60" />
+        <location filename="../gui/simulators/expansion.py" line="62" />
         <source>Keep the current a(t) curve on the plot to compare with other models (up to 5).</source>
         <translation>Başka modellerle karşılaştırmak için şimdiki a(t) eğrisini grafikte tutun (en çok 5 tane).</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/expansion.py" line="62" />
+        <location filename="../gui/simulators/expansion.py" line="64" />
         <source>Clear pins</source>
         <translation>Sabitleri temizle</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/expansion.py" line="68" />
+        <location filename="../gui/simulators/expansion.py" line="70" />
         <source>This universe</source>
         <translation>Bu evren</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/expansion.py" line="81" />
+        <location filename="../gui/simulators/expansion.py" line="83" />
         <source>Click anywhere on this map to choose Ωm and ΩΛ.</source>
         <translation>Ωm ve ΩΛ seçmek için bu haritanın herhangi bir yerine tıklayın.</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/expansion.py" line="142" />
+        <location filename="../gui/simulators/expansion.py" line="144" />
         <source>{years} billion years</source>
         <translation>{years} milyar yıl</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/expansion.py" line="143" />
+        <location filename="../gui/simulators/expansion.py" line="145" />
         <source>undefined (no Big Bang)</source>
         <translation>tanımsız (Büyük Patlama yok)</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/expansion.py" line="146" />
+        <location filename="../gui/simulators/expansion.py" line="148" />
         <source>Big Crunch in: &lt;b&gt;{years} billion years&lt;/b&gt;</source>
         <translation>Büyük Çöküş'e kalan: &lt;b&gt;{years} milyar yıl&lt;/b&gt;</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/expansion.py" line="149" />
+        <location filename="../gui/simulators/expansion.py" line="151" />
         <source>Age: &lt;b&gt;{age}&lt;/b&gt;{crunch}&lt;br&gt;Geometry: &lt;b&gt;{geometry}&lt;/b&gt; (Ωk = {curvature})&lt;br&gt;Today: &lt;b&gt;{trend}&lt;/b&gt; (q0 = {q0})&lt;br&gt;Hubble time 1/H0: {hubble} billion years&lt;br&gt;&lt;br&gt;&lt;span style='color:{colour}'&gt;&lt;b&gt;Fate: this universe {fate}.&lt;/b&gt;&lt;/span&gt;&lt;br&gt;{explanation}</source>
         <translation>Yaş: &lt;b&gt;{age}&lt;/b&gt;{crunch}&lt;br&gt;Geometri: &lt;b&gt;{geometry}&lt;/b&gt; (Ωk = {curvature})&lt;br&gt;Bugün: &lt;b&gt;{trend}&lt;/b&gt; (q0 = {q0})&lt;br&gt;Hubble süresi 1/H0: {hubble} milyar yıl&lt;br&gt;&lt;br&gt;&lt;span style='color:{colour}'&gt;&lt;b&gt;Kader: bu evren {fate}.&lt;/b&gt;&lt;/span&gt;&lt;br&gt;{explanation}</translation>
     </message>
@@ -5784,138 +5790,138 @@ parametreleri kendiniz değiştirmenize izin verir.
     </message>
     <message>
         <location filename="../gui/simulators/hubble_fit.py" line="56" />
-        <location filename="../gui/simulators/hubble_fit.py" line="79" />
+        <location filename="../gui/simulators/hubble_fit.py" line="91" />
         <source>Press &lt;b&gt;Find best fit&lt;/b&gt; to compute H0 and the Hubble time.</source>
         <translation>H0'ı ve Hubble süresini hesaplamak için &lt;b&gt;En iyi uyumu bul&lt;/b&gt; düğmesine basın.</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/hubble_fit.py" line="76" />
-        <source>⚠ Simulated data.</source>
-        <translation>⚠ Benzetilmiş veri.</translation>
+        <location filename="../gui/simulators/hubble_fit.py" line="88" />
+        <source>&lt;b&gt;Simulated data.&lt;/b&gt;</source>
+        <translation>&lt;b&gt;Benzetilmiş veri.&lt;/b&gt;</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/hubble_fit.py" line="76" />
+        <location filename="../gui/simulators/hubble_fit.py" line="88" />
         <source>Real historical data.</source>
         <translation>Gerçek tarihsel veri.</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/hubble_fit.py" line="88" />
+        <location filename="../gui/simulators/hubble_fit.py" line="100" />
         <source>Typical miss (RMS residual): &lt;b&gt;{rms} km/s&lt;/b&gt;&lt;br&gt;Hubble time for your slope: &lt;b&gt;{hubble_time} billion years&lt;/b&gt;</source>
         <translation>Tipik sapma (RMS artık): &lt;b&gt;{rms} km/s&lt;/b&gt;&lt;br&gt;Sizin eğiminiz için Hubble süresi: &lt;b&gt;{hubble_time} milyar yıl&lt;/b&gt;</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/hubble_fit.py" line="100" />
+        <location filename="../gui/simulators/hubble_fit.py" line="112" />
         <source>Hubble's value is about seven times larger than today's because his distances were too small. His Hubble time of {years} billion years was shorter than geologists' estimates of the age of the Earth, a real puzzle at the time.</source>
         <translation>Hubble'ın değeri bugünkünün yaklaşık yedi katıdır, çünkü uzaklıkları çok küçüktü. Onun {years} milyar yıllık Hubble süresi, jeologların Dünya'nın yaşı için verdiği kestirimlerden kısaydı; o zamanlar gerçek bir bilmeceydi.</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/hubble_fit.py" line="104" />
+        <location filename="../gui/simulators/hubble_fit.py" line="116" />
         <source>Close to modern measurements (67–73 km/s/Mpc). The Hubble time is close to the true age of 13.8 billion years.</source>
         <translation>Modern ölçümlere yakın (67–73 km/s/Mpc). Hubble süresi, 13,8 milyar yıllık gerçek yaşa yakındır.</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/hubble_fit.py" line="108" />
+        <location filename="../gui/simulators/hubble_fit.py" line="120" />
         <source>H0 = &lt;b&gt;{h0} ± {error} km/s/Mpc&lt;/b&gt;&lt;br&gt;Hubble time 1/H0 = &lt;b&gt;{hubble_time} billion years&lt;/b&gt;&lt;br&gt;Points: {points}&lt;br&gt;&lt;br&gt;{comment}</source>
         <translation>H0 = &lt;b&gt;{h0} ± {error} km/s/Mpc&lt;/b&gt;&lt;br&gt;Hubble süresi 1/H0 = &lt;b&gt;{hubble_time} milyar yıl&lt;/b&gt;&lt;br&gt;Nokta sayısı: {points}&lt;br&gt;&lt;br&gt;{comment}</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/inflation_sim.py" line="26" />
+        <location filename="../gui/simulators/inflation_sim.py" line="27" />
         <source>1 · The inflaton potential</source>
         <translation>1 · İnflaton potansiyeli</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/inflation_sim.py" line="33" />
+        <location filename="../gui/simulators/inflation_sim.py" line="34" />
         <location filename="../gui/widgets/tutor_panel.py" line="153" />
         <source>Model</source>
         <translation>Model</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/inflation_sim.py" line="34" />
+        <location filename="../gui/simulators/inflation_sim.py" line="35" />
         <source>Inflation models</source>
         <translation>Şişme modelleri</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/inflation_sim.py" line="35" />
+        <location filename="../gui/simulators/inflation_sim.py" line="36" />
         <source>Each model is a different shape for the energy of the inflaton field. The field rolls slowly down the potential; the shape decides how the universe expands and which fluctuations are created.</source>
         <translation>Her model, inflaton alanının enerjisi için farklı bir biçimdir. Alan potansiyel boyunca yavaşça aşağı yuvarlanır; biçim, evrenin nasıl genişleyeceğine ve hangi dalgalanmaların oluşacağına karar verir.</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/inflation_sim.py" line="39" />
+        <location filename="../gui/simulators/inflation_sim.py" line="40" />
         <source>Parameter</source>
         <translation>Parametre</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/inflation_sim.py" line="42" />
+        <location filename="../gui/simulators/inflation_sim.py" line="43" />
         <source>N*  e-folds before the end</source>
         <translation>N*  sondan önceki e-katlanma sayısı</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/inflation_sim.py" line="43" />
+        <location filename="../gui/simulators/inflation_sim.py" line="44" />
         <source>N*</source>
         <translation>N*</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/inflation_sim.py" line="43" />
+        <location filename="../gui/simulators/inflation_sim.py" line="44" />
         <source>When the scales we observe in the CMB left the horizon, measured in e-folds before inflation ended. It depends on how the universe reheated; 50–60 is typical.</source>
         <translation>KMF'de gözlediğimiz ölçeklerin ufku terk ettiği an, şişmenin bitişinden önceki e-katlanma sayısıyla ölçülür. Evrenin nasıl yeniden ısındığına bağlıdır; 50–60 tipiktir.</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/inflation_sim.py" line="49" />
+        <location filename="../gui/simulators/inflation_sim.py" line="50" />
         <source>2 · Watch the field roll</source>
         <translation>2 · Alanın yuvarlanışını izle</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/inflation_sim.py" line="56" />
+        <location filename="../gui/simulators/inflation_sim.py" line="58" />
         <source>Rewind</source>
         <translation>Geri sar</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/inflation_sim.py" line="108" />
+        <location filename="../gui/simulators/inflation_sim.py" line="110" />
         <source>This parameter value does not give enough inflation. Try another.</source>
         <translation>Bu parametre değeri yeterli şişme vermiyor. Başka bir değer deneyin.</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/inflation_sim.py" line="115" />
+        <location filename="../gui/simulators/inflation_sim.py" line="117" />
         <source>&lt;b&gt;Consistent with observations.&lt;/b&gt;</source>
         <translation>&lt;b&gt;Gözlemlerle uyumlu.&lt;/b&gt;</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/inflation_sim.py" line="115" />
+        <location filename="../gui/simulators/inflation_sim.py" line="117" />
         <source>&lt;b&gt;Ruled out by observations.&lt;/b&gt;</source>
         <translation>&lt;b&gt;Gözlemlerle elendi.&lt;/b&gt;</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/inflation_sim.py" line="116" />
+        <location filename="../gui/simulators/inflation_sim.py" line="118" />
         <source>Planck measures nₛ = {n_s} ± {error}; BICEP/Keck limit r &lt; {limit}.</source>
         <translation>Planck nₛ = {n_s} ± {error} ölçüyor; BICEP/Keck sınırı r &lt; {limit}.</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/inflation_sim.py" line="120" />
+        <location filename="../gui/simulators/inflation_sim.py" line="122" />
         <source>Spectral index nₛ: &lt;b&gt;{n_s}&lt;/b&gt;&lt;br&gt;Tensor-to-scalar ratio r: &lt;b&gt;{r}&lt;/b&gt;&lt;br&gt;Slow-roll ε = {epsilon}, η = {eta}&lt;br&gt;Field when CMB scales left: φ* = {phi_star} M_Pl&lt;br&gt;Field at the end: {phi_end} M_Pl&lt;br&gt;Energy scale V*¼: &lt;b&gt;{energy} GeV&lt;/b&gt;&lt;br&gt;Hubble rate during inflation: {hubble} GeV&lt;br&gt;Full solution: inflation lasted {efolds} e-folds from the start of the run</source>
         <translation>Spektral indis nₛ: &lt;b&gt;{n_s}&lt;/b&gt;&lt;br&gt;Tensör–skaler oranı r: &lt;b&gt;{r}&lt;/b&gt;&lt;br&gt;Yavaş yuvarlanma ε = {epsilon}, η = {eta}&lt;br&gt;KMF ölçekleri ayrıldığındaki alan: φ* = {phi_star} M_Pl&lt;br&gt;Sondaki alan: {phi_end} M_Pl&lt;br&gt;Enerji ölçeği V*¼: &lt;b&gt;{energy} GeV&lt;/b&gt;&lt;br&gt;Şişme sırasındaki Hubble hızı: {hubble} GeV&lt;br&gt;Tam çözüm: şişme, çalıştırmanın başlangıcından itibaren {efolds} e-katlanma sürdü</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/ladder_sim.py" line="20" />
+        <location filename="../gui/simulators/ladder_sim.py" line="21" />
         <source>1 · Parallaxes → Leavitt law</source>
         <translation>1 · Paralakslar → Leavitt yasası</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/ladder_sim.py" line="21" />
+        <location filename="../gui/simulators/ladder_sim.py" line="22" />
         <source>2 · Cepheid hosts → supernova M_B</source>
         <translation>2 · Sefeid barındıran gökadalar → süpernova M_B</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/ladder_sim.py" line="22" />
+        <location filename="../gui/simulators/ladder_sim.py" line="23" />
         <source>3 · Hubble-flow supernovae → H0</source>
         <translation>3 · Hubble akışındaki süpernovalar → H0</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/ladder_sim.py" line="34" />
+        <location filename="../gui/simulators/ladder_sim.py" line="35" />
         <source>0 · The toy universe</source>
         <translation>0 · Oyuncak evren</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/ladder_sim.py" line="37" />
+        <location filename="../gui/simulators/ladder_sim.py" line="38" />
         <location filename="../gui/simulators/olbers_sim.py" line="26" />
         <location filename="../gui/simulators/siren_sim.py" line="31" />
         <location filename="../gui/simulators/slice_sim.py" line="32" />
@@ -5924,240 +5930,240 @@ parametreleri kendiniz değiştirmenize izin verir.
         <translation>Özel</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/ladder_sim.py" line="40" />
+        <location filename="../gui/simulators/ladder_sim.py" line="41" />
         <source>Observing programme</source>
         <translation>Gözlem programı</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/ladder_sim.py" line="42" />
+        <location filename="../gui/simulators/ladder_sim.py" line="43" />
         <source>Toy versions of real programmes: how many stars and supernovae they measured and how precisely. The numbers they produce here are simulated, not the published results.</source>
         <translation>Gerçek programların oyuncak sürümleri: kaç yıldız ve süpernovayı ne duyarlılıkla ölçtükleri. Burada ürettikleri sayılar benzetimdir, yayımlanmış sonuçlar değildir.</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/ladder_sim.py" line="45" />
+        <location filename="../gui/simulators/ladder_sim.py" line="46" />
         <source>True H0 of the toy universe</source>
         <translation>Oyuncak evrenin gerçek H0 değeri</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/ladder_sim.py" line="46" />
+        <location filename="../gui/simulators/ladder_sim.py" line="47" />
         <source>Why can you set the truth?</source>
         <translation>Gerçeği neden siz belirleyebiliyorsunuz?</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/ladder_sim.py" line="47" />
+        <location filename="../gui/simulators/ladder_sim.py" line="48" />
         <source>In a simulation you know the answer, so you can see whether the ladder recovers it. Real astronomers never get this luxury — which is why systematic errors are so hard to catch.</source>
         <translation>Bir benzetimde cevabı bilirsiniz, böylece merdivenin onu bulup bulmadığını görebilirsiniz. Gerçek gökbilimcilerin böyle bir lüksü yoktur — sistematik hataları yakalamak bu yüzden bu kadar zordur.</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/ladder_sim.py" line="51" />
-        <location filename="../gui/simulators/mcmc_sim.py" line="74" />
-        <location filename="../gui/simulators/nbody_sim.py" line="111" />
+        <location filename="../gui/simulators/ladder_sim.py" line="52" />
+        <location filename="../gui/simulators/mcmc_sim.py" line="75" />
+        <location filename="../gui/simulators/nbody_sim.py" line="112" />
         <location filename="../gui/simulators/slice_sim.py" line="44" />
         <source>Random seed</source>
         <translation>Rastgelelik tohumu</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/ladder_sim.py" line="59" />
+        <location filename="../gui/simulators/ladder_sim.py" line="60" />
         <source>Milky Way Cepheids with parallaxes</source>
         <translation>Paralaksı ölçülmüş Samanyolu Sefeidleri</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/ladder_sim.py" line="60" />
+        <location filename="../gui/simulators/ladder_sim.py" line="61" />
         <source>The first rung</source>
         <translation>İlk basamak</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/ladder_sim.py" line="61" />
+        <location filename="../gui/simulators/ladder_sim.py" line="62" />
         <source>Parallax is pure geometry: the tiny shift of a star as the Earth orbits the Sun. It gives the distance to nearby Cepheids, and so their true brightness.</source>
         <translation>Paralaks saf geometridir: Dünya Güneş'in çevresinde dolanırken bir yıldızın gökyüzünde yaptığı minik kayma. Yakın Sefeidlerin uzaklığını, dolayısıyla gerçek parlaklıklarını verir.</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/ladder_sim.py" line="65" />
+        <location filename="../gui/simulators/ladder_sim.py" line="66" />
         <source>Parallax error (µas)</source>
         <translation>Paralaks hatası (µas)</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/ladder_sim.py" line="66" />
+        <location filename="../gui/simulators/ladder_sim.py" line="67" />
         <source>Micro-arcseconds</source>
         <translation>Mikro yay saniyesi</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/ladder_sim.py" line="67" />
+        <location filename="../gui/simulators/ladder_sim.py" line="68" />
         <source>A µas is the width of a coin on the Moon seen from Earth. Hipparcos reached about 1000 µas, HST spatial scanning and Gaia about 20–30 µas for these stars.</source>
         <translation>Bir µas, Ay'daki bir madeni paranın Dünya'dan görünen genişliğidir. Hipparcos yaklaşık 1000 µas'a, HST uzaysal tarama ve Gaia bu yıldızlar için yaklaşık 20–30 µas'a ulaştı.</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/ladder_sim.py" line="71" />
+        <location filename="../gui/simulators/ladder_sim.py" line="72" />
         <source>Parallax zero-point offset (µas) — systematic</source>
         <translation>Paralaks sıfır noktası kayması (µas) — sistematik</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/ladder_sim.py" line="72" />
+        <location filename="../gui/simulators/ladder_sim.py" line="73" />
         <source>A systematic error</source>
         <translation>Sistematik bir hata</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/ladder_sim.py" line="73" />
+        <location filename="../gui/simulators/ladder_sim.py" line="74" />
         <source>If every parallax is off by the same small amount, averaging more stars does not help. Gaia's parallax zero point is corrected at the level of about 10–20 µas.</source>
         <translation>Her paralaks aynı küçük miktarda kaymışsa daha çok yıldızın ortalamasını almak işe yaramaz. Gaia'nın paralaks sıfır noktası yaklaşık 10–20 µas düzeyinde düzeltilir.</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/ladder_sim.py" line="83" />
+        <location filename="../gui/simulators/ladder_sim.py" line="84" />
         <source>Galaxies with Cepheids and a supernova</source>
         <translation>Hem Sefeid hem süpernova barındıran gökadalar</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/ladder_sim.py" line="84" />
+        <location filename="../gui/simulators/ladder_sim.py" line="85" />
         <source>The bottleneck</source>
         <translation>Darboğaz</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/ladder_sim.py" line="85" />
+        <location filename="../gui/simulators/ladder_sim.py" line="86" />
         <source>A type Ia supernova must explode in a galaxy close enough for HST or JWST to resolve its Cepheids. Only about one such event happens every year or two.</source>
         <translation>Bir Ia süpernovası, HST ya da JWST'nin Sefeidlerini ayırt edebileceği kadar yakın bir gökadada patlamalıdır. Bu tür bir olay ancak bir iki yılda bir gerçekleşir.</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/ladder_sim.py" line="88" />
+        <location filename="../gui/simulators/ladder_sim.py" line="89" />
         <source>Cepheids per galaxy</source>
         <translation>Gökada başına Sefeid</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/ladder_sim.py" line="90" />
+        <location filename="../gui/simulators/ladder_sim.py" line="91" />
         <source>Leavitt law scatter (mag)</source>
         <translation>Leavitt yasası saçılması (kadir)</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/ladder_sim.py" line="91" />
+        <location filename="../gui/simulators/ladder_sim.py" line="92" />
         <source>Intrinsic scatter</source>
         <translation>İçsel saçılma</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/ladder_sim.py" line="92" />
+        <location filename="../gui/simulators/ladder_sim.py" line="93" />
         <source>Cepheids of the same period are not exactly equally bright. Near-infrared observations reduce the scatter and the effect of dust.</source>
         <translation>Aynı periyottaki Sefeidler tam olarak eşit parlaklıkta değildir. Yakın kızılötesi gözlemler saçılmayı ve tozun etkisini azaltır.</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/ladder_sim.py" line="96" />
+        <location filename="../gui/simulators/ladder_sim.py" line="97" />
         <source>Crowding bias (mag) — systematic</source>
         <translation>Kalabalık yanlılığı (kadir) — sistematik</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/ladder_sim.py" line="97" />
+        <location filename="../gui/simulators/ladder_sim.py" line="98" />
         <source>Blended stars</source>
         <translation>Karışan yıldızlar</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/ladder_sim.py" line="98" />
+        <location filename="../gui/simulators/ladder_sim.py" line="99" />
         <source>In a distant galaxy a Cepheid can blend with its neighbours and look brighter than it is. Positive values make every host look closer. JWST's sharper images test exactly this.</source>
         <translation>Uzak bir gökadada bir Sefeid komşularıyla karışıp olduğundan parlak görünebilir. Pozitif değerler her gökadayı daha yakın gösterir. JWST'nin daha keskin görüntüleri tam olarak bunu sınar.</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/ladder_sim.py" line="108" />
+        <location filename="../gui/simulators/ladder_sim.py" line="109" />
         <source>Supernovae in the Hubble flow</source>
         <translation>Hubble akışındaki süpernovalar</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/ladder_sim.py" line="109" />
+        <location filename="../gui/simulators/ladder_sim.py" line="110" />
         <source>Far enough to ignore local motions</source>
         <translation>Yerel hareketleri göz ardı edecek kadar uzak</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/ladder_sim.py" line="110" />
+        <location filename="../gui/simulators/ladder_sim.py" line="111" />
         <source>Between z ≈ 0.023 and 0.15 the expansion dominates over the galaxies' own motions, yet the result hardly depends on dark energy.</source>
         <translation>z ≈ 0,023 ile 0,15 arasında genişleme gökadaların kendi hareketlerine baskın gelir, üstelik sonuç karanlık enerjiye neredeyse hiç bağlı değildir.</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/ladder_sim.py" line="113" />
+        <location filename="../gui/simulators/ladder_sim.py" line="114" />
         <source>Supernova scatter (mag)</source>
         <translation>Süpernova saçılması (kadir)</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/ladder_sim.py" line="119" />
-        <source>🔭 New observation</source>
-        <translation>🔭 Yeni gözlem</translation>
+        <location filename="../gui/simulators/ladder_sim.py" line="120" />
+        <source>New observation</source>
+        <translation>Yeni gözlem</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/ladder_sim.py" line="121" />
+        <location filename="../gui/simulators/ladder_sim.py" line="123" />
         <source>The same programme with new random measurement errors.</source>
         <translation>Aynı program, yeni rastgele ölçüm hatalarıyla.</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/ladder_sim.py" line="123" />
+        <location filename="../gui/simulators/ladder_sim.py" line="125" />
         <source>Repeat {count}×</source>
         <translation>{count}× tekrarla</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/ladder_sim.py" line="124" />
+        <location filename="../gui/simulators/ladder_sim.py" line="126" />
         <source>Run the whole ladder many times: the spread of H0 is the real error bar.</source>
         <translation>Merdiveni baştan sona defalarca çalıştırın: H0'ın saçılması gerçek hata çubuğudur.</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/ladder_sim.py" line="130" />
+        <location filename="../gui/simulators/ladder_sim.py" line="132" />
         <source>Your H0</source>
         <translation>Sizin H0'ınız</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/ladder_sim.py" line="136" />
+        <location filename="../gui/simulators/ladder_sim.py" line="138" />
         <source>Simulated measurements. Real ladders add anchors such as the LMC and NGC 4258, and fit everything at once.</source>
         <translation>Benzetilmiş ölçümler. Gerçek merdivenler LMC ve NGC 4258 gibi çapalar ekler ve her şeyi aynı anda uydurur.</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/ladder_sim.py" line="146" />
+        <location filename="../gui/simulators/ladder_sim.py" line="148" />
         <source>The three rungs</source>
         <translation>Üç basamak</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/ladder_sim.py" line="147" />
+        <location filename="../gui/simulators/ladder_sim.py" line="149" />
         <source>Error budget</source>
         <translation>Hata bütçesi</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/ladder_sim.py" line="219" />
+        <location filename="../gui/simulators/ladder_sim.py" line="221" />
         <source>H0 = &lt;b&gt;{h0} ± {error} km/s/Mpc&lt;/b&gt; ({percent}%)</source>
         <translation>H0 = &lt;b&gt;{h0} ± {error} km/s/Mpc&lt;/b&gt; (%{percent})</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/ladder_sim.py" line="221" />
+        <location filename="../gui/simulators/ladder_sim.py" line="223" />
         <source>True value of this toy universe: {truth}; off by {miss}</source>
         <translation>Bu oyuncak evrenin gerçek değeri: {truth}; sapma {miss}</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/ladder_sim.py" line="226" />
+        <location filename="../gui/simulators/ladder_sim.py" line="228" />
         <source>{rung}: ± {percent}%</source>
         <translation>{rung}: ± %{percent}</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/ladder_sim.py" line="228" />
+        <location filename="../gui/simulators/ladder_sim.py" line="230" />
         <source>Systematic shift, not in the error bar: &lt;b&gt;{shift} km/s/Mpc&lt;/b&gt;</source>
         <translation>Hata çubuğunda olmayan sistematik kayma: &lt;b&gt;{shift} km/s/Mpc&lt;/b&gt;</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/ladder_sim.py" line="231" />
+        <location filename="../gui/simulators/ladder_sim.py" line="233" />
         <source>{count} repeats: mean {mean}, spread ± {spread}</source>
         <translation>{count} tekrar: ortalama {mean}, saçılma ± {spread}</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/ladder_sim.py" line="234" />
+        <location filename="../gui/simulators/ladder_sim.py" line="236" />
         <source>Difference from Planck (67.4 ± 0.5): &lt;b&gt;{sigma}σ&lt;/b&gt;</source>
         <translation>Planck'tan (67,4 ± 0,5) fark: &lt;b&gt;{sigma}σ&lt;/b&gt;</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/ladder_sim.py" line="241" />
+        <location filename="../gui/simulators/ladder_sim.py" line="243" />
         <source>&lt;b&gt;The systematic error is larger than the error bar.&lt;/b&gt; H0 is shifted by {shift} km/s/Mpc, and no amount of extra data will reveal it — only an independent check can.</source>
         <translation>&lt;b&gt;Sistematik hata, hata çubuğundan büyük.&lt;/b&gt; H0 {shift} km/s/Mpc kaymış durumda ve hiçbir miktarda ek veri bunu ortaya çıkaramaz — ancak bağımsız bir denetim çıkarabilir.</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/ladder_sim.py" line="247" />
+        <location filename="../gui/simulators/ladder_sim.py" line="249" />
         <source>&lt;b&gt;Simulated ladder.&lt;/b&gt; The weakest rung right now is &lt;b&gt;{rung}&lt;/b&gt;: improving the others hardly changes the total, because errors add in quadrature.</source>
         <translation>&lt;b&gt;Benzetilmiş merdiven.&lt;/b&gt; Şu anki en zayıf basamak &lt;b&gt;{rung}&lt;/b&gt;: hatalar kareleri toplamıyla birleştiği için diğerlerini iyileştirmek toplamı neredeyse değiştirmez.</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/ladder_sim.py" line="373" />
+        <location filename="../gui/simulators/ladder_sim.py" line="375" />
         <source>How the errors combine</source>
         <translation>Hatalar nasıl birleşir</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/ladder_sim.py" line="374" />
+        <location filename="../gui/simulators/ladder_sim.py" line="376" />
         <source>The three rungs are independent, so their percentage errors add **in quadrature**:
 
 $$\sigma_{H_0}/H_0 = \sqrt{\sigma_1^2 + \sigma_2^2 + \sigma_3^2}$$
@@ -6367,230 +6373,230 @@ En büyük terimi yarıya indirmek, en küçüğünü tamamen yok etmekten çok 
         <translation>Dolayısıyla halkanın boyutunu ölçmek, karanlık madde dahil olmak üzere merceği **tartar**.</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/mcmc_sim.py" line="30" />
+        <location filename="../gui/simulators/mcmc_sim.py" line="31" />
         <source>1 · The data</source>
         <translation>1 · Veri</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/mcmc_sim.py" line="36" />
+        <location filename="../gui/simulators/mcmc_sim.py" line="37" />
         <location filename="../gui/simulators/supernova_sim.py" line="42" />
         <source>Sample</source>
         <translation>Örneklem</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/mcmc_sim.py" line="37" />
+        <location filename="../gui/simulators/mcmc_sim.py" line="38" />
         <source>What the likelihood sees</source>
         <translation>Olabilirliğin gördüğü</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/mcmc_sim.py" line="38" />
+        <location filename="../gui/simulators/mcmc_sim.py" line="39" />
         <source>Every supernova contributes one term to χ². The real Pantheon+ sample is the default; the simulated ones let you see what fewer or noisier measurements would give.</source>
         <translation>Her süpernova χ²'ye bir terim katar. Varsayılan, gerçek Pantheon+ örneklemidir; benzetilmiş olanlar daha az ya da daha gürültülü ölçümlerin ne vereceğini görmenizi sağlar.</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/mcmc_sim.py" line="40" />
+        <location filename="../gui/simulators/mcmc_sim.py" line="41" />
         <location filename="../gui/simulators/supernova_sim.py" line="47" />
         <source>Assume a flat universe (ΩΛ = 1 − Ωm)</source>
         <translation>Düz bir evren varsay (ΩΛ = 1 − Ωm)</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/mcmc_sim.py" line="41" />
+        <location filename="../gui/simulators/mcmc_sim.py" line="42" />
         <source>One parameter instead of two. The chain then explores a line, not a plane.</source>
         <translation>İki yerine tek parametre. Zincir o zaman bir düzlemi değil, bir doğruyu tarar.</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/mcmc_sim.py" line="47" />
+        <location filename="../gui/simulators/mcmc_sim.py" line="48" />
         <source>Second probe</source>
         <translation>İkinci gözlem</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/mcmc_sim.py" line="48" />
+        <location filename="../gui/simulators/mcmc_sim.py" line="49" />
         <source>Combining measurements</source>
         <translation>Ölçümleri birleştirmek</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/mcmc_sim.py" line="49" />
+        <location filename="../gui/simulators/mcmc_sim.py" line="50" />
         <source>Independent measurements multiply: the posterior is the supernova likelihood times the second probe. Supernovae alone allow a long diagonal band; a probe that constrains a different direction cuts it down to a small patch.</source>
         <translation>Bağımsız ölçümler çarpılır: sonsal dağılım, süpernova olabilirliği ile ikinci gözlemin çarpımıdır. Süpernovalar tek başına uzun, çapraz bir kuşağa izin verir; başka bir yönü kısıtlayan bir gözlem onu küçük bir yamaya indirir.</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/mcmc_sim.py" line="54" />
+        <location filename="../gui/simulators/mcmc_sim.py" line="55" />
         <source>2 · The chain</source>
         <translation>2 · Zincir</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/mcmc_sim.py" line="57" />
+        <location filename="../gui/simulators/mcmc_sim.py" line="58" />
         <source>Steps</source>
         <translation>Adımlar</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/mcmc_sim.py" line="58" />
+        <location filename="../gui/simulators/mcmc_sim.py" line="59" />
         <source>Length of the chain</source>
         <translation>Zincirin uzunluğu</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/mcmc_sim.py" line="59" />
+        <location filename="../gui/simulators/mcmc_sim.py" line="60" />
         <source>Each step proposes a new universe and accepts or rejects it. More steps mean a smoother posterior, but the useful number is the effective sample size, not the raw count.</source>
         <translation>Her adım yeni bir evren önerir ve onu kabul ya da reddeder. Daha çok adım daha pürüzsüz bir sonsal dağılım demektir, ama işe yarayan sayı ham adım sayısı değil, etkin örneklem büyüklüğüdür.</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/mcmc_sim.py" line="63" />
+        <location filename="../gui/simulators/mcmc_sim.py" line="64" />
         <source>Proposal step σ</source>
         <translation>Öneri adımı σ</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/mcmc_sim.py" line="64" />
+        <location filename="../gui/simulators/mcmc_sim.py" line="65" />
         <source>How far each proposal jumps</source>
         <translation>Her önerinin ne kadar uzağa sıçradığı</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/mcmc_sim.py" line="65" />
+        <location filename="../gui/simulators/mcmc_sim.py" line="66" />
         <source>Too small and the walker crawls, accepting almost everything but exploring nothing. Too large and almost every proposal is rejected. An acceptance rate around 0.25 is healthy.</source>
         <translation>Çok küçükse yürüyücü sürünür: neredeyse her şeyi kabul eder ama hiçbir yeri taramaz. Çok büyükse önerilerin neredeyse tamamı reddedilir. 0,25 dolaylarında bir kabul oranı sağlıklıdır.</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/mcmc_sim.py" line="69" />
+        <location filename="../gui/simulators/mcmc_sim.py" line="70" />
         <source>Burn-in (fraction)</source>
         <translation>Isınma (kesir)</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/mcmc_sim.py" line="70" />
+        <location filename="../gui/simulators/mcmc_sim.py" line="71" />
         <source>Throwing away the start</source>
         <translation>Başlangıcı atmak</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/mcmc_sim.py" line="71" />
+        <location filename="../gui/simulators/mcmc_sim.py" line="72" />
         <source>The walker begins wherever you put it, not in the good region. The first steps are discarded so they do not bias the answer.</source>
         <translation>Yürüyücü, iyi bölgede değil, onu bıraktığınız yerde başlar. İlk adımlar sonucu yanıltmasın diye atılır.</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/mcmc_sim.py" line="78" />
-        <source>▶ Run the chain</source>
-        <translation>▶ Zinciri çalıştır</translation>
+        <location filename="../gui/simulators/mcmc_sim.py" line="79" />
+        <source>Run the chain</source>
+        <translation>Zinciri çalıştır</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/mcmc_sim.py" line="81" />
-        <location filename="../gui/simulators/mcmc_sim.py" line="175" />
+        <location filename="../gui/simulators/mcmc_sim.py" line="83" />
+        <location filename="../gui/simulators/mcmc_sim.py" line="191" />
         <source>Watch it walk</source>
         <translation>Yürüyüşü izle</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/mcmc_sim.py" line="83" />
+        <location filename="../gui/simulators/mcmc_sim.py" line="86" />
         <source>Reveal the chain step by step.</source>
         <translation>Zinciri adım adım ortaya çıkarın.</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/mcmc_sim.py" line="88" />
+        <location filename="../gui/simulators/mcmc_sim.py" line="91" />
         <source>Run {count} chains and check convergence</source>
         <translation>{count} zincir çalıştır ve yakınsamayı denetle</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/mcmc_sim.py" line="90" />
+        <location filename="../gui/simulators/mcmc_sim.py" line="93" />
         <source>Start four walkers from different corners and compare them with R̂.</source>
         <translation>Dört yürüyücüyü farklı köşelerden başlatıp R̂ ile karşılaştırın.</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/mcmc_sim.py" line="95" />
+        <location filename="../gui/simulators/mcmc_sim.py" line="98" />
         <source>What the chain says</source>
         <translation>Zincirin söyledikleri</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/mcmc_sim.py" line="101" />
+        <location filename="../gui/simulators/mcmc_sim.py" line="104" />
         <source>The magnitude offset (M and H0 together) is fitted away, so the chain measures the densities only.</source>
         <translation>Kadir kayması (M ile H0 birlikte) uydurularak elenir, bu yüzden zincir yalnızca yoğunlukları ölçer.</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/mcmc_sim.py" line="111" />
+        <location filename="../gui/simulators/mcmc_sim.py" line="114" />
         <source>Posterior</source>
         <translation>Sonsal dağılım</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/mcmc_sim.py" line="112" />
+        <location filename="../gui/simulators/mcmc_sim.py" line="115" />
         <source>Walk and χ²</source>
         <translation>Yürüyüş ve χ²</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/mcmc_sim.py" line="207" />
+        <location filename="../gui/simulators/mcmc_sim.py" line="224" />
         <source>Ωm = &lt;b&gt;{value} ± {error}&lt;/b&gt;</source>
         <translation>Ωm = &lt;b&gt;{value} ± {error}&lt;/b&gt;</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/mcmc_sim.py" line="209" />
+        <location filename="../gui/simulators/mcmc_sim.py" line="226" />
         <source>ΩΛ = &lt;b&gt;{value} ± {error}&lt;/b&gt;</source>
         <translation>ΩΛ = &lt;b&gt;{value} ± {error}&lt;/b&gt;</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/mcmc_sim.py" line="211" />
+        <location filename="../gui/simulators/mcmc_sim.py" line="228" />
         <source>Correlation between them: &lt;b&gt;{value}&lt;/b&gt;</source>
         <translation>Aralarındaki ilinti: &lt;b&gt;{value}&lt;/b&gt;</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/mcmc_sim.py" line="214" />
+        <location filename="../gui/simulators/mcmc_sim.py" line="231" />
         <source>68% interval for Ωm: {low} … {high}</source>
         <translation>Ωm için %68 aralığı: {low} … {high}</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/mcmc_sim.py" line="216" />
+        <location filename="../gui/simulators/mcmc_sim.py" line="233" />
         <source>Acceptance rate: &lt;b&gt;{rate}&lt;/b&gt;  (aim for about 25%)</source>
         <translation>Kabul oranı: &lt;b&gt;{rate}&lt;/b&gt;  (yaklaşık %25 hedefleyin)</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/mcmc_sim.py" line="218" />
+        <location filename="../gui/simulators/mcmc_sim.py" line="235" />
         <source>Steps kept: {kept} of {total}</source>
         <translation>Tutulan adım: {total} adımın {kept} tanesi</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/mcmc_sim.py" line="222" />
+        <location filename="../gui/simulators/mcmc_sim.py" line="239" />
         <source>Autocorrelation length: {tau} steps → &lt;b&gt;{neff}&lt;/b&gt; independent samples</source>
         <translation>Özilinti uzunluğu: {tau} adım → &lt;b&gt;{neff}&lt;/b&gt; bağımsız örneklem</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/mcmc_sim.py" line="226" />
+        <location filename="../gui/simulators/mcmc_sim.py" line="243" />
         <source>R̂ from {count} chains: &lt;b&gt;{rhat}&lt;/b&gt; (converged below 1.01)</source>
         <translation>{count} zincirden R̂: &lt;b&gt;{rhat}&lt;/b&gt; (1,01'in altı yakınsamış demektir)</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/mcmc_sim.py" line="230" />
+        <location filename="../gui/simulators/mcmc_sim.py" line="247" />
         <source>χ² at the mean: {chi2} for {dof} degrees of freedom (χ²/dof = {reduced})</source>
         <translation>Ortalamadaki χ²: {dof} serbestlik derecesi için {chi2} (χ²/sd = {reduced})</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/mcmc_sim.py" line="236" />
+        <location filename="../gui/simulators/mcmc_sim.py" line="253" />
         <source>Derived from the samples: q0 = &lt;b&gt;{q0} ± {error}&lt;/b&gt; (ignoring the correlation would give ± {naive})</source>
         <translation>Örneklemlerden türetilen: q0 = &lt;b&gt;{q0} ± {error}&lt;/b&gt; (ilinti göz ardı edilseydi ± {naive} çıkardı)</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/mcmc_sim.py" line="240" />
+        <location filename="../gui/simulators/mcmc_sim.py" line="257" />
         <source>Ωk = {value} ± {error}; accelerating in {fraction} of the samples</source>
         <translation>Ωk = {value} ± {error}; örneklemlerin {fraction} kadarında genişleme hızlanıyor</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/mcmc_sim.py" line="254" />
+        <location filename="../gui/simulators/mcmc_sim.py" line="271" />
         <source>&lt;b&gt;Almost everything is rejected.&lt;/b&gt; The proposal step is too large: the walker keeps suggesting universes the data rule out. Make σ smaller.</source>
         <translation>&lt;b&gt;Neredeyse her şey reddediliyor.&lt;/b&gt; Öneri adımı çok büyük: yürüyücü sürekli verinin elediği evrenleri öneriyor. σ'yı küçültün.</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/mcmc_sim.py" line="258" />
+        <location filename="../gui/simulators/mcmc_sim.py" line="275" />
         <source>&lt;b&gt;Almost everything is accepted.&lt;/b&gt; The steps are so small that the walker barely moves; the cloud looks tight but it has not explored. Make σ larger.</source>
         <translation>&lt;b&gt;Neredeyse her şey kabul ediliyor.&lt;/b&gt; Adımlar o kadar küçük ki yürüyücü neredeyse hiç hareket etmiyor; bulut dar görünür ama hiçbir yeri taramamıştır. σ'yı büyütün.</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/mcmc_sim.py" line="262" />
+        <location filename="../gui/simulators/mcmc_sim.py" line="279" />
         <source>&lt;b&gt;Real measurement.&lt;/b&gt; {citation}. The contours below are your own posterior, sampled step by step from these supernovae.</source>
         <translation>&lt;b&gt;Gerçek ölçüm.&lt;/b&gt; {citation}. Aşağıdaki eş olasılık eğrileri, bu süpernovalardan adım adım örneklenen kendi sonsal dağılımınızdır.</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/mcmc_sim.py" line="266" />
+        <location filename="../gui/simulators/mcmc_sim.py" line="283" />
         <source>&lt;b&gt;Simulated data.&lt;/b&gt; The chain works the same way; only the scatter is invented.</source>
         <translation>&lt;b&gt;Benzetilmiş veri.&lt;/b&gt; Zincir tıpatıp aynı çalışır; yalnızca saçılma uydurmadır.</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/mcmc_sim.py" line="382" />
+        <location filename="../gui/simulators/mcmc_sim.py" line="399" />
         <source>What the numbers mean</source>
         <translation>Sayıların anlamı</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/mcmc_sim.py" line="383" />
+        <location filename="../gui/simulators/mcmc_sim.py" line="400" />
         <source>- **Acceptance rate** — the fraction of proposals the walker took. Near 25% is healthy for two parameters; 1% or 95% both mean the step size is wrong.
 - **Autocorrelation length** — how many steps before the walker forgets where it was. The effective sample size is the chain length divided by it.
 - **R̂** — four walkers started far apart should end up describing the same distribution. Above 1.01 they have not met yet.
@@ -6601,173 +6607,168 @@ En büyük terimi yarıya indirmek, en küçüğünü tamamen yok etmekten çok 
 - Kadir kayması her adımda uydurularak elenir; H0'ın burada hiç görünmemesinin nedeni budur: süpernovalar tek başına genişlemenin hızını değil *biçimini* ölçer.</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/nbody_sim.py" line="72" />
+        <location filename="../gui/simulators/nbody_sim.py" line="73" />
         <source>1 · Initial ripples</source>
         <translation>1 · İlk dalgacıklar</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/nbody_sim.py" line="75" />
+        <location filename="../gui/simulators/nbody_sim.py" line="76" />
         <source>Spectral index n</source>
         <translation>Spektral indis n</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/nbody_sim.py" line="76" />
+        <location filename="../gui/simulators/nbody_sim.py" line="77" />
         <source>Power spectrum slope</source>
         <translation>Güç tayfının eğimi</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/nbody_sim.py" line="77" />
+        <location filename="../gui/simulators/nbody_sim.py" line="78" />
         <source>Initial fluctuations have power P(k) ∝ kⁿ. Smaller n puts more power on large scales (big coherent structures); larger n gives more small clumps.</source>
         <translation>İlk dalgalanmaların gücü P(k) ∝ kⁿ biçimindedir. Küçük n gücü büyük ölçeklere yığar (büyük, uyumlu yapılar); büyük n daha çok küçük yumak verir.</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/nbody_sim.py" line="81" />
+        <location filename="../gui/simulators/nbody_sim.py" line="82" />
         <source>Fluctuation strength</source>
         <translation>Dalgalanma gücü</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/nbody_sim.py" line="82" />
+        <location filename="../gui/simulators/nbody_sim.py" line="83" />
         <source>RMS density contrast per grid cell when the growth factor reaches D = 1. Stronger ripples collapse earlier.</source>
         <translation>Büyüme çarpanı D = 1'e ulaştığında ızgara hücresi başına RMS yoğunluk karşıtlığı. Daha güçlü dalgacıklar daha erken çöker.</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/nbody_sim.py" line="88" />
+        <location filename="../gui/simulators/nbody_sim.py" line="89" />
         <source>Cold dark matter</source>
         <translation>Soğuk karanlık madde</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/nbody_sim.py" line="89" />
+        <location filename="../gui/simulators/nbody_sim.py" line="90" />
         <source>Warm dark matter</source>
         <translation>Ilık karanlık madde</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/nbody_sim.py" line="97" />
+        <location filename="../gui/simulators/nbody_sim.py" line="98" />
         <source>Cold or warm?</source>
         <translation>Soğuk mu, ılık mı?</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/nbody_sim.py" line="98" />
+        <location filename="../gui/simulators/nbody_sim.py" line="99" />
         <source>Cold dark matter particles move slowly, so fluctuations survive on all scales. Warm dark matter particles move fast enough early on to smooth out the smallest ripples, so fewer small halos form.</source>
         <translation>Soğuk karanlık madde parçacıkları yavaş hareket eder, bu yüzden dalgalanmalar her ölçekte yaşar. Ilık karanlık madde parçacıkları erken dönemde en küçük dalgacıkları silecek kadar hızlıdır, dolayısıyla daha az küçük hale oluşur.</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/nbody_sim.py" line="103" />
+        <location filename="../gui/simulators/nbody_sim.py" line="104" />
         <source>Free-streaming scale (cells)</source>
         <translation>Serbest akış ölçeği (hücre)</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/nbody_sim.py" line="104" />
+        <location filename="../gui/simulators/nbody_sim.py" line="105" />
         <source>Cutoff</source>
         <translation>Kesme ölçeği</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/nbody_sim.py" line="104" />
+        <location filename="../gui/simulators/nbody_sim.py" line="105" />
         <source>Fluctuations smaller than this are erased in the warm dark matter model.</source>
         <translation>Bundan küçük dalgalanmalar ılık karanlık madde modelinde silinir.</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/nbody_sim.py" line="110" />
+        <location filename="../gui/simulators/nbody_sim.py" line="111" />
         <source>Different numbers give different random universes with the same statistics.</source>
         <translation>Farklı sayılar, aynı istatistiğe sahip farklı rastgele evrenler verir.</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/nbody_sim.py" line="113" />
+        <location filename="../gui/simulators/nbody_sim.py" line="114" />
         <source>96 × 96 particles (fast)</source>
         <translation>96 × 96 parçacık (hızlı)</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/nbody_sim.py" line="114" />
+        <location filename="../gui/simulators/nbody_sim.py" line="115" />
         <source>128 × 128 particles</source>
         <translation>128 × 128 parçacık</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/nbody_sim.py" line="115" />
+        <location filename="../gui/simulators/nbody_sim.py" line="116" />
         <source>192 × 192 particles (detailed)</source>
         <translation>192 × 192 parçacık (ayrıntılı)</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/nbody_sim.py" line="117" />
+        <location filename="../gui/simulators/nbody_sim.py" line="118" />
         <source>Resolution</source>
         <translation>Çözünürlük</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/nbody_sim.py" line="118" />
+        <location filename="../gui/simulators/nbody_sim.py" line="119" />
         <source>Apply and restart</source>
         <translation>Uygula ve yeniden başlat</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/nbody_sim.py" line="119" />
+        <location filename="../gui/simulators/nbody_sim.py" line="120" />
         <source>Create new initial conditions with these settings.</source>
         <translation>Bu ayarlarla yeni başlangıç koşulları oluştur.</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/nbody_sim.py" line="124" />
+        <location filename="../gui/simulators/nbody_sim.py" line="125" />
         <source>2 · Run</source>
         <translation>2 · Çalıştır</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/nbody_sim.py" line="131" />
+        <location filename="../gui/simulators/nbody_sim.py" line="133" />
         <source>Step</source>
         <translation>Adım</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/nbody_sim.py" line="132" />
+        <location filename="../gui/simulators/nbody_sim.py" line="134" />
         <source>Advance a little bit</source>
         <translation>Biraz ilerlet</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/nbody_sim.py" line="134" />
-        <source>Reset</source>
-        <translation>Sıfırla</translation>
-    </message>
-    <message>
-        <location filename="../gui/simulators/nbody_sim.py" line="139" />
+        <location filename="../gui/simulators/nbody_sim.py" line="141" />
         <source>Speed (steps per frame)</source>
         <translation>Hız (kare başına adım)</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/nbody_sim.py" line="144" />
+        <location filename="../gui/simulators/nbody_sim.py" line="146" />
         <source>Colours</source>
         <translation>Renkler</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/nbody_sim.py" line="147" />
+        <location filename="../gui/simulators/nbody_sim.py" line="149" />
         <source>What is happening</source>
         <translation>Neler oluyor</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/nbody_sim.py" line="153" />
+        <location filename="../gui/simulators/nbody_sim.py" line="155" />
         <source>A two-dimensional toy universe in a periodic box. Real simulations are 3D and use billions of particles, but the physics is the same.</source>
         <translation>Periyodik bir kutu içinde iki boyutlu bir oyuncak evren. Gerçek benzetimler üç boyutludur ve milyarlarca parçacık kullanır, ama fizik aynıdır.</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/nbody_sim.py" line="228" />
+        <location filename="../gui/simulators/nbody_sim.py" line="231" />
         <location filename="../gui/simulators/spacetime.py" line="139" />
         <source>future</source>
         <translation>gelecek</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/nbody_sim.py" line="229" />
+        <location filename="../gui/simulators/nbody_sim.py" line="232" />
         <source>growth factor D = {d}  ({epoch} in an Einstein–de Sitter universe)</source>
         <translation>büyüme çarpanı D = {d}  (Einstein–de Sitter evreninde {epoch})</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/nbody_sim.py" line="234" />
+        <location filename="../gui/simulators/nbody_sim.py" line="237" />
         <source>linear: ripples simply grow</source>
         <translation>doğrusal: dalgacıklar yalnızca büyür</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/nbody_sim.py" line="235" />
+        <location filename="../gui/simulators/nbody_sim.py" line="238" />
         <source>quasi-linear: sheets and filaments form</source>
         <translation>yarı doğrusal: levhalar ve iplikler oluşur</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/nbody_sim.py" line="236" />
+        <location filename="../gui/simulators/nbody_sim.py" line="239" />
         <source>non-linear: halos collapse and merge</source>
         <translation>doğrusal olmayan: haleler çöker ve birleşir</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/nbody_sim.py" line="238" />
+        <location filename="../gui/simulators/nbody_sim.py" line="241" />
         <source>Growth factor D: &lt;b&gt;{d}&lt;/b&gt;&lt;br&gt;RMS density contrast: &lt;b&gt;{sigma}&lt;/b&gt; (linear theory: {linear})&lt;br&gt;Particles in dense clumps (δ &gt; 4): &lt;b&gt;{collapsed}&lt;/b&gt;&lt;br&gt;Steps: {steps}&lt;br&gt;Stage: &lt;b&gt;{phase}&lt;/b&gt;</source>
         <translation>Büyüme çarpanı D: &lt;b&gt;{d}&lt;/b&gt;&lt;br&gt;RMS yoğunluk karşıtlığı: &lt;b&gt;{sigma}&lt;/b&gt; (doğrusal kuram: {linear})&lt;br&gt;Yoğun yumaklardaki parçacıklar (δ &gt; 4): &lt;b&gt;{collapsed}&lt;/b&gt;&lt;br&gt;Adım: {steps}&lt;br&gt;Aşama: &lt;b&gt;{phase}&lt;/b&gt;</translation>
     </message>
@@ -6972,77 +6973,77 @@ En büyük terimi yarıya indirmek, en küçüğünü tamamen yok etmekten çok 
         <translation>Yıldızlar, yıldız yarıçapı birimiyle ölçülen öğretici bir evrene rastgele yerleştirilir. Yakındaki yıldızlar disk olarak çizilir; 400 yıldız yarıçapının ötesinde her boş piksel, bir yıldıza çarpmanın tam olasılığıyla kendi bakış doğrultusu boyunca izlenir. Gökyüzü **benzetimdir**, gerçek gökyüzünün görüntüsü değildir.</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/powers_of_ten.py" line="96" />
+        <location filename="../gui/simulators/powers_of_ten.py" line="97" />
         <source>Scroll the mouse wheel to zoom in and out.</source>
         <translation>Yakınlaşıp uzaklaşmak için fare tekerleğini kaydırın.</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/powers_of_ten.py" line="191" />
+        <location filename="../gui/simulators/powers_of_ten.py" line="192" />
         <source>Zoom</source>
         <translation>Yakınlaştırma</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/powers_of_ten.py" line="194" />
+        <location filename="../gui/simulators/powers_of_ten.py" line="195" />
         <source>Field of view: 10^x metres</source>
         <translation>Görüş alanı: 10^x metre</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/powers_of_ten.py" line="195" />
+        <location filename="../gui/simulators/powers_of_ten.py" line="196" />
         <source>Powers of ten</source>
         <translation>Onun kuvvetleri</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/powers_of_ten.py" line="195" />
+        <location filename="../gui/simulators/powers_of_ten.py" line="196" />
         <source>Each whole step multiplies the width of the view by ten.</source>
         <translation>Her tam adım görüntünün genişliğini onla çarpar.</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/powers_of_ten.py" line="200" />
+        <location filename="../gui/simulators/powers_of_ten.py" line="202" />
         <source>Fly automatically from the current scale outward. Click again to pause.</source>
         <translation>Şimdiki ölçekten dışarı doğru kendiliğinden uçun. Duraklatmak için yeniden tıklayın.</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/powers_of_ten.py" line="204" />
+        <location filename="../gui/simulators/powers_of_ten.py" line="206" />
         <source>Zoom out</source>
         <translation>Uzaklaş</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/powers_of_ten.py" line="204" />
+        <location filename="../gui/simulators/powers_of_ten.py" line="206" />
         <source>Zoom in</source>
         <translation>Yakınlaş</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/powers_of_ten.py" line="205" />
+        <location filename="../gui/simulators/powers_of_ten.py" line="207" />
         <source>Direction</source>
         <translation>Yön</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/powers_of_ten.py" line="207" />
+        <location filename="../gui/simulators/powers_of_ten.py" line="209" />
         <source>Choose an object…</source>
         <translation>Bir nesne seçin…</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/powers_of_ten.py" line="211" />
+        <location filename="../gui/simulators/powers_of_ten.py" line="213" />
         <source>Jump to</source>
         <translation>Şuraya atla</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/powers_of_ten.py" line="214" />
+        <location filename="../gui/simulators/powers_of_ten.py" line="216" />
         <source>At this scale</source>
         <translation>Bu ölçekte</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/powers_of_ten.py" line="222" />
+        <location filename="../gui/simulators/powers_of_ten.py" line="224" />
         <source>What you are looking at</source>
         <translation>Neye bakıyorsunuz</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/powers_of_ten.py" line="245" />
+        <location filename="../gui/simulators/powers_of_ten.py" line="247" />
         <source>Width of view: &lt;b&gt;{metres} m&lt;/b&gt;&lt;br&gt;= &lt;b&gt;{in_units}&lt;/b&gt;&lt;br&gt;Light needs &lt;b&gt;{time}&lt;/b&gt; to cross it.</source>
         <translation>Görüntünün genişliği: &lt;b&gt;{metres} m&lt;/b&gt;&lt;br&gt;= &lt;b&gt;{in_units}&lt;/b&gt;&lt;br&gt;Işığın bunu geçmesi &lt;b&gt;{time}&lt;/b&gt; sürer.</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/powers_of_ten.py" line="253" />
+        <location filename="../gui/simulators/powers_of_ten.py" line="255" />
         <source>&lt;i&gt;Mostly empty space at this scale. Keep zooming!&lt;/i&gt;</source>
         <translation>&lt;i&gt;Bu ölçekte çoğunlukla boş uzay. Yakınlaşmayı sürdürün!&lt;/i&gt;</translation>
     </message>
@@ -9013,42 +9014,42 @@ En büyük terimi yarıya indirmek, en küçüğünü tamamen yok etmekten çok 
         <translation>Gerçek eğriler SPARC'tan gelir; örnek eğri burada üretilir.</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/rotation_curve.py" line="140" />
+        <location filename="../gui/simulators/rotation_curve.py" line="158" />
         <source>A synthetic curve generated by the app from disk + bulge + halo.</source>
         <translation>Uygulamanın disk + şişkinlik + haleden ürettiği yapay bir eğri.</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/rotation_curve.py" line="142" />
+        <location filename="../gui/simulators/rotation_curve.py" line="160" />
         <source>&lt;b&gt;Synthetic curve.&lt;/b&gt; Generated inside the app with the flat shape real spirals show. Choose a galaxy from the list for real measurements.</source>
         <translation>&lt;b&gt;Yapay eğri.&lt;/b&gt; Gerçek sarmalların gösterdiği düz biçimle uygulamanın içinde üretildi. Gerçek ölçümler için listeden bir gökada seçin.</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/rotation_curve.py" line="150" />
+        <location filename="../gui/simulators/rotation_curve.py" line="168" />
         <source>Hubble type T = {type}, distance {distance} Mpc, inclination {inclination}°, quality Q = {quality}</source>
         <translation>Hubble türü T = {type}, uzaklık {distance} Mpc, eğiklik {inclination}°, kalite Q = {quality}</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/rotation_curve.py" line="156" />
+        <location filename="../gui/simulators/rotation_curve.py" line="174" />
         <source>&lt;b&gt;Real measurements: {galaxy}.&lt;/b&gt; {citation}. {points} points out to {radius} kpc, flat rotation speed {speed} ± {error} km/s.</source>
         <translation>&lt;b&gt;Gerçek ölçümler: {galaxy}.&lt;/b&gt; {citation}. {radius} kpc'ye kadar {points} nokta, düz dönme hızı {speed} ± {error} km/s.</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/rotation_curve.py" line="163" />
+        <location filename="../gui/simulators/rotation_curve.py" line="181" />
         <source>Inside {radius} kpc</source>
         <translation>{radius} kpc içinde</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/rotation_curve.py" line="234" />
+        <location filename="../gui/simulators/rotation_curve.py" line="252" />
         <source>Missing mass MOND explains without dark matter</source>
         <translation>MOND'un karanlık madde olmadan açıkladığı eksik kütle</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/rotation_curve.py" line="235" />
+        <location filename="../gui/simulators/rotation_curve.py" line="253" />
         <source>Dark matter share</source>
         <translation>Karanlık madde payı</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/rotation_curve.py" line="237" />
+        <location filename="../gui/simulators/rotation_curve.py" line="255" />
         <source>Speed from visible matter: &lt;b&gt;{visible} km/s&lt;/b&gt;&lt;br&gt;Model total: &lt;b&gt;{total} km/s&lt;/b&gt; (data ≈ {observed} km/s)&lt;br&gt;Mass from visible matter: {mass_visible} M☉&lt;br&gt;Mass required by the model: {mass_total} M☉&lt;br&gt;{share_label}: &lt;b&gt;{share}&lt;/b&gt;&lt;br&gt;Fit quality χ²/point: &lt;b&gt;{chi2}&lt;/b&gt; (about 1 is a good fit)</source>
         <translation>Görünür maddeden gelen hız: &lt;b&gt;{visible} km/s&lt;/b&gt;&lt;br&gt;Model toplamı: &lt;b&gt;{total} km/s&lt;/b&gt; (veri ≈ {observed} km/s)&lt;br&gt;Görünür maddenin kütlesi: {mass_visible} M☉&lt;br&gt;Modelin gerektirdiği kütle: {mass_total} M☉&lt;br&gt;{share_label}: &lt;b&gt;{share}&lt;/b&gt;&lt;br&gt;Uyum kalitesi χ²/nokta: &lt;b&gt;{chi2}&lt;/b&gt; (yaklaşık 1 iyi bir uyumdur)</translation>
     </message>
@@ -9696,57 +9697,57 @@ Bu ifadedeki hiçbir şey herhangi bir şeye göre kalibre edilmemiştir. Cıvı
         <translation>Dalgalanmalar Gauss dağılımlı mı?</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/sky_sim.py" line="130" />
+        <location filename="../gui/simulators/sky_sim.py" line="148" />
         <source>Fluctuations: &lt;b&gt;{rms} µK&lt;/b&gt; rms, from {low} to {high} µK</source>
         <translation>Dalgalanmalar: &lt;b&gt;{rms} µK&lt;/b&gt; rms, {low} ile {high} µK arasında</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/sky_sim.py" line="132" />
+        <location filename="../gui/simulators/sky_sim.py" line="150" />
         <source>That is &lt;b&gt;{ratio}&lt;/b&gt; of the 2.725 K average — one part in {inverse}</source>
         <translation>Bu, 2,725 K ortalamasının &lt;b&gt;{ratio}&lt;/b&gt; katı — {inverse} birimde bir</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/sky_sim.py" line="135" />
+        <location filename="../gui/simulators/sky_sim.py" line="153" />
         <source>Sky used: &lt;b&gt;{percent}&lt;/b&gt;</source>
         <translation>Kullanılan gökyüzü: &lt;b&gt;{percent}&lt;/b&gt;</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/sky_sim.py" line="136" />
+        <location filename="../gui/simulators/sky_sim.py" line="154" />
         <source>Typical spot size: &lt;b&gt;{size}°&lt;/b&gt; across</source>
         <translation>Tipik leke boyutu: &lt;b&gt;{size}°&lt;/b&gt; genişliğinde</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/sky_sim.py" line="138" />
+        <location filename="../gui/simulators/sky_sim.py" line="156" />
         <source>Hottest at ℓ={hot_lon}°, b={hot_lat}°; coldest at ℓ={cold_lon}°, b={cold_lat}°</source>
         <translation>En sıcak nokta ℓ={hot_lon}°, b={hot_lat}°; en soğuk nokta ℓ={cold_lon}°, b={cold_lat}°</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/sky_sim.py" line="147" />
+        <location filename="../gui/simulators/sky_sim.py" line="165" />
         <source>&lt;b&gt;The Galaxy is in the picture.&lt;/b&gt; The bright band across the middle is our own galaxy, not the early universe. Every published measurement masks it first — the extremes you see now are foreground, not cosmology.</source>
         <translation>&lt;b&gt;Gökadamız resmin içinde.&lt;/b&gt; Ortadan geçen parlak şerit erken evren değil, kendi gökadamız. Yayımlanmış her ölçüm önce onu maskeler — şu anda gördüğün uç değerler kozmoloji değil, önalan.</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/sky_sim.py" line="153" />
+        <location filename="../gui/simulators/sky_sim.py" line="171" />
         <source>&lt;b&gt;Only the fine detail.&lt;/b&gt; Everything larger than {width}° has been subtracted, which is how the smooth foregrounds are suppressed and the degree-scale spots stand out.</source>
         <translation>&lt;b&gt;Yalnızca ince ayrıntı.&lt;/b&gt; {width}° üzerindeki her şey çıkarıldı; düzgün önalan kaynakları böyle bastırılır ve derece ölçeğindeki lekeler öne çıkar.</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/sky_sim.py" line="159" />
+        <location filename="../gui/simulators/sky_sim.py" line="177" />
         <source>&lt;b&gt;Blurred past the signal.&lt;/b&gt; At {width}° the acoustic spots have been averaged away and the rms has fallen to {rms} µK from about 67.</source>
         <translation>&lt;b&gt;Sinyalin ötesine bulanıklaştı.&lt;/b&gt; {width}° ölçeğinde akustik lekeler ortalamanın içinde eridi ve rms yaklaşık 67'den {rms} µK'ye düştü.</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/sky_sim.py" line="165" />
+        <location filename="../gui/simulators/sky_sim.py" line="183" />
         <source>&lt;b&gt;The oldest light there is.&lt;/b&gt; These ripples are a few parts in a hundred thousand of the average temperature, released 380 000 years after the Big Bang, and every structure in the universe grew from them.</source>
         <translation>&lt;b&gt;Var olan en eski ışık.&lt;/b&gt; Bu dalgalanmalar, ortalama sıcaklığın yüz binde birkaçı kadardır; Büyük Patlama'dan 380 000 yıl sonra salındılar ve evrendeki her yapı onlardan büyüdü.</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/sky_sim.py" line="292" />
+        <location filename="../gui/simulators/sky_sim.py" line="310" />
         <source>One part in a hundred thousand</source>
         <translation>Yüz binde bir</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/sky_sim.py" line="293" />
+        <location filename="../gui/simulators/sky_sim.py" line="311" />
         <source>The whole map spans about ±250 µK around 2.725 K. That is a contrast of $10^{-5}$ — and it is the largest contrast the universe had at that moment. Everything you have ever seen, every galaxy and every star, grew out of ripples this small by nothing but gravity pulling for 13.8 billion years.</source>
         <translation>Haritanın tamamı 2,725 K çevresinde yaklaşık ±250 µK'lik bir aralığa yayılır. Bu, $10^{-5}$'lik bir karşıtlıktır — ve o anda evrenin sahip olduğu en büyük karşıtlıktır. Şimdiye dek gördüğün her şey, her gökada ve her yıldız, 13,8 milyar yıl boyunca yalnızca kütleçekiminin çekmesiyle bu kadar küçük dalgalanmalardan büyüdü.</translation>
     </message>
@@ -9916,82 +9917,82 @@ Bu ifadedeki hiçbir şey herhangi bir şeye göre kalibre edilmemiştir. Cıvı
         <translation>Gerçek gökyüzü (SDSS)</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/slice_sim.py" line="196" />
+        <location filename="../gui/simulators/slice_sim.py" line="215" />
         <source>&lt;b&gt;{galaxies}&lt;/b&gt; galaxies, median redshift &lt;b&gt;{z}&lt;/b&gt;</source>
         <translation>&lt;b&gt;{galaxies}&lt;/b&gt; gökada, ortanca kırmızıya kayma &lt;b&gt;{z}&lt;/b&gt;</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/slice_sim.py" line="198" />
+        <location filename="../gui/simulators/slice_sim.py" line="217" />
         <source>Line-of-sight velocities: {rms} km/s rms, which move a galaxy by {shift} Mpc/h</source>
         <translation>Görüş doğrultusundaki hızlar: {rms} km/s karekök ortalama, bir gökadayı {shift} Mpc/h kaydırır</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/slice_sim.py" line="200" />
+        <location filename="../gui/simulators/slice_sim.py" line="219" />
         <source>Radial stretch in the densest regions: &lt;b&gt;{finger} Mpc/h&lt;/b&gt;</source>
         <translation>En yoğun bölgelerdeki ışınsal gerilme: &lt;b&gt;{finger} Mpc/h&lt;/b&gt;</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/slice_sim.py" line="202" />
+        <location filename="../gui/simulators/slice_sim.py" line="221" />
         <source>Completeness {complete}, growth rate f = {f}</source>
         <translation>Tamlık {complete}, büyüme hızı f = {f}</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/slice_sim.py" line="210" />
+        <location filename="../gui/simulators/slice_sim.py" line="229" />
         <source>&lt;b&gt;Only {galaxies} galaxies.&lt;/b&gt; The slice is too sparse to see the cosmic web. Raise the density, widen the slice, or relax the magnitude limit.</source>
         <translation>&lt;b&gt;Yalnızca {galaxies} gökada.&lt;/b&gt; Dilim kozmik ağı görmek için fazla seyrek. Yoğunluğu artırın, dilimi genişletin ya da kadir sınırını gevşetin.</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/slice_sim.py" line="216" />
+        <location filename="../gui/simulators/slice_sim.py" line="235" />
         <source>&lt;b&gt;The redshifts are blurred.&lt;/b&gt; An error of {sigma} in z moves a galaxy by about {blur} Mpc/h — far more than any peculiar velocity, and enough to wash the filaments out.</source>
         <translation>&lt;b&gt;Kırmızıya kaymalar bulanık.&lt;/b&gt; z'deki {sigma}'lık bir hata bir gökadayı yaklaşık {blur} Mpc/h kaydırır — herhangi bir öz hızdan çok daha fazla, ve lifleri silip atmaya yeter.</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/slice_sim.py" line="223" />
+        <location filename="../gui/simulators/slice_sim.py" line="242" />
         <source>&lt;b&gt;A flux-limited catalogue.&lt;/b&gt; At the far edge only {drop} of the galaxies are bright enough to be seen, so the thinning out there is the telescope, not the universe.</source>
         <translation>&lt;b&gt;Akı sınırlı bir katalog.&lt;/b&gt; Uzak kenarda gökadaların yalnızca {drop} kadarı görülecek kadar parlaktır, yani oradaki seyrelme evren değil teleskoptur.</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/slice_sim.py" line="229" />
+        <location filename="../gui/simulators/slice_sim.py" line="248" />
         <source>&lt;b&gt;The true universe.&lt;/b&gt; No velocities, no selection: this is where the galaxies really are. Every other setting shows what a telescope would have made of it.</source>
         <translation>&lt;b&gt;Gerçek evren.&lt;/b&gt; Hız yok, seçim yok: gökadalar gerçekten burada. Diğer her ayar, bir teleskobun bundan ne çıkaracağını gösterir.</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/slice_sim.py" line="234" />
+        <location filename="../gui/simulators/slice_sim.py" line="253" />
         <source>&lt;b&gt;Redshift space.&lt;/b&gt; Each galaxy is drawn at the distance its redshift implies, so infall squashes the filaments and cluster orbits stretch them towards us.</source>
         <translation>&lt;b&gt;Kırmızıya kayma uzayı.&lt;/b&gt; Her gökada kırmızıya kaymasının gösterdiği uzaklığa çizilir, bu yüzden içe düşüş lifleri yassıltır, küme yörüngeleri de onları bize doğru uzatır.</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/slice_sim.py" line="275" />
+        <location filename="../gui/simulators/slice_sim.py" line="294" />
         <source>us</source>
         <translation>biz</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/slice_sim.py" line="286" />
+        <location filename="../gui/simulators/slice_sim.py" line="305" />
         <source>Where the galaxies really are</source>
         <translation>Gökadaların gerçekte bulunduğu yer</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/slice_sim.py" line="289" />
+        <location filename="../gui/simulators/slice_sim.py" line="308" />
         <source>Where their redshifts put them</source>
         <translation>Kırmızıya kaymalarının onları koyduğu yer</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/slice_sim.py" line="301" />
+        <location filename="../gui/simulators/slice_sim.py" line="320" />
         <source>How the catalogue thins out with distance</source>
         <translation>Kataloğun uzaklıkla nasıl seyreldiği</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/slice_sim.py" line="333" />
+        <location filename="../gui/simulators/slice_sim.py" line="352" />
         <source>Clustering measured from the mock, by counting pairs</source>
         <translation>Çiftler sayılarak sahte kataloğdan ölçülen kümelenme</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/slice_sim.py" line="409" />
+        <location filename="../gui/simulators/slice_sim.py" line="428" />
         <source>Two spaces, one universe</source>
         <translation>İki uzay, tek evren</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/slice_sim.py" line="410" />
+        <location filename="../gui/simulators/slice_sim.py" line="429" />
         <source>A redshift is not a distance. What a survey plots is
 
 $$s = r + \frac{(1+z)\,v_\parallel}{H(z)},$$
@@ -10115,182 +10116,183 @@ yani gerçek uzaklık artı gökadanın kendi hareketinin eklediğidir. Bir duva
         <translation>Ölçek çarpanı a = &lt;b&gt;{a}&lt;/b&gt; ({epoch})&lt;br&gt;Evrenin yaşı: &lt;b&gt;{age} Gyr&lt;/b&gt;&lt;br&gt;Parçacık ufku: &lt;b&gt;{horizon} milyar ışık yılı&lt;/b&gt; (öz)&lt;br&gt;Olay ufku: &lt;b&gt;{event}&lt;/b&gt;&lt;br&gt;Hubble küresi: &lt;b&gt;{hubble} milyar ışık yılı&lt;/b&gt;&lt;br&gt;Geçmiş ışık konisi en geniş &lt;b&gt;{cone} milyar ışık yılı&lt;/b&gt; ile evren {cone_age} Gyr yaşındayken (a = {cone_a})</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/spectrum.py" line="114" />
+        <location filename="../gui/simulators/spectrum.py" line="115" />
         <source>1 · What causes the shift?</source>
         <translation>1 · Kaymaya ne yol açıyor?</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/spectrum.py" line="116" />
+        <location filename="../gui/simulators/spectrum.py" line="117" />
         <source>Doppler motion (a moving light source)</source>
         <translation>Doppler hareketi (hareket eden bir ışık kaynağı)</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/spectrum.py" line="117" />
+        <location filename="../gui/simulators/spectrum.py" line="118" />
         <source>A star or galaxy moving towards or away from us through space.</source>
         <translation>Uzayda bize doğru ya da bizden uzağa hareket eden bir yıldız ya da gökada.</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/spectrum.py" line="118" />
+        <location filename="../gui/simulators/spectrum.py" line="119" />
         <source>Cosmic expansion (a distant galaxy)</source>
         <translation>Kozmik genişleme (uzak bir gökada)</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/spectrum.py" line="119" />
+        <location filename="../gui/simulators/spectrum.py" line="120" />
         <source>Light stretched by the expansion of the universe: 1 + z = 1/a.</source>
         <translation>Evrenin genişlemesiyle gerilen ışık: 1 + z = 1/a.</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/spectrum.py" line="128" />
+        <location filename="../gui/simulators/spectrum.py" line="129" />
         <source>2 · Amount of shift</source>
         <translation>2 · Kayma miktarı</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/spectrum.py" line="131" />
+        <location filename="../gui/simulators/spectrum.py" line="132" />
         <source>Radial velocity (km/s)</source>
         <translation>Dikine hız (km/s)</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/spectrum.py" line="132" />
+        <location filename="../gui/simulators/spectrum.py" line="133" />
         <source>Radial velocity</source>
         <translation>Dikine hız</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/spectrum.py" line="132" />
+        <location filename="../gui/simulators/spectrum.py" line="133" />
         <source>Positive: moving away (redshift). Negative: approaching (blueshift). The relativistic Doppler formula is used, so the speed never reaches c.</source>
         <translation>Pozitif: uzaklaşıyor (kırmızıya kayma). Negatif: yaklaşıyor (maviye kayma). Görelilikli Doppler formülü kullanılır, bu yüzden hız asla c'ye ulaşmaz.</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/spectrum.py" line="137" />
+        <location filename="../gui/simulators/spectrum.py" line="138" />
         <source>Cosmological redshift</source>
         <translation>Kozmolojik kırmızıya kayma</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/spectrum.py" line="137" />
+        <location filename="../gui/simulators/spectrum.py" line="138" />
         <source>How much the universe has expanded since the light left the galaxy: 1 + z = 1/a.</source>
         <translation>Işık gökadadan ayrıldığından beri evrenin ne kadar genişlediği: 1 + z = 1/a.</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/spectrum.py" line="144" />
+        <location filename="../gui/simulators/spectrum.py" line="145" />
         <source>Readout</source>
         <translation>Gösterge</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/spectrum.py" line="152" />
+        <location filename="../gui/simulators/spectrum.py" line="153" />
         <source>Challenge: Mystery galaxy</source>
         <translation>Görev: Gizemli gökada</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/spectrum.py" line="154" />
+        <location filename="../gui/simulators/spectrum.py" line="155" />
         <source>Match the redshift of an unknown galaxy by lining up the lines.</source>
         <translation>Çizgileri hizalayarak bilinmeyen bir gökadanın kırmızıya kaymasını bulun.</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/spectrum.py" line="157" />
-        <source>🔭 New mystery galaxy</source>
-        <translation>🔭 Yeni gizemli gökada</translation>
+        <location filename="../gui/simulators/spectrum.py" line="158" />
+        <source>New mystery galaxy</source>
+        <translation>Yeni gizemli gökada</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/spectrum.py" line="159" />
+        <location filename="../gui/simulators/spectrum.py" line="161" />
+        <location filename="../gui/widgets/challenge_bar.py" line="64" />
         <source>Check my answer</source>
         <translation>Cevabımı kontrol et</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/spectrum.py" line="193" />
+        <location filename="../gui/simulators/spectrum.py" line="195" />
         <source>Redshift z = &lt;b&gt;{z}&lt;/b&gt;</source>
         <translation>Kırmızıya kayma z = &lt;b&gt;{z}&lt;/b&gt;</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/spectrum.py" line="194" />
+        <location filename="../gui/simulators/spectrum.py" line="196" />
         <source>Every wavelength × &lt;b&gt;{factor}&lt;/b&gt;</source>
         <translation>Her dalga boyu × &lt;b&gt;{factor}&lt;/b&gt;</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/spectrum.py" line="195" />
+        <location filename="../gui/simulators/spectrum.py" line="197" />
         <source>Hα (656.3 nm) observed at &lt;b&gt;{wavelength} nm&lt;/b&gt; ({band})</source>
         <translation>Hα (656,3 nm) &lt;b&gt;{wavelength} nm&lt;/b&gt; dalga boyunda gözleniyor ({band})</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/spectrum.py" line="200" />
+        <location filename="../gui/simulators/spectrum.py" line="202" />
         <source>receding</source>
         <translation>uzaklaşıyor</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/spectrum.py" line="200" />
+        <location filename="../gui/simulators/spectrum.py" line="202" />
         <source>approaching</source>
         <translation>yaklaşıyor</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/spectrum.py" line="200" />
+        <location filename="../gui/simulators/spectrum.py" line="202" />
         <source>at rest</source>
         <translation>durgun</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/spectrum.py" line="201" />
+        <location filename="../gui/simulators/spectrum.py" line="203" />
         <source>Source is &lt;b&gt;{direction}&lt;/b&gt; at {speed} km/s = {fraction}% of c</source>
         <translation>Kaynak &lt;b&gt;{direction}&lt;/b&gt;, hızı {speed} km/s = ışık hızının %{fraction}'i</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/spectrum.py" line="204" />
+        <location filename="../gui/simulators/spectrum.py" line="206" />
         <source>Simple estimate z ≈ v/c = {z}</source>
         <translation>Basit kestirim z ≈ v/c = {z}</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/spectrum.py" line="209" />
+        <location filename="../gui/simulators/spectrum.py" line="211" />
         <source>Universe size at emission: &lt;b&gt;{a}&lt;/b&gt; × today</source>
         <translation>Yayılma anındaki evren boyutu: bugünün &lt;b&gt;{a}&lt;/b&gt; katı</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/spectrum.py" line="210" />
+        <location filename="../gui/simulators/spectrum.py" line="212" />
         <source>Light travelled for &lt;b&gt;{years} billion years&lt;/b&gt;</source>
         <translation>Işık &lt;b&gt;{years} milyar yıl&lt;/b&gt; yol aldı</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/spectrum.py" line="212" />
+        <location filename="../gui/simulators/spectrum.py" line="214" />
         <source>Universe was &lt;b&gt;{years} billion years&lt;/b&gt; old (Planck 2018)</source>
         <translation>Evren &lt;b&gt;{years} milyar yıl&lt;/b&gt; yaşındaydı (Planck 2018)</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/spectrum.py" line="217" />
+        <location filename="../gui/simulators/spectrum.py" line="219" />
         <source>Laboratory (rest frame)</source>
         <translation>Laboratuvar (durgun çerçeve)</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/spectrum.py" line="217" />
+        <location filename="../gui/simulators/spectrum.py" line="219" />
         <source>Observed</source>
         <translation>Gözlenen</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/spectrum.py" line="219" />
+        <location filename="../gui/simulators/spectrum.py" line="221" />
         <source>Mystery galaxy</source>
         <translation>Gizemli gökada</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/spectrum.py" line="220" />
+        <location filename="../gui/simulators/spectrum.py" line="222" />
         <source>Your guess</source>
         <translation>Sizin tahmininiz</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/spectrum.py" line="228" />
+        <location filename="../gui/simulators/spectrum.py" line="230" />
         <source>&lt;b&gt;Mystery galaxy!&lt;/b&gt; Its spectrum is in the upper strip. Move the redshift slider until the lines in your guess line up with the mystery spectrum, then press &lt;b&gt;Check my answer&lt;/b&gt;.</source>
         <translation>&lt;b&gt;Gizemli gökada!&lt;/b&gt; Tayfı üstteki şerittedir. Tahmininizdeki çizgiler gizemli tayfla hizalanana kadar kırmızıya kayma kaydırıcısını oynatın, sonra &lt;b&gt;Cevabımı kontrol et&lt;/b&gt; düğmesine basın.</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/spectrum.py" line="242" />
+        <location filename="../gui/simulators/spectrum.py" line="244" />
         <source>&lt;b&gt;Excellent!&lt;/b&gt; The true redshift is z = {truth}. Your guess {guess} is within {error}. The light left this galaxy {years} billion years ago.</source>
         <translation>&lt;b&gt;Harika!&lt;/b&gt; Gerçek kırmızıya kayma z = {truth}. {guess} tahmininiz {error} yanılma payı içinde. Işık bu gökadadan {years} milyar yıl önce ayrıldı.</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/spectrum.py" line="251" />
+        <location filename="../gui/simulators/spectrum.py" line="253" />
         <source>higher</source>
         <translation>daha yüksek</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/spectrum.py" line="251" />
+        <location filename="../gui/simulators/spectrum.py" line="253" />
         <source>lower</source>
         <translation>daha düşük</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/spectrum.py" line="252" />
+        <location filename="../gui/simulators/spectrum.py" line="254" />
         <source>Not yet: the lines do not match. Try a &lt;b&gt;{hint}&lt;/b&gt; redshift.</source>
         <translation>Henüz değil: çizgiler uyuşmuyor. &lt;b&gt;{hint}&lt;/b&gt; bir kırmızıya kayma deneyin.</translation>
     </message>
@@ -10405,17 +10407,17 @@ yani gerçek uzaklık artı gökadanın kendi hareketinin eklediğidir. Bir duva
         <translation>&lt;b&gt;Benzetilmiş veri.&lt;/b&gt; Bu süpernovalar, 1998 çözümlemesini kendiniz yineleyebilesiniz diye gerçek taramalara benzemek üzere uygulamanın içinde üretilir. Gerçek ölçümler için örneklemi Pantheon+ olarak değiştirin.</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/supernova_sim.py" line="159" />
+        <location filename="../gui/simulators/supernova_sim.py" line="175" />
         <source>Best fit: &lt;b&gt;Ωm = {om}, ΩΛ = {ol}&lt;/b&gt;</source>
         <translation>En iyi uyum: &lt;b&gt;Ωm = {om}, ΩΛ = {ol}&lt;/b&gt;</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/supernova_sim.py" line="160" />
+        <location filename="../gui/simulators/supernova_sim.py" line="176" />
         <source>(flat)</source>
         <translation>(düz)</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/supernova_sim.py" line="161" />
+        <location filename="../gui/simulators/supernova_sim.py" line="177" />
         <source>Deceleration parameter q0 = &lt;b&gt;{q0}&lt;/b&gt; ({trend})&lt;br&gt;Evidence for acceleration: &lt;b&gt;{sigma}σ&lt;/b&gt;&lt;br&gt;Evidence for dark energy (ΩΛ &gt; 0, no flatness assumed): {dark_energy}σ&lt;br&gt;Hubble constant with this calibration: &lt;b&gt;{h0} km/s/Mpc&lt;/b&gt;&lt;br&gt;Number of supernovae: {count}</source>
         <translation>Yavaşlama parametresi q0 = &lt;b&gt;{q0}&lt;/b&gt; ({trend})&lt;br&gt;Hızlanma kanıtı: &lt;b&gt;{sigma}σ&lt;/b&gt;&lt;br&gt;Karanlık enerji kanıtı (ΩΛ &gt; 0, düzlük varsayılmadan): {dark_energy}σ&lt;br&gt;Bu kalibrasyonla Hubble sabiti: &lt;b&gt;{h0} km/s/Mpc&lt;/b&gt;&lt;br&gt;Süpernova sayısı: {count}</translation>
     </message>
@@ -10636,67 +10638,62 @@ Together they give the effective volume, $V_\mathrm{eff} = V\,[\bar nP/(1+\bar n
 İkisi birlikte etkin hacmi verir, $V_\mathrm{eff} = V\,[\bar nP/(1+\bar nP)]^2$, ve uzaklık hatası $1/\sqrt{V_\mathrm{eff}}$ ile düşer.</translation>
     </message>
     <message>
-        <location filename="../gui/widgets/challenge_bar.py" line="44" />
+        <location filename="../gui/widgets/challenge_bar.py" line="46" />
         <source>Previous challenge</source>
         <translation>Önceki görev</translation>
     </message>
     <message>
-        <location filename="../gui/widgets/challenge_bar.py" line="48" />
+        <location filename="../gui/widgets/challenge_bar.py" line="51" />
         <source>Next challenge</source>
         <translation>Sonraki görev</translation>
     </message>
     <message>
-        <location filename="../gui/widgets/challenge_bar.py" line="61" />
-        <source>✓  Check my answer</source>
-        <translation>✓  Cevabımı kontrol et</translation>
-    </message>
-    <message>
-        <location filename="../gui/widgets/challenge_bar.py" line="63" />
+        <location filename="../gui/widgets/challenge_bar.py" line="67" />
         <source>Look at the current settings of the simulator and see whether they solve the challenge.</source>
         <translation>Simülatörün şu anki ayarlarına bakar ve görevi çözüp çözmediğinizi söyler.</translation>
     </message>
     <message>
-        <location filename="../gui/widgets/challenge_bar.py" line="66" />
+        <location filename="../gui/widgets/challenge_bar.py" line="70" />
         <source>Show a hint</source>
         <translation>İpucu göster</translation>
     </message>
     <message>
-        <location filename="../gui/widgets/challenge_bar.py" line="97" />
+        <location filename="../gui/widgets/challenge_bar.py" line="101" />
         <source>Challenge {number} of {total}</source>
         <translation>Görev {number} / {total}</translation>
     </message>
     <message>
-        <location filename="../gui/widgets/challenge_bar.py" line="99" />
+        <location filename="../gui/widgets/challenge_bar.py" line="103" />
         <source>{solved} of {total} solved</source>
         <translation>{total} görevin {solved} tanesi çözüldü</translation>
     </message>
     <message>
-        <location filename="../gui/widgets/challenge_bar.py" line="104" />
+        <location filename="../gui/widgets/challenge_bar.py" line="108" />
         <source>&lt;b&gt;Solved.&lt;/b&gt;</source>
         <translation>&lt;b&gt;Çözüldü.&lt;/b&gt;</translation>
     </message>
     <message>
-        <location filename="../gui/widgets/challenge_bar.py" line="108" />
+        <location filename="../gui/widgets/challenge_bar.py" line="112" />
         <source>&lt;b&gt;Hint.&lt;/b&gt;</source>
         <translation>&lt;b&gt;İpucu.&lt;/b&gt;</translation>
     </message>
     <message>
-        <location filename="../gui/widgets/challenge_bar.py" line="119" />
+        <location filename="../gui/widgets/challenge_bar.py" line="123" />
         <source>&lt;b&gt;Solved!&lt;/b&gt;</source>
         <translation>&lt;b&gt;Çözüldü!&lt;/b&gt;</translation>
     </message>
     <message>
-        <location filename="../gui/widgets/challenge_bar.py" line="121" />
-        <source>Press ▶ for the next challenge.</source>
-        <translation>Sonraki görev için ▶ düğmesine basın.</translation>
+        <location filename="../gui/widgets/challenge_bar.py" line="125" />
+        <source>Use the arrows above for the next challenge.</source>
+        <translation>Sonraki görev için yukarıdaki okları kullanın.</translation>
     </message>
     <message>
-        <location filename="../gui/widgets/challenge_bar.py" line="126" />
+        <location filename="../gui/widgets/challenge_bar.py" line="130" />
         <source>Look again at: {fields}.</source>
         <translation>Şunlara yeniden bakın: {fields}.</translation>
     </message>
     <message>
-        <location filename="../gui/widgets/challenge_bar.py" line="127" />
+        <location filename="../gui/widgets/challenge_bar.py" line="131" />
         <source>&lt;b&gt;Not yet.&lt;/b&gt; The simulator is not in the state the challenge asks for.</source>
         <translation>&lt;b&gt;Henüz değil.&lt;/b&gt; Simülatör, görevin istediği durumda değil.</translation>
     </message>
@@ -10716,182 +10713,178 @@ Together they give the effective volume, $V_\mathrm{eff} = V\,[\bar nP/(1+\bar n
         <translation>İyi bilinen bir kozmolojik modelin parametrelerini yükleyin.</translation>
     </message>
     <message>
-        <location filename="../gui/widgets/flashcards.py" line="54" />
-        <location filename="../gui/widgets/flashcards.py" line="144" />
+        <location filename="../gui/widgets/flashcards.py" line="55" />
+        <location filename="../gui/widgets/flashcards.py" line="147" />
         <source>What does it mean? Say it to yourself, then turn the card over.</source>
         <translation>Ne anlama geliyor? Kendi kendinize söyleyin, sonra kartı çevirin.</translation>
     </message>
     <message>
-        <location filename="../gui/widgets/flashcards.py" line="66" />
+        <location filename="../gui/widgets/flashcards.py" line="67" />
         <source>Turn the card over (Space)</source>
         <translation>Kartı çevir (Boşluk)</translation>
     </message>
     <message>
-        <location filename="../gui/widgets/flashcards.py" line="69" />
-        <source>✗ I did not know it (1)</source>
-        <translation>✗ Bilmiyordum (1)</translation>
+        <location filename="../gui/widgets/flashcards.py" line="70" />
+        <source>I did not know it (1)</source>
+        <translation>Bilmiyordum (1)</translation>
     </message>
     <message>
-        <location filename="../gui/widgets/flashcards.py" line="70" />
+        <location filename="../gui/widgets/flashcards.py" line="72" />
         <source>It comes back tomorrow.</source>
         <translation>Yarın geri gelir.</translation>
     </message>
     <message>
-        <location filename="../gui/widgets/flashcards.py" line="72" />
-        <source>✓ I knew it (2)</source>
-        <translation>✓ Biliyordum (2)</translation>
+        <location filename="../gui/widgets/flashcards.py" line="74" />
+        <source>I knew it (2)</source>
+        <translation>Biliyordum (2)</translation>
     </message>
     <message>
-        <location filename="../gui/widgets/flashcards.py" line="73" />
+        <location filename="../gui/widgets/flashcards.py" line="76" />
         <source>It comes back later: 3 days, a week, 16 days, 35 days, then never.</source>
         <translation>Daha sonra geri gelir: 3 gün, bir hafta, 16 gün, 35 gün, sonra bir daha gelmez.</translation>
     </message>
     <message>
-        <location filename="../gui/widgets/flashcards.py" line="75" />
+        <location filename="../gui/widgets/flashcards.py" line="78" />
         <source>Back to the review page</source>
         <translation>Tekrar sayfasına dön</translation>
     </message>
     <message>
-        <location filename="../gui/widgets/flashcards.py" line="101" />
+        <location filename="../gui/widgets/flashcards.py" line="104" />
         <source>See also: {terms}</source>
         <translation>Ayrıca bakın: {terms}</translation>
     </message>
     <message>
-        <location filename="../gui/widgets/flashcards.py" line="137" />
+        <location filename="../gui/widgets/flashcards.py" line="140" />
         <source>All done</source>
         <translation>Hepsi bitti</translation>
     </message>
     <message>
-        <location filename="../gui/widgets/flashcards.py" line="138" />
+        <location filename="../gui/widgets/flashcards.py" line="141" />
         <source>You knew {known} of {total}. The ones you missed come back tomorrow.</source>
         <translation>{total} kartın {known} tanesini bildiniz. Bilemedikleriniz yarın geri gelir.</translation>
     </message>
     <message>
-        <location filename="../gui/widgets/flashcards.py" line="141" />
+        <location filename="../gui/widgets/flashcards.py" line="144" />
         <source>Card {number} of {total}</source>
         <translation>Kart {number} / {total}</translation>
     </message>
     <message>
-        <location filename="../gui/widgets/guide_panel.py" line="29" />
+        <location filename="../gui/widgets/guide_panel.py" line="30" />
         <source>GLOSSARY</source>
         <translation>SÖZLÜK</translation>
     </message>
     <message>
-        <location filename="../gui/widgets/guide_panel.py" line="34" />
+        <location filename="../gui/widgets/guide_panel.py" line="36" />
         <source>Hide this definition</source>
         <translation>Bu tanımı gizle</translation>
     </message>
     <message>
-        <location filename="../gui/widgets/guide_panel.py" line="45" />
+        <location filename="../gui/widgets/guide_panel.py" line="47" />
         <source>Open in Glossary</source>
         <translation>Sözlükte aç</translation>
     </message>
     <message>
-        <location filename="../gui/widgets/guide_panel.py" line="84" />
+        <location filename="../gui/widgets/guide_panel.py" line="86" />
         <source>See also:</source>
         <translation>Ayrıca bakın:</translation>
     </message>
     <message>
-        <location filename="../gui/widgets/guide_panel.py" line="86" />
+        <location filename="../gui/widgets/guide_panel.py" line="88" />
         <source>Lessons:</source>
         <translation>Dersler:</translation>
     </message>
     <message>
-        <location filename="../gui/widgets/notes_panel.py" line="35" />
-        <location filename="../gui/widgets/notes_panel.py" line="77" />
-        <source>☆  Bookmark this page</source>
-        <translation>☆  Bu sayfayı yer imlerine ekle</translation>
+        <location filename="../gui/widgets/notes_panel.py" line="36" />
+        <location filename="../gui/widgets/notes_panel.py" line="80" />
+        <location filename="../gui/widgets/notes_panel.py" line="123" />
+        <source>Bookmark this page</source>
+        <translation>Bu sayfayı yer imlerine ekle</translation>
     </message>
     <message>
-        <location filename="../gui/widgets/notes_panel.py" line="37" />
+        <location filename="../gui/widgets/notes_panel.py" line="39" />
         <source>Keep a link to this page in Notes &amp; bookmarks (Ctrl+D).</source>
         <translation>Bu sayfanın bağlantısını Notlar ve yer imlerinde tutar (Ctrl+D).</translation>
     </message>
     <message>
-        <location filename="../gui/widgets/notes_panel.py" line="44" />
+        <location filename="../gui/widgets/notes_panel.py" line="46" />
         <source>Your notes about this page…
 
 Write down what surprised you, a number you want to remember, or a question to come back to. Notes are saved automatically on this computer.</source>
         <translation>Bu sayfa hakkındaki notlarınız… Sizi şaşırtan şeyi, hatırlamak istediğiniz bir sayıyı ya da sonra döneceğiniz bir soruyu yazın. Notlar bu bilgisayarda otomatik olarak kaydedilir.</translation>
     </message>
     <message>
-        <location filename="../gui/widgets/notes_panel.py" line="55" />
-        <source>📝  All notes &amp;&amp; bookmarks</source>
-        <translation>📝  Tüm notlar ve yer imleri</translation>
+        <location filename="../gui/widgets/notes_panel.py" line="57" />
+        <source>All notes &amp;&amp; bookmarks</source>
+        <translation>Tüm notlar ve yer imleri</translation>
     </message>
     <message>
-        <location filename="../gui/widgets/notes_panel.py" line="56" />
+        <location filename="../gui/widgets/notes_panel.py" line="59" />
         <source>Open the page that lists every note and bookmark, and lets you export them.</source>
         <translation>Bütün not ve yer imlerini listeleyen, dışa aktarmanızı sağlayan sayfayı açar.</translation>
     </message>
     <message>
-        <location filename="../gui/widgets/notes_panel.py" line="75" />
+        <location filename="../gui/widgets/notes_panel.py" line="78" />
         <source>This page cannot be bookmarked.</source>
         <translation>Bu sayfa yer imlerine eklenemez.</translation>
     </message>
     <message>
-        <location filename="../gui/widgets/notes_panel.py" line="89" />
+        <location filename="../gui/widgets/notes_panel.py" line="93" />
         <source>Saved automatically.</source>
         <translation>Otomatik olarak kaydedildi.</translation>
     </message>
     <message>
-        <location filename="../gui/widgets/notes_panel.py" line="97" />
+        <location filename="../gui/widgets/notes_panel.py" line="101" />
         <source>Saved on this computer.</source>
         <translation>Bu bilgisayara kaydedildi.</translation>
     </message>
     <message>
-        <location filename="../gui/widgets/notes_panel.py" line="106" />
+        <location filename="../gui/widgets/notes_panel.py" line="110" />
         <source>Saving…</source>
         <translation>Kaydediliyor…</translation>
     </message>
     <message>
-        <location filename="../gui/widgets/notes_panel.py" line="119" />
-        <source>★  Bookmarked</source>
-        <translation>★  Yer imlerinde</translation>
-    </message>
-    <message>
-        <location filename="../gui/widgets/plot.py" line="65" />
+        <location filename="../gui/widgets/plot.py" line="66" />
         <source>Save image…</source>
         <translation>Görüntüyü kaydet…</translation>
     </message>
     <message>
-        <location filename="../gui/widgets/plot.py" line="66" />
+        <location filename="../gui/widgets/plot.py" line="67" />
         <source>Save this plot as a PNG or SVG image.</source>
         <translation>Bu grafiği PNG ya da SVG görüntüsü olarak kaydedin.</translation>
     </message>
     <message>
-        <location filename="../gui/widgets/plot.py" line="70" />
+        <location filename="../gui/widgets/plot.py" line="71" />
         <source>Export data (CSV)…</source>
         <translation>Veriyi dışa aktar (CSV)…</translation>
     </message>
     <message>
-        <location filename="../gui/widgets/plot.py" line="71" />
+        <location filename="../gui/widgets/plot.py" line="72" />
         <source>Save the numbers behind this plot as a CSV file (opens in Excel).</source>
         <translation>Bu grafiğin arkasındaki sayıları CSV dosyası olarak kaydedin (Excel'de açılır).</translation>
     </message>
     <message>
-        <location filename="../gui/widgets/plot.py" line="112" />
+        <location filename="../gui/widgets/plot.py" line="141" />
         <source>Save plot</source>
         <translation>Grafiği kaydet</translation>
     </message>
     <message>
-        <location filename="../gui/widgets/plot.py" line="113" />
+        <location filename="../gui/widgets/plot.py" line="142" />
         <source>PNG image (*.png);;SVG vector image (*.svg)</source>
         <translation>PNG görüntüsü (*.png);;SVG vektör görüntüsü (*.svg)</translation>
     </message>
     <message>
-        <location filename="../gui/widgets/plot.py" line="120" />
-        <location filename="../gui/widgets/plot.py" line="133" />
+        <location filename="../gui/widgets/plot.py" line="158" />
+        <location filename="../gui/widgets/plot.py" line="174" />
         <source>Could not save</source>
         <translation>Kaydedilemedi</translation>
     </message>
     <message>
-        <location filename="../gui/widgets/plot.py" line="125" />
+        <location filename="../gui/widgets/plot.py" line="166" />
         <source>Export data</source>
         <translation>Veriyi dışa aktar</translation>
     </message>
     <message>
-        <location filename="../gui/widgets/plot.py" line="126" />
+        <location filename="../gui/widgets/plot.py" line="167" />
         <source>CSV file (*.csv)</source>
         <translation>CSV dosyası (*.csv)</translation>
     </message>
@@ -10901,116 +10894,106 @@ Write down what surprised you, a number you want to remember, or a question to c
         <translation>Dersi açmak için tıklayın.</translation>
     </message>
     <message>
-        <location filename="../gui/widgets/quiz.py" line="65" />
-        <location filename="../gui/widgets/quiz.py" line="154" />
+        <location filename="../gui/widgets/quiz.py" line="66" />
+        <location filename="../gui/widgets/quiz.py" line="157" />
         <source>Check your understanding</source>
         <translation>Anladığınızı sınayın</translation>
     </message>
     <message>
-        <location filename="../gui/widgets/quiz.py" line="71" />
-        <location filename="../gui/widgets/quiz.py" line="155" />
+        <location filename="../gui/widgets/quiz.py" line="72" />
+        <location filename="../gui/widgets/quiz.py" line="158" />
         <source>Start the quiz</source>
         <translation>Sınavı başlat</translation>
     </message>
     <message>
-        <location filename="../gui/widgets/quiz.py" line="107" />
+        <location filename="../gui/widgets/quiz.py" line="108" />
         <source>Check answer</source>
         <translation>Cevabı kontrol et</translation>
     </message>
     <message>
-        <location filename="../gui/widgets/quiz.py" line="110" />
-        <location filename="../gui/widgets/quiz.py" line="239" />
+        <location filename="../gui/widgets/quiz.py" line="111" />
+        <location filename="../gui/widgets/quiz.py" line="242" />
         <source>Next question</source>
         <translation>Sonraki soru</translation>
     </message>
     <message>
-        <location filename="../gui/widgets/quiz.py" line="130" />
+        <location filename="../gui/widgets/quiz.py" line="131" />
         <source>Try again</source>
         <translation>Tekrar dene</translation>
     </message>
     <message>
-        <location filename="../gui/widgets/quiz.py" line="133" />
+        <location filename="../gui/widgets/quiz.py" line="134" />
         <source>Review the lesson</source>
         <translation>Dersi gözden geçir</translation>
     </message>
     <message>
-        <location filename="../gui/widgets/quiz.py" line="136" />
-        <source>Next lesson ▶</source>
-        <translation>Sonraki ders ▶</translation>
-    </message>
-    <message>
-        <location filename="../gui/widgets/quiz.py" line="157" />
+        <location filename="../gui/widgets/quiz.py" line="160" />
         <source>This quiz has {count} questions about “{lesson}”. After each answer you will see an explanation. Score at least {score} to complete the lesson; you can retry as often as you like.</source>
         <translation>Bu testte “{lesson}” konusunda {count} soru var. Her cevaptan sonra bir açıklama göreceksiniz. Dersi tamamlamak için en az {score} alın; istediğiniz kadar yeniden deneyebilirsiniz.</translation>
     </message>
     <message>
-        <location filename="../gui/widgets/quiz.py" line="161" />
+        <location filename="../gui/widgets/quiz.py" line="164" />
         <source>Your best score so far: &lt;b&gt;{score}&lt;/b&gt;</source>
         <translation>Şimdiye kadarki en iyi puanınız: &lt;b&gt;{score}&lt;/b&gt;</translation>
     </message>
     <message>
-        <location filename="../gui/widgets/quiz.py" line="170" />
+        <location filename="../gui/widgets/quiz.py" line="173" />
         <source>Time to review</source>
         <translation>Tekrar zamanı</translation>
     </message>
     <message>
-        <location filename="../gui/widgets/quiz.py" line="171" />
-        <source>Start the review</source>
-        <translation>Tekrarı başlat</translation>
-    </message>
-    <message>
-        <location filename="../gui/widgets/quiz.py" line="173" />
+        <location filename="../gui/widgets/quiz.py" line="176" />
         <source>{count} question(s) you once got wrong are due today, from {lessons} lesson(s). Answer one correctly and it comes back later still; get it wrong and it starts again tomorrow.</source>
         <translation>Bir zamanlar yanlış yanıtladığınız {count} sorunun bugün zamanı geldi; {lessons} dersten. Birini doğru yanıtlarsanız daha da ileri bir tarihte geri gelir; yanlış yanıtlarsanız yarın baştan başlar.</translation>
     </message>
     <message>
-        <location filename="../gui/widgets/quiz.py" line="196" />
+        <location filename="../gui/widgets/quiz.py" line="199" />
         <source>Question {number} of {total}</source>
         <translation>Soru {number} / {total}</translation>
     </message>
     <message>
-        <location filename="../gui/widgets/quiz.py" line="197" />
-        <location filename="../gui/widgets/quiz.py" line="235" />
+        <location filename="../gui/widgets/quiz.py" line="200" />
+        <location filename="../gui/widgets/quiz.py" line="238" />
         <source>Correct so far: {count}</source>
         <translation>Şu ana kadar doğru: {count}</translation>
     </message>
     <message>
-        <location filename="../gui/widgets/quiz.py" line="228" />
+        <location filename="../gui/widgets/quiz.py" line="231" />
         <source>&lt;b&gt;Correct!&lt;/b&gt;</source>
         <translation>&lt;b&gt;Doğru!&lt;/b&gt;</translation>
     </message>
     <message>
-        <location filename="../gui/widgets/quiz.py" line="231" />
+        <location filename="../gui/widgets/quiz.py" line="234" />
         <source>&lt;b&gt;Not quite.&lt;/b&gt; The right answer is &lt;b&gt;{answer}&lt;/b&gt;.</source>
         <translation>&lt;b&gt;Tam değil.&lt;/b&gt; Doğru cevap &lt;b&gt;{answer}&lt;/b&gt;.</translation>
     </message>
     <message>
-        <location filename="../gui/widgets/quiz.py" line="239" />
+        <location filename="../gui/widgets/quiz.py" line="242" />
         <source>See results</source>
         <translation>Sonuçları gör</translation>
     </message>
     <message>
-        <location filename="../gui/widgets/quiz.py" line="250" />
+        <location filename="../gui/widgets/quiz.py" line="253" />
         <source>You scored {correct} / {total} ({score})</source>
         <translation>{total} sorudan {correct} tanesini doğru yaptınız ({score})</translation>
     </message>
     <message>
-        <location filename="../gui/widgets/quiz.py" line="263" />
+        <location filename="../gui/widgets/quiz.py" line="266" />
         <source>&lt;b&gt;Lesson complete!&lt;/b&gt; Great work. The next lessons that build on this one are now ready.</source>
         <translation>&lt;b&gt;Ders tamamlandı!&lt;/b&gt; Harika iş. Bunun üzerine kurulu sonraki dersler artık hazır.</translation>
     </message>
     <message>
-        <location filename="../gui/widgets/quiz.py" line="269" />
+        <location filename="../gui/widgets/quiz.py" line="272" />
         <source>You need {score} to complete the lesson. Review the explanations, re-read the parts that felt unclear, and try again.</source>
         <translation>Dersi tamamlamak için {score} almanız gerekiyor. Açıklamaları gözden geçirin, anlaşılmaz gelen yerleri yeniden okuyun ve yeniden deneyin.</translation>
     </message>
     <message>
-        <location filename="../gui/widgets/quiz.py" line="281" />
+        <location filename="../gui/widgets/quiz.py" line="284" />
         <source>&lt;b&gt;Review done.&lt;/b&gt; {count} question(s) go back to the start and return tomorrow; the rest have moved further out.</source>
         <translation>&lt;b&gt;Tekrar bitti.&lt;/b&gt; {count} soru başa dönüyor ve yarın geri geliyor; geri kalanlar daha ileriye kaydı.</translation>
     </message>
     <message>
-        <location filename="../gui/widgets/quiz.py" line="286" />
+        <location filename="../gui/widgets/quiz.py" line="289" />
         <source>&lt;b&gt;All of them.&lt;/b&gt; Every card moved up a box, and the ones that passed the last box have left the deck for good.</source>
         <translation>&lt;b&gt;Hepsi doğru.&lt;/b&gt; Her kart bir kutu yukarı çıktı; son kutuyu geçenler desteden temelli ayrıldı.</translation>
     </message>
@@ -11028,12 +11011,6 @@ Write down what surprised you, a number you want to remember, or a question to c
         <location filename="../gui/widgets/tour.py" line="52" />
         <source>Skip tour</source>
         <translation>Turu geç</translation>
-    </message>
-    <message>
-        <location filename="../gui/widgets/tour.py" line="54" />
-        <location filename="../gui/widgets/tour.py" line="87" />
-        <source>Next</source>
-        <translation>İleri</translation>
     </message>
     <message>
         <location filename="../gui/widgets/tour.py" line="82" />

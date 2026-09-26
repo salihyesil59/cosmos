@@ -17,6 +17,7 @@ from PySide6.QtWidgets import (
 
 from cosmos import classroom
 from cosmos.content.loader import load_teacher_notes
+from cosmos.gui import nav_icons
 from cosmos.gui.context import AppContext
 from cosmos.gui.widgets.common import muted_label, title_label
 from cosmos.gui.widgets.rich_browser import RichBrowser
@@ -99,10 +100,12 @@ class ClassroomPage(QWidget):
         heading.addWidget(muted_label(
             tr("A progress report to hand on, and teacher notes for every lesson.")))
         head.addLayout(heading, 1)
-        self.markdown_btn = QPushButton(tr("⬇  Export as Markdown…"))
+        self.markdown_btn = QPushButton(tr("Export as Markdown…"))
         self.markdown_btn.clicked.connect(self.export_markdown)
-        self.pdf_btn = QPushButton(tr("⬇  Export as PDF…"))
+        self.pdf_btn = QPushButton(tr("Export as PDF…"))
         self.pdf_btn.clicked.connect(self.export_pdf)
+        for button in (self.markdown_btn, self.pdf_btn):
+            nav_icons.set_glyph(button, "export", 15)
         for button in (self.markdown_btn, self.pdf_btn):
             head.addWidget(button, 0, Qt.AlignTop)
         root.addLayout(head)

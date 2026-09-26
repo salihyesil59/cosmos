@@ -7,6 +7,7 @@ from matplotlib.patches import Rectangle
 from PySide6.QtCore import Qt, QTimer
 from PySide6.QtWidgets import QComboBox, QGroupBox, QHBoxLayout, QLabel, QPushButton, QVBoxLayout
 
+from cosmos.gui import nav_icons
 from cosmos.gui.simulators.base import SimulatorBase
 from cosmos.gui.theme import theme
 from cosmos.gui.widgets.common import Banner, ParameterSlider, labelled_row, muted_label
@@ -49,7 +50,8 @@ class InflationSimulator(SimulatorBase):
         run = QGroupBox(tr("2 · Watch the field roll"))
         rl = QVBoxLayout(run)
         row = QHBoxLayout()
-        self.play = QPushButton(tr("▶ Play"))
+        self.play = QPushButton(tr("Play"))
+        nav_icons.set_glyph(self.play, "continue", 14)
         self.play.setCheckable(True)
         self.play.setProperty("role", "primary")
         self.play.toggled.connect(self._toggle)
@@ -135,7 +137,8 @@ class InflationSimulator(SimulatorBase):
 
     # ---------------------------------------------------------- animation
     def _toggle(self, on: bool) -> None:
-        self.play.setText(tr("⏸ Pause") if on else tr("▶ Play"))
+        self.play.setText(tr("Pause") if on else tr("Play"))
+        nav_icons.set_glyph(self.play, "pause" if on else "continue", 14)
         if on:
             if self.frame >= len(self.trajectory.efolds) - 1:
                 self.frame = 0

@@ -24,6 +24,7 @@ from PySide6.QtWidgets import (
 )
 
 from cosmos.content.models import Lesson, QuizQuestion
+from cosmos.gui import nav_icons
 from cosmos.gui.widgets.common import Banner, muted_label, title_label
 from cosmos.i18n import tr
 from cosmos.progress import PASS_SCORE
@@ -133,8 +134,10 @@ class QuizWidget(QWidget):
         review = QPushButton(tr("Review the lesson"))
         review.clicked.connect(self.reviewRequested)
         self.review_button = review
-        self.next_lesson = QPushButton(tr("Next lesson ▶"))
+        self.next_lesson = QPushButton(tr("Next lesson"))
         self.next_lesson.setProperty("role", "primary")
+        self.next_lesson.setLayoutDirection(Qt.RightToLeft)     # the arrow after the words
+        nav_icons.set_glyph(self.next_lesson, "forward", 14)
         self.next_lesson.clicked.connect(self.nextLessonRequested)
         rb.addWidget(retry)
         rb.addWidget(review)

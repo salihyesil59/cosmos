@@ -85,7 +85,7 @@ class HubbleFitSimulator(SimulatorBase):
 
     def _dataset_changed(self, *_args) -> None:
         ds = self.data
-        tag = tr("⚠ Simulated data.") if ds.simulated else tr("Real historical data.")
+        tag = tr("<b>Simulated data.</b>") if ds.simulated else tr("Real historical data.")
         self.description.setText(tag + " " + ds.description)
         self.fit = None
         self.result.setText(tr("Press <b>Find best fit</b> to compute H0 and the Hubble time."))

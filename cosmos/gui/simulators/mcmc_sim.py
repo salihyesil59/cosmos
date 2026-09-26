@@ -7,6 +7,7 @@ from PySide6.QtCore import Qt, QTimer
 from PySide6.QtWidgets import QCheckBox, QComboBox, QGroupBox, QHBoxLayout, QLabel, QPushButton, QTabWidget, QVBoxLayout
 
 from cosmos.gui.labels import physics
+from cosmos.gui import nav_icons
 from cosmos.gui.simulators.base import SimulatorBase
 from cosmos.gui.theme import theme
 from cosmos.gui.widgets.common import Banner, ParameterSlider, labelled_row, muted_label
@@ -75,10 +76,12 @@ class MCMCSimulator(SimulatorBase):
         for w in (self.steps, self.step_size, self.burn_in, self.seed):
             wl.addWidget(w)
         row = QHBoxLayout()
-        self.run_button = QPushButton(tr("▶ Run the chain"))
+        self.run_button = QPushButton(tr("Run the chain"))
         self.run_button.setProperty("role", "primary")
+        nav_icons.set_glyph(self.run_button, "continue", 14)
         self.run_button.clicked.connect(self.run)
         self.animate_button = QPushButton(tr("Watch it walk"))
+        nav_icons.set_glyph(self.animate_button, "continue", 14)
         self.animate_button.setCheckable(True)
         self.animate_button.setToolTip(tr("Reveal the chain step by step."))
         self.animate_button.toggled.connect(self._animate)
@@ -185,7 +188,8 @@ class MCMCSimulator(SimulatorBase):
 
     # ----------------------------------------------------------- animation
     def _animate(self, on: bool) -> None:
-        self.animate_button.setText(tr("⏸ Pause") if on else tr("Watch it walk"))
+        self.animate_button.setText(tr("Pause") if on else tr("Watch it walk"))
+        nav_icons.set_glyph(self.animate_button, "pause" if on else "continue", 14)
         if on:
             if self.chain is None:
                 self.run()

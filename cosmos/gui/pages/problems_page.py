@@ -109,6 +109,7 @@ class ProblemsPage(QWidget):
         links = FlowLayout(spacing=8)
         self.lesson_btn = QPushButton()
         self.lesson_btn.setToolTip(tr("The lesson that explains the physics behind this problem."))
+        nav_icons.set_glyph(self.lesson_btn, "glossary", 16)
         self.lesson_btn.clicked.connect(lambda: self.current and ctx.navigate(f"lesson:{self.current.lesson}"))
         self.sim_btn = QPushButton()
         self.sim_btn.setToolTip(tr("A simulator that can compute or visualise part of the answer."))
@@ -132,8 +133,9 @@ class ProblemsPage(QWidget):
         answer_row.addWidget(self.answer, 1)
         self.unit = QLabel()
         answer_row.addWidget(self.unit)
-        self.check_btn = QPushButton(tr("✓  Check"))
+        self.check_btn = QPushButton(tr("Check"))
         self.check_btn.setProperty("role", "primary")
+        nav_icons.set_glyph(self.check_btn, "check", 14)
         self.check_btn.clicked.connect(self.check)
         answer_row.addWidget(self.check_btn)
         dl.addLayout(answer_row)
@@ -147,9 +149,12 @@ class ProblemsPage(QWidget):
         self.hint_btn.clicked.connect(self.show_hint)
         self.solution_btn = QPushButton(tr("Show the worked solution"))
         self.solution_btn.clicked.connect(self.show_solution)
-        self.prev_btn = QPushButton(tr("◀ Previous"))
+        self.prev_btn = QPushButton(tr("Previous"))
+        nav_icons.set_glyph(self.prev_btn, "back", 14)
         self.prev_btn.clicked.connect(lambda: self._step(-1))
-        self.next_btn = QPushButton(tr("Next ▶"))
+        self.next_btn = QPushButton(tr("Next"))
+        self.next_btn.setLayoutDirection(Qt.RightToLeft)      # the arrow after the word
+        nav_icons.set_glyph(self.next_btn, "forward", 14)
         self.next_btn.clicked.connect(lambda: self._step(1))
         for w in (self.hint_btn, self.solution_btn, self.prev_btn, self.next_btn):
             buttons.addWidget(w)
@@ -212,7 +217,7 @@ class ProblemsPage(QWidget):
                             + "   " + stars(problem.difficulty))
         self.title.setText(problem.title)
         lesson = self.ctx.curriculum.lessons.get(problem.lesson)
-        self.lesson_btn.setText("📖  " + (f"{problem.lesson} {lesson.title}" if lesson else problem.lesson))
+        self.lesson_btn.setText(f"{problem.lesson} {lesson.title}" if lesson else problem.lesson)
         has_simulator = problem.simulator in SIMULATORS
         self.sim_btn.setVisible(has_simulator)
         if has_simulator:
