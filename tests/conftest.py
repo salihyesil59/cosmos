@@ -24,6 +24,32 @@ if not os.environ.get("QT_QPA_FONTDIR"):
             break
 
 
+@pytest.fixture(autouse=True)
+def theme_stays_put():
+    """A test that changes the theme or the text size puts them back afterwards.
+
+    The theme manager is one object for the whole process, so a test that leaves the
+    interface on the high-contrast palette, or at 120% text, hands that state to
+    every test after it — and the layout checks then measure something nobody asked
+    for. Nothing is imported here for tests that never touch the interface.
+    """
+    import sys
+
+    module = sys.modules.get("cosmos.gui.theme")
+    before = (module.theme().name, module.theme().scale) if module else None
+    yield
+    module = sys.modules.get("cosmos.gui.theme")
+    if module is None or before is None:
+        return
+    from PySide6.QtWidgets import QApplication
+
+    manager = module.theme()
+    if QApplication.instance() is None or (manager.name, manager.scale) == before:
+        return
+    manager.set_theme(before[0])
+    manager.set_scale(before[1])
+
+
 @pytest.fixture(scope="session")
 def qt_app():
     """A Qt application, for tests that draw something but need no window."""

@@ -2,10 +2,11 @@
 
 from __future__ import annotations
 
+import sys
 from dataclasses import dataclass
 
 from PySide6.QtCore import QObject, Signal
-from PySide6.QtGui import QColor, QPalette
+from PySide6.QtGui import QColor, QFont, QPalette
 from PySide6.QtWidgets import QApplication
 
 
@@ -99,6 +100,15 @@ THEME_ORDER = ("dark", "light", "contrast")
 # Interface text can be scaled for readability; every point size below is multiplied by it.
 MIN_SCALE, MAX_SCALE, SCALE_STEP = 0.8, 1.6, 0.1
 BASE_POINT_SIZE = 10.0
+
+# The family the interface is drawn in. Left to Qt, a widget asks for the generic
+# "Sans Serif" and gets whatever the platform hands back — in a headless run, the
+# first family in the font folder, which may have no semibold face of its own, so
+# every heading and primary button is a synthetic approximation whose width drifts
+# with what else has been loaded. Naming the family keeps the app, the selftest and
+# the layout tests all measuring the same text. An empty name means the platform's
+# own default, which is the right answer outside Windows.
+INTERFACE_FONT = "Segoe UI" if sys.platform == "win32" else ""
 
 
 def _pt(size: float, scale: float) -> str:
@@ -308,7 +318,7 @@ class ThemeManager(QObject):
         qp.setColor(QPalette.Disabled, QPalette.Text, QColor(p.muted))
         qp.setColor(QPalette.Disabled, QPalette.ButtonText, QColor(p.muted))
         app.setPalette(qp)
-        font = app.font()
+        font = QFont(INTERFACE_FONT) if INTERFACE_FONT else app.font()
         font.setPointSizeF(BASE_POINT_SIZE * self._scale)
         app.setFont(font)
         app.setStyleSheet(_stylesheet(p, self._scale))
