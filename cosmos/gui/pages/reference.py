@@ -19,7 +19,7 @@ from PySide6.QtWidgets import (
 from cosmos.content.loader import load_formulas
 from cosmos.gui import nav_icons
 from cosmos.gui.context import AppContext
-from cosmos.gui.widgets.common import ParameterSlider, labelled_row, muted_label, title_label
+from cosmos.gui.widgets.common import ParameterSlider, labelled_row, muted_label, placeholder, title_label
 from cosmos.gui.widgets.rich_browser import RichBrowser
 from cosmos.physics import constants as const
 from cosmos.i18n import tr, tr_noop
@@ -164,7 +164,7 @@ class ReferencePage(QWidget):
         fl = QVBoxLayout(formulas_tab)
         fl.setContentsMargins(0, 8, 0, 0)
         self.search = QLineEdit()
-        self.search.setPlaceholderText(tr("Filter formulas…  (e.g. redshift, Friedmann, horizon, L4.3)"))
+        placeholder(self.search, tr("Filter formulas…  (e.g. redshift, Friedmann, horizon, L4.3)"))
         self.search.setClearButtonEnabled(True)
         self.search.setToolTip(tr("Show only the formulas whose name, topic, symbols or lesson match."))
         self.search.textChanged.connect(self._render_formulas)

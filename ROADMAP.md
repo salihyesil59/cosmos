@@ -302,3 +302,36 @@ out, what that leaves out, and how the whole engine is checked.
 - [x] `V5` One honest number for every figure in the course: a test that no lesson
   figure drawn from generated data can go unlabelled, and none of those labels is
   cut off by the edge of the picture
+
+---
+
+## Phase 7 — Within reach
+
+`G17` called itself an accessibility pass, and it did real work: the text scales,
+there is a high-contrast theme, and the app can be driven from the keyboard. What
+it did not do is make the app *legible to a screen reader*. Counted rather than
+guessed, 577 interactive widgets reach one with no name and no text of their own —
+among them 285 sliders, spin boxes and combo boxes that have a perfectly good
+label sitting beside them, never associated — and not one of the plot canvases,
+which is where the answer usually is. Phase 7 is about the learners who cannot see
+the screen, and about the pages that keep them waiting. ★ marks the ones worth
+doing first.
+
+### Reach
+
+- [x] ★ `A1` Every control announces itself: names taken from the labels already
+  beside them, names for the icon-only buttons, and a test that counts what is
+  left
+- [ ] ★ `A2` A plot a screen reader can read: a name and a description on every
+  canvas, and for the ones that already export their numbers, a text alternative
+  that says what the curve does
+- [ ] `A3` A keyboard-only path through every simulator, with a sensible tab
+  order, and a test that walks it
+- [ ] `A4` The high-contrast theme checked against a contrast ratio rather than
+  by eye
+
+### Quality
+
+- [ ] `A5` The Reference page takes 2.6 seconds to open the first time, which is
+  the formula sheet, the constants and every preset's age all computed before
+  anything is shown. Nobody should wait that long for a page that is mostly text

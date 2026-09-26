@@ -27,6 +27,7 @@ class HubbleFitSimulator(SimulatorBase):
         for key, ds in self.sets.items():
             self.selector.addItem(ds.label, key)
         self.selector.setToolTip(tr("Choose which galaxies to plot."))
+        self.selector.setAccessibleName(tr("Data set"))
         dl.addWidget(self.selector)
         self.description = muted_label("")
         dl.addWidget(self.description)

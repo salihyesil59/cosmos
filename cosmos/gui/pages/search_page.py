@@ -8,7 +8,7 @@ from PySide6.QtWidgets import QLineEdit, QListWidget, QListWidgetItem, QVBoxLayo
 from cosmos.gui import nav_icons
 from cosmos.gui.context import AppContext
 from cosmos.gui.search import KIND_COUNTS, KIND_LABELS, search
-from cosmos.gui.widgets.common import muted_label, title_label
+from cosmos.gui.widgets.common import muted_label, placeholder, title_label
 from cosmos.i18n import tr, tr_noop
 
 GUIDE = tr_noop("""
@@ -40,7 +40,7 @@ class SearchPage(QWidget):
         root.addWidget(muted_label(tr("Lessons, glossary terms, simulators and formulas.")))
         self.box = QLineEdit()
         self.box.setObjectName("searchPageBox")
-        self.box.setPlaceholderText(tr("What are you looking for?  (e.g. dark energy, horizon, L4.3, Friedmann)"))
+        placeholder(self.box, tr("What are you looking for?  (e.g. dark energy, horizon, L4.3, Friedmann)"))
         self.box.setClearButtonEnabled(True)
         self.box.textChanged.connect(self._update)
         self.box.returnPressed.connect(self._open_first)
@@ -106,7 +106,7 @@ class SearchBox(QLineEdit):
         super().__init__(parent)
         self.ctx = ctx
         self.setObjectName("toolbarSearch")
-        self.setPlaceholderText(tr("Search the course…  (Ctrl+F)"))
+        placeholder(self, tr("Search the course…  (Ctrl+F)"))
         self.setClearButtonEnabled(True)
         self.setMaximumWidth(280)
         self.setToolTip(tr("Search lessons, glossary, simulators and formulas. Press Enter for all results."))

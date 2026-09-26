@@ -4,6 +4,33 @@ All notable changes to Cosmos are recorded here. Versions follow
 [semantic versioning](https://semver.org): until 1.0 the interface and the save
 format may still change between releases.
 
+## Unreleased
+
+### Added
+
+- **Every control in the app now announces itself** (`A1`). `G17` called itself an
+  accessibility pass and did real work — scalable text, a high-contrast theme,
+  keyboard navigation — but it left the app illegible to a screen reader. Counted
+  rather than guessed, 577 interactive widgets reached one as an unnamed "slider"
+  or "button": 285 of them sliders, spin boxes and combo boxes with a perfectly
+  good label sitting beside them that nothing had ever associated. Four shared
+  widgets fixed almost all of it. A `ParameterSlider` now names its slider and its
+  spin box after its own label, and passes its tooltip on as a description; a
+  labelled row names the control inside it; an info button announces what it is
+  about instead of "question mark"; and a search box takes its name from the
+  placeholder, which is the only thing that ever said what the box was for and
+  which vanishes the moment you type.
+- **Markup is no longer read aloud** (`A1`). Labels in this app carry `<b>`,
+  `<sub>` and `<br>` because they are drawn, not spoken. `strip_markup` turns
+  `Ω<sub>b</sub> h<sup>2</sup>` into something a voice can say.
+- **A sweep that counts what is left** (`A1`). `tests/test_accessibility.py` walks
+  every page, every lesson and every simulator and fails on any control with
+  neither a name nor visible text. Qt's own furniture — scroll bars, the clear
+  button inside a line edit, a table's corner button — is excluded by name, so the
+  sweep cannot flatter itself about its coverage. It found the Guide panel's close
+  button on the way in, and it plants a nameless button of its own to prove it
+  would still notice.
+
 ## 0.6.0 — 2026-09-26
 
 Everything in this release is about being able to trust what is on screen. The app

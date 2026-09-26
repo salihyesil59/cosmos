@@ -5780,73 +5780,78 @@ curso y te deja cambiar tú mismo los parámetros.
         <translation>Elige qué galaxias dibujar.</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/hubble_fit.py" line="35" />
+        <location filename="../gui/simulators/hubble_fit.py" line="30" />
+        <source>Data set</source>
+        <translation>Conjunto de datos</translation>
+    </message>
+    <message>
+        <location filename="../gui/simulators/hubble_fit.py" line="36" />
         <source>2 · Fit the line v = H0 × d</source>
         <translation>2 · Ajusta la recta v = H0 × d</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/hubble_fit.py" line="38" />
+        <location filename="../gui/simulators/hubble_fit.py" line="39" />
         <source>Your H0 (km/s/Mpc)</source>
         <translation>Tu H0 (km/s/Mpc)</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/hubble_fit.py" line="39" />
+        <location filename="../gui/simulators/hubble_fit.py" line="40" />
         <source>Slope of the line</source>
         <translation>Pendiente de la recta</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/hubble_fit.py" line="39" />
+        <location filename="../gui/simulators/hubble_fit.py" line="40" />
         <source>Move this until the line runs through the middle of the points. The residual sum below gets smaller as the fit improves.</source>
         <translation>Mueve esto hasta que la recta pase por el medio de los puntos. La suma de residuos de abajo se hace menor cuanto mejor es el ajuste.</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/hubble_fit.py" line="47" />
+        <location filename="../gui/simulators/hubble_fit.py" line="48" />
         <source>Find best fit (least squares)</source>
         <translation>Buscar el mejor ajuste (mínimos cuadrados)</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/hubble_fit.py" line="49" />
+        <location filename="../gui/simulators/hubble_fit.py" line="50" />
         <source>Compute the slope that minimises the sum of squared residuals.</source>
         <translation>Calcula la pendiente que minimiza la suma de los residuos al cuadrado.</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/hubble_fit.py" line="54" />
+        <location filename="../gui/simulators/hubble_fit.py" line="55" />
         <source>Result</source>
         <translation>Resultado</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/hubble_fit.py" line="56" />
-        <location filename="../gui/simulators/hubble_fit.py" line="91" />
+        <location filename="../gui/simulators/hubble_fit.py" line="57" />
+        <location filename="../gui/simulators/hubble_fit.py" line="92" />
         <source>Press &lt;b&gt;Find best fit&lt;/b&gt; to compute H0 and the Hubble time.</source>
         <translation>Pulsa &lt;b&gt;Buscar el mejor ajuste&lt;/b&gt; para calcular H0 y el tiempo de Hubble.</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/hubble_fit.py" line="88" />
+        <location filename="../gui/simulators/hubble_fit.py" line="89" />
         <source>&lt;b&gt;Simulated data.&lt;/b&gt;</source>
         <translation>&lt;b&gt;Datos simulados.&lt;/b&gt;</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/hubble_fit.py" line="88" />
+        <location filename="../gui/simulators/hubble_fit.py" line="89" />
         <source>Real historical data.</source>
         <translation>Datos históricos reales.</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/hubble_fit.py" line="100" />
+        <location filename="../gui/simulators/hubble_fit.py" line="101" />
         <source>Typical miss (RMS residual): &lt;b&gt;{rms} km/s&lt;/b&gt;&lt;br&gt;Hubble time for your slope: &lt;b&gt;{hubble_time} billion years&lt;/b&gt;</source>
         <translation>Desviación típica (residuo RMS): &lt;b&gt;{rms} km/s&lt;/b&gt;&lt;br&gt;Tiempo de Hubble para tu pendiente: &lt;b&gt;{hubble_time} miles de millones de años&lt;/b&gt;</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/hubble_fit.py" line="112" />
+        <location filename="../gui/simulators/hubble_fit.py" line="113" />
         <source>Hubble's value is about seven times larger than today's because his distances were too small. His Hubble time of {years} billion years was shorter than geologists' estimates of the age of the Earth, a real puzzle at the time.</source>
         <translation>El valor de Hubble es unas siete veces mayor que el de hoy porque sus distancias eran demasiado pequeñas. Su tiempo de Hubble de {years} miles de millones de años era más corto que las estimaciones geológicas de la edad de la Tierra, un verdadero enigma en su momento.</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/hubble_fit.py" line="116" />
+        <location filename="../gui/simulators/hubble_fit.py" line="117" />
         <source>Close to modern measurements (67–73 km/s/Mpc). The Hubble time is close to the true age of 13.8 billion years.</source>
         <translation>Cerca de las medidas modernas (67-73 km/s/Mpc). El tiempo de Hubble se acerca a la edad verdadera de 13 800 millones de años.</translation>
     </message>
     <message>
-        <location filename="../gui/simulators/hubble_fit.py" line="120" />
+        <location filename="../gui/simulators/hubble_fit.py" line="121" />
         <source>H0 = &lt;b&gt;{h0} ± {error} km/s/Mpc&lt;/b&gt;&lt;br&gt;Hubble time 1/H0 = &lt;b&gt;{hubble_time} billion years&lt;/b&gt;&lt;br&gt;Points: {points}&lt;br&gt;&lt;br&gt;{comment}</source>
         <translation>H0 = &lt;b&gt;{h0} ± {error} km/s/Mpc&lt;/b&gt;&lt;br&gt;Tiempo de Hubble 1/H0 = &lt;b&gt;{hubble_time} miles de millones de años&lt;/b&gt;&lt;br&gt;Puntos: {points}&lt;br&gt;&lt;br&gt;{comment}</translation>
     </message>
@@ -10219,7 +10224,7 @@ la distancia verdadera más lo que añada el movimiento propio de la galaxia. La
     </message>
     <message>
         <location filename="../gui/simulators/spectrum.py" line="161" />
-        <location filename="../gui/widgets/challenge_bar.py" line="64" />
+        <location filename="../gui/widgets/challenge_bar.py" line="66" />
         <source>Check my answer</source>
         <translation>Comprobar mi respuesta</translation>
     </message>
@@ -10666,76 +10671,83 @@ Juntos dan el volumen efectivo, $V_\mathrm{eff} = V\,[\bar nP/(1+\bar nP)]^2$, y
     </message>
     <message>
         <location filename="../gui/widgets/challenge_bar.py" line="46" />
+        <location filename="../gui/widgets/challenge_bar.py" line="47" />
         <source>Previous challenge</source>
         <translation>Reto anterior</translation>
     </message>
     <message>
-        <location filename="../gui/widgets/challenge_bar.py" line="51" />
+        <location filename="../gui/widgets/challenge_bar.py" line="52" />
+        <location filename="../gui/widgets/challenge_bar.py" line="53" />
         <source>Next challenge</source>
         <translation>Reto siguiente</translation>
     </message>
     <message>
-        <location filename="../gui/widgets/challenge_bar.py" line="67" />
+        <location filename="../gui/widgets/challenge_bar.py" line="69" />
         <source>Look at the current settings of the simulator and see whether they solve the challenge.</source>
         <translation>Mira los ajustes actuales del simulador y comprueba si resuelven el reto.</translation>
     </message>
     <message>
-        <location filename="../gui/widgets/challenge_bar.py" line="70" />
+        <location filename="../gui/widgets/challenge_bar.py" line="72" />
         <source>Show a hint</source>
         <translation>Mostrar una pista</translation>
     </message>
     <message>
-        <location filename="../gui/widgets/challenge_bar.py" line="101" />
+        <location filename="../gui/widgets/challenge_bar.py" line="103" />
         <source>Challenge {number} of {total}</source>
         <translation>Reto {number} de {total}</translation>
     </message>
     <message>
-        <location filename="../gui/widgets/challenge_bar.py" line="103" />
+        <location filename="../gui/widgets/challenge_bar.py" line="105" />
         <source>{solved} of {total} solved</source>
         <translation>{solved} de {total} resueltos</translation>
     </message>
     <message>
-        <location filename="../gui/widgets/challenge_bar.py" line="108" />
+        <location filename="../gui/widgets/challenge_bar.py" line="110" />
         <source>&lt;b&gt;Solved.&lt;/b&gt;</source>
         <translation>&lt;b&gt;Resuelto.&lt;/b&gt;</translation>
     </message>
     <message>
-        <location filename="../gui/widgets/challenge_bar.py" line="112" />
+        <location filename="../gui/widgets/challenge_bar.py" line="114" />
         <source>&lt;b&gt;Hint.&lt;/b&gt;</source>
         <translation>&lt;b&gt;Pista.&lt;/b&gt;</translation>
     </message>
     <message>
-        <location filename="../gui/widgets/challenge_bar.py" line="123" />
+        <location filename="../gui/widgets/challenge_bar.py" line="125" />
         <source>&lt;b&gt;Solved!&lt;/b&gt;</source>
         <translation>&lt;b&gt;¡Resuelto!&lt;/b&gt;</translation>
     </message>
     <message>
-        <location filename="../gui/widgets/challenge_bar.py" line="125" />
+        <location filename="../gui/widgets/challenge_bar.py" line="127" />
         <source>Use the arrows above for the next challenge.</source>
         <translation>Usa las flechas de arriba para el reto siguiente.</translation>
     </message>
     <message>
-        <location filename="../gui/widgets/challenge_bar.py" line="130" />
+        <location filename="../gui/widgets/challenge_bar.py" line="132" />
         <source>Look again at: {fields}.</source>
         <translation>Vuelve a mirar: {fields}.</translation>
     </message>
     <message>
-        <location filename="../gui/widgets/challenge_bar.py" line="131" />
+        <location filename="../gui/widgets/challenge_bar.py" line="133" />
         <source>&lt;b&gt;Not yet.&lt;/b&gt; The simulator is not in the state the challenge asks for.</source>
         <translation>&lt;b&gt;Todavía no.&lt;/b&gt; El simulador no está en el estado que pide el reto.</translation>
     </message>
     <message>
-        <location filename="../gui/widgets/common.py" line="315" />
+        <location filename="../gui/widgets/common.py" line="91" />
+        <source>About {title}</source>
+        <translation>Acerca de {title}</translation>
+    </message>
+    <message>
+        <location filename="../gui/widgets/common.py" line="366" />
         <source>Custom (your own values)</source>
         <translation>Personalizado (tus propios valores)</translation>
     </message>
     <message>
-        <location filename="../gui/widgets/common.py" line="316" />
+        <location filename="../gui/widgets/common.py" line="367" />
         <source>Values you set with the controls below.</source>
         <translation>Valores que fijas con los controles de abajo.</translation>
     </message>
     <message>
-        <location filename="../gui/widgets/common.py" line="322" />
+        <location filename="../gui/widgets/common.py" line="373" />
         <source>Load the parameters of a well-known cosmological model.</source>
         <translation>Carga los parámetros de un modelo cosmológico muy conocido.</translation>
     </message>
@@ -10802,21 +10814,22 @@ Juntos dan el volumen efectivo, $V_\mathrm{eff} = V\,[\bar nP/(1+\bar nP)]^2$, y
     </message>
     <message>
         <location filename="../gui/widgets/guide_panel.py" line="36" />
+        <location filename="../gui/widgets/guide_panel.py" line="37" />
         <source>Hide this definition</source>
         <translation>Ocultar esta definición</translation>
     </message>
     <message>
-        <location filename="../gui/widgets/guide_panel.py" line="47" />
+        <location filename="../gui/widgets/guide_panel.py" line="48" />
         <source>Open in Glossary</source>
         <translation>Abrir en el Glosario</translation>
     </message>
     <message>
-        <location filename="../gui/widgets/guide_panel.py" line="86" />
+        <location filename="../gui/widgets/guide_panel.py" line="87" />
         <source>See also:</source>
         <translation>Véase también:</translation>
     </message>
     <message>
-        <location filename="../gui/widgets/guide_panel.py" line="88" />
+        <location filename="../gui/widgets/guide_panel.py" line="89" />
         <source>Lessons:</source>
         <translation>Lecciones:</translation>
     </message>

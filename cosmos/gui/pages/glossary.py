@@ -15,7 +15,7 @@ from PySide6.QtWidgets import (
 
 from cosmos.gui import nav_icons
 from cosmos.gui.context import AppContext
-from cosmos.gui.widgets.common import muted_label, title_label
+from cosmos.gui.widgets.common import muted_label, placeholder, title_label
 from cosmos.gui.widgets.rich_browser import RichBrowser
 from cosmos.i18n import tr, tr_noop
 
@@ -46,7 +46,7 @@ class GlossaryPage(QWidget):
         body = QHBoxLayout()
         left = QVBoxLayout()
         self.search = QLineEdit()
-        self.search.setPlaceholderText(tr("Search terms…  (e.g. redshift, parsec, dark matter)"))
+        placeholder(self.search, tr("Search terms…  (e.g. redshift, parsec, dark matter)"))
         self.search.setClearButtonEnabled(True)
         self.search.textChanged.connect(self._filter)
         left.addWidget(self.search)
