@@ -4,7 +4,14 @@ All notable changes to Cosmos are recorded here. Versions follow
 [semantic versioning](https://semver.org): until 1.0 the interface and the save
 format may still change between releases.
 
-## Unreleased
+## 0.6.0 — 2026-09-26
+
+Everything in this release is about being able to trust what is on screen. The app
+could already teach the physics; it could not tell you where a number came from,
+how it was worked out, what that calculation leaves out, or how the engine behind
+it is checked. It can now answer all four, in the interface rather than in a
+document nobody using the app ever sees. The interface also lost its last emoji,
+and the widths it measures are finally the widths it draws.
 
 ### Added
 
@@ -120,6 +127,33 @@ format may still change between releases.
   lost a symbol kept the translated words beside it, so nothing fell back to
   English; the three sentences that named a symbol — "press ☆ in the Notes panel"
   and its kind — were reworded in all three languages.
+
+### Fixed
+
+- **A primary button measured one width and drew another.** `INTERFACE_FONT` names
+  Segoe UI on Windows and nothing anywhere else, so on Linux and macOS a widget
+  still gets whatever family Qt hands back — and that family may have no semibold
+  face of its own. Qt then synthesised the weight a primary button asked for, and a
+  synthesised weight measures differently from the one Qt sized the button with.
+  The segment buttons had this exact bug fixed in `D5`; the primary buttons kept
+  it. The accent background was always the emphasis, and the weight was only making
+  the width fragile.
+- **A layout failure now names a culprit.** "review needs 874px, has 819px" tells
+  you nothing you can act on, and when a width only misbehaves in a full test run
+  there is no other way to see what moved. The check lists the widgets asking for
+  the most room, which costs nothing while it is green.
+
+### Downloads
+
+| Platform | File |
+|---|---|
+| Windows | `Cosmos-0.6.0-windows-amd64.zip` — one executable, no installer |
+| macOS | `Cosmos-0.6.0-macos-arm64.zip` — an app bundle |
+| Linux | `Cosmos-0.6.0-linux-x86_64.AppImage` or the equivalent `.tar.gz` |
+| Any browser | `Cosmos-0.6.0-website.zip` — the reading edition: unzip and open `index.html` |
+
+Nothing needs to be installed: each package contains its own Python and Qt, and
+every build runs `--selftest` before it is published.
 
 ## 0.5.0 — 2026-09-25
 
