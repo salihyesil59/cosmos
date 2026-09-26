@@ -13,7 +13,7 @@ from PySide6.QtWidgets import (
     QWidget,
 )
 
-from cosmos.content.loader import load_challenges
+from cosmos.content.loader import load_challenges, load_formulas
 from cosmos.gui import nav_icons
 from cosmos.gui.context import AppContext
 from cosmos.gui.simulators.registry import GROUP_ORDER, SIMULATORS, SimulatorInfo
@@ -108,6 +108,15 @@ class SimulatorHostPage(QWidget):
         badge.setProperty("role", "badge")
         head.addWidget(badge)
         head.addStretch(1)
+        if info.method:
+            # V3: a learner reading a number off this page cannot tell a textbook
+            # formula from a fit, or an exact answer from one good to fifteen per
+            # cent. The button says which, without putting it in their way.
+            how = QPushButton(tr("How this is computed"))
+            how.setProperty("role", "link")
+            how.setToolTip(tr("The formulas behind this simulator, and what they leave out"))
+            how.clicked.connect(self._show_method)
+            head.addWidget(how)
         root.addLayout(head)
         heading = QHBoxLayout()
         heading.setSpacing(10)
@@ -129,10 +138,44 @@ class SimulatorHostPage(QWidget):
     def _challenge_solved(self, _key: str) -> None:
         self.ctx.signals.progressChanged.emit()
 
+    def _show_method(self) -> None:
+        """Open the Guide panel at the method, rather than a popup of its own.
+
+        The panel already renders formulas and links to the lessons that derive
+        them, and it is where the rest of this simulator's help lives.
+        """
+        self.ctx.signals.guideRequested.emit()
+
+    def method_markdown(self) -> list[str]:
+        """V3: the formulas behind this simulator, and what they leave out."""
+        method = self.info.method
+        if method is None:
+            return []
+        formulas = {f.id: f for f in load_formulas()}
+        # The note itself is formula-sheet material — it names equations and cites
+        # papers — so it stays in English like the formula sheet and the glossary.
+        # The headings around it are translated.
+        lines = ["", "### " + tr("How this is computed"), "", method.summary, ""]
+        for formula_id in method.formulas:
+            formula = formulas.get(formula_id)
+            if formula is None:
+                continue
+            lines += [f"**{formula.title}**", "", f"$${formula.formula}$$", ""]
+        if method.reference:
+            lines += [f"**{tr('Follows')}:** {method.reference}", ""]
+        if method.approximations:
+            lines += [tr("**What it leaves out**"), ""]
+            lines += [f"- {a}" for a in method.approximations]
+        lines += ["", tr("Every check the physics engine has to pass is listed under "
+                         "[Reference → Data & methods](reference:data)."), ""]
+        return lines
+
     def guide_markdown(self) -> str:
         info = self.info
         cur = self.ctx.curriculum
-        lines = [f"## {tr(info.title)}", "", tr(info.description), "", "### " + tr("How to use"), ""]
+        lines = [f"## {tr(info.title)}", "", tr(info.description), ""]
+        lines += self.method_markdown()
+        lines += ["### " + tr("How to use"), ""]
         lines += [f"{i}. {tr(step)}" for i, step in enumerate(info.how_to_use, 1)]
         lines += ["", "### " + tr("Things to try"), ""]
         lines += [f"- {tr(t)}" for t in info.things_to_try]

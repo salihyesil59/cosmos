@@ -157,6 +157,7 @@ class MainWindow(QMainWindow):
         ctx.signals.navigate.connect(self.navigate)
         # A highlighted term is only useful if the panel that explains it comes with it.
         ctx.signals.glossaryRequested.connect(lambda _term: self.show_panel(self.guide_dock))
+        ctx.signals.guideRequested.connect(lambda: self.show_panel(self.guide_dock))
         ctx.signals.progressChanged.connect(self._refresh_sidebar)
         ctx.signals.progressChanged.connect(self._update_review_action)
         ctx.signals.notesChanged.connect(self._refresh_notes)

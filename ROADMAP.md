@@ -283,7 +283,9 @@ is which at each plot. That promise is only as good as the record behind it, and
 until now the record lived in a README the learner never sees. Phase 6 brings it
 into the app and carries it out with the data: what came from where, what the app
 made up and how, and how the numbers are checked. ★ marks the ones worth doing
-first.
+first. With `V1` to `V5` done, the app can answer every question a careful
+reader has about a number on screen: where the data came from, how it was worked
+out, what that leaves out, and how the whole engine is checked.
 
 ### Transparency
 
@@ -293,7 +295,7 @@ first.
 - [x] ★ `V2` Provenance that travels: an exported plot carries a caption saying
   what it shows and whether it is real, and an exported CSV carries a header with
   the source, the model parameters and the app version
-- [ ] `V3` "How was this computed?" beside a simulator's result: the formula it
+- [x] `V3` "How was this computed?" beside a simulator's result: the formula it
   used, the reference it follows, and the approximations it makes
 - [x] `V4` The validation report inside the app: what each physics routine is
   checked against, and the size of the worst disagreement

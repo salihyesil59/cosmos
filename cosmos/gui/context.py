@@ -15,6 +15,7 @@ class AppSignals(QObject):
     navigate = Signal(str)          # route string, e.g. "lesson:L1.2"
     progressChanged = Signal()
     glossaryRequested = Signal(str)  # show a term in the Guide panel
+    guideRequested = Signal()        # V3: open the Guide panel at the page it already holds
     notesChanged = Signal()          # a note or bookmark was added, edited or removed
     achievementsUnlocked = Signal(list)  # ids of achievements earned just now
     statusMessage = Signal(str)     # a line for the status bar, from any page
