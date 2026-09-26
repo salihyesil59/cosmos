@@ -9,9 +9,10 @@ from collections.abc import Callable, Sequence
 
 from matplotlib.backends.backend_qtagg import FigureCanvasQTAgg
 from matplotlib.figure import Figure
-from PySide6.QtCore import Qt
+from PySide6.QtCore import QEvent, Qt
 from PySide6.QtWidgets import (
     QFileDialog,
+    QFrame,
     QHBoxLayout,
     QMessageBox,
     QPushButton,
@@ -20,7 +21,7 @@ from PySide6.QtWidgets import (
     QWidget,
 )
 
-from cosmos.gui.theme import style_axes, style_legend, theme
+from cosmos.gui.theme import repolish, style_axes, style_legend, theme
 from cosmos.i18n import tr
 
 # Qt sometimes paints a canvas before the docks have settled on their sizes. The figure is
@@ -60,10 +61,22 @@ class PlotWidget(QWidget):
         # that the axes stay readable.
         self.canvas.setMinimumHeight(180)
 
+        # A3: the focus ring G17 gave every other control cannot be drawn on the
+        # canvas, which paints its own pixels and would cover a stylesheet border.
+        # A frame around it can take the ring instead, and it reserves the two
+        # pixels whether or not they are showing so nothing shifts on focus.
+        self.canvas_frame = QFrame()
+        self.canvas_frame.setObjectName("plotFrame")
+        self.canvas_frame.setProperty("focused", "no")
+        frame_layout = QVBoxLayout(self.canvas_frame)
+        frame_layout.setContentsMargins(0, 0, 0, 0)
+        frame_layout.addWidget(self.canvas)
+        self.canvas.installEventFilter(self)
+
         layout = QVBoxLayout(self)
         layout.setContentsMargins(0, 0, 0, 0)
         layout.setSpacing(4)
-        layout.addWidget(self.canvas, 1)
+        layout.addWidget(self.canvas_frame, 1)
         if toolbar:
             bar = QHBoxLayout()
             bar.addStretch(1)
@@ -79,6 +92,13 @@ class PlotWidget(QWidget):
             layout.addLayout(bar)
         self._dirty = False
         theme().changed.connect(self._theme_changed)
+
+    def eventFilter(self, watched, event):  # noqa: N802 (Qt override)
+        """Show the focus ring on the frame when the canvas takes focus (A3)."""
+        if watched is self.canvas and event.type() in (QEvent.FocusIn, QEvent.FocusOut):
+            self.canvas_frame.setProperty("focused", "yes" if event.type() == QEvent.FocusIn else "no")
+            repolish(self.canvas_frame)
+        return super().eventFilter(watched, event)
 
     def _theme_changed(self, _palette) -> None:
         # Hidden plots are redrawn only when they become visible again.

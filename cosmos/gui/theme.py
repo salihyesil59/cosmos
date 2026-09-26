@@ -274,6 +274,10 @@ def _stylesheet(p: Palette, scale: float = 1.0) -> str:
     QScrollArea:focus {{
         border: 2px solid {focus};
     }}
+    /* A3: a plot canvas paints over any border of its own, so the frame around it
+       wears the focus ring. The transparent one keeps the layout from shifting. */
+    QFrame#plotFrame {{ border: 2px solid transparent; border-radius: 4px; }}
+    QFrame#plotFrame[focused="yes"] {{ border: 2px solid {focus}; }}
     """
 
 

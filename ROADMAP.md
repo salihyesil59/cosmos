@@ -325,8 +325,9 @@ doing first.
 - [x] ★ `A2` A plot a screen reader can read: a name and a description on every
   canvas, read off the finished figure so it says what the curve actually does
   and moves when the controls move
-- [ ] `A3` A keyboard-only path through every simulator, with a sensible tab
-  order, and a test that walks it
+- [x] `A3` A keyboard-only path through every simulator, with a sensible tab
+  order, and a test that walks it — which found the order already right, and the
+  focus ring missing from the one thing `A2` had just made focusable
 - [ ] `A4` The high-contrast theme checked against a contrast ratio rather than
   by eye
 
