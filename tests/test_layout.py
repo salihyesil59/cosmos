@@ -14,7 +14,7 @@ import pytest
 
 os.environ.setdefault("QT_QPA_PLATFORM", "offscreen")
 
-from PySide6.QtGui import QFontMetrics  # noqa: E402
+from PySide6.QtGui import QFontInfo, QFontMetrics  # noqa: E402
 from PySide6.QtWidgets import QAbstractScrollArea, QApplication  # noqa: E402
 
 
@@ -87,6 +87,26 @@ def test_every_page_fits_the_smallest_window(window):
     assert not sideways, "sideways scrolling nobody asked for: " + "; ".join(sideways)
 
 
+def test_the_measurements_are_of_the_font_the_app_draws(window):
+    """A width only means something if the text is the text the learner sees.
+
+    Left to Qt, every widget asks for the generic "Sans Serif" and gets whatever the
+    platform hands back. Headless, that was the first family in the font folder, a
+    serif with no semibold face, so every heading and primary button was drawn in a
+    synthetic bold whose width drifted with whatever else the run had loaded — and
+    these checks measured a window nobody has ever seen.
+    """
+    from cosmos.gui.theme import INTERFACE_FONT
+
+    if not INTERFACE_FONT:
+        pytest.skip("this platform uses whatever font Qt hands back")
+    font = QApplication.instance().font()
+    assert font.family() == INTERFACE_FONT, f"the interface asks for {font.family()}"
+    # What it asks for is not always what it gets: a missing family is quietly replaced.
+    assert QFontInfo(font).family() == INTERFACE_FONT, (
+        f"{INTERFACE_FONT} is not installed here; Qt drew {QFontInfo(font).family()} instead")
+
+
 def test_the_declared_minimum_size_is_honest(window):
     """The window must really work at the size it lets you shrink to."""
     shrink_to_minimum(window)
@@ -99,6 +119,23 @@ def test_the_declared_minimum_size_is_honest(window):
         f"the window says it works at {window.minimumWidth()}px wide but needs {needed.width()}px")
     assert needed.height() <= window.minimumHeight(), (
         f"the window says it works at {window.minimumHeight()}px tall but needs {needed.height()}px")
+
+
+def test_the_declared_minimum_holds_in_every_theme(window):
+    """All three palettes have to fit the same window, not just the one in use."""
+    from cosmos.gui.theme import THEME_ORDER, theme
+
+    shrink_to_minimum(window)
+    window.navigate("home")
+    pump()
+    for name in THEME_ORDER:
+        theme().set_theme(name)
+        pump()
+        needed = window.minimumSizeHint()
+        assert needed.width() <= window.minimumWidth(), (
+            f"in the {name} theme the window needs {needed.width()}px of {window.minimumWidth()}px")
+        assert needed.height() <= window.minimumHeight(), (
+            f"in the {name} theme the window needs {needed.height()}px of {window.minimumHeight()}px")
 
 
 def test_a_page_that_cannot_shrink_scrolls_instead(window):

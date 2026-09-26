@@ -7,7 +7,6 @@ import sys
 from pathlib import Path
 
 from PySide6.QtCore import QStandardPaths, QTimer
-from PySide6.QtGui import QFont
 from PySide6.QtWidgets import QApplication
 
 from cosmos import APP_NAME, __version__, i18n
@@ -121,10 +120,8 @@ def run(argv: list[str] | None = None) -> int:
     app.setOrganizationName(APP_NAME)
     app.setApplicationVersion(__version__)
     app.setWindowIcon(app_icon())
-    font = QFont("Segoe UI" if sys.platform == "win32" else app.font().family())
-    font.setPointSizeF(10)
-    app.setFont(font)
-
+    # The interface font is chosen with the rest of the theme, in create_window below,
+    # so that a packaged run, a --selftest and the tests all draw the same text.
     window = create_window(app)
     window.show()
     store = window.ctx.store
