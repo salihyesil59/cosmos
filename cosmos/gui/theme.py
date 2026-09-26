@@ -384,9 +384,84 @@ def repolish(widget) -> None:
     widget.style().polish(widget)
 
 
+#: Dash patterns handed out to curves that would otherwise be told apart by
+#: colour alone (A6). The first is solid, so a plot with one curve is unchanged
+#: and the busiest line on a crowded plot stays the easiest to read.
+#: The first four are matplotlib's named styles, which read back as themselves;
+#: a custom dash tuple reports as "--" whatever its pattern, so the named ones go
+#: first and the rest are only reached on a plot with five or more curves.
+DASHES = (
+    "-",                           # solid
+    "--",                          # dashed
+    ":",                           # dotted
+    "-.",                          # dash-dot
+    (0, (7, 2, 1.5, 2, 1.5, 2)),   # dash-dot-dot
+    (0, (11, 3)),                  # very long dash
+    (0, (3, 1, 1, 1)),             # tight dash-dot
+)
+
+
+def _style_key(line):
+    """What a curve looks like, dashes and all.
+
+    ``get_linestyle`` answers "--" for every custom dash pattern, so two curves
+    with quite different dashes compare equal by it alone.
+    """
+    return (line.get_linestyle(), tuple(getattr(line, "_unscaled_dash_pattern", (0, None))[1] or ()))
+
+
+def separate_by_style(ax) -> None:
+    """Give curves that share a line style distinct dashes (A6).
+
+    A legend of seven colours is a legend of one line to a reader who cannot
+    distinguish hue, and no palette can fix that: seven hues at a readable
+    contrast cannot also be seven lightnesses without becoming a single ramp.
+    Shape is the channel that is free.
+
+    Only labelled curves are touched, and only where two or more of them look
+    alike — a marker is already a second channel, and a line drawn dashed on
+    purpose keeps its dashes, since whoever chose them meant something by it. A
+    replacement is taken from the styles nothing else on the axes is using, so
+    fixing one clash cannot create another. An axes that wants to be left alone
+    says so with ``ax.set(gid="keep-styles")``.
+    """
+    if ax.get_gid() == "keep-styles":
+        return
+    curves = [line for line in ax.lines
+              if (label := line.get_label()) and not label.startswith("_")
+              and line.get_marker() in ("", "None", " ", None)
+              and len(line.get_ydata()) > 1]
+    if len(curves) < 2:
+        return
+
+    seen: dict = {}
+    clashing = []
+    for line in curves:
+        key = _style_key(line)
+        if key in seen:
+            clashing.append(line)          # the first of a look keeps it
+        else:
+            seen[key] = line
+    if not clashing:
+        return
+
+    # Try each style and read back what the line actually became, rather than
+    # predicting it: a named "--" picks up matplotlib's own dash lengths, so a
+    # guessed key does not match the one a line set to "--" really has, and the
+    # replacement collides with the curve it was supposed to differ from.
+    for line in clashing:
+        for dash in DASHES:
+            line.set_linestyle(dash)
+            key = _style_key(line)
+            if key not in seen:
+                seen[key] = line
+                break
+
+
 def style_axes(ax, palette: Palette | None = None) -> None:
     """Apply palette colours to a matplotlib Axes."""
     p = palette or theme().palette
+    separate_by_style(ax)
     ax.set_facecolor(p.surface)
     for spine in ax.spines.values():
         spine.set_color(p.border)
