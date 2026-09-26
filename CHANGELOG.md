@@ -18,6 +18,22 @@ format may still change between releases.
   app invents, each with the recipe and the module that runs it. Every entry links
   to the simulators and lesson figures that use it. Reachable from Help → Data &
   methods, or at the route `reference:data`.
+- **Every simulator now says how it works out its answer** (`V3`). Move a slider,
+  read a number — and until now there was no way to tell a textbook formula from a
+  fit, or an exact calculation from a teaching model good to fifteen per cent. A
+  **How this is computed** link beside each simulator opens the Guide at a note
+  answering the three questions a careful reader would ask: what is being
+  computed, whose method it follows, and what it leaves out. The formulas it names
+  are typeset from the formula sheet, so the equation is there rather than
+  described.
+- **All twenty-nine of them, and a test that keeps it that way** (`V3`). Every
+  simulator that ships has a note; every formula it cites has to exist on the
+  formula sheet; every note has to list what it leaves out, because all of them
+  approximate something. Twenty-four cite a paper — the five that do not are the
+  ones with no paper behind them, like the powers-of-ten zoom, which is
+  arithmetic. The note is formula-sheet material, so like the formula sheet and
+  the glossary it stays in English; the headings around it are translated.
+
 - **The engine's report card, with numbers instead of a claim** (`V4`). The Data
   & methods page used to say the physics was checked against astropy and against
   published values, which a reader had to take on trust. It now shows the table:

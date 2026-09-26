@@ -9,6 +9,23 @@ from cosmos.i18n import tr_noop
 
 
 @dataclass(frozen=True)
+class Method:
+    """How a simulator works out the number it shows (`V3`).
+
+    A learner who moves a slider and reads an answer has no way of telling a
+    textbook formula from a fit, or an exact calculation from a teaching
+    approximation that is good to fifteen per cent. The three fields are the
+    three things they would have to ask: what is being computed, whose method it
+    follows, and what it leaves out.
+    """
+
+    summary: str                       #: what is computed, in a sentence or two
+    formulas: tuple[str, ...] = ()     #: ids on the Reference page's formula sheet
+    reference: str = ""                #: the paper or textbook the method follows
+    approximations: tuple[str, ...] = ()   #: what it does not do, and where that shows
+
+
+@dataclass(frozen=True)
 class SimulatorInfo:
     id: str
     title: str
@@ -21,6 +38,7 @@ class SimulatorInfo:
     class_name: str
     icon: str = "◆"
     group: str = ""                 # which family it belongs to; "" for a plugin
+    method: Method | None = None    # V3; None only for a plugin nobody documented
     extra: dict = field(default_factory=dict)
 
     @property
@@ -48,6 +66,358 @@ PLUGINS = tr_noop("Added by you")
 
 # The order they appear in, from what you can see to how it is all worked out.
 GROUP_ORDER = (MEASURING, EXPANSION, MATTER, EARLY, METHOD, PLUGINS)
+
+# V3: how each simulator works out what it shows. This is formula-sheet material —
+# it cites papers and names equations — so like the formula sheet and the glossary
+# it stays in English; the headings around it are translated.
+METHODS: dict[str, Method] = {
+    "S1": Method(
+        summary="Everything on this page comes out of one integral. The expansion rate E(z) is fixed "
+                "by the density parameters; ages and light-travel times integrate dt = da / (a H), and "
+                "the comoving distance integrates c dz / H(z). The other distances follow from it by "
+                "factors of (1 + z), and the horizons are the same integral taken to the limits of what "
+                "can be seen.",
+        formulas=("expansion-rate", "comoving-distance", "luminosity-distance", "age", "lookback-time"),
+        reference="Hogg (1999), 'Distance measures in cosmology'",
+        approximations=(
+            "The integrals are evaluated numerically; the error is far smaller than the width of a "
+            "plotted line.",
+            "Neutrinos are massless here, which is what Neff = 3.046 describes.",
+        ),
+    ),
+    "S2": Method(
+        summary="The Friedmann equation is integrated forwards and backwards from today to give the "
+                "scale factor a(t) for the densities you choose. The Ωm–ΩΛ map is the same equation "
+                "asked a yes-or-no question at every point: did a ever reach zero in the past, and does "
+                "it turn around in the future?",
+        formulas=("friedmann-1", "expansion-rate", "cpl"),
+        reference="the standard FLRW treatment, as in Ryden, 'Introduction to Cosmology'",
+        approximations=(
+            "Radiation is included, but the curves begin close to the Big Bang rather than at it.",
+        ),
+    ),
+    "S3": Method(
+        summary="No cosmology here, only arithmetic. Every object is drawn at its measured size and the "
+                "view scales by a factor of ten at a time, so the picture is always to scale for the "
+                "field of view it is showing.",
+        formulas=("scientific-notation",),
+        approximations=(
+            "Sizes are representative of each kind of object rather than a catalogue of individual ones.",
+        ),
+    ),
+    "S4": Method(
+        summary="Each line is drawn at its rest wavelength multiplied by (1 + z). Which redshift is "
+                "meant depends on the source: something moving through space uses the relativistic "
+                "Doppler formula, while a cosmological redshift is the stretching of the wave by the "
+                "expansion itself, 1 + z = a(now) / a(then).",
+        formulas=("redshift-definition", "relativistic-doppler", "scale-factor-redshift"),
+        approximations=(
+            "Line strengths are drawn for legibility rather than computed from the physics of the atom.",
+        ),
+    ),
+    "S5": Method(
+        summary="The line is fitted by least squares with the intercept held at zero, because v = H0 d "
+                "has no constant term: H0 is the slope that minimises the sum of squared residuals. The "
+                "Hubble time is 1 / H0 in convenient units.",
+        formulas=("hubble-law", "hubble-time-estimate"),
+        reference="the fit Hubble published in 1929, done the same way",
+        approximations=(
+            "Every point carries the same weight; a real analysis weights by measurement error.",
+            "Peculiar velocities are not modelled, and they are most of the scatter nearby.",
+        ),
+    ),
+    "S6": Method(
+        summary="Each component contributes the circular speed its own mass would produce and they add "
+                "in quadrature, v² = v_bulge² + v_disc² + v_halo². The disc is exponential, the halo "
+                "follows the NFW profile, and the MOND curve drops the halo and modifies the force law "
+                "below an acceleration a0 instead.",
+        formulas=("rotation-curve", "disc-scale-length", "mond"),
+        reference="Navarro, Frenk & White (1997) for the halo; Milgrom (1983) for MOND",
+        approximations=(
+            "The galaxy is axisymmetric and the disc infinitely thin.",
+            "Fitting a halo to a measured galaxy here uses the rotation curve alone, where a published "
+            "fit also uses the light profile to constrain the stellar mass.",
+        ),
+    ),
+    "S7": Method(
+        summary="Every point keeps a fixed comoving coordinate, and the distance between any two is that "
+                "coordinate times the scale factor. The recession speed is the derivative of that "
+                "distance, v = H d, which is why it grows with separation and why no point is the centre.",
+        formulas=("proper-distance", "hubble-law"),
+        approximations=(
+            "The expansion is applied to everything on screen; galaxies inside a bound cluster do not "
+            "actually expand with it.",
+        ),
+    ),
+    "S8": Method(
+        summary="Triangles and circles are drawn on a surface of constant curvature, and their angle "
+                "sums and circumferences come from the exact spherical or hyperbolic formulas rather "
+                "than the flat ones. The curvature is Ωk = 1 − Ωm − ΩΛ.",
+        formulas=("density-parameter",),
+        approximations=(
+            "Two dimensions stand in for three: you are shown a sphere and a saddle where the universe "
+            "has a three-dimensional geometry.",
+        ),
+    ),
+    "S9": Method(
+        summary="Light cones are drawn by integrating the path of a light ray, dr = c dt / a(t), through "
+                "the same expansion history the calculator uses. The particle horizon is that integral "
+                "from the Big Bang to now; the event horizon is the same integral from now to infinity.",
+        formulas=("particle-horizon", "event-horizon", "comoving-distance"),
+        reference="Davis & Lineweaver (2004), 'Expanding confusion'",
+        approximations=(
+            "Only radial motion is drawn: two of the three space dimensions are suppressed.",
+        ),
+    ),
+    "S10": Method(
+        summary="The slider runs in the logarithm of cosmic time. Temperature follows the "
+                "time–temperature relation of a radiation-dominated universe, and each labelled event "
+                "sits at the time the corresponding physics gives it — decoupling from the "
+                "recombination calculation, nucleosynthesis from neutron freeze-out.",
+        formulas=("time-temperature", "temperature-scaling"),
+        reference="Kolb & Turner, 'The Early Universe'",
+        approximations=(
+            "The radiation-era relation is used across the early timeline; near matter–radiation "
+            "equality the true relation bends away from it.",
+        ),
+    ),
+    "S11": Method(
+        summary="A full calculation follows a network of nuclear reactions. This uses published fitting "
+                "formulas that reproduce such a calculation near the observed baryon density, extended "
+                "smoothly so that the classic Schramm plot can be explored over a much wider range of η.",
+        formulas=("neutron-proton", "helium-fraction", "baryon-photon"),
+        reference="Steigman (2007, 2012) fitting formulas",
+        approximations=(
+            "Away from the measured baryon density the curves extrapolate a fit rather than solve a "
+            "reaction network.",
+            "Helium depends on the neutron lifetime and the number of neutrino species, which are "
+            "sliders here rather than fixed inputs.",
+        ),
+    ),
+    "S12": Method(
+        summary="Peak positions are real physics: the sound horizon at last scattering divided by the "
+                "angular diameter distance to it. Peak heights come from the tight-coupling oscillator, "
+                "with baryon loading, radiation driving, a Doppler contribution, Silk damping and "
+                "reionisation.",
+        formulas=("sound-horizon", "cmb-peaks"),
+        reference="Hu & Sugiyama (1995), the tight-coupling approximation",
+        approximations=(
+            "Heights are good to roughly fifteen per cent: this is a teaching model, not a Boltzmann "
+            "code.",
+            "Installing the optional package camb replaces the whole model with exact spectra.",
+        ),
+    ),
+    "S13": Method(
+        summary="A particle-mesh simulation in two dimensions: a Gaussian random field is laid down with "
+                "the Zel'dovich approximation, the potential is solved on a grid with Fourier "
+                "transforms, and the particles are stepped forward in the linear growth factor of an "
+                "Einstein–de Sitter universe.",
+        formulas=("jeans", "growth"),
+        reference="the standard particle-mesh scheme, as in Hockney & Eastwood",
+        approximations=(
+            "Two dimensions rather than three, and at most 192 × 192 particles against the billions of "
+            "a research run.",
+            "Gravity is softened at the grid scale, so nothing smaller than a cell is resolved.",
+        ),
+    ),
+    "S14": Method(
+        summary="The lens equation β = θ − α(θ) is solved for two mass profiles, a point mass and a "
+                "singular isothermal sphere. Image positions are its solutions, and magnification is "
+                "the ratio of image area to source area.",
+        formulas=("einstein-radius",),
+        reference="Schneider, Ehlers & Falco, 'Gravitational Lenses'",
+        approximations=(
+            "Lenses are circularly symmetric, which puts the rich arcs of a real cluster out of reach.",
+            "Every angle is small, which is what allows the lens equation to be written this way.",
+        ),
+    ),
+    "S15": Method(
+        summary="In reduced Planck units the slow-roll parameters ε and η follow from the shape of the "
+                "potential, and the observables follow from them: n_s = 1 − 6ε + 2η and r = 16ε, "
+                "evaluated N e-folds before inflation ends.",
+        formulas=("slow-roll", "ns-r", "efolds", "inflation-energy-scale"),
+        reference="Planck 2018 X for the contours the predictions are compared with",
+        approximations=(
+            "Slow roll itself: the field is assumed to move slowly enough that its acceleration can be "
+            "dropped.",
+            "One field, with a canonical kinetic term.",
+        ),
+    ),
+    "S16": Method(
+        summary="For every pair (Ωm, ΩΛ) on a grid the predicted distance modulus is compared with the "
+                "data by χ². The best fit is the grid point with the smallest χ², the contours are the "
+                "usual Δχ² levels around it, and the absolute magnitude you choose sets H0.",
+        formulas=("distance-modulus", "luminosity-distance", "combined-likelihood"),
+        reference="the 1998 analyses of Riess et al. and Perlmutter et al., repeated",
+        approximations=(
+            "Errors are diagonal: the covariance of the published analysis is not bundled, so this is a "
+            "teaching fit rather than a repeat of the published cosmology.",
+            "Radiation is neglected, which matters nowhere in the supernova redshift range.",
+        ),
+    ),
+    "S17": Method(
+        summary="Stars are Poisson-drawn through the volume out to the drawing depth and painted in "
+                "order of distance, so nearer ones cover the ones behind. The brightness of the sky is "
+                "not read off the picture but computed: it saturates once the line of sight reaches a "
+                "mean free path, and expansion dims the distant sky by a redshift factor.",
+        formulas=("inverse-square",),
+        reference="the classic argument as set out in Harrison, 'Darkness at Night'",
+        approximations=(
+            "Stars are identical and uniformly spread; real ones are clustered and vary enormously in "
+            "luminosity.",
+        ),
+    ),
+    "S18": Method(
+        summary="Your parameters go to the same engine the rest of the app uses, and the report card "
+                "scores them against the measurements that constrain each one: the age of the oldest "
+                "stars, the peak positions of the microwave background, the light-element abundances, "
+                "the growth of structure.",
+        formulas=("friedmann-1", "density-parameter", "age"),
+        approximations=(
+            "Each test is applied on its own, and the real constraints are correlated — so a universe "
+            "that passes every line here is not necessarily one the data allow.",
+        ),
+    ),
+    "S19": Method(
+        summary="A Metropolis random walk samples the posterior: propose a step, compare the "
+                "likelihoods, accept or reject. The likelihood is the same χ² the supernova fitter "
+                "uses, and the contours are drawn from the sampled points rather than from a formula.",
+        formulas=("combined-likelihood", "effective-samples"),
+        reference="Metropolis et al. (1953); the diagnostics use the usual autocorrelation time",
+        approximations=(
+            "One walker with a Gaussian proposal: no ensemble sampler and no tuning beyond the step "
+            "size you set.",
+            "The chain is short enough to watch, which is short by research standards.",
+        ),
+    ),
+    "S20": Method(
+        summary="Three rungs, each with its own error, added in quadrature: parallaxes fix the zero "
+                "point of the Leavitt law, galaxies with both Cepheids and a supernova carry it "
+                "outward, and distant supernovae take it into the Hubble flow. The error budget shows "
+                "which rung is limiting H0.",
+        formulas=("distance-modulus", "quadrature", "systematic-floor"),
+        reference="the SH0ES programme, e.g. Riess et al. (2022)",
+        approximations=(
+            "The measurements are simulated, so the numbers show how the method behaves rather than "
+            "what the real ladder gives.",
+            "Systematics are one floor per rung rather than an itemised budget.",
+        ),
+    ),
+    "S21": Method(
+        summary="A Fisher forecast for the BAO scale. Two things set the error: the volume surveyed, "
+                "which fixes how many independent patches of the cosmic web you see, and the number "
+                "density, through the combination n̄P that decides whether shot noise or sample "
+                "variance dominates.",
+        formulas=("effective-volume", "systematic-floor"),
+        reference="Tegmark (1997); Seo & Eisenstein (2007) for the BAO forecast",
+        approximations=(
+            "A Fisher forecast assumes the likelihood is Gaussian near the best fit, which is "
+            "optimistic in the tails.",
+            "Only the BAO scale is forecast, not the full shape of the power spectrum.",
+        ),
+    ),
+    "S22": Method(
+        summary="General relativity fixes the amplitude of the wave a merging binary radiates, so the "
+                "strain measured on Earth gives the luminosity distance with no calibration behind it. "
+                "Add the redshift of the host galaxy and one event gives H0 = c z / D_L.",
+        formulas=("gw-chirp", "siren-strain", "hubble-law"),
+        reference="Schutz (1986); the GW170817 measurement, Abbott et al. (2017)",
+        approximations=(
+            "The waveform is leading post-Newtonian order.",
+            "The distance–inclination degeneracy is shown rather than marginalised over as a real "
+            "analysis would.",
+        ),
+    ),
+    "S23": Method(
+        summary="A lognormal mock: a Gaussian field with the linear ΛCDM power spectrum is "
+                "exponentiated into a density that is positive everywhere, galaxies are Poisson-sampled "
+                "from it, and the observer then applies redshift-space distortions, a flux limit and a "
+                "redshift error.",
+        formulas=("power-spectrum", "redshift-space-position", "covariance-from-mocks"),
+        reference="Coles & Jones (1991) for the lognormal field",
+        approximations=(
+            "A lognormal field is not the real non-linear one: it keeps the large-scale power and "
+            "roughly the right one-point distribution, and that is all.",
+            "Which is exactly why the real SDSS slice is put beside it.",
+        ),
+    ),
+    "S24": Method(
+        summary="Nothing here is modelled: it is the WMAP nine-year map. What the controls do is the "
+                "analysis — apply the team's mask, remove the monopole and dipole, smooth with a "
+                "Gaussian beam or keep only what is finer than it — and then measure the rms, the "
+                "correlation function and the distribution of the pixels.",
+        formulas=("cmb-peaks",),
+        reference="Bennett et al. (2013); the KQ85 mask as published",
+        approximations=(
+            "The map has been resampled from HEALPix onto a longitude–latitude grid, which costs a "
+            "little of the finest detail.",
+            "Statistics are computed on that grid rather than with spherical harmonics, so they are "
+            "indicative rather than the published numbers.",
+        ),
+    ),
+    "S25": Method(
+        summary="Two descriptions side by side. Saha equilibrium balances ionisation against "
+                "recombination at every instant; Peebles' three-level atom follows the rate equation "
+                "instead, with the bottleneck the Lyman-α photons create — and that is what puts last "
+                "scattering near z = 1090 rather than earlier.",
+        formulas=("saha", "saha-hydrogen"),
+        reference="Peebles (1968), checked against RECFAST",
+        approximations=(
+            "Hydrogen only: helium recombines earlier and is not followed.",
+            "The three-level atom is the classic simplification; a modern code tracks hundreds of "
+            "levels.",
+        ),
+    ),
+    "S26": Method(
+        summary="The same Friedmann equation, run forwards instead of backwards for as long as the dark "
+                "energy allows. If w < −1 the scale factor diverges at a finite time, and the countdown "
+                "is that time; otherwise the timeline carries on into the era of evaporating black "
+                "holes.",
+        formulas=("big-rip-time", "black-hole-evaporation", "hawking-temperature"),
+        reference="Caldwell, Kamionkowski & Weinberg (2003) for the Rip; Adams & Laughlin (1997) for "
+                  "the long timeline",
+        approximations=(
+            "Past about 10^40 years the physics is speculative, and the timeline says so where it is.",
+        ),
+    ),
+    "S27": Method(
+        summary="The linear density field is smoothed over a sphere holding mass M to give σ(M, z); a "
+                "region collapses once its linear overdensity passes δc ≈ 1.686, so the abundance of "
+                "haloes is the rarity of such peaks. Press–Schechter and its calibrated successors turn "
+                "that into a number per unit volume.",
+        formulas=("halo-mass-function", "sigma8", "virial", "virial-temperature"),
+        reference="Press & Schechter (1974); Sheth & Tormen (1999)",
+        approximations=(
+            "A fitting function calibrated on simulations, not a simulation.",
+            "Haloes are spherical and their collapse instantaneous.",
+        ),
+    ),
+    "S28": Method(
+        summary="The brightness temperature of the 21-cm line seen against the microwave background "
+                "depends on how much hydrogen is still neutral and on the spin temperature — a weighted "
+                "mean of the CMB, gas and Lyman-α colour temperatures — so the depth of the trough "
+                "traces when the first stars turned on.",
+        formulas=("brightness-temperature-21cm",),
+        reference="Pritchard & Loeb (2012); the EDGES claim, Bowman et al. (2018)",
+        approximations=(
+            "The sky average only: no fluctuations and no maps.",
+            "Star formation and heating are parameterised rather than simulated.",
+        ),
+    ),
+    "S29": Method(
+        summary="The recoil spectrum follows from four things: the local dark matter density, the "
+                "Standard Halo Model velocity distribution, the kinematics of a WIMP bouncing off a "
+                "nucleus, and the nuclear form factor. An exclusion curve is drawn where the expected "
+                "count would have exceeded what the experiment saw.",
+        formulas=("recoil-energy", "wimp-relic"),
+        reference="Lewin & Smith (1996) for the rate, with the Helm form factor",
+        approximations=(
+            "The Standard Halo Model is a smooth Maxwellian; the real halo has structure in it.",
+            "Spin-independent scattering only, with a simple threshold and efficiency for the detector.",
+        ),
+    ),
+}
+
 
 SIMULATORS: dict[str, SimulatorInfo] = {
     s.id: s
@@ -78,6 +448,7 @@ SIMULATORS: dict[str, SimulatorInfo] = {
             class_name="CalculatorSimulator",
             icon="∑",
             group=EXPANSION,
+            method=METHODS["S1"],
         ),
         SimulatorInfo(
             id="S2",
@@ -104,6 +475,7 @@ SIMULATORS: dict[str, SimulatorInfo] = {
             class_name="ExpansionSimulator",
             icon="⤴",
             group=EXPANSION,
+            method=METHODS["S2"],
         ),
         SimulatorInfo(
             id="S3",
@@ -129,6 +501,7 @@ SIMULATORS: dict[str, SimulatorInfo] = {
             class_name="PowersOfTenSimulator",
             icon="⊙",
             group=MEASURING,
+            method=METHODS["S3"],
         ),
         SimulatorInfo(
             id="S4",
@@ -156,6 +529,7 @@ SIMULATORS: dict[str, SimulatorInfo] = {
             class_name="SpectrumSimulator",
             icon="≋",
             group=MEASURING,
+            method=METHODS["S4"],
         ),
         SimulatorInfo(
             id="S5",
@@ -181,6 +555,7 @@ SIMULATORS: dict[str, SimulatorInfo] = {
             class_name="HubbleFitSimulator",
             icon="⟋",
             group=MEASURING,
+            method=METHODS["S5"],
         ),
         SimulatorInfo(
             id="S6",
@@ -211,6 +586,7 @@ SIMULATORS: dict[str, SimulatorInfo] = {
             class_name="RotationCurveSimulator",
             icon="◎",
             group=MATTER,
+            method=METHODS["S6"],
         ),
         SimulatorInfo(
             id="S7",
@@ -237,6 +613,7 @@ SIMULATORS: dict[str, SimulatorInfo] = {
             class_name="BalloonSimulator",
             icon="◌",
             group=EXPANSION,
+            method=METHODS["S7"],
         ),
         SimulatorInfo(
             id="S12",
@@ -264,6 +641,7 @@ SIMULATORS: dict[str, SimulatorInfo] = {
             class_name="CMBSpectrumSimulator",
             icon="∿",
             group=EARLY,
+            method=METHODS["S12"],
         ),
         SimulatorInfo(
             id="S13",
@@ -292,6 +670,7 @@ SIMULATORS: dict[str, SimulatorInfo] = {
             class_name="NBodySimulator",
             icon="⁂",
             group=MATTER,
+            method=METHODS["S13"],
         ),
         SimulatorInfo(
             id="S14",
@@ -320,6 +699,7 @@ SIMULATORS: dict[str, SimulatorInfo] = {
             class_name="LensingSimulator",
             icon="⊚",
             group=MATTER,
+            method=METHODS["S14"],
         ),
         SimulatorInfo(
             id="S8",
@@ -348,6 +728,7 @@ SIMULATORS: dict[str, SimulatorInfo] = {
             class_name="CurvatureSimulator",
             icon="△",
             group=EXPANSION,
+            method=METHODS["S8"],
         ),
         SimulatorInfo(
             id="S9",
@@ -376,6 +757,7 @@ SIMULATORS: dict[str, SimulatorInfo] = {
             class_name="SpacetimeSimulator",
             icon="⧖",
             group=EXPANSION,
+            method=METHODS["S9"],
         ),
         SimulatorInfo(
             id="S15",
@@ -403,6 +785,7 @@ SIMULATORS: dict[str, SimulatorInfo] = {
             class_name="InflationSimulator",
             icon="⥥",
             group=EARLY,
+            method=METHODS["S15"],
         ),
         SimulatorInfo(
             id="S16",
@@ -434,6 +817,7 @@ SIMULATORS: dict[str, SimulatorInfo] = {
             class_name="SupernovaSimulator",
             icon="✶",
             group=MEASURING,
+            method=METHODS["S16"],
         ),
         SimulatorInfo(
             id="S18",
@@ -460,6 +844,7 @@ SIMULATORS: dict[str, SimulatorInfo] = {
             class_name="SandboxSimulator",
             icon="✦",
             group=EXPANSION,
+            method=METHODS["S18"],
         ),
         SimulatorInfo(
             id="S10",
@@ -489,6 +874,7 @@ SIMULATORS: dict[str, SimulatorInfo] = {
             class_name="CosmicTimelineSimulator",
             icon="⧗",
             group=EARLY,
+            method=METHODS["S10"],
         ),
         SimulatorInfo(
             id="S11",
@@ -521,6 +907,7 @@ SIMULATORS: dict[str, SimulatorInfo] = {
             class_name="BBNExplorerSimulator",
             icon="⊕",
             group=EARLY,
+            method=METHODS["S11"],
         ),
         SimulatorInfo(
             id="S17",
@@ -548,6 +935,7 @@ SIMULATORS: dict[str, SimulatorInfo] = {
             class_name="OlbersSimulator",
             icon="✧",
             group=EXPANSION,
+            method=METHODS["S17"],
         ),
         SimulatorInfo(
             id="S19",
@@ -576,6 +964,7 @@ SIMULATORS: dict[str, SimulatorInfo] = {
             class_name="MCMCSimulator",
             icon="⇌",
             group=METHOD,
+            method=METHODS["S19"],
         ),
         SimulatorInfo(
             id="S20",
@@ -607,6 +996,7 @@ SIMULATORS: dict[str, SimulatorInfo] = {
             class_name="LadderSimulator",
             icon="≣",
             group=MEASURING,
+            method=METHODS["S20"],
         ),
         SimulatorInfo(
             id="S21",
@@ -637,6 +1027,7 @@ SIMULATORS: dict[str, SimulatorInfo] = {
             class_name="SurveySimulator",
             icon="▦",
             group=METHOD,
+            method=METHODS["S21"],
         ),
         SimulatorInfo(
             id="S22",
@@ -672,6 +1063,7 @@ SIMULATORS: dict[str, SimulatorInfo] = {
             class_name="SirenSimulator",
             icon="〰",
             group=MEASURING,
+            method=METHODS["S22"],
         ),
         SimulatorInfo(
             id="S23",
@@ -706,6 +1098,7 @@ SIMULATORS: dict[str, SimulatorInfo] = {
             class_name="SliceSimulator",
             icon="◔",
             group=METHOD,
+            method=METHODS["S23"],
         ),
         SimulatorInfo(
             id="S24",
@@ -739,6 +1132,7 @@ SIMULATORS: dict[str, SimulatorInfo] = {
             class_name="SkySimulator",
             icon="⊛",
             group=EARLY,
+            method=METHODS["S24"],
         ),
         SimulatorInfo(
             id="S25",
@@ -772,6 +1166,7 @@ SIMULATORS: dict[str, SimulatorInfo] = {
             class_name="RecombinationSimulator",
             icon="◍",
             group=EARLY,
+            method=METHODS["S25"],
         ),
         SimulatorInfo(
             id="S26",
@@ -805,6 +1200,7 @@ SIMULATORS: dict[str, SimulatorInfo] = {
             class_name="FutureSimulator",
             icon="⇢",
             group=EXPANSION,
+            method=METHODS["S26"],
         ),
         SimulatorInfo(
             id="S27",
@@ -838,6 +1234,7 @@ SIMULATORS: dict[str, SimulatorInfo] = {
             class_name="HaloSimulator",
             icon="⬤",
             group=MATTER,
+            method=METHODS["S27"],
         ),
         SimulatorInfo(
             id="S28",
@@ -872,6 +1269,7 @@ SIMULATORS: dict[str, SimulatorInfo] = {
             class_name="Global21Simulator",
             icon="⇣",
             group=EARLY,
+            method=METHODS["S28"],
         ),
         SimulatorInfo(
             id="S29",
@@ -908,6 +1306,7 @@ SIMULATORS: dict[str, SimulatorInfo] = {
             class_name="DetectionSimulator",
             icon="⊗",
             group=MATTER,
+            method=METHODS["S29"],
         ),
     ]
 }
