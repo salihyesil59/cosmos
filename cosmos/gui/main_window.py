@@ -153,6 +153,7 @@ class MainWindow(QMainWindow):
         # The status bar stays quiet until something happens: it still shows what a
         # control does while the pointer is over it.
         self.statusBar().clearMessage()
+        self._report_save_file_trouble()
 
         ctx.signals.navigate.connect(self.navigate)
         # A highlighted term is only useful if the panel that explains it comes with it.
@@ -884,6 +885,22 @@ class MainWindow(QMainWindow):
         self.bookmark_action.setText(tr("Bookmarked") if marked else tr("Bookmark"))
         self.bookmark_action.setIcon(nav_icons.icon("bookmarked" if marked else "bookmark"))
         self.bookmark_action.setEnabled(bool(self.notes.route))
+
+    def _report_save_file_trouble(self) -> None:
+        """Say so if the save file could not be read in full (`R1`).
+
+        Quietly carrying on would mean somebody's settings or progress vanish
+        with no explanation, and they would reasonably think the app lost them.
+        """
+        store = self.ctx.store
+        if store.damaged_copy is not None:
+            self.statusBar().showMessage(
+                tr("Your progress file could not be read. A copy of it was kept as {name} "
+                   "and Cosmos started fresh.").format(name=store.damaged_copy.name), 20000)
+        elif store.dropped:
+            self.statusBar().showMessage(
+                tr("Part of your progress file could not be read and was left out: {fields}")
+                .format(fields=", ".join(store.dropped)), 20000)
 
     def check_achievements(self) -> list[str]:
         """Record anything the learner has just earned and celebrate it."""

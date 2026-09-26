@@ -5,7 +5,7 @@ from __future__ import annotations
 import enum
 import json
 import os
-from dataclasses import asdict, dataclass, field
+from dataclasses import MISSING, asdict, dataclass, field
 from datetime import date, datetime
 from pathlib import Path
 
@@ -57,8 +57,50 @@ class UserData:
 
     @classmethod
     def from_dict(cls, data: dict) -> UserData:
-        known = {k: v for k, v in data.items() if k in cls.__dataclass_fields__}
-        return cls(**known)
+        return cls.read(data)[0]
+
+    @classmethod
+    def read(cls, data: dict) -> tuple[UserData, list[str]]:
+        """Build from a dictionary, dropping anything of the wrong shape (`R1`).
+
+        A field whose value is the wrong type used to be handed straight to the
+        app, so a `completed` that had become a list took the whole thing down on
+        start-up with an AttributeError — a save file written half way through,
+        or restored from a version that spelled something differently, and the
+        app would not open at all. Losing one setting is a far smaller thing.
+
+        The expected type comes from each field's own default rather than from
+        its annotation, which is a string here and would have to be parsed.
+        """
+        if not isinstance(data, dict):
+            return cls(), ["the file did not contain a record at all"]
+        kept, dropped = {}, []
+        for name, field_def in cls.__dataclass_fields__.items():
+            if name not in data:
+                continue
+            value = data[name]
+            if _fits(value, field_def):
+                kept[name] = value
+            else:
+                dropped.append(name)
+        return cls(**kept), dropped
+
+
+def _expected_type(field_def) -> type:
+    """What this field holds, judged by what it holds when nothing is saved."""
+    if field_def.default is not MISSING:
+        return type(field_def.default)
+    return type(field_def.default_factory())
+
+
+def _fits(value, field_def) -> bool:
+    wanted = _expected_type(field_def)
+    if wanted is float:
+        # A whole number in JSON comes back as int, and 1 is a fine font scale.
+        return isinstance(value, (int, float)) and not isinstance(value, bool)
+    if wanted is int:
+        return isinstance(value, int) and not isinstance(value, bool)
+    return isinstance(value, wanted)
 
 
 BACKUP_APP = "Cosmos"
@@ -88,13 +130,38 @@ class ProgressStore:
 
     def __init__(self, path: Path):
         self.path = Path(path)
+        #: Fields the file held that could not be used, and whether the file
+        #: itself was unreadable. The window says so in the status bar (`R1`).
+        self.dropped: list[str] = []
+        self.damaged_copy: Path | None = None
         self.data = self._load()
 
     def _load(self) -> UserData:
         try:
-            return UserData.from_dict(json.loads(self.path.read_text(encoding="utf-8")))
-        except (OSError, ValueError, TypeError):
+            text = self.path.read_text(encoding="utf-8")
+        except OSError:
+            return UserData()                 # no file yet: a first run
+        try:
+            raw = json.loads(text)
+        except ValueError:
+            self.damaged_copy = self._keep_damaged(text)
             return UserData()
+        data, self.dropped = UserData.read(raw)
+        return data
+
+    def _keep_damaged(self, text: str) -> Path | None:
+        """Put an unreadable file aside instead of writing over it.
+
+        Whatever is in there is the only copy of somebody's progress, and the
+        next save would destroy it. It may well be readable by a person, or by us
+        with a bug report in hand.
+        """
+        spare = self.path.with_name(self.path.stem + ".damaged.json")
+        try:
+            spare.write_text(text, encoding="utf-8")
+        except OSError:
+            return None
+        return spare
 
     def save(self) -> None:
         self.path.parent.mkdir(parents=True, exist_ok=True)

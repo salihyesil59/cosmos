@@ -331,14 +331,44 @@ doing first.
 - [x] `A4` The high-contrast theme checked against a contrast ratio rather than
   by eye — which found it comfortably clear, and found three colours in the
   *light* theme that were not
-- [ ] `A6` Tell the lines on a plot apart by more than their colour. `A4` set out
+- [x] `A6` Tell the lines on a plot apart by more than their colour. `A4` set out
   to require that no two series share a lightness, so that a reader who cannot
   distinguish hue could still separate them, and every theme failed — as would
-  every categorical palette ever published. The answer is line style and markers,
-  used in some figures and not others, not a palette bent around a rule
+  every categorical palette ever published. The answer was line style, given out
+  after the figure is drawn rather than written into 41 plots by hand
 
 ### Quality
 
 - [x] `A5` The Reference page takes 2.6 seconds to open the first time, which is
   the formula sheet, the constants and every preset's age all computed before
   anything is shown. Nobody should wait that long for a page that is mostly text
+
+---
+
+## Phase 8 — Holding up
+
+Phases 6 and 7 made the app honest and made it reachable. This one is about what
+happens when something is wrong: a save file that was written badly, a page that
+makes you wait four seconds, a reading edition that has fallen behind the app it
+was exported from. Each item here started as a measurement, and the first one
+started as a crash. ★ marks the ones worth doing first.
+
+### Holding up
+
+- [x] ★ `R1` A save file the app can survive. A `progress.json` with a value of
+  the wrong type — a list where a dictionary belongs, which a half-written file
+  or a backup from another version can produce — takes the whole app down on
+  start-up with an `AttributeError`. It should keep what it can read, say what it
+  discarded, and open
+- [ ] ★ `R2` No page that makes you wait. `A5` fixed the Reference page; the same
+  measurement across the app says 28 of 44 pages take longer than 0.2 seconds to
+  open and two take nearly four — the CMB Sky Viewer at 3.9s and the Redshift
+  Survey Slice at 3.5s, both of them loading or generating before they draw
+  anything
+- [ ] `R3` The reading edition carries what the app carries. The static site that
+  ships with every release has none of Phase 6 in it: no Data & methods page, no
+  method note on a simulator, no provenance under a figure
+- [ ] `R4` A crash should leave a trail. If something does go wrong there is
+  nowhere for a report to come from: no log, and no way for somebody to tell us
+  what they were doing when it happened
+

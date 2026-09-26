@@ -4,6 +4,41 @@ All notable changes to Cosmos are recorded here. Versions follow
 [semantic versioning](https://semver.org): until 1.0 the interface and the save
 format may still change between releases.
 
+## Unreleased
+
+### Added
+
+### Fixed
+
+- **A badly written save file no longer stops the app opening** (`R1`). A
+  `progress.json` holding a value of the wrong type — a list where a dictionary
+  belongs, which a save interrupted half way through or a file from a version that
+  spelled something differently can produce — took the whole app down on start-up
+  with an `AttributeError`. It now keeps every field it can read, leaves out the
+  ones it cannot, and says in the status bar which those were: losing one setting
+  is a far smaller thing than losing the app.
+- **An unreadable file is kept rather than written over** (`R1`). When the JSON
+  cannot be parsed at all, the old behaviour was to start fresh and overwrite it
+  at the next save, destroying the only copy of somebody's progress. It is now put
+  aside as `progress.damaged.json`, which the status bar names.
+
+### Added
+
+- **No plot asks you to tell its lines apart by colour any more** (`A6`). Counted
+  rather than guessed, 24 of the 67 lesson figures and 17 simulator plots drew two
+  or more curves in the same solid line and left the colour to do the work, which
+  is a legend of one line to a reader who cannot distinguish hue. `A4` had already
+  established that no palette can fix this — seven hues at a readable contrast
+  cannot also be seven lightnesses without becoming a single ramp — so shape is
+  the channel that is free.
+- **The dashes are handed out after the figure is drawn** (`A6`), in the pass that
+  already themes every axes, so all 41 plots were covered at once instead of being
+  edited one at a time. Only labelled curves are touched, and only where two look
+  alike: a marker is already a second channel, and a line drawn dashed on purpose
+  keeps its dashes, because whoever chose them meant something by it. An axes can
+  opt out. The first curve stays solid, so the busiest line on a crowded plot
+  remains the easiest to read.
+
 ## 0.7.0 — 2026-09-26
 
 This release is for the people who could not use the app. A screen reader met 577
