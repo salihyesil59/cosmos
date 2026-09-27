@@ -115,6 +115,12 @@ def run(argv: list[str] | None = None) -> int:
         report = args[index + 1] if len(args) > index + 1 else None
         return selftest(report)
 
+    # R4: open the log before anything that can fail, so that a start-up which
+    # never reaches a window still leaves something to read.
+    from cosmos import logbook
+
+    logbook.start(data_path())
+
     app = QApplication(argv if argv is not None else sys.argv)
     app.setApplicationName(APP_NAME)
     app.setOrganizationName(APP_NAME)
@@ -123,6 +129,7 @@ def run(argv: list[str] | None = None) -> int:
     # The interface font is chosen with the rest of the theme, in create_window below,
     # so that a packaged run, a --selftest and the tests all draw the same text.
     window = create_window(app)
+    logbook.install_crash_handler(window.report_crash)
     window.show()
     store = window.ctx.store
     last = store.data.last_route or "home"

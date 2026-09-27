@@ -368,7 +368,7 @@ started as a crash. ★ marks the ones worth doing first.
 - [x] `R3` The reading edition carries what the app carries. The static site that
   ships with every release has none of Phase 6 in it: no Data & methods page, no
   method note on a simulator, no provenance under a figure
-- [ ] `R4` A crash should leave a trail. If something does go wrong there is
+- [x] `R4` A crash should leave a trail. If something does go wrong there is
   nowhere for a report to come from: no log, and no way for somebody to tell us
   what they were doing when it happened
 

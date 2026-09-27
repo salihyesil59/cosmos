@@ -10,6 +10,25 @@ format may still change between releases.
 
 ### Fixed
 
+- **A failure now leaves something to read** (`R4`). Nothing was written down
+  anywhere. When `R1` found a save file that stopped the app opening, the only
+  evidence was a traceback on standard error, which a packaged build on Windows
+  does not even show — "it did not open" was the whole report anybody could make.
+  There is now a `cosmos.log` beside the progress file, opened before anything
+  that can fail, and an unhandled error is written to it with its traceback before
+  the app goes down. A dialog then says what happened and where the log is.
+- **The log holds nothing the learner wrote** (`R4`). Not a note, not an answer,
+  not a search: the app has never uploaded anything and this does not begin. What
+  goes in is the version, the Python and platform needed to read a traceback, and
+  the failures themselves. The dialog says in as many words that nothing has been
+  sent anywhere, and a test asserts a saved note never reaches the file.
+- **Logging never becomes the thing that breaks** (`R4`). A log that cannot be
+  opened is given up on rather than raised, recording before one is open does
+  nothing, the file is trimmed when it outgrows what anybody would read, and
+  Ctrl-C and a clean exit pass through untouched instead of being reported as
+  crashes. The failure is written down before anybody is told about it, so a
+  dialog that fails in its turn cannot lose the evidence.
+
 - **The reading edition carries what the app carries** (`R3`). The static site
   ships with every release and had none of Phase 6 in it: no record of where a
   measurement came from, no validation table, no method note on a simulator.

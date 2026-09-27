@@ -886,6 +886,24 @@ class MainWindow(QMainWindow):
         self.bookmark_action.setIcon(nav_icons.icon("bookmarked" if marked else "bookmark"))
         self.bookmark_action.setEnabled(bool(self.notes.route))
 
+    def report_crash(self, error: BaseException) -> None:
+        """Tell somebody the app hit a problem, and where the trail is (`R4`).
+
+        Shown after the failure has already been written down, so that closing
+        this dialog -- or it never appearing at all -- cannot lose the evidence.
+        """
+        from cosmos import logbook
+
+        where = logbook.current()
+        box = QMessageBox(QMessageBox.Critical, tr("Cosmos hit a problem"),
+                          tr("Something went wrong: {error}").format(error=error), parent=self)
+        if where is not None:
+            box.setInformativeText(
+                tr("What happened was written to {path}. Nothing has been sent anywhere.")
+                .format(path=where))
+        box.setDetailedText(logbook.read())
+        box.exec()
+
     def _report_save_file_trouble(self) -> None:
         """Say so if the save file could not be read in full (`R1`).
 
