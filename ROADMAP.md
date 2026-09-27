@@ -365,7 +365,7 @@ started as a crash. ★ marks the ones worth doing first.
   open and two take nearly four — the CMB Sky Viewer at 3.9s and the Redshift
   Survey Slice at 3.5s, both of them loading or generating before they draw
   anything
-- [ ] `R3` The reading edition carries what the app carries. The static site that
+- [x] `R3` The reading edition carries what the app carries. The static site that
   ships with every release has none of Phase 6 in it: no Data & methods page, no
   method note on a simulator, no provenance under a figure
 - [ ] `R4` A crash should leave a trail. If something does go wrong there is

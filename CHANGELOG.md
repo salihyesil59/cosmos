@@ -10,6 +10,20 @@ format may still change between releases.
 
 ### Fixed
 
+- **The reading edition carries what the app carries** (`R3`). The static site
+  ships with every release and had none of Phase 6 in it: no record of where a
+  measurement came from, no validation table, no method note on a simulator.
+  Somebody reading it in a browser got a quietly less honest version of the same
+  course. It now has a **Data & methods** page of its own, in the navigation
+  beside the rest, and all 29 simulators carry the note saying what is computed,
+  whose method it follows and what it leaves out — with the equations typeset
+  rather than named.
+- **One source for that text, not two** (`R3`). Copying the prose into the site
+  would have started the two drifting apart the day it was written, so both render
+  `cosmos.gui.rendering.data_methods`; the only difference is how a link to a
+  simulator is spelled, which each passes in. A test strips the links and asserts
+  the words are identical.
+
 - **The slowest pages open three to four times faster** (`R2`). `A5` fixed the
   Reference page; measuring the rest found 28 of 44 pages taking longer than a
   fifth of a second and two taking nearly four. The CMB Sky Viewer is down from

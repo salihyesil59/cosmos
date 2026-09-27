@@ -49,11 +49,11 @@ def test_every_page_is_there(site):
     out, report, _pages = site
     curriculum = load_curriculum()
     for name in ("index.html", "glossary.html", "formulas.html", "problems.html", "simulators.html",
-                 "assets/site.css", "assets/site.js"):
+                 "data.html", "assets/site.css", "assets/site.js"):
         assert (out / name).exists(), name
     lessons = sorted(p.name for p in (out / "lessons").glob("*.html"))
     assert len(lessons) == len(curriculum.lessons)
-    assert len(report.pages) == len(curriculum.lessons) + 5
+    assert len(report.pages) == len(curriculum.lessons) + 6      # R3 added data.html
     assert report.images > 100
 
 
@@ -72,10 +72,19 @@ def test_every_link_and_image_resolves(site):
 
 
 def test_nothing_is_fetched_from_the_internet(site):
+    """The site must render with no network at all.
+
+    That is about what the page *loads*: images, stylesheets, scripts. A link the
+    reader can choose to follow fetches nothing, and R3's Data & methods page is
+    largely citations — the DOI of Hubble 1929, the SPARC archive, NASA LAMBDA.
+    A citation you cannot follow is worth much less than one you can, so ordinary
+    links may point outwards while everything the page pulls in may not.
+    """
     out, _report, _pages = site
     for path in out.rglob("*.html"):
         text = path.read_text(encoding="utf-8")
-        assert not re.search(r'(src|href)="(https?:)?//(?!github\.com/salihyesil59)', text), path.name
+        assert not re.search(r'src="(https?:)?//', text), f"{path.name} loads something remote"
+        assert not re.search(r'<link[^>]+href="(https?:)?//', text), f"{path.name} links a remote asset"
         assert "CSMTOKEN" not in text and "$$" not in text and ":::" not in text, path.name
 
 

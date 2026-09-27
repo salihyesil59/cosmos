@@ -116,7 +116,8 @@ class SiteBuilder:
         prefix = "../" * depth
         nav = [("index.html", "Course", "course"), ("glossary.html", "Glossary", "glossary"),
                ("formulas.html", "Formulas", "formulas"), ("problems.html", "Problems", "problems"),
-               ("simulators.html", "Simulators", "simulators")]
+               ("simulators.html", "Simulators", "simulators"),
+               ("data.html", "Data &amp; methods", "data")]
         current = ' aria-current="page"'
         links = "".join(f'<a href="{prefix}{href}"{current if key == section else ""}>{label}</a>'
                         for href, label, key in nav)
@@ -166,6 +167,7 @@ the observational data belong to the teams who measured it.</p>
         self.formulas_page()
         self.problems_page()
         self.simulators_page()
+        self.data_page()
         self.report.images = len(self._images)
         return self.report
 
@@ -301,6 +303,28 @@ the observational data belong to the teams who measured it.</p>
                     f"{hints}<details><summary>Solution</summary>{solution}</details></div>")
         self.page("problems.html", "Worked problems", "\n".join(parts), section="problems")
 
+    def method_html(self, info) -> str:
+        """V3's method note, in the reading edition too (`R3`).
+
+        What is computed, whose method it follows, and what it leaves out — the
+        three things a reader has to ask before quoting a number off a plot.
+        """
+        method = info.method
+        if method is None:
+            return ""
+        by_id = {f.id: f for f in self.formulas}
+        parts = [f"<h3>How this is computed</h3><p>{esc(method.summary)}</p>"]
+        for formula_id in method.formulas:
+            formula = by_id.get(formula_id)
+            if formula is not None:
+                parts.append(f'<p class="formula">{self.math(formula.formula, 0)}</p>')
+        if method.reference:
+            parts.append(f'<p class="meta">Follows: {esc(method.reference)}</p>')
+        if method.approximations:
+            items = "".join(f"<li>{esc(line)}</li>" for line in method.approximations)
+            parts.append(f"<p><b>What it leaves out</b></p><ul>{items}</ul>")
+        return "".join(parts)
+
     def simulators_page(self) -> None:
         cur = self.curriculum
         parts = ["<h1>Simulators</h1>",
@@ -313,9 +337,27 @@ the observational data belong to the teams who measured it.</p>
                                 for i in info.lessons if i in cur.lessons)
             parts.append(f'<section class="sim" id="{key}"><h2>{esc(info.icon)} {esc(info.title)}</h2>'
                          f'<p class="lead">{esc(info.tagline)}</p><p>{esc(info.description)}</p>'
-                         f"<h3>How to use it</h3><ul>{how}</ul><h3>Things to try</h3><ul>{tries}</ul>"
-                         f'<p class="meta">Used in: {lessons}</p></section>')
+                         + self.method_html(info)
+                         + f"<h3>How to use it</h3><ul>{how}</ul><h3>Things to try</h3><ul>{tries}</ul>"
+                         + f'<p class="meta">Used in: {lessons}</p></section>')
         self.page("simulators.html", "Simulators", "\n".join(parts), section="simulators")
+
+
+
+    def data_page(self) -> None:
+        """Where every number came from, and how the physics is checked (`R3`).
+
+        The same text the app shows under Reference, rendered from the same
+        source, so that the edition somebody reads in a browser cannot quietly
+        become less honest than the one they install.
+        """
+        from cosmos.gui.rendering import data_methods
+
+        def link(simulator_id: str, title: str) -> str:
+            return f"[{simulator_id} {title}](simulators.html#{simulator_id})"
+
+        body = self.markdown(data_methods.data_markdown(link), depth=0)
+        self.page("data.html", "Data & methods", body, section="data")
 
 
 def build_site(out: Path) -> SiteReport:
